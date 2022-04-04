@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace StoreMarket_V1
 {
-    public partial class RegisterAdminForm : Form
+    public partial class SELECTADMIN : Form
     {
-        public RegisterAdminForm()
+        public SELECTADMIN()
         {
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

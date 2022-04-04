@@ -32,6 +32,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ADMINNUMBER = new System.Windows.Forms.Label();
+            this.ADMINNAME = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -39,6 +41,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(32, 35);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 0;
             // 
@@ -54,7 +57,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Location = new System.Drawing.Point(46, 65);
+            this.button1.Location = new System.Drawing.Point(132, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 35);
             this.button1.TabIndex = 2;
@@ -62,12 +65,36 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ADMINNUMBER
+            // 
+            this.ADMINNUMBER.AutoSize = true;
+            this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ADMINNUMBER.Location = new System.Drawing.Point(12, 95);
+            this.ADMINNUMBER.Name = "ADMINNUMBER";
+            this.ADMINNUMBER.Size = new System.Drawing.Size(36, 13);
+            this.ADMINNUMBER.TabIndex = 21;
+            this.ADMINNUMBER.Text = "شماره";
+            // 
+            // ADMINNAME
+            // 
+            this.ADMINNAME.AutoSize = true;
+            this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ADMINNAME.Location = new System.Drawing.Point(12, 76);
+            this.ADMINNAME.Name = "ADMINNAME";
+            this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
+            this.ADMINNAME.TabIndex = 20;
+            this.ADMINNAME.Text = "نام";
+            // 
             // AccessCodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(299, 117);
+            this.Controls.Add(this.ADMINNUMBER);
+            this.Controls.Add(this.ADMINNAME);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -84,5 +111,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label ADMINNUMBER;
+        public System.Windows.Forms.Label ADMINNAME;
     }
 }

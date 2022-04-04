@@ -16,3 +16,6 @@ C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\Sto
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.pdb
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.AccessCodeForm.resources
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.RegisterAdminForm.resources
+C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.SELECTADMIN.resources
+C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.MainForm.resources
+C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.StoreManagmentForm.resources

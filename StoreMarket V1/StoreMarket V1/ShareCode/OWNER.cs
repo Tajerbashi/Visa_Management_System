@@ -8,13 +8,9 @@ namespace StoreMarket_V1
 {
     public class OWNER
     {
-        public OWNER()
-        {
-            access = "ADMIN";
-            Status = true;
-        }
         public int id { get; set; }
         public String access { get; set; } 
+        public String password { get; set; }
         public bool Status { get; set; }
     }
 }
