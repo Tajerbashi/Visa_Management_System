@@ -20,12 +20,10 @@ namespace StoreMarket_V1
         public bool DeleteStatus { get; set; }
         public bool  Status { get; set; }//ایا چک پاس شده یا خیر    پاس شده درست نشده نادرست
 
-
         public AAdminBankAccount adminBankAccount { get; set; }
-
         public AAgentBankAccount agentBankAccount { get; set; }
+        public List<ABuyFactor> aBuyFactors { get; set; } = new List<ABuyFactor>();
 
-        public ABuyFactor aBuyFactor { get; set; }
 
     }
 }

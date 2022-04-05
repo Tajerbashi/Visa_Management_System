@@ -46,10 +46,10 @@ namespace StoreMarket_V1
         {
             if (AccessCodeForAdminENTER(textBox1.Text))
             {
-                StoreManagmentForm RGF = new StoreManagmentForm();
-                RGF.ADMINNAME.Text = ADMINNAME.Text;
-                RGF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-                RGF.ShowDialog();
+                StoreManagmentForm SMF = new StoreManagmentForm();
+                SMF.ADMINNAME.Text = ADMINNAME.Text;
+                SMF.ADMINNUMBER.Text = ADMINNUMBER.Text;
+                SMF.Show();
                 this.Close();
             }
             else

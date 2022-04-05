@@ -7,6 +7,8 @@ namespace StoreMarket_V1
 {
     public class Functions
     {
+        DBCLASS dbc = new DBCLASS();
+        
         public void ClearTextBoxes(Control.ControlCollection ctrlCollection)
         {
             foreach (Control ctrl in ctrlCollection)
@@ -21,10 +23,8 @@ namespace StoreMarket_V1
                 }
             }
         }
-
         public bool register(OWNER owner)
         {
-            DBCLASS dbc = new DBCLASS();
             foreach (var item in dbc.Owner)
             {
                 if (owner.access == item.access)
@@ -33,6 +33,94 @@ namespace StoreMarket_V1
                 }
             }
             return false;
+        }
+        public bool SelectStatusInfoA(AAdmin aAdmin)
+        {
+            foreach (var item in dbc.aAdmins)
+            {
+                if (item.Name == aAdmin.Name && item.Family == aAdmin.Family && item.Phone == aAdmin.Phone)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool SelectStatusInfoB(BAdmin bAdmin)
+        {
+            DBCLASS dbc = new DBCLASS();
+            foreach (var item in dbc.bAdmins)
+            {
+                if (item.Name == bAdmin.Name && item.Family == bAdmin.Family && item.Phone == bAdmin.Phone)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool RegisterAdminA(AAdmin aAdmin)
+        {
+            if (!SelectStatusInfoA(aAdmin))
+            {
+                dbc.aAdmins.Add(new AAdmin
+                {
+                    OwnerName = aAdmin.OwnerName,
+                    Name = aAdmin.Name,
+                    Family = aAdmin.Family,
+                    Phone = aAdmin.Phone,
+                    Email = aAdmin.Email,
+                    Address = aAdmin.Address,
+                    IsActive = aAdmin.IsActive,
+                    accessCode = aAdmin.accessCode,
+                    Username = aAdmin.Username,
+                    Password = aAdmin.Password,
+                    DeleteStatus = aAdmin.DeleteStatus
+                });
+                dbc.SaveChanges();
+                return true;
+            }
+
+            return false;
+        }
+        public bool RegisterAdminB(BAdmin bAdmin)
+        {
+            if (!SelectStatusInfoB(bAdmin))
+            {
+                dbc.bAdmins.Add(new BAdmin
+                {
+                    OwnerName = bAdmin.OwnerName,
+                    Name = bAdmin.Name,
+                    Family = bAdmin.Family,
+                    Phone = bAdmin.Phone,
+                    Email = bAdmin.Email,
+                    Address = bAdmin.Address,
+                    IsActive = bAdmin.IsActive,
+                    accessCode = bAdmin.accessCode,
+                    Username = bAdmin.Username,
+                    Password = bAdmin.Password,
+                    DeleteStatus = bAdmin.DeleteStatus
+                });
+                dbc.SaveChanges();
+                return true;
+            }
+
+            return false;
+        }
+        public int CheckAdminInfo(String ADMINNAME,String ADMINNUMBER)
+        {
+            String Owner = ADMINNAME;
+            DBCLASS dbc = new DBCLASS();
+            foreach (var item in dbc.Owner)
+            {
+                if (item.access == Owner && item.Status && ADMINNUMBER == "1")
+                {
+                    return 1;
+                }
+                else if (item.access == Owner && item.Status && ADMINNUMBER == "2")
+                {
+                    return 2;
+                }
+            }
+            return 0;
         }
 
         public void FirstLoginAdminA()

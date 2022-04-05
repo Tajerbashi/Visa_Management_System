@@ -74,12 +74,14 @@ namespace StoreMarket_V1
             {
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ADMINNUMBER.Text = "1";
-                MF.ShowDialog();
+                MF.Show();
+                this.Hide();
             }else if(Fun.CheckAdminB(accessTXT.Text, UserTXT.Text, passTXT.Text))
             {
                 MF.ADMINNUMBER.Text = "2";
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ShowDialog();
+                this.Hide();
             }
             else
             {

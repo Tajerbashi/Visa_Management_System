@@ -41,8 +41,8 @@ namespace StoreMarket_V1
         public DbSet<BSellFactor> bSellFactors { set; get; }
         public DbSet<AProduct> aProducts { set; get; }
         public DbSet<BProduct> bProducts { set; get; }
-        public DbSet<ADayInformationProduct> aDayInformationProducts { set; get; }
-        public DbSet<BDayInformationProduct> bDayInformationProducts { set; get; }
+        public DbSet<ALogInformation> aLogInformation { get; set; }
+        public DbSet<BLogInformation> bLogInformation { get; set; }
 
         #region Comment
         //Add a DbSet for each entity type that you want to include in your model.For more information
@@ -50,14 +50,14 @@ namespace StoreMarket_V1
         //on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-    #endregion
+        #endregion
 
-    #region Comment
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
-    #endregion
+        #region Comment
+        //public class MyEntity
+        //{
+        //    public int Id { get; set; }
+        //    public string Name { get; set; }
+        //}
+        #endregion
     }
 }

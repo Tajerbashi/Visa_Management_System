@@ -14,6 +14,7 @@ namespace StoreMarket_V1
         [STAThread]
         static void Main()
         {
+            Cultures.InitializePersianCulture();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

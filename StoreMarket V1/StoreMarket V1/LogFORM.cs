@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace StoreMarket_V1
 {
-    public partial class StoreManagmentForm : Form
+    public partial class LogFORM : Form
     {
         #region CodeClick
         const int HT_CAPTION = 0x2;
@@ -23,17 +23,34 @@ namespace StoreMarket_V1
         public static extern bool ReleaseCapture();
         #endregion
 
-        public StoreManagmentForm()
+        public LogFORM()
         {
             InitializeComponent();
         }
 
-        private void StoreManagmentForm_Load(object sender, EventArgs e)
+        private void LogFORM_Load(object sender, EventArgs e)
         {
+            DBCLASS dbc = new DBCLASS();
+            if (ADMINNUMBER.Text == "1")
+            {
+                var DB = from i in dbc.aLogInformation where i.id > 0 select i;
+                foreach(var item in DB)
+                {
+                    dataGridView1.Rows.Add(item.id, item.AdminName, item.Enter, item.Leave);
+                }
 
+            }
+            else
+            {
+                var DB = from i in dbc.bLogInformation where i.id > 0 select i;
+                foreach (var item in DB)
+                {
+                    dataGridView1.Rows.Add(item.id, item.AdminName, item.Enter, item.Leave);
+                }
+            }
         }
 
-        private void StoreManagmentForm_MouseDown(object sender, MouseEventArgs e)
+        private void LogFORM_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -42,34 +59,14 @@ namespace StoreMarket_V1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RegisterAdminForm RGF = new RegisterAdminForm();
-            RGF.ADMINNAME.Text = ADMINNAME.Text;
-            RGF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            RGF.Show();
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ControlAccount CA = new ControlAccount();
-            CA.ADMINNAME.Text = ADMINNAME.Text;
-            CA.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            CA.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            LogFORM LF = new LogFORM();
-            LF.ADMINNAME.Text = ADMINNAME.Text;
-            LF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            LF.ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

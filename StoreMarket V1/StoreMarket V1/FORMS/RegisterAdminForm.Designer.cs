@@ -192,6 +192,7 @@
             this.Phonetxt.Name = "Phonetxt";
             this.Phonetxt.Size = new System.Drawing.Size(177, 20);
             this.Phonetxt.TabIndex = 4;
+            this.Phonetxt.Leave += new System.EventHandler(this.Phonetxt_Leave);
             // 
             // Familytxt
             // 
@@ -310,9 +311,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label7.Location = new System.Drawing.Point(194, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "کد مالک :";
+            this.label7.Text = "نام مالک :";
             // 
             // button3
             // 
@@ -354,7 +355,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
-            this.BackgroundImage = global::StoreMarket_V1.Properties.Resources.UserPanelForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(555, 312);
             this.Controls.Add(this.ADMINNUMBER);

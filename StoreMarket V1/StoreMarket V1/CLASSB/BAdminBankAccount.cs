@@ -14,6 +14,6 @@ namespace StoreMarket_V1
         public String OwnerName { get; set; }
 
         public BAdmin bAdmin { get; set; }
-        public BCheckBank bCheckBank { get; set; }
+        public List<BCheckBank> bCheckBank { get; set; } = new List<BCheckBank>();
     }
 }

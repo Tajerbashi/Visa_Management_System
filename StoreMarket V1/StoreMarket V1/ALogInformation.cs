@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace StoreMarket_V1
 {
-    public class BDayInformationProduct
+    public class ALogInformation
     {
         public int id { get; set; }
-        public int ManyNumber { get; set; }
-        public BProduct bProduct { get; set; }
+        public String Enter { get; set; }
+        public String Leave { get; set; }
+        public String AdminName { get; set; }
     }
 }

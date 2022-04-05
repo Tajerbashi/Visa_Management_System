@@ -21,7 +21,7 @@ namespace StoreMarket_V1
         public bool  Status { get; set; }//ایا چک پاس شده یا خیر    پاس شده درست نشده نادرست
         public BAdminBankAccount bAdminBankAccount { get; set; }
         public BAgentBankAccount bAgentBankAccount { get; set; }
-        public BBuyFactor bBuyFactor { get; set; }
+        public List<BBuyFactor> bBuyFactor { get; set; } = new List<BBuyFactor>();
 
     }
 }

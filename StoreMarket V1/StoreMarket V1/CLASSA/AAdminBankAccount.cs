@@ -14,6 +14,6 @@ namespace StoreMarket_V1
         public String AccountNumber { get; set; }
         public String OwnerName { get; set; }
         public AAdmin aadmin { get; set; }
-        public ACheckBank aCheckBank { get; set; }
+        public List<ACheckBank> aCheckBank { get; set; } = new List<ACheckBank>();
     }
 }

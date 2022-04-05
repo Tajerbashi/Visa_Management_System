@@ -160,6 +160,7 @@
             this.button8.TabIndex = 15;
             this.button8.Text = "کنترل محصولات";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -236,6 +237,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Enter += new System.EventHandler(this.MainForm_Enter);
+            this.Leave += new System.EventHandler(this.MainForm_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
