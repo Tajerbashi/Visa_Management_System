@@ -30,123 +30,6 @@ namespace StoreMarket_V1
         }
         DBCLASS dbc = new DBCLASS();
         #region FUNCTION
-        public int HelpCodeACCESS(String Code)
-        {
-            if (Code == "TAJERBASHI")
-            {
-                MessageBox.Show("برای چه کسی ثبت نام انجام شود");
-                SELECTADMIN SA = new SELECTADMIN();
-                SA.ShowDialog();
-                if (SA.ADMINA.Checked)
-                {
-                    return 1;
-                }
-                else if (SA.ADMINB.Checked)
-                {
-                    return 2;
-                }
-            }
-            return 0;
-        }
-        public int CheckOwner(String Code,String Help)
-        {
-            DBCLASS dbc = new DBCLASS();
-            int R = HelpCodeACCESS(Help);
-            MessageBox.Show(R.ToString());
-            foreach (var item in dbc.aAdmins)
-            {
-                if (item.accessCode == Code || R==1)
-                {
-                    return 1;
-                }
-            }
-            foreach (var item in dbc.bAdmins)
-            {
-                if (item.accessCode == Code || R==2)
-                {
-                    return 2;
-                }
-            }
-            return 0;
-        }
-        public int CheckAdmin(int a,String Name,String Family)
-        {
-            DBCLASS dbc = new DBCLASS();
-            if(a == 1)
-            {
-                foreach(var item in dbc.aAdmins)
-                {
-                    if(item.Name == Name && item.Family == Family)
-                    {
-                        return 1;
-                    }
-                }
-                return -1;
-            }else if(a == 2)
-            {
-                foreach (var item in dbc.bAdmins)
-                {
-                    if (item.Name == Name && item.Family == Family)
-                    {
-                        return 2;
-                    }
-                }
-                return -2;
-            }
-            return 0;
-        }
-        public bool AREG(AAdmin aAdmin, String ADMIN)
-        {
-            int R = CheckAdmin(1, aAdmin.Name, aAdmin.Family);
-            if (R == -1 || ADMIN == "TAJERBASHI")
-            {
-                DBCLASS dbc = new DBCLASS();
-                dbc.aAdmins.Add(new AAdmin
-                {
-                    Name = aAdmin.Name,
-                    Family = aAdmin.Family,
-                    Phone = aAdmin.Phone,
-                    Email = aAdmin.Email,
-                    Address = aAdmin.Address,
-                    IsActive = aAdmin.IsActive,
-                    OWNERID = aAdmin.OWNERID,
-                    Username = aAdmin.Username,
-                    Password = aAdmin.Password,
-                    accessCode = aAdmin.accessCode,
-                    DeleteStatus = aAdmin.DeleteStatus
-                });
-                dbc.SaveChanges();
-                return true;
-            }
-
-            return false;
-        }
-        public bool BREG(BAdmin bAdmin, String ADMIN)
-        {
-            int R = CheckAdmin(2, bAdmin.Name, bAdmin.Family);
-            if (R == -2 || ADMIN == "TAJERBASHI")
-            {
-                DBCLASS dbc = new DBCLASS();
-                dbc.bAdmins.Add(new BAdmin
-                {
-                    Name = bAdmin.Name,
-                    Family = bAdmin.Family,
-                    Phone = bAdmin.Phone,
-                    Email = bAdmin.Email,
-                    Address = bAdmin.Address,
-                    IsActive = bAdmin.IsActive,
-                    OWNERID = bAdmin.OWNERID,
-                    Username = bAdmin.Username,
-                    Password = bAdmin.Password,
-                    accessCode = bAdmin.accessCode,
-                    DeleteStatus = bAdmin.DeleteStatus
-                });
-                dbc.SaveChanges();
-                return true;
-            }
-
-            return false;
-        }
         public bool SelectStatusInfoA(AAdmin aAdmin)
         {
             DBCLASS dbc = new DBCLASS();
@@ -186,7 +69,6 @@ namespace StoreMarket_V1
                     Email = aAdmin.Email,
                     Address = aAdmin.Address,
                     IsActive = aAdmin.IsActive,
-                    OWNERID = aAdmin.OWNERID,
                     accessCode = aAdmin.accessCode,
                     Username = aAdmin.Username,
                     Password = aAdmin.Password,
@@ -213,7 +95,6 @@ namespace StoreMarket_V1
                     Email = bAdmin.Email,
                     Address = bAdmin.Address,
                     IsActive = bAdmin.IsActive,
-                    OWNERID = bAdmin.OWNERID,
                     accessCode = bAdmin.accessCode,
                     Username = bAdmin.Username,
                     Password = bAdmin.Password,
@@ -271,6 +152,7 @@ namespace StoreMarket_V1
         }
         private void button1_Click(object sender, EventArgs e)
         {   // ذخیره ادمین
+            Functions Fun = new Functions();
             if (ADMINNUMBER.Text == "1" && RegisterAdminA(new AAdmin
             {
                 Name = Nametxt.Text,
@@ -279,7 +161,6 @@ namespace StoreMarket_V1
                 Email = Emailtxt.Text,
                 Address = Addresstxt.Text,
                 IsActive = (Statustxt.Text) == "فعال" ? true : false,
-                OWNERID = int.Parse(ADMINNUMBER.Text),
                 Username = usernametxt.Text,
                 Password = userpasstxt.Text,
                 accessCode = accessCode.Text,
@@ -287,6 +168,7 @@ namespace StoreMarket_V1
             }))
             {
                 MessageBox.Show("ثبت نام انجام شد");
+                Fun.ClearTextBoxes(this.Controls);
 
             }else if (ADMINNUMBER.Text == "2" && RegisterAdminB(new BAdmin
             {
@@ -296,7 +178,6 @@ namespace StoreMarket_V1
                 Email = Emailtxt.Text,
                 Address = Addresstxt.Text,
                 IsActive = (Statustxt.Text) == "فعال" ? true : false,
-                OWNERID = int.Parse(ADMINNUMBER.Text),
                 Username = usernametxt.Text,
                 Password = userpasstxt.Text,
                 accessCode = accessCode.Text,
@@ -304,12 +185,17 @@ namespace StoreMarket_V1
             }))
             {
                 MessageBox.Show("ثبت نام انجام شد");
-
+                Fun.ClearTextBoxes(this.Controls);
             }
             else
             {
                 MessageBox.Show("اطلاعات نادرست است");
             }
+        }
+
+        private void RegisterAdminForm_Load(object sender, EventArgs e)
+        {
+            OwnerCodetxt.Text = ADMINNAME.Text;
         }
     }
 }

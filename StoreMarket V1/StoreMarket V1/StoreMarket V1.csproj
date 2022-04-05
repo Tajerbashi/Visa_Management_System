@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FORMS\ControlAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ControlAccount.Designer.cs">
+      <DependentUpon>ControlAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\AccessCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,21 +79,17 @@
     <Compile Include="CLASSA\ACustomer.cs" />
     <Compile Include="CLASSA\ADayInformationProduct.cs" />
     <Compile Include="CLASSA\AProduct.cs" />
-    <Compile Include="CLASSA\ASectionSellFactorProduct.cs" />
-    <Compile Include="CLASSA\ASectionBuyFactorProduct.cs" />
     <Compile Include="CLASSA\ASellFactor.cs" />
     <Compile Include="CLASSB\BAdmin.cs" />
-    <Compile Include="CLASSB\BAgentBankAccount.cs" />
-    <Compile Include="CLASSB\BAgent.cs" />
     <Compile Include="CLASSB\BAdminBankAccount.cs" />
+    <Compile Include="CLASSB\BAgent.cs" />
+    <Compile Include="CLASSB\BAgentBankAccount.cs" />
     <Compile Include="CLASSB\BBuyFactor.cs" />
     <Compile Include="CLASSB\BCheckBank.cs" />
     <Compile Include="CLASSB\BCompany.cs" />
     <Compile Include="CLASSB\BCustomer.cs" />
     <Compile Include="CLASSB\BDayInformationProduct.cs" />
     <Compile Include="CLASSB\BProduct.cs" />
-    <Compile Include="CLASSB\BSectionBuyFactorProduct.cs" />
-    <Compile Include="CLASSB\BSectionSellFactorProduct.cs" />
     <Compile Include="CLASSB\BSellFactor.cs" />
     <Compile Include="FORMS\LoginForm.cs">
       <SubType>Form</SubType>
@@ -110,11 +112,11 @@
     <Compile Include="FORMS\RegisterAdminForm.Designer.cs">
       <DependentUpon>RegisterAdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\SELECTADMIN.cs">
+    <Compile Include="FORMS\RecoveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\SELECTADMIN.Designer.cs">
-      <DependentUpon>SELECTADMIN.cs</DependentUpon>
+    <Compile Include="FORMS\RecoveryForm.Designer.cs">
+      <DependentUpon>RecoveryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Functions.cs" />
     <Compile Include="ShareCode\OWNER.cs" />
@@ -125,6 +127,9 @@
     <Compile Include="FORMS\StoreManagmentForm.Designer.cs">
       <DependentUpon>StoreManagmentForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FORMS\ControlAccount.resx">
+      <DependentUpon>ControlAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\AccessCodeForm.resx">
       <DependentUpon>AccessCodeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,12 +152,13 @@
     <EmbeddedResource Include="FORMS\RegisterAdminForm.resx">
       <DependentUpon>RegisterAdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\SELECTADMIN.resx">
-      <DependentUpon>SELECTADMIN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\StoreManagmentForm.resx">
       <DependentUpon>StoreManagmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\RecoveryForm.resx">
+      <DependentUpon>RecoveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

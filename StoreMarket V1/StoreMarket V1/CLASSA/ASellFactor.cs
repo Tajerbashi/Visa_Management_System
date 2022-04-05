@@ -14,6 +14,7 @@ namespace StoreMarket_V1
         public double Price { get; set; }
         public DateTime DayDate { get; set; }
         public int factorNumber { get; set; }
-        public int CustomerID { get; set; }
+        public List<AProduct> aProducts { get; set; } = new List<AProduct>();
+        public ACustomer aCustomer { get; set; }
     }
 }

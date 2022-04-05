@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StoreMarket_V1.AAdmin" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAgAAAAQAAAAAAAAAAAAACABIAAAAAAgA=</HashCode>
+      <FileName>CLASSA\AAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.AAdminBankAccount" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAIAAAAAAAAAAAAAAAhgAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>CLASSA\AAdminBankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.AAgent" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAIAAAAAAAAAAAAAAAAAAAAAAQBAABAAAAAA=</HashCode>
+      <FileName>CLASSA\AAgent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.AAgentBankAccount" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAhgAAAAAAAAAAAAgAgA=</HashCode>
+      <FileName>CLASSA\AAgentBankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ABuyFactor" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAYAAAAAAAAAAwAAAABABAAAAABgAAAAAAgA=</HashCode>
+      <FileName>CLASSA\ABuyFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ACheckBank" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAgAEAQAAAiAAEAAAAAAAAAAgAIAAAFAAAAAAAgA=</HashCode>
+      <FileName>CLASSA\ACheckBank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ACompany" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgAAAAAAAABAAAAAAAAACADAAMAAAAgA=</HashCode>
+      <FileName>CLASSA\ACompany.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ACustomer" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIAAIAAAAAAAAAAAAAAABAAAAABAAAAAAAgA=</HashCode>
+      <FileName>CLASSA\ACustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ADayInformationProduct" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgA=</HashCode>
+      <FileName>CLASSA\ADayInformationProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.AProduct" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAQACAIAAAAAAAAAAQoAAAAAAAAAQAAAAAgAgA=</HashCode>
+      <FileName>CLASSA\AProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ASellFactor" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAYAAAAAAACAAAAAAAEAAAAAAAQgAAAAAAgA=</HashCode>
+      <FileName>CLASSA\ASellFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BAdmin" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgAAAAQAAAAAAAAAAAAACABIAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BAdminBankAccount" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAgAAAAAggAAACAAAAAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BAdminBankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BAgent" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAAAAAAAAAAEAAAAAAAAAAAABAABCAAAAA=</HashCode>
+      <FileName>CLASSB\BAgent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BAgentBankAccount" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEAAAAAAAAAAAAggAAACAAAAAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BAgentBankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BBuyFactor" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAQAAAAAAAAAA0AAAAAABAACAABgAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BBuyFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BCheckBank" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAQAAACABEAAAAAAAAAAgAAAAAFAAAAABAgE=</HashCode>
+      <FileName>CLASSB\BCheckBank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BCompany" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgAAAAAAAABAAACAAAAACADAAIAAAAgA=</HashCode>
+      <FileName>CLASSB\BCompany.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BCustomer" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIAAAAAAAEAAAAAAAAAABAAAAABAAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BDayInformationProduct" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAQgA=</HashCode>
+      <FileName>CLASSB\BDayInformationProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BProduct" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAQACAAEAAAEAAAAAQoAAAAAAAAAQAAAAAAAgE=</HashCode>
+      <FileName>CLASSB\BProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.BSellFactor" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAQAQAAAAAAAAAAEAAAAEAAAAAAAQgAAAAAAgA=</HashCode>
+      <FileName>CLASSB\BSellFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.ControlAccount" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAADAAAEBDECgFAAAA6tsAECAIwIAgACAAQEIABABAI=</HashCode>
+      <FileName>ControlAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.DBCLASS" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEACABIgYIAAAVAQBECAAACAgMACARAAAECgAAAA=</HashCode>
+      <FileName>DBCLASS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.AccessCodeForm" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABABAAAACIAAACAAAIAAAAEEQAAAAAAAA=</HashCode>
+      <FileName>FORMS\AccessCodeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.LoginForm" Collapsed="true">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAABAAiAAABAAACSAAAACAEAwAAACADAIAAUQQAA=</HashCode>
+      <FileName>FORMS\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.MainForm" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAiAAAAAAACCIEAACAMw7AAAAAAQHAAAQAAA=</HashCode>
+      <FileName>FORMS\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.RecoveryForm" Collapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAACIAABACAASEAAACAAAAgAAAAEAAABAAAAA=</HashCode>
+      <FileName>FORMS\RecoveryForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.RegisterAdminForm" Collapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECBAAAAgUiIQABQBByCIABAGAIAoQIAAAHYEABAQAgA=</HashCode>
+      <FileName>FORMS\RegisterAdminForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.StoreManagmentForm" Collapsed="true">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAiAAAAAAACCIAEACAMAYAAAACGQEAAAQAAA=</HashCode>
+      <FileName>FORMS\StoreManagmentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.Program" Collapsed="true">
+    <Position X="23" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.Functions" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAABAAAAAAAAgAAAAAAAAAAAAYABAAAAAAA=</HashCode>
+      <FileName>ShareCode\Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.OWNER" Collapsed="true">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAACAAAAAAAAAAAAAAAAAAAAAAAAgAEAgA=</HashCode>
+      <FileName>ShareCode\OWNER.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.Person" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAQAAAAAAAACAAAAIAAABAA=</HashCode>
+      <FileName>ShareCode\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.Properties.Resources" Collapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAABEAAAAUAAAAAAAAAAIAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMarket_V1.Properties.Settings" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

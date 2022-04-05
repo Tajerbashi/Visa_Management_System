@@ -13,5 +13,6 @@ namespace StoreMarket_V1
         public int PercentUnit { get; set; }
         public bool type { get; set; }  //false normal   true VIP
         public bool DeleteStatus { get; set; }    // if be true deleted
+        public ASellFactor aSellFactor { get; set; }
     }
 }

@@ -76,7 +76,7 @@
             this.groupBox1.Controls.Add(this.Phonetxt);
             this.groupBox1.Controls.Add(this.Familytxt);
             this.groupBox1.Controls.Add(this.Nametxt);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Location = new System.Drawing.Point(285, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 193);
@@ -236,6 +236,7 @@
             // OwnerCodetxt
             // 
             this.OwnerCodetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.OwnerCodetxt.Enabled = false;
             this.OwnerCodetxt.Location = new System.Drawing.Point(11, 45);
             this.OwnerCodetxt.Name = "OwnerCodetxt";
             this.OwnerCodetxt.Size = new System.Drawing.Size(177, 20);
@@ -253,7 +254,7 @@
             this.groupBox2.Controls.Add(this.OwnerCodetxt);
             this.groupBox2.Controls.Add(this.usernametxt);
             this.groupBox2.Controls.Add(this.userpasstxt);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.groupBox2.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox2.Location = new System.Drawing.Point(12, 76);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(267, 193);
@@ -353,6 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
+            this.BackgroundImage = global::StoreMarket_V1.Properties.Resources.UserPanelForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(555, 312);
             this.Controls.Add(this.ADMINNUMBER);
@@ -365,6 +367,7 @@
             this.Name = "RegisterAdminForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "RegisterAdminForm";
+            this.Load += new System.EventHandler(this.RegisterAdminForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RegisterAdminForm_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

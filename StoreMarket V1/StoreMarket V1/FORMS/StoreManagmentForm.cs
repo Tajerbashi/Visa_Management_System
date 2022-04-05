@@ -54,5 +54,13 @@ namespace StoreMarket_V1
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ControlAccount CA = new ControlAccount();
+            CA.ADMINNAME.Text = ADMINNAME.Text;
+            CA.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            CA.ShowDialog();
+        }
     }
 }

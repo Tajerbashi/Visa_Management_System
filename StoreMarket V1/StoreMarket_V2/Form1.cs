@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoreMarket_V1
+namespace StoreMarket_V2
 {
-    public partial class SELECTADMIN : Form
+    public partial class Form1 : Form
     {
-        public SELECTADMIN()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace StoreMarket_V1
     public class ADayInformationProduct
     {
         public int id { get; set; }
-        public int ProductID { get; set; }
         public int ManyNumber { get; set; }
+        public AProduct aProduct { get; set; }
     }
 }

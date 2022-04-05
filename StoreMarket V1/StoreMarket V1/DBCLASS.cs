@@ -41,10 +41,6 @@ namespace StoreMarket_V1
         public DbSet<BSellFactor> bSellFactors { set; get; }
         public DbSet<AProduct> aProducts { set; get; }
         public DbSet<BProduct> bProducts { set; get; }
-        public DbSet<ASectionBuyFactorProduct> aSectionBuyFactorProducts { set; get; }
-        public DbSet<ASectionSellFactorProduct> aSectionSellFactorProducts { set; get; }
-        public DbSet<BSectionBuyFactorProduct> bSectionBuyFactorProducts { set; get; }
-        public DbSet<BSectionSellFactorProduct> bSectionSellFactorProducts { set; get; }
         public DbSet<ADayInformationProduct> aDayInformationProducts { set; get; }
         public DbSet<BDayInformationProduct> bDayInformationProducts { set; get; }
 

@@ -13,7 +13,10 @@ namespace StoreMarket_V1
         public String Type { get; set; }
         public int price { get; set; }
         public int ManyP { get; set; }
-        public int AgentID { get; set; }
+        public AAgent aAgent { get; set; }
+        public ABuyFactor aBuyFactor { get; set; }
+        public ASellFactor aSellFactor { get; set; }
+        public ADayInformationProduct dayInformationProduct { get; set; }
         public DateTime RegisterDate { get; set; } = DateTime.Now;
         public DateTime EndDate { get; set; }
     }

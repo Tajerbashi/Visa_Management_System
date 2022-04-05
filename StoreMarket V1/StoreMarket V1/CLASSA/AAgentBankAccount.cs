@@ -9,9 +9,11 @@ namespace StoreMarket_V1
     public class AAgentBankAccount
     {
         public int id { get; set; }
-        public int AgentID { get; set; }
         public String NameBank { get; set; }
         public String AccountNumber { get; set; }
         public String OwnerName { get; set; }
+        public AAgent aAgent { get; set; }
+        public ACheckBank aCheckBank { get; set; }
+
     }
 }

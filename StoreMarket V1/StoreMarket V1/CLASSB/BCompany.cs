@@ -17,5 +17,6 @@ namespace StoreMarket_V1
         public String Site { get; set; }
         public bool isActive { get; set; }
         public bool DeleteStatus { get; set; }
+        public List<BAgent> bAgents { set; get; } = new List<BAgent>();
     }
 }

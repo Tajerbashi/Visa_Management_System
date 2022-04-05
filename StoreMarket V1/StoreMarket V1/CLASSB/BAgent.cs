@@ -10,8 +10,9 @@ namespace StoreMarket_V1
     {
         public int Id { get; set; }
         public String CompanyName { get; set; }
-        public int CompanyID { get; set; }
         public bool DeleteStatus { get; set; }
-
+        public BCompany Company { get; set; }
+        public List<BAgentBankAccount> bAgentBankAccounts { get; set; } = new List<BAgentBankAccount>();
+        public List<BProduct> bProducts { get; set; } = new List<BProduct>();
     }
 }

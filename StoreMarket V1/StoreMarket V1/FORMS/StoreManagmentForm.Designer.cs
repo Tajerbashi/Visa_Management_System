@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.ADMINNUMBER = new System.Windows.Forms.Label();
@@ -59,27 +58,16 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(232, 43);
             this.button2.TabIndex = 1;
-            this.button2.Text = "ویرایش ادمین";
+            this.button2.Text = "کنترل حساب";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(47, 253);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 43);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "حذف ادمین";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(47, 336);
+            this.button4.Location = new System.Drawing.Point(47, 249);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(232, 43);
             this.button4.TabIndex = 3;
@@ -91,7 +79,7 @@
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(269, 390);
+            this.button5.Location = new System.Drawing.Point(269, 303);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(54, 34);
             this.button5.TabIndex = 4;
@@ -126,12 +114,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(330, 478);
+            this.ClientSize = new System.Drawing.Size(330, 403);
             this.Controls.Add(this.ADMINNUMBER);
             this.Controls.Add(this.ADMINNAME);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -149,7 +136,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.Label ADMINNUMBER;
