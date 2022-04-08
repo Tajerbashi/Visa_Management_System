@@ -21,6 +21,8 @@ namespace StoreMarket_V1
             
         }
         public DbSet<OWNER> Owner { set; get; }
+        public DbSet<ATypeProduct> atypeProducts { get; set; }
+        public DbSet<BTypeProduct> btypeProducts { get; set; }
         public DbSet<AAdminBankAccount> aAdminBankAccounts { set; get; }
         public DbSet<BAdminBankAccount> bAdminBankAccounts { set; get; }
         public DbSet<AAgentBankAccount> aAgentBankAccounts { set; get; }

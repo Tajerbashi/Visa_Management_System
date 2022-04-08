@@ -50,6 +50,7 @@
             this.accessTXT.PasswordChar = '+';
             this.accessTXT.Size = new System.Drawing.Size(225, 20);
             this.accessTXT.TabIndex = 1;
+            this.accessTXT.Text = "ADMIN1";
             // 
             // UserTXT
             // 
@@ -59,6 +60,7 @@
             this.UserTXT.Name = "UserTXT";
             this.UserTXT.Size = new System.Drawing.Size(225, 20);
             this.UserTXT.TabIndex = 2;
+            this.UserTXT.Text = "ADMIN1";
             // 
             // passTXT
             // 
@@ -69,6 +71,7 @@
             this.passTXT.PasswordChar = '*';
             this.passTXT.Size = new System.Drawing.Size(225, 20);
             this.passTXT.TabIndex = 3;
+            this.passTXT.Text = "ADMIN1";
             // 
             // button2
             // 

@@ -24,25 +24,23 @@ namespace StoreMarket_V1
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
         #endregion
-        
+        Timer timer = new Timer();
         public MainForm()
         {
             InitializeComponent();
+            date.Text = DateTime.Now.ToString("yyyy/MM/dd");//tarikh feli ro mide
+            Time.Text = DateTime.Now.ToString("HH:mm:ss dddd");
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = 800;
+            timer.Start();
         }
         DBCLASS dbc = new DBCLASS();
+        Functions Fun = new Functions();
         ALogInformation ALog = new ALogInformation();
         BLogInformation BLog = new BLogInformation();
-
-        public String CLOCK()
+        private void timer_Tick(object sender, EventArgs e)
         {
-            PersianCalendar pc = new PersianCalendar();
-            var currentDate = DateTime.Now;
-            string persianCurrentDate = pc.GetYear(currentDate) + "/" +
-                                        pc.GetMonth(currentDate) + "/" +
-                                        pc.GetDayOfMonth(currentDate) + " ( " +
-                                        pc.GetHour(DateTime.Now) + " : " +
-                                        pc.GetMinute(DateTime.Now) + " )";
-            return persianCurrentDate;
+            Time.Text = DateTime.Now.ToString("HH:mm:ss dddd");//zaman ro mide
         }
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {    //  MouseDown
@@ -56,17 +54,17 @@ namespace StoreMarket_V1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DialogResult= MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست" ,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست" ,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
                 if (ADMINNUMBER.Text == "1")
                 {
-                    ALog.Leave = CLOCK();
+                    ALog.Leave = Fun.CLOCK();
                     dbc.aLogInformation.Add(ALog);
                 }
                 else
                 {
-                    BLog.Leave = CLOCK();
+                    BLog.Leave = Fun.CLOCK();
                     dbc.bLogInformation.Add(BLog);
                 }
                 dbc.SaveChanges();
@@ -92,28 +90,21 @@ namespace StoreMarket_V1
             if (ADMINNUMBER.Text == "1")
             {
                 ALog.AdminName = ADMINNAME.Text;
-                ALog.Enter = CLOCK();
+                ALog.Enter = Fun.CLOCK();
             }
             else
             {
                 BLog.AdminName = ADMINNAME.Text;
-                BLog.Enter = CLOCK();
+                BLog.Enter = Fun.CLOCK();
             }
-        }
-
-        private void MainForm_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void MainForm_Leave(object sender, EventArgs e)
-        {
-            
-            dbc.SaveChanges();
-
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            ProductControlForm PCF = new ProductControlForm();
+            PCF.ADMINNAME.Text = ADMINNAME.Text;
+            PCF.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            PCF.ShowDialog();
         }
     }
 }

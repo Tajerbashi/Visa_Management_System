@@ -15,10 +15,12 @@ namespace StoreMarket_V1
         public int newBuyPrice { get; set; }
         public int sellPrice { get; set; }
         public int ManyP { get; set; }
+        public String RegisterDate { get; set; }
+        public String EndDate { get; set; }
+        public int CashType { get; set; }
+        public String AgentName { get; set; }
         public AAgent aAgent { get; set; }
         public ABuyFactor aBuyFactor { get; set; }
         public ASellFactor aSellFactor { get; set; }
-        public DateTime RegisterDate { get; set; } = DateTime.Now;
-        public DateTime EndDate { get; set; }
     }
 }

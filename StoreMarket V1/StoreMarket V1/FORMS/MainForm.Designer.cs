@@ -40,6 +40,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.ADMINNUMBER = new System.Windows.Forms.Label();
+            this.Time = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button4
@@ -173,7 +175,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(119, 41);
             this.button9.TabIndex = 16;
-            this.button9.Text = "چک ها بانکی";
+            this.button9.Text = "کنترل معاملات";
             this.button9.UseVisualStyleBackColor = false;
             // 
             // button10
@@ -194,10 +196,11 @@
             // 
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNAME.Font = new System.Drawing.Font("MRT_Matin", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ADMINNAME.Location = new System.Drawing.Point(12, 9);
             this.ADMINNAME.Name = "ADMINNAME";
-            this.ADMINNAME.Size = new System.Drawing.Size(26, 19);
+            this.ADMINNAME.Size = new System.Drawing.Size(22, 15);
             this.ADMINNAME.TabIndex = 18;
             this.ADMINNAME.Text = "نام";
             // 
@@ -205,12 +208,37 @@
             // 
             this.ADMINNUMBER.AutoSize = true;
             this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNUMBER.Font = new System.Drawing.Font("MRT_Matin", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ADMINNUMBER.Location = new System.Drawing.Point(12, 28);
             this.ADMINNUMBER.Name = "ADMINNUMBER";
-            this.ADMINNUMBER.Size = new System.Drawing.Size(40, 19);
+            this.ADMINNUMBER.Size = new System.Drawing.Size(33, 15);
             this.ADMINNUMBER.TabIndex = 19;
             this.ADMINNUMBER.Text = "شماره";
+            // 
+            // Time
+            // 
+            this.Time.AutoSize = true;
+            this.Time.BackColor = System.Drawing.Color.Transparent;
+            this.Time.Font = new System.Drawing.Font("MRT_Matin", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Time.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Time.Location = new System.Drawing.Point(4, 343);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(37, 17);
+            this.Time.TabIndex = 21;
+            this.Time.Text = "ساعت";
+            // 
+            // date
+            // 
+            this.date.AutoSize = true;
+            this.date.BackColor = System.Drawing.Color.Transparent;
+            this.date.Font = new System.Drawing.Font("MRT_Matin", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.date.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.date.Location = new System.Drawing.Point(573, 343);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(38, 17);
+            this.date.TabIndex = 22;
+            this.date.Text = "تاریخ";
             // 
             // MainForm
             // 
@@ -218,6 +246,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(649, 365);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.Time);
             this.Controls.Add(this.ADMINNUMBER);
             this.Controls.Add(this.ADMINNAME);
             this.Controls.Add(this.button10);
@@ -237,8 +267,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Enter += new System.EventHandler(this.MainForm_Enter);
-            this.Leave += new System.EventHandler(this.MainForm_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,5 +287,7 @@
         private System.Windows.Forms.Button button10;
         public System.Windows.Forms.Label ADMINNAME;
         public System.Windows.Forms.Label ADMINNUMBER;
+        public System.Windows.Forms.Label Time;
+        public System.Windows.Forms.Label date;
     }
 }

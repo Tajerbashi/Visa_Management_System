@@ -27,7 +27,7 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-
+        DBCLASS dbc = new DBCLASS();
         private void LogFORM_Load(object sender, EventArgs e)
         {
             DBCLASS dbc = new DBCLASS();
@@ -67,6 +67,35 @@ namespace StoreMarket_V1
         private void button4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (searchtxt.Text != null)
+            {
+                if(ADMINNUMBER.Text == "1")
+                {
+                    var time = from i in dbc.aLogInformation where (searchtxt.Text).Contains(i.Enter) select i;
+                    dataGridView1.DataSource = time.ToList();
+                }
+                else
+                {
+                    var time = from i in dbc.bLogInformation where (searchtxt.Text).Contains(i.Enter) select i;
+                    dataGridView1.DataSource = time.ToList();
+                }
+            }else if(Startdate.Text != null  && Enddate.Text != null)
+            {
+                if (ADMINNUMBER.Text == "1")
+                {
+                    var time = from i in dbc.aLogInformation where (Startdate.Text).Contains(i.Enter) select i;
+                    dataGridView1.DataSource = time.ToList();
+                }
+                else
+                {
+                    var time = from i in dbc.bLogInformation where (Startdate.Text).Contains(i.Enter) select i;
+                    dataGridView1.DataSource = time.ToList();
+                }
+            }
         }
     }
 }

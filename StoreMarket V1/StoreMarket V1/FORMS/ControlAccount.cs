@@ -59,7 +59,6 @@ namespace StoreMarket_V1
 
         private void ControlAccount_Load(object sender, EventArgs e)
         {
-            ADMINNUMBER.Text = "1";
             Printdata(ADMINNUMBER.Text);
         }
 
@@ -74,7 +73,6 @@ namespace StoreMarket_V1
             {
                 ID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 dataGridView1.CurrentRow.Selected=true;
-                //MessageBox.Show(ID.ToString());
             }
         }
 
