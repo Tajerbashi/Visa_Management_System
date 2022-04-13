@@ -71,5 +71,13 @@ namespace StoreMarket_V1
             LF.ADMINNUMBER.Text = ADMINNUMBER.Text;
             LF.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdminBankAccount ABA = new AdminBankAccount();
+            ABA.ADMINNAME.Text = ADMINNAME.Text;
+            ABA.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            ABA.ShowDialog();
+        }
     }
 }

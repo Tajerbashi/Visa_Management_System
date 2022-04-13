@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Drawing;
 using System.Runtime.InteropServices;
-
+using BEE;
+using BLL;
 namespace StoreMarket_V1
 {
     public partial class LogFORM : Form
@@ -27,22 +29,22 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-        DBCLASS dbc = new DBCLASS();
+        Functions Fun = new Functions();
+        BLLCode blc = new BLLCode();
+
         private void LogFORM_Load(object sender, EventArgs e)
         {
-            DBCLASS dbc = new DBCLASS();
             if (ADMINNUMBER.Text == "1")
             {
-                var DB = from i in dbc.aLogInformation where i.id > 0 select i;
-                foreach(var item in DB)
+                var DB = blc.aLogInformation();
+                foreach (var item in DB)
                 {
                     dataGridView1.Rows.Add(item.id, item.AdminName, item.Enter, item.Leave);
                 }
-
             }
             else
             {
-                var DB = from i in dbc.bLogInformation where i.id > 0 select i;
+                var DB = blc.bLogInformation();
                 foreach (var item in DB)
                 {
                     dataGridView1.Rows.Add(item.id, item.AdminName, item.Enter, item.Leave);
@@ -71,31 +73,23 @@ namespace StoreMarket_V1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            searchtxt.Text = ConvertArabicNumberToEnglish.toEnglishNumber(searchtxt.Text);
+            Startdate.Text = ConvertArabicNumberToEnglish.toEnglishNumber(Startdate.Text);
+            Enddate.Text = ConvertArabicNumberToEnglish.toEnglishNumber(Enddate.Text);
             if (searchtxt.Text != null)
-            {
-                if(ADMINNUMBER.Text == "1")
-                {
-                    var time = from i in dbc.aLogInformation where (searchtxt.Text).Contains(i.Enter) select i;
-                    dataGridView1.DataSource = time.ToList();
-                }
-                else
-                {
-                    var time = from i in dbc.bLogInformation where (searchtxt.Text).Contains(i.Enter) select i;
-                    dataGridView1.DataSource = time.ToList();
-                }
-            }else if(Startdate.Text != null  && Enddate.Text != null)
             {
                 if (ADMINNUMBER.Text == "1")
                 {
-                    var time = from i in dbc.aLogInformation where (Startdate.Text).Contains(i.Enter) select i;
+                    var time = blc.LogSearchEnterA(searchtxt.Text);
                     dataGridView1.DataSource = time.ToList();
                 }
                 else
                 {
-                    var time = from i in dbc.bLogInformation where (Startdate.Text).Contains(i.Enter) select i;
+                    var time = blc.LogSearchEnterB(searchtxt.Text);
                     dataGridView1.DataSource = time.ToList();
                 }
             }
         }
+
     }
 }

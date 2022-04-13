@@ -65,13 +65,13 @@ namespace StoreMarket_V1
         private void button1_Click(object sender, EventArgs e)
         {   // ذخیره ادمین
             Functions Fun = new Functions();
-
+            Phonetxt.Text = ConvertArabicNumberToEnglish.toEnglishNumber(Phonetxt.Text);
             try
             {
                 OWNER owner = dbc.Owner.Where(c => c.access == ADMINNAME.Text).FirstOrDefault();
                 if (owner.Status && ADMINNUMBER.Text == "1" && Fun.RegisterAdminA(new AAdmin
                 {
-                    OwnerName=OwnerCodetxt.Text,
+                    OwnerName = OwnerCodetxt.Text,
                     Name = Nametxt.Text,
                     Family = Familytxt.Text,
                     Phone = Int64.Parse(Phonetxt.Text),
@@ -111,7 +111,7 @@ namespace StoreMarket_V1
                     owner.Status = false;
                     dbc.SaveChanges();
                 }
-            }   
+            }
             catch
             {
                 MessageBox.Show("اطلاعات نادرست است");

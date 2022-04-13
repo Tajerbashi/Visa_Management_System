@@ -3,11 +3,12 @@ using System.Data;
 using System.Windows.Forms;
 using System.Linq;
 using System.Data.SqlClient;
+using System.Data.Entity;
+
 namespace StoreMarket_V1
 {
     public class Functions
     {
-        DBCLASS dbc = new DBCLASS();
         public string GetPersianDate(DateTime date)
         {
             System.Globalization.PersianCalendar jc = new System.Globalization.PersianCalendar();
@@ -34,187 +35,146 @@ namespace StoreMarket_V1
                 }
             }
         }
-        public bool register(OWNER owner)
+
+        #region FunctionsProduct
+        public void digitonly(KeyPressEventArgs e)
         {
-            foreach (var item in dbc.Owner)
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)))
             {
-                if (owner.access == item.access)
+                e.Handled = true;
+                MessageBox.Show("کیبورد را عوض کنید", "Alert!");
+            }
+        }
+        public string GetEnglishNumber(string persianNumber)
+        {
+            string englishNumber = "";
+            foreach (char ch in persianNumber)
+            {
+                englishNumber += char.GetNumericValue(ch);
+            }
+            return englishNumber;
+        }
+        public bool SelecttypePA(String atp)
+        {
+            var q = from i in dbc.atypeProducts select i;
+            foreach (var item in q)
+            {
+                if (item.Name == atp)
                 {
                     return true;
                 }
             }
+
             return false;
         }
-        public bool SelectStatusInfoA(AAdmin aAdmin)
+        public bool SelecttypePB(String atp)
         {
-            foreach (var item in dbc.aAdmins)
+            var q = from i in dbc.btypeProducts select i;
+            foreach (var item in q)
             {
-                if (item.Name == aAdmin.Name && item.Family == aAdmin.Family && item.Phone == aAdmin.Phone)
+                if (item.Name == atp)
                 {
                     return true;
                 }
             }
+
             return false;
         }
-        public bool SelectStatusInfoB(BAdmin bAdmin)
+        public bool savetpA(ATypeProduct atp)
         {
-            DBCLASS dbc = new DBCLASS();
-            foreach (var item in dbc.bAdmins)
+            if (!SelecttypePA(atp.Name))
             {
-                if (item.Name == bAdmin.Name && item.Family == bAdmin.Family && item.Phone == bAdmin.Phone)
+                dbc.atypeProducts.Add(new ATypeProduct
                 {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool RegisterAdminA(AAdmin aAdmin)
-        {
-            if (!SelectStatusInfoA(aAdmin))
-            {
-                dbc.aAdmins.Add(new AAdmin
-                {
-                    OwnerName = aAdmin.OwnerName,
-                    Name = aAdmin.Name,
-                    Family = aAdmin.Family,
-                    Phone = aAdmin.Phone,
-                    Email = aAdmin.Email,
-                    Address = aAdmin.Address,
-                    IsActive = aAdmin.IsActive,
-                    accessCode = aAdmin.accessCode,
-                    Username = aAdmin.Username,
-                    Password = aAdmin.Password,
-                    DeleteStatus = aAdmin.DeleteStatus
+                    Name = atp.Name
                 });
                 dbc.SaveChanges();
                 return true;
             }
-
             return false;
         }
-        public bool RegisterAdminB(BAdmin bAdmin)
+        public bool savetpB(BTypeProduct atp)
         {
-            if (!SelectStatusInfoB(bAdmin))
+            if (!SelecttypePB(atp.Name))
             {
-                dbc.bAdmins.Add(new BAdmin
+                dbc.btypeProducts.Add(new BTypeProduct
                 {
-                    OwnerName = bAdmin.OwnerName,
-                    Name = bAdmin.Name,
-                    Family = bAdmin.Family,
-                    Phone = bAdmin.Phone,
-                    Email = bAdmin.Email,
-                    Address = bAdmin.Address,
-                    IsActive = bAdmin.IsActive,
-                    accessCode = bAdmin.accessCode,
-                    Username = bAdmin.Username,
-                    Password = bAdmin.Password,
-                    DeleteStatus = bAdmin.DeleteStatus
+                    Name = atp.Name
                 });
                 dbc.SaveChanges();
                 return true;
             }
-
             return false;
         }
-        public int CheckAdminInfo(String ADMINNAME,String ADMINNUMBER)
+        public bool selectPro(String code, String Name, String type)
         {
-            String Owner = ADMINNAME;
-            DBCLASS dbc = new DBCLASS();
-            foreach (var item in dbc.Owner)
+            if (code == "1")
             {
-                if (item.access == Owner && item.Status && ADMINNUMBER == "1")
+                foreach (var item in dbc.aProducts)
                 {
-                    return 1;
-                }
-                else if (item.access == Owner && item.Status && ADMINNUMBER == "2")
-                {
-                    return 2;
+                    if (item.Name == Name && item.Type == type)
+                    {
+                        return true;
+                    }
                 }
             }
-            return 0;
+            else
+            {
+                foreach (var item in dbc.bProducts)
+                {
+                    if (item.Name == Name && item.Type == type)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
-
-        public void FirstLoginAdminA()
+        public bool RegisterProductA(AProduct aProduct)
         {
-            DBCLASS dbc = new DBCLASS();
-            OWNER owner = new OWNER();
-            if (!register(new OWNER
+            if (!selectPro("1", aProduct.Name, aProduct.Type))
             {
-                access = "ADMIN1",
-                password = "ADMIN1"
-            }))
-            {
-                owner.access = "ADMIN1";
-                owner.password = "ADMIN1";
-                owner.Status = true;
-                dbc.Owner.Add(owner);
+                dbc.aProducts.Add(new AProduct
+                {
+                    Name = aProduct.Name,
+                    Type = aProduct.Type,
+                    buyPrice = aProduct.buyPrice,
+                    newBuyPrice = aProduct.buyPrice,
+                    sellPrice = aProduct.sellPrice,
+                    ManyP = aProduct.ManyP,
+                    RegisterDate = aProduct.RegisterDate,
+                    EndDate = aProduct.EndDate,
+                    AgentName = aProduct.AgentName,
+                    CashType = aProduct.CashType
+                });
                 dbc.SaveChanges();
-                //MessageBox.Show("ادمین اول موجود نبود و جدید ثبت شد");
+                return true;
             }
+            return false;
         }
-
-        public void FirstLoginAdminB()
+        public bool RegisterProductB(BProduct bProduct)
         {
-            DBCLASS dbc = new DBCLASS();
-            OWNER owner = new OWNER();
-            if (!register(new OWNER
+            if (!selectPro("2", bProduct.Name, bProduct.Type))
             {
-                access = "ADMIN2",
-                password = "ADMIN2"
-
-            }))
-            {
-                owner.access = "ADMIN2";
-                owner.password = "ADMIN2";
-                owner.Status = true;
-                dbc.Owner.Add(owner);
+                dbc.bProducts.Add(new BProduct
+                {
+                    Name = bProduct.Name,
+                    Type = bProduct.Type,
+                    buyPrice = bProduct.buyPrice,
+                    newBuyPrice = bProduct.buyPrice,
+                    sellPrice = bProduct.sellPrice,
+                    ManyP = bProduct.ManyP,
+                    RegisterDate = bProduct.RegisterDate,
+                    EndDate = bProduct.EndDate,
+                    AgentName = bProduct.AgentName,
+                    CashType = bProduct.CashType
+                });
                 dbc.SaveChanges();
-                //MessageBox.Show("ادمین دوم موجود نبود و جدید ثبت شد");
-            }
-        }
-
-        public bool CheckAdminA(String Access,String User, String Pass)
-        {
-            DBCLASS dbc = new DBCLASS();
-
-            foreach (var item in dbc.Owner)
-            {
-                if (Access == "ADMIN1"  && item.access == User && item.password == Pass && item.Status == true)
-                {
-                    return true;
-                }
-            }
-
-            foreach(var item in dbc.aAdmins)
-            {
-                if(item.accessCode == Access && item.Username==User && item.Password == Pass)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool CheckAdminB(String Access,String User, String Pass)
-        {
-            DBCLASS dbc = new DBCLASS();
-
-            foreach (var item in dbc.Owner)
-            {
-                if (Access == "ADMIN2" && item.access == User && item.password == Pass && item.Status == true)
-                {
-                    return true;
-                }
-            }
-
-            foreach (var item in dbc.bAdmins)
-            {
-                if (item.accessCode == Access && item.Username == User && item.Password == Pass)
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
 
+        #endregion
     }
 }

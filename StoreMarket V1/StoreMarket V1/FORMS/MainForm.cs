@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.Globalization;
-
+using BEE;
+using BLL;
 namespace StoreMarket_V1
 {
     public partial class MainForm : Form
@@ -34,8 +35,8 @@ namespace StoreMarket_V1
             timer.Interval = 800;
             timer.Start();
         }
-        DBCLASS dbc = new DBCLASS();
         Functions Fun = new Functions();
+        BLLCode blc = new BLLCode();
         ALogInformation ALog = new ALogInformation();
         BLogInformation BLog = new BLogInformation();
         private void timer_Tick(object sender, EventArgs e)
@@ -51,32 +52,28 @@ namespace StoreMarket_V1
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست" ,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
                 if (ADMINNUMBER.Text == "1")
                 {
                     ALog.Leave = Fun.CLOCK();
-                    dbc.aLogInformation.Add(ALog);
+                    blc.ALoginfor(ALog);
                 }
                 else
                 {
                     BLog.Leave = Fun.CLOCK();
-                    dbc.bLogInformation.Add(BLog);
+                    blc.BLoginfor(BLog);
                 }
-                dbc.SaveChanges();
                 Application.Exit();
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             AccessCodeForm ACF = new AccessCodeForm();
@@ -84,7 +81,6 @@ namespace StoreMarket_V1
             ACF.ADMINNAME.Text = ADMINNAME.Text;
             ACF.Show();
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (ADMINNUMBER.Text == "1")
@@ -98,13 +94,23 @@ namespace StoreMarket_V1
                 BLog.Enter = Fun.CLOCK();
             }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             ProductControlForm PCF = new ProductControlForm();
             PCF.ADMINNAME.Text = ADMINNAME.Text;
             PCF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            PCF.ShowDialog();
+            PCF.Show();
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ControlTranSectionForm CTSF = new ControlTranSectionForm();
+            CTSF.ADMINNAME.Text = ADMINNAME.Text;
+            CTSF.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            CTSF.Show();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -37,11 +37,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiMessageBox">
+      <HintPath>E:\Class\آموزش های فرادرس\C C++C#\C#\C# samples\C# Store\Learning_Academy_With_CSharp_Part1\File For Academy Project\Academy\Academy\bin\Debug\FarsiMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin2">
+      <HintPath>E:\Class\آموزش های فرادرس\C C++C#\C#\C# samples\C# Store\Learning_Academy_With_CSharp_Part1\File For Academy Project\Academy\Academy\bin\Debug\IrisSkin2.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDate">
+      <HintPath>E:\Class\آموزش های فرادرس\C C++C#\C#\C# samples\C# Store\Learning_Academy_With_CSharp_Part1\File For Academy Project\Academy\Academy\bin\Debug\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PopupControl">
+      <HintPath>E:\Class\آموزش های فرادرس\C C++C#\C#\C# samples\C# Store\Learning_Academy_With_CSharp_Part1\File For Academy Project\Academy\Academy\bin\Debug\PopupControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -57,14 +68,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLASSA\ALogInformation.cs" />
-    <Compile Include="CLASSB\BTypeProduct.cs" />
-    <Compile Include="CLASSB\BLogInformation.cs" />
-    <Compile Include="ConvertArabicNumberToEnglish.cs" />
-    <Compile Include="ProductControlForm.cs">
+    <Compile Include="FORMS\AdminBankAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductControlForm.Designer.cs">
+    <Compile Include="FORMS\AdminBankAccount.Designer.cs">
+      <DependentUpon>AdminBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\ControlTranSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ControlTranSectionForm.Designer.cs">
+      <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShareCode\ConvertArabicNumberToEnglish.cs" />
+    <Compile Include="FORMS\ProductControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\ProductControlForm.Designer.cs">
       <DependentUpon>ProductControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Cultures.cs" />
@@ -80,26 +100,6 @@
     <Compile Include="FORMS\AccessCodeForm.Designer.cs">
       <DependentUpon>AccessCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CLASSA\AAdmin.cs" />
-    <Compile Include="CLASSA\AAdminBankAccount.cs" />
-    <Compile Include="CLASSA\AAgent.cs" />
-    <Compile Include="CLASSA\AAgentBankAccount.cs" />
-    <Compile Include="CLASSA\ABuyFactor.cs" />
-    <Compile Include="CLASSA\ACheckBank.cs" />
-    <Compile Include="CLASSA\ACompany.cs" />
-    <Compile Include="CLASSA\ACustomer.cs" />
-    <Compile Include="CLASSA\AProduct.cs" />
-    <Compile Include="CLASSA\ASellFactor.cs" />
-    <Compile Include="CLASSB\BAdmin.cs" />
-    <Compile Include="CLASSB\BAdminBankAccount.cs" />
-    <Compile Include="CLASSB\BAgent.cs" />
-    <Compile Include="CLASSB\BAgentBankAccount.cs" />
-    <Compile Include="CLASSB\BBuyFactor.cs" />
-    <Compile Include="CLASSB\BCheckBank.cs" />
-    <Compile Include="CLASSB\BCompany.cs" />
-    <Compile Include="CLASSB\BCustomer.cs" />
-    <Compile Include="CLASSB\BProduct.cs" />
-    <Compile Include="CLASSB\BSellFactor.cs" />
     <Compile Include="FORMS\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,7 +120,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShareCode\DBCLASS.cs" />
     <Compile Include="FORMS\RegisterAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,15 +133,19 @@
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Functions.cs" />
-    <Compile Include="ShareCode\OWNER.cs" />
-    <Compile Include="ShareCode\Person.cs" />
     <Compile Include="FORMS\StoreManagmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\StoreManagmentForm.Designer.cs">
       <DependentUpon>StoreManagmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CLASSA\ATypeProduct.cs" />
+    <Compile Include="SQLCOMMOND.cs" />
+    <EmbeddedResource Include="FORMS\AdminBankAccount.resx">
+      <DependentUpon>AdminBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\ControlTranSectionForm.resx">
+      <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ControlAccount.resx">
       <DependentUpon>ControlAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,7 +161,7 @@
     <EmbeddedResource Include="FORMS\LogFORM.resx">
       <DependentUpon>LogFORM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductControlForm.resx">
+    <EmbeddedResource Include="FORMS\ProductControlForm.resx">
       <DependentUpon>ProductControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -180,6 +183,9 @@
     <EmbeddedResource Include="FORMS\RecoveryForm.resx">
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -209,6 +215,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\Everaldo-Crystal-Clear-Action-viewmag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserPanelForm2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BEE\BEE.csproj">
+      <Project>{5cf8da78-74cd-4c79-8654-b6310c7d8891}</Project>
+      <Name>BEE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{73dee255-a2b1-49d7-84a7-70679fb5a82f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
