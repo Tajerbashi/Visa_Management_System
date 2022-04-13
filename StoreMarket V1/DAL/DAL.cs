@@ -20,6 +20,17 @@ namespace DAL
             db.Owner.Add(owner);
             db.SaveChanges();
         }
+        public bool SelectOwnerStatus(OWNER owner)
+        {
+            foreach (var item in db.Owner)
+            {
+                if(item.access==owner.access && item.password==owner.password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         // Company Code Function
         public void CreateCompanyA(ACompany company)
         {
@@ -131,5 +142,139 @@ namespace DAL
             product.DeleteStatus = true;
             db.SaveChanges();
         }
+
+        public void SAVEDB()
+        {
+            db.SaveChanges();
+        }
+
+        public String GetPassA(AAdmin adminA,BAdmin adminb)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if (item.Username == adminA.Username && item.accessCode == adminA.accessCode && item.Phone == adminA.Phone)
+                {
+                    return item.Password;
+                }
+            }
+            foreach (var item in db.bAdmins)
+            {
+                if (item.Username == adminb.Username && item.accessCode == adminb.accessCode && item.Phone == adminb.Phone)
+                {
+                    return item.Password;
+                }
+            }
+
+            return "0";
+        }
+
+        public List<AAdminBankAccount> ReadBankAccountA()
+        {
+            return (from i in db.aAdminBankAccounts where !i.DeleteStatus select i).ToList();
+        }
+        public List<BAdminBankAccount> ReadBankAccountB()
+        {
+            return (from i in db.bAdminBankAccounts where !i.DeleteStatus select i).ToList();
+        }
+
+        public void CreateAdminBankAccountA(AAdminBankAccount adminbank)
+        {
+            db.aAdminBankAccounts.Add(adminbank);
+        }
+        public void CreateAdminBankAccountB(BAdminBankAccount adminbank)
+        {
+            db.bAdminBankAccounts.Add(adminbank);
+        }
+
+        public AAdminBankAccount SelectAdminBankAccountA(int ID)
+        {
+            return (db.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault());
+        }
+        public BAdminBankAccount SelectAdminBankAccountB(int ID)
+        {
+            return (db.bAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault());
+        }
+
+        public void DeleteAdminBankAccountA(int ID)
+        {
+            AAdminBankAccount adminbank = db.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
+            adminbank.DeleteStatus = true;
+            db.SaveChanges();
+        }
+        public void DeleteAdminBankAccountB(int ID)
+        {
+            BAdminBankAccount adminbank = db.bAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
+            adminbank.DeleteStatus = true;
+            db.SaveChanges();
+        }
+
+        public bool ExistAdminBankA(AAdminBankAccount adminbank)
+        {
+            foreach (var item in db.aAdminBankAccounts)
+            {
+                if (item.id != adminbank.id && item.OwnerName == adminbank.OwnerName && item.AccountNumber == adminbank.AccountNumber)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool ExistAdminBankB(BAdminBankAccount adminbank)
+        {
+            foreach (var item in db.bAdminBankAccounts)
+            {
+                if (item.id != adminbank.id && item.OwnerName == adminbank.OwnerName && item.AccountNumber == adminbank.AccountNumber)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void SaveEditAdminBankAccountA(AAdminBankAccount adminbank)
+        {
+            adminbank.DeleteStatus = false;
+            db.SaveChanges();
+        }
+        public void SaveEditAdminBankAccountB(BAdminBankAccount adminbank)
+        {
+            adminbank.DeleteStatus = false;
+            db.SaveChanges();
+        }
+
+        public bool SelectAdminA(AAdmin admin)
+        {
+            foreach(var i in db.aAdmins)
+            {
+                if(i.id != admin.id && i.Name==admin.Name && i.Family == admin.Family)
+                {
+                    return true;
+                }
+            }
+            db.SaveChanges();
+            return false;
+        }
+        public bool SelectAdminB(BAdmin admin)
+        {
+            foreach (var i in db.bAdmins)
+            {
+                if (i.id != admin.id && i.Name == admin.Name && i.Family == admin.Family)
+                {
+                    return true;
+                }
+            }
+            db.SaveChanges();
+            return false;
+        }
+
+        public AAdmin SelectAdminAccountA(int ID)
+        {
+            return (db.aAdmins.Where(c => c.id == ID).FirstOrDefault());
+        }
+        public BAdmin SelectAdminAccountB(int ID)
+        {
+            return (db.bAdmins.Where(c => c.id == ID).FirstOrDefault());
+        }
+
     }
 }

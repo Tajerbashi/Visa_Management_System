@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using BEE;
+using BLL;
 
 namespace StoreMarket_V1
 {
@@ -27,7 +28,7 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-        DBCLASS dbc = new DBCLASS();
+        BLLCode blc = new BLLCode();
         Functions Fun = new Functions();
 
         private void RegisterAdminForm_MouseDown(object sender, MouseEventArgs e)
@@ -44,23 +45,33 @@ namespace StoreMarket_V1
         }
         private void checkbtn_Click(object sender, EventArgs e)
         {   //  بررسی
-            try
+            if (ADMINNUMBER.Text == "1")
             {
-                if ((ADMINNUMBER.Text == "1" && !Fun.SelectStatusInfoA(new AAdmin { Name = Nametxt.Text, Family = Familytxt.Text, Phone = Int64.Parse(Phonetxt.Text) }))
-                ||
-               (ADMINNUMBER.Text == "2" && !Fun.SelectStatusInfoB(new BAdmin { Name = Nametxt.Text, Family = Familytxt.Text, Phone = Int64.Parse(Phonetxt.Text) })))
+                AAdmin admin = new AAdmin();
+                admin.Name = Nametxt.Text;
+                admin.Family = Familytxt.Text;
+                admin.Phone = Int64.Parse(Phonetxt.Text);
+                admin.Email = Emailtxt.Text;
+                admin.Address = Addresstxt.Text;
+                if (!blc.ExistAdminA(admin))
                 {
                     MessageBox.Show("ادمین جدید است");
                 }
-                else
+            }
+            else
+            {
+                BAdmin admin = new BAdmin();
+                admin.Name = Nametxt.Text;
+                admin.Family = Familytxt.Text;
+                admin.Phone = Int64.Parse(Phonetxt.Text);
+                admin.Email = Emailtxt.Text;
+                admin.Address = Addresstxt.Text;
+                if (!blc.ExistAdminB(admin))
                 {
-                    MessageBox.Show("اطلاعات تکراری است");
+                    MessageBox.Show("ادمین جدید است");
                 }
             }
-            catch
-            {
-                MessageBox.Show("اطلاعات اشتباه وارد شده است");
-            }
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {   // ذخیره ادمین
@@ -68,8 +79,8 @@ namespace StoreMarket_V1
             Phonetxt.Text = ConvertArabicNumberToEnglish.toEnglishNumber(Phonetxt.Text);
             try
             {
-                OWNER owner = dbc.Owner.Where(c => c.access == ADMINNAME.Text).FirstOrDefault();
-                if (owner.Status && ADMINNUMBER.Text == "1" && Fun.RegisterAdminA(new AAdmin
+                OWNER owner = blc.CheckOwner(ADMINNAME.Text);
+                if (owner.Status && ADMINNUMBER.Text == "1" && !blc.RegisterAdminA(new AAdmin
                 {
                     OwnerName = OwnerCodetxt.Text,
                     Name = Nametxt.Text,
@@ -88,7 +99,7 @@ namespace StoreMarket_V1
                     Fun.ClearTextBoxes(this.Controls);
 
                 }
-                else if (owner.Status && ADMINNUMBER.Text == "2" && Fun.RegisterAdminB(new BAdmin
+                else if (owner.Status && ADMINNUMBER.Text == "2" && blc.RegisterAdminB(new BAdmin
                 {
                     OwnerName = OwnerCodetxt.Text,
                     Name = Nametxt.Text,
@@ -109,7 +120,7 @@ namespace StoreMarket_V1
                 if (owner != null)
                 {
                     owner.Status = false;
-                    dbc.SaveChanges();
+                    blc.SAVEDB();
                 }
             }
             catch
@@ -126,5 +137,6 @@ namespace StoreMarket_V1
         {
             usernametxt.Text = Phonetxt.Text;
         }
+
     }
 }

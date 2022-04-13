@@ -247,7 +247,7 @@ namespace StoreMarket_V1
                         admin.Username = username.Text;
                         admin.Password = userpass.Text;
                         admin.accessCode = accesscode.Text;
-                        blc.SaveEditAdminA(admin);
+                        blc.SelectAdminA(admin);
                     }
                     else
                     {
@@ -260,7 +260,7 @@ namespace StoreMarket_V1
                         admin.Username = username.Text;
                         admin.Password = userpass.Text;
                         admin.accessCode = accesscode.Text;
-                        blc.SaveEditAdminB(admin);
+                        blc.SelectAdminB(admin);
                     }
                     SW = true;
                     Savebtn.Text = "ذخیره";

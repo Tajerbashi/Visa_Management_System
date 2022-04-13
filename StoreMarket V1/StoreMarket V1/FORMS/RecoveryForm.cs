@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using BEE;
 
 namespace StoreMarket_V1
 {
@@ -16,13 +18,32 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-
+        BLLCode blc = new BLLCode();
         private void button1_Click(object sender, EventArgs e)
         {
-            DBCLASS dbc = new DBCLASS();
-            Int64 phone = Int64.Parse(phonetxt.Text);
-            AAdmin aAdmin=dbc.aAdmins.Where(c =>c.Phone==phone && c.Username == usernametxt.Text && c.Name==nametxt.Text && c.Family == familytxt.Text).First();
-            OLDPASS.Text = aAdmin.Password;
+            AAdmin adminA = new AAdmin();
+            BAdmin adminB = new BAdmin();
+
+            adminA.accessCode = accesscodetxt.Text;
+            adminA.Username = usernametxt.Text;
+            adminA.Phone = Int64.Parse(phonetxt.Text);
+            
+            adminB.accessCode = accesscodetxt.Text;
+            adminB.Username = usernametxt.Text;
+            adminB.Phone = Int64.Parse(phonetxt.Text);
+
+            String Pass = blc.ResetAdminPassword(adminA, adminB);
+
+            if(Pass != "0")
+            {
+                OLDPASS.Text = Pass;
+            }
+            else
+            {
+                OLDPASS.Text = "اطلاعات اشتباه است";
+            }
+            
+
         }
 
         private void changebtn_Click(object sender, EventArgs e)

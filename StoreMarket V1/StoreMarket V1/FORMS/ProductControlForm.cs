@@ -366,7 +366,7 @@ namespace StoreMarket_V1
                     product.EndDate = dateexpire2.Text;
                     product.AgentName = agenttxtname2.Text;
                     product.CashType = (R22.Checked) ? 2 : 1;
-                    blc.Save();
+                    blc.SAVEDB();
                 }
                 else
                 {
@@ -381,7 +381,7 @@ namespace StoreMarket_V1
                     product.EndDate = dateexpire2.Text;
                     product.AgentName = agenttxtname2.Text;
                     product.CashType = (R22.Checked) ? 2 : 1;
-                    blc.Save();
+                    blc.SAVEDB();
                 }
                 Fun.ClearTextBoxes(this.Controls);
             }

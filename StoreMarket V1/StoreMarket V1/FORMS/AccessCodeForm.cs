@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using BEE;
 namespace StoreMarket_V1
 {
     public partial class AccessCodeForm : Form
@@ -16,35 +17,11 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-        public bool AccessCodeForAdminENTER(String Code)
-        {
-            DBCLASS dbc = new DBCLASS();
-            foreach (var item in dbc.Owner)
-            {
-                if ( item.access == Code && item.password == Code && item.Status == true )
-                {
-                    return true;
-                }
-            }
-            foreach (var item in dbc.aAdmins)
-            {
-                if (item.accessCode == textBox1.Text)
-                {
-                    return true;
-                }
-            }
-            foreach (var item in dbc.bAdmins)
-            {
-                if (item.accessCode == textBox1.Text)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        BLLCode blc = new BLLCode();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (AccessCodeForAdminENTER(textBox1.Text))
+            OWNER owner = blc.CheckOwner(ADMINNAME.Text);
+            if (owner.Status)
             {
                 StoreManagmentForm SMF = new StoreManagmentForm();
                 SMF.ADMINNAME.Text = ADMINNAME.Text;

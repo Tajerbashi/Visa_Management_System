@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using BEE;
+using BLL;
 namespace StoreMarket_V1
 {
     public partial class AdminBankAccount : Form
@@ -28,32 +29,32 @@ namespace StoreMarket_V1
             InitializeComponent();
         }
         Functions Fun = new Functions();
-        //DBCLASS dbc = new DBCLASS();
+        BLLCode blc = new BLLCode();
         int ID = -1;
         bool SW = true;
-        //public void Printdata(String ID)
-        //{
-        //    dataGridView1.Rows.Clear();
-        //    if(ID == "1")
-        //    {
-        //        var DB = from i in dbc.aAdminBankAccounts where !i.DeleteStatus select i;
-        //        foreach (var item in DB)
-        //        {
-        //            dataGridView1.Rows.Add(item.id, item.phonenumber, item.NameBank, item.AccountNumber , item.OwnerName);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        var DB = from i in dbc.bAdminBankAccounts where !i.DeleteStatus select i;
-        //        foreach (var item in DB)
-        //        {
-        //            dataGridView1.Rows.Add(item.id, item.phonenumber, item.NameBank, item.AccountNumber, item.OwnerName);
-        //        }
-        //    }
-        //}
+        public void Printdata(String ID)
+        {
+            dataGridView1.Rows.Clear();
+            if (ID == "1")
+            {
+                var DB = blc.ReadAdminbankA();
+                foreach (var item in DB)
+                {
+                    dataGridView1.Rows.Add(item.id, item.phonenumber, item.NameBank, item.AccountNumber, item.OwnerName);
+                }
+            }
+            else
+            {
+                var DB = blc.ReadAdminbankB();
+                foreach (var item in DB)
+                {
+                    dataGridView1.Rows.Add(item.id, item.phonenumber, item.NameBank, item.AccountNumber, item.OwnerName);
+                }
+            }
+        }
         private void AdminBankAccount_Load(object sender, EventArgs e)
         {
-            //Printdata(ADMINNUMBER.Text);
+            Printdata(ADMINNUMBER.Text);
         }
 
         private void AdminBankAccount_MouseDown(object sender, MouseEventArgs e)
@@ -62,138 +63,6 @@ namespace StoreMarket_V1
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-        //public bool select(String ID,String number)
-        //{
-        //    if(ID == "1")
-        //    {
-        //        foreach (var item in dbc.aAdminBankAccounts)
-        //        {
-        //            if (item.AccountNumber == number)
-        //            {
-        //                return true;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        foreach (var item in dbc.bAdminBankAccounts)
-        //        {
-        //            if (item.AccountNumber == number)
-        //            {
-        //                return true;
-        //            }
-        //        }
-        //    }
-        //    return false;
-        //}
-        //public bool AregisgterBankAccount(AAdminBankAccount adminBankAccount)
-        //{
-        //    if (!select(ADMINNUMBER.Text, adminBankAccount.AccountNumber))
-        //    {
-        //        dbc.aAdminBankAccounts.Add(new AAdminBankAccount
-        //        {
-        //            AccountNumber = adminBankAccount.AccountNumber,
-        //            NameBank = adminBankAccount.NameBank,
-        //            OwnerName = adminBankAccount.OwnerName,
-        //            phonenumber = adminBankAccount.phonenumber
-        //        });
-        //        dbc.SaveChanges();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-        //public bool BregisgterBankAccount(BAdminBankAccount adminBankAccount)
-        //{
-        //    if (!select(ADMINNUMBER.Text, adminBankAccount.AccountNumber))
-        //    {
-        //        dbc.bAdminBankAccounts.Add(new BAdminBankAccount
-        //        {
-        //            AccountNumber = adminBankAccount.AccountNumber,
-        //            NameBank = adminBankAccount.NameBank,
-        //            OwnerName = adminBankAccount.OwnerName,
-        //            phonenumber = adminBankAccount.phonenumber
-        //        });
-        //        dbc.SaveChanges();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-        private void savebtn_Click(object sender, EventArgs e)
-        {
-            if (((bankname.Text.Trim()).Length == 0) ||
-                ((banknumberaccount.Text.Trim()).Length == 0) ||
-                ((owneradminname.Text.Trim()).Length == 0) ||
-                ((adminphonebank.Text.Trim()).Length == 0))
-            {
-                MessageBox.Show("تمامی خانه ها را پر کنید");
-            }
-            else
-            {
-                if (SW)
-                {
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        if (AregisgterBankAccount(new AAdminBankAccount
-                        {
-                            NameBank = bankname.Text,
-                            AccountNumber = banknumberaccount.Text,
-                            OwnerName = owneradminname.Text,
-                            phonenumber = adminphonebank.Text
-                        }))
-                        {
-                            MessageBox.Show("شماره حساب ذخیره شد");
-                        }
-                        else
-                        {
-                            MessageBox.Show("شماره حساب موجود است");
-                        }
-                    }
-                    else if (ADMINNUMBER.Text == "2")
-                    {
-                        if (BregisgterBankAccount(new BAdminBankAccount
-                        {
-                            NameBank = bankname.Text,
-                            AccountNumber = banknumberaccount.Text,
-                            OwnerName = owneradminname.Text,
-                            phonenumber = adminphonebank.Text
-                        }))
-                        {
-                            MessageBox.Show("شماره حساب ذخیره شد");
-                        }
-                        else
-                        {
-                            MessageBox.Show("شماره حساب موجود است");
-                        }
-                    }
-
-                }
-                else
-                {
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAdminBankAccount bankAccount = dbc.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
-                        bankAccount.NameBank = bankname.Text;
-                        bankAccount.AccountNumber = banknumberaccount.Text;
-                        bankAccount.OwnerName = owneradminname.Text;
-                        bankAccount.phonenumber = adminphonebank.Text;
-                    }
-                    else
-                    {
-                        BAdminBankAccount bankAccount = dbc.bAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
-                        bankAccount.NameBank = bankname.Text;
-                        bankAccount.AccountNumber = banknumberaccount.Text;
-                        bankAccount.OwnerName = owneradminname.Text;
-                        bankAccount.phonenumber = adminphonebank.Text;
-                    }
-                    dbc.SaveChanges();
-                    MessageBox.Show("اطلاعات با موفقیت بروز رسانی شد");
-                    savebtn.Text = "ذخیره";
-                    SW = true;
-                }
-                Fun.ClearTextBoxes(this.Controls);
-                Printdata(ADMINNUMBER.Text);
             }
         }
 
@@ -214,15 +83,12 @@ namespace StoreMarket_V1
             {
                 if (ADMINNUMBER.Text == "1")
                 {
-                    AAdminBankAccount bankAccount = dbc.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
-                    bankAccount.DeleteStatus = true;
+                    blc.DeleteBankAccountA(ID);
                 }
                 else
                 {
-                    BAdminBankAccount bankAccount = dbc.bAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
-                    bankAccount.DeleteStatus = true;
+                    blc.DeleteBankAccountB(ID);
                 }
-                dbc.SaveChanges();
             }
             Printdata(ADMINNUMBER.Text);
         }
@@ -235,7 +101,7 @@ namespace StoreMarket_V1
                 savebtn.Text = "بروزرسانی";
                 if (ADMINNUMBER.Text == "1")
                 {
-                    AAdminBankAccount bankAccount = dbc.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
+                    AAdminBankAccount bankAccount = blc.adminbankacountA(ID);
                     bankname.Text = bankAccount.NameBank;
                     owneradminname.Text = bankAccount.OwnerName;
                     adminphonebank.Text = bankAccount.phonenumber;
@@ -243,7 +109,7 @@ namespace StoreMarket_V1
                 }
                 else
                 {
-                    BAdminBankAccount bankAccount = dbc.bAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault();
+                    BAdminBankAccount bankAccount = blc.adminbankacountB(ID);
                     bankname.Text = bankAccount.NameBank;
                     owneradminname.Text = bankAccount.OwnerName;
                     adminphonebank.Text = bankAccount.phonenumber;
@@ -263,9 +129,59 @@ namespace StoreMarket_V1
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void adminphonebank_KeyPress(object sender, KeyPressEventArgs e)
+        private void savebtn_Click(object sender, EventArgs e)
         {
-
+            if (SW)
+            {   //  Save New Admin Bank Account
+                if (ADMINNUMBER.Text == "1")
+                {
+                    AAdminBankAccount adminbank = new AAdminBankAccount();
+                    adminbank.NameBank = bankname.Text;
+                    adminbank.OwnerName = owneradminname.Text;
+                    adminbank.AccountNumber = banknumberaccount.Text;
+                    adminbank.phonenumber = adminphonebank.Text;
+                    if (blc.CreateAdminBankA(adminbank))
+                    {
+                        MessageBox.Show("اطلاعات تکراری است");
+                    }
+                }
+                else
+                {
+                    BAdminBankAccount adminbank = new BAdminBankAccount();
+                    adminbank.NameBank = bankname.Text;
+                    adminbank.OwnerName = owneradminname.Text;
+                    adminbank.AccountNumber = banknumberaccount.Text;
+                    adminbank.phonenumber = adminphonebank.Text;
+                    if (blc.CreateAdminBankB(adminbank))
+                    {
+                        MessageBox.Show("اطلاعات تکراری است");
+                    }
+                }
+            }
+            else
+            {   //  EDIT Admin Bank Account
+                SW = true;
+                if(ADMINNUMBER.Text == "1")
+                {
+                    AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
+                    adminbank.NameBank = bankname.Text;
+                    adminbank.OwnerName = owneradminname.Text;
+                    adminbank.phonenumber = adminphonebank.Text;
+                    adminbank.AccountNumber = banknumberaccount.Text;
+                    blc.ExistAdminBankA(adminbank);
+                }
+                else
+                {
+                    BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
+                    adminbank.NameBank = bankname.Text;
+                    adminbank.OwnerName = owneradminname.Text;
+                    adminbank.phonenumber = adminphonebank.Text;
+                    adminbank.AccountNumber = banknumberaccount.Text;
+                    blc.ExistAdminBankB(adminbank);
+                }
+                
+            }
+            Printdata(ADMINNUMBER.Text);
         }
     }
 }
