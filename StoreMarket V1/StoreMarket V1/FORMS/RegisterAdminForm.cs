@@ -50,7 +50,7 @@ namespace StoreMarket_V1
                 AAdmin admin = new AAdmin();
                 admin.Name = Nametxt.Text;
                 admin.Family = Familytxt.Text;
-                admin.Phone = Int64.Parse(Phonetxt.Text);
+                admin.Phone = Int64.Parse(Fun.GetEnglishNumber(Phonetxt.Text));
                 admin.Email = Emailtxt.Text;
                 admin.Address = Addresstxt.Text;
                 if (!blc.ExistAdminA(admin))
@@ -79,48 +79,50 @@ namespace StoreMarket_V1
             Phonetxt.Text = ConvertArabicNumberToEnglish.toEnglishNumber(Phonetxt.Text);
             try
             {
-                OWNER owner = blc.CheckOwner(ADMINNAME.Text);
-                if (owner.Status && ADMINNUMBER.Text == "1" && !blc.RegisterAdminA(new AAdmin
+                OWNER owner = blc.SelectOwner(ADMINNAME.Text);
+                if (owner.Status && ADMINNUMBER.Text == "1")
                 {
-                    OwnerName = OwnerCodetxt.Text,
-                    Name = Nametxt.Text,
-                    Family = Familytxt.Text,
-                    Phone = Int64.Parse(Phonetxt.Text),
-                    Email = Emailtxt.Text,
-                    Address = Addresstxt.Text,
-                    IsActive = (Statustxt.Text) == "فعال" ? true : false,
-                    Username = usernametxt.Text,
-                    Password = userpasstxt.Text,
-                    accessCode = accessCode.Text,
-                    DeleteStatus = false
-                }))
-                {
-                    MessageBox.Show("ثبت نام انجام شد");
-                    Fun.ClearTextBoxes(this.Controls);
+                    AAdmin admin = new AAdmin();
 
-                }
-                else if (owner.Status && ADMINNUMBER.Text == "2" && blc.RegisterAdminB(new BAdmin
-                {
-                    OwnerName = OwnerCodetxt.Text,
-                    Name = Nametxt.Text,
-                    Family = Familytxt.Text,
-                    Phone = Int64.Parse(Phonetxt.Text),
-                    Email = Emailtxt.Text,
-                    Address = Addresstxt.Text,
-                    IsActive = (Statustxt.Text) == "فعال" ? true : false,
-                    Username = usernametxt.Text,
-                    Password = userpasstxt.Text,
-                    accessCode = accessCode.Text,
-                    DeleteStatus = false
-                }))
-                {
+                    admin.OwnerName = OwnerCodetxt.Text;
+                    admin.Name = Nametxt.Text;
+                    admin.Family = Familytxt.Text;
+                    admin.Phone = Int64.Parse(Phonetxt.Text);
+                    admin.Email = Emailtxt.Text;
+                    admin.Address = Addresstxt.Text;
+                    admin.IsActive = (Statustxt.Text) == "فعال" ? true : false;
+                    admin.Username = usernametxt.Text;
+                    admin.Password = userpasstxt.Text;
+                    admin.accessCode = accessCode.Text;
+                    admin.DeleteStatus = false;
+                    
+                    blc.RegisterAdminA(admin);
+                    blc.ChangeOwnerStatus(owner);
+
                     MessageBox.Show("ثبت نام انجام شد");
                     Fun.ClearTextBoxes(this.Controls);
                 }
-                if (owner != null)
+                else if (owner.Status && ADMINNUMBER.Text == "2")
                 {
-                    owner.Status = false;
-                    blc.SAVEDB();
+                    BAdmin admin = new BAdmin();
+
+                    admin.OwnerName = OwnerCodetxt.Text;
+                    admin.Name = Nametxt.Text;
+                    admin.Family = Familytxt.Text;
+                    admin.Phone = Int64.Parse(Phonetxt.Text);
+                    admin.Email = Emailtxt.Text;
+                    admin.Address = Addresstxt.Text;
+                    admin.IsActive = (Statustxt.Text) == "فعال" ? true : false;
+                    admin.Username = usernametxt.Text;
+                    admin.Password = userpasstxt.Text;
+                    admin.accessCode = accessCode.Text;
+                    admin.DeleteStatus = false;
+
+                    blc.RegisterAdminB(admin);
+                    blc.ChangeOwnerStatus(owner);
+
+                    MessageBox.Show("ثبت نام انجام شد");
+                    Fun.ClearTextBoxes(this.Controls);
                 }
             }
             catch

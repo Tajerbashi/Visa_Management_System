@@ -118,11 +118,11 @@ namespace StoreMarket_V1
         {
             if (ADMINNUMBER.Text == "1")
             {
-                blc.ChangeStatusA(ID);
+                blc.ChangeStatusAdminA(ID);
             }
             else
             {
-                blc.ChangeStatusB(ID);
+                blc.ChangeStatusAdminB(ID);
             }
             Printdata(ADMINNUMBER.Text);
         }

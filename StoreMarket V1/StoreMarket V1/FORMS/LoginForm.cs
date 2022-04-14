@@ -57,26 +57,31 @@ namespace StoreMarket_V1
         #region ClickButton
         private void button2_Click(object sender, EventArgs e)
         {
+            // ADMIN CODE
             MainForm MF = new MainForm();
             OWNER owner = new OWNER();
             owner.access = accessTXT.Text;
             owner.password = passTXT.Text;
             #region OWNERCODE
-            if (blc.CheckAccessOwner(owner,UserTXT.Text) && owner.access=="ADMIN1" )
+            if (blc.CheckAccessOwner(owner,owner.access)==1 || blc.PublicKey(accessTXT.Text) == 1)
             {
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ADMINNUMBER.Text = "1";
                 this.Hide();
                 MF.Show();
-            }else if (blc.CheckAccessOwner(owner,UserTXT.Text) && owner.access == "ADMIN2" )
+            } 
+            else if (blc.CheckAccessOwner(owner,owner.access)==2 || blc.PublicKey(accessTXT.Text) == 2)
             {
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ADMINNUMBER.Text = "2";
                 this.Hide();
                 MF.Show();
             }
+            else
+            {
+                MessageBox.Show(" نام و رمز کاربری اشتباه است");
+            }
             #endregion
-            // ADMIN CODE
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -104,6 +109,8 @@ namespace StoreMarket_V1
             ADMIN1();
             ADMIN2();
         }
+
+
 
     }
 }

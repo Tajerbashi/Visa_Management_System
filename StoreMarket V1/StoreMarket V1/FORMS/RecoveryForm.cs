@@ -9,16 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using BEE;
+using System.Runtime.InteropServices;
 
 namespace StoreMarket_V1
 {
     public partial class RecoveryForm : Form
     {
+        #region CodeClick
+        const int HT_CAPTION = 0x2;
+        const int WM_NCLBUTTONDOWN = 0xA1;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        #endregion
+
         public RecoveryForm()
         {
             InitializeComponent();
         }
         BLLCode blc = new BLLCode();
+        Functions Fun = new Functions();
         private void button1_Click(object sender, EventArgs e)
         {
             AAdmin adminA = new AAdmin();
@@ -26,7 +38,7 @@ namespace StoreMarket_V1
 
             adminA.accessCode = accesscodetxt.Text;
             adminA.Username = usernametxt.Text;
-            adminA.Phone = Int64.Parse(phonetxt.Text);
+            adminA.Phone = Int64.Parse(Fun.GetEnglishNumber(phonetxt.Text));
             
             adminB.accessCode = accesscodetxt.Text;
             adminB.Username = usernametxt.Text;
@@ -49,6 +61,15 @@ namespace StoreMarket_V1
         private void changebtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RecoveryForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

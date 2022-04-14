@@ -14,30 +14,36 @@ namespace BLL
         DALCODE dlc = new DALCODE();
 
         #region OWNER
-        public bool CheckAccessOwner(OWNER owner, String Help)
+        public int PublicKey(String Key)
         {
-            DBCLASS db = new DBCLASS();
-            if (Help == "TAJERBASHI1" || Help == "TAJERBASHI2")
-            {
-                return true;
-            }
-            foreach (var item in db.Owner)
-            {
-                if (item.access == owner.access && item.password == owner.password && item.Status)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (dlc.PublicKey(Key));
         }
         public bool CreateNewOwner(OWNER owner)
-        {
+        {   // برای ساخت مالک در اولین اجرا برنامه میباشد وبعد از آن کاربردی ندارد
             if (!dlc.SelectOwnerStatus(owner))
             {
                 dlc.CreateOwner(owner);
                 return true;
             }
-                return false;
+            return false;
+        }
+        public int CheckAccessOwner(OWNER owner,String AdminName)
+        {   //  کنترل دسترسی میباشد اگر کلید وارد شود اجازه ورود بدهد
+            //  اگر وضعیت کامل فعال بود ثبت نام و ورود انجام شود
+            return (dlc.SelectOwnerStatusAccess(owner, AdminName));
+        }
+        public OWNER SelectOwner(String Name)
+        {
+            return (dlc.SelectOwner(Name));
+
+        }
+        public void ChangeOwnerStatus(OWNER owner)
+        {   // وضعیت مالک تغییر میدهد و غیر فعال میکند
+            dlc.ChangeStatusOwner(owner);
+        }
+        public bool OwnerKey(String Key)
+        {
+            return (dlc.OwmerAccessKey(Key));
         }
         #endregion
         // Login Load Code
@@ -72,6 +78,10 @@ namespace BLL
         #endregion
         // Control Account
         #region Control
+        public bool AdminKey(String Key)
+        {
+            return (dlc.AdminKey(Key));
+        }
         public List<AAdmin> ReadAdminA()
         {
             return (dlc.readadminA().ToList());
@@ -104,23 +114,23 @@ namespace BLL
             return "";
         }
 
-        public void ChangeStatusA(int ID)
+        public void ChangeStatusAdminA(int ID)
         {
             foreach (var item in DB.aAdmins)
             {
                 if (item.id == ID)
                 {
-                    dlc.ChangeStatusA(item);
+                    dlc.ChangeStatusAdminA(item);
                 }
             }
         }
-        public void ChangeStatusB(int ID)
+        public void ChangeStatusAdminB(int ID)
         {
             foreach (var item in DB.bAdmins)
             {
                 if (item.id == ID)
                 {
-                    dlc.ChangeStatusB(item);
+                    dlc.ChangeStatusAdminB(item);
                 }
             }
         }
@@ -162,6 +172,15 @@ namespace BLL
         public List<BAdmin> ShowActiveDataB()
         {
             return (from i in DB.bAdmins where !i.DeleteStatus select i).ToList();
+        }
+        
+        public bool SelectAdminA(AAdmin admin)
+        {
+            return (dlc.SelectAdminA(admin));
+        }
+        public bool SelectAdminB(BAdmin admin)
+        {
+            return (dlc.SelectAdminB(admin));
         }
 
         public bool RegisterAdminA(AAdmin admin)
@@ -373,16 +392,10 @@ namespace BLL
             }
             return false;
         }
-
-        public OWNER CheckOwner(String Name)
-        {
-            return (DB.Owner.Where(c => c.access == Name).FirstOrDefault());
-        }
         public String ResetAdminPassword(AAdmin adminA,BAdmin adminB)
         {
             return (dlc.GetPassA(adminA, adminB));
         }
-
         // AdminAccount Bank Form
         public List<AAdminBankAccount> ReadAdminbankA()
         {
@@ -460,14 +473,6 @@ namespace BLL
             }
         }
 
-        public bool SelectAdminA(AAdmin admin)
-        {
-            return (dlc.SelectAdminA(admin));
-        }
-        public bool SelectAdminB(BAdmin admin)
-        {
-            return (dlc.SelectAdminB(admin));
-        }
         #endregion
 
     }

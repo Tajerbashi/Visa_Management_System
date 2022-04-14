@@ -13,18 +13,64 @@ namespace DAL
     public class DALCODE
     {
         BEE.DBCLASS db = new DBCLASS();
-        
+        //  Public Keys
+        public int PublicKey(String Key)
+        {
+            if (Key == "TAJERBASHI1")
+            {
+                return 1;
+            }
+            else if (Key == "TAJERBASHI2")
+            {
+                return 2;
+            }
+            return 0;
+        }
+
+
+
         // Owner Code Function
         public void CreateOwner(OWNER owner)
-        {
+        {   // اگر لایه هارا رد کرده باشد و وجود نداشته باشد ذخیره کند
             db.Owner.Add(owner);
             db.SaveChanges();
         }
         public bool SelectOwnerStatus(OWNER owner)
-        {
+        {   // اگر وجود دارد هنگام اولین ورود دوباره ایجاد نکند
             foreach (var item in db.Owner)
             {
-                if(item.access==owner.access && item.password==owner.password)
+                if(item.access==owner.access && item.password==owner.password )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public int SelectOwnerStatusAccess(OWNER owner,String AdminName)
+        {   //  وضعیت سطح دسترسی مالک کنترل میکند که اگر فعال باشد اجازه ثبت نام را میدهد
+            foreach (var item in db.Owner)
+            {
+                if (item.access==AdminName && item.access == owner.access && item.password == owner.password && item.Status)
+                {
+                    return item.id;
+                }
+            }
+            return 0;
+        }
+        public OWNER SelectOwner(String Name)
+        {   //  مالک که با آن وارد شدید را انتخاب میکند و برمیگرداند برای انجام عملیات غیر فعال کردن
+            return (db.Owner.Where(c => c.access == Name).FirstOrDefault());
+        }
+        public void ChangeStatusOwner(OWNER owner)
+        {
+            owner.Status = false;
+            db.SaveChanges();
+        }
+        public bool OwmerAccessKey(String Key)
+        {
+            foreach(var item in db.Owner)
+            {
+                if((item.access == Key || Key == "TAJERBASHI") && item.Status)
                 {
                     return true;
                 }
@@ -54,6 +100,24 @@ namespace DAL
             db.SaveChanges();
         }
         // Control Account
+        public bool AdminKey(String Key)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if ( item.accessCode == Key && !item.DeleteStatus && item.IsActive )
+                {
+                    return true;
+                }
+            }
+            foreach (var item in db.bAdmins)
+            {
+                if ( item.accessCode == Key && !item.DeleteStatus && item.IsActive )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public List<AAdmin> readadminA()
         {
             return (from i in db.aAdmins where i.DeleteStatus == false select i).ToList();
@@ -63,7 +127,7 @@ namespace DAL
             return (from i in db.bAdmins where i.DeleteStatus == false select i).ToList();
         }
 
-        public void ChangeStatusA(AAdmin admin)
+        public void ChangeStatusAdminA(AAdmin admin)
         {
             if (admin.IsActive == true)
             {
@@ -75,7 +139,7 @@ namespace DAL
             }
             db.SaveChanges();
         }
-        public void ChangeStatusB(BAdmin admin)
+        public void ChangeStatusAdminB(BAdmin admin)
         {
             if (admin.IsActive == true)
             {

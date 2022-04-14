@@ -134,6 +134,7 @@
             this.Name = "RecoveryForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "بازیابی اطلاعات";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RecoveryForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

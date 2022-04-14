@@ -17,11 +17,15 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
+
         BLLCode blc = new BLLCode();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            OWNER owner = blc.CheckOwner(ADMINNAME.Text);
-            if (owner.Status)
+            bool OwnerKey=blc.OwnerKey(textBox1.Text);
+            bool AdminKey=blc.AdminKey(textBox1.Text);
+
+            if (OwnerKey || AdminKey)
             {
                 StoreManagmentForm SMF = new StoreManagmentForm();
                 SMF.ADMINNAME.Text = ADMINNAME.Text;
