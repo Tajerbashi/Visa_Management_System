@@ -131,67 +131,72 @@ namespace StoreMarket_V1
 
         private void savebtn_Click(object sender, EventArgs e)
         {
-            if (SW)
-            {   //  Save New Admin Bank Account
-                if (ADMINNUMBER.Text == "1")
-                {
-                    AAdminBankAccount adminbank = new AAdminBankAccount();
-                    adminbank.NameBank = bankname.Text;
-                    adminbank.OwnerName = owneradminname.Text;
-                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                    if (!blc.CreateAdminBankA(adminbank))
+            DialogResult = MessageBox.Show("از درج اطلاعات مطمیین هستید؟؟؟", "اطلاعیه", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
+            {
+                if (SW)
+                {   //  Save New Admin Bank Account
+                    if (ADMINNUMBER.Text == "1")
                     {
-                        MessageBox.Show("اطلاعات تکراری است");
+                        AAdminBankAccount adminbank = new AAdminBankAccount();
+                        adminbank.NameBank = bankname.Text;
+                        adminbank.OwnerName = owneradminname.Text;
+                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                        if (!blc.CreateAdminBankA(adminbank))
+                        {
+                            MessageBox.Show("اطلاعات تکراری است");
+                        }
+                        else
+                        {
+                            MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
+                        BAdminBankAccount adminbank = new BAdminBankAccount();
+                        adminbank.NameBank = bankname.Text;
+                        adminbank.OwnerName = owneradminname.Text;
+                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                        if (!blc.CreateAdminBankB(adminbank))
+                        {
+                            MessageBox.Show("اطلاعات تکراری است");
+                        }
+                        else
+                        {
+                            MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
+                        }
                     }
                 }
                 else
-                {
-                    BAdminBankAccount adminbank = new BAdminBankAccount();
-                    adminbank.NameBank = bankname.Text;
-                    adminbank.OwnerName = owneradminname.Text;
-                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                    if (!blc.CreateAdminBankB(adminbank))
+                {   //  EDIT Admin Bank Account
+                    if (ADMINNUMBER.Text == "1")
                     {
-                        MessageBox.Show("اطلاعات تکراری است");
-                    }
-                    else
-                    {
-                        MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
-                    }
-                }
-            }
-            else
-            {   //  EDIT Admin Bank Account
-                if(ADMINNUMBER.Text == "1")
-                {
-                    AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
-                    adminbank.NameBank = bankname.Text;
-                    adminbank.OwnerName = owneradminname.Text;
-                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                    blc.ExistAdminBankA(adminbank);
+                        AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
+                        adminbank.NameBank = bankname.Text;
+                        adminbank.OwnerName = owneradminname.Text;
+                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                        blc.ExistAdminBankA(adminbank);
 
+                    }
+                    else
+                    {
+                        BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
+                        adminbank.NameBank = bankname.Text;
+                        adminbank.OwnerName = owneradminname.Text;
+                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                        blc.ExistAdminBankB(adminbank);
+                    }
+                    SW = true;
+                    savebtn.Text = "ذخیره";
                 }
-                else
-                {
-                    BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
-                    adminbank.NameBank = bankname.Text;
-                    adminbank.OwnerName = owneradminname.Text;
-                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                    blc.ExistAdminBankB(adminbank);
-                }
-                SW = true;
-                savebtn.Text = "ذخیره";
+                Fun.ClearTextBoxes(this.Controls);
+                Printdata(ADMINNUMBER.Text);
             }
-            Fun.ClearTextBoxes(this.Controls);
-            Printdata(ADMINNUMBER.Text);
+             
         }
     }
 }

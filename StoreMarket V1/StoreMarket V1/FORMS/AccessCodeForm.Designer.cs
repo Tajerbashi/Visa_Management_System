@@ -40,6 +40,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(32, 35);
+            this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(175, 20);

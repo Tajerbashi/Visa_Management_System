@@ -121,62 +121,47 @@ namespace BLL
 
         public void ChangeStatusAdminA(int ID)
         {
-            foreach (var item in DB.aAdmins)
-            {
-                if (item.id == ID)
-                {
-                    dlc.ChangeStatusAdminA(item);
-                }
-            }
+            dlc.ChangeStatusAdminA(ID);
         }
         public void ChangeStatusAdminB(int ID)
         {
-            foreach (var item in DB.bAdmins)
-            {
-                if (item.id == ID)
-                {
-                    dlc.ChangeStatusAdminB(item);
-                }
-            }
+            dlc.ChangeStatusAdminB(ID);
+        }
+
+        public List<AAdmin> ShowSearchResultA(String AdminNumber, String Word)
+        {
+            return (dlc.ShowSearchResultA(AdminNumber, Word)).ToList();
+        }
+        public List<BAdmin> ShowSearchResultB(String AdminNumber, String Word)
+        {
+            return (dlc.ShowSearchResultB(AdminNumber, Word)).ToList();
         }
 
         public void DeleteAdminA(int ID)
         {
-            foreach (var item in DB.aAdmins)
-            {
-                if (item.id == ID)
-                {
-                    dlc.DeleteAdminA(item);
-                }
-            }
+            dlc.DeleteAdminA(ID);
         }
         public void DeleteAdminB(int ID)
         {
-            foreach (var item in DB.bAdmins)
-            {
-                if (item.id == ID)
-                {
-                    dlc.DeleteAdminB(item);
-                }
-            }
+            dlc.DeleteAdminB(ID);
         }
 
         public List<AAdmin> ShowAllAdminDataA()
         {
-            return (from i in DB.aAdmins select i).ToList();
+            return (dlc.ShowAllAdminDataA()).ToList();
         }
         public List<BAdmin> ShowAllAdminDataB()
         {
-            return (from i in DB.bAdmins select i).ToList();
+            return (dlc.ShowAllAdminDataB()).ToList();
         }
 
         public List<AAdmin> ShowActiveDataA()
         {
-            return (from i in DB.aAdmins where !i.DeleteStatus select i).ToList();
+            return (from i in DB.aAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
         }
         public List<BAdmin> ShowActiveDataB()
         {
-            return (from i in DB.bAdmins where !i.DeleteStatus select i).ToList();
+            return (from i in DB.bAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
         }
         
         public bool SelectAdminA(AAdmin admin)

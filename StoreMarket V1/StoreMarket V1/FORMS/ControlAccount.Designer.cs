@@ -115,6 +115,7 @@
             // 
             this.nametxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.nametxt.Location = new System.Drawing.Point(655, 109);
+            this.nametxt.MaxLength = 20;
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(153, 20);
             this.nametxt.TabIndex = 0;
@@ -123,6 +124,7 @@
             // 
             this.familytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.familytxt.Location = new System.Drawing.Point(655, 135);
+            this.familytxt.MaxLength = 20;
             this.familytxt.Name = "familytxt";
             this.familytxt.Size = new System.Drawing.Size(153, 20);
             this.familytxt.TabIndex = 1;
@@ -131,6 +133,7 @@
             // 
             this.phonetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.phonetxt.Location = new System.Drawing.Point(655, 161);
+            this.phonetxt.MaxLength = 11;
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Size = new System.Drawing.Size(153, 20);
             this.phonetxt.TabIndex = 2;
@@ -139,6 +142,7 @@
             // 
             this.emailtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.emailtxt.Location = new System.Drawing.Point(655, 187);
+            this.emailtxt.MaxLength = 30;
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(153, 20);
             this.emailtxt.TabIndex = 3;
@@ -147,6 +151,7 @@
             // 
             this.addresstxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.addresstxt.Location = new System.Drawing.Point(655, 213);
+            this.addresstxt.MaxLength = 30;
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(153, 20);
             this.addresstxt.TabIndex = 4;
@@ -155,6 +160,7 @@
             // 
             this.searchtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.searchtxt.Location = new System.Drawing.Point(49, 207);
+            this.searchtxt.MaxLength = 30;
             this.searchtxt.Name = "searchtxt";
             this.searchtxt.Size = new System.Drawing.Size(174, 20);
             this.searchtxt.TabIndex = 32;
@@ -163,6 +169,7 @@
             // 
             this.accesscode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.accesscode.Location = new System.Drawing.Point(406, 161);
+            this.accesscode.MaxLength = 20;
             this.accesscode.Name = "accesscode";
             this.accesscode.Size = new System.Drawing.Size(153, 20);
             this.accesscode.TabIndex = 7;
@@ -171,6 +178,7 @@
             // 
             this.userpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.userpass.Location = new System.Drawing.Point(406, 135);
+            this.userpass.MaxLength = 20;
             this.userpass.Name = "userpass";
             this.userpass.Size = new System.Drawing.Size(153, 20);
             this.userpass.TabIndex = 6;
@@ -179,6 +187,7 @@
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.username.Location = new System.Drawing.Point(406, 109);
+            this.username.MaxLength = 20;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(153, 20);
             this.username.TabIndex = 5;

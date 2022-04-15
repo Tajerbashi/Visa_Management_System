@@ -32,14 +32,14 @@ namespace DAL
         {
             foreach (var item in db.aAdmins)
             {
-                if (item.accessCode == Access && item.Username == UserName && item.Password == Password)
+                if (item.accessCode == Access && item.Username == UserName && item.Password == Password && !item.DeleteStatus)
                 {
                     return 1;
                 }
             }
             foreach (var item in db.bAdmins)
             {
-                if (item.accessCode == Access && item.Username == UserName && item.Password == Password)
+                if (item.accessCode == Access && item.Username == UserName && item.Password == Password && !item.DeleteStatus)
                 {
                     return 2;
                 }
@@ -140,46 +140,94 @@ namespace DAL
         }
         public List<AAdmin> readadminA()
         {
-            return (from i in db.aAdmins where i.DeleteStatus == false select i).ToList();
+            return (from i in db.aAdmins where !i.DeleteStatus select i).ToList();
         }
         public List<BAdmin> readadminB()
         {
-            return (from i in db.bAdmins where i.DeleteStatus == false select i).ToList();
+            return (from i in db.bAdmins where !i.DeleteStatus select i).ToList();
         }
 
-        public void ChangeStatusAdminA(AAdmin admin)
+        public List<AAdmin> ShowAllAdminDataA()
         {
-            if (admin.IsActive == true)
+            return (from i in db.aAdmins where i.id>0 select i).ToList();
+        }
+        public List<BAdmin> ShowAllAdminDataB()
+        {
+            return (from i in db.bAdmins where i.id>0 select i).ToList();
+        }
+
+        public List<AAdmin> ShowSearchResultA(String AdminNumber, String Word)
+        {
+            return (from i in db.aAdmins where (i.Name.Contains(Word) || i.Family.Contains(Word)) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BAdmin> ShowSearchResultB(String AdminNumber, String Word)
+        {
+            return (from i in db.bAdmins where (i.Name.Contains(Word) || i.Family.Contains(Word)) && !i.DeleteStatus select i).ToList();
+        }
+
+        public void ChangeStatusAdminA(int ID)
+        {
+            foreach(var item in db.aAdmins)
             {
-                admin.IsActive = false;
-            }
-            else
-            {
-                admin.IsActive = true;
+                if (item.id == ID)
+                {
+                    if (item.IsActive)
+                    {
+                        item.IsActive = false;
+                        item.DeleteStatus = false;
+                    }
+                    else
+                    {
+                        item.IsActive = true;
+                        item.DeleteStatus = false;
+                    }
+                }
             }
             db.SaveChanges();
         }
-        public void ChangeStatusAdminB(BAdmin admin)
+        public void ChangeStatusAdminB(int ID)
         {
-            if (admin.IsActive == true)
+            foreach (var item in db.bAdmins)
             {
-                admin.IsActive = false;
-            }
-            else
-            {
-                admin.IsActive = true;
+                if (item.id == ID)
+                {
+                    if (item.IsActive)
+                    {
+                        item.IsActive = false;
+                        item.DeleteStatus = false;
+                    }
+                    else
+                    {
+                        item.IsActive = true;
+                        item.DeleteStatus = false;
+                    }
+                }
             }
             db.SaveChanges();
         }
 
-        public void DeleteAdminA(AAdmin admin)
+        public void DeleteAdminA(int ID)
         {
-            admin.DeleteStatus = true;
+            foreach(var item in db.aAdmins)
+            {
+                if (item.id == ID)
+                {
+                    item.DeleteStatus = true;
+                    item.IsActive = false;
+                }
+            }
             db.SaveChanges();
         }
-        public void DeleteAdminB(BAdmin admin)
+        public void DeleteAdminB(int ID)
         {
-            admin.DeleteStatus = true;
+            foreach (var item in db.bAdmins)
+            {
+                if (item.id == ID)
+                {
+                    item.DeleteStatus = true;
+                    item.IsActive = false;
+                }
+            }
             db.SaveChanges();
         }
 

@@ -61,7 +61,7 @@ namespace StoreMarket_V1
             ControlAccount CA = new ControlAccount();
             CA.ADMINNAME.Text = ADMINNAME.Text;
             CA.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            CA.ShowDialog();
+            CA.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace StoreMarket_V1
             LogFORM LF = new LogFORM();
             LF.ADMINNAME.Text = ADMINNAME.Text;
             LF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            LF.ShowDialog();
+            LF.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

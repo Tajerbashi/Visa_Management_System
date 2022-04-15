@@ -46,32 +46,35 @@
             this.accessTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.accessTXT.ForeColor = System.Drawing.Color.Navy;
             this.accessTXT.Location = new System.Drawing.Point(252, 116);
+            this.accessTXT.MaxLength = 20;
             this.accessTXT.Name = "accessTXT";
             this.accessTXT.PasswordChar = '+';
             this.accessTXT.Size = new System.Drawing.Size(225, 20);
             this.accessTXT.TabIndex = 1;
-            this.accessTXT.Text = "ADMIN1";
+            this.accessTXT.Text = "KAIHAN";
             // 
             // UserTXT
             // 
             this.UserTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.UserTXT.ForeColor = System.Drawing.Color.Navy;
             this.UserTXT.Location = new System.Drawing.Point(252, 142);
+            this.UserTXT.MaxLength = 20;
             this.UserTXT.Name = "UserTXT";
             this.UserTXT.Size = new System.Drawing.Size(225, 20);
             this.UserTXT.TabIndex = 2;
-            this.UserTXT.Text = "ADMIN1";
+            this.UserTXT.Text = "KAIHAN";
             // 
             // passTXT
             // 
             this.passTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.passTXT.ForeColor = System.Drawing.Color.Navy;
             this.passTXT.Location = new System.Drawing.Point(252, 168);
+            this.passTXT.MaxLength = 20;
             this.passTXT.Name = "passTXT";
             this.passTXT.PasswordChar = '*';
             this.passTXT.Size = new System.Drawing.Size(225, 20);
             this.passTXT.TabIndex = 3;
-            this.passTXT.Text = "ADMIN1";
+            this.passTXT.Text = "KAIHAN";
             // 
             // button2
             // 

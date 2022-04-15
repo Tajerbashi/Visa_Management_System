@@ -33,13 +33,14 @@ namespace StoreMarket_V1
 
         int ID = -1;
         bool SW = true; // ذخیره
+
         public void Printdata(String Number)
         {
             #region CodeShow
             dataGridView1.Rows.Clear();
             if (Number == "1")
             {
-                var DB= blc.ReadAdminA().ToList();
+                var DB = blc.ReadAdminA().ToList();
                 foreach (var item in DB)
                 {
                     String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -56,6 +57,79 @@ namespace StoreMarket_V1
                 }
             }
             #endregion
+        }
+        public void PrintALLdata(String Number)
+        {
+            #region CodeShow
+            dataGridView1.Rows.Clear();
+            if (Number == "1")
+            {
+                var DB = blc.ShowAllAdminDataA().ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            else if (Number == "2")
+            {
+                var DB = blc.ShowAllAdminDataB().ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            #endregion
+        }
+        public void PrintActiveData(String Number)
+        {
+            #region CodeShow
+            dataGridView1.Rows.Clear();
+            if (Number == "1")
+            {
+                var DB = blc.ShowActiveDataA().ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            else if (Number == "2")
+            {
+                var DB = blc.ShowActiveDataA().ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            #endregion
+        }
+        public void PrintSearchResult(String Number,String Word)
+        {
+            #region CodeShow
+            dataGridView1.Rows.Clear();
+            if (Number == "1")
+            {
+                var DB = blc.ShowSearchResultA(Number,Word).ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            else if (Number == "2")
+            {
+                var DB = blc.ShowSearchResultB(Number, Word).ToList();
+                foreach (var item in DB)
+                {
+                    String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    dataGridView1.Rows.Add(item.id, status, item.Name, item.Family, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
+                }
+            }
+            #endregion
+
         }
 
         private void ControlAccount_Load(object sender, EventArgs e)
@@ -155,7 +229,7 @@ namespace StoreMarket_V1
             {
                 MessageBox.Show("اطلاعات ادمین حذف نمیشود", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            Printdata(ADMINNUMBER.Text);
         }
 
         private void ControlAccount_MouseDown(object sender, MouseEventArgs e)
@@ -172,105 +246,132 @@ namespace StoreMarket_V1
             dataGridView1.Rows.Clear();
 
             #region CodeTajer
-            if (searchtxt.Text == "KAMRANTAJERBASHI1")
+            if ((searchtxt.Text).Trim().Equals("TAJERBASHI1"))
             {
-                blc.ShowAllAdminDataA();
+                PrintALLdata(ADMINNUMBER.Text);
             }
-            else if (searchtxt.Text == "KAMRANTAJERBASHI2")
+            else
+            if ((searchtxt.Text).Trim().Equals("TAJERBASHI2"))
             {
-                blc.ShowAllAdminDataB();
+                PrintALLdata(ADMINNUMBER.Text);
             }
-            #endregion
-
-            if (ADMINNUMBER.Text == "1")
+            else
+            if (searchtxt.Text == "1")
             {
-                blc.ShowActiveDataA();
+                Printdata(ADMINNUMBER.Text);
+            }
+            else
+            if(searchtxt.Text == "2")
+            {
+                Printdata(ADMINNUMBER.Text);
             }
             else
             {
-                blc.ShowActiveDataB();
+                PrintSearchResult(ADMINNUMBER.Text, searchtxt.Text);
             }
+            #endregion
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult= MessageBox.Show("از درج اطلاعات مطمیین هستید؟؟؟", "اطلاعیه", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
             {
-                if (SW)
-                {   // ذخیره
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAdmin admin = new AAdmin();
-                        admin.Name = nametxt.Text;
+                try
+                {
+                    if (SW)
+                    {   // ذخیره
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            OWNER owner = blc.SelectOwner("ADMIN1");
+                            AAdmin admin = new AAdmin();
 
-                        admin.Family = familytxt.Text;
-                        admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
-                        admin.Email = emailtxt.Text;
-                        admin.Address = addresstxt.Text;
-                        admin.Username = username.Text;
-                        admin.Password = userpass.Text;
-                        admin.accessCode = accesscode.Text;
-                        admin.DeleteStatus = false;
-                        admin.IsActive = true;
-                        admin.OwnerName = ADMINNAME.Text;
-                        blc.RegisterAdminA(admin);
+                            admin.Name = nametxt.Text;
+                            admin.Family = familytxt.Text;
+                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Email = emailtxt.Text;
+                            admin.Address = addresstxt.Text;
+                            admin.Username = username.Text;
+                            admin.Password = userpass.Text;
+                            admin.accessCode = accesscode.Text;
+                            admin.DeleteStatus = false;
+                            admin.IsActive = true;
+                            admin.OwnerName = ADMINNAME.Text;
+
+                            blc.RegisterAdminA(admin);
+                            if (owner.Status)
+                            {
+                                blc.ChangeOwnerStatus(owner);
+                                Application.Exit();
+                            }
+                            Fun.ClearTextBoxes(this.Controls);
+                        }
+                        else
+                        {
+                            OWNER owner = blc.SelectOwner("ADMIN2");
+
+                            BAdmin admin = new BAdmin();
+                            admin.Name = nametxt.Text;
+                            admin.Family = familytxt.Text;
+                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Email = emailtxt.Text;
+                            admin.Address = addresstxt.Text;
+                            admin.Username = username.Text;
+                            admin.Password = userpass.Text;
+                            admin.accessCode = accesscode.Text;
+                            admin.DeleteStatus = false;
+                            admin.IsActive = true;
+                            admin.OwnerName = ADMINNAME.Text;
+
+                            blc.RegisterAdminB(admin);
+                            if (owner.Status)
+                            {
+                                blc.ChangeOwnerStatus(owner);
+                                Application.Exit();
+                            }
+                            Fun.ClearTextBoxes(this.Controls);
+                        }
                     }
                     else
-                    {
-                        BAdmin admin = new BAdmin();
-                        admin.Name = nametxt.Text;
-                        admin.Family = familytxt.Text;
-                        admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
-                        admin.Email = emailtxt.Text;
-                        admin.Address = addresstxt.Text;
-                        admin.Username = username.Text;
-                        admin.Password = userpass.Text;
-                        admin.accessCode = accesscode.Text;
-                        admin.DeleteStatus = false;
-                        admin.IsActive = true;
-                        admin.OwnerName = ADMINNAME.Text;
-                        blc.RegisterAdminB(admin);
-
+                    {   // ویرایش
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            AAdmin admin = blc.EditAdminA(ID);
+                            admin.Name = nametxt.Text;
+                            admin.Family = familytxt.Text;
+                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Email = emailtxt.Text;
+                            admin.Address = addresstxt.Text;
+                            admin.Username = username.Text;
+                            admin.Password = userpass.Text;
+                            admin.accessCode = accesscode.Text;
+                            blc.SelectAdminA(admin);
+                        }
+                        else
+                        {
+                            BAdmin admin = blc.EditAdminB(ID);
+                            admin.Name = nametxt.Text;
+                            admin.Family = familytxt.Text;
+                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Email = emailtxt.Text;
+                            admin.Address = addresstxt.Text;
+                            admin.Username = username.Text;
+                            admin.Password = userpass.Text;
+                            admin.accessCode = accesscode.Text;
+                            blc.SelectAdminB(admin);
+                        }
                         Fun.ClearTextBoxes(this.Controls);
+                        SW = true;
+                        Savebtn.Text = "ذخیره";
                     }
                 }
-                else
-                {   // ویرایش
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAdmin admin = blc.EditAdminA(ID);
-                        admin.Name = nametxt.Text;
-                        admin.Family = familytxt.Text;
-                        admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
-                        admin.Email = emailtxt.Text;
-                        admin.Address = addresstxt.Text;
-                        admin.Username = username.Text;
-                        admin.Password = userpass.Text;
-                        admin.accessCode = accesscode.Text;
-                        blc.SelectAdminA(admin);
-                    }
-                    else
-                    {
-                        BAdmin admin = blc.EditAdminB(ID);
-                        admin.Name = nametxt.Text;
-                        admin.Family = familytxt.Text;
-                        admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
-                        admin.Email = emailtxt.Text;
-                        admin.Address = addresstxt.Text;
-                        admin.Username = username.Text;
-                        admin.Password = userpass.Text;
-                        admin.accessCode = accesscode.Text;
-                        blc.SelectAdminB(admin);
-                    }
-                    SW = true;
-                    Savebtn.Text = "ذخیره";
+                catch
+                {
+                    MessageBox.Show("اطلاعات درست وارد نشده است");
                 }
+                PrintActiveData(ADMINNUMBER.Text);
             }
-            catch
-            {
-                MessageBox.Show("اطلاعات درست وارد نشده است");
-            }
-            Printdata(ADMINNUMBER.Text);
+            
 
         }
 
