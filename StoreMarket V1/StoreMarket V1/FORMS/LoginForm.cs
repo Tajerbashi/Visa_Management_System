@@ -31,8 +31,6 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-        Functions Fun = new Functions();
-        DBCLASS DB = new DBCLASS();
         BLLCode blc = new BLLCode();
 
         #region Function()
@@ -62,15 +60,20 @@ namespace StoreMarket_V1
             OWNER owner = new OWNER();
             owner.access = accessTXT.Text;
             owner.password = passTXT.Text;
+
+            String AccessCode = accessTXT.Text;
+            String UserName = UserTXT.Text;
+            String Password = passTXT.Text;
+
             #region OWNERCODE
-            if (blc.CheckAccessOwner(owner,owner.access)==1 || blc.PublicKey(accessTXT.Text) == 1)
+            if (blc.LoginCodeAdmin(AccessCode, UserName, Password)==1||blc.CheckAccessOwner(owner,owner.access)==1 || blc.PublicKey(accessTXT.Text) == 1)
             {
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ADMINNUMBER.Text = "1";
                 this.Hide();
                 MF.Show();
             } 
-            else if (blc.CheckAccessOwner(owner,owner.access)==2 || blc.PublicKey(accessTXT.Text) == 2)
+            else if (blc.LoginCodeAdmin(AccessCode, UserName, Password) == 2 || blc.CheckAccessOwner(owner,owner.access)==2 || blc.PublicKey(accessTXT.Text) == 2)
             {
                 MF.ADMINNAME.Text = UserTXT.Text;
                 MF.ADMINNUMBER.Text = "2";

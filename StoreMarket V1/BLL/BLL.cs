@@ -15,7 +15,7 @@ namespace BLL
 
         #region OWNER
         public int PublicKey(String Key)
-        {
+        {   //  کلید کلی برای باز کردن فرم
             return (dlc.PublicKey(Key));
         }
         public bool CreateNewOwner(OWNER owner)
@@ -35,7 +35,6 @@ namespace BLL
         public OWNER SelectOwner(String Name)
         {
             return (dlc.SelectOwner(Name));
-
         }
         public void ChangeOwnerStatus(OWNER owner)
         {   // وضعیت مالک تغییر میدهد و غیر فعال میکند
@@ -64,6 +63,10 @@ namespace BLL
         {
             return (from i in DB.bLogInformation select i).ToList();
         }
+        public int LoginCodeAdmin(String Access, String UserName, String Password)
+        {
+            return (dlc.LoginCodeAdmin(Access, UserName, Password));
+        }
         #endregion
         // Admin Log Form
         #region LogSearch
@@ -78,10 +81,12 @@ namespace BLL
         #endregion
         // Control Account
         #region Control
-        public bool AdminKey(String Key)
+
+        public int AdminKey(String Key,String ADMINNAME)
         {
-            return (dlc.AdminKey(Key));
+            return (dlc.AdminKey(Key, ADMINNAME));
         }
+
         public List<AAdmin> ReadAdminA()
         {
             return (dlc.readadminA().ToList());
@@ -189,11 +194,11 @@ namespace BLL
             {
                 if (item.Name == admin.Name && item.Family == admin.Family)
                 {
-                    return true;
+                    return false;
                 }
             }
             dlc.RegisterAdminA(admin);
-            return false;
+            return true;
         }
         public bool RegisterAdminB(BAdmin admin)
         {
@@ -201,11 +206,11 @@ namespace BLL
             {
                 if (item.Name == admin.Name && item.Family == admin.Family)
                 {
-                    return true;
+                    return false;
                 }
             }
             dlc.RegisterAdminB(admin);
-            return false;
+            return true;
         }
 
         public AAdmin EditAdminA(int ID)
@@ -412,11 +417,11 @@ namespace BLL
             {
                 if (item.NameBank == adminbank.NameBank && item.AccountNumber == adminbank.AccountNumber)
                 {
-                    return true;
+                    return false;
                 }
             }
             dlc.CreateAdminBankAccountA(adminbank);
-            return false;
+            return true;
         }
         public bool CreateAdminBankB(BAdminBankAccount adminbank)
         {

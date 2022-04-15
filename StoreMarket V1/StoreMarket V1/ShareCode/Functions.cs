@@ -45,14 +45,22 @@ namespace StoreMarket_V1
                 MessageBox.Show("کیبورد را عوض کنید", "Alert!");
             }
         }
-        public string GetEnglishNumber(string persianNumber)
+
+        public String ChangeToEnglishNumber(String input)
         {
-            string englishNumber = "";
-            foreach (char ch in persianNumber)
+            String EnglishNumbers = "";
+            for (int i = 0; i < input.Length; i++)
             {
-                englishNumber += char.GetNumericValue(ch);
+                if (Char.IsDigit(input[i]))
+                {
+                    EnglishNumbers += char.GetNumericValue(input, i);
+                }
+                else
+                {
+                    EnglishNumbers += input[i].ToString();
+                }
             }
-            return englishNumber;
+            return EnglishNumbers;
         }
         #endregion
     }

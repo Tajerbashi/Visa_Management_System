@@ -104,16 +104,16 @@ namespace StoreMarket_V1
                     AAdminBankAccount bankAccount = blc.adminbankacountA(ID);
                     bankname.Text = bankAccount.NameBank;
                     owneradminname.Text = bankAccount.OwnerName;
-                    adminphonebank.Text = bankAccount.phonenumber;
-                    banknumberaccount.Text = bankAccount.AccountNumber;
+                    adminphonebank.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
+                    AccountNumber.Text = (Fun.ChangeToEnglishNumber((bankAccount.AccountNumber).ToString())).ToString();
                 }
                 else
                 {
                     BAdminBankAccount bankAccount = blc.adminbankacountB(ID);
                     bankname.Text = bankAccount.NameBank;
                     owneradminname.Text = bankAccount.OwnerName;
-                    adminphonebank.Text = bankAccount.phonenumber;
-                    banknumberaccount.Text = bankAccount.AccountNumber;
+                    adminphonebank.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
+                    AccountNumber.Text = (Fun.ChangeToEnglishNumber((bankAccount.AccountNumber).ToString())).ToString();
                 }
             }
 
@@ -138,11 +138,15 @@ namespace StoreMarket_V1
                     AAdminBankAccount adminbank = new AAdminBankAccount();
                     adminbank.NameBank = bankname.Text;
                     adminbank.OwnerName = owneradminname.Text;
-                    adminbank.AccountNumber = banknumberaccount.Text;
-                    adminbank.phonenumber = adminphonebank.Text;
-                    if (blc.CreateAdminBankA(adminbank))
+                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                    if (!blc.CreateAdminBankA(adminbank))
                     {
                         MessageBox.Show("اطلاعات تکراری است");
+                    }
+                    else
+                    {
+                        MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
                     }
                 }
                 else
@@ -150,37 +154,43 @@ namespace StoreMarket_V1
                     BAdminBankAccount adminbank = new BAdminBankAccount();
                     adminbank.NameBank = bankname.Text;
                     adminbank.OwnerName = owneradminname.Text;
-                    adminbank.AccountNumber = banknumberaccount.Text;
-                    adminbank.phonenumber = adminphonebank.Text;
-                    if (blc.CreateAdminBankB(adminbank))
+                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
+                    if (!blc.CreateAdminBankB(adminbank))
                     {
                         MessageBox.Show("اطلاعات تکراری است");
+                    }
+                    else
+                    {
+                        MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
                     }
                 }
             }
             else
             {   //  EDIT Admin Bank Account
-                SW = true;
                 if(ADMINNUMBER.Text == "1")
                 {
                     AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
                     adminbank.NameBank = bankname.Text;
                     adminbank.OwnerName = owneradminname.Text;
-                    adminbank.phonenumber = adminphonebank.Text;
-                    adminbank.AccountNumber = banknumberaccount.Text;
+                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
                     blc.ExistAdminBankA(adminbank);
+
                 }
                 else
                 {
                     BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
                     adminbank.NameBank = bankname.Text;
                     adminbank.OwnerName = owneradminname.Text;
-                    adminbank.phonenumber = adminphonebank.Text;
-                    adminbank.AccountNumber = banknumberaccount.Text;
+                    adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                    adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
                     blc.ExistAdminBankB(adminbank);
                 }
-                
+                SW = true;
+                savebtn.Text = "ذخیره";
             }
+            Fun.ClearTextBoxes(this.Controls);
             Printdata(ADMINNUMBER.Text);
         }
     }

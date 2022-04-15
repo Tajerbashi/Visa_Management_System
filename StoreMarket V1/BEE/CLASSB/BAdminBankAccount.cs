@@ -12,7 +12,7 @@ namespace BEE
         public String NameBank { get; set; }
         public String AccountNumber { get; set; }
         public String OwnerName { get; set; }
-        public String phonenumber { get; set; }
+        public Int64 phonenumber { get; set; }
         public bool DeleteStatus { get; set; } = false;
         public BAdmin bAdmin { get; set; }
         public List<BCheckBank> bCheckBank { get; set; } = new List<BCheckBank>();

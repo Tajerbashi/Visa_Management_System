@@ -50,7 +50,7 @@ namespace StoreMarket_V1
                 AAdmin admin = new AAdmin();
                 admin.Name = Nametxt.Text;
                 admin.Family = Familytxt.Text;
-                admin.Phone = Int64.Parse(Fun.GetEnglishNumber(Phonetxt.Text));
+                admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
                 admin.Email = Emailtxt.Text;
                 admin.Address = Addresstxt.Text;
                 if (!blc.ExistAdminA(admin))
@@ -63,7 +63,7 @@ namespace StoreMarket_V1
                 BAdmin admin = new BAdmin();
                 admin.Name = Nametxt.Text;
                 admin.Family = Familytxt.Text;
-                admin.Phone = Int64.Parse(Phonetxt.Text);
+                admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
                 admin.Email = Emailtxt.Text;
                 admin.Address = Addresstxt.Text;
                 if (!blc.ExistAdminB(admin))

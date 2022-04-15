@@ -69,10 +69,11 @@
             // 
             this.ADMINNUMBER.AutoSize = true;
             this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNUMBER.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNUMBER.Location = new System.Drawing.Point(12, 95);
+            this.ADMINNUMBER.Location = new System.Drawing.Point(1, 3);
             this.ADMINNUMBER.Name = "ADMINNUMBER";
-            this.ADMINNUMBER.Size = new System.Drawing.Size(36, 13);
+            this.ADMINNUMBER.Size = new System.Drawing.Size(18, 7);
             this.ADMINNUMBER.TabIndex = 21;
             this.ADMINNUMBER.Text = "شماره";
             // 
@@ -80,10 +81,11 @@
             // 
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNAME.Location = new System.Drawing.Point(12, 76);
+            this.ADMINNAME.Location = new System.Drawing.Point(3, 10);
             this.ADMINNAME.Name = "ADMINNAME";
-            this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
+            this.ADMINNAME.Size = new System.Drawing.Size(10, 7);
             this.ADMINNAME.TabIndex = 20;
             this.ADMINNAME.Text = "نام";
             // 

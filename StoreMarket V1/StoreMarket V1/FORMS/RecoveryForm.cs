@@ -38,7 +38,7 @@ namespace StoreMarket_V1
 
             adminA.accessCode = accesscodetxt.Text;
             adminA.Username = usernametxt.Text;
-            adminA.Phone = Int64.Parse(Fun.GetEnglishNumber(phonetxt.Text));
+            adminA.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(phonetxt.Text));
             
             adminB.accessCode = accesscodetxt.Text;
             adminB.Username = usernametxt.Text;

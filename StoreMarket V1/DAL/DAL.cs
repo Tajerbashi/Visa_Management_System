@@ -27,6 +27,26 @@ namespace DAL
             return 0;
         }
 
+        // Login Code Admin
+        public int LoginCodeAdmin(String Access, String UserName, String Password)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if (item.accessCode == Access && item.Username == UserName && item.Password == Password)
+                {
+                    return 1;
+                }
+            }
+            foreach (var item in db.bAdmins)
+            {
+                if (item.accessCode == Access && item.Username == UserName && item.Password == Password)
+                {
+                    return 2;
+                }
+            }
+            return 0;
+        }
+
 
 
         // Owner Code Function
@@ -70,7 +90,7 @@ namespace DAL
         {
             foreach(var item in db.Owner)
             {
-                if((item.access == Key || Key == "TAJERBASHI") && item.Status)
+                if((item.access == Key && item.Status) || Key == "TAJERBASHI" )
                 {
                     return true;
                 }
@@ -100,23 +120,23 @@ namespace DAL
             db.SaveChanges();
         }
         // Control Account
-        public bool AdminKey(String Key)
+        public int AdminKey(String Key,String ADMINNAME)
         {
             foreach (var item in db.aAdmins)
             {
-                if ( item.accessCode == Key && !item.DeleteStatus && item.IsActive )
+                if (item.Username == ADMINNAME && item.accessCode == Key && item.IsActive && !item.DeleteStatus)
                 {
-                    return true;
+                    return 1;
                 }
             }
             foreach (var item in db.bAdmins)
             {
-                if ( item.accessCode == Key && !item.DeleteStatus && item.IsActive )
+                if (item.Username == ADMINNAME && item.accessCode == Key && item.IsActive && !item.DeleteStatus)
                 {
-                    return true;
+                    return 2;
                 }
             }
-            return false;
+            return 0;
         }
         public List<AAdmin> readadminA()
         {
@@ -244,10 +264,12 @@ namespace DAL
         public void CreateAdminBankAccountA(AAdminBankAccount adminbank)
         {
             db.aAdminBankAccounts.Add(adminbank);
+            db.SaveChanges();
         }
         public void CreateAdminBankAccountB(BAdminBankAccount adminbank)
         {
             db.bAdminBankAccounts.Add(adminbank);
+            db.SaveChanges();
         }
 
         public AAdminBankAccount SelectAdminBankAccountA(int ID)

@@ -23,9 +23,9 @@ namespace StoreMarket_V1
         private void button1_Click(object sender, EventArgs e)
         {
             bool OwnerKey=blc.OwnerKey(textBox1.Text);
-            bool AdminKey=blc.AdminKey(textBox1.Text);
+            int AdminKey=blc.AdminKey(textBox1.Text, ADMINNAME.Text);
 
-            if (OwnerKey || AdminKey)
+            if (OwnerKey || AdminKey != 0)
             {
                 StoreManagmentForm SMF = new StoreManagmentForm();
                 SMF.ADMINNAME.Text = ADMINNAME.Text;
