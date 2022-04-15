@@ -98,6 +98,29 @@ namespace DAL
             return false;
         }
         // Company Code Function
+        public bool SelectionCompanyA(ACompany company)
+        {
+            foreach (var item in db.aCompanies)
+            {
+                if (item.id != company.id && item.CompanyName == company.CompanyName && item.CompanyManager == company.CompanyManager)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool SelectionCompanyB(BCompany company)
+        {
+            foreach (var item in db.bCompanies)
+            {
+                if (item.id != company.id && item.CompanyName == company.CompanyName && item.CompanyManager == company.CompanyManager)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
         public void CreateCompanyA(ACompany company)
         {
             db.aCompanies.Add(company);
@@ -106,6 +129,81 @@ namespace DAL
         public void CreateCompanyB(BCompany company)
         {
             db.bCompanies.Add(company);
+            db.SaveChanges();
+        }
+
+        public List<ACompany> ShowActiveDataCompanyA()
+        {
+            return (from i in db.aCompanies where i.isActive && !i.DeleteStatus select i).ToList();
+        }
+        public List<BCompany> ShowActiveDataCompanyB()
+        {
+            return (from i in db.bCompanies where i.isActive && !i.DeleteStatus select i).ToList();
+        }
+
+        public List<ACompany> ShowAllDataCompanyA()
+        {
+            return (from i in db.aCompanies where !i.DeleteStatus select i).ToList();
+        }
+        public List<BCompany> ShowAllDataCompanyB()
+        {
+            return (from i in db.bCompanies where !i.DeleteStatus select i).ToList();
+        }
+
+        public ACompany SelectionCompanyA(int ID)
+        {
+            return (db.aCompanies.Where(c => c.id == ID).FirstOrDefault());
+        }
+        public BCompany SelectionCompanyB(int ID)
+        {
+            return (db.bCompanies.Where(c => c.id == ID).FirstOrDefault());
+        }
+
+        public bool SaveEditCompanyA(ACompany company)
+        {
+            company.DeleteStatus = false;
+            db.SaveChanges();
+            return true;
+        }
+        public bool SaveEditCompanyB(BCompany company)
+        {
+            company.DeleteStatus = false;
+            db.SaveChanges();
+            return true;
+        }
+
+        public void DeleteCompany(String Admin,int ID)
+        {
+            if(Admin == "1")
+            {
+                ACompany company = db.aCompanies.Where(c => c.id == ID).First();
+                company.DeleteStatus = true;
+                company.isActive = false;
+            }
+            else if(Admin == "2")
+            {
+                BCompany company = db.bCompanies.Where(c => c.id == ID).First();
+                company.DeleteStatus = true;
+                company.isActive = false;
+            }
+            db.SaveChanges();
+        }
+
+        public void ChangeStatusCompany(String Admin,int ID)
+        {
+            if (Admin == "1")
+            {
+                ACompany company = db.aCompanies.Where(c => c.id == ID).First();
+                company.DeleteStatus = false;
+                company.isActive = (company.isActive) ? false : true;
+            }
+            else if (Admin == "2")
+            {
+                BCompany company = db.bCompanies.Where(c => c.id == ID).First();
+                company.DeleteStatus = false;
+                company.isActive = (company.isActive) ? false : true;
+
+            }
             db.SaveChanges();
         }
         // Log Information
@@ -408,6 +506,190 @@ namespace DAL
         public BAdmin SelectAdminAccountB(int ID)
         {
             return (db.bAdmins.Where(c => c.id == ID).FirstOrDefault());
+        }
+
+        // Agent Register
+
+        public bool SelectionAgentA(AAgent agent)
+        {
+            foreach (var item in db.aAgents)
+            {
+                if (item.Name == agent.Name && item.Family == agent.Family)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool SelectionAgentB(BAgent agent)
+        {
+            foreach (var item in db.bAgents)
+            {
+                if (item.Name == agent.Name && item.Family == agent.Family)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool CreateAgentA(AAgent agent)
+        {
+            agent.DeleteStatus = false;
+            db.aAgents.Add(agent);
+            db.SaveChanges();
+            return true;
+        }
+        public bool CreateAgentB(BAgent agent)
+        {
+            agent.DeleteStatus = false;
+            db.bAgents.Add(agent);
+            db.SaveChanges();
+            return true;
+        }
+
+        public List<AAgent> ShowAllDataAgentA()
+        {
+            return (from i in db.aAgents where !i.DeleteStatus select i).ToList();
+        }
+        public List<BAgent> ShowAllDataAgentB()
+        {
+            return (from i in db.bAgents where !i.DeleteStatus select i).ToList();
+        }
+
+        public List<AAgent> ShowAllActiveDataAgentA()
+        {
+            return (from i in db.aAgents where !i.DeleteStatus && i.IsActive select i).ToList();
+        }
+        public List<BAgent> ShowAllActiveDataAgentB()
+        {
+            return (from i in db.bAgents where !i.DeleteStatus && i.IsActive select i).ToList();
+        }
+
+        public List<AAgent> ShowAllDataAgentcompleteA()
+        {
+            return (from i in db.aAgents select i).ToList();
+        }
+        public List<BAgent> ShowAllDataAgentcompleteB()
+        {
+            return (from i in db.bAgents select i).ToList();
+        }
+
+        public AAgent SelectAgentA(int ID)
+        {
+            return (db.aAgents.Where(c => c.Id == ID).FirstOrDefault());
+        }
+        public BAgent SelectAgentB(int ID)
+        {
+            return (db.bAgents.Where(c => c.Id == ID).FirstOrDefault());
+        }
+
+        public bool SaveEditAgentA(AAgent agent)
+        {
+            foreach (var item in db.aAgents)
+            {
+                if (item.Id != agent.Id && item.Name == agent.Name && item.Family == agent.Family)
+                {
+                    return false;
+                }
+            }
+            agent.DeleteStatus = false;
+            db.SaveChanges();
+            return true;
+        }
+        public bool SaveEditAgentB(BAgent agent)
+        {
+            foreach (var item in db.bAgents)
+            {
+                if (item.Id != agent.Id && item.Name == agent.Name && item.Family == agent.Family)
+                {
+                    return false;
+                }
+            }
+            agent.DeleteStatus = false;
+            db.SaveChanges();
+            return true;
+        }
+
+        public void DeleteAgent(String Admin,int ID)
+        {
+            if(Admin == "1")
+            {
+                AAgent agent = db.aAgents.Where(c => c.Id == ID).FirstOrDefault();
+                agent.DeleteStatus = true;
+                agent.IsActive = false;
+            }
+            else
+            {
+                BAgent agent = db.bAgents.Where(c => c.Id == ID).FirstOrDefault();
+                agent.DeleteStatus = true;
+                agent.IsActive = false;
+            }
+            db.SaveChanges();
+        }
+
+        public void ChangeStatusAgent(String Admin,int ID)
+        {
+            if (Admin == "1")
+            {
+                AAgent agent = db.aAgents.Where(c => c.Id == ID).FirstOrDefault();
+                agent.DeleteStatus = false;
+                agent.IsActive = (agent.IsActive) ? false : true;
+            }
+            else
+            {
+                BAgent agent = db.bAgents.Where(c => c.Id == ID).FirstOrDefault();
+                agent.DeleteStatus = false;
+                agent.IsActive = (agent.IsActive) ? false : true;
+            }
+            db.SaveChanges();
+        }
+
+        //  Agent Bank Account
+
+        public bool CreateAgentBankA(AAgentBankAccount agentbank)
+        {
+            foreach (var item in db.aAgentBankAccounts)
+            {
+                if (item.id != agentbank.id && item.AccountNumber == agentbank.AccountNumber && item.NameBank == agentbank.NameBank)
+                {
+                    return false;
+                }
+            }
+            db.aAgentBankAccounts.Add(agentbank);
+            db.SaveChanges();
+            return true;
+        }
+        public bool CreateAgentBankB(BAgentBankAccount agentbank)
+        {
+            foreach (var item in db.bAgentBankAccounts)
+            {
+                if (item.id != agentbank.id && item.AccountNumber == agentbank.AccountNumber && item.NameBank == agentbank.NameBank)
+                {
+                    return false;
+                }
+            }
+            db.bAgentBankAccounts.Add(agentbank);
+            db.SaveChanges();
+            return true;
+        }
+
+        public List<AAgentBankAccount> ShowAllDataAgentBankA()
+        {
+            return (from i in db.aAgentBankAccounts where !i.DeleteStatus select i).ToList();
+        }
+        public List<BAgentBankAccount> ShowAllDataAgentBankB()
+        {
+            return (from i in db.bAgentBankAccounts where !i.DeleteStatus select i).ToList();
+        }
+
+        public List<AAgentBankAccount> ShowAllActiveDataAgentBankA()
+        {
+            return (from i in db.aAgentBankAccounts where !i.DeleteStatus && i.IsActive select i).ToList();
+        }
+        public List<BAgentBankAccount> ShowAllActiveDataAgentBankB()
+        {
+            return (from i in db.bAgentBankAccounts where !i.DeleteStatus && i.IsActive select i).ToList();
         }
 
     }

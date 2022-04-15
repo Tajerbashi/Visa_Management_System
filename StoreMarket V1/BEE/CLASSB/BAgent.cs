@@ -9,6 +9,7 @@ namespace BEE
     public class BAgent : Person
     {
         public int Id { get; set; }
+        public bool IsActive { get; set; }
         public String CompanyName { get; set; }
         public bool DeleteStatus { get; set; }
         public BCompany Company { get; set; }

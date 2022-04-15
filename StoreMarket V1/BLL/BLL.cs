@@ -212,27 +212,76 @@ namespace BLL
         #region Company
         public bool CreatCompanyA(ACompany company)
         {
-            foreach (var item in DB.aCompanies)
+            if (!dlc.SelectionCompanyA(company))
             {
-                if (company.CompanyName == item.CompanyName && company.CompanyManager == item.CompanyManager)
-                {
-                    return true;
-                }
+                dlc.CreateCompanyA(company);
+                return true;
             }
-            dlc.CreateCompanyA(company);
             return false;
         }
         public bool CreatCompanyB(BCompany company)
         {
-            foreach (var item in DB.bCompanies)
+            if (!dlc.SelectionCompanyB(company))
             {
-                if (company.CompanyName == item.CompanyName && company.CompanyManager == item.CompanyManager)
-                {
-                    return true;
-                }
+                dlc.CreateCompanyB(company);
+                return true;
             }
-            dlc.CreateCompanyB(company);
             return false;
+        }
+
+        public List<ACompany> ShowActiveDataCompanyA()
+        {
+            return (dlc.ShowActiveDataCompanyA()).ToList();
+        }
+        public List<BCompany> ShowActiveDataCompanyB()
+        {
+            return (dlc.ShowActiveDataCompanyB()).ToList();
+        }
+
+        public List<ACompany> ShowAllDataCompanyA()
+        {
+            return (dlc.ShowAllDataCompanyA()).ToList();
+        }
+        public List<BCompany> ShowAllDataCompanyB()
+        {
+            return (dlc.ShowAllDataCompanyB()).ToList();
+        }
+        public ACompany SelectCompanyA(int ID)
+        {
+            return (dlc.SelectionCompanyA(ID));
+        }
+        public BCompany SelectCompanyB(int ID)
+        {
+            return (dlc.SelectionCompanyB(ID));
+        }
+
+        public bool SaveEditCompanyA(ACompany company)
+        {
+            if (!dlc.SelectionCompanyA(company))
+            {
+                dlc.SaveEditCompanyA(company);
+                return true;
+            }
+            return false;
+        }
+        public bool SaveEditCompanyB(BCompany company)
+        {
+            if (!dlc.SelectionCompanyB(company))
+            {
+                dlc.SaveEditCompanyB(company);
+                return true;
+            }
+            return false;
+        }
+
+        public void DeleteCompany(String Admin,int ID)
+        {
+            dlc.DeleteCompany(Admin,ID);
+        }
+
+        public void ChangeStatusCompany(String Admin,int ID)
+        {
+            dlc.ChangeStatusCompany(Admin, ID);
         }
         #endregion
         //  Product Control Form
@@ -464,6 +513,107 @@ namespace BLL
         }
 
         #endregion
+        //  Agent Register
+        public bool CreatAgentA(AAgent agent)
+        {
+            if (!dlc.SelectionAgentA(agent))
+            {
+                return (dlc.CreateAgentA(agent));
+            }
+            return false;
+        }
+        public bool CreatAgentB(BAgent agent)
+        {
+            if (!dlc.SelectionAgentB(agent))
+            {
+                return (dlc.CreateAgentB(agent));
+            }
+            return false;
+        }
+
+        public List<AAgent> ShowAllDataAgentA()
+        {
+            return (dlc.ShowAllDataAgentA()).ToList();
+        }
+        public List<BAgent> ShowAllDataAgentB()
+        {
+            return (dlc.ShowAllDataAgentB()).ToList();
+        }
+
+        public List<AAgent> ShowAllActiveDataAgentA()
+        {
+            return (dlc.ShowAllActiveDataAgentA()).ToList();
+        }
+        public List<BAgent> ShowAllActiveDataAgentB()
+        {
+            return (dlc.ShowAllActiveDataAgentB()).ToList();
+        }
+
+        public List<AAgent> ShowAllDataAgentcompleteA()
+        {
+            return (dlc.ShowAllDataAgentcompleteA()).ToList();
+        }
+        public List<BAgent> ShowAllDataAgentcompleteB()
+        {
+            return (dlc.ShowAllDataAgentcompleteB()).ToList();
+        }
+
+        public AAgent SelectAgentA(int ID)
+        {
+            return (dlc.SelectAgentA(ID));
+        }
+        public BAgent SelectAgentB(int ID)
+        {
+            return (dlc.SelectAgentB(ID));
+        }
+
+        public bool SaveEditAgentA(AAgent agent)
+        {
+            return (dlc.SaveEditAgentA(agent));
+        }
+        public bool SaveEditAgentB(BAgent agent)
+        {
+            return (dlc.SaveEditAgentB(agent));
+        }
+
+        public void DeleteAgent(String Admin,int ID)
+        {
+            dlc.DeleteAgent(Admin, ID);
+        }
+
+        public void ChangeStatusAgent(String Admin, int ID)
+        {
+            dlc.ChangeStatusAgent(Admin, ID);
+        }
+
+        //  Agent Bank Account
+
+        public bool CreateAgentBankA(AAgentBankAccount agentBank)
+        {
+            return (dlc.CreateAgentBankA(agentBank));
+        }
+        public bool CreateAgentBankB(BAgentBankAccount agentBank)
+        {
+            return (dlc.CreateAgentBankB(agentBank));
+        }
+
+        public List<AAgentBankAccount> ShowAllDataAgentBankA()
+        {
+            return (dlc.ShowAllDataAgentBankA()).ToList();
+        }
+        public List<BAgentBankAccount> ShowAllDataAgentBankB()
+        {
+            return (dlc.ShowAllDataAgentBankB()).ToList();
+        }
+
+        public List<AAgentBankAccount> ShowAllActiveDataAgentBankA()
+        {
+            return (dlc.ShowAllActiveDataAgentBankA()).ToList();
+        }
+        public List<BAgentBankAccount> ShowAllActiveDataAgentBankB()
+        {
+            return (dlc.ShowAllActiveDataAgentBankB()).ToList();
+        }
 
     }
 }
