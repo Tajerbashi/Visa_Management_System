@@ -83,11 +83,11 @@ namespace StoreMarket_V1
             {
                 if (ADMINNUMBER.Text == "1")
                 {
-                    blc.DeleteBankAccountA(ID);
+                    blc.DeleteAdminBankAccountA(ID);
                 }
                 else
                 {
-                    blc.DeleteBankAccountB(ID);
+                    blc.DeleteAdminBankAccountB(ID);
                 }
             }
             Printdata(ADMINNUMBER.Text);

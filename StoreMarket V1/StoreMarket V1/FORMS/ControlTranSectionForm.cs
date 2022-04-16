@@ -31,34 +31,12 @@ namespace StoreMarket_V1
         }
         Functions Fun = new Functions();
         BLLCode blc = new BLLCode();
-        int Tap = 1;
+        int Tap = 0;
         int ID = -1;
         bool SW = true;
         //  نمایش اطلاعات شرکت    
-        public void PrintDT1(String ADMIN)
+        public void ShowAllCompany(String ADMIN)
         {   // نمایش پیشفرض صفحه اول
-            DT1.Rows.Clear();
-            if (ADMIN == "1")
-            {
-                var DB = blc.ShowActiveDataCompanyA();
-                foreach (var item in DB)
-                {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
-                    DT1.Rows.Add(item.id, Status, item.CompanyName,item.CompanyManager,item.Phone1,item.Phone2,item.Address,item.Site,item.Details);
-                }
-            }
-            else
-            {
-                var DB = blc.ShowActiveDataCompanyB();
-                foreach (var item in DB)
-                {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
-                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
-                }
-            }
-        }
-        public void PrintAllDataCompany(String ADMIN)
-        {   // نماش تمام اطلاعات صفحه اول
             DT1.Rows.Clear();
             if (ADMIN == "1")
             {
@@ -66,7 +44,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
-                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                    DT1.Rows.Add(item.id, Status, item.CompanyName,item.CompanyManager,item.Phone1,item.Phone2,item.Address,item.Site,item.Details);
                 }
             }
             else
@@ -79,13 +57,58 @@ namespace StoreMarket_V1
                 }
             }
         }
+        public void ShowAllActiveCompany(String ADMIN)
+        {   // نماش تمام اطلاعات صفحه اول
+            DT1.Rows.Clear();
+            if (ADMIN == "1")
+            {
+                var DB = blc.ShowAllActiveDataCompanyA();
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowAllActiveDataCompanyA();
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+        }
+        public void ShowAllDisActiveCompany(String ADMIN)
+        {   // نمایش پیشفرض صفحه اول
+            DT1.Rows.Clear();
+            if (ADMIN == "1")
+            {
+                var DB = blc.ShowAllDisActiveDataCompanyA();
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowAllDisActiveDataCompanyB();
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+        }
+
         //  نمایش اطلاعات نماینده ها    
-        public void PrintAllDataAgent(String ADMIN)
+        public void ShowAllAgent(String ADMIN)
         {   //  نمایش اطلاعات ادمین
             DT2.Rows.Clear();
             if (ADMIN == "1")
             {
-                var DB = blc.ShowAllDataAgentA();
+                var DB = blc.ShowAllAgentA();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -94,7 +117,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                var DB = blc.ShowAllDataAgentB();
+                var DB = blc.ShowAllAgentB();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -102,12 +125,12 @@ namespace StoreMarket_V1
                 }
             }
         }
-        public void ShowAllActiveDataAgent(String ADMIN)
+        public void ShowAllActiveAgent(String ADMIN)
         {   //  نمایش تمام اطلاعات نماینده که فعال هستند
             DT2.Rows.Clear();
             if (ADMIN == "1")
             {
-                var DB = blc.ShowAllActiveDataAgentA();
+                var DB = blc.ShowAllActiveAgentA();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -116,7 +139,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                var DB = blc.ShowAllActiveDataAgentB();
+                var DB = blc.ShowAllActiveAgentB();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -124,12 +147,12 @@ namespace StoreMarket_V1
                 }
             }
         }
-        public void ShowAllDataAgentcomplete(String ADMIN)
+        public void ShowAllDisActiveAgent(String ADMIN)
         {   //  نمایش تمام اطلاعات موجود در پایگاه داده
             DT2.Rows.Clear();
             if (ADMIN == "1")
             {
-                var DB = blc.ShowAllDataAgentcompleteA();
+                var DB = blc.ShowAllDisActiveAgentA();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -138,7 +161,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                var DB = blc.ShowAllDataAgentcompleteB();
+                var DB = blc.ShowAllDisActiveAgentB();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -146,8 +169,9 @@ namespace StoreMarket_V1
                 }
             }
         }
+        
         //  نمایش اطلاعات حساب مشترکین    
-        public void PrintAllDataAgentBank(String ADMIN)
+        public void ShowAllAgentAccountBank(String ADMIN)
         {   //تمام اطلاعات موجود در پایگاه داده
             DT3.Rows.Clear();
             if (ADMIN == "1")
@@ -156,7 +180,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT3.Rows.Add(item.id, Status, item.AgentName, item.NameBank, item.OwnerName, item.AccountNumber);
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
                 }
             }
             else
@@ -165,13 +189,12 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT3.Rows.Add(item.id, Status, item.AgentName, item.NameBank, item.OwnerName, item.AccountNumber);
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
                 }
             }
         }
-
-        public void PrintAllActiveDataAgentBank(String ADMIN)
-        {   //تمام اطلاعات موجود در پایگاه داده
+        public void ShowAllActiveAgentAccountBank(String ADMIN)
+        {   //تمام اطلاعات که فعال است در پایگاه داده
             DT3.Rows.Clear();
             if (ADMIN == "1")
             {
@@ -179,7 +202,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT3.Rows.Add(item.id, Status, item.AgentName, item.NameBank, item.OwnerName, item.AccountNumber);
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
                 }
             }
             else
@@ -188,17 +211,107 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT3.Rows.Add(item.id, Status, item.AgentName, item.NameBank, item.OwnerName, item.AccountNumber);
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
+                }
+            }
+        }
+        public void ShowAllDisActiveAgentAccountBank(String ADMIN)
+        {
+            DT3.Rows.Clear();
+            if (ADMIN == "1")
+            {
+                var DB = blc.ShowAllActiveDataAgentBankA();
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowAllActiveDataAgentBankB();
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
+                }
+            }
+        }
+        
+        //  نمایش نتایج جستجو
+        public void SearchTap0(String Admin,String Word)
+        {
+            DT1.Rows.Clear();
+            if (Admin == "1")
+            {
+                var DB = blc.SearchResult0A(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+            else
+            {
+                var DB = blc.SearchResult0B(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
+                }
+            }
+        }
+        public void SearchTap1(String Admin,String Word)
+        {
+            DT2.Rows.Clear();
+            if (Admin == "1")
+            {
+                var DB = blc.SearchResult1A(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) ? "فعال" : "غیر فعال";
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                }
+            }
+            else
+            {
+                var DB = blc.SearchResult1B(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) ? "فعال" : "غیر فعال";
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                }
+            }
+        }
+        public void SearchTap2(String Admin, String Word)
+        {
+            DT3.Rows.Clear();
+            if (Admin == "1")
+            {
+                var DB = blc.SearchResult2A(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) ? "فعال" : "غیر فعال";
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
+                }
+            }
+            else
+            {
+                var DB = blc.SearchResult2B(Word);
+                foreach (var item in DB)
+                {
+                    String Status = (item.IsActive) ? "فعال" : "غیر فعال";
+                    DT3.Rows.Add(item.id, item.AccountNumber, item.OwnerName, item.NameBank, item.AgentName, Status);
                 }
             }
         }
 
 
-
         private void ControlTranSectionForm_Load(object sender, EventArgs e)
         {
-            PrintDT1(ADMINNUMBER.Text);
-            PrintAllDataAgent(ADMINNUMBER.Text);
+            ShowAllActiveCompany(ADMINNUMBER.Text);
+            ShowAllAgent(ADMINNUMBER.Text);
+            ShowAllAgentAccountBank(ADMINNUMBER.Text);
         }
 
         private void ControlTranSectionForm_MouseDown(object sender, MouseEventArgs e)
@@ -212,95 +325,134 @@ namespace StoreMarket_V1
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            if (SW)
-            {   // ذخیره کردن
+            if (companyname1.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("نام شرکت را ذکر کنید");
+                companyname1.Focus();
+            }else if (managername1.Text.Trim().Length==0)
+            {
+                MessageBox.Show("نام مدیر شرکت را ذکر کنید");
+                managername1.Focus();
+            }
+            else if (phoneC1.Text.Trim().Length == 0 || phoneC2.Text.Trim().Length == 0) 
+            {
+                MessageBox.Show("شماره تماس را ذکر کنید");
+                phoneC1.Focus();
+            }
+            else if (status1.Text.Trim().Length==0)
+            {
+                MessageBox.Show("وضعیت را مشخص کنید");
+                status1.Focus();
+            }
+            else
+            {
                 try
                 {
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        ACompany company = new ACompany();
-                        company.CompanyName = companyname1.Text;
-                        company.CompanyManager = managername1.Text;
-                        company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
-                        company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
-                        company.Address = address1.Text;
-                        company.Site = site1.Text;
-                        company.isActive = (status1.Text) == "فعال" ? true : false;
-                        company.DeleteStatus = false;
-                        company.Details = details1.Text;
-                        if (!blc.CreatCompanyA(company))
+                    if (SW)
+                    {   // ذخیره کردن
+                        try
                         {
-                            MessageBox.Show("ثبت نام انجام شد");
+                            if (ADMINNUMBER.Text == "1")
+                            {
+                                ACompany company = new ACompany();
+                                company.CompanyName = companyname1.Text;
+                                company.CompanyManager = managername1.Text;
+                                company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
+                                company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
+                                company.Address = address1.Text;
+                                company.Site = site1.Text;
+                                company.isActive = (status1.Text) == "فعال" ? true : false;
+                                company.DeleteStatus = false;
+                                company.Details = details1.Text;
+                                if (blc.CreatCompanyA(company))
+                                {
+                                    MessageBox.Show("ثبت نام انجام شد");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("ثبت نام ناموفق ");
+                                }
+                            }
+                            else if (ADMINNUMBER.Text == "2")
+                            {
+                                BCompany company = new BCompany();
+                                company.CompanyName = companyname1.Text;
+                                company.CompanyManager = managername1.Text;
+                                company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
+                                company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
+                                company.Address = address1.Text;
+                                company.Site = site1.Text;
+                                company.isActive = (status1.Text) == "فعال" ? true : false;
+                                company.DeleteStatus = false;
+                                company.Details = details1.Text;
+                                if (blc.CreatCompanyB(company))
+                                {
+                                    MessageBox.Show("ثبت نام انجام شد");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("ثبت نام ناموفق ");
+                                }
+                            }
+                            Fun.ClearTextBoxes(this.Controls);
                         }
+                        catch
+                        {
+                            MessageBox.Show("اطلاعات درست وارد نشده است");
+                        }
+
                     }
-                    else if (ADMINNUMBER.Text == "2")
-                    {
-                        BCompany company = new BCompany();
-                        company.CompanyName = companyname1.Text;
-                        company.CompanyManager = managername1.Text;
-                        company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
-                        company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
-                        company.Address = address1.Text;
-                        company.Site = site1.Text;
-                        company.isActive = (status1.Text) == "فعال" ? true : false;
-                        company.DeleteStatus = false;
-                        company.Details = details1.Text;
-                        if (!blc.CreatCompanyB(company))
+                    else
+                    {   // ویرایش کردن
+
+                        if (ADMINNUMBER.Text == "1")
                         {
-                            MessageBox.Show("ثبت نام انجام شد");
+                            ACompany company = blc.SelectCompanyA(ID);
+                            company.CompanyName = companyname1.Text;
+                            company.CompanyManager = managername1.Text;
+                            company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
+                            company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
+                            company.Address = address1.Text;
+                            company.Site = site1.Text;
+                            company.isActive = (status1.Text) == "فعال" ? true : false;
+                            company.DeleteStatus = false;
+                            company.Details = details1.Text;
+
+                            if (blc.SaveEditCompanyA(company))
+                            {
+                                MessageBox.Show("ویرایش انجام شد");
+                            }
                         }
+                        else
+                        {
+                            BCompany company = blc.SelectCompanyB(ID);
+                            company.CompanyName = companyname1.Text;
+                            company.CompanyManager = managername1.Text;
+                            company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
+                            company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
+                            company.Address = address1.Text;
+                            company.Site = site1.Text;
+                            company.isActive = (status1.Text) == "فعال" ? true : false;
+                            company.DeleteStatus = false;
+                            company.Details = details1.Text;
+                            if (blc.SaveEditCompanyB(company))
+                            {
+                                MessageBox.Show("ویرایش انجام شد");
+                            }
+                        }
+                        SaveBTN1.Text = "ذخیره";
+                        SW = true;
                     }
                     Fun.ClearTextBoxes(this.Controls);
+                    ShowAllCompany(ADMINNUMBER.Text);
                 }
                 catch
                 {
-                    MessageBox.Show("اطلاعات درست وارد نشده است");
+                    MessageBox.Show("اطلاعات درست نیست");
                 }
 
             }
-            else
-            {   // ویرایش کردن
 
-                if(ADMINNUMBER.Text == "1")
-                {
-                    ACompany company = blc.SelectCompanyA(ID);
-                    company.CompanyName = companyname1.Text;
-                    company.CompanyManager = managername1.Text;
-                    company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
-                    company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
-                    company.Address = address1.Text;
-                    company.Site = site1.Text;
-                    company.isActive = (status1.Text) == "فعال" ? true : false;
-                    company.DeleteStatus = false;
-                    company.Details = details1.Text;
-
-                    if (blc.SaveEditCompanyA(company))
-                    {
-                        MessageBox.Show("ویرایش انجام شد");
-                    }
-                }
-                else
-                {
-                    BCompany company = blc.SelectCompanyB(ID);
-                    company.CompanyName = companyname1.Text;
-                    company.CompanyManager = managername1.Text;
-                    company.Phone1 = Fun.ChangeToEnglishNumber(phoneC1.Text);
-                    company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
-                    company.Address = address1.Text;
-                    company.Site = site1.Text;
-                    company.isActive = (status1.Text) == "فعال" ? true : false;
-                    company.DeleteStatus = false;
-                    company.Details = details1.Text;
-                    if (blc.SaveEditCompanyB(company))
-                    {
-                        MessageBox.Show("ویرایش انجام شد");
-                    }
-                }
-                SaveBTN1.Text = "ذخیره";
-                SW = true;
-            }
-            Fun.ClearTextBoxes(this.Controls);
-            PrintDT1(ADMINNUMBER.Text);
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -349,32 +501,58 @@ namespace StoreMarket_V1
             else if(Tap == 1)
             {
                 #region Tap2
-                if (ADMINNUMBER.Text == "1")
+                DialogResult = MessageBox.Show("آیا میخواهید ویرایش کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
                 {
-                    AAgent agent = blc.SelectAgentA(ID);
-                    NameAgent2.Text = agent.Name;
-                    FamilyAgent2.Text = agent.Family;
-                    CompanyAgent2.Text = agent.CompanyName;
-                    PhoneAgent2.Text = agent.Phone.ToString();
-                    Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
-                }
-                else
-                {
-                    BAgent agent = blc.SelectAgentB(ID);
-                    NameAgent2.Text = agent.Name;
-                    FamilyAgent2.Text = agent.Family;
-                    CompanyAgent2.Text = agent.CompanyName;
-                    PhoneAgent2.Text = agent.Phone.ToString();
-                    Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
+                    if (ADMINNUMBER.Text == "1")
+                    {
+                        AAgent agent = blc.SelectAgentA(ID);
+                        NameAgent2.Text = agent.Name;
+                        FamilyAgent2.Text = agent.Family;
+                        CompanyAgent2.Text = agent.CompanyName;
+                        PhoneAgent2.Text = agent.Phone.ToString();
+                        Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
+                    }
+                    else
+                    {
+                        BAgent agent = blc.SelectAgentB(ID);
+                        NameAgent2.Text = agent.Name;
+                        FamilyAgent2.Text = agent.Family;
+                        CompanyAgent2.Text = agent.CompanyName;
+                        PhoneAgent2.Text = agent.Phone.ToString();
+                        Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
+                    }
+                    AgentSave.Text = "بروزرسانی";
+                    SW = false;
                 }
                 #endregion
-                AgentSave.Text = "بروزرسانی";
-                SW = false;
+                
             }
             else if(Tap == 2)
             {
                 #region Tap3
-
+                DialogResult = MessageBox.Show("آیا میخواهید ویرایش کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    if (ADMINNUMBER.Text == "1")
+                    {
+                        AAgentBankAccount agentbank = blc.SelectAgentBankAccountA(ID);
+                        bankName3.Text = agentbank.NameBank;
+                        bankOwner3.Text = agentbank.OwnerName;
+                        agentName3.Text = agentbank.AgentName;
+                        AccountNumber3.Text = agentbank.AccountNumber;
+                    }
+                    else
+                    {
+                        BAgentBankAccount agentbank = blc.SelectAgentBankAccountB(ID);
+                        bankName3.Text = agentbank.NameBank;
+                        bankOwner3.Text = agentbank.OwnerName;
+                        agentName3.Text = agentbank.AgentName;
+                        AccountNumber3.Text = agentbank.AccountNumber;
+                    }
+                    Save3.Text = "بروزرسانی";
+                    SW = false;
+                }
                 #endregion
             }
 
@@ -404,32 +582,41 @@ namespace StoreMarket_V1
         {
             if(Tap == 0)
             {
-                #region Tap1
+                #region Tap0
                 ID = int.Parse(DT1.CurrentRow.Cells[0].Value.ToString());
-                DialogResult = MessageBox.Show("آيا میخواهید شرکت را حذف کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult = MessageBox.Show("آيا میخواهید شرکت را حذف کنید؟", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
                     blc.DeleteCompany(ADMINNUMBER.Text, ID);
                     MessageBox.Show("شرکت حذف شد");
+                    ShowAllCompany(ADMINNUMBER.Text);
                 }
-                PrintDT1(ADMINNUMBER.Text);
                 #endregion
-            }else if(Tap == 1)
+            }
+            else if(Tap == 1)
             {
-                #region Tap2
+                #region Tap1
                 ID = int.Parse(DT2.CurrentRow.Cells[0].Value.ToString());
-                DialogResult = MessageBox.Show("آيا میخواهید شرکت را حذف کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult = MessageBox.Show("آيا میخواهید نماینده فروش را حذف کنید؟", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
                     blc.DeleteAgent(ADMINNUMBER.Text, ID);
                     MessageBox.Show("شرکت حذف شد");
+                    ShowAllAgent(ADMINNUMBER.Text);
                 }
-                PrintAllDataAgent(ADMINNUMBER.Text);
                 #endregion
             }
             else if(Tap == 2)
             {
-                #region Tap3
+                #region Tap2
+                ID = int.Parse(DT3.CurrentRow.Cells[0].Value.ToString());
+                DialogResult = MessageBox.Show("آيا میخواهید حساب مشترک را حذف کنید؟", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    blc.DeleteBankAccountAgent(ADMINNUMBER.Text, ID);
+                    MessageBox.Show("شرکت حذف شد");
+                    ShowAllCompany(ADMINNUMBER.Text);
+                }
                 #endregion
             }
         }
@@ -440,35 +627,26 @@ namespace StoreMarket_V1
             {
                 #region Tap1
                 ID = int.Parse(DT1.CurrentRow.Cells[0].Value.ToString());
-                DialogResult = MessageBox.Show("آيا میخواهید شرکت را حذف کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.Yes)
-                {
-                    blc.ChangeStatusCompany(ADMINNUMBER.Text, ID);
-                }
-                PrintDT1(ADMINNUMBER.Text);
+                blc.ChangeStatusCompany(ADMINNUMBER.Text, ID);
+                ShowAllCompany(ADMINNUMBER.Text);
                 #endregion
             }
             else if(Tap == 1)
             {
                 #region Tap2
                 ID = int.Parse(DT2.CurrentRow.Cells[0].Value.ToString());
-                DialogResult = MessageBox.Show("آيا میخواهید شرکت را حذف کنید", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.Yes)
-                {
-                    blc.ChangeStatusAgent(ADMINNUMBER.Text, ID);
-                }
-                PrintAllDataAgent(ADMINNUMBER.Text);
+                blc.ChangeStatusAgent(ADMINNUMBER.Text, ID);
+                ShowAllAgent(ADMINNUMBER.Text);
                 #endregion
             }
             else if(Tap == 2)
             {
-                #region Tap3
+                #region Tap2
+                ID = int.Parse(DT3.CurrentRow.Cells[0].Value.ToString());
+                blc.ChangeStatusAgentBank(ADMINNUMBER.Text, ID);
+                ShowAllAgentAccountBank(ADMINNUMBER.Text);
                 #endregion
             }
-        }
-
-        private void buttonX1_Click_1(object sender, EventArgs e)
-        {
         }
 
         private void buttonX5_Click(object sender, EventArgs e)
@@ -483,160 +661,280 @@ namespace StoreMarket_V1
 
         private void AgentSave_Click(object sender, EventArgs e)
         {
-            if (SW)
-            {   //  ذخیره اطلاعات
+            if (NameAgent2.Text.Trim().Length==0)
+            {
+                MessageBox.Show("نام را ذکر کنید");
+                NameAgent2.Focus();
+            }else if (FamilyAgent2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("فامیلی را ذکر کنید");
+                NameAgent2.Focus();
+            }
+            else if (PhoneAgent2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("تلفن را ذکر کنید");
+                NameAgent2.Focus();
+            }
+            else if (CompanyAgent2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("نام شرکت را ذکر کنید");
+                NameAgent2.Focus();
+            }
+            else if (Status2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("وضعیت را ذکر کنید");
+                NameAgent2.Focus();
+            }
+            else
+            {
                 try
                 {
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAgent agent = new AAgent();
-                        agent.CompanyName = CompanyAgent2.Text;
-                        agent.Name = NameAgent2.Text;
-                        agent.Family = FamilyAgent2.Text;
-                        agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
-                        agent.IsActive = (Status2.Text) == "فعال" ? true : false;
-                        if (blc.CreatAgentA(agent))
+                    if (SW)
+                    {   //  ذخیره اطلاعات
+                        if (ADMINNUMBER.Text == "1")
                         {
-                            MessageBox.Show("ثبت شد");
+                            AAgent agent = new AAgent();
+                            agent.CompanyName = CompanyAgent2.Text;
+                            agent.Name = NameAgent2.Text;
+                            agent.Family = FamilyAgent2.Text;
+                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.IsActive = (Status2.Text) == "فعال" ? true : false;
+                            if (blc.CreatAgentA(agent))
+                            {
+                                MessageBox.Show("ثبت شد");
+                            }
+                            else
+                            {
+                                MessageBox.Show("ثبت نام ناموفق");
+                            }
+                        }
+                        else
+                        {
+                            BAgent agent = new BAgent();
+                            agent.CompanyName = CompanyAgent2.Text;
+                            agent.Name = NameAgent2.Text;
+                            agent.Family = FamilyAgent2.Text;
+                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.IsActive = (Status2.Text) == "فعال" ? true : false;
+
+                            if (blc.CreatAgentB(agent))
+                            {
+                                MessageBox.Show("ثبت شد");
+                            }
+                            else
+                            {
+                                MessageBox.Show("ثبت نام ناموفق");
+                            }
                         }
                     }
                     else
-                    {
-                        BAgent agent = new BAgent();
-                        agent.CompanyName = CompanyAgent2.Text;
-                        agent.Name = NameAgent2.Text;
-                        agent.Family = FamilyAgent2.Text;
-                        agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
-                        agent.IsActive = (Status2.Text) == "فعال" ? true : false;
-
-                        if (blc.CreatAgentB(agent))
+                    {   //  ویرایش اطلاعات
+                        if (ADMINNUMBER.Text == "1")
                         {
-                            MessageBox.Show("ثبت شد");
+                            AAgent agent = blc.SelectAgentA(ID);
+                            agent.CompanyName = CompanyAgent2.Text;
+                            agent.Name = NameAgent2.Text;
+                            agent.Family = FamilyAgent2.Text;
+                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.IsActive = (Status2.Text) == "فعال" ? true : false;
+                            if (blc.SaveEditAgentA(agent))
+                            {
+                                MessageBox.Show("اطلاعات بروزرسانی شد");
+                            }
+                            else
+                            {
+                                MessageBox.Show("اطلاعات تکراری وارد شده است");
+                            }
+
                         }
+                        else
+                        {
+                            BAgent agent = blc.SelectAgentB(ID);
+                            agent.CompanyName = CompanyAgent2.Text;
+                            agent.Name = NameAgent2.Text;
+                            agent.Family = FamilyAgent2.Text;
+                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.IsActive = (Status2.Text) == "فعال" ? true : false;
+                            if (blc.SaveEditAgentB(agent))
+                            {
+                                MessageBox.Show("اطلاعات بروزرسانی شد");
+                            }
+                            else
+                            {
+                                MessageBox.Show("اطلاعات تکراری وارد شده است");
+                            }
+                        }
+
+                        SW = true;
+                        AgentSave.Text = "ذخیره";
                     }
+
+                    ShowAllAgent(ADMINNUMBER.Text);
+                    Fun.ClearTextBoxes(this.Controls);
                 }
                 catch
                 {
-                    MessageBox.Show("اطلاعات ورودی اشتباه است");
-                }
-            }
-            else
-            {   //  ویرایش اطلاعات
-                if (ADMINNUMBER.Text == "1")
-                {
-                    AAgent agent = blc.SelectAgentA(ID);
-                    agent.CompanyName = CompanyAgent2.Text;
-                    agent.Name = NameAgent2.Text;
-                    agent.Family = FamilyAgent2.Text;
-                    agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
-                    agent.IsActive = (Status2.Text) == "فعال" ? true : false;
-                    if (blc.SaveEditAgentA(agent))
-                    {
-                        MessageBox.Show("اطلاعات بروزرسانی شد");
-                    }
-
-                }
-                else
-                {
-                    BAgent agent = blc.SelectAgentB(ID);
-                    agent.CompanyName = CompanyAgent2.Text;
-                    agent.Name = NameAgent2.Text;
-                    agent.Family = FamilyAgent2.Text;
-                    agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
-                    agent.IsActive = (Status2.Text) == "فعال" ? true : false;
-                    if (blc.SaveEditAgentB(agent))
-                    {
-                        MessageBox.Show("اطلاعات بروزرسانی شد");
-                    }
+                    MessageBox.Show("اطلاعات اشتباه است");
                 }
 
-                SW = true;
-                AgentSave.Text = "ذخیره";
             }
-            PrintAllDataAgent(ADMINNUMBER.Text);
-            Fun.ClearTextBoxes(this.Controls);
         }
 
         private void tabControl1_SelectedTabChanged(object sender, DevComponents.DotNetBar.TabStripTabChangedEventArgs e)
         {
             Tap = tabControl1.SelectedTabIndex;
-            MessageBox.Show(Tap.ToString());
+            //MessageBox.Show(Tap.ToString());
             if (Tap == 0)
             {
-                PrintDT1(ADMINNUMBER.Text);
+                ShowAllCompany(ADMINNUMBER.Text);
             }
             else 
             if(Tap == 1)
             {
-                PrintAllDataAgent(ADMINNUMBER.Text);
+                ShowAllAgent(ADMINNUMBER.Text);
 
             }else
             if(Tap == 2)
             {
-
+                ShowAllCompany(ADMINNUMBER.Text);
             }
-        }
-
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-            PrintAllDataAgent(ADMINNUMBER.Text);
-        }
-
-        private void buttonX8_Click(object sender, EventArgs e)
-        {
-            ShowAllActiveDataAgent(ADMINNUMBER.Text);
-        }
-
-        private void buttonX9_Click(object sender, EventArgs e)
-        {
-            ShowAllDataAgentcomplete(ADMINNUMBER.Text);
-        }
-
-        private void buttonX19_Click(object sender, EventArgs e)
-        {
-            PrintAllDataCompany(ADMINNUMBER.Text);
-        }
-
-        private void buttonX7_Click(object sender, EventArgs e)
-        {
-            PrintDT1(ADMINNUMBER.Text);
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
         {
-            if (ADMINNUMBER.Text == "1")
+            if (bankName3.Text.Trim().Length==0)
             {
-                AAgentBankAccount AgentBank = new AAgentBankAccount();
-                AgentBank.NameBank = bankName3.Text;
-                AgentBank.OwnerName = bankOwner3.Text;
-                AgentBank.AgentName = agentName3.Text;
-                AgentBank.AccountNumber = AccountNumber3.Text;
-                if (blc.CreateAgentBankA(AgentBank))
-                {
-                    MessageBox.Show("حساب ثبت شد");
-                }
+                MessageBox.Show("نام بانک را ذکر کنید");
+                bankName3.Focus();
+            }else if (bankOwner3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("نام بانک را ذکر کنید");
+                bankOwner3.Focus();
+            }
+            else if (agentName3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("نام بانک را ذکر کنید");
+                agentName3.Focus();
+            }
+            else if (AccountNumber3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("نام بانک را ذکر کنید");
+                AccountNumber3.Focus();
             }
             else
             {
-                BAgentBankAccount AgentBank = new BAgentBankAccount();
-                AgentBank.NameBank = bankName3.Text;
-                AgentBank.OwnerName = bankOwner3.Text;
-                AgentBank.AgentName = agentName3.Text;
-                AgentBank.AccountNumber = AccountNumber3.Text;
-                if (blc.CreateAgentBankB(AgentBank))
+                try
                 {
-                    MessageBox.Show("حساب ثبت شد");
+                    if (SW)
+                    {   // ذخره حساب بانکی مشترکین
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            AAgentBankAccount AgentBank = new AAgentBankAccount();
+                            AgentBank.NameBank = bankName3.Text;
+                            AgentBank.OwnerName = bankOwner3.Text;
+                            AgentBank.AgentName = agentName3.Text;
+                            AgentBank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber3.Text);
+                            AgentBank.IsActive = true;
+                            AgentBank.DeleteStatus = false;
+                            if (blc.CreateAgentBankA(AgentBank))
+                            {
+                                Fun.ClearTextBoxes(this.Controls);
+                                MessageBox.Show("حساب ثبت شد");
+                            }
+                        }
+                        else
+                        {
+                            BAgentBankAccount AgentBank = new BAgentBankAccount();
+                            AgentBank.NameBank = bankName3.Text;
+                            AgentBank.OwnerName = bankOwner3.Text;
+                            AgentBank.AgentName = agentName3.Text;
+                            AgentBank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber3.Text);
+                            AgentBank.IsActive = true;
+                            AgentBank.DeleteStatus = false;
+                            if (blc.CreateAgentBankB(AgentBank))
+                            {
+                                Fun.ClearTextBoxes(this.Controls);
+                                MessageBox.Show("حساب ثبت شد");
+                            }
+                        }
+                    }
+                    else
+                    {   //  ویرایش حساب بانکی مشترکین
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            AAgentBankAccount agentbank = blc.SelectAgentBankAccountA(ID);
+                            agentbank.NameBank = bankName3.Text;
+                            agentbank.OwnerName = bankOwner3.Text;
+                            agentbank.AgentName = agentName3.Text;
+                            agentbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber3.Text);
+                            agentbank.IsActive = true;
+                            if (blc.SaveEditAgentBankA(agentbank))
+                            {
+                                Fun.ClearTextBoxes(this.Controls);
+                                MessageBox.Show("ویرایش شد");
+                            }
+                        }
+                        else
+                        {
+                            BAgentBankAccount agentbank = blc.SelectAgentBankAccountB(ID);
+                            agentbank.NameBank = bankName3.Text;
+                            agentbank.OwnerName = bankOwner3.Text;
+                            agentbank.AgentName = agentName3.Text;
+                            agentbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber3.Text);
+                            agentbank.IsActive = true;
+                            if (blc.SaveEditAgentBankB(agentbank))
+                            {
+                                Fun.ClearTextBoxes(this.Controls);
+                                MessageBox.Show("ویرایش شد");
+                            }
+                        }
+                        Save3.Text = "ذخیره";
+                        SW = true;
+                    }
                 }
+                catch
+                {
+                    MessageBox.Show("اطلاعات ورودی درست نیست");
+                }
+
+                ShowAllAgentAccountBank(ADMINNUMBER.Text);
             }
-            PrintAllDataAgentBank(ADMINNUMBER.Text);
+
+
         }
 
-        private void buttonX18_Click(object sender, EventArgs e)
+        private void buttonX4_Click(object sender, EventArgs e)
         {
-            PrintAllActiveDataAgentBank(ADMINNUMBER.Text);
+            if (Tap == 0)
+            {
+                SearchTap0(ADMINNUMBER.Text, SearchBox.Text);
+            } 
+            else 
+            if (Tap == 1)
+            {
+                SearchTap1(ADMINNUMBER.Text, SearchBox.Text);
+            }
+            else
+            if(Tap == 2)
+            {
+                SearchTap2(ADMINNUMBER.Text, SearchBox.Text);
+            }
         }
 
+        private void buttonX19_Click_1(object sender, EventArgs e)
+        {
+            ShowAllDisActiveCompany(ADMINNUMBER.Text);
+        }
 
+        private void buttonX7_Click_1(object sender, EventArgs e)
+        {
+            ShowAllActiveCompany(ADMINNUMBER.Text);
+        }
+
+        private void buttonX1_Click_1(object sender, EventArgs e)
+        {
+            ShowAllCompany(ADMINNUMBER.Text);
+        }
 
     }
 }

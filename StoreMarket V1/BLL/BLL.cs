@@ -27,7 +27,7 @@ namespace BLL
             }
             return false;
         }
-        public int CheckAccessOwner(OWNER owner,String AdminName)
+        public int CheckAccessOwner(OWNER owner, String AdminName)
         {   //  کنترل دسترسی میباشد اگر کلید وارد شود اجازه ورود بدهد
             //  اگر وضعیت کامل فعال بود ثبت نام و ورود انجام شود
             return (dlc.SelectOwnerStatusAccess(owner, AdminName));
@@ -82,7 +82,7 @@ namespace BLL
         // Control Account
         #region Control
 
-        public int AdminKey(String Key,String ADMINNAME)
+        public int AdminKey(String Key, String ADMINNAME)
         {
             return (dlc.AdminKey(Key, ADMINNAME));
         }
@@ -163,7 +163,7 @@ namespace BLL
         {
             return (from i in DB.bAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
         }
-        
+
         public bool SelectAdminA(AAdmin admin)
         {
             return (dlc.SelectAdminA(admin));
@@ -212,7 +212,7 @@ namespace BLL
         #region Company
         public bool CreatCompanyA(ACompany company)
         {
-            if (!dlc.SelectionCompanyA(company))
+            if (dlc.SelectionCompanyA(company))
             {
                 dlc.CreateCompanyA(company);
                 return true;
@@ -221,23 +221,14 @@ namespace BLL
         }
         public bool CreatCompanyB(BCompany company)
         {
-            if (!dlc.SelectionCompanyB(company))
+            if (dlc.SelectionCompanyB(company))
             {
                 dlc.CreateCompanyB(company);
                 return true;
             }
             return false;
         }
-
-        public List<ACompany> ShowActiveDataCompanyA()
-        {
-            return (dlc.ShowActiveDataCompanyA()).ToList();
-        }
-        public List<BCompany> ShowActiveDataCompanyB()
-        {
-            return (dlc.ShowActiveDataCompanyB()).ToList();
-        }
-
+        //  نمایش همه شرکت ها
         public List<ACompany> ShowAllDataCompanyA()
         {
             return (dlc.ShowAllDataCompanyA()).ToList();
@@ -246,6 +237,25 @@ namespace BLL
         {
             return (dlc.ShowAllDataCompanyB()).ToList();
         }
+        // نمایش شرکت های  فعال
+        public List<ACompany> ShowAllActiveDataCompanyA()
+        {
+            return (dlc.ShowAllActiveDataCompanyA()).ToList();
+        }
+        public List<BCompany> ShowAllActiveDataCompanyB()
+        {
+            return (dlc.ShowAllActiveDataCompanyB()).ToList();
+        }
+        //  نمایش شرکت های غیر فعال
+        public List<ACompany> ShowAllDisActiveDataCompanyA()
+        {
+            return (dlc.ShowAllDisActiveDataCompanyA()).ToList();
+        }
+        public List<BCompany> ShowAllDisActiveDataCompanyB()
+        {
+            return (dlc.ShowAllDisActiveDataCompanyB()).ToList();
+        }
+
         public ACompany SelectCompanyA(int ID)
         {
             return (dlc.SelectionCompanyA(ID));
@@ -274,12 +284,12 @@ namespace BLL
             return false;
         }
 
-        public void DeleteCompany(String Admin,int ID)
+        public void DeleteCompany(String Admin, int ID)
         {
-            dlc.DeleteCompany(Admin,ID);
+            dlc.DeleteCompany(Admin, ID);
         }
 
-        public void ChangeStatusCompany(String Admin,int ID)
+        public void ChangeStatusCompany(String Admin, int ID)
         {
             dlc.ChangeStatusCompany(Admin, ID);
         }
@@ -383,7 +393,7 @@ namespace BLL
         }
         public BProduct ProductEditB(int ID)
         {
-            BProduct product= DB.bProducts.Where(c => c.id == ID).First();
+            BProduct product = DB.bProducts.Where(c => c.id == ID).First();
             if (!ExistProductB(ID, product))
             {
                 dlc.EditProductB(product);
@@ -401,7 +411,7 @@ namespace BLL
             BProduct product = DB.bProducts.Where(c => c.id == ID).First();
             dlc.DeleteProductB(product);
         }
-        
+
         public void SAVEDB()
         {
             dlc.SAVEDB();
@@ -431,7 +441,7 @@ namespace BLL
             }
             return false;
         }
-        public String ResetAdminPassword(AAdmin adminA,BAdmin adminB)
+        public String ResetAdminPassword(AAdmin adminA, BAdmin adminB)
         {
             return (dlc.GetPassA(adminA, adminB));
         }
@@ -479,11 +489,11 @@ namespace BLL
             return (dlc.SelectAdminBankAccountB(ID));
         }
 
-        public void DeleteBankAccountA(int ID)
+        public void DeleteAdminBankAccountA(int ID)
         {
             dlc.DeleteAdminBankAccountA(ID);
         }
-        public void DeleteBankAccountB(int ID)
+        public void DeleteAdminBankAccountB(int ID)
         {
             dlc.DeleteAdminBankAccountB(ID);
         }
@@ -516,7 +526,7 @@ namespace BLL
         //  Agent Register
         public bool CreatAgentA(AAgent agent)
         {
-            if (!dlc.SelectionAgentA(agent))
+            if (dlc.SelectionAgentA(agent))
             {
                 return (dlc.CreateAgentA(agent));
             }
@@ -524,38 +534,38 @@ namespace BLL
         }
         public bool CreatAgentB(BAgent agent)
         {
-            if (!dlc.SelectionAgentB(agent))
+            if (dlc.SelectionAgentB(agent))
             {
                 return (dlc.CreateAgentB(agent));
             }
             return false;
         }
 
-        public List<AAgent> ShowAllDataAgentA()
+        public List<AAgent> ShowAllAgentA()
         {
-            return (dlc.ShowAllDataAgentA()).ToList();
+            return (dlc.ShowAllAgentA()).ToList();
         }
-        public List<BAgent> ShowAllDataAgentB()
+        public List<BAgent> ShowAllAgentB()
         {
-            return (dlc.ShowAllDataAgentB()).ToList();
-        }
-
-        public List<AAgent> ShowAllActiveDataAgentA()
-        {
-            return (dlc.ShowAllActiveDataAgentA()).ToList();
-        }
-        public List<BAgent> ShowAllActiveDataAgentB()
-        {
-            return (dlc.ShowAllActiveDataAgentB()).ToList();
+            return (dlc.ShowAllAgentB()).ToList();
         }
 
-        public List<AAgent> ShowAllDataAgentcompleteA()
+        public List<AAgent> ShowAllActiveAgentA()
         {
-            return (dlc.ShowAllDataAgentcompleteA()).ToList();
+            return (dlc.ShowAllActiveAgentA()).ToList();
         }
-        public List<BAgent> ShowAllDataAgentcompleteB()
+        public List<BAgent> ShowAllActiveAgentB()
         {
-            return (dlc.ShowAllDataAgentcompleteB()).ToList();
+            return (dlc.ShowAllActiveAgentB()).ToList();
+        }
+
+        public List<AAgent> ShowAllDisActiveAgentA()
+        {
+            return (dlc.ShowAllDisActiveAgentA()).ToList();
+        }
+        public List<BAgent> ShowAllDisActiveAgentB()
+        {
+            return (dlc.ShowAllDisActiveAgentB()).ToList();
         }
 
         public AAgent SelectAgentA(int ID)
@@ -576,7 +586,7 @@ namespace BLL
             return (dlc.SaveEditAgentB(agent));
         }
 
-        public void DeleteAgent(String Admin,int ID)
+        public void DeleteAgent(String Admin, int ID)
         {
             dlc.DeleteAgent(Admin, ID);
         }
@@ -614,6 +624,72 @@ namespace BLL
         {
             return (dlc.ShowAllActiveDataAgentBankB()).ToList();
         }
+
+        public List<AAgentBankAccount> ShowAllDisActiveDataAgentBankA()
+        {
+            return (dlc.ShowAllDisActiveDataAgentBankA()).ToList();
+        }
+        public List<BAgentBankAccount> ShowAllDisActiveDataAgentBankB()
+        {
+            return (dlc.ShowAllDisActiveDataAgentBankB()).ToList();
+        }
+
+        public AAgentBankAccount SelectAgentBankAccountA(int ID)
+        {
+            return (dlc.SelectAgentBankAccountA(ID));
+        }
+        public BAgentBankAccount SelectAgentBankAccountB(int ID)
+        {
+            return (dlc.SelectAgentBankAccountB(ID));
+        }
+
+        public bool SaveEditAgentBankA(AAgentBankAccount agentBank)
+        {
+            return (dlc.SaveEditAgentBankA(agentBank));
+        }
+        public bool SaveEditAgentBankB(BAgentBankAccount agentBank)
+        {
+            return (dlc.SaveEditAgentBankB(agentBank));
+        }
+
+        public void DeleteBankAccountAgent(String Admin, int ID)
+        {
+            dlc.DeleteBankAccountAgent(Admin, ID);
+        }
+
+
+        public void ChangeStatusAgentBank(String Admin,int ID)
+        {
+            dlc.ChangeStatusAgentBank(Admin, ID);
+        }
+
+        public List<ACompany> SearchResult0A(String Word)
+        {
+            return (dlc.SearchResult0A(Word));
+        }
+        public List<BCompany> SearchResult0B(String Word)
+        {
+            return (dlc.SearchResult0B(Word));
+        }
+
+        public List<AAgent> SearchResult1A(String Word)
+        {
+            return (dlc.SearchResult1A(Word));
+        }
+        public List<BAgent> SearchResult1B(String Word)
+        {
+            return (dlc.SearchResult1B(Word));
+        }
+
+        public List<AAgentBankAccount> SearchResult2A(String Word)
+        {
+            return (dlc.SearchResult2A(Word));
+        }
+        public List<BAgentBankAccount> SearchResult2B(String Word)
+        {
+            return (dlc.SearchResult2B(Word));
+        }
+
 
     }
 }
