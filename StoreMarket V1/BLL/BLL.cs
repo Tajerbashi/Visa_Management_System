@@ -72,11 +72,20 @@ namespace BLL
         #region LogSearch
         public List<ALogInformation> LogSearchEnterA(String Word)
         {
-            return (from i in DB.aLogInformation where Word.Contains(i.Enter) select i).ToList();
+            return (dlc.LogSearchEnterA(Word).ToList());
         }
         public List<BLogInformation> LogSearchEnterB(String Word)
         {
-            return (from i in DB.bLogInformation where Word.Contains(i.Enter) select i).ToList();
+            return (dlc.LogSearchEnterB(Word).ToList());
+        }
+
+        public List<ALogInformation> SearchResultLogInformationDateA(string date1, string date2)
+        {
+            return (dlc.SearchResultLogInformationDateA(date1, date2)).ToList();
+        }
+        public List<BLogInformation> SearchResultLogInformationDateB(string date1, string date2)
+        {
+            return (dlc.SearchResultLogInformationDateB(date1, date2)).ToList();
         }
         #endregion
         // Control Account

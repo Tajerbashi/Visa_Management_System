@@ -34,7 +34,7 @@
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DT = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enter = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +46,9 @@
             this.Enddate = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.searchtxt = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DT)).BeginInit();
             this.SuspendLayout();
             // 
             // ADMINNUMBER
@@ -103,9 +103,12 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView1
+            // DT
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DT.AllowUserToAddRows = false;
+            this.DT.AllowUserToResizeColumns = false;
+            this.DT.AllowUserToResizeRows = false;
+            this.DT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,9 +116,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Admin,
             this.Enter,
@@ -127,15 +130,15 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 108);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(430, 342);
-            this.dataGridView1.TabIndex = 28;
+            this.DT.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DT.EnableHeadersVisualStyles = false;
+            this.DT.Location = new System.Drawing.Point(0, 108);
+            this.DT.Name = "DT";
+            this.DT.ReadOnly = true;
+            this.DT.RowHeadersVisible = false;
+            this.DT.Size = new System.Drawing.Size(430, 342);
+            this.DT.TabIndex = 28;
             // 
             // ID
             // 
@@ -169,9 +172,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(364, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 29;
-            this.label1.Text = "فیلتر :";
+            this.label1.Text = "جستجو :";
             // 
             // label2
             // 
@@ -199,6 +202,7 @@
             this.Startdate.Location = new System.Drawing.Point(267, 73);
             this.Startdate.Mask = "0000/00/00";
             this.Startdate.Name = "Startdate";
+            this.Startdate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Startdate.Size = new System.Drawing.Size(91, 26);
             this.Startdate.TabIndex = 39;
             // 
@@ -209,17 +213,18 @@
             this.Enddate.Location = new System.Drawing.Point(106, 73);
             this.Enddate.Mask = "0000/00/00";
             this.Enddate.Name = "Enddate";
+            this.Enddate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Enddate.Size = new System.Drawing.Size(91, 26);
             this.Enddate.TabIndex = 40;
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 66);
+            this.button1.Location = new System.Drawing.Point(176, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 32);
+            this.button1.Size = new System.Drawing.Size(73, 26);
             this.button1.TabIndex = 41;
-            this.button1.Text = "مرور";
+            this.button1.Text = "جستجو";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -230,27 +235,30 @@
             this.searchtxt.Location = new System.Drawing.Point(267, 31);
             this.searchtxt.Mask = "0000/00/00";
             this.searchtxt.Name = "searchtxt";
-            this.searchtxt.Size = new System.Drawing.Size(91, 26);
+            this.searchtxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.searchtxt.Size = new System.Drawing.Size(90, 26);
             this.searchtxt.TabIndex = 42;
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 43;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(9, 73);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 26);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "فیلتر";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label4
+            // button5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(203, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "ادمین :";
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(418, 90);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(11, 17);
+            this.button5.TabIndex = 44;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // LogFORM
             // 
@@ -258,8 +266,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(430, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.searchtxt);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Enddate);
@@ -267,7 +275,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DT);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.ADMINNUMBER);
@@ -278,7 +286,7 @@
             this.Text = "LogFORM";
             this.Load += new System.EventHandler(this.LogFORM_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LogFORM_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +298,7 @@
         public System.Windows.Forms.Label ADMINNAME;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Admin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enter;
@@ -302,7 +310,7 @@
         private System.Windows.Forms.MaskedTextBox Enddate;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox searchtxt;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
     }
 }

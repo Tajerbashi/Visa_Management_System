@@ -244,6 +244,25 @@ namespace DAL
             db.bLogInformation.Add(log);
             db.SaveChanges();
         }
+
+        public List<ALogInformation> LogSearchEnterA(String Word)
+        {
+            return (from i in db.aLogInformation where (i.Enter).Contains(Word) select i).ToList();
+        }
+        public List<BLogInformation> LogSearchEnterB(String Word)
+        {
+            return (from i in db.bLogInformation where (i.Enter).Contains( Word) select i).ToList();
+        }
+
+        public List<ALogInformation> SearchResultLogInformationDateA(string date1, string date2)
+        {
+            return (from i in db.aLogInformation where string.Compare(i.Enter, date1) >= 0 && string.Compare(i.Leave, date2) <= 0 select i).ToList();
+        }
+        public List<BLogInformation> SearchResultLogInformationDateB(string date1, string date2)
+        {
+            return (from i in db.bLogInformation where string.Compare(i.Enter, date1) >= 0 && string.Compare(i.Leave, date2) <= 0 select i).ToList();
+        }
+
         // Control Account
         public int AdminKey(String Key, String ADMINNAME)
         {
