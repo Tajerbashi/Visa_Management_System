@@ -600,11 +600,11 @@ namespace DAL
 
         public List<AAgent> ShowAllActiveAgentA()
         {
-            return (from i in db.aAgents where i.DeleteStatus && i.IsActive select i).ToList();
+            return (from i in db.aAgents where !i.DeleteStatus && i.IsActive select i).ToList();
         }
         public List<BAgent> ShowAllActiveAgentB()
         {
-            return (from i in db.bAgents where i.DeleteStatus && i.IsActive select i).ToList();
+            return (from i in db.bAgents where !i.DeleteStatus && i.IsActive select i).ToList();
         }
 
         public List<AAgent> ShowAllDisActiveAgentA()
@@ -737,7 +737,7 @@ namespace DAL
 
         public List<AAgentBankAccount> ShowAllDisActiveDataAgentBankA()
         {
-            return (from i in db.aAgentBankAccounts where !i.DeleteStatus && i.IsActive select i).ToList();
+            return (from i in db.aAgentBankAccounts where !i.DeleteStatus && !i.IsActive select i).ToList();
         }
         public List<BAgentBankAccount> ShowAllDisActiveDataAgentBankB()
         {

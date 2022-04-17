@@ -220,7 +220,7 @@ namespace StoreMarket_V1
             DT3.Rows.Clear();
             if (ADMIN == "1")
             {
-                var DB = blc.ShowAllActiveDataAgentBankA();
+                var DB = blc.ShowAllDisActiveDataAgentBankA();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -229,7 +229,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                var DB = blc.ShowAllActiveDataAgentBankB();
+                var DB = blc.ShowAllDisActiveDataAgentBankB();
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -923,7 +923,7 @@ namespace StoreMarket_V1
 
         private void buttonX19_Click_1(object sender, EventArgs e)
         {
-            ShowAllDisActiveCompany(ADMINNUMBER.Text);
+            ShowAllCompany(ADMINNUMBER.Text);
         }
 
         private void buttonX7_Click_1(object sender, EventArgs e)
@@ -933,8 +933,53 @@ namespace StoreMarket_V1
 
         private void buttonX1_Click_1(object sender, EventArgs e)
         {
-            ShowAllCompany(ADMINNUMBER.Text);
+            ShowAllDisActiveCompany(ADMINNUMBER.Text);
         }
 
+        private void DT3_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.CellBounds, true);
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    e.FormattedValue.ToString(),
+                    e.CellStyle.Font,
+                    e.CellBounds,
+                    e.CellStyle.ForeColor,
+                    TextFormatFlags.Left | TextFormatFlags.HorizontalCenter);
+                    e.Handled = true;
+            }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            ShowAllAgent(ADMINNUMBER.Text);
+        }
+
+        private void buttonX8_Click(object sender, EventArgs e)
+        {
+            ShowAllActiveAgent(ADMINNUMBER.Text);
+        }
+
+        private void buttonX3_Click_1(object sender, EventArgs e)
+        {
+            ShowAllDisActiveAgent(ADMINNUMBER.Text);
+        }
+
+        private void buttonX9_Click(object sender, EventArgs e)
+        {
+            ShowAllAgentAccountBank(ADMINNUMBER.Text);
+        }
+
+        private void buttonX11_Click(object sender, EventArgs e)
+        {
+            ShowAllActiveAgentAccountBank(ADMINNUMBER.Text);
+        }
+
+        private void buttonX10_Click(object sender, EventArgs e)
+        {
+            ShowAllDisActiveAgentAccountBank(ADMINNUMBER.Text);
+        }
     }
 }
