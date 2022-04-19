@@ -380,15 +380,6 @@ namespace BLL
         }
 
 
-        public List<AProduct> ProductA(int ID)
-        {
-            return (from i in DB.aProducts where i.id == ID select i).ToList();
-        }
-        public List<BProduct> ProductB(int ID)
-        {
-            return (from i in DB.bProducts where i.id == ID select i).ToList();
-        }
-
         public bool CreateProductA(AProduct product)
         {
             foreach (var item in DB.aProducts)
@@ -414,22 +405,31 @@ namespace BLL
             return true;
         }
 
-        public bool ExistProductA(int ID, AProduct product)
+        public AProduct GetProductA(int ID)
+        {
+            return (dlc.GetProductA(ID));
+        }
+        public BProduct GetProductB(int ID)
+        {
+            return (dlc.GetProductB(ID));
+        }
+
+        public bool ExistProductA(AProduct product)
         {
             foreach (var item in DB.aProducts)
             {
-                if (item.id != ID && item.Name == product.Name && item.Type == product.Type)
+                if( item.id!=product.id && item.Name==product.Name && item.Type == product.Type)
                 {
                     return true;
                 }
             }
             return false;
         }
-        public bool ExistProductB(int ID, BProduct product)
+        public bool ExistProductB(BProduct product)
         {
             foreach (var item in DB.bProducts)
             {
-                if (item.id != ID && item.Name == product.Name && item.Type == product.Type)
+                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
                 {
                     return true;
                 }
@@ -437,35 +437,24 @@ namespace BLL
             return false;
         }
 
-        public AProduct ProductEditA(int ID)
+        public void SaveEditProductA(AProduct product)
         {
-            AProduct product = DB.aProducts.Where(c => c.id == ID).First();
-            if (!ExistProductA(ID, product))
-            {
-                dlc.EditProductA(product);
-            }
-            return product;
+            dlc.SaveEditProductA(product);
         }
-        public BProduct ProductEditB(int ID)
+        public void SaveEditProductB(BProduct product)
         {
-            BProduct product = DB.bProducts.Where(c => c.id == ID).First();
-            if (!ExistProductB(ID, product))
-            {
-                dlc.EditProductB(product);
-            }
-            return product;
+            dlc.SaveEditProductB(product);
         }
 
         public void DeleteProductA(int ID)
         {
-            AProduct product = DB.aProducts.Where(c => c.id == ID).First();
-            dlc.DeleteProductA(product);
+            dlc.DeleteProductA(ID);
         }
         public void DeleteProductB(int ID)
         {
-            BProduct product = DB.bProducts.Where(c => c.id == ID).First();
-            dlc.DeleteProductB(product);
+            dlc.DeleteProductB(ID);
         }
+
 
         public void SAVEDB()
         {

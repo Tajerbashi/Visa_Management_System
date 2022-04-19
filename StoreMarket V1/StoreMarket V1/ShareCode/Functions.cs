@@ -35,8 +35,6 @@ namespace StoreMarket_V1
                 }
             }
         }
-
-        #region FunctionsProduct
         public void digitonly(KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsPunctuation(e.KeyChar)))
@@ -45,7 +43,6 @@ namespace StoreMarket_V1
                 MessageBox.Show("کیبورد را عوض کنید", "Alert!");
             }
         }
-
         public String ChangeToEnglishNumber(String input)
         {
             String EnglishNumbers = "";
@@ -80,6 +77,5 @@ namespace StoreMarket_V1
             }
             return input;
         }
-        #endregion
     }
 }

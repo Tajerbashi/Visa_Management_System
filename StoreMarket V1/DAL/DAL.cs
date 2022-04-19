@@ -418,20 +418,20 @@ namespace DAL
         //  محصولات که از ان عدد کمتر میباشد
         public List<AProduct> ShowAllProductALessN(int N)
         {
-            return (from i in db.aProducts where (i.ManyP <= N) && !i.DeleteStatus select i).ToList();
+            return (from i in db.aProducts where (i.Mojodi <= N) && !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> ShowAllProductBLessN(int N)
         {
-            return (from i in db.bProducts where (i.ManyP <= N) && !i.DeleteStatus select i).ToList();
+            return (from i in db.bProducts where (i.Mojodi <= N) && !i.DeleteStatus select i).ToList();
         }
         //  محصولات که از ان عدد بیشتر میباشد
         public List<AProduct> ShowAllProductAGreatN(int N)
         {
-            return (from i in db.aProducts where (i.ManyP >= N) && !i.DeleteStatus select i).ToList();
+            return (from i in db.aProducts where (i.Mojodi >= N) && !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> ShowAllProductBGreatN(int N)
         {
-            return (from i in db.bProducts where (i.ManyP >= N) && !i.DeleteStatus select i).ToList();
+            return (from i in db.bProducts where (i.Mojodi >= N) && !i.DeleteStatus select i).ToList();
         }
 
         public void CreateProductA(AProduct product)
@@ -445,22 +445,35 @@ namespace DAL
             db.SaveChanges();
         }
 
-        public void EditProductA(AProduct product)
+        public AProduct GetProductA(int ID)
         {
+            return (db.aProducts.Where(c => c.id == ID).FirstOrDefault());
+        }
+        public BProduct GetProductB(int ID)
+        {
+            return (db.bProducts.Where(c => c.id == ID).FirstOrDefault());
+        }
+
+        public void SaveEditProductA(AProduct product)
+        {
+            product.DeleteStatus = false;
             db.SaveChanges();
         }
-        public void EditProductB(BProduct product)
+        public void SaveEditProductB(BProduct product)
         {
+            product.DeleteStatus = false;
             db.SaveChanges();
         }
 
-        public void DeleteProductA(AProduct product)
+        public void DeleteProductA(int ID)
         {
+            AProduct product = db.aProducts.Where(c => c.id == ID).FirstOrDefault();
             product.DeleteStatus = true;
             db.SaveChanges();
         }
-        public void DeleteProductB(BProduct product)
+        public void DeleteProductB(int ID)
         {
+            BProduct product = db.bProducts.Where(c => c.id == ID).FirstOrDefault();
             product.DeleteStatus = true;
             db.SaveChanges();
         }

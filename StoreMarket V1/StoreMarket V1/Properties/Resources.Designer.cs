@@ -63,6 +63,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Everaldo_Crystal_Clear_Action_cancel__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Everaldo-Crystal-Clear-Action-cancel (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Everaldo_Crystal_Clear_Action_ok__1_ {
             get {
                 object obj = ResourceManager.GetObject("Everaldo-Crystal-Clear-Action-ok (1)", resourceCulture);
