@@ -54,6 +54,7 @@ namespace StoreMarket_V1
         }
         private void AdminBankAccount_Load(object sender, EventArgs e)
         {
+            Result.Text = "ثبت حساب بانکی";
             Printdata(ADMINNUMBER.Text);
         }
 
@@ -68,12 +69,15 @@ namespace StoreMarket_V1
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
             {
                 ID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
                 dataGridView1.CurrentRow.Selected = true;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
             }
         }
 
@@ -102,101 +106,138 @@ namespace StoreMarket_V1
                 if (ADMINNUMBER.Text == "1")
                 {
                     AAdminBankAccount bankAccount = blc.adminbankacountA(ID);
-                    bankname.Text = bankAccount.NameBank;
-                    owneradminname.Text = bankAccount.OwnerName;
-                    adminphonebank.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
+                    BankName.Text = bankAccount.NameBank;
+                    OwnerName.Text = bankAccount.OwnerName;
+                    PhoneNumber.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
                     AccountNumber.Text = (Fun.ChangeToEnglishNumber((bankAccount.AccountNumber).ToString())).ToString();
                 }
                 else
                 {
                     BAdminBankAccount bankAccount = blc.adminbankacountB(ID);
-                    bankname.Text = bankAccount.NameBank;
-                    owneradminname.Text = bankAccount.OwnerName;
-                    adminphonebank.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
+                    BankName.Text = bankAccount.NameBank;
+                    OwnerName.Text = bankAccount.OwnerName;
+                    PhoneNumber.Text = Fun.ChangeToEnglishNumber((bankAccount.phonenumber).ToString());
                     AccountNumber.Text = (Fun.ChangeToEnglishNumber((bankAccount.AccountNumber).ToString())).ToString();
                 }
             }
 
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonX2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonX1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("از درج اطلاعات مطمیین هستید؟؟؟", "اطلاعیه", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.Yes)
-            {
-                if (SW)
-                {   //  Save New Admin Bank Account
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAdminBankAccount adminbank = new AAdminBankAccount();
-                        adminbank.NameBank = bankname.Text;
-                        adminbank.OwnerName = owneradminname.Text;
-                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                        if (!blc.CreateAdminBankA(adminbank))
-                        {
-                            MessageBox.Show("اطلاعات تکراری است");
-                        }
-                        else
-                        {
-                            MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
-                        }
-                    }
-                    else
-                    {
-                        BAdminBankAccount adminbank = new BAdminBankAccount();
-                        adminbank.NameBank = bankname.Text;
-                        adminbank.OwnerName = owneradminname.Text;
-                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                        if (!blc.CreateAdminBankB(adminbank))
-                        {
-                            MessageBox.Show("اطلاعات تکراری است");
-                        }
-                        else
-                        {
-                            MessageBox.Show("اطلاعات با موفقیت ذخیره شد");
-                        }
-                    }
-                }
-                else
-                {   //  EDIT Admin Bank Account
-                    if (ADMINNUMBER.Text == "1")
-                    {
-                        AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
-                        adminbank.NameBank = bankname.Text;
-                        adminbank.OwnerName = owneradminname.Text;
-                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                        blc.ExistAdminBankA(adminbank);
 
+            if (BankName.Text.Trim().Length == 0)
+            {
+                Result.ForeColor = Color.Red;
+                Result.Text= "نام بانک را درج کنید";
+                BankName.Focus();
+            } 
+            else 
+            if (OwnerName.Text.Trim().Length == 0) 
+            {
+                Result.ForeColor = Color.Red;
+                Result.Text = "نام مالک را درج کنید";
+                OwnerName.Focus();
+            }
+            else if (PhoneNumber.Text.Trim().Length==0)
+            {
+                Result.ForeColor = Color.Red;
+                Result.Text = "تلفن را درج کنید";
+                PhoneNumber.Focus();
+            }
+            else if (AccountNumber.Text.Trim().Length==0)
+            {
+                Result.ForeColor = Color.Red;
+                Result.Text = "شماره حساب را درج کنید";
+                AccountNumber.Focus();
+            }
+            else
+            {
+                DialogResult = MessageBox.Show("از درج اطلاعات مطمیین هستید؟؟؟", "اطلاعیه", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    if (SW)
+                    {   //  Save New Admin Bank Account
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            AAdminBankAccount adminbank = new AAdminBankAccount();
+                            adminbank.NameBank = BankName.Text;
+                            adminbank.OwnerName = OwnerName.Text;
+                            adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                            adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                            if (!blc.CreateAdminBankA(adminbank))
+                            {
+                                Result.ForeColor = Color.Green;
+                                Result.Text = "ثبت نام انجام شد";
+                            }
+                            else
+                            {
+                                Result.ForeColor = Color.Red;
+                                Result.Text = "عملیات ناموفق بود";
+                            }
+                        }
+                        else
+                        {
+                            BAdminBankAccount adminbank = new BAdminBankAccount();
+                            adminbank.NameBank = BankName.Text;
+                            adminbank.OwnerName = OwnerName.Text;
+                            adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                            adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                            if (!blc.CreateAdminBankB(adminbank))
+                            {
+                                Result.ForeColor = Color.Green;
+                                Result.Text = "ثبت نام انجام شد";
+                            }
+                            else
+                            {
+                                Result.ForeColor = Color.Red;
+                                Result.Text = "عملیات ناموفق بود";
+                            }
+                        }
                     }
                     else
-                    {
-                        BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
-                        adminbank.NameBank = bankname.Text;
-                        adminbank.OwnerName = owneradminname.Text;
-                        adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
-                        adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(adminphonebank.Text));
-                        blc.ExistAdminBankB(adminbank);
+                    {   //  EDIT Admin Bank Account
+                        if (ADMINNUMBER.Text == "1")
+                        {
+                            AAdminBankAccount adminbank = blc.SelectAdminBankAccountA(ID);
+                            adminbank.NameBank = BankName.Text;
+                            adminbank.OwnerName = OwnerName.Text;
+                            adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                            adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                            blc.ExistAdminBankA(adminbank);
+
+                        }
+                        else
+                        {
+                            BAdminBankAccount adminbank = blc.SelectAdminBankAccountB(ID);
+                            adminbank.NameBank = BankName.Text;
+                            adminbank.OwnerName = OwnerName.Text;
+                            adminbank.AccountNumber = Fun.ChangeToEnglishNumber(AccountNumber.Text);
+                            adminbank.phonenumber = Convert.ToInt64(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                            blc.ExistAdminBankB(adminbank);
+                        }
+                        SW = true;
+                        savebtn.Text = "ذخیره";
                     }
-                    SW = true;
-                    savebtn.Text = "ذخیره";
+
+                    Fun.ClearTextBoxes(this.Controls);
+                    Printdata(ADMINNUMBER.Text);
                 }
-                Fun.ClearTextBoxes(this.Controls);
-                Printdata(ADMINNUMBER.Text);
             }
-             
+        }
+
+        private void ResultTimer_Tick(object sender, EventArgs e)
+        {
+            Result.ForeColor = Color.Black;
+            Result.Text = "ثبت حساب بانکی";
         }
     }
 }

@@ -305,13 +305,59 @@ namespace BLL
         #endregion
         //  Product Control Form
         #region Product
+        //  تمام محصولات موجود
         public List<AProduct> ShowAllProductA()
         {
-            return (from i in DB.aProducts where !i.DeleteStatus select i).ToList();
+            return (dlc.ShowAllProductA().ToList());
         }
         public List<BProduct> ShowAllProductB()
         {
-            return (from i in DB.bProducts where !i.DeleteStatus select i).ToList();
+            return (dlc.ShowAllProductB().ToList());
+
+        }
+        // محصولا خرید نقدی
+        public List<AProduct> ShowAllMoneyProductA()
+        {
+            return (dlc.ShowAllMoneyProductA().ToList());
+
+        }
+        public List<BProduct> ShowAllMoneyActiveProductB()
+        {
+            return (dlc.ShowAllMoneyActiveProductB().ToList());
+
+        }
+        // محصولات خرید بانکی
+        public List<AProduct> ShowAllBankiProductA()
+        {
+            return (dlc.ShowAllBankiProductA().ToList());
+
+        }
+        public List<BProduct> ShowAllBankiActiveProductB()
+        {
+            return (dlc.ShowAllBankiActiveProductB().ToList());
+
+        }
+        //  محصولات که از ان عدد کمتر میباشد
+        public List<AProduct> ShowAllProductALessN(int N)
+        {
+            return (dlc.ShowAllProductALessN(N).ToList());
+
+        }
+        public List<BProduct> ShowAllProductBLessN(int N)
+        {
+            return (dlc.ShowAllProductBLessN(N).ToList());
+
+        }
+        //  محصولات که از ان عدد بیشتر میباشد
+        public List<AProduct> ShowAllProductAGreatN(int N)
+        {
+            return (dlc.ShowAllProductAGreatN(N).ToList());
+
+        }
+        public List<BProduct> ShowAllProductBGreatN(int N)
+        {
+            return (dlc.ShowAllProductBGreatN(N).ToList());
+
         }
 
         public List<ATypeProduct> ATypes()
@@ -349,11 +395,11 @@ namespace BLL
             {
                 if (item.Name == product.Name && item.Type == product.Type)
                 {
-                    return true;
+                    return false;
                 }
             }
             dlc.CreateProductA(product);
-            return false;
+            return true;
         }
         public bool CreateProductB(BProduct product)
         {
@@ -361,11 +407,11 @@ namespace BLL
             {
                 if (item.Name == product.Name && item.Type == product.Type)
                 {
-                    return true;
+                    return false;
                 }
             }
             dlc.CreateProductB(product);
-            return false;
+            return true;
         }
 
         public bool ExistProductA(int ID, AProduct product)

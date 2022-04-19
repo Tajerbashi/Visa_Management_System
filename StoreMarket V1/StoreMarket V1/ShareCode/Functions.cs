@@ -62,6 +62,24 @@ namespace StoreMarket_V1
             }
             return EnglishNumbers;
         }
+        public String ChangeToPersionNumber(String englishNumber)
+        {
+            String Result = "";
+            foreach (char ch in englishNumber)
+            {
+                Result += (char)(1776 + char.GetNumericValue(ch));
+            }
+            return Result;
+        }
+        public String toArabicNumber(String input)
+        {
+            var arabic = new String[10] { "۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹" };
+            for (int j = 0; j < arabic.Length; j++)
+            {
+                input = input.Replace(j.ToString(), arabic[j]);
+            }
+            return input;
+        }
         #endregion
     }
 }

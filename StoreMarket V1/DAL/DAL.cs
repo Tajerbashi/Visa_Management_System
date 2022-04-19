@@ -387,6 +387,52 @@ namespace DAL
             db.SaveChanges();
         }
 
+        //  Control Product
+        //  تمام محصولات موجود
+        public List<AProduct> ShowAllProductA()
+        {
+            return (from i in db.aProducts where !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowAllProductB()
+        {
+            return (from i in db.bProducts where !i.DeleteStatus select i).ToList();
+        }
+        // محصولا خرید نقدی
+        public List<AProduct> ShowAllMoneyProductA()
+        {
+            return (from i in db.aProducts where (i.CashType==1) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowAllMoneyActiveProductB()
+        {
+            return (from i in db.bProducts where (i.CashType==1) && !i.DeleteStatus select i).ToList();
+        }
+        // محصولات خرید بانکی
+        public List<AProduct> ShowAllBankiProductA()
+        {
+            return (from i in db.aProducts where (i.CashType == 2) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowAllBankiActiveProductB()
+        {
+            return (from i in db.bProducts where (i.CashType == 2) && !i.DeleteStatus select i).ToList();
+        }
+        //  محصولات که از ان عدد کمتر میباشد
+        public List<AProduct> ShowAllProductALessN(int N)
+        {
+            return (from i in db.aProducts where (i.ManyP <= N) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowAllProductBLessN(int N)
+        {
+            return (from i in db.bProducts where (i.ManyP <= N) && !i.DeleteStatus select i).ToList();
+        }
+        //  محصولات که از ان عدد بیشتر میباشد
+        public List<AProduct> ShowAllProductAGreatN(int N)
+        {
+            return (from i in db.aProducts where (i.ManyP >= N) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowAllProductBGreatN(int N)
+        {
+            return (from i in db.bProducts where (i.ManyP >= N) && !i.DeleteStatus select i).ToList();
+        }
 
         public void CreateProductA(AProduct product)
         {

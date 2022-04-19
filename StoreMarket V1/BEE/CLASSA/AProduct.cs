@@ -9,7 +9,7 @@ namespace BEE
     public class AProduct
     {
         public int id { get; set; }
-        public int sellCount { get; set; } = 0;
+        public int sellCount { get; set; } = 0; // شمارنده فروش
         public String Name { get; set; }
         public String Type { get; set; }
         public int buyPrice { get; set; }
