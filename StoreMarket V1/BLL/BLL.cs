@@ -321,9 +321,9 @@ namespace BLL
             return (dlc.ShowAllMoneyProductA().ToList());
 
         }
-        public List<BProduct> ShowAllMoneyActiveProductB()
+        public List<BProduct> ShowAllMoneyProductB()
         {
-            return (dlc.ShowAllMoneyActiveProductB().ToList());
+            return (dlc.ShowAllMoneyProductB().ToList());
 
         }
         // محصولات خرید بانکی
@@ -332,9 +332,9 @@ namespace BLL
             return (dlc.ShowAllBankiProductA().ToList());
 
         }
-        public List<BProduct> ShowAllBankiActiveProductB()
+        public List<BProduct> ShowAllBankiProductB()
         {
-            return (dlc.ShowAllBankiActiveProductB().ToList());
+            return (dlc.ShowAllBankiProductB().ToList());
 
         }
         //  محصولات که از ان عدد کمتر میباشد
@@ -359,7 +359,25 @@ namespace BLL
             return (dlc.ShowAllProductBGreatN(N).ToList());
 
         }
+        //  نتایج جستجو
+        public List<AProduct> ShowSearchResultA(String Word)
+        {
+            return (dlc.ShowSearchResultA(Word));
+        }
+        public List<BProduct> ShowSearchResultB(String Word)
+        {
+            return (dlc.ShowSearchResultB(Word));
 
+        }
+        //نتایج تاریخ امروز تا انقضا
+        public List<AProduct> ShowResultDateNowExpireA(String Now, String Expire)
+        {
+            return (dlc.ShowResultDateNowExpireA(Now,Expire));
+        }
+        public List<BProduct> ShowResultDateNowExpireB(String Now, String Expire)
+        {
+            return (dlc.ShowResultDateNowExpireB(Now, Expire));
+        }
         public List<ATypeProduct> ATypes()
         {
             return (from i in DB.atypeProducts select i).ToList();

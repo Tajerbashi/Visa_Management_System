@@ -402,7 +402,7 @@ namespace DAL
         {
             return (from i in db.aProducts where (i.CashType==1) && !i.DeleteStatus select i).ToList();
         }
-        public List<BProduct> ShowAllMoneyActiveProductB()
+        public List<BProduct> ShowAllMoneyProductB()
         {
             return (from i in db.bProducts where (i.CashType==1) && !i.DeleteStatus select i).ToList();
         }
@@ -411,7 +411,7 @@ namespace DAL
         {
             return (from i in db.aProducts where (i.CashType == 2) && !i.DeleteStatus select i).ToList();
         }
-        public List<BProduct> ShowAllBankiActiveProductB()
+        public List<BProduct> ShowAllBankiProductB()
         {
             return (from i in db.bProducts where (i.CashType == 2) && !i.DeleteStatus select i).ToList();
         }
@@ -432,6 +432,23 @@ namespace DAL
         public List<BProduct> ShowAllProductBGreatN(int N)
         {
             return (from i in db.bProducts where (i.Mojodi >= N) && !i.DeleteStatus select i).ToList();
+        }
+
+        public List<AProduct> ShowResultDateNowExpireA(String Now, String Expire)
+        {
+            return (from i in db.aProducts where String.Compare(Now, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+        }
+        public List<BProduct> ShowResultDateNowExpireB(String Now, String Expire)
+        {
+            return (from i in db.bProducts where String.Compare(Now, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+        }
+        public List<AProduct> ShowSearchResultA(String Word)
+        {
+            return (from i in db.aProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowSearchResultB(String Word)
+        {
+            return (from i in db.bProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
         }
 
         public void CreateProductA(AProduct product)

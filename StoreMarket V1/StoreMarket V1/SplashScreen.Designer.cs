@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +42,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.label1.Font = new System.Drawing.Font("MRT_Mitra_5", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.Lavender;
-            this.label1.Location = new System.Drawing.Point(41, 25);
+            this.label1.Location = new System.Drawing.Point(41, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(351, 64);
             this.label1.TabIndex = 0;
@@ -54,7 +53,6 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.Color.Fuchsia;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.progressBar1);
             this.panelEx1.Controls.Add(this.label1);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Location = new System.Drawing.Point(103, 134);
@@ -69,20 +67,6 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 1;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.progressBar1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.progressBar1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.progressBar1.Location = new System.Drawing.Point(125, 97);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(183, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 1;
             // 
             // timer1
             // 
@@ -119,6 +103,5 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

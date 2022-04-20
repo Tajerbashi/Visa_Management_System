@@ -29,7 +29,6 @@ namespace StoreMarket_V1
             owner1.password = "ADMIN1";
             owner1.Status = true;
             blc.CreateNewOwner(owner1);
-            progressBar1.Value += 50;
         }
         public void ADMIN2()
         {
@@ -38,10 +37,8 @@ namespace StoreMarket_V1
             owner2.password = "ADMIN2";
             owner2.Status = true;
             blc.CreateNewOwner(owner2);
-            progressBar1.Value += 50;
         }
         #endregion
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
