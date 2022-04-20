@@ -21,6 +21,7 @@ namespace BEE
         public String EndDate { get; set; }
         public int CashType { get; set; }
         public String AgentName { get; set; }
+        public int Totalcash { get; set; } = 0;
 
         public bool DeleteStatus { get; set; } = false;
         public AAgent aAgent { get; set; }

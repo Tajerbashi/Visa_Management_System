@@ -436,11 +436,13 @@ namespace DAL
 
         public void CreateProductA(AProduct product)
         {
+            product.Totalcash = product.buyPrice * product.BuyCount;
             db.aProducts.Add(product);
             db.SaveChanges();
         }
         public void CreateProductB(BProduct product)
         {
+            product.Totalcash = product.buyPrice * product.BuyCount;
             db.bProducts.Add(product);
             db.SaveChanges();
         }
@@ -456,11 +458,13 @@ namespace DAL
 
         public void SaveEditProductA(AProduct product)
         {
+            product.Totalcash += (product.newBuyPrice * product.BuyCount);
             product.DeleteStatus = false;
             db.SaveChanges();
         }
         public void SaveEditProductB(BProduct product)
         {
+            product.Totalcash += (product.newBuyPrice * product.BuyCount);
             product.DeleteStatus = false;
             db.SaveChanges();
         }

@@ -126,7 +126,7 @@ namespace StoreMarket_V1
                     NN8.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells["now"].Value.ToString();
                     NN9.Text = DGV2.Rows[DGV2.CurrentRow.Index].Cells["expire"].Value.ToString();
                 }
-                else if (TAP == 3)
+                else if (TAP == 2)
                 {
                     N1.Text = DGV2.Rows[DGV1.CurrentRow.Index].Cells["name"].Value.ToString();
                     N2.Text = DGV2.Rows[DGV1.CurrentRow.Index].Cells["type"].Value.ToString();
@@ -141,7 +141,7 @@ namespace StoreMarket_V1
                 }
 
                 SW = false;
-                button8.Text = "بروززسانی";
+                button8.Text = "بروزرسانی";
 
             }
 
@@ -150,6 +150,7 @@ namespace StoreMarket_V1
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("آیا میخواهید اطلاعات حذف شود؟؟؟","تایید درخواست",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+            
             if (DialogResult==DialogResult.OK)
             {
                 if (ADMINNUMBER.Text == "1")
@@ -303,9 +304,9 @@ namespace StoreMarket_V1
                                 Result.Text = "محصول با موفقیت ثبت شد";
                                 Fun.ClearTextBoxes(this.Controls);
                                 NN7.Text = " ";
+                                Fun.ClearTextBoxes(this.Controls);
                                 ShowAllProductDGV1(ADMINNUMBER.Text);
                                 ShowAllProductDGV2(ADMINNUMBER.Text);
-                                Fun.ClearTextBoxes(this.Controls);
 
                             }
                             else
@@ -367,10 +368,9 @@ namespace StoreMarket_V1
                             {
                                 blc.SaveEditProductA(product);
                                 Result.Text = "ویرایش شد";
+                                Fun.ClearTextBoxes(this.Controls);
                                 ShowAllProductDGV1(ADMINNUMBER.Text);
                                 ShowAllProductDGV2(ADMINNUMBER.Text);
-                                Fun.ClearTextBoxes(this.Controls);
-
                             }
                             else
                             {
@@ -491,6 +491,7 @@ namespace StoreMarket_V1
             {
                 case 0:
                     {
+                        ShowAllProductDGV2(ADMINNUMBER.Text);
                         break;
                     }
                 case 1:
@@ -499,14 +500,12 @@ namespace StoreMarket_V1
                     }
                 case 2:
                     {
-                        break;
-                    }
-                case 3:
-                    {
+                        ShowAllProductDGV1(ADMINNUMBER.Text);
                         break;
                     }
             }
 
         }
+    
     }
 }

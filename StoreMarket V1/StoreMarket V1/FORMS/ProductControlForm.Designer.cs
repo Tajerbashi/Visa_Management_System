@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ADMINNUMBER = new System.Windows.Forms.Label();
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -46,43 +51,6 @@
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Result = new System.Windows.Forms.Label();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.DGV2 = new System.Windows.Forms.DataGridView();
-            this.code2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.many1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buy2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buyn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sell2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.now = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agentname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashtype2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.RR2 = new System.Windows.Forms.RadioButton();
-            this.RR1 = new System.Windows.Forms.RadioButton();
-            this.NN7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN9 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
-            this.NN6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN8 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
-            this.NN5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.NN1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.DGV1 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,8 +89,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -131,21 +97,75 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.DGV2 = new System.Windows.Forms.DataGridView();
+            this.code2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.many1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buy2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buyn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sell2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.now = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashtype2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.RR2 = new System.Windows.Forms.RadioButton();
+            this.RR1 = new System.Windows.Forms.RadioButton();
+            this.NN7 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN9 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.NN6 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN8 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
+            this.NN5 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN3 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NN1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NO1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabControlPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabControlPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ADMINNUMBER
@@ -201,7 +221,7 @@
             this.Result.AutoSize = true;
             this.Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Result.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Result.Location = new System.Drawing.Point(4, 3);
+            this.Result.Location = new System.Drawing.Point(200, 6);
             this.Result.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Result.Name = "Result";
             this.Result.Size = new System.Drawing.Size(94, 17);
@@ -212,517 +232,23 @@
             // 
             this.tabControl1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel4);
-            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Location = new System.Drawing.Point(0, 30);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(953, 502);
+            this.tabControl1.Size = new System.Drawing.Size(953, 496);
             this.tabControl1.TabIndex = 22;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Tabs.Add(this.tabItem3);
-            this.tabControl1.Tabs.Add(this.tabItem4);
             this.tabControl1.Tabs.Add(this.tabItem1);
             this.tabControl1.Text = "tabControl1";
             this.tabControl1.SelectedTabChanged += new DevComponents.DotNetBar.TabStrip.SelectedTabChangedEventHandler(this.tabControl1_SelectedTabChanged);
-            // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Controls.Add(this.DGV2);
-            this.tabControlPanel2.Controls.Add(this.groupBox3);
-            this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(953, 475);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 5;
-            this.tabControlPanel2.TabItem = this.tabItem2;
-            // 
-            // DGV2
-            // 
-            this.DGV2.AllowUserToAddRows = false;
-            this.DGV2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(215)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.code2,
-            this.many1,
-            this.name2,
-            this.type2,
-            this.buy2,
-            this.buyn1,
-            this.sell2,
-            this.now,
-            this.expire,
-            this.agentname,
-            this.cashtype2});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV2.DefaultCellStyle = dataGridViewCellStyle10;
-            this.DGV2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DGV2.EnableHeadersVisualStyles = false;
-            this.DGV2.Location = new System.Drawing.Point(1, 136);
-            this.DGV2.Margin = new System.Windows.Forms.Padding(4);
-            this.DGV2.Name = "DGV2";
-            this.DGV2.ReadOnly = true;
-            this.DGV2.RowHeadersVisible = false;
-            this.DGV2.Size = new System.Drawing.Size(951, 338);
-            this.DGV2.TabIndex = 3;
-            this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick_1);
-            // 
-            // code2
-            // 
-            this.code2.HeaderText = "id";
-            this.code2.Name = "code2";
-            this.code2.ReadOnly = true;
-            this.code2.Width = 5;
-            // 
-            // many1
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.many1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.many1.HeaderText = "تعداد";
-            this.many1.Name = "many1";
-            this.many1.ReadOnly = true;
-            this.many1.Width = 50;
-            // 
-            // name2
-            // 
-            this.name2.HeaderText = "نام";
-            this.name2.Name = "name2";
-            this.name2.ReadOnly = true;
-            // 
-            // type2
-            // 
-            this.type2.HeaderText = "مدل";
-            this.type2.Name = "type2";
-            this.type2.ReadOnly = true;
-            // 
-            // buy2
-            // 
-            this.buy2.HeaderText = "خرید قبل";
-            this.buy2.Name = "buy2";
-            this.buy2.ReadOnly = true;
-            // 
-            // buyn1
-            // 
-            this.buyn1.HeaderText = "خرید جدید";
-            this.buyn1.Name = "buyn1";
-            this.buyn1.ReadOnly = true;
-            // 
-            // sell2
-            // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Lime;
-            this.sell2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.sell2.HeaderText = "مبلغ فروش";
-            this.sell2.Name = "sell2";
-            this.sell2.ReadOnly = true;
-            // 
-            // now
-            // 
-            this.now.HeaderText = "تاریخ خرید";
-            this.now.Name = "now";
-            this.now.ReadOnly = true;
-            // 
-            // expire
-            // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.expire.DefaultCellStyle = dataGridViewCellStyle9;
-            this.expire.HeaderText = "تاریخ انقضا";
-            this.expire.Name = "expire";
-            this.expire.ReadOnly = true;
-            // 
-            // agentname
-            // 
-            this.agentname.HeaderText = "نام نماینده";
-            this.agentname.Name = "agentname";
-            this.agentname.ReadOnly = true;
-            this.agentname.Width = 120;
-            // 
-            // cashtype2
-            // 
-            this.cashtype2.HeaderText = "پرداخت";
-            this.cashtype2.Name = "cashtype2";
-            this.cashtype2.ReadOnly = true;
-            this.cashtype2.Width = 50;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.RR2);
-            this.groupBox3.Controls.Add(this.RR1);
-            this.groupBox3.Controls.Add(this.NN7);
-            this.groupBox3.Controls.Add(this.NN9);
-            this.groupBox3.Controls.Add(this.NN6);
-            this.groupBox3.Controls.Add(this.NN8);
-            this.groupBox3.Controls.Add(this.NN5);
-            this.groupBox3.Controls.Add(this.NN4);
-            this.groupBox3.Controls.Add(this.NN3);
-            this.groupBox3.Controls.Add(this.NN2);
-            this.groupBox3.Controls.Add(this.NN1);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(22, 2);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(910, 129);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "اطلاعات :";
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Teal;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button9.Location = new System.Drawing.Point(22, 76);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(127, 34);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "نمایش اطلاعات";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click_1);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button8.Location = new System.Drawing.Point(22, 27);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(127, 34);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "ذخیره";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // RR2
-            // 
-            this.RR2.AutoSize = true;
-            this.RR2.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RR2.Location = new System.Drawing.Point(195, 89);
-            this.RR2.Margin = new System.Windows.Forms.Padding(4);
-            this.RR2.Name = "RR2";
-            this.RR2.Size = new System.Drawing.Size(54, 25);
-            this.RR2.TabIndex = 53;
-            this.RR2.TabStop = true;
-            this.RR2.Text = "بانکی";
-            this.RR2.UseVisualStyleBackColor = true;
-            // 
-            // RR1
-            // 
-            this.RR1.AutoSize = true;
-            this.RR1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RR1.Location = new System.Drawing.Point(195, 55);
-            this.RR1.Margin = new System.Windows.Forms.Padding(4);
-            this.RR1.Name = "RR1";
-            this.RR1.Size = new System.Drawing.Size(53, 25);
-            this.RR1.TabIndex = 52;
-            this.RR1.TabStop = true;
-            this.RR1.Text = "نقدی";
-            this.RR1.UseVisualStyleBackColor = true;
-            // 
-            // NN7
-            // 
-            // 
-            // 
-            // 
-            this.NN7.Border.Class = "TextBoxBorder";
-            this.NN7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN7.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN7.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN7.Location = new System.Drawing.Point(179, 20);
-            this.NN7.Margin = new System.Windows.Forms.Padding(4);
-            this.NN7.Name = "NN7";
-            this.NN7.PreventEnterBeep = true;
-            this.NN7.Size = new System.Drawing.Size(219, 28);
-            this.NN7.TabIndex = 6;
-            // 
-            // NN9
-            // 
-            // 
-            // 
-            // 
-            this.NN9.BackgroundStyle.Class = "TextBoxBorder";
-            this.NN9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN9.ButtonClear.Visible = true;
-            this.NN9.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN9.Location = new System.Drawing.Point(256, 86);
-            this.NN9.Margin = new System.Windows.Forms.Padding(4);
-            this.NN9.Mask = "1400/00/00";
-            this.NN9.Name = "NN9";
-            this.NN9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NN9.Size = new System.Drawing.Size(140, 25);
-            this.NN9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.NN9.TabIndex = 8;
-            this.NN9.Text = "";
-            // 
-            // NN6
-            // 
-            // 
-            // 
-            // 
-            this.NN6.Border.Class = "TextBoxBorder";
-            this.NN6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN6.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN6.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN6.Location = new System.Drawing.Point(470, 89);
-            this.NN6.Margin = new System.Windows.Forms.Padding(4);
-            this.NN6.Name = "NN6";
-            this.NN6.PreventEnterBeep = true;
-            this.NN6.Size = new System.Drawing.Size(141, 28);
-            this.NN6.TabIndex = 5;
-            this.NN6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
-            // 
-            // NN8
-            // 
-            // 
-            // 
-            // 
-            this.NN8.BackgroundStyle.Class = "TextBoxBorder";
-            this.NN8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN8.ButtonClear.Visible = true;
-            this.NN8.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN8.Location = new System.Drawing.Point(256, 54);
-            this.NN8.Margin = new System.Windows.Forms.Padding(4);
-            this.NN8.Mask = "1400/00/00";
-            this.NN8.Name = "NN8";
-            this.NN8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NN8.Size = new System.Drawing.Size(140, 25);
-            this.NN8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.NN8.TabIndex = 7;
-            this.NN8.Text = "";
-            // 
-            // NN5
-            // 
-            // 
-            // 
-            // 
-            this.NN5.Border.Class = "TextBoxBorder";
-            this.NN5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN5.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN5.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN5.Location = new System.Drawing.Point(470, 55);
-            this.NN5.Margin = new System.Windows.Forms.Padding(4);
-            this.NN5.Name = "NN5";
-            this.NN5.PreventEnterBeep = true;
-            this.NN5.Size = new System.Drawing.Size(141, 28);
-            this.NN5.TabIndex = 4;
-            this.NN5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
-            // 
-            // NN4
-            // 
-            // 
-            // 
-            // 
-            this.NN4.Border.Class = "TextBoxBorder";
-            this.NN4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN4.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN4.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN4.Location = new System.Drawing.Point(470, 20);
-            this.NN4.Margin = new System.Windows.Forms.Padding(4);
-            this.NN4.Name = "NN4";
-            this.NN4.PreventEnterBeep = true;
-            this.NN4.Size = new System.Drawing.Size(141, 28);
-            this.NN4.TabIndex = 3;
-            this.NN4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
-            // 
-            // NN3
-            // 
-            // 
-            // 
-            // 
-            this.NN3.Border.Class = "TextBoxBorder";
-            this.NN3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN3.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN3.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN3.Location = new System.Drawing.Point(689, 89);
-            this.NN3.Margin = new System.Windows.Forms.Padding(4);
-            this.NN3.Name = "NN3";
-            this.NN3.PreventEnterBeep = true;
-            this.NN3.Size = new System.Drawing.Size(141, 28);
-            this.NN3.TabIndex = 2;
-            this.NN3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
-            // 
-            // NN2
-            // 
-            // 
-            // 
-            // 
-            this.NN2.Border.Class = "TextBoxBorder";
-            this.NN2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN2.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN2.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN2.Location = new System.Drawing.Point(689, 55);
-            this.NN2.Margin = new System.Windows.Forms.Padding(4);
-            this.NN2.Name = "NN2";
-            this.NN2.PreventEnterBeep = true;
-            this.NN2.Size = new System.Drawing.Size(141, 28);
-            this.NN2.TabIndex = 1;
-            // 
-            // NN1
-            // 
-            // 
-            // 
-            // 
-            this.NN1.Border.Class = "TextBoxBorder";
-            this.NN1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NN1.FocusHighlightColor = System.Drawing.Color.Red;
-            this.NN1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.NN1.Location = new System.Drawing.Point(689, 21);
-            this.NN1.Margin = new System.Windows.Forms.Padding(4);
-            this.NN1.Name = "NN1";
-            this.NN1.PreventEnterBeep = true;
-            this.NN1.Size = new System.Drawing.Size(141, 28);
-            this.NN1.TabIndex = 0;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label19.Location = new System.Drawing.Point(397, 88);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 21);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "تاریخ انقضا :";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label20.Location = new System.Drawing.Point(399, 57);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 21);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "تاریخ خرید :";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label17.Location = new System.Drawing.Point(400, 23);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 21);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "نام نماینده :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label14.Location = new System.Drawing.Point(613, 92);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 21);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "قیمت فروش :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label15.Location = new System.Drawing.Point(613, 59);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 21);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "قیمت جدید :";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label16.Location = new System.Drawing.Point(613, 23);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 21);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "قیمت خرید :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(833, 24);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 21);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "نام محصول :";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label12.Location = new System.Drawing.Point(833, 59);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 21);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "نوع محصول :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label13.Location = new System.Drawing.Point(833, 93);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 21);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "تعداد خرید :";
-            // 
-            // tabItem2
-            // 
-            this.tabItem2.AttachedControl = this.tabControlPanel2;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "محصولات";
             // 
             // tabControlPanel1
             // 
@@ -735,7 +261,7 @@
             this.tabControlPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(953, 475);
+            this.tabControlPanel1.Size = new System.Drawing.Size(953, 469);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -751,14 +277,14 @@
             this.DGV1.AllowUserToAddRows = false;
             this.DGV1.AllowUserToDeleteRows = false;
             this.DGV1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.code,
@@ -770,21 +296,21 @@
             this.Column2,
             this.Column3,
             this.cashtype});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV1.DefaultCellStyle = dataGridViewCellStyle30;
             this.DGV1.EnableHeadersVisualStyles = false;
-            this.DGV1.Location = new System.Drawing.Point(0, -2);
+            this.DGV1.Location = new System.Drawing.Point(2, -2);
             this.DGV1.Margin = new System.Windows.Forms.Padding(4);
             this.DGV1.Name = "DGV1";
             this.DGV1.ReadOnly = true;
             this.DGV1.RowHeadersVisible = false;
-            this.DGV1.Size = new System.Drawing.Size(657, 473);
+            this.DGV1.Size = new System.Drawing.Size(664, 473);
             this.DGV1.TabIndex = 2;
             this.DGV1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV1_CellMouseClick_1);
             // 
@@ -823,8 +349,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lime;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Lime;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle27;
             this.Column1.HeaderText = "موجودی";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -832,8 +358,8 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle28;
             this.Column2.HeaderText = "فروش";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -841,8 +367,8 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Silver;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle29;
             this.Column3.HeaderText = "خریده شده";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -1226,33 +752,9 @@
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "بررسی در انبار";
             // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel4.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(953, 475);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 13;
-            this.tabControlPanel4.TabItem = this.tabItem4;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel4;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "نمایش محصولات";
-            // 
             // tabControlPanel3
             // 
+            this.tabControlPanel3.Controls.Add(this.dataGridView1);
             this.tabControlPanel3.Controls.Add(this.groupBox4);
             this.tabControlPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1260,7 +762,7 @@
             this.tabControlPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(953, 475);
+            this.tabControlPanel3.Size = new System.Drawing.Size(953, 469);
             this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1279,11 +781,13 @@
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(751, 0);
+            this.groupBox4.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox4.Location = new System.Drawing.Point(13, 0);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(195, 457);
+            this.groupBox4.Size = new System.Drawing.Size(933, 73);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ابزار کاربردی";
@@ -1291,10 +795,10 @@
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(21, 233);
+            this.button7.Location = new System.Drawing.Point(149, 25);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(160, 35);
+            this.button7.Size = new System.Drawing.Size(111, 35);
             this.button7.TabIndex = 9;
             this.button7.Text = "تاریخ محصول";
             this.button7.UseVisualStyleBackColor = true;
@@ -1302,10 +806,10 @@
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(21, 184);
+            this.button6.Location = new System.Drawing.Point(285, 25);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(160, 35);
+            this.button6.Size = new System.Drawing.Size(111, 35);
             this.button6.TabIndex = 8;
             this.button6.Text = "تعداد موجود";
             this.button6.UseVisualStyleBackColor = true;
@@ -1313,10 +817,10 @@
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(21, 136);
+            this.button5.Location = new System.Drawing.Point(421, 25);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 35);
+            this.button5.Size = new System.Drawing.Size(111, 35);
             this.button5.TabIndex = 7;
             this.button5.Text = "تعداد فروش";
             this.button5.UseVisualStyleBackColor = true;
@@ -1324,10 +828,10 @@
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(21, 88);
+            this.button4.Location = new System.Drawing.Point(693, 25);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 35);
+            this.button4.Size = new System.Drawing.Size(111, 35);
             this.button4.TabIndex = 6;
             this.button4.Text = "کم فروش ترین";
             this.button4.UseVisualStyleBackColor = true;
@@ -1335,10 +839,10 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(21, 39);
+            this.button1.Location = new System.Drawing.Point(557, 25);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 35);
+            this.button1.Size = new System.Drawing.Size(111, 35);
             this.button1.TabIndex = 5;
             this.button1.Text = "پرفروش ترین";
             this.button1.UseVisualStyleBackColor = true;
@@ -1349,12 +853,506 @@
             this.tabItem3.Name = "tabItem3";
             this.tabItem3.Text = "گزارش محصول";
             // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.DGV2);
+            this.tabControlPanel2.Controls.Add(this.groupBox3);
+            this.tabControlPanel2.DisabledBackColor = System.Drawing.Color.Empty;
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(953, 469);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 5;
+            this.tabControlPanel2.TabItem = this.tabItem2;
+            // 
+            // DGV2
+            // 
+            this.DGV2.AllowUserToAddRows = false;
+            this.DGV2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(215)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.code2,
+            this.many1,
+            this.name2,
+            this.type2,
+            this.buy2,
+            this.buyn1,
+            this.sell2,
+            this.now,
+            this.expire,
+            this.agentname,
+            this.cashtype2});
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV2.DefaultCellStyle = dataGridViewCellStyle20;
+            this.DGV2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGV2.EnableHeadersVisualStyles = false;
+            this.DGV2.Location = new System.Drawing.Point(1, 139);
+            this.DGV2.Margin = new System.Windows.Forms.Padding(4);
+            this.DGV2.Name = "DGV2";
+            this.DGV2.ReadOnly = true;
+            this.DGV2.RowHeadersVisible = false;
+            this.DGV2.Size = new System.Drawing.Size(951, 329);
+            this.DGV2.TabIndex = 3;
+            this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick_1);
+            // 
+            // code2
+            // 
+            this.code2.HeaderText = "id";
+            this.code2.Name = "code2";
+            this.code2.ReadOnly = true;
+            this.code2.Width = 5;
+            // 
+            // many1
+            // 
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.many1.DefaultCellStyle = dataGridViewCellStyle17;
+            this.many1.HeaderText = "تعداد";
+            this.many1.Name = "many1";
+            this.many1.ReadOnly = true;
+            this.many1.Width = 50;
+            // 
+            // name2
+            // 
+            this.name2.HeaderText = "نام";
+            this.name2.Name = "name2";
+            this.name2.ReadOnly = true;
+            // 
+            // type2
+            // 
+            this.type2.HeaderText = "مدل";
+            this.type2.Name = "type2";
+            this.type2.ReadOnly = true;
+            // 
+            // buy2
+            // 
+            this.buy2.HeaderText = "خرید قبل";
+            this.buy2.Name = "buy2";
+            this.buy2.ReadOnly = true;
+            // 
+            // buyn1
+            // 
+            this.buyn1.HeaderText = "خرید جدید";
+            this.buyn1.Name = "buyn1";
+            this.buyn1.ReadOnly = true;
+            // 
+            // sell2
+            // 
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Lime;
+            this.sell2.DefaultCellStyle = dataGridViewCellStyle18;
+            this.sell2.HeaderText = "مبلغ فروش";
+            this.sell2.Name = "sell2";
+            this.sell2.ReadOnly = true;
+            // 
+            // now
+            // 
+            this.now.HeaderText = "تاریخ خرید";
+            this.now.Name = "now";
+            this.now.ReadOnly = true;
+            // 
+            // expire
+            // 
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.expire.DefaultCellStyle = dataGridViewCellStyle19;
+            this.expire.HeaderText = "تاریخ انقضا";
+            this.expire.Name = "expire";
+            this.expire.ReadOnly = true;
+            // 
+            // agentname
+            // 
+            this.agentname.HeaderText = "نام نماینده";
+            this.agentname.Name = "agentname";
+            this.agentname.ReadOnly = true;
+            this.agentname.Width = 120;
+            // 
+            // cashtype2
+            // 
+            this.cashtype2.HeaderText = "پرداخت";
+            this.cashtype2.Name = "cashtype2";
+            this.cashtype2.ReadOnly = true;
+            this.cashtype2.Width = 50;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.RR2);
+            this.groupBox3.Controls.Add(this.RR1);
+            this.groupBox3.Controls.Add(this.NN7);
+            this.groupBox3.Controls.Add(this.NN9);
+            this.groupBox3.Controls.Add(this.NN6);
+            this.groupBox3.Controls.Add(this.NN8);
+            this.groupBox3.Controls.Add(this.NN5);
+            this.groupBox3.Controls.Add(this.NN4);
+            this.groupBox3.Controls.Add(this.NN3);
+            this.groupBox3.Controls.Add(this.NN2);
+            this.groupBox3.Controls.Add(this.NN1);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.groupBox3.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox3.Location = new System.Drawing.Point(22, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(910, 129);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "اطلاعات :";
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Teal;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button9.Location = new System.Drawing.Point(22, 76);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(127, 34);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "نمایش اطلاعات";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button8.Location = new System.Drawing.Point(22, 27);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(127, 34);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "ذخیره";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // RR2
+            // 
+            this.RR2.AutoSize = true;
+            this.RR2.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RR2.Location = new System.Drawing.Point(195, 89);
+            this.RR2.Margin = new System.Windows.Forms.Padding(4);
+            this.RR2.Name = "RR2";
+            this.RR2.Size = new System.Drawing.Size(54, 25);
+            this.RR2.TabIndex = 53;
+            this.RR2.TabStop = true;
+            this.RR2.Text = "بانکی";
+            this.RR2.UseVisualStyleBackColor = true;
+            // 
+            // RR1
+            // 
+            this.RR1.AutoSize = true;
+            this.RR1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RR1.Location = new System.Drawing.Point(195, 55);
+            this.RR1.Margin = new System.Windows.Forms.Padding(4);
+            this.RR1.Name = "RR1";
+            this.RR1.Size = new System.Drawing.Size(53, 25);
+            this.RR1.TabIndex = 52;
+            this.RR1.TabStop = true;
+            this.RR1.Text = "نقدی";
+            this.RR1.UseVisualStyleBackColor = true;
+            // 
+            // NN7
+            // 
+            // 
+            // 
+            // 
+            this.NN7.Border.Class = "TextBoxBorder";
+            this.NN7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN7.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN7.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN7.Location = new System.Drawing.Point(179, 20);
+            this.NN7.Margin = new System.Windows.Forms.Padding(4);
+            this.NN7.Name = "NN7";
+            this.NN7.PreventEnterBeep = true;
+            this.NN7.Size = new System.Drawing.Size(219, 28);
+            this.NN7.TabIndex = 6;
+            // 
+            // NN9
+            // 
+            // 
+            // 
+            // 
+            this.NN9.BackgroundStyle.Class = "TextBoxBorder";
+            this.NN9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN9.ButtonClear.Visible = true;
+            this.NN9.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN9.Location = new System.Drawing.Point(256, 86);
+            this.NN9.Margin = new System.Windows.Forms.Padding(4);
+            this.NN9.Mask = "1400/00/00";
+            this.NN9.Name = "NN9";
+            this.NN9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NN9.Size = new System.Drawing.Size(140, 25);
+            this.NN9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.NN9.TabIndex = 8;
+            this.NN9.Text = "";
+            // 
+            // NN6
+            // 
+            // 
+            // 
+            // 
+            this.NN6.Border.Class = "TextBoxBorder";
+            this.NN6.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN6.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN6.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN6.Location = new System.Drawing.Point(470, 89);
+            this.NN6.Margin = new System.Windows.Forms.Padding(4);
+            this.NN6.Name = "NN6";
+            this.NN6.PreventEnterBeep = true;
+            this.NN6.Size = new System.Drawing.Size(141, 28);
+            this.NN6.TabIndex = 5;
+            this.NN6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
+            // 
+            // NN8
+            // 
+            // 
+            // 
+            // 
+            this.NN8.BackgroundStyle.Class = "TextBoxBorder";
+            this.NN8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN8.ButtonClear.Visible = true;
+            this.NN8.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN8.Location = new System.Drawing.Point(256, 54);
+            this.NN8.Margin = new System.Windows.Forms.Padding(4);
+            this.NN8.Mask = "1400/00/00";
+            this.NN8.Name = "NN8";
+            this.NN8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NN8.Size = new System.Drawing.Size(140, 25);
+            this.NN8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.NN8.TabIndex = 7;
+            this.NN8.Text = "";
+            // 
+            // NN5
+            // 
+            // 
+            // 
+            // 
+            this.NN5.Border.Class = "TextBoxBorder";
+            this.NN5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN5.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN5.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN5.Location = new System.Drawing.Point(470, 55);
+            this.NN5.Margin = new System.Windows.Forms.Padding(4);
+            this.NN5.Name = "NN5";
+            this.NN5.PreventEnterBeep = true;
+            this.NN5.Size = new System.Drawing.Size(141, 28);
+            this.NN5.TabIndex = 4;
+            this.NN5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
+            // 
+            // NN4
+            // 
+            // 
+            // 
+            // 
+            this.NN4.Border.Class = "TextBoxBorder";
+            this.NN4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN4.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN4.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN4.Location = new System.Drawing.Point(470, 20);
+            this.NN4.Margin = new System.Windows.Forms.Padding(4);
+            this.NN4.Name = "NN4";
+            this.NN4.PreventEnterBeep = true;
+            this.NN4.Size = new System.Drawing.Size(141, 28);
+            this.NN4.TabIndex = 3;
+            this.NN4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
+            // 
+            // NN3
+            // 
+            // 
+            // 
+            // 
+            this.NN3.Border.Class = "TextBoxBorder";
+            this.NN3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN3.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN3.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN3.Location = new System.Drawing.Point(689, 89);
+            this.NN3.Margin = new System.Windows.Forms.Padding(4);
+            this.NN3.Name = "NN3";
+            this.NN3.PreventEnterBeep = true;
+            this.NN3.Size = new System.Drawing.Size(141, 28);
+            this.NN3.TabIndex = 2;
+            this.NN3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NN3_KeyPress);
+            // 
+            // NN2
+            // 
+            // 
+            // 
+            // 
+            this.NN2.Border.Class = "TextBoxBorder";
+            this.NN2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN2.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN2.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN2.Location = new System.Drawing.Point(689, 55);
+            this.NN2.Margin = new System.Windows.Forms.Padding(4);
+            this.NN2.Name = "NN2";
+            this.NN2.PreventEnterBeep = true;
+            this.NN2.Size = new System.Drawing.Size(141, 28);
+            this.NN2.TabIndex = 1;
+            // 
+            // NN1
+            // 
+            // 
+            // 
+            // 
+            this.NN1.Border.Class = "TextBoxBorder";
+            this.NN1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.NN1.FocusHighlightColor = System.Drawing.Color.Red;
+            this.NN1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.NN1.Location = new System.Drawing.Point(689, 21);
+            this.NN1.Margin = new System.Windows.Forms.Padding(4);
+            this.NN1.Name = "NN1";
+            this.NN1.PreventEnterBeep = true;
+            this.NN1.Size = new System.Drawing.Size(141, 28);
+            this.NN1.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label19.Location = new System.Drawing.Point(397, 88);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 21);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "تاریخ انقضا :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label20.Location = new System.Drawing.Point(399, 57);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(68, 21);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "تاریخ خرید :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label17.Location = new System.Drawing.Point(400, 23);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 21);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "نام نماینده :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label14.Location = new System.Drawing.Point(613, 92);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 21);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "قیمت فروش :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label15.Location = new System.Drawing.Point(613, 59);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(71, 21);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "قیمت جدید :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label16.Location = new System.Drawing.Point(613, 23);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 21);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "قیمت خرید :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label11.Location = new System.Drawing.Point(833, 24);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 21);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "نام محصول :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label12.Location = new System.Drawing.Point(833, 59);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 21);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "نوع محصول :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label13.Location = new System.Drawing.Point(833, 93);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 21);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "تعداد خرید :";
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel2;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "محصولات";
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.BackColor = System.Drawing.Color.Transparent;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(912, 8);
+            this.buttonX1.Location = new System.Drawing.Point(4, 3);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
             this.buttonX1.Size = new System.Drawing.Size(21, 23);
@@ -1369,7 +1367,7 @@
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.BackColor = System.Drawing.Color.Transparent;
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(885, 8);
+            this.buttonX2.Location = new System.Drawing.Point(30, 3);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
             this.buttonX2.Size = new System.Drawing.Size(21, 23);
@@ -1385,13 +1383,180 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("MRT_Mitra_3", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NO1,
+            this.NO2,
+            this.NO3,
+            this.NO4,
+            this.NO5,
+            this.NO6,
+            this.NO7,
+            this.NO8,
+            this.NO9,
+            this.NO10,
+            this.NO11,
+            this.NO12});
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.Location = new System.Drawing.Point(1, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(951, 390);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // NO1
+            // 
+            this.NO1.HeaderText = "id";
+            this.NO1.Name = "NO1";
+            this.NO1.Width = 5;
+            // 
+            // NO2
+            // 
+            this.NO2.HeaderText = "نام";
+            this.NO2.Name = "NO2";
+            // 
+            // NO3
+            // 
+            this.NO3.HeaderText = "نوع";
+            this.NO3.Name = "NO3";
+            // 
+            // NO4
+            // 
+            this.NO4.HeaderText = "خرید جدبد";
+            this.NO4.Name = "NO4";
+            // 
+            // NO5
+            // 
+            this.NO5.HeaderText = "تاریخ خرید";
+            this.NO5.Name = "NO5";
+            // 
+            // NO6
+            // 
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.NO6.DefaultCellStyle = dataGridViewCellStyle22;
+            this.NO6.HeaderText = "تاریخ انقضاء";
+            this.NO6.Name = "NO6";
+            // 
+            // NO7
+            // 
+            this.NO7.HeaderText = "پرداخت";
+            this.NO7.Name = "NO7";
+            this.NO7.Width = 50;
+            // 
+            // NO8
+            // 
+            this.NO8.HeaderText = "نماینده";
+            this.NO8.Name = "NO8";
+            // 
+            // NO9
+            // 
+            this.NO9.HeaderText = "فروش";
+            this.NO9.Name = "NO9";
+            this.NO9.Width = 50;
+            // 
+            // NO10
+            // 
+            this.NO10.HeaderText = "خرید";
+            this.NO10.Name = "NO10";
+            this.NO10.Width = 50;
+            // 
+            // NO11
+            // 
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.NO11.DefaultCellStyle = dataGridViewCellStyle23;
+            this.NO11.HeaderText = "موجود";
+            this.NO11.Name = "NO11";
+            this.NO11.Width = 50;
+            // 
+            // NO12
+            // 
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Blue;
+            this.NO12.DefaultCellStyle = dataGridViewCellStyle24;
+            this.NO12.HeaderText = "کل مبلغ پرداختی";
+            this.NO12.Name = "NO12";
+            this.NO12.Width = 115;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(670, 5);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 21);
+            this.label21.TabIndex = 58;
+            this.label21.Text = "جستجو :";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.Location = new System.Drawing.Point(725, 4);
+            this.textBoxX1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(184, 24);
+            this.textBoxX1.TabIndex = 59;
+            this.textBoxX1.WatermarkText = "کلمه مورد نظر را جستجو کن ...";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.BackColor = System.Drawing.Color.Transparent;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Location = new System.Drawing.Point(913, 3);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
+            this.buttonX3.Size = new System.Drawing.Size(23, 24);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 60;
+            this.buttonX3.TextColor = System.Drawing.Color.Black;
+            this.buttonX3.Tooltip = "مرور";
+            // 
             // ProductControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(953, 526);
+            this.Controls.Add(this.buttonX3);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.textBoxX1);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.Result);
@@ -1410,10 +1575,6 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabControlPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.tabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1422,6 +1583,11 @@
             this.groupBox1.PerformLayout();
             this.tabControlPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.tabControlPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1496,8 +1662,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private DevComponents.DotNetBar.TabItem tabItem1;
-        private DevComponents.DotNetBar.TabControlPanel tabControlPanel4;
-        private DevComponents.DotNetBar.TabItem tabItem4;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button7;
@@ -1524,5 +1688,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn expire;
         private System.Windows.Forms.DataGridViewTextBoxColumn agentname;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashtype2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO12;
+        private System.Windows.Forms.Label label21;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
     }
 }
