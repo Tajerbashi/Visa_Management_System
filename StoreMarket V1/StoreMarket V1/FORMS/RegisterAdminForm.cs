@@ -90,7 +90,7 @@ namespace StoreMarket_V1
                     admin.Phone = Int64.Parse(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
-                    admin.IsActive = (Statustxt.Text) == "فعال" ? true : false;
+                    admin.IsActive = true;
                     admin.Username = usernametxt.Text;
                     admin.Password = userpasstxt.Text;
                     admin.accessCode = accessCode.Text;
@@ -112,7 +112,7 @@ namespace StoreMarket_V1
                     admin.Phone = Int64.Parse(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
-                    admin.IsActive = (Statustxt.Text) == "فعال" ? true : false;
+                    admin.IsActive = true;
                     admin.Username = usernametxt.Text;
                     admin.Password = userpasstxt.Text;
                     admin.accessCode = accessCode.Text;

@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterAdminForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Statustxt = new System.Windows.Forms.ComboBox();
             this.checkbtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,9 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.Statustxt);
             this.groupBox1.Controls.Add(this.checkbtn);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -84,20 +80,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات فردی :";
             // 
-            // Statustxt
-            // 
-            this.Statustxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Statustxt.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.Statustxt.FormattingEnabled = true;
-            this.Statustxt.Items.AddRange(new object[] {
-            "فعال",
-            "غیر فعال"});
-            this.Statustxt.Location = new System.Drawing.Point(107, 146);
-            this.Statustxt.Name = "Statustxt";
-            this.Statustxt.Size = new System.Drawing.Size(79, 21);
-            this.Statustxt.TabIndex = 19;
-            this.Statustxt.Text = "غیر فعال";
-            // 
             // checkbtn
             // 
             this.checkbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,16 +91,6 @@
             this.checkbtn.Text = "بررسی";
             this.checkbtn.UseVisualStyleBackColor = true;
             this.checkbtn.Click += new System.EventHandler(this.checkbtn_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(192, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "وضعیت :";
             // 
             // label5
             // 
@@ -174,6 +146,7 @@
             // 
             this.Addresstxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Addresstxt.Location = new System.Drawing.Point(9, 123);
+            this.Addresstxt.MaxLength = 20;
             this.Addresstxt.Name = "Addresstxt";
             this.Addresstxt.Size = new System.Drawing.Size(177, 20);
             this.Addresstxt.TabIndex = 6;
@@ -182,6 +155,7 @@
             // 
             this.Emailtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Emailtxt.Location = new System.Drawing.Point(9, 97);
+            this.Emailtxt.MaxLength = 20;
             this.Emailtxt.Name = "Emailtxt";
             this.Emailtxt.Size = new System.Drawing.Size(177, 20);
             this.Emailtxt.TabIndex = 5;
@@ -190,6 +164,7 @@
             // 
             this.Phonetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Phonetxt.Location = new System.Drawing.Point(9, 71);
+            this.Phonetxt.MaxLength = 11;
             this.Phonetxt.Name = "Phonetxt";
             this.Phonetxt.Size = new System.Drawing.Size(177, 20);
             this.Phonetxt.TabIndex = 4;
@@ -199,6 +174,7 @@
             // 
             this.Familytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Familytxt.Location = new System.Drawing.Point(9, 45);
+            this.Familytxt.MaxLength = 20;
             this.Familytxt.Name = "Familytxt";
             this.Familytxt.Size = new System.Drawing.Size(177, 20);
             this.Familytxt.TabIndex = 3;
@@ -207,6 +183,7 @@
             // 
             this.Nametxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Nametxt.Location = new System.Drawing.Point(9, 19);
+            this.Nametxt.MaxLength = 20;
             this.Nametxt.Name = "Nametxt";
             this.Nametxt.Size = new System.Drawing.Size(177, 20);
             this.Nametxt.TabIndex = 2;
@@ -215,6 +192,7 @@
             // 
             this.accessCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.accessCode.Location = new System.Drawing.Point(11, 123);
+            this.accessCode.MaxLength = 20;
             this.accessCode.Name = "accessCode";
             this.accessCode.Size = new System.Drawing.Size(177, 20);
             this.accessCode.TabIndex = 11;
@@ -223,6 +201,7 @@
             // 
             this.userpasstxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.userpasstxt.Location = new System.Drawing.Point(11, 97);
+            this.userpasstxt.MaxLength = 20;
             this.userpasstxt.Name = "userpasstxt";
             this.userpasstxt.Size = new System.Drawing.Size(177, 20);
             this.userpasstxt.TabIndex = 10;
@@ -231,6 +210,7 @@
             // 
             this.usernametxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.usernametxt.Location = new System.Drawing.Point(11, 71);
+            this.usernametxt.MaxLength = 20;
             this.usernametxt.Name = "usernametxt";
             this.usernametxt.Size = new System.Drawing.Size(177, 20);
             this.usernametxt.TabIndex = 9;
@@ -391,7 +371,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button checkbtn;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -404,7 +383,6 @@
         private System.Windows.Forms.TextBox Nametxt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox Statustxt;
         public System.Windows.Forms.TextBox OwnerCodetxt;
         public System.Windows.Forms.Label ADMINNUMBER;
         public System.Windows.Forms.Label ADMINNAME;

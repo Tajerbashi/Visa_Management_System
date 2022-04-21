@@ -746,9 +746,9 @@ namespace StoreMarket_V1
             //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
 
             DateTime NowDate = Convert.ToDateTime(Now);
-            MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+            //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
             NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
-            MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+            //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
             Now= Fun.ChangeToEnglishNumber(NN8.Text);
             String Expire = NowDate.ToString();
 
