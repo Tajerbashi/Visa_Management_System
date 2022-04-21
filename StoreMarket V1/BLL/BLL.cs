@@ -20,7 +20,7 @@ namespace BLL
         }
         public bool CreateNewOwner(OWNER owner)
         {   // برای ساخت مالک در اولین اجرا برنامه میباشد وبعد از آن کاربردی ندارد
-            if (!dlc.SelectOwnerStatus(owner))
+            if (dlc.SelectOwnerStatus(owner))
             {
                 dlc.CreateOwner(owner);
                 return true;
@@ -378,6 +378,17 @@ namespace BLL
         {
             return (dlc.ShowResultDateNowExpireB(Now, Expire));
         }
+
+        // مرتب سازی بر اساس تاریخ انقضا
+        public List<AProduct> ShowProductOrderbyExpireDateA()
+        {
+            return (dlc.ShowProductOrderbyExpireDateA());
+        }
+        public List<BProduct> ShowProductOrderbyExpireDateB()
+        {
+            return (dlc.ShowProductOrderbyExpireDateB());
+        }
+
         public List<ATypeProduct> ATypes()
         {
             return (from i in DB.atypeProducts select i).ToList();

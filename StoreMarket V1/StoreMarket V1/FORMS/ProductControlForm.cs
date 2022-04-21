@@ -204,7 +204,6 @@ namespace StoreMarket_V1
             }
         }
 
-
         public void ShowSearchResultDGV1(String Admin,String Word)
         {
             String Cash;
@@ -232,11 +231,10 @@ namespace StoreMarket_V1
             }
             NN8.Text = Fun.CLOCK();
         }
-
         public void ShowSearchResultDGV2(String Admin, String Word)
         {
             String Cash;
-            DGV1.Rows.Clear();
+            DGV2.Rows.Clear();
             int i = 0;
             if (Admin == "1")
             {
@@ -245,7 +243,8 @@ namespace StoreMarket_V1
                 {
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice,item.newBuyPrice, item.sellPrice,item.RegisterDate,item.EndDate,item.AgentName, Cash);
+
                 }
             }
             else
@@ -255,7 +254,7 @@ namespace StoreMarket_V1
                 {
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice,item.newBuyPrice, item.sellPrice,item.RegisterDate,item.EndDate,item.AgentName, Cash);
                 }
             }
             NN8.Text = Fun.CLOCK();
@@ -267,12 +266,20 @@ namespace StoreMarket_V1
             DGV1.Rows.Clear();
             int i = 0;
             var DB = blc.ShowResultDateNowExpireA(Now, Expire);
-            foreach (var item in DB)
+            if (DB == null)
             {
-                i++;
-                Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
-                DGV2.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                MessageBox.Show("موردی یافت نشد");
             }
+            else
+            {
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
+            }
+            
             NN8.Text = Fun.CLOCK();
         }
         public void ShowResultDateNowExpireB(String Now, String Expire)
@@ -281,20 +288,59 @@ namespace StoreMarket_V1
             DGV1.Rows.Clear();
             int i = 0;
             var DB = blc.ShowResultDateNowExpireB(Now, Expire);
-            foreach (var item in DB)
+            if (DB == null)
             {
-                i++;
-                Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
-                DGV2.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                MessageBox.Show("موردی یافت نشد");
+            }
+            else
+            {
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
             }
             NN8.Text = Fun.CLOCK();
         }
+
+        public void ShowProductOrderbyExpireDate(String Admin)
+        {
+            String Cash;
+            DGV1.Rows.Clear();
+            int i = 0;
+            if (Admin == "1")
+            {
+                var DB = blc.ShowProductOrderbyExpireDateA();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowProductOrderbyExpireDateB();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
+            }
+            NN8.Text = Fun.CLOCK();
+        }
+
         public void ColorFun()
         {
             var rand = new Random();
             Color c = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             Result.ForeColor = c;
         }
+        
+        
         #endregion 
 
         #region CompleteCode
@@ -362,7 +408,6 @@ namespace StoreMarket_V1
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void button8_Click_1(object sender, EventArgs e)
         {
             #region RegisterCode
@@ -551,18 +596,15 @@ namespace StoreMarket_V1
             #endregion
 
         }
-
         private void button9_Click_1(object sender, EventArgs e)
         {
             ShowAllProductDGV1(ADMINNUMBER.Text);
             ShowAllProductDGV2(ADMINNUMBER.Text);
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             ColorFun();
         }
-
         private void DGV2_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
@@ -575,7 +617,6 @@ namespace StoreMarket_V1
                 contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
             }
         }
-
         private void DGV1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
@@ -589,7 +630,6 @@ namespace StoreMarket_V1
                 contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
             }
         }
-
         private void NN3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -603,7 +643,6 @@ namespace StoreMarket_V1
                 e.Handled = true;
             }
         }
-
         private void N4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -617,7 +656,6 @@ namespace StoreMarket_V1
                 e.Handled = true;
             }
         }
-
         private void tabControl1_SelectedTabChanged(object sender, DevComponents.DotNetBar.TabStripTabChangedEventArgs e)
         {
 
@@ -638,7 +676,6 @@ namespace StoreMarket_V1
             }
 
         }
-
         private void buttonX3_Click(object sender, EventArgs e)
         {
             if (TAP == 0)
@@ -650,17 +687,14 @@ namespace StoreMarket_V1
                 ShowSearchResultDGV1(ADMINNUMBER.Text, Searchtext.Text);
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ShowAllMoneyProductDGV1(ADMINNUMBER.Text);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ShowAllBankiProductDGV1(ADMINNUMBER.Text);
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (ADMINNUMBER.Text == "1")
@@ -674,7 +708,6 @@ namespace StoreMarket_V1
                 ShowAllProductBGreatN(Number);
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (ADMINNUMBER.Text == "1")
@@ -688,22 +721,55 @@ namespace StoreMarket_V1
                 ShowAllProductBLessN(Number);
             }
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            String Now = Fun.ChangeToEnglishNumber(NN8.Text);
+            String Expire = Fun.ChangeToEnglishNumber(date.Text);
+            //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
 
-        private void GR_KeyPress(object sender, KeyPressEventArgs e)
+            if (ADMINNUMBER.Text == "1")
+            {
+                ShowResultDateNowExpireA(Now,Expire);
+            }
+            else
+            {
+                ShowResultDateNowExpireB(Now, Expire);
+            }
+        }
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            ShowAllProductDGV1(ADMINNUMBER.Text);
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            String Now = Fun.ChangeToEnglishNumber(NN8.Text);
+            //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
+
+            DateTime NowDate = Convert.ToDateTime(Now);
+            MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+            NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
+            MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+            Now= Fun.ChangeToEnglishNumber(NN8.Text);
+            String Expire = NowDate.ToString();
+
+            if (ADMINNUMBER.Text == "1")
+            {
+                ShowResultDateNowExpireA(Now, Expire);
+            }
+            else
+            {
+                ShowResultDateNowExpireB(Now, Expire);
+            }
+        }
+
+        private void GR_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonX5_Click(object sender, EventArgs e)
         {
-            if (ADMINNUMBER.Text == "1")
-            {
-                ShowResultDateNowExpireA(Fun.CLOCK(),date.Text);
-            }
-            else
-            {
-                ShowResultDateNowExpireB(Fun.CLOCK(), date.Text);
-            }
+            ShowProductOrderbyExpireDate(ADMINNUMBER.Text);
         }
     }
 }

@@ -33,6 +33,24 @@ namespace StoreMarket_V1
         }
         BLLCode blc = new BLLCode();
 
+        #region Function()
+        public void ADMIN1()
+        {
+            OWNER owner1 = new OWNER();
+            owner1.access = "ADMIN1";
+            owner1.password = "ADMIN1";
+            owner1.Status = true;
+            blc.CreateNewOwner(owner1);
+        }
+        public void ADMIN2()
+        {
+            OWNER owner2 = new OWNER();
+            owner2.access = "ADMIN2";
+            owner2.password = "ADMIN2";
+            owner2.Status = true;
+            blc.CreateNewOwner(owner2);
+        }
+        #endregion
         #region ClickButton
         private void button2_Click(object sender, EventArgs e)
         {
@@ -90,7 +108,8 @@ namespace StoreMarket_V1
         #endregion
         private void LoginForm_Load(object sender, EventArgs e)
         {           //  Loading Form
-           
+            ADMIN1();
+            ADMIN2();
         }
     }
 }

@@ -61,11 +61,12 @@ namespace DAL
             {
                 if (item.access == owner.access && item.password == owner.password)
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
+
         public int SelectOwnerStatusAccess(OWNER owner, String AdminName)
         {   //  وضعیت سطح دسترسی مالک کنترل میکند که اگر فعال باشد اجازه ثبت نام را میدهد
             foreach (var item in db.Owner)
@@ -433,15 +434,27 @@ namespace DAL
         {
             return (from i in db.bProducts where (i.Mojodi >= N) && !i.DeleteStatus select i).ToList();
         }
-
+        // نمایش محصولاتی که از تاریخ الان تا تاریخ درج شده زمان دارند
         public List<AProduct> ShowResultDateNowExpireA(String Now, String Expire)
         {
-            return (from i in db.aProducts where String.Compare(Now, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+            return (from i in db.aProducts orderby i.EndDate ascending where String.Compare(Expire,Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+
         }
         public List<BProduct> ShowResultDateNowExpireB(String Now, String Expire)
         {
-            return (from i in db.bProducts where String.Compare(Now, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+            return (from i in db.bProducts orderby i.EndDate ascending where String.Compare(Expire, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
         }
+        //  نمایش صعودی برحسب تاریخ انقضا
+        public List<AProduct> ShowProductOrderbyExpireDateA()
+        {
+            return (from i in db.aProducts orderby i.EndDate ascending select i).ToList();
+        }
+        public List<BProduct> ShowProductOrderbyExpireDateB()
+        {
+            return (from i in db.bProducts orderby i.EndDate ascending select i).ToList();
+
+        }
+
         public List<AProduct> ShowSearchResultA(String Word)
         {
             return (from i in db.aProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();

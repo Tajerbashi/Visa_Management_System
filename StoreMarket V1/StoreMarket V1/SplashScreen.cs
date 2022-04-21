@@ -19,26 +19,6 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
-        BLLCode blc = new BLLCode();
-
-        #region Function()
-        public void ADMIN1()
-        {
-            OWNER owner1 = new OWNER();
-            owner1.access = "ADMIN1";
-            owner1.password = "ADMIN1";
-            owner1.Status = true;
-            blc.CreateNewOwner(owner1);
-        }
-        public void ADMIN2()
-        {
-            OWNER owner2 = new OWNER();
-            owner2.access = "ADMIN2";
-            owner2.password = "ADMIN2";
-            owner2.Status = true;
-            blc.CreateNewOwner(owner2);
-        }
-        #endregion
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -57,8 +37,7 @@ namespace StoreMarket_V1
         }
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-            ADMIN1();
-            ADMIN2();
+
         }
 
     }
