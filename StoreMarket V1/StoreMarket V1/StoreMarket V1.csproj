@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="STOREForm\ProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="STOREForm\ProductPanel.Designer.cs">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="STOREForm\CustomerPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="STOREForm\ProductPanel.resx">
+      <DependentUpon>ProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="STOREForm\CustomerPanel.resx">
       <DependentUpon>CustomerPanel.cs</DependentUpon>
     </EmbeddedResource>

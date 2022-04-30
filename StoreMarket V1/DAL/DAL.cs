@@ -1061,5 +1061,14 @@ namespace DAL
             return true;
         }
 
+        public List<ACustomer> PrintSerchResultCustomerA ( String Word )
+        {
+            return (from i in db.aCustomers where i.Name.Contains(Word) || i.Family.Contains(Word)  select i).ToList();
+        }
+        public List<BCustomer> PrintSerchResultCustomerB ( String Word )
+        {
+            return (from i in db.bCustomers where i.Name.Contains(Word) || i.Family.Contains(Word)  select i).ToList();
+        }
+
     }
 }

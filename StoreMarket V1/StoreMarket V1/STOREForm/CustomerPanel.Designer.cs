@@ -42,7 +42,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ADMIN = new System.Windows.Forms.Label();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.Search = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
             this.SEABTN = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -167,7 +167,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ADMIN);
-            this.groupBox1.Controls.Add(this.textBoxX7);
+            this.groupBox1.Controls.Add(this.Search);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.SEABTN);
             this.groupBox1.Controls.Add(this.button4);
@@ -198,18 +198,19 @@
             this.ADMIN.TabIndex = 22;
             this.ADMIN.Text = "نام :";
             // 
-            // textBoxX7
+            // Search
+            // 
+            this.Search.BackColor = System.Drawing.SystemColors.Window;
             // 
             // 
             // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX7.Location = new System.Drawing.Point(14, 397);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.PreventEnterBeep = true;
-            this.textBoxX7.Size = new System.Drawing.Size(187, 20);
-            this.textBoxX7.TabIndex = 20;
+            this.Search.Border.Class = "TextBoxBorder";
+            this.Search.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.Search.Location = new System.Drawing.Point(14, 397);
+            this.Search.Name = "Search";
+            this.Search.PreventEnterBeep = true;
+            this.Search.Size = new System.Drawing.Size(187, 20);
+            this.Search.TabIndex = 20;
             // 
             // label1
             // 
@@ -226,8 +227,9 @@
             this.SEABTN.Name = "SEABTN";
             this.SEABTN.Size = new System.Drawing.Size(250, 38);
             this.SEABTN.TabIndex = 19;
-            this.SEABTN.Text = "button5";
+            this.SEABTN.Text = "جستجو نتایج";
             this.SEABTN.UseVisualStyleBackColor = true;
+            this.SEABTN.Click += new System.EventHandler(this.SEABTN_Click);
             // 
             // button4
             // 
@@ -372,7 +374,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
+        private DevComponents.DotNetBar.Controls.TextBoxX Search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SEABTN;
         private System.Windows.Forms.Button button4;

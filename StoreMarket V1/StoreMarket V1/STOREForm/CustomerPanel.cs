@@ -41,6 +41,26 @@ namespace StoreMarket_V1
                 }
             }
         }
+        public void PrintSerchResult(String Admin,String Word)
+        {
+            DGV1.Rows.Clear();
+            if (Admin=="1")
+            {
+                var DB = bll.PrintSerchResultCustomerA(Word);
+                foreach (var item in DB)
+                {
+                    DGV1.Rows.Add(item.id,item.Name,item.Family,item.Phone,item.BuyCost);
+                }
+            }
+            else
+            {
+                var DB = bll.PrintSerchResultCustomerB(Word);
+                foreach (var item in DB)
+                {
+                    DGV1.Rows.Add(item.id, item.Name, item.Family, item.Phone, item.BuyCost);
+                }
+            }
+        }
         private void SAVEBTN_Click(object sender, EventArgs e)
         {
             if (NAME.Text.Trim().Length==0)
@@ -192,6 +212,11 @@ namespace StoreMarket_V1
         private void NAME_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider1.Clear();
+        }
+
+        private void SEABTN_Click(object sender, EventArgs e)
+        {
+            PrintSerchResult(ADMIN.Text, Search.Text);
         }
     }
 }

@@ -62,3 +62,4 @@ C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.pdb
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.Store.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.CustomerPanel.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ProductPanel.resources

@@ -822,5 +822,13 @@ namespace BLL
             }
             return (dlc.EditCustomerB(customer, ID));
         }
+        public List<ACustomer> PrintSerchResultCustomerA(String Word)
+        {
+            return (dlc.PrintSerchResultCustomerA(Word).ToList());
+        }
+        public List<BCustomer> PrintSerchResultCustomerB(String Word)
+        {
+            return (dlc.PrintSerchResultCustomerB(Word).ToList());
+        }
     }
 }
