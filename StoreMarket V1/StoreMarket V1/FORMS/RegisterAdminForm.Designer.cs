@@ -54,8 +54,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.ADMINNUMBER = new System.Windows.Forms.Label();
             this.ADMINNAME = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -301,7 +303,7 @@
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(525, 44);
+            this.button3.Location = new System.Drawing.Point(535, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(19, 22);
             this.button3.TabIndex = 19;
@@ -314,7 +316,7 @@
             this.ADMINNUMBER.AutoSize = true;
             this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNUMBER.Location = new System.Drawing.Point(12, 32);
+            this.ADMINNUMBER.Location = new System.Drawing.Point(3, 7);
             this.ADMINNUMBER.Name = "ADMINNUMBER";
             this.ADMINNUMBER.Size = new System.Drawing.Size(36, 13);
             this.ADMINNUMBER.TabIndex = 21;
@@ -325,11 +327,22 @@
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNAME.Location = new System.Drawing.Point(12, 13);
+            this.ADMINNAME.Location = new System.Drawing.Point(45, 7);
             this.ADMINNAME.Name = "ADMINNAME";
             this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
             this.ADMINNAME.TabIndex = 20;
             this.ADMINNAME.Text = "نام";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.ADMINNUMBER);
+            this.panel1.Controls.Add(this.ADMINNAME);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(557, 27);
+            this.panel1.TabIndex = 22;
             // 
             // RegisterAdminForm
             // 
@@ -338,9 +351,7 @@
             this.BackColor = System.Drawing.Color.Brown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(555, 312);
-            this.Controls.Add(this.ADMINNUMBER);
-            this.Controls.Add(this.ADMINNAME);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -354,8 +365,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -386,5 +398,6 @@
         public System.Windows.Forms.TextBox OwnerCodetxt;
         public System.Windows.Forms.Label ADMINNUMBER;
         public System.Windows.Forms.Label ADMINNAME;
+        private System.Windows.Forms.Panel panel1;
     }
 }

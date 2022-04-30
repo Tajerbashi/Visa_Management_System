@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ADMINNUMBER = new System.Windows.Forms.Label();
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,9 +69,13 @@
             this.تغییروضعیتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ADMINNUMBER
@@ -79,7 +83,7 @@
             this.ADMINNUMBER.AutoSize = true;
             this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNUMBER.Location = new System.Drawing.Point(12, 31);
+            this.ADMINNUMBER.Location = new System.Drawing.Point(368, 9);
             this.ADMINNUMBER.Name = "ADMINNUMBER";
             this.ADMINNUMBER.Size = new System.Drawing.Size(36, 13);
             this.ADMINNUMBER.TabIndex = 25;
@@ -90,7 +94,7 @@
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNAME.Location = new System.Drawing.Point(12, 12);
+            this.ADMINNAME.Location = new System.Drawing.Point(271, 9);
             this.ADMINNAME.Name = "ADMINNAME";
             this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
             this.ADMINNAME.TabIndex = 24;
@@ -103,7 +107,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(843, 12);
+            this.button5.Location = new System.Drawing.Point(847, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(25, 25);
             this.button5.TabIndex = 26;
@@ -114,7 +118,7 @@
             // nametxt
             // 
             this.nametxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.nametxt.Location = new System.Drawing.Point(655, 109);
+            this.nametxt.Location = new System.Drawing.Point(667, 54);
             this.nametxt.MaxLength = 20;
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(153, 20);
@@ -123,7 +127,7 @@
             // familytxt
             // 
             this.familytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.familytxt.Location = new System.Drawing.Point(655, 135);
+            this.familytxt.Location = new System.Drawing.Point(667, 80);
             this.familytxt.MaxLength = 20;
             this.familytxt.Name = "familytxt";
             this.familytxt.Size = new System.Drawing.Size(153, 20);
@@ -132,7 +136,7 @@
             // phonetxt
             // 
             this.phonetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.phonetxt.Location = new System.Drawing.Point(655, 161);
+            this.phonetxt.Location = new System.Drawing.Point(667, 106);
             this.phonetxt.MaxLength = 11;
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Size = new System.Drawing.Size(153, 20);
@@ -141,7 +145,7 @@
             // emailtxt
             // 
             this.emailtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.emailtxt.Location = new System.Drawing.Point(655, 187);
+            this.emailtxt.Location = new System.Drawing.Point(460, 54);
             this.emailtxt.MaxLength = 30;
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(153, 20);
@@ -150,7 +154,7 @@
             // addresstxt
             // 
             this.addresstxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.addresstxt.Location = new System.Drawing.Point(655, 213);
+            this.addresstxt.Location = new System.Drawing.Point(460, 80);
             this.addresstxt.MaxLength = 30;
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(153, 20);
@@ -159,7 +163,7 @@
             // searchtxt
             // 
             this.searchtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.searchtxt.Location = new System.Drawing.Point(49, 207);
+            this.searchtxt.Location = new System.Drawing.Point(37, 5);
             this.searchtxt.MaxLength = 30;
             this.searchtxt.Name = "searchtxt";
             this.searchtxt.Size = new System.Drawing.Size(174, 20);
@@ -168,7 +172,7 @@
             // accesscode
             // 
             this.accesscode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.accesscode.Location = new System.Drawing.Point(406, 161);
+            this.accesscode.Location = new System.Drawing.Point(226, 106);
             this.accesscode.MaxLength = 20;
             this.accesscode.Name = "accesscode";
             this.accesscode.Size = new System.Drawing.Size(153, 20);
@@ -177,7 +181,7 @@
             // userpass
             // 
             this.userpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.userpass.Location = new System.Drawing.Point(406, 135);
+            this.userpass.Location = new System.Drawing.Point(226, 80);
             this.userpass.MaxLength = 20;
             this.userpass.Name = "userpass";
             this.userpass.Size = new System.Drawing.Size(153, 20);
@@ -186,7 +190,7 @@
             // username
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.username.Location = new System.Drawing.Point(406, 109);
+            this.username.Location = new System.Drawing.Point(226, 54);
             this.username.MaxLength = 20;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(153, 20);
@@ -196,7 +200,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(814, 112);
+            this.label1.Location = new System.Drawing.Point(826, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 38;
@@ -206,7 +210,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(814, 138);
+            this.label2.Location = new System.Drawing.Point(826, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 39;
@@ -216,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(814, 164);
+            this.label3.Location = new System.Drawing.Point(826, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 40;
@@ -226,7 +230,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(814, 190);
+            this.label4.Location = new System.Drawing.Point(619, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 41;
@@ -236,7 +240,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(814, 216);
+            this.label5.Location = new System.Drawing.Point(619, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 42;
@@ -246,7 +250,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(565, 164);
+            this.label8.Location = new System.Drawing.Point(385, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 45;
@@ -256,7 +260,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(565, 138);
+            this.label9.Location = new System.Drawing.Point(385, 83);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 13);
             this.label9.TabIndex = 44;
@@ -266,7 +270,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(565, 112);
+            this.label10.Location = new System.Drawing.Point(385, 57);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 43;
@@ -277,7 +281,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(229, 208);
+            this.label11.Location = new System.Drawing.Point(217, 6);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 16);
             this.label11.TabIndex = 48;
@@ -286,9 +290,9 @@
             // Savebtn
             // 
             this.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Savebtn.Location = new System.Drawing.Point(406, 199);
+            this.Savebtn.Location = new System.Drawing.Point(12, 107);
             this.Savebtn.Name = "Savebtn";
-            this.Savebtn.Size = new System.Drawing.Size(91, 30);
+            this.Savebtn.Size = new System.Drawing.Size(85, 30);
             this.Savebtn.TabIndex = 49;
             this.Savebtn.Text = "ذخیره";
             this.Savebtn.UseVisualStyleBackColor = true;
@@ -298,14 +302,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -319,20 +323,20 @@
             this.Code,
             this.Access});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 242);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 143);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(875, 208);
+            this.dataGridView1.Size = new System.Drawing.Size(875, 307);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
@@ -423,13 +427,50 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.Everaldo_Crystal_Clear_Action_viewmag;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "فعال";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Brown;
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.searchtxt);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.ADMINNAME);
+            this.panel1.Controls.Add(this.ADMINNUMBER);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(875, 30);
+            this.panel1.TabIndex = 54;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 30);
+            this.button2.TabIndex = 55;
+            this.button2.Text = "همه";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ControlAccount
             // 
@@ -438,10 +479,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(875, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Savebtn);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -453,15 +495,11 @@
             this.Controls.Add(this.accesscode);
             this.Controls.Add(this.userpass);
             this.Controls.Add(this.username);
-            this.Controls.Add(this.searchtxt);
             this.Controls.Add(this.addresstxt);
             this.Controls.Add(this.emailtxt);
             this.Controls.Add(this.phonetxt);
             this.Controls.Add(this.familytxt);
             this.Controls.Add(this.nametxt);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.ADMINNUMBER);
-            this.Controls.Add(this.ADMINNAME);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ControlAccount";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -471,6 +509,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,5 +556,8 @@
         private System.Windows.Forms.ToolStripMenuItem تغییروضعیتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }

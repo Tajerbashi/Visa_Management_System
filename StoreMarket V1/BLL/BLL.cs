@@ -763,6 +763,41 @@ namespace BLL
             return (dlc.SearchResult2B(Word));
         }
 
+        //  Customer
 
+        public bool CreateCustomerA(ACustomer customer)
+        {
+            if (dlc.SelectCustumerA(customer))
+            {
+                return false;
+            }
+            dlc.CreateCustomerA(customer);
+            return true;
+        }
+        public bool CreateCustomerB(BCustomer customer)
+        {
+            if (dlc.SelectCustumerB(customer))
+            {
+                return false;
+            }
+            dlc.CreateCustomerB(customer);
+            return true;
+        }
+        public List<ACustomer> ShowAllCustomerA()
+        {
+            return (dlc.ShowAllCustomerA()).ToList();
+        }
+        public List<BCustomer> ShowAllCustomerB()
+        {
+            return (dlc.ShowAllCustomerB()).ToList();
+        }
+        public void DeleteCustomerA(int ID)
+        {
+            dlc.DeleteCustomerA(ID);
+        }
+        public void DeleteCustomerB(int ID)
+        {
+            dlc.DeleteCustomerB(ID);
+        }
     }
 }

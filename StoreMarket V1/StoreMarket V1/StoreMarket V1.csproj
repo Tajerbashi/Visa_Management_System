@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="STOREForm\CustomerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="STOREForm\CustomerPanel.Designer.cs">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\AdminBankAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,15 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLCOMMOND.cs" />
+    <Compile Include="STOREForm\Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOREForm\Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="STOREForm\CustomerPanel.resx">
+      <DependentUpon>CustomerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\AdminBankAccount.resx">
       <DependentUpon>AdminBankAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOREForm\Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -243,6 +261,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\MainForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Graphicloads-Polygon-Cross-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\1251819.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\icons8-search.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Jommans-Briefness-Search.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -110,8 +110,11 @@ namespace StoreMarket_V1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            String Number = "۱۲۳۲۲۲";
-            MessageBox.Show(Fun.ChangeToEnglishNumber(Number));
+            Store store = new Store();
+            store.ADMINNAME.Text = ADMINNAME.Text;
+            store.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            this.Hide();
+            store.ShowDialog();
         }
     }
 }

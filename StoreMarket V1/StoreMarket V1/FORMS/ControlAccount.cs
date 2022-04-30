@@ -364,16 +364,34 @@ namespace StoreMarket_V1
                         SW = true;
                         Savebtn.Text = "ذخیره";
                     }
+                    Printdata(ADMINNUMBER.Text);
                 }
                 catch
                 {
                     MessageBox.Show("اطلاعات درست وارد نشده است");
                 }
-                PrintActiveData(ADMINNUMBER.Text);
             }
-            
+
 
         }
 
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PrintActiveData(ADMINNUMBER.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Printdata(ADMINNUMBER.Text);
+        }
     }
 }

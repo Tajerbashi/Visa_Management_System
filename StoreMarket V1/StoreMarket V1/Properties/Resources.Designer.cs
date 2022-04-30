@@ -63,6 +63,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1251819 {
+            get {
+                object obj = ResourceManager.GetObject("1251819", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Everaldo_Crystal_Clear_Action_cancel__2_ {
             get {
                 object obj = ResourceManager.GetObject("Everaldo-Crystal-Clear-Action-cancel (2)", resourceCulture);
@@ -86,6 +96,36 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Everaldo_Crystal_Clear_Action_viewmag {
             get {
                 object obj = ResourceManager.GetObject("Everaldo-Crystal-Clear-Action-viewmag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Polygon_Cross_3 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads-Polygon-Cross-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jommans_Briefness_Search {
+            get {
+                object obj = ResourceManager.GetObject("Jommans-Briefness-Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

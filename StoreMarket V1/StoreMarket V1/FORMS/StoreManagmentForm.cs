@@ -30,7 +30,10 @@ namespace StoreMarket_V1
 
         private void StoreManagmentForm_Load(object sender, EventArgs e)
         {
-
+            if (ADMINNAME.Text == "ADMIN1" || ADMINNAME.Text == "ADMIN2")
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void StoreManagmentForm_MouseDown(object sender, MouseEventArgs e)

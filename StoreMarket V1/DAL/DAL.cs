@@ -52,6 +52,16 @@ namespace DAL
         // Owner Code Function
         public void CreateOwner(OWNER owner)
         {   // اگر لایه هارا رد کرده باشد و وجود نداشته باشد ذخیره کند
+            //String CSTR = "Data Source=.;Initial Catalog = StoreMarketDB;Integrated Security = true";
+            //SqlConnection connection = new SqlConnection(CSTR);
+            //connection.Open();
+            //SqlCommand command = new SqlCommand();
+            //command.Connection = connection;
+            //command.Parameters.AddWithValue("@access", owner.access);
+            //command.Parameters.AddWithValue("@pass", owner.password);
+            //command.CommandText = "insert into dbo.Owner values (@access,@pass,1)";
+            //command.ExecuteNonQuery();
+            //connection.Close();
             db.Owner.Add(owner);
             db.SaveChanges();
         }
@@ -949,8 +959,85 @@ namespace DAL
             return (from i in db.bAgentBankAccounts where ((i.AgentName.Contains(Word) || i.NameBank.Contains(Word) || i.OwnerName.Contains(Word) || ((i.AccountNumber).ToString()).Contains(Word)) && !i.DeleteStatus) select i).ToList();
         }
 
+        // Customer
+        public bool SelectCustumerA(ACustomer customer)
+        {
+            foreach (var item in db.aCustomers)
+            {
+                if (item.id != customer.id && item.Name == customer.Name && item.Family == customer.Family)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool SelectCustumerB(BCustomer customer)
+        {
+            foreach (var item in db.bCustomers)
+            {
+                if (item.id != customer.id && item.Name == customer.Name && item.Family == customer.Family)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool CreateCustomerA(ACustomer customer)
+        {
+            //String CSTR = "Data Source=.;Initial Catalog = StoreMarketDB;Integrated Security = true";
+            //SqlConnection connection = new SqlConnection(CSTR);
+            //connection.Open();
+            //SqlCommand command = new SqlCommand();
+            //command.Connection = connection;
+            //command.Parameters.AddWithValue("@name", customer.Name);
+            //command.Parameters.AddWithValue("@family", customer.Family);
+            //command.Parameters.AddWithValue("@phone", customer.Phone);
+            //command.Parameters.AddWithValue("@buy", customer.BuyCost);
+            //command.CommandText = "insert into dbo.ACustomers values (@access,@pass,1)";
+            //command.ExecuteNonQuery();
+            //connection.Close();
+            db.aCustomers.Add(customer);
+            db.SaveChanges();
+            return true;
+        }
+        public bool CreateCustomerB(BCustomer customer)
+        {
+            //String CSTR = "Data Source=.;Initial Catalog = StoreMarketDB;Integrated Security = true";
+            //SqlConnection connection = new SqlConnection(CSTR);
+            //connection.Open();
+            //SqlCommand command = new SqlCommand();
+            //command.Connection = connection;
+            //command.Parameters.AddWithValue("@name", customer.Name);
+            //command.Parameters.AddWithValue("@family", customer.Family);
+            //command.Parameters.AddWithValue("@phone", customer.Phone);
+            //command.Parameters.AddWithValue("@buy", customer.BuyCost);
+            //command.CommandText = "insert into dbo.ACustomers values (@access,@pass,1)";
+            //command.ExecuteNonQuery();
+            //connection.Close();
+            db.bCustomers.Add(customer);
+            db.SaveChanges();
+            return true;
+        }
 
+        public List<ACustomer> ShowAllCustomerA()
+        {
+            return (from i in db.aCustomers select i).ToList();
+        }
+        public List<BCustomer> ShowAllCustomerB()
+        {
+            return (from i in db.bCustomers select i).ToList();
+        }
 
+        public void DeleteCustomerA(int ID)
+        {
+            ACustomer customer = db.aCustomers.Where(c => c.id == ID).FirstOrDefault();
+            db.aCustomers.Remove(customer);
+        }
+        public void DeleteCustomerB(int ID)
+        {
+            BCustomer customer = db.bCustomers.Where(c => c.id == ID).FirstOrDefault();
+            db.bCustomers.Remove(customer);
+        }
 
     }
 }

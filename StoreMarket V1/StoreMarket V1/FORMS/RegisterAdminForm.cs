@@ -124,6 +124,7 @@ namespace StoreMarket_V1
                     MessageBox.Show("ثبت نام انجام شد");
                     Fun.ClearTextBoxes(this.Controls);
                 }
+                Application.Exit();
             }
             catch
             {
