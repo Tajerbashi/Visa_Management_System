@@ -1021,22 +1021,44 @@ namespace DAL
 
         public List<ACustomer> ShowAllCustomerA()
         {
-            return (from i in db.aCustomers select i).ToList();
+            return (from i in db.aCustomers where !i.DeleteStatus select i).ToList();
         }
         public List<BCustomer> ShowAllCustomerB()
         {
-            return (from i in db.bCustomers select i).ToList();
+            return (from i in db.bCustomers where !i.DeleteStatus select i).ToList();
         }
 
         public void DeleteCustomerA(int ID)
         {
             ACustomer customer = db.aCustomers.Where(c => c.id == ID).FirstOrDefault();
-            db.aCustomers.Remove(customer);
+            customer.DeleteStatus = true;
+            db.SaveChanges();
         }
         public void DeleteCustomerB(int ID)
         {
             BCustomer customer = db.bCustomers.Where(c => c.id == ID).FirstOrDefault();
-            db.bCustomers.Remove(customer);
+            customer.DeleteStatus = true;
+            db.SaveChanges();
+        }
+        public bool EditCustomerA(ACustomer customer, int ID)
+        {
+            ACustomer aCustomer = db.aCustomers.Where(c => c.id == ID).FirstOrDefault();
+            aCustomer.Name = customer.Name;
+            aCustomer.Family = customer.Family;
+            aCustomer.Phone = customer.Phone;
+            aCustomer.BuyCost += customer.BuyCost;
+            db.SaveChanges();
+            return true;
+        }
+        public bool EditCustomerB(BCustomer customer, int ID)
+        {
+            BCustomer bCustomer = db.bCustomers.Where(c => c.id == ID).FirstOrDefault();
+            bCustomer.Name = customer.Name;
+            bCustomer.Family = customer.Family;
+            bCustomer.Phone = customer.Phone;
+            bCustomer.BuyCost += customer.BuyCost;
+            db.SaveChanges();
+            return true;
         }
 
     }

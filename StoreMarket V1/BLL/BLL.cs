@@ -799,5 +799,28 @@ namespace BLL
         {
             dlc.DeleteCustomerB(ID);
         }
+
+        public bool EditCustomerA(ACustomer customer, int ID)
+        {
+            foreach (var item in DB.aCustomers)
+            {
+                if (item.id != ID && item.Name==customer.Name && item.Family==customer.Family)
+                {
+                    return false;
+                }
+            }
+            return (dlc.EditCustomerA(customer, ID));
+        }
+        public bool EditCustomerB(BCustomer customer, int ID)
+        {
+            foreach (var item in DB.bCustomers)
+            {
+                if (item.id != ID && item.Name == customer.Name && item.Family == customer.Family)
+                {
+                    return false;
+                }
+            }
+            return (dlc.EditCustomerB(customer, ID));
+        }
     }
 }

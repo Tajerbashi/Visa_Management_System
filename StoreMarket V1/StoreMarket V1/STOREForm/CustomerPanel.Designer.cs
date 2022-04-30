@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SAVEBTN = new System.Windows.Forms.Button();
@@ -54,9 +55,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // SAVEBTN
@@ -76,11 +79,12 @@
             // 
             this.NAME.Border.Class = "TextBoxBorder";
             this.NAME.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NAME.Location = new System.Drawing.Point(14, 65);
+            this.NAME.Location = new System.Drawing.Point(26, 65);
             this.NAME.Name = "NAME";
             this.NAME.PreventEnterBeep = true;
             this.NAME.Size = new System.Drawing.Size(172, 20);
             this.NAME.TabIndex = 1;
+            this.NAME.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // FAMILY
             // 
@@ -89,11 +93,12 @@
             // 
             this.FAMILY.Border.Class = "TextBoxBorder";
             this.FAMILY.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.FAMILY.Location = new System.Drawing.Point(14, 93);
+            this.FAMILY.Location = new System.Drawing.Point(26, 93);
             this.FAMILY.Name = "FAMILY";
             this.FAMILY.PreventEnterBeep = true;
             this.FAMILY.Size = new System.Drawing.Size(172, 20);
             this.FAMILY.TabIndex = 2;
+            this.FAMILY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // PHONE
             // 
@@ -102,11 +107,12 @@
             // 
             this.PHONE.Border.Class = "TextBoxBorder";
             this.PHONE.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.PHONE.Location = new System.Drawing.Point(14, 121);
+            this.PHONE.Location = new System.Drawing.Point(26, 121);
             this.PHONE.Name = "PHONE";
             this.PHONE.PreventEnterBeep = true;
             this.PHONE.Size = new System.Drawing.Size(172, 20);
             this.PHONE.TabIndex = 3;
+            this.PHONE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // NEWBUY
             // 
@@ -115,16 +121,17 @@
             // 
             this.NEWBUY.Border.Class = "TextBoxBorder";
             this.NEWBUY.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.NEWBUY.Location = new System.Drawing.Point(14, 147);
+            this.NEWBUY.Location = new System.Drawing.Point(26, 147);
             this.NEWBUY.Name = "NEWBUY";
             this.NEWBUY.PreventEnterBeep = true;
             this.NEWBUY.Size = new System.Drawing.Size(172, 20);
             this.NEWBUY.TabIndex = 6;
+            this.NEWBUY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(192, 149);
+            this.label2.Location = new System.Drawing.Point(204, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 9;
@@ -133,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(192, 123);
+            this.label6.Location = new System.Drawing.Point(204, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 13;
@@ -142,7 +149,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(192, 95);
+            this.label7.Location = new System.Drawing.Point(204, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 14;
@@ -151,7 +158,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(192, 67);
+            this.label8.Location = new System.Drawing.Point(204, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 13);
             this.label8.TabIndex = 15;
@@ -239,6 +246,7 @@
             this.EDITBTN.TabIndex = 17;
             this.EDITBTN.Text = "ویرایش";
             this.EDITBTN.UseVisualStyleBackColor = true;
+            this.EDITBTN.Click += new System.EventHandler(this.EDITBTN_Click);
             // 
             // DELETBTN
             // 
@@ -328,6 +336,11 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 130;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
+            // 
             // CustomerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +355,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         public System.Windows.Forms.Label ADMIN;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
