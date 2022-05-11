@@ -35,10 +35,10 @@ namespace StoreMarket_V1
         {
             return (Now1.Second);
         }
-        private void SplashScreen_Load(object sender, EventArgs e)
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
     }
 }

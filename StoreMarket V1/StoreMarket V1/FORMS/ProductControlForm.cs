@@ -339,16 +339,40 @@ namespace StoreMarket_V1
             Color c = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             Result.ForeColor = c;
         }
-        
-        
-        #endregion 
+
+
+        #endregion
 
         #region CompleteCode
-        
+        public void AddagentName(String Admin)
+        {
+            NN7.Items.Clear();
+            if (Admin == "1")
+            {
+                var DD = blc.GetAgentNameA();
+                foreach (var item in DD)
+                {
+                    String name = item.FullName;
+                    NN7.Items.Add(name);
+                }
+            }
+            else
+            {
+                var DD = blc.GetAgentNameB();
+                foreach (var item in DD)
+                {
+                    String name = item.FullName;
+                    NN7.Items.Add(name);
+                }
+            }
+        }
         private void ProductControlForm_Load_1(object sender, EventArgs e)
         {
+            buttonX4.Enabled = false;
+            buttonX5.Enabled = false;
             ShowAllProductDGV1(ADMINNUMBER.Text);
             ShowAllProductDGV2(ADMINNUMBER.Text);
+            AddagentName(ADMINNUMBER.Text);
         }
         private void ProductControlForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -399,14 +423,6 @@ namespace StoreMarket_V1
                 ShowAllProductDGV1(ADMINNUMBER.Text);
                 ShowAllProductDGV2(ADMINNUMBER.Text);
             }
-        }
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
         private void button8_Click_1(object sender, EventArgs e)
         {
@@ -665,27 +681,21 @@ namespace StoreMarket_V1
             {
                 case 0:
                     {
+                        AddagentName(ADMINNUMBER.Text);
+                        buttonX4.Enabled = false;
+                        buttonX5.Enabled = false;
                         ShowAllProductDGV2(ADMINNUMBER.Text);
                         break;
                     }
                 case 1:
                     {
+                        buttonX4.Enabled = true;
+                        buttonX5.Enabled = true;
                         ShowAllProductDGV1(ADMINNUMBER.Text);
                         break;
                     }
             }
 
-        }
-        private void buttonX3_Click(object sender, EventArgs e)
-        {
-            if (TAP == 0)
-            {   //DGV2
-                ShowSearchResultDGV2(ADMINNUMBER.Text, Searchtext.Text);
-            }
-            else
-            {   //DGV1
-                ShowSearchResultDGV1(ADMINNUMBER.Text, Searchtext.Text);
-            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -697,44 +707,68 @@ namespace StoreMarket_V1
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (ADMINNUMBER.Text == "1")
+            try 
             {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
-                ShowAllProductAGreatN(Number);
-            }
-            else
+                if (ADMINNUMBER.Text == "1")
+                {
+                    int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
+                    ShowAllProductAGreatN(Number);
+                }
+                else
+                {
+                    int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
+                    ShowAllProductBGreatN(Number);
+                }
+            } catch
             {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
-                ShowAllProductBGreatN(Number);
+                MessageBox.Show("عدد وارد کنید");
             }
+            
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (ADMINNUMBER.Text == "1")
+            try
             {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
-                ShowAllProductALessN(Number);
+                if (ADMINNUMBER.Text == "1")
+                {
+                    int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
+                    ShowAllProductALessN(Number);
+                }
+                else
+                {
+                    int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
+                    ShowAllProductBLessN(Number);
+                }
             }
-            else
+            catch
             {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
-                ShowAllProductBLessN(Number);
+                MessageBox.Show("عدد وارد کنید");
             }
+
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            String Now = Fun.ChangeToEnglishNumber(NN8.Text);
-            String Expire = Fun.ChangeToEnglishNumber(date.Text);
-            //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
+            try
+            {
+                String Now = Fun.ChangeToEnglishNumber(NN8.Text);
+                String Expire = Fun.ChangeToEnglishNumber(date.Text);
+                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
 
-            if (ADMINNUMBER.Text == "1")
-            {
-                ShowResultDateNowExpireA(Now,Expire);
+                if (ADMINNUMBER.Text == "1")
+                {
+                    ShowResultDateNowExpireA(Now, Expire);
+                }
+                else
+                {
+                    ShowResultDateNowExpireB(Now, Expire);
+                }
             }
-            else
+            catch
             {
-                ShowResultDateNowExpireB(Now, Expire);
+                MessageBox.Show("عدد وارد کنید");
+
             }
+
         }
         private void buttonX4_Click(object sender, EventArgs e)
         {
@@ -742,34 +776,81 @@ namespace StoreMarket_V1
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            String Now = Fun.ChangeToEnglishNumber(NN8.Text);
-            //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
-
-            DateTime NowDate = Convert.ToDateTime(Now);
-            //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
-            NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
-            //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
-            Now= Fun.ChangeToEnglishNumber(NN8.Text);
-            String Expire = NowDate.ToString();
-
-            if (ADMINNUMBER.Text == "1")
+            try
             {
-                ShowResultDateNowExpireA(Now, Expire);
+                String Now = Fun.ChangeToEnglishNumber(NN8.Text);
+                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
+
+                DateTime NowDate = Convert.ToDateTime(Now);
+                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+                NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
+                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+                Now = Fun.ChangeToEnglishNumber(NN8.Text);
+                String Expire = NowDate.ToString();
+
+                if (ADMINNUMBER.Text == "1")
+                {
+                    ShowResultDateNowExpireA(Now, Expire);
+                }
+                else
+                {
+                    ShowResultDateNowExpireB(Now, Expire);
+                }
             }
-            else
+            catch
             {
-                ShowResultDateNowExpireB(Now, Expire);
+                MessageBox.Show("عدد مورد نظر را وارد کنید");
             }
+            
         }
-
         private void GR_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-
         private void buttonX5_Click(object sender, EventArgs e)
         {
             ShowProductOrderbyExpireDate(ADMINNUMBER.Text);
+        }
+        private void buttonX10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ControlTranSectionForm ctf = new ControlTranSectionForm();
+                ctf.ADMINNUMBER.Text = ADMINNUMBER.Text;
+                ctf.ADMINNAME.Text = ADMINNAME.Text;
+                ctf.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("عدد مورد نظر را وارد کنید");
+            }
+
+        }
+        private void buttonX11_Click(object sender, EventArgs e)
+        {
+            AddagentName(ADMINNUMBER.Text);
+        }
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+            if (TAP == 0)
+            {   //DGV2
+                ShowSearchResultDGV2(ADMINNUMBER.Text, Searchtext.Text);
+            }
+            else
+            {   //DGV1
+                ShowSearchResultDGV1(ADMINNUMBER.Text, Searchtext.Text);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

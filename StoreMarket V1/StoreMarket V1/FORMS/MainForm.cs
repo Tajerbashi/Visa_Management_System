@@ -52,28 +52,7 @@ namespace StoreMarket_V1
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.Yes)
-            {
-                if (ADMINNUMBER.Text == "1")
-                {
-                    ALog.Leave = Fun.CLOCK();
-                    blc.ALoginfor(ALog);
-                }
-                else
-                {
-                    BLog.Leave = Fun.CLOCK();
-                    blc.BLoginfor(BLog);
-                }
-                Application.Exit();
-            }
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+      
         private void button7_Click(object sender, EventArgs e)
         {
             AccessCodeForm ACF = new AccessCodeForm();
@@ -94,20 +73,6 @@ namespace StoreMarket_V1
                 BLog.Enter = Fun.CLOCK();
             }
         }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ProductControlForm PCF = new ProductControlForm();
-            PCF.ADMINNAME.Text = ADMINNAME.Text;
-            PCF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            PCF.Show();
-        }
-        private void button9_Click(object sender, EventArgs e)
-        {
-            ControlTranSectionForm CTSF = new ControlTranSectionForm();
-            CTSF.ADMINNAME.Text = ADMINNAME.Text;
-            CTSF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            CTSF.Show();
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             Store store = new Store();
@@ -115,6 +80,62 @@ namespace StoreMarket_V1
             store.ADMINNUMBER.Text = ADMINNUMBER.Text;
             this.Hide();
             store.ShowDialog();
+        }
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
+            {
+                if (ADMINNUMBER.Text == "1")
+                {
+                    ALog.Leave = Fun.CLOCK();
+                    blc.ALoginfor(ALog);
+                }
+                else
+                {
+                    BLog.Leave = Fun.CLOCK();
+                    blc.BLoginfor(BLog);
+                }
+                Application.Exit();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+        }
+
+        private void button7_MouseEnter(object sender, EventArgs e)
+        {
+            button7.ForeColor = Color.Black;
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            button7.ForeColor = Color.White;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

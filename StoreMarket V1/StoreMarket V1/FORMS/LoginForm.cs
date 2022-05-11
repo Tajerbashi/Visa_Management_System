@@ -97,19 +97,22 @@ namespace StoreMarket_V1
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        private void button3_Click(object sender, EventArgs e)
-        {   // Close
-            Application.Exit();
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {   //  Minimize
-            this.WindowState = FormWindowState.Minimized;
-        }
         #endregion
         private void LoginForm_Load(object sender, EventArgs e)
         {           //  Loading Form
             ADMIN1();
             ADMIN2();
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -67,20 +67,6 @@ namespace StoreMarket_V1
             }
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
-            {
-                ID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-
-                dataGridView1.CurrentRow.Selected = true;
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
-            }
-        }
-
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("آیا میخواهید اطلاعات حذف شود", "تایید درخواست", MessageBoxButtons.YesNo))
@@ -122,15 +108,6 @@ namespace StoreMarket_V1
             }
 
         }
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void savebtn_Click(object sender, EventArgs e)
         {
 
@@ -238,6 +215,24 @@ namespace StoreMarket_V1
         {
             Result.ForeColor = Color.Black;
             Result.Text = "ثبت حساب بانکی";
+        }
+
+        private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            {
+                dataGridView1.CurrentRow.Selected = (dataGridView1.CurrentRow.Selected) ? false : true;
+                ID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

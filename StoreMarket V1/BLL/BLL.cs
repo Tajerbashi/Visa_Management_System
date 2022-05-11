@@ -111,7 +111,7 @@ namespace BLL
             {
                 if (item.id == id)
                 {
-                    return (item.Name + " " + item.Family);
+                    return (item.FullName);
                 }
             }
             return "";
@@ -122,7 +122,7 @@ namespace BLL
             {
                 if (item.id == id)
                 {
-                    return (item.Name + " " + item.Family);
+                    return (item.FullName);
                 }
             }
             return "";
@@ -186,7 +186,7 @@ namespace BLL
         {
             foreach (var item in DB.aAdmins)
             {
-                if (item.Name == admin.Name && item.Family == admin.Family)
+                if (item.FullName == admin.FullName)
                 {
                     return false;
                 }
@@ -198,7 +198,7 @@ namespace BLL
         {
             foreach (var item in DB.bAdmins)
             {
-                if (item.Name == admin.Name && item.Family == admin.Family)
+                if (item.FullName == admin.FullName)
                 {
                     return false;
                 }
@@ -389,15 +389,6 @@ namespace BLL
             return (dlc.ShowProductOrderbyExpireDateB());
         }
 
-        public List<ATypeProduct> ATypes()
-        {
-            return (from i in DB.atypeProducts select i).ToList();
-        }
-        public List<BTypeProduct> BTypes()
-        {
-            return (from i in DB.btypeProducts select i).ToList();
-        }
-
 
         public List<AAgent> AgentA()
         {
@@ -496,7 +487,7 @@ namespace BLL
         {
             foreach (var item in DB.aAdmins)
             {
-                if (item.Name == admin.Name && item.Family == admin.Family && item.OwnerName == admin.OwnerName)
+                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
                 {
                     return true;
                 }
@@ -507,7 +498,7 @@ namespace BLL
         {
             foreach (var item in DB.bAdmins)
             {
-                if (item.Name == admin.Name && item.Family == admin.Family && item.OwnerName == admin.OwnerName)
+                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
                 {
                     return true;
                 }
@@ -804,7 +795,7 @@ namespace BLL
         {
             foreach (var item in DB.aCustomers)
             {
-                if (item.id != ID && item.Name==customer.Name && item.Family==customer.Family)
+                if (item.id != ID && item.FullName == customer.FullName)
                 {
                     return false;
                 }
@@ -815,7 +806,7 @@ namespace BLL
         {
             foreach (var item in DB.bCustomers)
             {
-                if (item.id != ID && item.Name == customer.Name && item.Family == customer.Family)
+                if (item.id != ID && item.FullName == customer.FullName)
                 {
                     return false;
                 }
@@ -829,6 +820,16 @@ namespace BLL
         public List<BCustomer> PrintSerchResultCustomerB(String Word)
         {
             return (dlc.PrintSerchResultCustomerB(Word).ToList());
+        }
+
+        //  Agent
+        public List<AAgent> GetAgentNameA()
+        {
+            return (dlc.GetAgentNameA()).ToList();
+        }
+        public List<BAgent> GetAgentNameB()
+        {
+            return (dlc.GetAgentNameB()).ToList();
         }
     }
 }

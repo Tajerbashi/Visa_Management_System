@@ -54,7 +54,11 @@ namespace StoreMarket_V1
         #endregion
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -93,6 +97,31 @@ namespace StoreMarket_V1
             }
             panel.ADMIN.Text = ADMINNUMBER.Text;
             MainPanel.Controls.Add(panel);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ProductControlForm PCF = new ProductControlForm();
+            PCF.ADMINNAME.Text = ADMINNAME.Text;
+            PCF.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            PCF.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ControlTranSectionForm CTSF = new ControlTranSectionForm();
+            CTSF.ADMINNAME.Text = ADMINNAME.Text;
+            CTSF.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            CTSF.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

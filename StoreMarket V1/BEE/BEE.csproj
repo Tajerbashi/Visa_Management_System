@@ -63,7 +63,6 @@
     <Compile Include="CLASSA\ALogInformation.cs" />
     <Compile Include="CLASSA\AProduct.cs" />
     <Compile Include="CLASSA\ASellFactor.cs" />
-    <Compile Include="CLASSA\ATypeProduct.cs" />
     <Compile Include="CLASSB\BAdmin.cs" />
     <Compile Include="CLASSB\BAdminBankAccount.cs" />
     <Compile Include="CLASSB\BAgent.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="CLASSB\BLogInformation.cs" />
     <Compile Include="CLASSB\BProduct.cs" />
     <Compile Include="CLASSB\BSellFactor.cs" />
-    <Compile Include="CLASSB\BTypeProduct.cs" />
     <Compile Include="DBCLASS.cs" />
     <Compile Include="OWNER.cs" />
     <Compile Include="Person.cs" />

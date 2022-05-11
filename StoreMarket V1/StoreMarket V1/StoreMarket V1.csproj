@@ -37,6 +37,120 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Charts.WinForms, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.5\lib\net40\Bunifu.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.1\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.5\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\packages\Bunifu.UI.Form.1.﻿9.0.1_YasDL.com\Bunifu UI WinForms 1.9.0.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLoader, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Downloads\Telegram Desktop\Bunifu_UI_WinForms_1.11.5.1_Downloadly.ir\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -57,6 +171,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,8 +183,20 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2022.1.222.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2022.1.222.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2022.1.222.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="XanderUI">
+      <HintPath>..\..\..\3LayerDBFirst\packages\XanderUI-master\XanderUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountsPanel.Designer.cs">
+      <DependentUpon>AccountsPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="STOREForm\ProductPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,12 +229,6 @@
       <DependentUpon>ProductControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Cultures.cs" />
-    <Compile Include="FORMS\ControlAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\ControlAccount.Designer.cs">
-      <DependentUpon>ControlAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMS\AccessCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +287,10 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountsPanel.resx">
+      <DependentUpon>AccountsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="STOREForm\ProductPanel.resx">
       <DependentUpon>ProductPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,9 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ControlTranSectionForm.resx">
       <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\ControlAccount.resx">
-      <DependentUpon>ControlAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\AccessCodeForm.resx">
       <DependentUpon>AccessCodeForm.cs</DependentUpon>
@@ -244,13 +368,7 @@
     <None Include="img\UserPanelForm2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\Everaldo-Crystal-Clear-Action-ok %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\UserPanelForm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ico\Everaldo-Crystal-Clear-Action-viewmag.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserPanelForm2.png" />
@@ -266,22 +384,214 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\Everaldo-Crystal-Clear-Action-cancel %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\MainForm.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\Graphicloads-Polygon-Cross-3.ico" />
+    <None Include="Resources\MAIN1~1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\1251819.png" />
+    <None Include="Resources\گزارش گیری.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\icons8-search.gif" />
+    <None Include="ico\credit-card-icon %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ico\Jommans-Briefness-Search.ico" />
+    <None Include="ico\shopping-bags-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Shopping-bag-purple-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\User-Executive-Green-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\credit-card-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\pie-chart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\dollar-folder-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\dollar-folder-icon %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\boss-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Male-user-info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\bank-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Uiconstock-Dynamic-Flat-Android-Bank.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Saviourmachine-Chat-Default.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\default-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\default-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\search-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\search-icon %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Pretty-Office-4-Shopping-bag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Shopping %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\shop-cart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Fasticon-Shop-Cart-Shop-cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Everaldo-Crystal-Clear-Mimetype-log.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Hopstarter-Rounded-Square-Button-Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Rimshotdesign-Milkanodised-Mac-mini.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\boxes-brown-icon %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Shopping-bag-purple-icon %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Shopping-bag-purple-icon %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Calendar-Blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Master-card.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ProductGrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\bank-icon %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Paomedia-Small-N-Flat-Sign-check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Button-Next-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Flatastic-4-Package-accept.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Mazenl77-I-Like-Buttons-3a-Perspective-Button-Go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Button-Green-Arrow-Down-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\switch-on-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Wackypixel-Pushdown-Buttons-Button-Green-Arrow-Up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Wackypixel-Pushdown-Buttons-Button-Red-Cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\shopping-bag-icon %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Hopstarter-Soft-Scraps-Button-Next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\bank-icon %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ProductPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Shopping-bag-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\shopping-bag-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\shopping-bag-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\admin-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\atm-money-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\bank-icon %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Documents-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Pretty-Office-4-Open-Folder-Full.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\admin-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\keyring-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\master-card-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Notes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\save-icon %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Franksouza183-Fs-Actions-stock-save-as.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Money.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Visa.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Credit-card.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Uriy1966-Steel-System-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Treetog-I-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Flatastic-4-Decrease.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Ampeross-Lamond-Control-panel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Vexels-Office-Key-lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Information-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

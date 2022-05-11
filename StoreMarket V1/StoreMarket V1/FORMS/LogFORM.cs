@@ -93,8 +93,6 @@ namespace StoreMarket_V1
             }
         }
 
-
-
         private void LogFORM_Load(object sender, EventArgs e)
         {
             ShowAllDate(ADMINNUMBER.Text);
@@ -112,19 +110,6 @@ namespace StoreMarket_V1
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -167,6 +152,20 @@ namespace StoreMarket_V1
         private void button5_Click(object sender, EventArgs e)
         {
             ShowAllDate(ADMINNUMBER.Text);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

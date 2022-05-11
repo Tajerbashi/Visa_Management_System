@@ -39,37 +39,41 @@ namespace StoreMarket_V1
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
         private void checkbtn_Click(object sender, EventArgs e)
         {   //  بررسی
-            if (ADMINNUMBER.Text == "1")
+            try
             {
-                AAdmin admin = new AAdmin();
-                admin.Name = Nametxt.Text;
-                admin.Family = Familytxt.Text;
-                admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
-                admin.Email = Emailtxt.Text;
-                admin.Address = Addresstxt.Text;
-                if (!blc.ExistAdminA(admin))
+                if (ADMINNUMBER.Text == "1")
                 {
-                    MessageBox.Show("ادمین جدید است");
+                    AAdmin admin = new AAdmin();
+                    admin.FullName = Nametxt.Text + " " + Familytxt;
+                    admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
+                    admin.Email = Emailtxt.Text;
+                    admin.Address = Addresstxt.Text;
+                    if (!blc.ExistAdminA(admin))
+                    {
+                        MessageBox.Show("ادمین جدید است");
+                        groupBox2.Enabled = true;
+                    }
+                }
+                else
+                {
+                    BAdmin admin = new BAdmin();
+                    admin.FullName = Nametxt.Text + " " + Familytxt;
+                    admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
+                    admin.Email = Emailtxt.Text;
+                    admin.Address = Addresstxt.Text;
+                    if (!blc.ExistAdminB(admin))
+                    {
+                        MessageBox.Show("ادمین جدید است");
+                        groupBox2.Enabled = true;
+                    }
                 }
             }
-            else
+            catch (Exception)
             {
-                BAdmin admin = new BAdmin();
-                admin.Name = Nametxt.Text;
-                admin.Family = Familytxt.Text;
-                admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
-                admin.Email = Emailtxt.Text;
-                admin.Address = Addresstxt.Text;
-                if (!blc.ExistAdminB(admin))
-                {
-                    MessageBox.Show("ادمین جدید است");
-                }
+                MessageBox.Show("اطلاعاتی وارد نشده است","خطا",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
         }
@@ -80,13 +84,18 @@ namespace StoreMarket_V1
             try
             {
                 OWNER owner = blc.SelectOwner(ADMINNAME.Text);
+                if (usernametxt.Text.Trim().Length == 0) { MessageBox.Show("نام کاربری را وارد کنید","خطا",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+                else
+                if (userpasstxt.Text.Trim().Length == 0) { MessageBox.Show("رمز کاربری را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                else
+                if (accessCode.Text.Trim().Length == 0) { MessageBox.Show("کد دسترسی را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                else
                 if (owner.Status && ADMINNUMBER.Text == "1")
                 {
                     AAdmin admin = new AAdmin();
 
                     admin.OwnerName = OwnerCodetxt.Text;
-                    admin.Name = Nametxt.Text;
-                    admin.Family = Familytxt.Text;
+                    admin.FullName = Nametxt.Text +" "+Familytxt.Text;
                     admin.Phone = Int64.Parse(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
@@ -95,7 +104,7 @@ namespace StoreMarket_V1
                     admin.Password = userpasstxt.Text;
                     admin.accessCode = accessCode.Text;
                     admin.DeleteStatus = false;
-                    
+                    admin.AccessControl = true;
                     blc.RegisterAdminA(admin);
                     blc.ChangeOwnerStatus(owner);
 
@@ -107,8 +116,7 @@ namespace StoreMarket_V1
                     BAdmin admin = new BAdmin();
 
                     admin.OwnerName = OwnerCodetxt.Text;
-                    admin.Name = Nametxt.Text;
-                    admin.Family = Familytxt.Text;
+                    admin.FullName = Nametxt.Text + " " + Familytxt;
                     admin.Phone = Int64.Parse(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
@@ -117,6 +125,7 @@ namespace StoreMarket_V1
                     admin.Password = userpasstxt.Text;
                     admin.accessCode = accessCode.Text;
                     admin.DeleteStatus = false;
+                    admin.AccessControl = true;
 
                     blc.RegisterAdminB(admin);
                     blc.ChangeOwnerStatus(owner);
@@ -141,5 +150,38 @@ namespace StoreMarket_V1
             usernametxt.Text = Phonetxt.Text;
         }
 
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void checkbtn_MouseEnter(object sender, EventArgs e)
+        {
+            checkbtn.ForeColor = Color.Black;
+        }
+
+        private void checkbtn_MouseLeave(object sender, EventArgs e)
+        {
+            checkbtn.ForeColor = Color.White;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+        }
     }
 }

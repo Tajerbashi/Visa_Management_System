@@ -29,7 +29,7 @@ namespace StoreMarket_V1
                 var DB = bll.ShowAllCustomerA();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id,item.Name,item.Family,item.Phone,item.BuyCost);
+                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost);
                 }
             }
             else
@@ -37,7 +37,7 @@ namespace StoreMarket_V1
                 var DB = bll.ShowAllCustomerB();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, item.Name, item.Family,item.Phone, item.BuyCost);
+                    DGV1.Rows.Add(item.id, item.FullName,item.Phone, item.BuyCost);
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace StoreMarket_V1
                 var DB = bll.PrintSerchResultCustomerA(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id,item.Name,item.Family,item.Phone,item.BuyCost);
+                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost);
                 }
             }
             else
@@ -57,7 +57,7 @@ namespace StoreMarket_V1
                 var DB = bll.PrintSerchResultCustomerB(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, item.Name, item.Family, item.Phone, item.BuyCost);
+                    DGV1.Rows.Add(item.id, item.FullName, item.Phone, item.BuyCost);
                 }
             }
         }
@@ -90,8 +90,7 @@ namespace StoreMarket_V1
                     ACustomer customer = new ACustomer();
                     if (SW)
                     {   //ذخیره
-                        customer.Name = NAME.Text;
-                        customer.Family = FAMILY.Text;
+                        customer.FullName = NAME.Text + " "+ FAMILY.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerA(customer))
@@ -107,8 +106,7 @@ namespace StoreMarket_V1
                     }
                     else
                     {
-                        customer.Name = NAME.Text;
-                        customer.Family = FAMILY.Text;
+                        customer.FullName = NAME.Text + " " + FAMILY.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerA(customer, ID))
@@ -130,8 +128,7 @@ namespace StoreMarket_V1
                     BCustomer customer = new BCustomer();
                     if (SW)
                     {
-                        customer.Name = NAME.Text;
-                        customer.Family = FAMILY.Text;
+                        customer.FullName = NAME.Text + " " + FAMILY.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerB(customer))
@@ -147,8 +144,7 @@ namespace StoreMarket_V1
                     }
                     else
                     {
-                        customer.Name = NAME.Text;
-                        customer.Family = FAMILY.Text;
+                        customer.FullName = NAME.Text + " " + FAMILY.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerB(customer, ID))
@@ -218,5 +214,6 @@ namespace StoreMarket_V1
         {
             PrintSerchResult(ADMIN.Text, Search.Text);
         }
+
     }
 }

@@ -38,5 +38,15 @@ namespace StoreMarket_V1
                 MessageBox.Show("دسترسی ندارید");
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AccessCodeForm_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
     }
 }

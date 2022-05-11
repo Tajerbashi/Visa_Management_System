@@ -313,11 +313,11 @@ namespace DAL
 
         public List<AAdmin> ShowSearchResultA(String AdminNumber, String Word)
         {
-            return (from i in db.aAdmins where (i.Name.Contains(Word) || i.Family.Contains(Word)) && !i.DeleteStatus select i).ToList();
+            return (from i in db.aAdmins where (i.FullName.Contains(Word) && !i.DeleteStatus) select i).ToList();
         }
         public List<BAdmin> ShowSearchResultB(String AdminNumber, String Word)
         {
-            return (from i in db.bAdmins where (i.Name.Contains(Word) || i.Family.Contains(Word)) && !i.DeleteStatus select i).ToList();
+            return (from i in db.bAdmins where (i.FullName.Contains(Word) && !i.DeleteStatus) select i).ToList();
         }
 
         public void ChangeStatusAdminA(int ID)
@@ -627,7 +627,7 @@ namespace DAL
         {
             foreach (var i in db.aAdmins)
             {
-                if (i.id != admin.id && i.Name == admin.Name && i.Family == admin.Family)
+                if (i.id != admin.id && i.FullName == admin.FullName)
                 {
                     return true;
                 }
@@ -639,7 +639,7 @@ namespace DAL
         {
             foreach (var i in db.bAdmins)
             {
-                if (i.id != admin.id && i.Name == admin.Name && i.Family == admin.Family)
+                if (i.id != admin.id && i.FullName == admin.FullName)
                 {
                     return true;
                 }
@@ -665,7 +665,7 @@ namespace DAL
             {
                 if (item.Id != agent.Id)
                 {
-                    if (item.Name == agent.Name && item.Family == agent.Family)
+                    if (item.FullName == agent.FullName)
                     {
                         if (!item.DeleteStatus)
                         {
@@ -683,7 +683,7 @@ namespace DAL
             {
                 if (item.Id != agent.Id)
                 {
-                    if (item.Name == agent.Name && item.Family == agent.Family)
+                    if (item.FullName == agent.FullName)
                     {
                         if (!item.DeleteStatus)
                         {
@@ -751,7 +751,7 @@ namespace DAL
         {
             foreach (var item in db.aAgents)
             {
-                if (item.Id != agent.Id && item.Name == agent.Name && item.Family == agent.Family)
+                if (item.Id != agent.Id && item.FullName == agent.FullName)
                 {
                     return false;
                 }
@@ -764,7 +764,7 @@ namespace DAL
         {
             foreach (var item in db.bAgents)
             {
-                if (item.Id != agent.Id && item.Name == agent.Name && item.Family == agent.Family)
+                if (item.Id != agent.Id && item.FullName == agent.FullName)
                 {
                     return false;
                 }
@@ -866,6 +866,15 @@ namespace DAL
             return (from i in db.bAgentBankAccounts where !i.DeleteStatus && !i.IsActive select i).ToList();
         }
 
+        public List<AAgent> GetAgentNameA()
+        {
+            return (from i in db.aAgents select i).ToList();
+        }
+        public List<BAgent> GetAgentNameB()
+        {
+            return (from i in db.bAgents select i).ToList();
+        }
+
         public AAgentBankAccount SelectAgentBankAccountA(int ID)
         {
             return (db.aAgentBankAccounts.Where(c => c.id == ID).FirstOrDefault());
@@ -944,11 +953,11 @@ namespace DAL
         }
         public List<AAgent> SearchResult1A(String Word)
         {
-            return (from i in db.aAgents where ((i.CompanyName.Contains(Word) || i.Name.Contains(Word) || i.Family.Contains(Word) || ((i.Phone).ToString()).Contains(Word)) && !i.DeleteStatus) select i).ToList();
+            return (from i in db.aAgents where ((i.CompanyName.Contains(Word) || i.FullName.Contains(Word) || ((i.Phone).ToString()).Contains(Word)) && !i.DeleteStatus) select i).ToList();
         }
         public List<BAgent> SearchResult1B(String Word)
         {
-            return (from i in db.bAgents where ((i.CompanyName.Contains(Word) || i.Name.Contains(Word) || i.Family.Contains(Word) || ((i.Phone).ToString()).Contains(Word)) && !i.DeleteStatus) select i).ToList();
+            return (from i in db.bAgents where ((i.CompanyName.Contains(Word) || i.FullName.Contains(Word) || ((i.Phone).ToString()).Contains(Word)) && !i.DeleteStatus) select i).ToList();
         }
         public List<AAgentBankAccount> SearchResult2A(String Word)
         {
@@ -964,7 +973,7 @@ namespace DAL
         {
             foreach (var item in db.aCustomers)
             {
-                if (item.id != customer.id && item.Name == customer.Name && item.Family == customer.Family)
+                if (item.id != customer.id && item.FullName == customer.FullName)
                 {
                     return true;
                 }
@@ -975,7 +984,7 @@ namespace DAL
         {
             foreach (var item in db.bCustomers)
             {
-                if (item.id != customer.id && item.Name == customer.Name && item.Family == customer.Family)
+                if (item.id != customer.id && item.FullName == customer.FullName)
                 {
                     return true;
                 }
@@ -1043,8 +1052,7 @@ namespace DAL
         public bool EditCustomerA(ACustomer customer, int ID)
         {
             ACustomer aCustomer = db.aCustomers.Where(c => c.id == ID).FirstOrDefault();
-            aCustomer.Name = customer.Name;
-            aCustomer.Family = customer.Family;
+            aCustomer.FullName = customer.FullName;
             aCustomer.Phone = customer.Phone;
             aCustomer.BuyCost += customer.BuyCost;
             db.SaveChanges();
@@ -1053,8 +1061,7 @@ namespace DAL
         public bool EditCustomerB(BCustomer customer, int ID)
         {
             BCustomer bCustomer = db.bCustomers.Where(c => c.id == ID).FirstOrDefault();
-            bCustomer.Name = customer.Name;
-            bCustomer.Family = customer.Family;
+            bCustomer.FullName = customer.FullName;
             bCustomer.Phone = customer.Phone;
             bCustomer.BuyCost += customer.BuyCost;
             db.SaveChanges();
@@ -1063,11 +1070,11 @@ namespace DAL
 
         public List<ACustomer> PrintSerchResultCustomerA ( String Word )
         {
-            return (from i in db.aCustomers where i.Name.Contains(Word) || i.Family.Contains(Word)  select i).ToList();
+            return (from i in db.aCustomers where i.FullName.Contains(Word) select i).ToList();
         }
         public List<BCustomer> PrintSerchResultCustomerB ( String Word )
         {
-            return (from i in db.bCustomers where i.Name.Contains(Word) || i.Family.Contains(Word)  select i).ToList();
+            return (from i in db.bCustomers where i.FullName.Contains(Word) select i).ToList();
         }
 
     }

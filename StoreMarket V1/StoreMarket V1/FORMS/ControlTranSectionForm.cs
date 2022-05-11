@@ -112,7 +112,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
             else
@@ -121,7 +121,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
         }
@@ -134,7 +134,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
             else
@@ -143,7 +143,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
         }
@@ -156,7 +156,8 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
+
                 }
             }
             else
@@ -165,7 +166,8 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
+
                 }
             }
         }
@@ -270,7 +272,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
             else
@@ -279,7 +281,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     String Status = (item.IsActive) ? "فعال" : "غیر فعال";
-                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.Name, item.Family, item.Phone);
+                    DT2.Rows.Add(item.Id, Status, item.CompanyName, item.FullName, item.Phone);
                 }
             }
         }
@@ -507,8 +509,7 @@ namespace StoreMarket_V1
                     if (ADMINNUMBER.Text == "1")
                     {
                         AAgent agent = blc.SelectAgentA(ID);
-                        NameAgent2.Text = agent.Name;
-                        FamilyAgent2.Text = agent.Family;
+                        NameAgent2.Text = agent.FullName;
                         CompanyAgent2.Text = agent.CompanyName;
                         PhoneAgent2.Text = agent.Phone.ToString();
                         Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
@@ -516,8 +517,7 @@ namespace StoreMarket_V1
                     else
                     {
                         BAgent agent = blc.SelectAgentB(ID);
-                        NameAgent2.Text = agent.Name;
-                        FamilyAgent2.Text = agent.Family;
+                        NameAgent2.Text = agent.FullName;
                         CompanyAgent2.Text = agent.CompanyName;
                         PhoneAgent2.Text = agent.Phone.ToString();
                         Status2.Text = (agent.IsActive) ? "فعال" : "غیر فعال";
@@ -648,26 +648,12 @@ namespace StoreMarket_V1
                 #endregion
             }
         }
-
-        private void buttonX5_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonX6_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+        
         private void AgentSave_Click(object sender, EventArgs e)
         {
             if (NameAgent2.Text.Trim().Length==0)
             {
                 MessageBox.Show("نام را ذکر کنید");
-                NameAgent2.Focus();
-            }else if (FamilyAgent2.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("فامیلی را ذکر کنید");
                 NameAgent2.Focus();
             }
             else if (PhoneAgent2.Text.Trim().Length == 0)
@@ -695,8 +681,7 @@ namespace StoreMarket_V1
                         {
                             AAgent agent = new AAgent();
                             agent.CompanyName = CompanyAgent2.Text;
-                            agent.Name = NameAgent2.Text;
-                            agent.Family = FamilyAgent2.Text;
+                            agent.FullName = NameAgent2.Text;
                             agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.CreatAgentA(agent))
@@ -712,8 +697,7 @@ namespace StoreMarket_V1
                         {
                             BAgent agent = new BAgent();
                             agent.CompanyName = CompanyAgent2.Text;
-                            agent.Name = NameAgent2.Text;
-                            agent.Family = FamilyAgent2.Text;
+                            agent.FullName = NameAgent2.Text;
                             agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
 
@@ -733,8 +717,7 @@ namespace StoreMarket_V1
                         {
                             AAgent agent = blc.SelectAgentA(ID);
                             agent.CompanyName = CompanyAgent2.Text;
-                            agent.Name = NameAgent2.Text;
-                            agent.Family = FamilyAgent2.Text;
+                            agent.FullName = NameAgent2.Text;
                             agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.SaveEditAgentA(agent))
@@ -751,8 +734,7 @@ namespace StoreMarket_V1
                         {
                             BAgent agent = blc.SelectAgentB(ID);
                             agent.CompanyName = CompanyAgent2.Text;
-                            agent.Name = NameAgent2.Text;
-                            agent.Family = FamilyAgent2.Text;
+                            agent.FullName = NameAgent2.Text;
                             agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.SaveEditAgentB(agent))
@@ -903,24 +885,6 @@ namespace StoreMarket_V1
 
         }
 
-        private void buttonX4_Click(object sender, EventArgs e)
-        {
-            if (Tap == 0)
-            {
-                SearchTap0(ADMINNUMBER.Text, SearchBox.Text);
-            } 
-            else 
-            if (Tap == 1)
-            {
-                SearchTap1(ADMINNUMBER.Text, SearchBox.Text);
-            }
-            else
-            if(Tap == 2)
-            {
-                SearchTap2(ADMINNUMBER.Text, SearchBox.Text);
-            }
-        }
-
         private void buttonX19_Click_1(object sender, EventArgs e)
         {
             ShowAllCompany(ADMINNUMBER.Text);
@@ -981,5 +945,35 @@ namespace StoreMarket_V1
         {
             ShowAllDisActiveAgentAccountBank(ADMINNUMBER.Text);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (Tap == 0)
+            {
+                SearchTap0(ADMINNUMBER.Text, SearchBox.Text);
+            }
+            else
+            if (Tap == 1)
+            {
+                SearchTap1(ADMINNUMBER.Text, SearchBox.Text);
+            }
+            else
+            if (Tap == 2)
+            {
+                SearchTap2(ADMINNUMBER.Text, SearchBox.Text);
+            }
+        }
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
     }
 }
