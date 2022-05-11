@@ -191,10 +191,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountsPanel.cs">
+    <Compile Include="FORMS\LogFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\LogFORM.designer.cs">
+      <DependentUpon>LogFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm\LogReports.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AccountsPanel.Designer.cs">
+    <Compile Include="ManagerForm\LogReports.Designer.cs">
+      <DependentUpon>LogReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm\FirstAdminPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerForm\FirstAdminPanel.Designer.cs">
+      <DependentUpon>FirstAdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm\AccountsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerForm\AccountsPanel.Designer.cs">
       <DependentUpon>AccountsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="STOREForm\ProductPanel.cs">
@@ -229,16 +247,16 @@
       <DependentUpon>ProductControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Cultures.cs" />
-    <Compile Include="FORMS\AccessCodeForm.cs">
+    <Compile Include="CompleteForm\AccessCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\AccessCodeForm.Designer.cs">
+    <Compile Include="CompleteForm\AccessCodeForm.Designer.cs">
       <DependentUpon>AccessCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\LoginForm.cs">
+    <Compile Include="CompleteForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\LoginForm.Designer.cs">
+    <Compile Include="CompleteForm\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\MainForm.cs">
@@ -247,20 +265,8 @@
     <Compile Include="FORMS\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\LogFORM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\LogFORM.Designer.cs">
-      <DependentUpon>LogFORM.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FORMS\RegisterAdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\RegisterAdminForm.Designer.cs">
-      <DependentUpon>RegisterAdminForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMS\RecoveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,16 +274,16 @@
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Functions.cs" />
-    <Compile Include="FORMS\StoreManagmentForm.cs">
+    <Compile Include="ManagerForm\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\StoreManagmentForm.Designer.cs">
-      <DependentUpon>StoreManagmentForm.cs</DependentUpon>
+    <Compile Include="ManagerForm\ManageForm.Designer.cs">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.cs">
+    <Compile Include="CompleteForm\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Include="CompleteForm\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLCOMMOND.cs" />
@@ -287,7 +293,16 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountsPanel.resx">
+    <EmbeddedResource Include="FORMS\LogFORM.resx">
+      <DependentUpon>LogFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\LogReports.resx">
+      <DependentUpon>LogReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\FirstAdminPanel.resx">
+      <DependentUpon>FirstAdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm\AccountsPanel.resx">
       <DependentUpon>AccountsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -303,17 +318,14 @@
     <EmbeddedResource Include="FORMS\ControlTranSectionForm.resx">
       <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\AccessCodeForm.resx">
+    <EmbeddedResource Include="CompleteForm\AccessCodeForm.resx">
       <DependentUpon>AccessCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\LoginForm.resx">
+    <EmbeddedResource Include="CompleteForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\LogFORM.resx">
-      <DependentUpon>LogFORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ProductControlForm.resx">
       <DependentUpon>ProductControlForm.cs</DependentUpon>
@@ -328,16 +340,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FORMS\RegisterAdminForm.resx">
-      <DependentUpon>RegisterAdminForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\StoreManagmentForm.resx">
-      <DependentUpon>StoreManagmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerForm\ManageForm.resx">
+      <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\RecoveryForm.resx">
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Include="CompleteForm\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STOREForm\Store.resx">

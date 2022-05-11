@@ -55,10 +55,10 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = global::StoreMarket_V1.Properties.Resources.Ampeross_Lamond_Control_panel;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(14, 359);
+            this.button7.Location = new System.Drawing.Point(610, 339);
             this.button7.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(263, 42);
+            this.button7.Size = new System.Drawing.Size(263, 52);
             this.button7.TabIndex = 14;
             this.button7.Text = "مدیریت فروشگاه";
             this.button7.UseVisualStyleBackColor = false;
@@ -124,7 +124,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("MRT_Mitra_2", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 41);
+            this.button1.Location = new System.Drawing.Point(610, 21);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(263, 306);
@@ -141,7 +141,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.Wackypixel_Pushdown_Buttons_Button_Red_Cancel;
-            this.pictureBox1.Location = new System.Drawing.Point(247, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(994, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 59;
@@ -153,7 +153,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::StoreMarket_V1.Properties.Resources.Rimshotdesign_Milkanodised_Mac_mini;
-            this.pictureBox2.Location = new System.Drawing.Point(211, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(994, 41);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 60;
@@ -182,7 +182,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::StoreMarket_V1.Properties.Resources.ProductPanel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(357, 435);
+            this.ClientSize = new System.Drawing.Size(1024, 720);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

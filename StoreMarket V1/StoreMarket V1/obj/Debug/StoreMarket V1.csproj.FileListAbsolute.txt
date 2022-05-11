@@ -44,15 +44,12 @@ C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.SuggestedBindingRedirects.cache
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.AdminBankAccount.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ControlTranSectionForm.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ControlAccount.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.AccessCodeForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.LoginForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.MainForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.LogFORM.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ProductControlForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.Properties.Resources.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.RegisterAdminForm.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.StoreManagmentForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.RecoveryForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.SplashScreen.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.GenerateResource.cache
@@ -142,3 +139,7 @@ C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\Telerik.WinControls.xml
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\Telerik.WinControls.UI.xml
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.AccountsPanel.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ManageForm.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.LogReports.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.FirstAdminPanel.resources
