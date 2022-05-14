@@ -52,6 +52,8 @@ namespace StoreMarket_V1
             {
                 mainpanel.Controls[0].Dispose();
             }
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            panel.ADMINNAME.Text = ADMINNAME.Text;
             mainpanel.Controls.Add(panel);
         }
 
@@ -67,6 +69,8 @@ namespace StoreMarket_V1
             {
                 mainpanel.Controls[0].Dispose();
             }
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            panel.ADMINNAME.Text = ADMINNAME.Text;
             mainpanel.Controls.Add(panel);
         }
 
@@ -77,6 +81,8 @@ namespace StoreMarket_V1
             {
                 mainpanel.Controls[0].Dispose();
             }
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            panel.ADMINNAME.Text = ADMINNAME.Text;
             mainpanel.Controls.Add(panel);
         }
 

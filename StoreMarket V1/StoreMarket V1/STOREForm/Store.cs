@@ -54,8 +54,11 @@ namespace StoreMarket_V1
         #endregion
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("میخواهید برنامه بسته شود؟", "درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.Yes)
+            MessageBoxForm message = new MessageBoxForm();
+            message.title.Text = "تایید درخواست خروج";
+            message.Subject.Text = "میخواهید برنامه بسته شود؟";
+            message.ShowDialog();
+            if (message.Sw)
             {
                 Application.Exit();
             }
@@ -122,6 +125,18 @@ namespace StoreMarket_V1
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BuyFactorPanel panel = new BuyFactorPanel();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.AdminName.Text = ADMINNAME.Text;
+            panel.ADMIN.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
         }
     }
 }

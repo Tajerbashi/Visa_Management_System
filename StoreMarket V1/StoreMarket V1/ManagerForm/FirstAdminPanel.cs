@@ -67,48 +67,55 @@ namespace StoreMarket_V1
                 else
                 if (owner.Status && ADMINNUMBER.Text == "1")
                 {
-                    AAdmin admin = new AAdmin();
+                    if (DialogResult.OK == MessageBox.Show("به یاد داشته باشید که\n اطلاعات شما برای ورود به برنامه \nکد دسترسی  \nنام کاربری \n رمز کاربری \nاست پس در وارد کردن آنها دقت کنید!!!","اخطار",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning))
+                    {
+                        AAdmin admin = new AAdmin();
 
-                    admin.OwnerName = OwnerCodetxt.Text;
-                    admin.FullName = Nametxt.Text + " " + Familytxt.Text;
-                    admin.Phone = Int64.Parse(Phonetxt.Text);
-                    admin.Email = Emailtxt.Text;
-                    admin.Address = Addresstxt.Text;
-                    admin.IsActive = true;
-                    admin.Username = usernametxt.Text;
-                    admin.Password = userpasstxt.Text;
-                    admin.accessCode = accessCode.Text;
-                    admin.DeleteStatus = false;
-                    admin.AccessControl = true;
-                    blc.RegisterAdminA(admin);
-                    blc.ChangeOwnerStatus(owner);
+                        admin.OwnerName = OwnerCodetxt.Text;
+                        admin.FullName = Nametxt.Text + " " + Familytxt.Text;
+                        admin.Phone = Int64.Parse(Phonetxt.Text);
+                        admin.Email = Emailtxt.Text;
+                        admin.Address = Addresstxt.Text;
+                        admin.IsActive = true;
+                        admin.Username = usernametxt.Text;
+                        admin.Password = userpasstxt.Text;
+                        admin.accessCode = accessCode.Text;
+                        admin.DeleteStatus = false;
+                        admin.AccessControl = true;
+                        blc.RegisterAdminA(admin);
+                        blc.ChangeOwnerStatus(owner);
 
-                    MessageBox.Show("ثبت نام انجام شد");
-                    Fun.ClearTextBoxes(this.Controls);
+                        MessageBox.Show("ثبت نام انجام شد");
+                        Fun.ClearTextBoxes(this.Controls);
+                    }
+                    
                 }
                 else if (owner.Status && ADMINNUMBER.Text == "2")
                 {
-                    BAdmin admin = new BAdmin();
+                    if (DialogResult.OK == MessageBox.Show("به یاد داشته باشید که\n اطلاعات شما برای ورود به برنامه \nکد دسترسی  \nنام کاربری \n رمز کاربری \nاست پس در وارد کردن آنها دقت کنید!!!", "اخطار", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                    {
+                        BAdmin admin = new BAdmin();
 
-                    admin.OwnerName = OwnerCodetxt.Text;
-                    admin.FullName = Nametxt.Text + " " + Familytxt;
-                    admin.Phone = Int64.Parse(Phonetxt.Text);
-                    admin.Email = Emailtxt.Text;
-                    admin.Address = Addresstxt.Text;
-                    admin.IsActive = true;
-                    admin.Username = usernametxt.Text;
-                    admin.Password = userpasstxt.Text;
-                    admin.accessCode = accessCode.Text;
-                    admin.DeleteStatus = false;
-                    admin.AccessControl = true;
+                        admin.OwnerName = OwnerCodetxt.Text;
+                        admin.FullName = Nametxt.Text + " " + Familytxt;
+                        admin.Phone = Int64.Parse(Phonetxt.Text);
+                        admin.Email = Emailtxt.Text;
+                        admin.Address = Addresstxt.Text;
+                        admin.IsActive = true;
+                        admin.Username = usernametxt.Text;
+                        admin.Password = userpasstxt.Text;
+                        admin.accessCode = accessCode.Text;
+                        admin.DeleteStatus = false;
+                        admin.AccessControl = true;
 
-                    blc.RegisterAdminB(admin);
-                    blc.ChangeOwnerStatus(owner);
+                        blc.RegisterAdminB(admin);
+                        blc.ChangeOwnerStatus(owner);
 
-                    MessageBox.Show("ثبت نام انجام شد");
-                    Fun.ClearTextBoxes(this.Controls);
+                        MessageBox.Show("ثبت نام انجام شد");
+                        Fun.ClearTextBoxes(this.Controls);
+                    }
+                    Application.Exit();
                 }
-                Application.Exit();
             }
             catch
             {
@@ -155,5 +162,6 @@ namespace StoreMarket_V1
             }
 
         }
+
     }
 }

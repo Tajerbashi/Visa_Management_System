@@ -34,6 +34,7 @@ namespace StoreMarket_V1
         bool SW = true;
         Functions Fun = new Functions();
         BLLCode blc = new BLLCode();
+
         #region ShowDataGrideView
         public void ShowAllProductDGV1(String Admin)
         {
@@ -102,7 +103,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     i++;
-                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    Cash = "نقدی" ;
 
                     DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
                 }
@@ -113,7 +114,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     i++;
-                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    Cash = "نقدی" ;
                     DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
                 }
             }
@@ -268,7 +269,7 @@ namespace StoreMarket_V1
             var DB = blc.ShowResultDateNowExpireA(Now, Expire);
             if (DB == null)
             {
-                MessageBox.Show("موردی یافت نشد");
+                MessageBox.Show("موردی یافت نشد","اطلاعیه",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
@@ -290,7 +291,7 @@ namespace StoreMarket_V1
             var DB = blc.ShowResultDateNowExpireB(Now, Expire);
             if (DB == null)
             {
-                MessageBox.Show("موردی یافت نشد");
+                MessageBox.Show("موردی یافت نشد", "اطلاعیه", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -304,7 +305,7 @@ namespace StoreMarket_V1
             NN8.Text = Fun.CLOCK();
         }
 
-        public void ShowProductOrderbyExpireDate(String Admin)
+        public void ShowProductOrderbyExpireDateDGV1(String Admin)
         {
             String Cash;
             DGV1.Rows.Clear();
@@ -332,47 +333,129 @@ namespace StoreMarket_V1
             }
             NN8.Text = Fun.CLOCK();
         }
+        public void ShowProductOrderbyExpireDateDGV2(String Admin)
+        {
+            String Cash;
+            DGV2.Rows.Clear();
+            int i = 0;
+            if (Admin == "1")
+            {
+                var DB = blc.ShowProductOrderbyExpireDateA();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
 
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.EndDate, item.AgentName, Cash);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowProductOrderbyExpireDateB();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice,item.newBuyPrice, item.sellPrice,item.RegisterDate,item.EndDate,item.AgentName, Cash);
+                }
+            }
+            NN8.Text = Fun.CLOCK();
+        }
+
+        public void ShowProductOrderbyMojodiDGV1(String Admin)
+        {
+            String Cash;
+            DGV1.Rows.Clear();
+            int i = 0;
+            if (Admin == "1")
+            {
+                var DB = blc.ShowProductOrderbyMojodiA();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowProductOrderbyMojodiB();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Type, item.newBuyPrice, item.RegisterDate, item.EndDate, Cash, item.AgentName, item.SellCount, item.BuyCount, item.Mojodi, item.Totalcash);
+                }
+            }
+            NN8.Text = Fun.CLOCK();
+        }
+        public void ShowProductOrderbyMojodiDGV2(String Admin)
+        {
+            String Cash;
+            DGV2.Rows.Clear();
+            int i = 0;
+            if (Admin == "1")
+            {
+                var DB = blc.ShowProductOrderbyMojodiA();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.EndDate, item.AgentName, Cash);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowProductOrderbyMojodiB();
+                foreach (var item in DB)
+                {
+                    i++;
+                    Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
+
+                    DGV2.Rows.Add(item.id, i, item.Mojodi, item.Name, item.Type, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.EndDate, item.AgentName, Cash);
+                }
+            }
+            NN8.Text = Fun.CLOCK();
+        }
+
+
+        public void ShowAllAgentNameinComboBox(String ADMIN)
+        {
+            NN7.Items.Clear();
+            if (ADMIN == "1")
+            {
+                var DB = blc.ShowAllAgentA();
+                foreach (var item in DB)
+                {
+                    NN7.Items.Add(item.FullName);
+                }
+            }
+            else
+            {
+                var DB = blc.ShowAllAgentB();
+                foreach (var item in DB)
+                {
+                    NN7.Items.Add(item.FullName);
+                }
+            }
+        }
         public void ColorFun()
         {
             var rand = new Random();
             Color c = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             Result.ForeColor = c;
         }
-
-
         #endregion
 
         #region CompleteCode
-        public void AddagentName(String Admin)
-        {
-            NN7.Items.Clear();
-            if (Admin == "1")
-            {
-                var DD = blc.GetAgentNameA();
-                foreach (var item in DD)
-                {
-                    String name = item.FullName;
-                    NN7.Items.Add(name);
-                }
-            }
-            else
-            {
-                var DD = blc.GetAgentNameB();
-                foreach (var item in DD)
-                {
-                    String name = item.FullName;
-                    NN7.Items.Add(name);
-                }
-            }
-        }
         private void ProductControlForm_Load_1(object sender, EventArgs e)
         {
-            buttonX4.Enabled = false;
-            buttonX5.Enabled = false;
             ShowAllProductDGV1(ADMINNUMBER.Text);
             ShowAllProductDGV2(ADMINNUMBER.Text);
-            AddagentName(ADMINNUMBER.Text);
+            ShowAllAgentNameinComboBox(ADMINNUMBER.Text);
         }
         private void ProductControlForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -383,6 +466,7 @@ namespace StoreMarket_V1
             }
         }
         #endregion
+
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("آیا میخواهید اطلاعات را ویرایش کنید؟", "تایید درخواست", MessageBoxButtons.YesNo);
@@ -460,7 +544,7 @@ namespace StoreMarket_V1
             else if (NN7.Text.Trim().Length == 0)
             {
                 Result.ForeColor = Color.Red;
-                Result.Text = "تاریخ خرید محصول را ذکر کنید";
+                Result.Text = "نام نماینده فروش را ذکر کنید";
             }
             else if (NN8.Text.Trim().Length == 0)
             {
@@ -470,7 +554,7 @@ namespace StoreMarket_V1
             else if (!RR1.Checked && !RR2.Checked)
             {
                 Result.ForeColor = Color.Red;
-                Result.Text = "نوع خرید محصول را ذکر کنید";
+                Result.Text = "نوع پرداخت محصول را ذکر کنید";
             }
             else
             {
@@ -498,15 +582,16 @@ namespace StoreMarket_V1
                             {
                                 Result.ForeColor = Color.Green;
                                 Result.Text = "محصول با موفقیت ثبت شد";
-                                Fun.ClearTextBoxes(this.Controls);
-                                ShowAllProductDGV1(ADMINNUMBER.Text);
-                                ShowAllProductDGV2(ADMINNUMBER.Text);
+                                
                             }
                             else
                             {
                                 Result.ForeColor = Color.Red;
-                                Result.Text = "ثبت محصول ناموفق بود";
+                                Result.Text = "محصول موجود بود و اطلاعات بروزرسانی شد";
                             }
+                            Fun.ClearTextBoxes(this.Controls);
+                            ShowAllProductDGV1(ADMINNUMBER.Text);
+                            ShowAllProductDGV2(ADMINNUMBER.Text);
                         }
                         else
                         {
@@ -528,81 +613,165 @@ namespace StoreMarket_V1
                             {
                                 Result.ForeColor = Color.Green;
                                 Result.Text = "محصول با موفقیت ثبت شد";
-                                Fun.ClearTextBoxes(this.Controls);
-                                ShowAllProductDGV1(ADMINNUMBER.Text);
-                                ShowAllProductDGV2(ADMINNUMBER.Text);
+                                
                             }
                             else
                             {
                                 Result.ForeColor = Color.Red;
-                                Result.Text = "ثبت محصول ناموفق بود";
+                                Result.Text = "محصول موجود بود و اطلاعات بروزرسانی شد";
                             }
+                            Fun.ClearTextBoxes(this.Controls);
+                            ShowAllProductDGV1(ADMINNUMBER.Text);
+                            ShowAllProductDGV2(ADMINNUMBER.Text);
                         }
                     }
                     else
                     {// ویرایش
-                        SW = true;
-                        if (ADMINNUMBER.Text == "1")
-                        {
-                            AProduct product = blc.GetProductA(ID);
-                            product.Name = NN1.Text;
-                            product.Type = NN2.Text;
-                            product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
-                            product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
-                            product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
-                            product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
-                            product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
-                            product.AgentName = NN7.Text;
-                            product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
-                            product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
-                            product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
-                            product.Totalcash += product.newBuyPrice * product.BuyCount;
 
-                            if (!blc.ExistProductA(product))
-                            {
-                                blc.SaveEditProductA(product);
-                                Result.Text = "ویرایش شد";
-                                Fun.ClearTextBoxes(this.Controls);
-                                ShowAllProductDGV1(ADMINNUMBER.Text);
-                                ShowAllProductDGV2(ADMINNUMBER.Text);
-                                button8.Text = "ذخیره";
-                            }
-                            else
-                            {
-                                Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
-                            }
-                        }
-                        else
+                        MessageBoxForm MessageForm = new MessageBoxForm();
+                        MessageForm.title.Text = "تایید نوعیت ویرایش اطلاعات";
+                        MessageForm.Subject.Text = "ویرایش خود را انتخاب کنید و تایید کنید!";
+                        MessageForm.RC1.Visible = true;
+                        MessageForm.RC2.Visible = true;
+                        MessageForm.ShowDialog();
+
+                        if (MessageForm.Sw)
                         {
-                            BProduct product = blc.GetProductB(ID);
-                            product.Name = NN1.Text;
-                            product.Type = NN2.Text;
-                            product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
-                            product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
-                            product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
-                            product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
-                            product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
-                            product.AgentName = NN7.Text;
-                            product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
-                            product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
-                            product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
-                            product.Totalcash += product.newBuyPrice * product.BuyCount;
-                            if (!blc.ExistProductB(product))
+                            if (MessageForm.RC2.Checked)
                             {
-                                blc.SaveEditProductB(product);
-                                Result.Text = "ویرایش شد";
-                                button8.Text = "ذخیره";
-                                Fun.ClearTextBoxes(this.Controls);
-                                ShowAllProductDGV1(ADMINNUMBER.Text);
-                                ShowAllProductDGV2(ADMINNUMBER.Text);
+                                #region EditCode
+
+                                SW = true;
+
+                                if (ADMINNUMBER.Text == "1")
+                                {
+                                    AProduct product = blc.GetProductA(ID);
+                                    product.Name = NN1.Text;
+                                    product.Type = NN2.Text;
+                                    product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
+                                    product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
+                                    product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
+                                    product.AgentName = NN7.Text;
+                                    product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
+                                    product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
+                                    product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
+                                    product.Totalcash += product.newBuyPrice * product.BuyCount;
+
+                                    if (!blc.ExistProductA(product))
+                                    {
+                                        blc.SaveEditProductA(product);
+                                        Result.Text = "ویرایش شد";
+                                        button8.Text = "ذخیره";
+                                        Fun.ClearTextBoxes(this.Controls);
+                                        ShowAllProductDGV1(ADMINNUMBER.Text);
+                                        ShowAllProductDGV2(ADMINNUMBER.Text);
+                                    }
+                                    else
+                                    {
+                                        Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
+                                    }
+
+                                }
+                                else
+                                {
+                                    BProduct product = blc.GetProductB(ID);
+                                    product.Name = NN1.Text;
+                                    product.Type = NN2.Text;
+                                    product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
+                                    product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
+                                    product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
+                                    product.AgentName = NN7.Text;
+                                    product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
+                                    product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
+                                    product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
+                                    product.Totalcash += product.newBuyPrice * product.BuyCount;
+                                    if (!blc.ExistProductB(product))
+                                    {
+                                        blc.SaveEditProductB(product);
+                                        Result.Text = "ویرایش شد";
+                                        button8.Text = "ذخیره";
+                                        Fun.ClearTextBoxes(this.Controls);
+                                        ShowAllProductDGV1(ADMINNUMBER.Text);
+                                        ShowAllProductDGV2(ADMINNUMBER.Text);
+                                    }
+                                    else
+                                    {
+                                        Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
+                                    }
+                                }
+                                #endregion
                             }
                             else
                             {
-                                Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
+                                #region EditCode
+                                SW = true;
+                                if (ADMINNUMBER.Text == "1")
+                                {
+                                    AProduct product = blc.GetProductA(ID);
+                                    product.Name = NN1.Text;
+                                    product.Type = NN2.Text;
+                                    //product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    //product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    //product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
+                                    //product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
+                                    product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
+                                    product.AgentName = NN7.Text;
+                                    product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
+                                    product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
+                                    product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
+                                    //product.Totalcash = product.newBuyPrice * product.BuyCount;
+
+                                    if (!blc.ExistProductA(product))
+                                    {
+                                        blc.SaveEditProductA(product);
+                                        Result.Text = "ویرایش شد";
+                                        button8.Text = "ذخیره";
+                                        Fun.ClearTextBoxes(this.Controls);
+                                        ShowAllProductDGV1(ADMINNUMBER.Text);
+                                        ShowAllProductDGV2(ADMINNUMBER.Text);
+                                    }
+                                    else
+                                    {
+                                        Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
+                                    }
+                                }
+                                else
+                                {
+                                    BProduct product = blc.GetProductB(ID);
+                                    product.Name = NN1.Text;
+                                    product.Type = NN2.Text;
+                                    //product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    //product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(NN3.Text));
+                                    //product.buyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN4.Text));
+                                    //product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(NN5.Text));
+                                    product.sellPrice = int.Parse(Fun.ChangeToEnglishNumber(NN6.Text));
+                                    product.AgentName = NN7.Text;
+                                    product.CashType = (RR1.Checked) ? 1 : 2;    //  1:Money 2:Banking
+                                    product.RegisterDate = Fun.ChangeToEnglishNumber(NN8.Text);
+                                    product.EndDate = Fun.ChangeToEnglishNumber(NN9.Text);
+                                    //product.Totalcash = product.newBuyPrice * product.BuyCount;
+                                    if (!blc.ExistProductB(product))
+                                    {
+                                        blc.SaveEditProductB(product);
+                                        Result.Text = "ویرایش شد";
+                                        button8.Text = "ذخیره";
+                                        Fun.ClearTextBoxes(this.Controls);
+                                        ShowAllProductDGV1(ADMINNUMBER.Text);
+                                        ShowAllProductDGV2(ADMINNUMBER.Text);
+                                    }
+                                    else
+                                    {
+                                        Result.Text = " اطلاعات اشتباه یا تکراری است و ویرایش نشد";
+                                    }
+                                }
+                                #endregion
                             }
                         }
                     }
-
                 }
                 catch
                 {
@@ -614,6 +783,7 @@ namespace StoreMarket_V1
         }
         private void button9_Click_1(object sender, EventArgs e)
         {
+            // نمایش اطلاعات
             ShowAllProductDGV1(ADMINNUMBER.Text);
             ShowAllProductDGV2(ADMINNUMBER.Text);
         }
@@ -681,16 +851,12 @@ namespace StoreMarket_V1
             {
                 case 0:
                     {
-                        AddagentName(ADMINNUMBER.Text);
-                        buttonX4.Enabled = false;
-                        buttonX5.Enabled = false;
                         ShowAllProductDGV2(ADMINNUMBER.Text);
+                        ShowAllAgentNameinComboBox(ADMINNUMBER.Text);
                         break;
                     }
                 case 1:
                     {
-                        buttonX4.Enabled = true;
-                        buttonX5.Enabled = true;
                         ShowAllProductDGV1(ADMINNUMBER.Text);
                         break;
                     }
@@ -699,14 +865,17 @@ namespace StoreMarket_V1
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            // خرید نقدی
             ShowAllMoneyProductDGV1(ADMINNUMBER.Text);
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            //  خرید بانکی
             ShowAllBankiProductDGV1(ADMINNUMBER.Text);
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            // مانده بیشتر از
             try 
             {
                 if (ADMINNUMBER.Text == "1")
@@ -727,6 +896,7 @@ namespace StoreMarket_V1
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            // مانده کمتر از
             try
             {
                 if (ADMINNUMBER.Text == "1")
@@ -748,6 +918,7 @@ namespace StoreMarket_V1
         }
         private void button5_Click(object sender, EventArgs e)
         {
+            //  تاریخ انقضاء
             try
             {
                 String Now = Fun.ChangeToEnglishNumber(NN8.Text);
@@ -770,12 +941,9 @@ namespace StoreMarket_V1
             }
 
         }
-        private void buttonX4_Click(object sender, EventArgs e)
-        {
-            ShowAllProductDGV1(ADMINNUMBER.Text);
-        }
         private void button6_Click(object sender, EventArgs e)
         {
+            //  نزدیک انقضاء
             try
             {
                 String Now = Fun.ChangeToEnglishNumber(NN8.Text);
@@ -807,10 +975,6 @@ namespace StoreMarket_V1
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-        private void buttonX5_Click(object sender, EventArgs e)
-        {
-            ShowProductOrderbyExpireDate(ADMINNUMBER.Text);
-        }
         private void buttonX10_Click(object sender, EventArgs e)
         {
             try
@@ -826,13 +990,8 @@ namespace StoreMarket_V1
             }
 
         }
-        private void buttonX11_Click(object sender, EventArgs e)
-        {
-            AddagentName(ADMINNUMBER.Text);
-        }
         private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
+        { 
             if (TAP == 0)
             {   //DGV2
                 ShowSearchResultDGV2(ADMINNUMBER.Text, Searchtext.Text);
@@ -842,15 +1001,31 @@ namespace StoreMarket_V1
                 ShowSearchResultDGV1(ADMINNUMBER.Text, Searchtext.Text);
             }
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            ShowAllProductDGV1(ADMINNUMBER.Text);
+            ShowAllProductDGV2(ADMINNUMBER.Text);
+        }
+        private void buttonX11_Click(object sender, EventArgs e)
+        {
+            // مرتب بر اساس تاریخ انقضاء
+            ShowProductOrderbyExpireDateDGV1(ADMINNUMBER.Text);
+            ShowProductOrderbyExpireDateDGV2(ADMINNUMBER.Text);
+        }
+        private void buttonX5_Click(object sender, EventArgs e)
+        {
+            // مرتب براساس موجودی
+            ShowProductOrderbyMojodiDGV1(ADMINNUMBER.Text);
+            ShowProductOrderbyMojodiDGV2(ADMINNUMBER.Text);
+        }
+
     }
 }

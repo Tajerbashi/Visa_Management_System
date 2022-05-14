@@ -69,7 +69,11 @@ namespace StoreMarket_V1
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("آیا میخواهید اطلاعات حذف شود", "تایید درخواست", MessageBoxButtons.YesNo))
+            MessageBoxForm message = new MessageBoxForm();
+            message.title.Text = "تایید درخواست";
+            message.Subject.Text = "آیا میخواهید اطلاعات حذف شود؟؟؟";
+            message.ShowDialog();
+            if (message.Sw)
             {
                 if (ADMINNUMBER.Text == "1")
                 {
@@ -85,7 +89,11 @@ namespace StoreMarket_V1
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("آیا میخواهید اطلاعات ویرایش شود", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            MessageBoxForm message = new MessageBoxForm();
+            message.title.Text = "تایید درخواست";
+            message.Subject.Text = "آیا میخواهید اطلاعات ویرایش شود؟؟؟";
+            message.ShowDialog();
+            if (message.Sw)
             {
                 SW = false;
                 savebtn.Text = "بروزرسانی";
@@ -138,8 +146,11 @@ namespace StoreMarket_V1
             }
             else
             {
-                DialogResult = MessageBox.Show("از درج اطلاعات مطمیین هستید؟؟؟", "اطلاعیه", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.Yes)
+                MessageBoxForm message = new MessageBoxForm();
+                message.title.Text = "تایید درخواست";
+                message.Subject.Text = "از درج اطلاعات مطمیین هستید؟؟؟";
+                message.ShowDialog();
+                if (message.Sw)
                 {
                     if (SW)
                     {   //  Save New Admin Bank Account

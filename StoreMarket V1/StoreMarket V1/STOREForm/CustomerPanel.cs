@@ -68,11 +68,6 @@ namespace StoreMarket_V1
                 errorProvider1.SetError(NAME,"نام را وارد کنید");
                 NAME.Focus();
             }
-            else if (FAMILY.Text.Trim().Length == 0)
-            {
-                errorProvider1.SetError(FAMILY, "فامیلی را وارد کنید");
-                FAMILY.Focus();
-            }
             else if (PHONE.Text.Trim().Length == 0)
             {
                 errorProvider1.SetError(PHONE, "تلفن را وارد کنید");
@@ -90,28 +85,28 @@ namespace StoreMarket_V1
                     ACustomer customer = new ACustomer();
                     if (SW)
                     {   //ذخیره
-                        customer.FullName = NAME.Text + " "+ FAMILY.Text;
+                        customer.FullName = NAME.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerA(customer))
                         {
-                            MessageBox.Show("ذخیره شد");
+                            Result.Text = "ذخیره شد";
                             PrintCustomer(ADMIN.Text);
                             Fun.ClearTextBoxes(this.Controls);
                         }
                         else
                         {
-                            MessageBox.Show("ذخیره نشد");
+                            Result.Text = "ذخیره نشد";
                         }
                     }
                     else
                     {
-                        customer.FullName = NAME.Text + " " + FAMILY.Text;
+                        customer.FullName = NAME.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerA(customer, ID))
                         {
-                            MessageBox.Show("ویرایش شد");
+                            Result.Text = "ویرایش شد";
                             PrintCustomer(ADMIN.Text);
                             Fun.ClearTextBoxes(this.Controls);
                             SAVEBTN.Text = "ذخیره";
@@ -119,7 +114,7 @@ namespace StoreMarket_V1
                         }
                         else
                         {
-                            MessageBox.Show("ذخیره نشد");
+                            Result.Text = "ذخیره نشد";
                         }
                     }
                 }
@@ -128,28 +123,28 @@ namespace StoreMarket_V1
                     BCustomer customer = new BCustomer();
                     if (SW)
                     {
-                        customer.FullName = NAME.Text + " " + FAMILY.Text;
+                        customer.FullName = NAME.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerB(customer))
                         {
-                            MessageBox.Show("ذخیره شد");
+                            Result.Text = "ذخیره شد";
                             PrintCustomer(ADMIN.Text);
                             Fun.ClearTextBoxes(this.Controls);
                         }
                         else
                         {
-                            MessageBox.Show("ذخیره نشد");
+                            Result.Text = "ذخیره نشد";
                         }
                     }
                     else
                     {
-                        customer.FullName = NAME.Text + " " + FAMILY.Text;
+                        customer.FullName = NAME.Text;
                         customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerB(customer, ID))
                         {
-                            MessageBox.Show("ویرایش شد");
+                            Result.Text = "ویرایش شد";
                             PrintCustomer(ADMIN.Text);
                             Fun.ClearTextBoxes(this.Controls);
                             SAVEBTN.Text = "ذخیره";
@@ -157,7 +152,7 @@ namespace StoreMarket_V1
                         }
                         else
                         {
-                            MessageBox.Show("ذخیره نشد");
+                            Result.Text = "ذخیره نشد";
                         }
                     }
                 }
@@ -178,32 +173,12 @@ namespace StoreMarket_V1
                 DGV1.CurrentRow.Selected = (DGV1.CurrentRow.Selected) ? false : true;
                 ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
             }
-        }
-
-        private void DELETBTN_Click(object sender, EventArgs e)
-        {
-            if (ADMIN.Text == "1")
+            if (e.Button==MouseButtons.Right)
             {
-                bll.DeleteCustomerA(ID);
-                PrintCustomer(ADMIN.Text);
-            }
-            else
-            {
-                bll.DeleteCustomerB(ID);
-                PrintCustomer(ADMIN.Text);
+                contextMenuStrip1.Show(Cursor.Position.X,Cursor.Position.Y);
             }
         }
 
-        private void EDITBTN_Click(object sender, EventArgs e)
-        {
-            ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
-            NAME.Text = DGV1.CurrentRow.Cells[1].Value.ToString();
-            FAMILY.Text = DGV1.CurrentRow.Cells[2].Value.ToString();
-            PHONE.Text = DGV1.CurrentRow.Cells[3].Value.ToString();
-            NEWBUY.Text = DGV1.CurrentRow.Cells[4].Value.ToString();
-            SAVEBTN.Text = "بروزرسانی";
-            SW = false;
-        }
 
         private void NAME_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -215,5 +190,49 @@ namespace StoreMarket_V1
             PrintSerchResult(ADMIN.Text, Search.Text);
         }
 
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ADMIN.Text == "1")
+            {
+                bll.DeleteCustomerA(ID);
+                PrintCustomer(ADMIN.Text);
+            }
+            else
+            {
+                bll.DeleteCustomerB(ID);
+                PrintCustomer(ADMIN.Text);
+            }
+            Result.Text ="اطلاعات مشتری مورد نظر حذف شد!!!";
+        }
+
+        private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
+            NAME.Text = DGV1.CurrentRow.Cells[1].Value.ToString();
+            PHONE.Text = DGV1.CurrentRow.Cells[2].Value.ToString();
+            NEWBUY.Text = DGV1.CurrentRow.Cells[3].Value.ToString();
+            SAVEBTN.Text = "بروزرسانی";
+            SW = false;
+        }
+
+        private void SAVEBTN_MouseEnter(object sender, EventArgs e)
+        {
+            SAVEBTN.ForeColor = Color.Black;
+        }
+
+        private void SAVEBTN_MouseLeave(object sender, EventArgs e)
+        {
+            SAVEBTN.ForeColor = Color.White;
+        }
+
+        private void SEABTN_MouseEnter(object sender, EventArgs e)
+        {
+            SEABTN.ForeColor = Color.Black;
+        }
+
+        private void SEABTN_MouseLeave(object sender, EventArgs e)
+        {
+            SEABTN.ForeColor = Color.White;
+        }
     }
 }

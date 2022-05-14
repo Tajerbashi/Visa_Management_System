@@ -32,7 +32,6 @@ namespace StoreMarket_V1
                         string email = dr["status"].ToString();
                         // int userlevel = dr["userlevel"].ToString();
 
-                        MessageBox.Show(FirstName + " " + LastName + " " + email);
                     }
                     dr.Close();
                 }

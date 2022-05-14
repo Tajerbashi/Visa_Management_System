@@ -191,11 +191,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FORMS\LogFORM.cs">
-      <SubType>Form</SubType>
+    <Compile Include="STOREForm\BuyFactorPanel.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FORMS\LogFORM.designer.cs">
-      <DependentUpon>LogFORM.cs</DependentUpon>
+    <Compile Include="STOREForm\BuyFactorPanel.Designer.cs">
+      <DependentUpon>BuyFactorPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerForm\LogReports.cs">
       <SubType>UserControl</SubType>
@@ -215,6 +215,17 @@
     <Compile Include="ManagerForm\AccountsPanel.Designer.cs">
       <DependentUpon>AccountsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxForm.Designer.cs">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="STOREForm\ProductPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,16 +238,16 @@
     <Compile Include="STOREForm\CustomerPanel.Designer.cs">
       <DependentUpon>CustomerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\AdminBankAccount.cs">
+    <Compile Include="CompleteForm\AdminBankAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\AdminBankAccount.Designer.cs">
+    <Compile Include="CompleteForm\AdminBankAccount.Designer.cs">
       <DependentUpon>AdminBankAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\ControlTranSectionForm.cs">
+    <Compile Include="CompleteForm\ControlTranSectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\ControlTranSectionForm.Designer.cs">
+    <Compile Include="CompleteForm\ControlTranSectionForm.Designer.cs">
       <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\ConvertArabicNumberToEnglish.cs" />
@@ -267,10 +278,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FORMS\RecoveryForm.cs">
+    <Compile Include="CompleteForm\RecoveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\RecoveryForm.Designer.cs">
+    <Compile Include="CompleteForm\RecoveryForm.Designer.cs">
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareCode\Functions.cs" />
@@ -293,8 +304,8 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FORMS\LogFORM.resx">
-      <DependentUpon>LogFORM.cs</DependentUpon>
+    <EmbeddedResource Include="STOREForm\BuyFactorPanel.resx">
+      <DependentUpon>BuyFactorPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm\LogReports.resx">
       <DependentUpon>LogReports.cs</DependentUpon>
@@ -305,6 +316,9 @@
     <EmbeddedResource Include="ManagerForm\AccountsPanel.resx">
       <DependentUpon>AccountsPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="STOREForm\ProductPanel.resx">
       <DependentUpon>ProductPanel.cs</DependentUpon>
@@ -312,10 +326,10 @@
     <EmbeddedResource Include="STOREForm\CustomerPanel.resx">
       <DependentUpon>CustomerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\AdminBankAccount.resx">
+    <EmbeddedResource Include="CompleteForm\AdminBankAccount.resx">
       <DependentUpon>AdminBankAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\ControlTranSectionForm.resx">
+    <EmbeddedResource Include="CompleteForm\ControlTranSectionForm.resx">
       <DependentUpon>ControlTranSectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompleteForm\AccessCodeForm.resx">
@@ -332,18 +346,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ManagerForm\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\RecoveryForm.resx">
+    <EmbeddedResource Include="CompleteForm\RecoveryForm.resx">
       <DependentUpon>RecoveryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompleteForm\SplashScreen.resx">
@@ -601,6 +610,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\Information-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boss-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyring-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\search-icon %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\atm-money-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\master-card-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Awicons-Vista-Artistic-Chart-search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Flatastic-1-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Person-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\company-building-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Flatastic-4-Increase.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Gpritiranjan-Simple-Christmas-Christmas-date.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Pretty-Office-10-Numbers.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Pretty-Office-10-Abacus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Awicons-Vista-Artistic-Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Everaldo-Crystal-Clear-Action-cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\vintage-radio-05-orange-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\default-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Action-cancel-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Iconleak-Atrous-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Fasticon-Shop-Cart-Shop-cart-add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Fasticon-Shop-Cart-Shop-cart-exclude.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Fasticon-Shop-Cart-Shop-cart-apply.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

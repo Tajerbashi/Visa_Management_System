@@ -237,23 +237,14 @@ namespace BLL
             }
             return false;
         }
-        //  نمایش همه شرکت ها
-        public List<ACompany> ShowAllDataCompanyA()
-        {
-            return (dlc.ShowAllDataCompanyA()).ToList();
-        }
-        public List<BCompany> ShowAllDataCompanyB()
-        {
-            return (dlc.ShowAllDataCompanyB()).ToList();
-        }
         // نمایش شرکت های  فعال
         public List<ACompany> ShowAllActiveDataCompanyA()
         {
-            return (dlc.ShowAllActiveDataCompanyA()).ToList();
+            return (dlc.GetCompanyA()).ToList();
         }
         public List<BCompany> ShowAllActiveDataCompanyB()
         {
-            return (dlc.ShowAllActiveDataCompanyB()).ToList();
+            return (dlc.GetCompanyB()).ToList();
         }
         //  نمایش شرکت های غیر فعال
         public List<ACompany> ShowAllDisActiveDataCompanyA()
@@ -301,6 +292,15 @@ namespace BLL
         public void ChangeStatusCompany(String Admin, int ID)
         {
             dlc.ChangeStatusCompany(Admin, ID);
+        }
+
+        public List<ACompany> GetCompanyA()
+        {
+            return (dlc.GetCompanyA()).ToList();
+        }
+        public List<BCompany> GetCompanyB()
+        {
+            return (dlc.GetCompanyB()).ToList();
         }
         #endregion
         //  Product Control Form
@@ -388,6 +388,15 @@ namespace BLL
         {
             return (dlc.ShowProductOrderbyExpireDateB());
         }
+        //  مرتب سازی بر اساس موجودی
+        public List<AProduct> ShowProductOrderbyMojodiA()
+        {
+            return (dlc.ShowProductOrderbyMojodiA());
+        }
+        public List<BProduct> ShowProductOrderbyMojodiB()
+        {
+            return (dlc.ShowProductOrderbyMojodiB());
+        }
 
 
         public List<AAgent> AgentA()
@@ -399,6 +408,14 @@ namespace BLL
             return (from i in DB.bAgents select i).ToList();
         }
 
+        public List<AAgent> GetAgentNameforCompanyA(String CompanyName)
+        {
+            return (dlc.GetAgentNameforCompanyA(CompanyName));
+        }
+        public List<BAgent> GetAgentNameforCompanyB(String CompanyName)
+        {
+            return (dlc.GetAgentNameforCompanyB(CompanyName));
+        }
 
         public bool CreateProductA(AProduct product)
         {
@@ -406,6 +423,15 @@ namespace BLL
             {
                 if (item.Name == product.Name && item.Type == product.Type)
                 {
+                    AProduct p = GetProductA(item.id);
+                    p.BuyCount += product.BuyCount;
+                    p.Mojodi += product.Mojodi;
+                    p.newBuyPrice = product.newBuyPrice;
+                    p.sellPrice = product.sellPrice;
+                    p.RegisterDate = product.RegisterDate;
+                    p.EndDate = product.EndDate;
+                    p.Totalcash += product.newBuyPrice * product.BuyCount;
+                    dlc.SaveEditProductA(p);
                     return false;
                 }
             }
@@ -418,6 +444,15 @@ namespace BLL
             {
                 if (item.Name == product.Name && item.Type == product.Type)
                 {
+                    BProduct p = GetProductB(item.id);
+                    p.BuyCount += product.BuyCount;
+                    p.Mojodi += product.Mojodi;
+                    p.newBuyPrice = product.newBuyPrice;
+                    p.sellPrice = product.sellPrice;
+                    p.RegisterDate = product.RegisterDate;
+                    p.EndDate = product.EndDate;
+                    p.Totalcash += product.newBuyPrice * product.BuyCount;
+                    dlc.SaveEditProductB(p);
                     return false;
                 }
             }

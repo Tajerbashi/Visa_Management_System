@@ -33,11 +33,11 @@
             this.ADMINNUMBER = new System.Windows.Forms.Label();
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.mainpanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.mainpanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.ADMINNUMBER.AutoSize = true;
             this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNUMBER.Location = new System.Drawing.Point(69, 438);
+            this.ADMINNUMBER.Location = new System.Drawing.Point(60, 438);
             this.ADMINNUMBER.Name = "ADMINNUMBER";
             this.ADMINNUMBER.Size = new System.Drawing.Size(36, 13);
             this.ADMINNUMBER.TabIndex = 23;
@@ -72,7 +72,7 @@
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
             this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNAME.Location = new System.Drawing.Point(85, 402);
+            this.ADMINNAME.Location = new System.Drawing.Point(76, 402);
             this.ADMINNAME.Name = "ADMINNAME";
             this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
             this.ADMINNAME.TabIndex = 22;
@@ -94,6 +94,32 @@
             this.panel1.TabIndex = 25;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("MRT_Mitra_3", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::StoreMarket_V1.Properties.Resources.Everaldo_Crystal_Clear_Mimetype_log;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(19, 532);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(135, 107);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "گزارش های ورود و خروج";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // mainpanel
+            // 
+            this.mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
+            this.mainpanel.Location = new System.Drawing.Point(6, 5);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(838, 709);
+            this.mainpanel.TabIndex = 26;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -104,32 +130,14 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::StoreMarket_V1.Properties.Resources.admin_icon__2_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(28, 25);
+            this.button1.Location = new System.Drawing.Point(19, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 163);
+            this.button1.Size = new System.Drawing.Size(135, 163);
             this.button1.TabIndex = 0;
             this.button1.Text = "مالک فروشگاه";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("MRT_Mitra_3", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Pretty_Office_4_Open_Folder_Full;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(28, 532);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 107);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "گزارش های ورود و خروج";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -140,9 +148,9 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::StoreMarket_V1.Properties.Resources.master_card_icon__1_;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(28, 363);
+            this.button3.Location = new System.Drawing.Point(19, 363);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 163);
+            this.button3.Size = new System.Drawing.Size(135, 163);
             this.button3.TabIndex = 24;
             this.button3.Text = "حساب بانکی";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -156,24 +164,16 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("MRT_Mitra_3", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::StoreMarket_V1.Properties.Resources.keyring_icon;
+            this.button2.Image = global::StoreMarket_V1.Properties.Resources.keyring_icon3;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(28, 194);
+            this.button2.Location = new System.Drawing.Point(19, 194);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 163);
+            this.button2.Size = new System.Drawing.Size(135, 163);
             this.button2.TabIndex = 1;
             this.button2.Text = "کنترل ادمین";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // mainpanel
-            // 
-            this.mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
-            this.mainpanel.Location = new System.Drawing.Point(6, 5);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(838, 709);
-            this.mainpanel.TabIndex = 26;
             // 
             // ManageForm
             // 

@@ -9,14 +9,16 @@ namespace BEE
     public class BBuyFactor 
     {   //  فاکتور خرید
         public int id { get; set; }
-        public bool type { get; set; }  //
-        public bool Model { get; set; }  // sell or buy
-        public DateTime DayDate { get; set; }
-        public double Price { get; set; }
         public int FactorNumber { get; set; }
-        public bool Status { get; set; }
+        public int FactorCode { get; set; }
+        public BAgent agent { get; set; }
+        public BCompany company { get; set; }
+        public String Date { get; set; }
+        public Int16 CashType { get; set; } //  1 Money     2 Banki
+        public double TotalPrice { get; set; }
+        public BAdmin admin { get; set; }
+        public bool Status { get; set; } = true;
         public bool DeleteStatus { get; set; }
-        public BCheckBank bCheckBank { get; set; }
-        public List<BProduct> bProducts { get; set; } = new List<BProduct>();
+        public List<BProduct> Products { get; set; } = new List<BProduct>();
     }
 }

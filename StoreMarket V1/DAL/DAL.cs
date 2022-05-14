@@ -51,7 +51,9 @@ namespace DAL
 
         // Owner Code Function
         public void CreateOwner(OWNER owner)
-        {   // اگر لایه هارا رد کرده باشد و وجود نداشته باشد ذخیره کند
+        {
+            #region code
+            // اگر لایه هارا رد کرده باشد و وجود نداشته باشد ذخیره کند
             //String CSTR = "Data Source=.;Initial Catalog = StoreMarketDB;Integrated Security = true";
             //SqlConnection connection = new SqlConnection(CSTR);
             //connection.Open();
@@ -62,11 +64,14 @@ namespace DAL
             //command.CommandText = "insert into dbo.Owner values (@access,@pass,1)";
             //command.ExecuteNonQuery();
             //connection.Close();
+            #endregion
+
             db.Owner.Add(owner);
             db.SaveChanges();
         }
         public bool SelectOwnerStatus(OWNER owner)
-        {   // اگر وجود دارد هنگام اولین ورود دوباره ایجاد نکند
+        {   
+            // اگر وجود دارد هنگام اولین ورود دوباره ایجاد نکند
             foreach (var item in db.Owner)
             {
                 if (item.access == owner.access && item.password == owner.password)
@@ -159,22 +164,12 @@ namespace DAL
             db.SaveChanges();
         }
 
-
-        public List<ACompany> ShowAllDataCompanyA()
-        {
-            return (from i in db.aCompanies where !i.DeleteStatus select i).ToList();
-        }
-        public List<BCompany> ShowAllDataCompanyB()
-        {
-            return (from i in db.bCompanies where !i.DeleteStatus select i).ToList();
-        }
-
-
-        public List<ACompany> ShowAllActiveDataCompanyA()
+        //  فعال و موجود
+        public List<ACompany> GetCompanyA()
         {
             return (from i in db.aCompanies where i.isActive && !i.DeleteStatus select i).ToList();
         }
-        public List<BCompany> ShowAllActiveDataCompanyB()
+        public List<BCompany> GetCompanyB()
         {
             return (from i in db.bCompanies where i.isActive && !i.DeleteStatus select i).ToList();
         }
@@ -464,6 +459,17 @@ namespace DAL
             return (from i in db.bProducts orderby i.EndDate ascending select i).ToList();
 
         }
+        // نمایش اطلاعات بر اساس تعداد موجودی
+        public List<AProduct> ShowProductOrderbyMojodiA()
+        {
+            return (from i in db.aProducts orderby i.Mojodi ascending select i).ToList();
+        }
+        public List<BProduct> ShowProductOrderbyMojodiB()
+        {
+            return (from i in db.bProducts orderby i.Mojodi ascending select i).ToList();
+
+        }
+
 
         public List<AProduct> ShowSearchResultA(String Word)
         {
@@ -476,13 +482,11 @@ namespace DAL
 
         public void CreateProductA(AProduct product)
         {
-            product.Totalcash = product.buyPrice * product.BuyCount;
             db.aProducts.Add(product);
             db.SaveChanges();
         }
         public void CreateProductB(BProduct product)
         {
-            product.Totalcash = product.buyPrice * product.BuyCount;
             db.bProducts.Add(product);
             db.SaveChanges();
         }
@@ -498,13 +502,11 @@ namespace DAL
 
         public void SaveEditProductA(AProduct product)
         {
-            product.Totalcash += (product.newBuyPrice * product.BuyCount);
             product.DeleteStatus = false;
             db.SaveChanges();
         }
         public void SaveEditProductB(BProduct product)
         {
-            product.Totalcash += (product.newBuyPrice * product.BuyCount);
             product.DeleteStatus = false;
             db.SaveChanges();
         }
@@ -720,6 +722,14 @@ namespace DAL
             return (from i in db.bAgents where !i.DeleteStatus select i).ToList();
         }
 
+        public List<AAgent> GetAgentNameforCompanyA(String CompanyName)
+        {
+            return (from i in db.aAgents where i.CompanyName==CompanyName select i).ToList();
+        }
+        public List<BAgent> GetAgentNameforCompanyB(String CompanyName)
+        {
+            return (from i in db.bAgents where i.CompanyName == CompanyName select i).ToList();
+        }
         public List<AAgent> ShowAllActiveAgentA()
         {
             return (from i in db.aAgents where !i.DeleteStatus && i.IsActive select i).ToList();
