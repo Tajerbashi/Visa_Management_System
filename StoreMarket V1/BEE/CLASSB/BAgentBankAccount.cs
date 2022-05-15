@@ -13,8 +13,8 @@ namespace BEE
         public String AccountNumber { get; set; }
         public String AgentName { get; set; }
         public String OwnerName { get; set; }
-        public bool IsActive { get; set; }
-        public bool DeleteStatus { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public BAgent bAgent { get; set; }
         public List<BCheckBank> bCheckBank { get; set; } = new List<BCheckBank>();
 

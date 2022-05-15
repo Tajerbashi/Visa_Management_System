@@ -14,17 +14,19 @@ namespace BEE
         public int Mojodi { get; set; } = 0; // شمارنده موجودی
         public String Name { get; set; }
         public String Type { get; set; }
+        public String Brand { get; set; }
         public int buyPrice { get; set; }
         public int newBuyPrice { get; set; }
         public int sellPrice { get; set; }
         public String RegisterDate { get; set; }
-        public String EndDate { get; set; }
+        public String ProduceDate { get; set; }
+        public String ExpireDate { get; set; }
         public int CashType { get; set; }
         public String AgentName { get; set; }
         public int Totalcash { get; set; } = 0;
 
         public bool DeleteStatus { get; set; } = false;
-        public AAgent aAgent { get; set; }
+        public bool IsActive { get; set; } = true;
         public ABuyFactor aBuyFactor { get; set; }
         public ASellFactor aSellFactor { get; set; }
     }

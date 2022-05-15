@@ -15,9 +15,9 @@ namespace BEE
         public String PersionCost { get; set; }
         public double Price { get; set; }
         public DateTime DayDate { get; set; } 
-        public DateTime PassDate { get; set; }        
-        public bool IsActive { get; set; }
-        public bool DeleteStatus { get; set; }
+        public DateTime PassDate { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public bool  Status { get; set; }//ایا چک پاس شده یا خیر    پاس شده درست نشده نادرست
 
         public AAdminBankAccount adminBankAccount { get; set; }

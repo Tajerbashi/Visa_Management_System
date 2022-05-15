@@ -10,7 +10,6 @@ namespace BEE
     {
         public int id { get; set; }
         public Double BuyCost { get; set; }
-        public bool DeleteStatus { get; set; }    // if be true deleted
         public List<BSellFactor> bSellFactor { get; set; } = new List<BSellFactor>();
     }
 }

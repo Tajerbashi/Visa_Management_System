@@ -12,6 +12,8 @@ namespace BEE
         public Int64 Phone { get; set; }
         public String Email { get; set; }
         public String Address { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
+        public bool DeleteStatus { get; set; } = false;
+
     }
 }

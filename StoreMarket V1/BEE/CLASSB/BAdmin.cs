@@ -13,7 +13,6 @@ namespace BEE
         public String Password { get; set; }
         public String accessCode { get; set; }
         public bool AccessControl { get; set; }
-        public bool DeleteStatus { get; set; }
         public List<BAdminBankAccount> bAdminBankAccounts { get; set; } = new List<BAdminBankAccount>();
     }
 

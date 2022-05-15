@@ -43,7 +43,6 @@ namespace StoreMarket_V1
         public bool Sw = false;
         private void MessageBoxForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -57,7 +56,6 @@ namespace StoreMarket_V1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TestBtn.Visible = false;
             Sw = false;
             this.Close();
         }

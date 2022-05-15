@@ -78,16 +78,16 @@ namespace StoreMarket_V1
             DGV1.Rows.Clear();
             if (Number == "1")
             {
-                var DB = blc.ShowActiveDataA().ToList();
+                var DB = blc.ShowAdminsA().ToList();
                 foreach (var item in DB)
                 {
                     String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DGV1.Rows.Add(item.id, status, item.FullName, item.Phone, item.Email, item.Address, item.Username, item.Password, item.accessCode);
                 }
             }
-            else if (Number == "2")
+            else
             {
-                var DB = blc.ShowActiveDataA().ToList();
+                var DB = blc.ShowAdminsB().ToList();
                 foreach (var item in DB)
                 {
                     String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -283,7 +283,7 @@ namespace StoreMarket_V1
             bool sws = false;
             if (ADMINNUMBER.Text == "1")
             {
-                name = blc.FullNameA(ID);
+                name = blc.AdminFullNameByIDA(ID);
                 if (DialogResult.Yes == MessageBox.Show("آیا میخواهید اطلاعات\n " + name + " \nرا ویرایش کنید؟", "تایید درخواست", MessageBoxButtons.YesNo))
                 {
                     sws = true;
@@ -291,7 +291,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                name = blc.FullNameB(ID);
+                name = blc.AdminFullNameByIDB(ID);
                 if (DialogResult.Yes == MessageBox.Show("آیا میخواهید اطلاعات\n " + name + " \nرا ویرایش کنید؟", "تایید درخواست", MessageBoxButtons.YesNo))
                 {
                     sws = true;
@@ -332,7 +332,7 @@ namespace StoreMarket_V1
             {
                 if (ADMINNUMBER.Text == "1")
                 {
-                    Name = blc.FullNameA(ID);
+                    Name = blc.AdminFullNameByIDA(ID);
 
                     if (DialogResult.Yes == MessageBox.Show("اطلاعات " + Name + "  پاک شود ؟", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
@@ -341,7 +341,7 @@ namespace StoreMarket_V1
                 }
                 else if (ADMINNUMBER.Text == "2")
                 {
-                    Name = blc.FullNameB(ID);
+                    Name = blc.AdminFullNameByIDB(ID);
 
                     if (DialogResult.Yes == MessageBox.Show("اطلاعات " + Name + "  پاک شود ؟", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {

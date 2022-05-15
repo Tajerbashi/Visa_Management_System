@@ -16,8 +16,8 @@ namespace BEE
         public String Address { get; set; }
         public String Site { get; set; }
         public String Details { get; set; }
-        public bool isActive { get; set; }
-        public bool DeleteStatus { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public List<BAgent> bAgents { set; get; } = new List<BAgent>();
     }
 }

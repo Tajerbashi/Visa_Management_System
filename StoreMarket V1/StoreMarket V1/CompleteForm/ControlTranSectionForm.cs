@@ -44,7 +44,7 @@ namespace StoreMarket_V1
                 var DB = blc.GetCompanyA();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName,item.CompanyManager,item.Phone1,item.Phone2,item.Address,item.Site,item.Details);
                 }
             }
@@ -53,7 +53,7 @@ namespace StoreMarket_V1
                 var DB = blc.GetCompanyB();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -66,7 +66,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowAllActiveDataCompanyA();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -75,7 +75,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowAllActiveDataCompanyA();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -88,7 +88,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowAllDisActiveDataCompanyA();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -97,7 +97,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowAllDisActiveDataCompanyB();
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -219,18 +219,24 @@ namespace StoreMarket_V1
             agentName3.Items.Clear();
             if (ADMIN == "1")
             {
-                var DB = blc.GetAgentNameforCompanyA(CompanyName);
+                var DB = blc.GetAgentA();
                 foreach (var item in DB)
                 {
-                    agentName3.Items.Add(item.FullName);
+                    if (item.CompanyName==CompanyName)
+                    {
+                        agentName3.Items.Add(item.FullName);
+                    }
                 }
             }
             else
             {
-                var DB = blc.GetAgentNameforCompanyB(CompanyName);
+                var DB = blc.GetAgentB();
                 foreach (var item in DB)
                 {
-                    agentName3.Items.Add(item.FullName);
+                    if (item.CompanyName == CompanyName)
+                    {
+                        agentName3.Items.Add(item.FullName);
+                    }
                 }
             }
         }
@@ -313,7 +319,7 @@ namespace StoreMarket_V1
                 var DB = blc.SearchResult0A(Word);
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -322,7 +328,7 @@ namespace StoreMarket_V1
                 var DB = blc.SearchResult0B(Word);
                 foreach (var item in DB)
                 {
-                    String Status = (item.isActive) == true ? "فعال" : "غیر فعال";
+                    String Status = (item.IsActive) == true ? "فعال" : "غیر فعال";
                     DT1.Rows.Add(item.id, Status, item.CompanyName, item.CompanyManager, item.Phone1, item.Phone2, item.Address, item.Site, item.Details);
                 }
             }
@@ -411,7 +417,7 @@ namespace StoreMarket_V1
                         address1.Text = company.Address;
                         site1.Text = company.Site;
                         details1.Text = company.Details;
-                        status1.Text = (company.isActive) == true ? "فعال" : "غیر فعال";
+                        status1.Text = (company.IsActive) == true ? "فعال" : "غیر فعال";
                     }
                     else
                     {
@@ -423,7 +429,7 @@ namespace StoreMarket_V1
                         address1.Text = company.Address;
                         site1.Text = company.Site;
                         details1.Text = company.Details;
-                        status1.Text = (company.isActive) == true ? "فعال" : "غیر فعال";
+                        status1.Text = (company.IsActive) == true ? "فعال" : "غیر فعال";
                     }
                     SW = false;
                     buttonX4.Text = "بروزرسانی";
@@ -961,7 +967,7 @@ namespace StoreMarket_V1
                                 company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
                                 company.Address = address1.Text;
                                 company.Site = site1.Text;
-                                company.isActive = (status1.Text) == "فعال" ? true : false;
+                                company.IsActive = (status1.Text) == "فعال" ? true : false;
                                 company.DeleteStatus = false;
                                 company.Details = details1.Text;
                                 if (blc.CreatCompanyA(company))
@@ -982,7 +988,7 @@ namespace StoreMarket_V1
                                 company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
                                 company.Address = address1.Text;
                                 company.Site = site1.Text;
-                                company.isActive = (status1.Text) == "فعال" ? true : false;
+                                company.IsActive = (status1.Text) == "فعال" ? true : false;
                                 company.DeleteStatus = false;
                                 company.Details = details1.Text;
                                 if (blc.CreatCompanyB(company))
@@ -1014,7 +1020,7 @@ namespace StoreMarket_V1
                             company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
                             company.Address = address1.Text;
                             company.Site = site1.Text;
-                            company.isActive = (status1.Text) == "فعال" ? true : false;
+                            company.IsActive = (status1.Text) == "فعال" ? true : false;
                             company.DeleteStatus = false;
                             company.Details = details1.Text;
 
@@ -1032,7 +1038,7 @@ namespace StoreMarket_V1
                             company.Phone2 = Fun.ChangeToEnglishNumber(phoneC2.Text);
                             company.Address = address1.Text;
                             company.Site = site1.Text;
-                            company.isActive = (status1.Text) == "فعال" ? true : false;
+                            company.IsActive = (status1.Text) == "فعال" ? true : false;
                             company.DeleteStatus = false;
                             company.Details = details1.Text;
                             if (blc.SaveEditCompanyB(company))

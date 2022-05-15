@@ -123,6 +123,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Artdesigner_Urban_Stories_Cart {
+            get {
+                object obj = ResourceManager.GetObject("Artdesigner-Urban-Stories-Cart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap atm_money_icon {
             get {
                 object obj = ResourceManager.GetObject("atm-money-icon", resourceCulture);
@@ -273,6 +283,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Check_2_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Check-2-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap company_building_icon {
             get {
                 object obj = ResourceManager.GetObject("company-building-icon", resourceCulture);
@@ -346,6 +366,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Package_accept1 {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Package-accept1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Shopping_cart_insert {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Shopping-cart-insert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,6 +593,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap faq_icon {
+            get {
+                object obj = ResourceManager.GetObject("faq-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fasticon_Shop_Cart_Shop_cart {
             get {
                 object obj = ResourceManager.GetObject("Fasticon-Shop-Cart-Shop-cart", resourceCulture);
@@ -623,6 +663,36 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Polygon_Refresh_3 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads-Polygon-Refresh-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Polygon_Reload_2 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads-Polygon-Reload-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_file_icon {
+            get {
+                object obj = ResourceManager.GetObject("help-file-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hopstarter_Rounded_Square_Button_Delete {
             get {
                 object obj = ResourceManager.GetObject("Hopstarter-Rounded-Square-Button-Delete", resourceCulture);
@@ -656,6 +726,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Information_icon {
             get {
                 object obj = ResourceManager.GetObject("Information-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Information_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Information-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -793,6 +873,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Paomedia_Small_N_Flat_Sign_check1 {
+            get {
+                object obj = ResourceManager.GetObject("Paomedia-Small-N-Flat-Sign-check1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Person_Male_Light_icon {
             get {
                 object obj = ResourceManager.GetObject("Person-Male-Light-icon", resourceCulture);
@@ -806,6 +896,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap pie_chart_icon {
             get {
                 object obj = ResourceManager.GetObject("pie-chart-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Problem_icon {
+            get {
+                object obj = ResourceManager.GetObject("Problem-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1116,6 +1216,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Wackypixel_Pushdown_Buttons_Button_Red_Cancel {
             get {
                 object obj = ResourceManager.GetObject("Wackypixel-Pushdown-Buttons-Button-Red-Cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Warning-icon (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

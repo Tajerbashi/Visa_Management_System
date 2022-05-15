@@ -10,7 +10,6 @@ namespace BLL
 {
     public class BLLCode
     {
-        DBCLASS DB = new DBCLASS();
         DALCODE dlc = new DALCODE();
 
         #region OWNER
@@ -57,11 +56,11 @@ namespace BLL
         }
         public List<ALogInformation> aLogInformation()
         {
-            return (from i in DB.aLogInformation select i).ToList();
+            return (dlc.aLogInformation());
         }
         public List<BLogInformation> bLogInformation()
         {
-            return (from i in DB.bLogInformation select i).ToList();
+            return (dlc.bLogInformation());
         }
         public int LoginCodeAdmin(String Access, String UserName, String Password)
         {
@@ -105,27 +104,13 @@ namespace BLL
             return (dlc.readadminB().ToList());
         }
 
-        public String FullNameA(int id)
+        public String AdminFullNameByIDA(int id)
         {
-            foreach (var item in DB.aAdmins)
-            {
-                if (item.id == id)
-                {
-                    return (item.FullName);
-                }
-            }
-            return "";
+            return (dlc.AdminFullNameByIDA(id));
         }
-        public String FullNameB(int id)
+        public String AdminFullNameByIDB(int id)
         {
-            foreach (var item in DB.bAdmins)
-            {
-                if (item.id == id)
-                {
-                    return (item.FullName);
-                }
-            }
-            return "";
+            return (dlc.AdminFullNameByIDB(id));
         }
 
         public void ChangeStatusAdminA(int ID)
@@ -164,13 +149,13 @@ namespace BLL
             return (dlc.ShowAllAdminDataB()).ToList();
         }
 
-        public List<AAdmin> ShowActiveDataA()
+        public List<AAdmin> ShowAdminsA()
         {
-            return (from i in DB.aAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
+            return (dlc.ShowAdminsA()).ToList();
         }
-        public List<BAdmin> ShowActiveDataB()
+        public List<BAdmin> ShowAdminsB()
         {
-            return (from i in DB.bAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
+            return (dlc.ShowAdminsB()).ToList();
         }
 
         public bool SelectAdminA(AAdmin admin)
@@ -184,24 +169,18 @@ namespace BLL
 
         public bool RegisterAdminA(AAdmin admin)
         {
-            foreach (var item in DB.aAdmins)
+            if (dlc.SelectAdminA(admin))
             {
-                if (item.FullName == admin.FullName)
-                {
-                    return false;
-                }
+                return false;
             }
             dlc.RegisterAdminA(admin);
             return true;
         }
         public bool RegisterAdminB(BAdmin admin)
         {
-            foreach (var item in DB.bAdmins)
+            if (dlc.SelectAdminB(admin))
             {
-                if (item.FullName == admin.FullName)
-                {
-                    return false;
-                }
+                return false;
             }
             dlc.RegisterAdminB(admin);
             return true;
@@ -372,7 +351,7 @@ namespace BLL
         //نتایج تاریخ امروز تا انقضا
         public List<AProduct> ShowResultDateNowExpireA(String Now, String Expire)
         {
-            return (dlc.ShowResultDateNowExpireA(Now,Expire));
+            return (dlc.ShowResultDateNowExpireA(Now, Expire));
         }
         public List<BProduct> ShowResultDateNowExpireB(String Now, String Expire)
         {
@@ -388,76 +367,44 @@ namespace BLL
         {
             return (dlc.ShowProductOrderbyExpireDateB());
         }
+        // برند های محصولات
+        public List<AProduct> GetProductsA()
+        {
+            return (dlc.GetProductsA()).ToList();
+        }
+        public List<BProduct> GetProductsB()
+        {
+            return (dlc.GetProductsB()).ToList();
+        }
         //  مرتب سازی بر اساس موجودی
         public List<AProduct> ShowProductOrderbyMojodiA()
         {
-            return (dlc.ShowProductOrderbyMojodiA());
+            return (dlc.ShowProductOrderbyMojodiA()).ToList();
         }
         public List<BProduct> ShowProductOrderbyMojodiB()
         {
-            return (dlc.ShowProductOrderbyMojodiB());
-        }
-
-
-        public List<AAgent> AgentA()
-        {
-            return (from i in DB.aAgents select i).ToList();
-        }
-        public List<BAgent> AgentB()
-        {
-            return (from i in DB.bAgents select i).ToList();
-        }
-
-        public List<AAgent> GetAgentNameforCompanyA(String CompanyName)
-        {
-            return (dlc.GetAgentNameforCompanyA(CompanyName));
-        }
-        public List<BAgent> GetAgentNameforCompanyB(String CompanyName)
-        {
-            return (dlc.GetAgentNameforCompanyB(CompanyName));
+            return (dlc.ShowProductOrderbyMojodiB()).ToList();
         }
 
         public bool CreateProductA(AProduct product)
         {
-            foreach (var item in DB.aProducts)
+            if (dlc.SaveEditProductA(product))
             {
-                if (item.Name == product.Name && item.Type == product.Type)
-                {
-                    AProduct p = GetProductA(item.id);
-                    p.BuyCount += product.BuyCount;
-                    p.Mojodi += product.Mojodi;
-                    p.newBuyPrice = product.newBuyPrice;
-                    p.sellPrice = product.sellPrice;
-                    p.RegisterDate = product.RegisterDate;
-                    p.EndDate = product.EndDate;
-                    p.Totalcash += product.newBuyPrice * product.BuyCount;
-                    dlc.SaveEditProductA(p);
-                    return false;
-                }
+                return false;
             }
             dlc.CreateProductA(product);
             return true;
+            //if false editesave else create new
         }
         public bool CreateProductB(BProduct product)
         {
-            foreach (var item in DB.bProducts)
+            if (dlc.SaveEditProductB(product))
             {
-                if (item.Name == product.Name && item.Type == product.Type)
-                {
-                    BProduct p = GetProductB(item.id);
-                    p.BuyCount += product.BuyCount;
-                    p.Mojodi += product.Mojodi;
-                    p.newBuyPrice = product.newBuyPrice;
-                    p.sellPrice = product.sellPrice;
-                    p.RegisterDate = product.RegisterDate;
-                    p.EndDate = product.EndDate;
-                    p.Totalcash += product.newBuyPrice * product.BuyCount;
-                    dlc.SaveEditProductB(p);
-                    return false;
-                }
+                return false;
             }
             dlc.CreateProductB(product);
             return true;
+            //if false editesave else create new
         }
 
         public AProduct GetProductA(int ID)
@@ -471,25 +418,11 @@ namespace BLL
 
         public bool ExistProductA(AProduct product)
         {
-            foreach (var item in DB.aProducts)
-            {
-                if( item.id!=product.id && item.Name==product.Name && item.Type == product.Type)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (dlc.ExistProductA(product));
         }
         public bool ExistProductB(BProduct product)
         {
-            foreach (var item in DB.bProducts)
-            {
-                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (dlc.ExistProductB(product));
         }
 
         public void SaveEditProductA(AProduct product)
@@ -520,25 +453,11 @@ namespace BLL
         #region AdminControl
         public bool ExistAdminA(AAdmin admin)
         {
-            foreach (var item in DB.aAdmins)
-            {
-                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (dlc.ExistAdminA(admin));
         }
         public bool ExistAdminB(BAdmin admin)
         {
-            foreach (var item in DB.bAdmins)
-            {
-                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (dlc.ExistAdminB(admin));
         }
         public String ResetAdminPassword(AAdmin adminA, BAdmin adminB)
         {
@@ -556,27 +475,11 @@ namespace BLL
 
         public bool CreateAdminBankA(AAdminBankAccount adminbank)
         {
-            foreach (var item in DB.aAdminBankAccounts)
-            {
-                if (item.NameBank == adminbank.NameBank && item.AccountNumber == adminbank.AccountNumber)
-                {
-                    return false;
-                }
-            }
-            dlc.CreateAdminBankAccountA(adminbank);
-            return true;
+            return (dlc.CreateAdminBankA(adminbank));
         }
         public bool CreateAdminBankB(BAdminBankAccount adminbank)
         {
-            foreach (var item in DB.bAdminBankAccounts)
-            {
-                if (item.NameBank == adminbank.NameBank && item.AccountNumber == adminbank.AccountNumber)
-                {
-                    return true;
-                }
-            }
-            dlc.CreateAdminBankAccountB(adminbank);
-            return false;
+            return (dlc.CreateAdminBankB(adminbank));
         }
 
         public AAdminBankAccount adminbankacountA(int ID)
@@ -622,10 +525,31 @@ namespace BLL
         }
 
         #endregion
+        // Company
+
+        public ACompany GetCompanyIDA(String company)
+        {
+            return (dlc.GetCompanyIDA(company));
+        }
+        public BCompany GetCompanyIDB(String company)
+        {
+            return (dlc.GetCompanyIDB(company));
+        }
+
         //  Agent Register
+
+        public AAgent GetAgentIDA(String Name)
+        {
+            return (dlc.GetAgentIDA(Name));
+        }
+        public BAgent GetAgentIDB(String Name)
+        {
+            return (dlc.GetAgentIDB(Name));
+        }
+
         public bool CreatAgentA(AAgent agent)
         {
-            if (dlc.SelectionAgentA(agent))
+            if (!dlc.SelectionAgentA(agent))
             {
                 return (dlc.CreateAgentA(agent));
             }
@@ -633,7 +557,7 @@ namespace BLL
         }
         public bool CreatAgentB(BAgent agent)
         {
-            if (dlc.SelectionAgentB(agent))
+            if (!dlc.SelectionAgentB(agent))
             {
                 return (dlc.CreateAgentB(agent));
             }
@@ -828,24 +752,10 @@ namespace BLL
 
         public bool EditCustomerA(ACustomer customer, int ID)
         {
-            foreach (var item in DB.aCustomers)
-            {
-                if (item.id != ID && item.FullName == customer.FullName)
-                {
-                    return false;
-                }
-            }
-            return (dlc.EditCustomerA(customer, ID));
+            return (dlc.EditCustomerA(customer,ID));
         }
         public bool EditCustomerB(BCustomer customer, int ID)
         {
-            foreach (var item in DB.bCustomers)
-            {
-                if (item.id != ID && item.FullName == customer.FullName)
-                {
-                    return false;
-                }
-            }
             return (dlc.EditCustomerB(customer, ID));
         }
         public List<ACustomer> PrintSerchResultCustomerA(String Word)
@@ -858,13 +768,32 @@ namespace BLL
         }
 
         //  Agent
-        public List<AAgent> GetAgentNameA()
+        public List<AAgent> GetAgentA()
         {
-            return (dlc.GetAgentNameA()).ToList();
+            return (dlc.GetAgentA()).ToList();
         }
-        public List<BAgent> GetAgentNameB()
+        public List<BAgent> GetAgentB()
         {
-            return (dlc.GetAgentNameB()).ToList();
+            return (dlc.GetAgentB()).ToList();
+        }
+
+        //  Buy Factor
+        public int GetLastFactorNumberA()
+        {
+            return (dlc.GetLastFactorNumberA());
+        }
+        public int GetLastFactorNumberB()
+        {
+            return (dlc.GetLastFactorNumberB());
+        }
+
+        public int GetLastFactorCodeA()
+        {
+            return (dlc.GetLastFactorCodeA());
+        }
+        public int GetLastFactorCodeB()
+        {
+            return (dlc.GetLastFactorCodeB());
         }
     }
 }

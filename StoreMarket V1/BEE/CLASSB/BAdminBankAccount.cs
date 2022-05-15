@@ -14,6 +14,7 @@ namespace BEE
         public String OwnerName { get; set; }
         public Int64 phonenumber { get; set; }
         public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public BAdmin bAdmin { get; set; }
         public List<BCheckBank> bCheckBank { get; set; } = new List<BCheckBank>();
     }

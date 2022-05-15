@@ -683,6 +683,33 @@
   <ItemGroup>
     <None Include="ico\Fasticon-Shop-Cart-Shop-cart-apply.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Artdesigner-Urban-Stories-Cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Graphicloads-Polygon-Refresh-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Graphicloads-Polygon-Reload-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Warning-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\faq-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Problem-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Check-2-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\help-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Custom-Icon-Design-Flatastic-4-Shopping-cart-insert.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

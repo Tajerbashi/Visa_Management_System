@@ -55,8 +55,10 @@ namespace StoreMarket_V1
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MessageBoxForm message = new MessageBoxForm();
+            message.Subject.Location= new Point(196, 60);
             message.title.Text = "تایید درخواست خروج";
             message.Subject.Text = "میخواهید برنامه بسته شود؟";
+            message.question.Visible = true;
             message.ShowDialog();
             if (message.Sw)
             {

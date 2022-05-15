@@ -46,26 +46,95 @@ namespace DAL
             }
             return 0;
         }
+        //  Admin
+        public String AdminFullNameByIDA(int id)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if (item.id == id)
+                {
+                    return (item.FullName);
+                }
+            }
+            return "0";
+        }
+        public String AdminFullNameByIDB(int id)
+        {
+            foreach (var item in db.bAdmins)
+            {
+                if (item.id == id)
+                {
+                    return (item.FullName);
+                }
+            }
+            return "0";
+        }
 
+        public List<AAdmin> ShowAdminsA()
+        {
+            return (from i in db.aAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
+        }
+        public List<BAdmin> ShowAdminsB()
+        {
+            return (from i in db.bAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
+        }
+
+        public bool ExistAdminA(AAdmin admin)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool ExistAdminB(BAdmin admin)
+        {
+            foreach (var item in db.bAdmins)
+            {
+                if (item.FullName == admin.FullName && item.OwnerName == admin.OwnerName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Admin Bank
+
+        public bool CreateAdminBankA(AAdminBankAccount adminbank)
+        {
+            foreach (var item in db.aAdminBankAccounts)
+            {
+                if (item.NameBank == adminbank.NameBank && item.AccountNumber == adminbank.AccountNumber)
+                {
+                    return false;
+                }
+            }
+            db.aAdminBankAccounts.Add(adminbank);
+            db.SaveChanges();
+            return true;
+        }
+        public bool CreateAdminBankB(BAdminBankAccount adminbank)
+        {
+            foreach (var item in db.bAdminBankAccounts)
+            {
+                if (item.NameBank == adminbank.NameBank && item.AccountNumber == adminbank.AccountNumber)
+                {
+                    return true;
+                }
+            }
+            db.bAdminBankAccounts.Add(adminbank);
+            db.SaveChanges();
+            return false;
+        }
 
 
         // Owner Code Function
         public void CreateOwner(OWNER owner)
         {
-            #region code
-            // اگر لایه هارا رد کرده باشد و وجود نداشته باشد ذخیره کند
-            //String CSTR = "Data Source=.;Initial Catalog = StoreMarketDB;Integrated Security = true";
-            //SqlConnection connection = new SqlConnection(CSTR);
-            //connection.Open();
-            //SqlCommand command = new SqlCommand();
-            //command.Connection = connection;
-            //command.Parameters.AddWithValue("@access", owner.access);
-            //command.Parameters.AddWithValue("@pass", owner.password);
-            //command.CommandText = "insert into dbo.Owner values (@access,@pass,1)";
-            //command.ExecuteNonQuery();
-            //connection.Close();
-            #endregion
-
             db.Owner.Add(owner);
             db.SaveChanges();
         }
@@ -116,38 +185,22 @@ namespace DAL
         // Company Code Function
         public bool SelectionCompanyA(ACompany company)
         {
-            foreach (var item in db.aCompanies)
+            var q = db.aCompanies.Where(c => c.CompanyName == company.CompanyName && c.CompanyManager==company.CompanyManager && !c.DeleteStatus).FirstOrDefault();
+            if (q != null)
             {
-                if (item.id != company.id && item.CompanyName == company.CompanyName)
-                {
-                    if( item.CompanyManager == company.CompanyManager )
-                    {
-                        if (!item.DeleteStatus)
-                        {
-                            // پیدا شد و ثبت نام نکن
-                            return false;
-                        }
-                    }
-                } 
+                // پیدا شد و ثبت نام نکن
+                return false;
             }
             //  پیدا نشد و ثبت نام کن
             return true;
         }
         public bool SelectionCompanyB(BCompany company)
         {
-            foreach (var item in db.bCompanies)
+            var q = db.bCompanies.Where(c => c.CompanyName == company.CompanyName && c.CompanyManager == company.CompanyManager && !c.DeleteStatus).FirstOrDefault();
+            if (q != null)
             {
-                if (item.id != company.id && item.CompanyName == company.CompanyName)
-                {
-                    if (item.CompanyManager == company.CompanyManager)
-                    {
-                        if (!item.DeleteStatus)
-                        {
-                            // پیدا شد و ثبت نام نکن
-                            return false;
-                        }
-                    }
-                }
+                // پیدا شد و ثبت نام نکن
+                return false;
             }
             //  پیدا نشد و ثبت نام کن
             return true;
@@ -164,23 +217,32 @@ namespace DAL
             db.SaveChanges();
         }
 
+        public ACompany GetCompanyIDA(String company)
+        {
+            return (db.aCompanies.Where(c => c.CompanyName==company).FirstOrDefault());
+        }
+        public BCompany GetCompanyIDB(String company)
+        {
+            return (db.bCompanies.Where(c => c.CompanyName == company).FirstOrDefault());
+        }
+
         //  فعال و موجود
         public List<ACompany> GetCompanyA()
         {
-            return (from i in db.aCompanies where i.isActive && !i.DeleteStatus select i).ToList();
+            return (from i in db.aCompanies where i.IsActive && !i.DeleteStatus select i).ToList();
         }
         public List<BCompany> GetCompanyB()
         {
-            return (from i in db.bCompanies where i.isActive && !i.DeleteStatus select i).ToList();
+            return (from i in db.bCompanies where i.IsActive && !i.DeleteStatus select i).ToList();
         }
 
         public List<ACompany> ShowAllDisActiveDataCompanyA()
         {
-            return (from i in db.aCompanies where !i.isActive && !i.DeleteStatus select i).ToList();
+            return (from i in db.aCompanies where !i.IsActive && !i.DeleteStatus select i).ToList();
         }
         public List<BCompany> ShowAllDisActiveDataCompanyB()
         {
-            return (from i in db.bCompanies where i.isActive && !i.DeleteStatus select i).ToList();
+            return (from i in db.bCompanies where i.IsActive && !i.DeleteStatus select i).ToList();
         }
 
         public ACompany SelectionCompanyA(int ID)
@@ -211,13 +273,13 @@ namespace DAL
             {
                 ACompany company = db.aCompanies.Where(c => c.id == ID).First();
                 company.DeleteStatus = true;
-                company.isActive = false;
+                company.IsActive = false;
             }
             else if (Admin == "2")
             {
                 BCompany company = db.bCompanies.Where(c => c.id == ID).First();
                 company.DeleteStatus = true;
-                company.isActive = false;
+                company.IsActive = false;
             }
             db.SaveChanges();
         }
@@ -228,13 +290,13 @@ namespace DAL
             {
                 ACompany company = db.aCompanies.Where(c => c.id == ID).FirstOrDefault();
                 company.DeleteStatus = false;
-                company.isActive = (company.isActive) ? false : true;
+                company.IsActive = (company.IsActive) ? false : true;
             }
             else if (Admin == "2")
             {
                 BCompany company = db.bCompanies.Where(c => c.id == ID).FirstOrDefault();
                 company.DeleteStatus = false;
-                company.isActive = (company.isActive) ? false : true;
+                company.IsActive = (company.IsActive) ? false : true;
 
             }
             db.SaveChanges();
@@ -249,6 +311,15 @@ namespace DAL
         {
             db.bLogInformation.Add(log);
             db.SaveChanges();
+        }
+
+        public List<ALogInformation> aLogInformation()
+        {
+            return (from i in db.aLogInformation select i).ToList();
+        }
+        public List<BLogInformation> bLogInformation()
+        {
+            return (from i in db.bLogInformation select i).ToList();
         }
 
         public List<ALogInformation> LogSearchEnterA(String Word)
@@ -393,7 +464,17 @@ namespace DAL
             db.SaveChanges();
         }
 
+        // Product
+        public List<AProduct> GetProductsA()
+        {
+            return (from i in db.aProducts select i).ToList();
+        }
+        public List<BProduct> GetProductsB()
+        {
+            return (from i in db.bProducts select i).ToList();
+        }
         //  Control Product
+
         //  تمام محصولات موجود
         public List<AProduct> ShowAllProductA()
         {
@@ -442,31 +523,31 @@ namespace DAL
         // نمایش محصولاتی که از تاریخ الان تا تاریخ درج شده زمان دارند
         public List<AProduct> ShowResultDateNowExpireA(String Now, String Expire)
         {
-            return (from i in db.aProducts orderby i.EndDate ascending where String.Compare(Expire,Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+            return (from i in db.aProducts orderby i.ExpireDate ascending where !i.DeleteStatus && String.Compare(Expire,Now) >= 0 && String.Compare(i.ExpireDate, Expire) <= 0 select i).ToList();
 
         }
         public List<BProduct> ShowResultDateNowExpireB(String Now, String Expire)
         {
-            return (from i in db.bProducts orderby i.EndDate ascending where String.Compare(Expire, Now) >= 0 && String.Compare(i.EndDate, Expire) <= 0 select i).ToList();
+            return (from i in db.bProducts orderby i.ExpireDate ascending where !i.DeleteStatus && String.Compare(Expire, Now) >= 0 && String.Compare(i.ExpireDate, Expire) <= 0 select i).ToList();
         }
         //  نمایش صعودی برحسب تاریخ انقضا
         public List<AProduct> ShowProductOrderbyExpireDateA()
         {
-            return (from i in db.aProducts orderby i.EndDate ascending select i).ToList();
+            return (from i in db.aProducts orderby i.ExpireDate ascending where !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> ShowProductOrderbyExpireDateB()
         {
-            return (from i in db.bProducts orderby i.EndDate ascending select i).ToList();
+            return (from i in db.bProducts orderby i.ExpireDate ascending where !i.DeleteStatus select i).ToList();
 
         }
         // نمایش اطلاعات بر اساس تعداد موجودی
         public List<AProduct> ShowProductOrderbyMojodiA()
         {
-            return (from i in db.aProducts orderby i.Mojodi ascending select i).ToList();
+            return (from i in db.aProducts orderby i.Mojodi ascending where !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> ShowProductOrderbyMojodiB()
         {
-            return (from i in db.bProducts orderby i.Mojodi ascending select i).ToList();
+            return (from i in db.bProducts orderby i.Mojodi ascending where !i.DeleteStatus select i).ToList();
 
         }
 
@@ -500,15 +581,72 @@ namespace DAL
             return (db.bProducts.Where(c => c.id == ID).FirstOrDefault());
         }
 
-        public void SaveEditProductA(AProduct product)
+        public bool SaveEditProductA(AProduct product)
         {
-            product.DeleteStatus = false;
-            db.SaveChanges();
+            foreach (var item in db.aProducts)
+            {
+                if (item.Name == product.Name && item.Type == product.Type)
+                {
+                    AProduct p = GetProductA(item.id);
+                    p.BuyCount += product.BuyCount;
+                    p.Mojodi += product.Mojodi;
+                    p.newBuyPrice = product.newBuyPrice;
+                    p.sellPrice = product.sellPrice;
+                    p.RegisterDate = product.RegisterDate;
+                    p.ProduceDate = product.ProduceDate;
+                    p.ExpireDate = product.ExpireDate;
+                    p.Totalcash += product.newBuyPrice * product.BuyCount;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
         }
-        public void SaveEditProductB(BProduct product)
+        public bool SaveEditProductB(BProduct product)
         {
-            product.DeleteStatus = false;
-            db.SaveChanges();
+            foreach (var item in db.bProducts)
+            {
+                if (item.Name == product.Name && item.Type == product.Type)
+                {
+                    BProduct p = GetProductB(item.id);
+                    p.BuyCount += product.BuyCount;
+                    p.Mojodi += product.Mojodi;
+                    p.newBuyPrice = product.newBuyPrice;
+                    p.sellPrice = product.sellPrice;
+                    p.RegisterDate = product.RegisterDate;
+                    p.ProduceDate = product.ProduceDate;
+                    p.ExpireDate = product.ExpireDate;
+                    p.Totalcash += product.newBuyPrice * product.BuyCount;
+                    product.DeleteStatus = false;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+            
+        }
+
+        public bool ExistProductA(AProduct product)
+        {
+            foreach (var item in db.aProducts)
+            {
+                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool ExistProductB(BProduct product)
+        {
+            foreach (var item in db.bProducts)
+            {
+                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public void DeleteProductA(int ID)
@@ -558,17 +696,6 @@ namespace DAL
             return (from i in db.bAdminBankAccounts where !i.DeleteStatus select i).ToList();
         }
 
-        public void CreateAdminBankAccountA(AAdminBankAccount adminbank)
-        {
-            db.aAdminBankAccounts.Add(adminbank);
-            db.SaveChanges();
-        }
-        public void CreateAdminBankAccountB(BAdminBankAccount adminbank)
-        {
-            db.bAdminBankAccounts.Add(adminbank);
-            db.SaveChanges();
-        }
-
         public AAdminBankAccount SelectAdminBankAccountA(int ID)
         {
             return (db.aAdminBankAccounts.Where(c => c.id == ID).FirstOrDefault());
@@ -613,6 +740,8 @@ namespace DAL
             }
             return false;
         }
+
+
 
         public void SaveEditAdminBankAccountA(AAdminBankAccount adminbank)
         {
@@ -661,39 +790,32 @@ namespace DAL
 
         // Agent Register
 
+        public AAgent GetAgentIDA(String Name)
+        {
+            return (db.aAgents.Where(c => c.FullName==Name).FirstOrDefault());
+        }
+        public BAgent GetAgentIDB(String Name)
+        {
+            return (db.bAgents.Where(c => c.FullName == Name).FirstOrDefault());
+        }
+
         public bool SelectionAgentA(AAgent agent)
         {
-            foreach (var item in db.aAgents)
+            var q = db.aAgents.Where(c => c.FullName==agent.FullName && c.CompanyName==agent.CompanyName && !c.DeleteStatus).FirstOrDefault();
+            if (q != null)
             {
-                if (item.Id != agent.Id)
-                {
-                    if (item.FullName == agent.FullName)
-                    {
-                        if (!item.DeleteStatus)
-                        {
-                            return false;
-                        }
-                    }
-
-                }
+                // پیدا شد ذخیره نکن
+                return true;
             }
-            return true;
+            // پیدا نشد ذخیره کن
+            return false;
         }
         public bool SelectionAgentB(BAgent agent)
         {
-            foreach (var item in db.bAgents)
+            var q = db.bAgents.Where(c => c.FullName == agent.FullName && c.CompanyName == agent.CompanyName && !c.DeleteStatus).FirstOrDefault();
+            if (q != null)
             {
-                if (item.Id != agent.Id)
-                {
-                    if (item.FullName == agent.FullName)
-                    {
-                        if (!item.DeleteStatus)
-                        {
-                            return false;
-                        }
-                    }
-
-                }
+                return false;
             }
             return true;
         }
@@ -722,14 +844,6 @@ namespace DAL
             return (from i in db.bAgents where !i.DeleteStatus select i).ToList();
         }
 
-        public List<AAgent> GetAgentNameforCompanyA(String CompanyName)
-        {
-            return (from i in db.aAgents where i.CompanyName==CompanyName select i).ToList();
-        }
-        public List<BAgent> GetAgentNameforCompanyB(String CompanyName)
-        {
-            return (from i in db.bAgents where i.CompanyName == CompanyName select i).ToList();
-        }
         public List<AAgent> ShowAllActiveAgentA()
         {
             return (from i in db.aAgents where !i.DeleteStatus && i.IsActive select i).ToList();
@@ -876,13 +990,13 @@ namespace DAL
             return (from i in db.bAgentBankAccounts where !i.DeleteStatus && !i.IsActive select i).ToList();
         }
 
-        public List<AAgent> GetAgentNameA()
+        public List<AAgent> GetAgentA()
         {
-            return (from i in db.aAgents select i).ToList();
+            return (from i in db.aAgents where !i.DeleteStatus select i).ToList();
         }
-        public List<BAgent> GetAgentNameB()
+        public List<BAgent> GetAgentB()
         {
-            return (from i in db.bAgents select i).ToList();
+            return (from i in db.bAgents where !i.DeleteStatus select i).ToList();
         }
 
         public AAgentBankAccount SelectAgentBankAccountA(int ID)
@@ -1061,6 +1175,13 @@ namespace DAL
         }
         public bool EditCustomerA(ACustomer customer, int ID)
         {
+            foreach (var item in db.aCustomers)
+            {
+                if (item.id != ID && item.FullName == customer.FullName)
+                {
+                    return false;
+                }
+            }
             ACustomer aCustomer = db.aCustomers.Where(c => c.id == ID).FirstOrDefault();
             aCustomer.FullName = customer.FullName;
             aCustomer.Phone = customer.Phone;
@@ -1070,6 +1191,13 @@ namespace DAL
         }
         public bool EditCustomerB(BCustomer customer, int ID)
         {
+            foreach (var item in db.bCustomers)
+            {
+                if (item.id != ID && item.FullName == customer.FullName)
+                {
+                    return false;
+                }
+            }
             BCustomer bCustomer = db.bCustomers.Where(c => c.id == ID).FirstOrDefault();
             bCustomer.FullName = customer.FullName;
             bCustomer.Phone = customer.Phone;
@@ -1085,6 +1213,57 @@ namespace DAL
         public List<BCustomer> PrintSerchResultCustomerB ( String Word )
         {
             return (from i in db.bCustomers where i.FullName.Contains(Word) select i).ToList();
+        }
+
+        //  Buy Factor
+        public int GetLastFactorNumberA()
+        {
+            try
+            {
+                int code = ((from i in db.aBuyFactors select i.FactorNumber).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+        public int GetLastFactorNumberB()
+        {
+            try
+            {
+                int code = ((from i in db.bBuyFactors select i.FactorNumber).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        public int GetLastFactorCodeA()
+        {
+            try
+            {
+                int code = ((from i in db.aBuyFactors select i.FactorCode).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1001;
+            }
+        }
+        public int GetLastFactorCodeB()
+        {
+            try
+            {
+                int code = ((from i in db.bBuyFactors select i.FactorCode).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1001;
+            }
         }
 
     }

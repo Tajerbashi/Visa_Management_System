@@ -12,8 +12,10 @@ namespace BEE
         public bool Type { get; set; }
         public bool Model { get; set; }  // sell or buy
         public double Price { get; set; }
-        public DateTime DayDate { get; set; }
+        public String DayDate { get; set; }
         public int factorNumber { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public List<BProduct> bProducts { get; set; } = new List<BProduct>();
         public BCustomer bCustomer { get; set; }
     }

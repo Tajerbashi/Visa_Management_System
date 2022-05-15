@@ -13,12 +13,13 @@ namespace BEE
         public int FactorCode { get; set; }
         public BAgent agent { get; set; }
         public BCompany company { get; set; }
-        public String Date { get; set; }
+        public String RegisterDate { get; set; }
         public Int16 CashType { get; set; } //  1 Money     2 Banki
         public double TotalPrice { get; set; }
         public BAdmin admin { get; set; }
-        public bool Status { get; set; } = true;
-        public bool DeleteStatus { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public List<BProduct> Products { get; set; } = new List<BProduct>();
+
     }
 }

@@ -14,6 +14,8 @@ namespace BEE
         public double Price { get; set; }
         public DateTime DayDate { get; set; }
         public int factorNumber { get; set; }
+        public bool DeleteStatus { get; set; } = false;
+        public bool IsActive { get; set; } = true;
         public List<AProduct> aProducts { get; set; } = new List<AProduct>();
         public ACustomer aCustomer { get; set; }
     }
