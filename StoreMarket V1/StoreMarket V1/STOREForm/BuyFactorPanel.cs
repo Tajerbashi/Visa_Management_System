@@ -25,6 +25,7 @@ namespace StoreMarket_V1
         AAgent agentA = new AAgent();
         BAgent agentB = new BAgent();
         int No = 1;
+        int index = 0;
         public void GetAgentNameForXCompany(String Admin, String CompanyName1)
         {
             AgentName.Items.Clear();
@@ -224,7 +225,8 @@ namespace StoreMarket_V1
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-
+            bool ExistInDGV = false;
+            int index = 0;
             DateTime Produce = DateTime.Now.AddMonths(-(int.Parse(TolidDate.Value.ToString())));
             DateTime Expire = DateTime.Now.AddMonths(int.Parse(ExpireDate.Value.ToString()));
             DateTime RegisterDateProduct = DateTime.Now;
@@ -308,60 +310,92 @@ namespace StoreMarket_V1
             }
             else
             {
-                #region CodeAdd
-                ACompany company = new ACompany();
-                company.CompanyName = CompanyName.Text;
-                company.Phone1 = company.Phone2 = company.Address = company.Site = company.Details = company.CompanyManager = "تعریف نشده";
-
-                AAgent agent = new AAgent();
-                agent.CompanyName = CompanyName.Text;
-                agent.FullName = AgentName.Text;
-                agent.Address = "تعریف نشده";
-                agent.Phone = 100;
-
-                AProduct product = new AProduct();
-                product.BuyCount = int.Parse(Tehdad.Value.ToString());
-                product.Mojodi = product.BuyCount;
-                product.Name = ProductName.Text;
-                product.Type = ProductType.Text;
-                product.Brand = Brand.Text;
-                product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
-                product.sellPrice = 0;
-                product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
-                product.Totalcash = (product.BuyCount * product.buyPrice);
-                product.AgentName = AgentName.Text;
-                product.ProduceDate = Produce.ToString("yyyy/MM/dd");
-                product.RegisterDate = RegisterDateProduct.ToString("yyyy/MM/dd");
-                product.ExpireDate = Expire.ToString("yyyy/MM/dd");
-
-                #region Code
-
-                if (!blc.CreatCompanyA(company))
+                foreach (DataGridViewRow row in DGV.Rows)
                 {
-                    agent.Company = blc.GetCompanyA().Where(c => c.CompanyName == company.CompanyName).FirstOrDefault();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.ColumnIndex == 2)
+                        {
+                            if (cell.Value.ToString()==ProductName.Text.Trim())
+                            {
+                                index = cell.RowIndex;
+                                if (DGV.Rows[index].Cells[3].Value.ToString()==ProductType.Text.Trim()  && DGV.Rows[index].Cells[4].Value.ToString() == CompanyName.Text.Trim())
+                                {
+                                    ExistInDGV = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (ExistInDGV)
+                {
+                    // در دتاگرید موجود است واطلاعات ویرایش شود
+                    #region EditCode 
+                    int ID = int.Parse(DGV.Rows[index].Cells[0].Value.ToString());
+                    int TehdadTotal=int.Parse(Tehdad.Value.ToString())+ int.Parse(DGV.Rows[index].Cells[5].Value.ToString());
+                    int NewPrice = int.Parse(Fun.ChangeToEnglishNumber(Price.Text));
+                    int TotalPrice = TehdadTotal*NewPrice;
+                    DGV.Rows[index].Cells[5].Value = TehdadTotal; 
+                    DGV.Rows[index].Cells[6].Value = NewPrice; 
+                    DGV.Rows[index].Cells[7].Value = TotalPrice;
+                    #endregion
                 }
                 else
                 {
-                    agent.Company = company;
-                }
+                    //  در دتاگرید موجود نیست و ثبت و اضافه کن
+                    #region CodeAdd
+                    ACompany company = new ACompany();
+                    company.CompanyName = CompanyName.Text.Trim();
+                    company.Phone1 = company.Phone2 = company.Address = company.Site = company.Details = company.CompanyManager = "تعریف نشده";
 
-                if (blc.CreatAgentA(agent))
-                {
-                    ResultText.Text = "جدید است";
-                }
-                else
-                {
-                    ResultText.Text = "جدید نیست";
-                }
+                    AAgent agent = new AAgent();
+                    agent.CompanyName = CompanyName.Text.Trim();
+                    agent.FullName = AgentName.Text.Trim();
+                    agent.Address = "تعریف نشده";
+                    agent.Phone = 100;
 
-                blc.CreateProductA(product);
-                DGV.Rows.Add(product.id, No, ProductName.Text, ProductType.Text, CompanyName.Text, Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
-                ProductName.Text = " ";
-                ProductName.Focus();
-                No++;
-                #endregion
-                #endregion
+                    AProduct product = new AProduct();
+                    product.BuyCount = int.Parse(Tehdad.Value.ToString());
+                    product.Mojodi = product.BuyCount;
+                    product.Name = ProductName.Text.Trim();
+                    product.Type = ProductType.Text.Trim();
+                    product.Brand = Brand.Text.Trim();
+                    product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
+                    product.sellPrice = 0;
+                    product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
+                    product.Totalcash = (product.BuyCount * product.buyPrice);
+                    product.AgentName = AgentName.Text.Trim();
+                    product.ProduceDate = Produce.ToString("yyyy/MM/dd");
+                    product.RegisterDate = RegisterDateProduct.ToString("yyyy/MM/dd");
+                    product.ExpireDate = Expire.ToString("yyyy/MM/dd");
 
+
+                    if (!blc.CreatCompanyA(company))
+                    {
+                        agent.Company = blc.GetCompanyA().Where(c => c.CompanyName == company.CompanyName).FirstOrDefault();
+                    }
+                    else
+                    {
+                        agent.Company = company;
+                    }
+
+                    if (blc.CreatAgentA(agent))
+                    {
+                        ResultText.Text = "جدید است";
+                    }
+                    else
+                    {
+                        ResultText.Text = "جدید نیست";
+                    }
+
+                    blc.CreateProductForBuyFactorA(product);
+                    DGV.Rows.Add(product.id, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
+                    ProductName.Text = " ";
+                    ProductName.Focus();
+                    No++;
+                    #endregion
+
+                }
             }
         }
 
@@ -392,6 +426,28 @@ namespace StoreMarket_V1
                 }
                 Fun.ClearTextBoxes(this.Controls);
             }
+        }
+        
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            DGV.Rows.RemoveAt(index);
+            No = 1;
+            for (int i=0;i<DGV.Rows.Count;i++)
+            {
+                DGV.Rows[i].Cells[1].Value = No;
+                No++;
+            }
+        }
+
+        private void DGV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            index = DGV.CurrentRow.Index;
+            if ( e.Button==MouseButtons.Right || e.Button == MouseButtons.Left )
+            {
+                DGV.CurrentRow.Selected = (DGV.CurrentRow.Selected) ? false : true;
+            }
+            
+            //MessageBox.Show(index.ToString());
         }
 
     }

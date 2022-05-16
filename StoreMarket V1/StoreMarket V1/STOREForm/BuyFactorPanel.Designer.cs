@@ -237,6 +237,7 @@
             this.Deletebtn.TabIndex = 15;
             this.Deletebtn.Text = "حذف";
             this.Deletebtn.TextColor = System.Drawing.Color.White;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
             // Savebtn
             // 
@@ -650,6 +651,9 @@
             // 
             // DGV
             // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToOrderColumns = true;
+            this.DGV.AllowUserToResizeRows = false;
             this.DGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -679,12 +683,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV.EnableHeadersVisualStyles = false;
             this.DGV.Location = new System.Drawing.Point(7, 24);
             this.DGV.Name = "DGV";
             this.DGV.RowHeadersVisible = false;
             this.DGV.Size = new System.Drawing.Size(763, 258);
             this.DGV.TabIndex = 41;
+            this.DGV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_CellMouseClick);
             // 
             // Column1
             // 

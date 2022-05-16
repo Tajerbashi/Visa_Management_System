@@ -386,6 +386,23 @@ namespace BLL
             return (dlc.ShowProductOrderbyMojodiB()).ToList();
         }
 
+        public bool CreateProductForBuyFactorA(AProduct product)
+        {
+            if (dlc.ExistProductForBuyFactorA(product))
+            {
+                return false;
+            }
+            return (dlc.CreateProductForBuyFactorA(product));
+        }
+        public bool CreateProductForBuyFactorB(BProduct product)
+        {
+            if (dlc.ExistProductForBuyFactorB(product))
+            {
+                return false;
+            }
+            return (dlc.CreateProductForBuyFactorB(product));
+        }
+
         public bool CreateProductA(AProduct product)
         {
             if (dlc.SaveEditProductA(product))
@@ -443,11 +460,6 @@ namespace BLL
             dlc.DeleteProductB(ID);
         }
 
-
-        public void SAVEDB()
-        {
-            dlc.SAVEDB();
-        }
         #endregion
         //  Admin Control Register Form
         #region AdminControl

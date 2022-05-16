@@ -605,22 +605,20 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.NN3);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.ProduceDate);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.ShowTransection);
             this.groupBox3.Controls.Add(this.Brand);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.NN7);
             this.groupBox3.Controls.Add(this.Savebtn);
-            this.groupBox3.Controls.Add(this.RR2);
-            this.groupBox3.Controls.Add(this.RR1);
             this.groupBox3.Controls.Add(this.ExpireDate);
             this.groupBox3.Controls.Add(this.NN6);
             this.groupBox3.Controls.Add(this.NN8);
             this.groupBox3.Controls.Add(this.NN5);
             this.groupBox3.Controls.Add(this.NN4);
-            this.groupBox3.Controls.Add(this.NN3);
             this.groupBox3.Controls.Add(this.NN2);
             this.groupBox3.Controls.Add(this.NN1);
             this.groupBox3.Controls.Add(this.label19);
@@ -631,7 +629,9 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.RR2);
+            this.groupBox3.Controls.Add(this.RR1);
             this.groupBox3.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(30, 1);
@@ -679,7 +679,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(426, 124);
+            this.label4.Location = new System.Drawing.Point(428, 124);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 21);
@@ -762,7 +762,7 @@
             // 
             this.RR2.AutoSize = true;
             this.RR2.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RR2.Location = new System.Drawing.Point(283, 123);
+            this.RR2.Location = new System.Drawing.Point(285, 123);
             this.RR2.Margin = new System.Windows.Forms.Padding(4);
             this.RR2.Name = "RR2";
             this.RR2.Size = new System.Drawing.Size(54, 25);
@@ -775,7 +775,7 @@
             // 
             this.RR1.AutoSize = true;
             this.RR1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RR1.Location = new System.Drawing.Point(370, 123);
+            this.RR1.Location = new System.Drawing.Point(372, 123);
             this.RR1.Margin = new System.Windows.Forms.Padding(4);
             this.RR1.Name = "RR1";
             this.RR1.Size = new System.Drawing.Size(53, 25);

@@ -596,6 +596,7 @@ namespace DAL
                     p.ProduceDate = product.ProduceDate;
                     p.ExpireDate = product.ExpireDate;
                     p.Totalcash += product.newBuyPrice * product.BuyCount;
+                    product.DeleteStatus = false;
                     db.SaveChanges();
                     return true;
                 }
@@ -606,7 +607,7 @@ namespace DAL
         {
             foreach (var item in db.bProducts)
             {
-                if (item.Name == product.Name && item.Type == product.Type)
+                if (item.Name == product.Name && item.Type == product.Type )
                 {
                     BProduct p = GetProductB(item.id);
                     p.BuyCount += product.BuyCount;
@@ -623,7 +624,38 @@ namespace DAL
                 }
             }
             return false;
-            
+        }
+
+        public bool ExistProductForBuyFactorA(AProduct product)
+        {
+            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName).FirstOrDefault();
+            if (q != null)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ExistProductForBuyFactorB(BProduct product)
+        {
+            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName).FirstOrDefault();
+            if (q != null)
+            {
+                return true;
+            }
+            return false;
+        }
+       
+        public bool CreateProductForBuyFactorA(AProduct product)
+        {
+            db.aProducts.Add(product);
+            db.SaveChanges();
+            return true;
+        }
+        public bool CreateProductForBuyFactorB(BProduct product)
+        {
+            db.bProducts.Add(product);
+            db.SaveChanges();
+            return true;
         }
 
         public bool ExistProductA(AProduct product)
@@ -659,11 +691,6 @@ namespace DAL
         {
             BProduct product = db.bProducts.Where(c => c.id == ID).FirstOrDefault();
             product.DeleteStatus = true;
-            db.SaveChanges();
-        }
-
-        public void SAVEDB()
-        {
             db.SaveChanges();
         }
 
