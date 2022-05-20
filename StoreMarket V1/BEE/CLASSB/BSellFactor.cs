@@ -9,14 +9,16 @@ namespace BEE
     public class BSellFactor
     {
         public int id { get; set; }
-        public bool Type { get; set; }
-        public bool Model { get; set; }  // sell or buy
-        public double Price { get; set; }
-        public String DayDate { get; set; }
-        public int factorNumber { get; set; }
+        public int FactorNumber { get; set; }
+        public int FactorCode { get; set; }
+        public String RegisterDate { get; set; }
+        public double TotalPrice { get; set; }
+        public bool CashType { get; set; }  // sell or buy
         public bool DeleteStatus { get; set; } = false;
         public bool IsActive { get; set; } = true;
         public List<BProduct> bProducts { get; set; } = new List<BProduct>();
         public BCustomer bCustomer { get; set; }
+        public BAdmin admin { get; set; }
+
     }
 }

@@ -377,6 +377,7 @@
             this.accesscode.Name = "accesscode";
             this.accesscode.Size = new System.Drawing.Size(149, 28);
             this.accesscode.TabIndex = 65;
+            this.accesscode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // userpass
             // 
@@ -389,6 +390,7 @@
             this.userpass.Name = "userpass";
             this.userpass.Size = new System.Drawing.Size(149, 28);
             this.userpass.TabIndex = 64;
+            this.userpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // username
             // 
@@ -401,6 +403,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(149, 28);
             this.username.TabIndex = 63;
+            this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // addresstxt
             // 
@@ -413,6 +416,7 @@
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(147, 28);
             this.addresstxt.TabIndex = 62;
+            this.addresstxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailtxt
             // 
@@ -425,6 +429,7 @@
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(147, 28);
             this.emailtxt.TabIndex = 61;
+            this.emailtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // phonetxt
             // 
@@ -437,6 +442,7 @@
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Size = new System.Drawing.Size(155, 28);
             this.phonetxt.TabIndex = 60;
+            this.phonetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.phonetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phonetxt_KeyPress);
             // 
             // nametxt
@@ -450,6 +456,7 @@
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(155, 28);
             this.nametxt.TabIndex = 58;
+            this.nametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SearchBtn
             // 

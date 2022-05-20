@@ -71,15 +71,15 @@ namespace StoreMarket_V1
                     {
                         AAdmin admin = new AAdmin();
 
-                        admin.OwnerName = OwnerCodetxt.Text;
-                        admin.FullName = Nametxt.Text + " " + Familytxt.Text;
+                        admin.OwnerName = OwnerCodetxt.Text.Trim();
+                        admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
                         admin.Phone = Int64.Parse(Phonetxt.Text);
                         admin.Email = Emailtxt.Text;
                         admin.Address = Addresstxt.Text;
                         admin.IsActive = true;
-                        admin.Username = usernametxt.Text;
-                        admin.Password = userpasstxt.Text;
-                        admin.accessCode = accessCode.Text;
+                        admin.Username = usernametxt.Text.Trim();
+                        admin.Password = userpasstxt.Text.Trim();
+                        admin.accessCode = accessCode.Text.Trim();
                         admin.DeleteStatus = false;
                         admin.AccessControl = true;
                         blc.RegisterAdminA(admin);
@@ -96,15 +96,15 @@ namespace StoreMarket_V1
                     {
                         BAdmin admin = new BAdmin();
 
-                        admin.OwnerName = OwnerCodetxt.Text;
-                        admin.FullName = Nametxt.Text + " " + Familytxt;
+                        admin.OwnerName = OwnerCodetxt.Text.Trim();
+                        admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
                         admin.Phone = Int64.Parse(Phonetxt.Text);
                         admin.Email = Emailtxt.Text;
                         admin.Address = Addresstxt.Text;
                         admin.IsActive = true;
-                        admin.Username = usernametxt.Text;
-                        admin.Password = userpasstxt.Text;
-                        admin.accessCode = accessCode.Text;
+                        admin.Username = usernametxt.Text.Trim();
+                        admin.Password = userpasstxt.Text.Trim();
+                        admin.accessCode = accessCode.Text.Trim();
                         admin.DeleteStatus = false;
                         admin.AccessControl = true;
 
@@ -122,6 +122,10 @@ namespace StoreMarket_V1
                 MessageBox.Show("اطلاعات نادرست است");
             }
             OwnerCodetxt.Text = ADMINNAME.Text;
+            if (ADMINNAME.Text=="ADMIN1" || ADMINNAME.Text=="ADMIN2")
+            {
+                Application.Exit();
+            }
         }
 
         private void checkbtn_Click_1(object sender, EventArgs e)
@@ -163,5 +167,29 @@ namespace StoreMarket_V1
 
         }
 
+        private void FirstAdminPanel_Load(object sender, EventArgs e)
+        {
+            OwnerCodetxt.Text = ADMINNAME.Text;
+        }
+
+        private void checkbtn_MouseEnter_1(object sender, EventArgs e)
+        {
+            checkbtn.ForeColor = Color.Black;
+        }
+
+        private void checkbtn_MouseLeave_1(object sender, EventArgs e)
+        {
+            checkbtn.ForeColor = Color.White;
+        }
+
+        private void button1_MouseEnter_1(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+        }
+
+        private void button1_MouseLeave_1(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+        }
     }
 }

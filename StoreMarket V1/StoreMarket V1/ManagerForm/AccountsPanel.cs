@@ -30,7 +30,7 @@ namespace StoreMarket_V1
             DGV1.Rows.Clear();
             if (Number == "1")
             {
-                var DB = blc.ReadAdminA().ToList();
+                var DB = blc.GetAdminsA().ToList();
                 foreach (var item in DB)
                 {
                     String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -39,7 +39,7 @@ namespace StoreMarket_V1
             }
             else if (Number == "2")
             {
-                var DB = blc.ReadAdminB().ToList();
+                var DB = blc.GetAdminsB().ToList();
                 foreach (var item in DB)
                 {
                     String status = (item.IsActive) == true ? "فعال" : "غیر فعال";
@@ -148,7 +148,7 @@ namespace StoreMarket_V1
                             admin.OwnerName = ADMINNAME.Text;
 
                             blc.RegisterAdminA(admin);
-                            if (owner.Status)
+                            if ( owner != null && owner.Status  )
                             {
                                 blc.ChangeOwnerStatus(owner);
                                 Application.Exit();
@@ -172,7 +172,7 @@ namespace StoreMarket_V1
                             admin.OwnerName = ADMINNAME.Text;
 
                             blc.RegisterAdminB(admin);
-                            if (owner.Status)
+                            if (owner != null && owner.Status )
                             {
                                 blc.ChangeOwnerStatus(owner);
                                 Application.Exit();

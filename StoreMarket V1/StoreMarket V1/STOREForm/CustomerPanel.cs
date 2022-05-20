@@ -26,7 +26,7 @@ namespace StoreMarket_V1
             DGV1.Rows.Clear();
             if (Name=="1")
             {
-                var DB = bll.ShowAllCustomerA();
+                var DB = bll.GetCustomersA();
                 foreach (var item in DB)
                 {
                     DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost);
@@ -34,7 +34,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                var DB = bll.ShowAllCustomerB();
+                var DB = bll.GetCustomersB();
                 foreach (var item in DB)
                 {
                     DGV1.Rows.Add(item.id, item.FullName,item.Phone, item.BuyCost);

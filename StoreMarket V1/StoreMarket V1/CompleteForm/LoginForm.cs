@@ -67,14 +67,14 @@ namespace StoreMarket_V1
             #region OWNERCODE
             if (blc.LoginCodeAdmin(AccessCode, UserName, Password)==1||blc.CheckAccessOwner(owner,owner.access)==1 || blc.PublicKey(accessTXT.Text) == 1)
             {
-                MF.ADMINNAME.Text = UserTXT.Text;
+                MF.ADMINNAME.Text = UserName;
                 MF.ADMINNUMBER.Text = "1";
                 this.Hide();
                 MF.Show();
             } 
             else if (blc.LoginCodeAdmin(AccessCode, UserName, Password) == 2 || blc.CheckAccessOwner(owner,owner.access)==2 || blc.PublicKey(accessTXT.Text) == 2)
             {
-                MF.ADMINNAME.Text = UserTXT.Text;
+                MF.ADMINNAME.Text = UserName;
                 MF.ADMINNUMBER.Text = "2";
                 this.Hide();
                 MF.Show();

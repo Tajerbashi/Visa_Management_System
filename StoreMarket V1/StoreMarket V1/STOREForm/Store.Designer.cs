@@ -31,23 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Store));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.date = new System.Windows.Forms.Label();
             this.clock = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.ADMINNUMBER = new System.Windows.Forms.Label();
-            this.ADMINNAME = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.TIME = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -57,15 +45,27 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.ADMINNUMBER = new System.Windows.Forms.Label();
+            this.ADMINNAME = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.TIME = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +80,17 @@
             this.panel1.Size = new System.Drawing.Size(1027, 34);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::StoreMarket_V1.Properties.Resources.Rimshotdesign_Milkanodised_Mac_mini;
+            this.pictureBox16.Location = new System.Drawing.Point(952, 2);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 25;
+            this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
             // date
             // 
@@ -105,6 +116,17 @@
             this.clock.TabIndex = 23;
             this.clock.Text = "ساعت";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.Hopstarter_Rounded_Square_Button_Delete;
+            this.pictureBox1.Location = new System.Drawing.Point(987, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))));
@@ -123,184 +145,6 @@
             this.panel2.Size = new System.Drawing.Size(1027, 674);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.Location = new System.Drawing.Point(41, 113);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(198, 23);
-            this.textBoxX1.TabIndex = 36;
-            // 
-            // ADMINNUMBER
-            // 
-            this.ADMINNUMBER.AutoSize = true;
-            this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
-            this.ADMINNUMBER.Font = new System.Drawing.Font("MRT_Matin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNUMBER.Location = new System.Drawing.Point(2, 5);
-            this.ADMINNUMBER.Name = "ADMINNUMBER";
-            this.ADMINNUMBER.Size = new System.Drawing.Size(37, 18);
-            this.ADMINNUMBER.TabIndex = 21;
-            this.ADMINNUMBER.Text = "شماره";
-            // 
-            // ADMINNAME
-            // 
-            this.ADMINNAME.AutoSize = true;
-            this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
-            this.ADMINNAME.Font = new System.Drawing.Font("MRT_Matin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ADMINNAME.Location = new System.Drawing.Point(6, 23);
-            this.ADMINNAME.Name = "ADMINNAME";
-            this.ADMINNAME.Size = new System.Drawing.Size(25, 18);
-            this.ADMINNAME.TabIndex = 20;
-            this.ADMINNAME.Text = "نام";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(76)))), ((int)(((byte)(125)))));
-            this.panel3.Controls.Add(this.pictureBox8);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.ADMINNAME);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.ADMINNUMBER);
-            this.panel3.Location = new System.Drawing.Point(788, 173);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(229, 545);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(9)))), ((int)(((byte)(108)))));
-            this.MainPanel.Location = new System.Drawing.Point(5, 173);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(776, 545);
-            this.MainPanel.TabIndex = 3;
-            // 
-            // TIME
-            // 
-            this.TIME.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(40, 23);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(149, 145);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 23;
-            this.pictureBox8.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox8, "مدیریت محصولات");
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Image = global::StoreMarket_V1.Properties.Resources.boxes_brown_icon__5_;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(25, 489);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 50);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "انبارداری";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Image = global::StoreMarket_V1.Properties.Resources.Everaldo_Crystal_Clear_Mimetype_log;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(25, 428);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 50);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "گزارش گیری";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Image = global::StoreMarket_V1.Properties.Resources.Fasticon_Shop_Cart_Shop_cart;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(25, 367);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "فاکتور فروش";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Shopping__1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(25, 306);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "فاکتور خرید";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Pretty_Office_4_Shopping_bag;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(25, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "محصولات";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::StoreMarket_V1.Properties.Resources.default_icon__3_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(25, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "مدیریت مشتریان";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button14
             // 
@@ -447,27 +291,184 @@
             this.pictureBox17.TabIndex = 26;
             this.pictureBox17.TabStop = false;
             // 
-            // pictureBox16
+            // textBoxX1
             // 
-            this.pictureBox16.Image = global::StoreMarket_V1.Properties.Resources.Rimshotdesign_Milkanodised_Mac_mini;
-            this.pictureBox16.Location = new System.Drawing.Point(952, 2);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 25;
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
-            // pictureBox1
             // 
-            this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.Hopstarter_Rounded_Square_Button_Delete;
-            this.pictureBox1.Location = new System.Drawing.Point(987, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX1.Location = new System.Drawing.Point(41, 113);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(198, 23);
+            this.textBoxX1.TabIndex = 36;
+            // 
+            // ADMINNUMBER
+            // 
+            this.ADMINNUMBER.AutoSize = true;
+            this.ADMINNUMBER.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNUMBER.Font = new System.Drawing.Font("MRT_Matin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ADMINNUMBER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ADMINNUMBER.Location = new System.Drawing.Point(2, 5);
+            this.ADMINNUMBER.Name = "ADMINNUMBER";
+            this.ADMINNUMBER.Size = new System.Drawing.Size(37, 18);
+            this.ADMINNUMBER.TabIndex = 21;
+            this.ADMINNUMBER.Text = "شماره";
+            // 
+            // ADMINNAME
+            // 
+            this.ADMINNAME.AutoSize = true;
+            this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
+            this.ADMINNAME.Font = new System.Drawing.Font("MRT_Matin", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ADMINNAME.Location = new System.Drawing.Point(6, 23);
+            this.ADMINNAME.Name = "ADMINNAME";
+            this.ADMINNAME.Size = new System.Drawing.Size(25, 18);
+            this.ADMINNAME.TabIndex = 20;
+            this.ADMINNAME.Text = "نام";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(76)))), ((int)(((byte)(125)))));
+            this.panel3.Controls.Add(this.pictureBox8);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.ADMINNAME);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.ADMINNUMBER);
+            this.panel3.Location = new System.Drawing.Point(788, 173);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(229, 545);
+            this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(40, 23);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(149, 145);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 23;
+            this.pictureBox8.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox8, "مدیریت محصولات");
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button6.ForeColor = System.Drawing.Color.Transparent;
+            this.button6.Image = global::StoreMarket_V1.Properties.Resources.boxes_brown_icon__5_;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.Location = new System.Drawing.Point(25, 489);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(178, 50);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "انبارداری";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
+            this.button5.Image = global::StoreMarket_V1.Properties.Resources.Everaldo_Crystal_Clear_Mimetype_log;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(25, 428);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(178, 50);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "گزارش گیری";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button4.ForeColor = System.Drawing.Color.Transparent;
+            this.button4.Image = global::StoreMarket_V1.Properties.Resources.Fasticon_Shop_Cart_Shop_cart;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(25, 367);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(178, 50);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "فاکتور فروش";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Shopping__1_;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(25, 306);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(178, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "فاکتور خرید";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Pretty_Office_4_Shopping_bag;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(25, 245);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(178, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "محصولات";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::StoreMarket_V1.Properties.Resources.default_icon__3_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(25, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "مدیریت مشتریان";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(9)))), ((int)(((byte)(108)))));
+            this.MainPanel.Location = new System.Drawing.Point(5, 173);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(776, 545);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // TIME
+            // 
+            this.TIME.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Store
             // 
@@ -487,13 +488,13 @@
             this.Load += new System.EventHandler(this.Store_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,7 +504,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label ADMINNUMBER;
         public System.Windows.Forms.Label ADMINNAME;
@@ -529,5 +529,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Panel MainPanel;
     }
 }

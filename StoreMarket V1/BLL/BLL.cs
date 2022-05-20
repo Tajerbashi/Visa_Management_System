@@ -95,13 +95,13 @@ namespace BLL
             return (dlc.AdminKey(Key, ADMINNAME));
         }
 
-        public List<AAdmin> ReadAdminA()
+        public List<AAdmin> GetAdminsA()
         {
-            return (dlc.readadminA().ToList());
+            return (dlc.GetAdminsA().ToList());
         }
-        public List<BAdmin> ReadAdminB()
+        public List<BAdmin> GetAdminsB()
         {
-            return (dlc.readadminB().ToList());
+            return (dlc.GetAdminsB().ToList());
         }
 
         public String AdminFullNameByIDA(int id)
@@ -424,6 +424,15 @@ namespace BLL
             //if false editesave else create new
         }
 
+        public void DeleteProductFromDBA(int ID)
+        {
+            dlc.DeleteProductFromDBA(ID);
+        }
+        public void DeleteProductFromDBB(int ID)
+        {
+            dlc.DeleteProductFromDBB(ID);
+        }
+
         public AProduct GetProductA(int ID)
         {
             return (dlc.GetProductA(ID));
@@ -451,6 +460,16 @@ namespace BLL
             dlc.SaveEditProductB(product);
         }
 
+        public void SaveEditForBuyFactorProductA(AProduct product)
+        {
+            dlc.SaveEditForBuyFactorProductA(product);
+        }
+        public void SaveEditForBuyFactorProductB(BProduct product)
+        {
+            dlc.SaveEditForBuyFactorProductB(product);
+        }
+
+        
         public void DeleteProductA(int ID)
         {
             dlc.DeleteProductA(ID);
@@ -461,6 +480,33 @@ namespace BLL
         }
 
         #endregion
+        //  Buy Factor
+        public void CreateBuyFactorA(ABuyFactor factor)
+        {
+            dlc.CreateBuyFactorA(factor);
+        }
+        public void CreateBuyFactorB(BBuyFactor factor)
+        {
+            dlc.CreateBuyFactorB(factor);
+        }
+        public List<ABuyFactor> GetBuyFactorA()
+        {
+            return (dlc.GetBuyFactorA()).ToList();
+        }
+        public List<BBuyFactor> GetBuyFactorB()
+        {
+            return (dlc.GetBuyFactorB()).ToList();
+        }
+
+        public void SaveLastChangesOnBuyFacotrA(ABuyFactor factor)
+        {
+            dlc.SaveLastChangesOnBuyFacotrA(factor);
+        }
+        public void SaveLastChangesOnBuyFacotrB(BBuyFactor factor)
+        {
+            dlc.SaveLastChangesOnBuyFacotrB(factor);
+        }
+
         //  Admin Control Register Form
         #region AdminControl
         public bool ExistAdminA(AAdmin admin)
@@ -733,8 +779,7 @@ namespace BLL
             {
                 return false;
             }
-            dlc.CreateCustomerA(customer);
-            return true;
+            return dlc.CreateCustomerA(customer);
         }
         public bool CreateCustomerB(BCustomer customer)
         {
@@ -742,16 +787,16 @@ namespace BLL
             {
                 return false;
             }
-            dlc.CreateCustomerB(customer);
-            return true;
+            
+            return dlc.CreateCustomerB(customer);
         }
-        public List<ACustomer> ShowAllCustomerA()
+        public List<ACustomer> GetCustomersA()
         {
-            return (dlc.ShowAllCustomerA()).ToList();
+            return (dlc.GetCustomersA()).ToList();
         }
-        public List<BCustomer> ShowAllCustomerB()
+        public List<BCustomer> GetCustomersB()
         {
-            return (dlc.ShowAllCustomerB()).ToList();
+            return (dlc.GetCustomersB()).ToList();
         }
         public void DeleteCustomerA(int ID)
         {
@@ -790,22 +835,41 @@ namespace BLL
         }
 
         //  Buy Factor
-        public int GetLastFactorNumberA()
+        public int GetLastBuyFactorNumberA()
         {
-            return (dlc.GetLastFactorNumberA());
+            return (dlc.GetLastBuyFactorNumberA());
         }
-        public int GetLastFactorNumberB()
+        public int GetLastBuyFactorNumberB()
         {
-            return (dlc.GetLastFactorNumberB());
+            return (dlc.GetLastBuyFactorNumberB());
         }
 
-        public int GetLastFactorCodeA()
+        public int GetLastBuyFactorCodeA()
         {
-            return (dlc.GetLastFactorCodeA());
+            return (dlc.GetLastBuyFactorCodeA());
         }
-        public int GetLastFactorCodeB()
+        public int GetLastBuyFactorCodeB()
         {
-            return (dlc.GetLastFactorCodeB());
+            return (dlc.GetLastBuyFactorCodeB());
+        }
+
+        //  Sell Factor
+        public int GetLastSellFactorNumberA()
+        {
+            return (dlc.GetLastSellFactorNumberA());
+        }
+        public int GetLastSellFactorNumberB()
+        {
+            return (dlc.GetLastSellFactorNumberB());
+        }
+
+        public int GetLastSellFactorCodeA()
+        {
+            return (dlc.GetLastSellFactorCodeA());
+        }
+        public int GetLastSellFactorCodeB()
+        {
+            return (dlc.GetLastSellFactorCodeB());
         }
     }
 }

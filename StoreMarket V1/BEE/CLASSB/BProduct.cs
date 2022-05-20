@@ -26,8 +26,8 @@ namespace BEE
         public int Totalcash { get; set; } = 0;
         public bool DeleteStatus { get; set; } = false;
         public bool IsActive { get; set; } = true;
-        public BBuyFactor aBuyFactor { get; set; }
-        public BSellFactor aSellFactor { get; set; }
+        public BBuyFactor bBuyFactor { get; set; }
+        public BSellFactor bSellFactor { get; set; }
 
     }
 }

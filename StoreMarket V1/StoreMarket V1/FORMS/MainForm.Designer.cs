@@ -119,6 +119,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::StoreMarket_V1.Properties.Resources.shopping_bag_icon;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

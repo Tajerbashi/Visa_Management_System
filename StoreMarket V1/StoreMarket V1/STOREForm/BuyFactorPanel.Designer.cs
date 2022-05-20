@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ResultText = new System.Windows.Forms.Label();
             this.Brand = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TolidDate = new System.Windows.Forms.NumericUpDown();
             this.AgentName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -58,22 +58,22 @@
             this.FactorCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.ProductName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label9 = new System.Windows.Forms.Label();
-            this.Result = new System.Windows.Forms.Label();
             this.DayDate = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.ProductType = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ADMIN = new System.Windows.Forms.Label();
+            this.AdminNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.factorNumber = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.FactorNumber = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.AdminName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label5 = new System.Windows.Forms.Label();
             this.Price = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.TotalPriceFactor = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +86,9 @@
             this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.TotalFactor = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ResultText = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TolidDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpireDate)).BeginInit();
@@ -99,6 +101,7 @@
             // 
             this.groupBox1.Controls.Add(this.ResultText);
             this.groupBox1.Controls.Add(this.Brand);
+            this.groupBox1.Controls.Add(this.buttonX1);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.TolidDate);
             this.groupBox1.Controls.Add(this.AgentName);
@@ -119,14 +122,13 @@
             this.groupBox1.Controls.Add(this.FactorCode);
             this.groupBox1.Controls.Add(this.ProductName);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.Result);
             this.groupBox1.Controls.Add(this.DayDate);
             this.groupBox1.Controls.Add(this.ProductType);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.ADMIN);
+            this.groupBox1.Controls.Add(this.AdminNumber);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.factorNumber);
+            this.groupBox1.Controls.Add(this.FactorNumber);
             this.groupBox1.Controls.Add(this.AdminName);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.Price);
@@ -142,17 +144,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات فاکتور خرید";
-            // 
-            // ResultText
-            // 
-            this.ResultText.AutoSize = true;
-            this.ResultText.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ResultText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ResultText.Location = new System.Drawing.Point(444, 19);
-            this.ResultText.Name = "ResultText";
-            this.ResultText.Size = new System.Drawing.Size(62, 21);
-            this.ResultText.TabIndex = 43;
-            this.ResultText.Text = "ثبت فاکتور";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Brand
             // 
@@ -178,6 +170,21 @@
             // 
             this.comboItem2.ImagePosition = System.Windows.Forms.HorizontalAlignment.Center;
             this.comboItem2.Text = "بانکی";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
+            this.buttonX1.HoverImage = global::StoreMarket_V1.Properties.Resources.Graphicloads_Polygon_Reload_2;
+            this.buttonX1.Image = global::StoreMarket_V1.Properties.Resources.Graphicloads_Polygon_Refresh_3;
+            this.buttonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.buttonX1.Location = new System.Drawing.Point(397, 102);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(20, 20);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 18;
+            this.buttonX1.TextColor = System.Drawing.Color.White;
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // panel1
             // 
@@ -238,6 +245,8 @@
             this.Deletebtn.Text = "حذف";
             this.Deletebtn.TextColor = System.Drawing.Color.White;
             this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            this.Deletebtn.MouseEnter += new System.EventHandler(this.Deletebtn_MouseEnter);
+            this.Deletebtn.MouseLeave += new System.EventHandler(this.Deletebtn_MouseLeave);
             // 
             // Savebtn
             // 
@@ -252,6 +261,9 @@
             this.Savebtn.TabIndex = 16;
             this.Savebtn.Text = "بستن فاکتور";
             this.Savebtn.TextColor = System.Drawing.Color.White;
+            this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
+            this.Savebtn.MouseEnter += new System.EventHandler(this.Savebtn_MouseEnter);
+            this.Savebtn.MouseLeave += new System.EventHandler(this.Savebtn_MouseLeave);
             // 
             // label14
             // 
@@ -341,6 +353,8 @@
             this.buttonX2.Text = "فاکتور جدید";
             this.buttonX2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            this.buttonX2.MouseEnter += new System.EventHandler(this.buttonX2_MouseEnter);
+            this.buttonX2.MouseLeave += new System.EventHandler(this.buttonX2_MouseLeave);
             // 
             // label8
             // 
@@ -379,6 +393,8 @@
             this.Addbtn.Text = "اضافه";
             this.Addbtn.TextColor = System.Drawing.Color.White;
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            this.Addbtn.MouseEnter += new System.EventHandler(this.Addbtn_MouseEnter);
+            this.Addbtn.MouseLeave += new System.EventHandler(this.Addbtn_MouseLeave);
             // 
             // Tehdad
             // 
@@ -441,16 +457,6 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "نام محصول";
             // 
-            // Result
-            // 
-            this.Result.AutoSize = true;
-            this.Result.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Result.Location = new System.Drawing.Point(390, 21);
-            this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(13, 17);
-            this.Result.TabIndex = 34;
-            this.Result.Text = "-";
-            // 
             // DayDate
             // 
             // 
@@ -459,10 +465,9 @@
             this.DayDate.BackgroundStyle.Class = "TextBoxBorder";
             this.DayDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.DayDate.ButtonClear.Visible = true;
-            this.DayDate.Enabled = false;
             this.DayDate.ForeColor = System.Drawing.Color.Black;
             this.DayDate.Location = new System.Drawing.Point(587, 180);
-            this.DayDate.Mask = "1400 / 00 / 00";
+            this.DayDate.Mask = "1400/00/00";
             this.DayDate.Name = "DayDate";
             this.DayDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DayDate.Size = new System.Drawing.Size(173, 26);
@@ -507,15 +512,16 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "تاریخ امروز :";
             // 
-            // ADMIN
+            // AdminNumber
             // 
-            this.ADMIN.AutoSize = true;
-            this.ADMIN.Font = new System.Drawing.Font("MRT_Mitra_3", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ADMIN.Location = new System.Drawing.Point(409, 21);
-            this.ADMIN.Name = "ADMIN";
-            this.ADMIN.Size = new System.Drawing.Size(13, 17);
-            this.ADMIN.TabIndex = 23;
-            this.ADMIN.Text = "-";
+            this.AdminNumber.AutoSize = true;
+            this.AdminNumber.BackColor = System.Drawing.Color.Transparent;
+            this.AdminNumber.Font = new System.Drawing.Font("MRT_Mitra_3", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.AdminNumber.Location = new System.Drawing.Point(587, 58);
+            this.AdminNumber.Name = "AdminNumber";
+            this.AdminNumber.Size = new System.Drawing.Size(8, 11);
+            this.AdminNumber.TabIndex = 23;
+            this.AdminNumber.Text = "-";
             // 
             // label1
             // 
@@ -527,22 +533,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "شماره فاکتور";
             // 
-            // factorNumber
+            // FactorNumber
             // 
-            this.factorNumber.BackColor = System.Drawing.Color.White;
+            this.FactorNumber.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.factorNumber.Border.Class = "TextBoxBorder";
-            this.factorNumber.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.factorNumber.Font = new System.Drawing.Font("MRT_Mitra_3", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.factorNumber.Location = new System.Drawing.Point(679, 126);
-            this.factorNumber.Name = "factorNumber";
-            this.factorNumber.PreventEnterBeep = true;
-            this.factorNumber.Size = new System.Drawing.Size(81, 27);
-            this.factorNumber.TabIndex = 1;
-            this.factorNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.factorNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.factorNumber_KeyPress);
+            this.FactorNumber.Border.Class = "TextBoxBorder";
+            this.FactorNumber.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.FactorNumber.Font = new System.Drawing.Font("MRT_Mitra_3", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.FactorNumber.Location = new System.Drawing.Point(679, 126);
+            this.FactorNumber.Name = "FactorNumber";
+            this.FactorNumber.PreventEnterBeep = true;
+            this.FactorNumber.Size = new System.Drawing.Size(81, 27);
+            this.FactorNumber.TabIndex = 1;
+            this.FactorNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FactorNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.factorNumber_KeyPress);
             // 
             // AdminName
             // 
@@ -617,28 +623,15 @@
             this.label15.TabIndex = 42;
             this.label15.Text = "برند محصول";
             // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
-            this.buttonX1.HoverImage = global::StoreMarket_V1.Properties.Resources.Graphicloads_Polygon_Reload_2;
-            this.buttonX1.Image = global::StoreMarket_V1.Properties.Resources.Graphicloads_Polygon_Refresh_3;
-            this.buttonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.buttonX1.Location = new System.Drawing.Point(8, 25);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(30, 30);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 18;
-            this.buttonX1.TextColor = System.Drawing.Color.White;
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonX1);
+            this.groupBox2.Controls.Add(this.buttonX3);
+            this.groupBox2.Controls.Add(this.TotalPriceFactor);
             this.groupBox2.Controls.Add(this.DGV);
             this.groupBox2.Controls.Add(this.buttonX5);
             this.groupBox2.Controls.Add(this.buttonX4);
             this.groupBox2.Controls.Add(this.TotalFactor);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -648,6 +641,33 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "فاکتور خرید";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
+            this.buttonX3.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Open;
+            this.buttonX3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.buttonX3.Location = new System.Drawing.Point(318, 287);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(139, 30);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 44;
+            this.buttonX3.Text = "باز کردن فاکتور";
+            this.buttonX3.TextColor = System.Drawing.Color.White;
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            this.buttonX3.MouseEnter += new System.EventHandler(this.buttonX3_MouseEnter);
+            this.buttonX3.MouseLeave += new System.EventHandler(this.buttonX3_MouseLeave);
+            // 
+            // TotalPriceFactor
+            // 
+            this.TotalPriceFactor.AutoSize = true;
+            this.TotalPriceFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.TotalPriceFactor.Location = new System.Drawing.Point(604, 291);
+            this.TotalPriceFactor.Name = "TotalPriceFactor";
+            this.TotalPriceFactor.Size = new System.Drawing.Size(88, 23);
+            this.TotalPriceFactor.TabIndex = 42;
+            this.TotalPriceFactor.Text = "۰۰۰.۰۰۰.۰۰۰";
             // 
             // DGV
             // 
@@ -742,20 +762,25 @@
             // 
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
+            this.buttonX5.Enabled = false;
             this.buttonX5.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Shopping_cart_insert;
             this.buttonX5.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.buttonX5.Location = new System.Drawing.Point(176, 288);
+            this.buttonX5.Location = new System.Drawing.Point(165, 287);
             this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(139, 27);
+            this.buttonX5.Size = new System.Drawing.Size(139, 30);
             this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX5.TabIndex = 0;
             this.buttonX5.Text = "تایید فاکتور";
             this.buttonX5.TextColor = System.Drawing.Color.White;
+            this.buttonX5.Click += new System.EventHandler(this.buttonX5_Click);
+            this.buttonX5.MouseEnter += new System.EventHandler(this.buttonX5_MouseEnter);
+            this.buttonX5.MouseLeave += new System.EventHandler(this.buttonX5_MouseLeave);
             // 
             // buttonX4
             // 
             this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
+            this.buttonX4.Enabled = false;
             this.buttonX4.Image = global::StoreMarket_V1.Properties.Resources.Paomedia_Small_N_Flat_Sign_check1;
             this.buttonX4.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.buttonX4.Location = new System.Drawing.Point(12, 287);
@@ -765,6 +790,9 @@
             this.buttonX4.TabIndex = 1;
             this.buttonX4.Text = "ثبت سیستم";
             this.buttonX4.TextColor = System.Drawing.Color.White;
+            this.buttonX4.Click += new System.EventHandler(this.buttonX4_Click);
+            this.buttonX4.MouseEnter += new System.EventHandler(this.buttonX4_MouseEnter);
+            this.buttonX4.MouseLeave += new System.EventHandler(this.buttonX4_MouseLeave);
             // 
             // TotalFactor
             // 
@@ -775,6 +803,31 @@
             this.TotalFactor.Size = new System.Drawing.Size(58, 23);
             this.TotalFactor.TabIndex = 35;
             this.TotalFactor.Text = "جمع کل :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label12.Location = new System.Drawing.Point(568, 290);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 23);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "ریال";
+            // 
+            // ResultText
+            // 
+            // 
+            // 
+            // 
+            this.ResultText.BackgroundStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(24)))), ((int)(((byte)(154)))));
+            this.ResultText.BackgroundStyle.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
+            this.ResultText.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ResultText.ForeColor = System.Drawing.Color.Red;
+            this.ResultText.Location = new System.Drawing.Point(397, 21);
+            this.ResultText.Name = "ResultText";
+            this.ResultText.Size = new System.Drawing.Size(363, 23);
+            this.ResultText.TabIndex = 43;
+            this.ResultText.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // BuyFactorPanel
             // 
@@ -804,7 +857,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label ADMIN;
+        public System.Windows.Forms.Label AdminNumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -812,11 +865,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Result;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private DevComponents.DotNetBar.Controls.TextBoxX FactorCode;
-        private DevComponents.DotNetBar.Controls.TextBoxX factorNumber;
+        private DevComponents.DotNetBar.Controls.TextBoxX FactorNumber;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label TotalFactor;
@@ -856,6 +908,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        public System.Windows.Forms.Label ResultText;
+        private System.Windows.Forms.Label TotalPriceFactor;
+        private System.Windows.Forms.Label label12;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.LabelX ResultText;
     }
 }

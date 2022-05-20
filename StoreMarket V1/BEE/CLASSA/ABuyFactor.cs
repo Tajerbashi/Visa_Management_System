@@ -15,7 +15,7 @@ namespace BEE
         public AAgent agent { get; set; }
         public ACompany company { get; set; }
         public String RegisterDate { get; set; }
-        public Int16 CashType { get; set; } //  1 Money     2 Banki
+        public int CashType { get; set; } //  1 Money     2 Banki
         public double TotalPrice { get; set; }
         public AAdmin admin { get; set; }
         public bool DeleteStatus { get; set; } = false;

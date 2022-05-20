@@ -137,7 +137,19 @@ namespace StoreMarket_V1
                 MainPanel.Controls[0].Dispose();
             }
             panel.AdminName.Text = ADMINNAME.Text;
-            panel.ADMIN.Text = ADMINNUMBER.Text;
+            panel.AdminNumber.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SellFactor panel = new SellFactor();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.AdminName.Text = ADMINNAME.Text;
+            panel.AdminNumber.Text = ADMINNUMBER.Text;
             MainPanel.Controls.Add(panel);
         }
     }

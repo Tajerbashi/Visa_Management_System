@@ -18,14 +18,99 @@ namespace StoreMarket_V1
         {
             InitializeComponent();
         }
+        #region Objects
         BLLCode blc = new BLLCode();
         Functions Fun = new Functions();
         ACompany companyA = new ACompany();
         BCompany companyB = new BCompany();
         AAgent agentA = new AAgent();
         BAgent agentB = new BAgent();
+        
+        AAdmin AdminA = new AAdmin();
+        BAdmin AdminB = new BAdmin();
+        #endregion
         int No = 1;
         int index = 0;
+        int IDforDelete = 0;
+        #region MouseHover
+        private void buttonX2_MouseEnter(object sender, EventArgs e)
+        {
+            buttonX2.FadeEffect = true;
+            buttonX2.TextColor = Color.Black;
+        }
+
+        private void buttonX2_MouseLeave(object sender, EventArgs e)
+        {
+            buttonX2.TextColor = Color.White;
+        }
+
+        private void Addbtn_MouseEnter(object sender, EventArgs e)
+        {
+            Addbtn.FadeEffect = true;
+            Addbtn.TextColor = Color.Black;
+        }
+
+        private void Addbtn_MouseLeave(object sender, EventArgs e)
+        {
+            Addbtn.TextColor = Color.White;
+        }
+
+        private void Deletebtn_MouseEnter(object sender, EventArgs e)
+        {
+            Deletebtn.FadeEffect = true;
+            Deletebtn.TextColor = Color.Black;
+        }
+
+        private void Deletebtn_MouseLeave(object sender, EventArgs e)
+        {
+            Deletebtn.TextColor = Color.White;
+        }
+
+        private void Savebtn_MouseEnter(object sender, EventArgs e)
+        {
+            Savebtn.FadeEffect = true;
+            Savebtn.TextColor = Color.Black;
+        }
+
+        private void Savebtn_MouseLeave(object sender, EventArgs e)
+        {
+            Savebtn.TextColor = Color.White;
+        }
+
+        private void buttonX3_MouseEnter(object sender, EventArgs e)
+        {
+            buttonX3.TextColor = Color.Black;
+            buttonX3.FadeEffect = true;
+        }
+
+        private void buttonX3_MouseLeave(object sender, EventArgs e)
+        {
+            buttonX3.TextColor = Color.White;
+        }
+
+        private void buttonX5_MouseEnter(object sender, EventArgs e)
+        {
+            buttonX5.FadeEffect = true;
+            buttonX5.TextColor = Color.Black;
+        }
+
+        private void buttonX5_MouseLeave(object sender, EventArgs e)
+        {
+            buttonX5.TextColor = Color.White;
+        }
+
+        private void buttonX4_MouseEnter(object sender, EventArgs e)
+        {
+            buttonX4.FadeEffect = true;
+            buttonX4.TextColor = Color.Black;
+        }
+
+        private void buttonX4_MouseLeave(object sender, EventArgs e)
+        {
+            buttonX4.TextColor = Color.White;
+        }
+        #endregion
+        #region Functions
         public void GetAgentNameForXCompany(String Admin, String CompanyName1)
         {
             AgentName.Items.Clear();
@@ -147,39 +232,48 @@ namespace StoreMarket_V1
         {
             if (Admin == "1")
             {
-                factorNumber.Text = (blc.GetLastFactorNumberA()).ToString();
+                FactorNumber.Text = (blc.GetLastBuyFactorNumberA()).ToString();
             }
             else
             {
-                factorNumber.Text = (blc.GetLastFactorNumberB()).ToString();
+                FactorNumber.Text = (blc.GetLastBuyFactorNumberB()).ToString();
             }
         }
         public void GetLastFactorCode(String Admin)
         {
             if (Admin == "1")
             {
-                FactorCode.Text = (blc.GetLastFactorCodeA()).ToString();
+                FactorCode.Text = (blc.GetLastBuyFactorCodeA()).ToString();
             }
             else
             {
-                FactorCode.Text = (blc.GetLastFactorCodeB()).ToString();
+                FactorCode.Text = (blc.GetLastBuyFactorCodeB()).ToString();
             }
         }
-        
+        #endregion
+
         private void BuyFactorPanel_Load(object sender, EventArgs e)
         {
             DayDate.Text = Fun.CLOCK();
-            GetAgentName(ADMIN.Text);
-            GetCompanyName(ADMIN.Text);
-            GetLastFactorNumber(ADMIN.Text);
-            GetLastFactorCode(ADMIN.Text);
-            GetBrandProduct(ADMIN.Text);
+            GetAgentName(AdminNumber.Text);
+            GetCompanyName(AdminNumber.Text);
+            GetLastFactorNumber(AdminNumber.Text);
+            GetLastFactorCode(AdminNumber.Text);
+            GetBrandProduct(AdminNumber.Text);
+            if (AdminNumber.Text=="1")
+            {
+                AdminA = blc.GetAdminsA().Where(c => c.Username == AdminName.Text).FirstOrDefault();
+            }
+            else
+            {
+                AdminB = blc.GetAdminsB().Where(c => c.Username == AdminName.Text).FirstOrDefault();
+            }
         }
 
         private void AgentName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetCompanyForXAgent(ADMIN.Text, AgentName.Text);
-            if (ADMIN.Text == "1")
+            GetCompanyForXAgent(AdminNumber.Text, AgentName.Text);
+            if (AdminNumber.Text == "1")
             {
                 agentA = blc.GetAgentIDA(CompanyName.Text);
             }
@@ -191,21 +285,14 @@ namespace StoreMarket_V1
 
         private void CompanyName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetAgentNameForXCompany(ADMIN.Text, CompanyName.Text);
-            if (ADMIN.Text=="1")
+            GetAgentNameForXCompany(AdminNumber.Text, CompanyName.Text);
+            if (AdminNumber.Text=="1")
             {
-                //AgentName.Items.Clear();
                 companyA = blc.GetCompanyIDA(CompanyName.Text);
-                //var agents = from i in blc.GetAgentA() where i.CompanyName==CompanyName.Text select i;
-                //foreach (var item in agents)
-                //{
-                //    AgentName.Items.Add(item);
-                //}
             }
             else
             {
                 companyB = blc.GetCompanyIDB(CompanyName.Text);
-
             }
         }
 
@@ -213,8 +300,8 @@ namespace StoreMarket_V1
         {
             CompanyName.Text = " ";
             AgentName.Text = " ";
-            GetAgentName(ADMIN.Text);
-            GetCompanyName(ADMIN.Text);
+            GetAgentName(AdminNumber.Text);
+            GetCompanyName(AdminNumber.Text);
             DayDate.Text = Fun.CLOCK();
         }
 
@@ -343,58 +430,136 @@ namespace StoreMarket_V1
                 else
                 {
                     //  در دتاگرید موجود نیست و ثبت و اضافه کن
-                    #region CodeAdd
-                    ACompany company = new ACompany();
-                    company.CompanyName = CompanyName.Text.Trim();
-                    company.Phone1 = company.Phone2 = company.Address = company.Site = company.Details = company.CompanyManager = "تعریف نشده";
-
-                    AAgent agent = new AAgent();
-                    agent.CompanyName = CompanyName.Text.Trim();
-                    agent.FullName = AgentName.Text.Trim();
-                    agent.Address = "تعریف نشده";
-                    agent.Phone = 100;
-
-                    AProduct product = new AProduct();
-                    product.BuyCount = int.Parse(Tehdad.Value.ToString());
-                    product.Mojodi = product.BuyCount;
-                    product.Name = ProductName.Text.Trim();
-                    product.Type = ProductType.Text.Trim();
-                    product.Brand = Brand.Text.Trim();
-                    product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
-                    product.sellPrice = 0;
-                    product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
-                    product.Totalcash = (product.BuyCount * product.buyPrice);
-                    product.AgentName = AgentName.Text.Trim();
-                    product.ProduceDate = Produce.ToString("yyyy/MM/dd");
-                    product.RegisterDate = RegisterDateProduct.ToString("yyyy/MM/dd");
-                    product.ExpireDate = Expire.ToString("yyyy/MM/dd");
-
-
-                    if (!blc.CreatCompanyA(company))
+                    if (AdminNumber.Text == "1")
                     {
-                        agent.Company = blc.GetCompanyA().Where(c => c.CompanyName == company.CompanyName).FirstOrDefault();
+                        #region CodeAddA
+                        ACompany company = new ACompany();
+                        company.CompanyName = CompanyName.Text.Trim();
+                        company.Phone1 = company.Phone2 = company.Address = company.Site = company.Details = company.CompanyManager = "تعریف نشده";
+
+                        AAgent agent = new AAgent();
+                        agent.CompanyName = CompanyName.Text.Trim();
+                        agent.FullName = AgentName.Text.Trim();
+                        agent.Address = "تعریف نشده";
+                        agent.Phone = 100;
+
+                        AProduct product = new AProduct();
+                        product.BuyCount = int.Parse(Tehdad.Value.ToString());
+                        product.Mojodi = product.BuyCount;
+                        product.Name = ProductName.Text.Trim();
+                        product.Type = ProductType.Text.Trim();
+                        product.Brand = Brand.Text.Trim();
+                        product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
+                        product.sellPrice = 0;
+                        product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
+                        product.Totalcash = (product.BuyCount * product.buyPrice);
+                        product.AgentName = AgentName.Text.Trim();
+                        product.ProduceDate = Fun.ChangeToEnglishNumber(Produce.ToString("yyyy/MM/dd"));
+                        product.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                        product.ExpireDate = Fun.ChangeToEnglishNumber(Expire.ToString("yyyy/MM/dd"));
+
+                        if (!blc.CreatCompanyA(company))
+                        {
+                            agent.Company = blc.GetCompanyA().Where(c => c.CompanyName == company.CompanyName).FirstOrDefault();
+                        }
+                        else
+                        {
+                            agent.Company = company;
+                        }
+
+                        if (blc.CreatAgentA(agent))
+                        {
+                            ResultText.Text = "جدید است";
+                        }
+                        else
+                        {
+                            ResultText.Text = "جدید نیست";
+                        }
+                        int IDforProduct = 0;
+                        if (blc.CreateProductForBuyFactorA(product))
+                        {
+                            IDforProduct = product.id;
+                        }
+                        else
+                        {
+                            var q = from i in blc.GetProductsA() where i.Name == product.Name && i.Type == product.Type && i.Brand == product.Brand && i.AgentName == product.AgentName select i;
+                            foreach (var item in q)
+                            {
+                                IDforProduct = item.id;
+                            }
+                        }
+                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
+                        ProductName.Text = " ";
+                        ProductName.Focus();
+                        No++;
+                        #endregion
+
                     }
                     else
                     {
-                        agent.Company = company;
-                    }
+                        #region CodeAddB
+                        BCompany company = new BCompany();
+                        company.CompanyName = CompanyName.Text.Trim();
+                        company.Phone1 = company.Phone2 = company.Address = company.Site = company.Details = company.CompanyManager = "تعریف نشده";
 
-                    if (blc.CreatAgentA(agent))
-                    {
-                        ResultText.Text = "جدید است";
-                    }
-                    else
-                    {
-                        ResultText.Text = "جدید نیست";
-                    }
+                        BAgent agent = new BAgent();
+                        agent.CompanyName = CompanyName.Text.Trim();
+                        agent.FullName = AgentName.Text.Trim();
+                        agent.Address = "تعریف نشده";
+                        agent.Phone = 100;
 
-                    blc.CreateProductForBuyFactorA(product);
-                    DGV.Rows.Add(product.id, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
-                    ProductName.Text = " ";
-                    ProductName.Focus();
-                    No++;
-                    #endregion
+                        BProduct product = new BProduct();
+                        product.BuyCount = int.Parse(Tehdad.Value.ToString());
+                        product.Mojodi = product.BuyCount;
+                        product.Name = ProductName.Text.Trim();
+                        product.Type = ProductType.Text.Trim();
+                        product.Brand = Brand.Text.Trim();
+                        product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
+                        product.sellPrice = 0;
+                        product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
+                        product.Totalcash = (product.BuyCount * product.buyPrice);
+                        product.AgentName = AgentName.Text.Trim();
+                        product.ProduceDate = Fun.ChangeToEnglishNumber(Produce.ToString("yyyy/MM/dd"));
+                        product.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                        product.ExpireDate = Fun.ChangeToEnglishNumber(Expire.ToString("yyyy/MM/dd"));
 
+                        if (!blc.CreatCompanyB(company))
+                        {
+                            agent.Company = blc.GetCompanyB().Where(c => c.CompanyName == company.CompanyName).FirstOrDefault();
+                        }
+                        else
+                        {
+                            agent.Company = company;
+                        }
+
+                        if (blc.CreatAgentB(agent))
+                        {
+                            ResultText.Text = "جدید است";
+                        }
+                        else
+                        {
+                            ResultText.Text = "جدید نیست";
+                        }
+                        int IDforProduct = 0;
+                        if (blc.CreateProductForBuyFactorB(product))
+                        {
+                            IDforProduct = product.id;
+                        }
+                        else
+                        {
+                            var q = from i in blc.GetProductsB() where i.Name == product.Name && i.Type == product.Type && i.Brand == product.Brand && i.AgentName == product.AgentName select i;
+                            foreach (var item in q)
+                            {
+                                IDforProduct = item.id;
+                            }
+                        }
+                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
+                        ProductName.Text = " ";
+                        ProductName.Focus();
+                        No++;
+                        #endregion
+
+                    }
                 }
             }
         }
@@ -408,31 +573,79 @@ namespace StoreMarket_V1
             message.ShowDialog();
             if (message.Sw)
             {
+                Fun.ClearTextBoxes(groupBox1.Controls);
+                Fun.ClearTextBoxes(groupBox2.Controls);
+                
                 No = 1;
-                if (ADMIN.Text == "1")
+                if (AdminNumber.Text == "1")
                 {
-                    FactorCode.Text = blc.GetLastFactorCodeA().ToString();
-                    factorNumber.Text = blc.GetLastFactorNumberA().ToString();
-                    CompanyName.Text = " ";
-                    AgentName.Text = " ";
+                    FactorCode.Text = blc.GetLastBuyFactorCodeA().ToString();
+                    FactorNumber.Text = blc.GetLastBuyFactorNumberA().ToString();
 
                 }
                 else
                 {
-                    FactorCode.Text = blc.GetLastFactorCodeB().ToString();
-                    factorNumber.Text = blc.GetLastFactorNumberB().ToString();
-                    CompanyName.Text = " ";
-                    AgentName.Text = " ";
+                    FactorCode.Text = blc.GetLastBuyFactorCodeB().ToString();
+                    FactorNumber.Text = blc.GetLastBuyFactorNumberB().ToString();
                 }
-                Fun.ClearTextBoxes(this.Controls);
             }
+            
         }
         
         private void Deletebtn_Click(object sender, EventArgs e)
         {
+            // حذف  اطلاعات
+            if (AdminNumber.Text=="1")
+            {
+                AProduct product = blc.GetProductA(IDforDelete);
+                if (Fun.ChangeToEnglishNumber(product.RegisterDate) == Fun.ChangeToEnglishNumber(DayDate.ToString()))
+                {
+                    // اگر تاریخ ثبت امروز بود حذف کن
+                    blc.DeleteProductFromDBA(IDforDelete);
+                    MessageBox.Show("حذف شد از دتابس");
+                }
+                else
+                {
+                    //  اگر تاریخ ثبت امروز نیست از دتا گرید تغیرات حذف کن
+                    // تعداد خرید
+                    // قیمت جدید
+                    // از مجموعه قیمت کم کن
+                    product.BuyCount -= int.Parse(DGV.Rows[index].Cells[5].Value.ToString());
+                    product.Mojodi -= int.Parse(DGV.Rows[index].Cells[5].Value.ToString());
+                    product.newBuyPrice = product.buyPrice;
+                    product.Totalcash -= int.Parse(DGV.Rows[index].Cells[7].Value.ToString());
+                    blc.SaveEditForBuyFactorProductA(product);
+                    MessageBox.Show("تغییرات از دتابس حذف شد");
+                }
+
+            }
+            else
+            {
+                BProduct product = blc.GetProductB(IDforDelete);
+                if (Fun.ChangeToEnglishNumber(product.RegisterDate) == Fun.ChangeToEnglishNumber(DayDate.ToString()))
+                {
+                    // اگر تاریخ ثبت امروز بود حذف کن
+                    blc.DeleteProductFromDBB(IDforDelete);
+                    MessageBox.Show("حذف شد از دتابس");
+                }
+                else
+                {
+                    //  اگر تاریخ ثبت امروز نیست از دتا گرید تغیرات حذف کن
+                    // تعداد خرید
+                    // قیمت جدید
+                    // از مجموعه قیمت کم کن
+                    product.BuyCount -= int.Parse(DGV.Rows[index].Cells[5].Value.ToString());
+                    product.Mojodi -= int.Parse(DGV.Rows[index].Cells[5].Value.ToString());
+                    product.newBuyPrice = product.buyPrice;
+                    product.Totalcash -= int.Parse(DGV.Rows[index].Cells[7].Value.ToString());
+                    blc.SaveEditForBuyFactorProductB(product);
+                    MessageBox.Show("تغییرات از دتابس حذف شد");
+                }
+            }
+
             DGV.Rows.RemoveAt(index);
             No = 1;
-            for (int i=0;i<DGV.Rows.Count;i++)
+            for (int i = 0; i < DGV.Rows.Count; i++)
             {
                 DGV.Rows[i].Cells[1].Value = No;
                 No++;
@@ -441,15 +654,190 @@ namespace StoreMarket_V1
 
         private void DGV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            index = DGV.CurrentRow.Index;
-            if ( e.Button==MouseButtons.Right || e.Button == MouseButtons.Left )
+            try
             {
-                DGV.CurrentRow.Selected = (DGV.CurrentRow.Selected) ? false : true;
+                index = DGV.CurrentRow.Index;
+                if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
+                {
+                    DGV.CurrentRow.Selected = (DGV.CurrentRow.Selected) ? false : true;
+                    IDforDelete = int.Parse(DGV.CurrentRow.Cells[0].Value.ToString());
+                }
             }
-            
+            catch
+            {
+
+            }
             //MessageBox.Show(index.ToString());
         }
 
+        private void Savebtn_Click(object sender, EventArgs e)
+        {
+            int totalfactor = 0;
+            for (int i = 0; i < DGV.Rows.Count; i++)
+            {
+                totalfactor += int.Parse(DGV.Rows[i].Cells[7].Value.ToString());
+            }
+            TotalPriceFactor.Text = (totalfactor).ToString();
+            groupBox1.Enabled = false;
+            buttonX5.Enabled = true;
+        }
+
+        private void buttonX5_Click(object sender, EventArgs e)
+        {
+            //  تایید فاکتور و ثبت تمام تغییرات روی محصولات
+            // تک تک ردیف ها بر اساس 
+            if (AdminNumber.Text=="1")
+            {
+                #region CodeA
+                ABuyFactor factor = new ABuyFactor();
+                factor.FactorNumber = int.Parse(FactorNumber.Text);
+                factor.FactorCode = int.Parse(FactorCode.Text);
+                blc.CreateBuyFactorA(factor);
+                for (int i = 0; i < DGV.RowCount; i++)
+                {
+                    int ID = int.Parse(DGV.Rows[i].Cells[0].Value.ToString());
+                    AProduct product = blc.GetProductA(ID);
+                    if (product.RegisterDate.Equals(Fun.ChangeToEnglishNumber(DayDate.Text)))
+                    {
+                        // خرید امروز و تغییرات نهایی درج شود
+                        product.buyPrice = product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Totalcash = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        //MessageBox.Show("خرید جدید");
+                    }
+                    else
+                    {
+                        // خرید امروز به علاوه موجودیت قبل و ذخیره شود
+                        product.buyPrice = product.newBuyPrice;
+                        product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Totalcash += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        //MessageBox.Show("ویرایش");
+                    }
+                    product.aBuyFactor = factor;
+                    blc.SaveEditForBuyFactorProductA(product);
+                }
+                #endregion
+            }
+            else
+            {
+                #region CodeB
+                BBuyFactor factor = new BBuyFactor();
+                factor.FactorNumber = int.Parse(FactorNumber.Text);
+                factor.FactorCode = int.Parse(FactorCode.Text);
+                blc.CreateBuyFactorB(factor);
+                for (int i = 0; i < DGV.RowCount; i++)
+                {
+                    int ID = int.Parse(DGV.Rows[i].Cells[0].Value.ToString());
+                    BProduct product = blc.GetProductB(ID);
+                    if (product.RegisterDate.Equals(Fun.ChangeToEnglishNumber(DayDate.Text)))
+                    {
+                        // خرید امروز و تغییرات نهایی درج شود
+                        product.buyPrice = product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Totalcash = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        //MessageBox.Show("خرید جدید");
+                    }
+                    else
+                    {
+                        // خرید امروز به علاوه موجودیت قبل و ذخیره شود
+                        product.buyPrice = product.newBuyPrice;
+                        product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
+                        product.Totalcash += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        //MessageBox.Show("ویرایش");
+                    }
+                    product.bBuyFactor = factor;
+                    blc.SaveEditForBuyFactorProductB(product);
+                }
+                #endregion
+            }
+
+            buttonX4.Enabled = true;
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = true;
+            buttonX5.Enabled = false;
+        }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            if (AdminNumber.Text=="1")
+            {
+                #region CodeA
+                ABuyFactor factor = blc.GetBuyFactorA().Where(c => c.FactorCode.ToString() == Fun.ChangeToEnglishNumber(FactorCode.Text)).FirstOrDefault();
+                factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+                factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+                factor.agent = blc.GetAgentA().Where(c => c.FullName == AgentName.Text).FirstOrDefault();
+                factor.company = blc.GetCompanyA().Where(c => c.CompanyName == CompanyName.Text).FirstOrDefault();
+                factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                factor.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
+                factor.TotalPrice = Convert.ToDouble(TotalPriceFactor.Text);
+                factor.admin = blc.GetAdminsA().Where(c => c.Username == AdminName.Text).FirstOrDefault();
+                String adminname = AdminName.Text;
+                DGV.Rows.Clear();
+                blc.SaveLastChangesOnBuyFacotrA(factor);
+                Fun.ClearTextBoxes(groupBox1.Controls);
+                Fun.ClearTextBoxes(groupBox2.Controls);
+                buttonX4.Enabled = false;
+                DayDate.Text = Fun.CLOCK();
+                AdminName.Text = adminname;
+                AgentName.Text = " ";
+                CompanyName.Text = " ";
+                TotalPriceFactor.Text = "۰۰۰,۰۰۰,۰۰۰";
+                GetAgentName(AdminNumber.Text);
+                GetCompanyName(AdminNumber.Text);
+                GetLastFactorNumber(AdminNumber.Text);
+                GetLastFactorCode(AdminNumber.Text);
+                GetBrandProduct(AdminNumber.Text);
+                buttonX5.Enabled = false;
+                No = 1;
+                #endregion
+            }
+            else
+            {
+                #region CodeB
+                BBuyFactor factor = blc.GetBuyFactorB().Where(c => c.FactorCode.ToString() == Fun.ChangeToEnglishNumber(FactorCode.Text)).FirstOrDefault();
+                factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+                factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+                factor.agent = blc.GetAgentB().Where(c => c.FullName == AgentName.Text).FirstOrDefault();
+                factor.company = blc.GetCompanyB().Where(c => c.CompanyName == CompanyName.Text).FirstOrDefault();
+                factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                factor.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
+                factor.TotalPrice = Convert.ToDouble(TotalPriceFactor.Text);
+                factor.admin = blc.GetAdminsB().Where(c => c.Username == AdminName.Text).FirstOrDefault();
+                String adminname = AdminName.Text;
+                DGV.Rows.Clear();
+                blc.SaveLastChangesOnBuyFacotrB(factor);
+                Fun.ClearTextBoxes(groupBox1.Controls);
+                Fun.ClearTextBoxes(groupBox2.Controls);
+                buttonX4.Enabled = false;
+                DayDate.Text = Fun.CLOCK();
+                AdminName.Text = adminname;
+                AgentName.Text = " ";
+                CompanyName.Text = " ";
+                TotalPriceFactor.Text = "۰۰۰,۰۰۰,۰۰۰";
+                GetAgentName(AdminNumber.Text);
+                GetCompanyName(AdminNumber.Text);
+                GetLastFactorNumber(AdminNumber.Text);
+                GetLastFactorCode(AdminNumber.Text);
+                GetBrandProduct(AdminNumber.Text);
+                buttonX5.Enabled = false;
+                No = 1;
+                #endregion
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -72,6 +72,14 @@ namespace StoreMarket_V1
                 BLog.AdminName = ADMINNAME.Text;
                 BLog.Enter = Fun.CLOCK();
             }
+            if (ADMINNAME.Text=="ADMIN1" || ADMINNAME.Text=="ADMIN2")
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {

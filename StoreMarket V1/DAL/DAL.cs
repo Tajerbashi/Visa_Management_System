@@ -12,7 +12,7 @@ namespace DAL
 {
     public class DALCODE
     {
-        BEE.DBCLASS db = new DBCLASS();
+        DBCLASS db = new DBCLASS();
         //  Public Keys
         public int PublicKey(String Key)
         {
@@ -359,11 +359,11 @@ namespace DAL
             }
             return 0;
         }
-        public List<AAdmin> readadminA()
+        public List<AAdmin> GetAdminsA()
         {
             return (from i in db.aAdmins where !i.DeleteStatus select i).ToList();
         }
-        public List<BAdmin> readadminB()
+        public List<BAdmin> GetAdminsB()
         {
             return (from i in db.bAdmins where !i.DeleteStatus select i).ToList();
         }
@@ -581,11 +581,32 @@ namespace DAL
             return (db.bProducts.Where(c => c.id == ID).FirstOrDefault());
         }
 
+        public void SaveEditForBuyFactorProductA(AProduct product)
+        {
+            AProduct producte = db.aProducts.Where(c => c.id == product.id).FirstOrDefault();
+            producte.buyPrice = product.buyPrice;
+            producte.newBuyPrice = product.newBuyPrice;
+            producte.BuyCount = product.BuyCount;
+            producte.Totalcash = product.Totalcash;
+            producte.Mojodi = product.Mojodi;
+            db.SaveChanges();
+        }
+        public void SaveEditForBuyFactorProductB(BProduct product)
+        {
+            BProduct producte = db.bProducts.Where(c => c.id == product.id).FirstOrDefault();
+            producte.buyPrice = product.buyPrice;
+            producte.newBuyPrice = product.newBuyPrice;
+            producte.BuyCount = product.BuyCount;
+            producte.Totalcash = product.Totalcash;
+            producte.Mojodi = product.Mojodi;
+            db.SaveChanges();
+        }
+
         public bool SaveEditProductA(AProduct product)
         {
             foreach (var item in db.aProducts)
             {
-                if (item.Name == product.Name && item.Type == product.Type)
+                if (item.Name == product.Name && item.Type == product.Type && item.ProduceDate==product.ProduceDate)
                 {
                     AProduct p = GetProductA(item.id);
                     p.BuyCount += product.BuyCount;
@@ -607,7 +628,7 @@ namespace DAL
         {
             foreach (var item in db.bProducts)
             {
-                if (item.Name == product.Name && item.Type == product.Type )
+                if (item.Name == product.Name && item.Type == product.Type && item.ProduceDate == product.ProduceDate )
                 {
                     BProduct p = GetProductB(item.id);
                     p.BuyCount += product.BuyCount;
@@ -628,7 +649,7 @@ namespace DAL
 
         public bool ExistProductForBuyFactorA(AProduct product)
         {
-            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName).FirstOrDefault();
+            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName && c.RegisterDate==product.RegisterDate).FirstOrDefault();
             if (q != null)
             {
                 return true;
@@ -637,14 +658,27 @@ namespace DAL
         }
         public bool ExistProductForBuyFactorB(BProduct product)
         {
-            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName).FirstOrDefault();
+            var q = db.aProducts.Where(c => c.Name == product.Name && c.Type == product.Type && c.AgentName == product.AgentName && c.RegisterDate == product.RegisterDate).FirstOrDefault();
             if (q != null)
             {
                 return true;
             }
             return false;
         }
-       
+
+        public void DeleteProductFromDBA(int ID)
+        {
+            AProduct product = db.aProducts.Where(c => c.id == ID).FirstOrDefault();
+            db.aProducts.Remove(product);
+            db.SaveChanges();
+        }
+        public void DeleteProductFromDBB(int ID)
+        {
+            BProduct product = db.bProducts.Where(c => c.id == ID).FirstOrDefault();
+            db.bProducts.Remove(product);
+            db.SaveChanges();
+        }
+
         public bool CreateProductForBuyFactorA(AProduct product)
         {
             db.aProducts.Add(product);
@@ -662,7 +696,7 @@ namespace DAL
         {
             foreach (var item in db.aProducts)
             {
-                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
+                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type && item.ProduceDate==product.ProduceDate )
                 {
                     return true;
                 }
@@ -673,7 +707,7 @@ namespace DAL
         {
             foreach (var item in db.bProducts)
             {
-                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type)
+                if (item.id != product.id && item.Name == product.Name && item.Type == product.Type && item.ProduceDate == product.ProduceDate )
                 {
                     return true;
                 }
@@ -813,6 +847,52 @@ namespace DAL
         public BAdmin SelectAdminAccountB(int ID)
         {
             return (db.bAdmins.Where(c => c.id == ID).FirstOrDefault());
+        }
+        //  Buy Factor
+        public void CreateBuyFactorA(ABuyFactor factor)
+        {
+            db.aBuyFactors.Add(factor);
+            db.SaveChanges();
+        }
+        public void CreateBuyFactorB(BBuyFactor factor)
+        {
+            db.bBuyFactors.Add(factor);
+            db.SaveChanges();
+        }
+        public List<ABuyFactor> GetBuyFactorA()
+        {
+            return (from i in db.aBuyFactors where !i.DeleteStatus select i).ToList();
+        }
+        public List<BBuyFactor> GetBuyFactorB()
+        {
+            return (from i in db.bBuyFactors where !i.DeleteStatus select i).ToList();
+        }
+
+        public void SaveLastChangesOnBuyFacotrA(ABuyFactor factor)
+        {
+            ABuyFactor NewFactor = db.aBuyFactors.Where(c => c.FactorCode == factor.FactorCode).FirstOrDefault();
+            NewFactor.FactorCode = factor.FactorCode;
+            NewFactor.FactorNumber = factor.FactorNumber;
+            NewFactor.agent = factor.agent;
+            NewFactor.company = factor.company;
+            NewFactor.RegisterDate = factor.RegisterDate;
+            NewFactor.CashType = factor.CashType;
+            NewFactor.TotalPrice = factor.TotalPrice;
+            NewFactor.admin = factor.admin;
+            db.SaveChanges();
+        }
+        public void SaveLastChangesOnBuyFacotrB(BBuyFactor factor)
+        {
+            BBuyFactor NewFactor = db.bBuyFactors.Where(c => c.FactorCode == factor.FactorCode).FirstOrDefault();
+            NewFactor.FactorCode = factor.FactorCode;
+            NewFactor.FactorNumber = factor.FactorNumber;
+            NewFactor.agent = factor.agent;
+            NewFactor.company = factor.company;
+            NewFactor.RegisterDate = factor.RegisterDate;
+            NewFactor.CashType = factor.CashType;
+            NewFactor.TotalPrice = factor.TotalPrice;
+            NewFactor.admin = factor.admin;
+            db.SaveChanges();
         }
 
         // Agent Register
@@ -1124,7 +1204,7 @@ namespace DAL
         {
             foreach (var item in db.aCustomers)
             {
-                if (item.id != customer.id && item.FullName == customer.FullName)
+                if ( item.FullName == customer.FullName & item.Phone==customer.Phone)
                 {
                     return true;
                 }
@@ -1135,7 +1215,7 @@ namespace DAL
         {
             foreach (var item in db.bCustomers)
             {
-                if (item.id != customer.id && item.FullName == customer.FullName)
+                if (item.FullName == customer.FullName & item.Phone == customer.Phone)
                 {
                     return true;
                 }
@@ -1179,11 +1259,11 @@ namespace DAL
             return true;
         }
 
-        public List<ACustomer> ShowAllCustomerA()
+        public List<ACustomer> GetCustomersA()
         {
             return (from i in db.aCustomers where !i.DeleteStatus select i).ToList();
         }
-        public List<BCustomer> ShowAllCustomerB()
+        public List<BCustomer> GetCustomersB()
         {
             return (from i in db.bCustomers where !i.DeleteStatus select i).ToList();
         }
@@ -1243,7 +1323,7 @@ namespace DAL
         }
 
         //  Buy Factor
-        public int GetLastFactorNumberA()
+        public int GetLastBuyFactorNumberA()
         {
             try
             {
@@ -1255,7 +1335,7 @@ namespace DAL
                 return 1;
             }
         }
-        public int GetLastFactorNumberB()
+        public int GetLastBuyFactorNumberB()
         {
             try
             {
@@ -1268,7 +1348,7 @@ namespace DAL
             }
         }
 
-        public int GetLastFactorCodeA()
+        public int GetLastBuyFactorCodeA()
         {
             try
             {
@@ -1280,7 +1360,7 @@ namespace DAL
                 return 1001;
             }
         }
-        public int GetLastFactorCodeB()
+        public int GetLastBuyFactorCodeB()
         {
             try
             {
@@ -1292,6 +1372,58 @@ namespace DAL
                 return 1001;
             }
         }
+
+        // Sell Factor
+        public int GetLastSellFactorNumberA()
+        {
+            try
+            {
+                int code = ((from i in db.aSellFactors select i.FactorNumber).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+        public int GetLastSellFactorNumberB()
+        {
+            try
+            {
+                int code = ((from i in db.bSellFactors select i.FactorNumber).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        public int GetLastSellFactorCodeA()
+        {
+            try
+            {
+                int code = ((from i in db.aSellFactors select i.FactorCode).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1001;
+            }
+        }
+        public int GetLastSellFactorCodeB()
+        {
+            try
+            {
+                int code = ((from i in db.bSellFactors select i.FactorCode).Max() + 1);
+                return code;
+            }
+            catch
+            {
+                return 1001;
+            }
+        }
+
 
     }
 }

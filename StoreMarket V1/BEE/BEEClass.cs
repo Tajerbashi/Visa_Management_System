@@ -10,6 +10,5 @@ namespace BEE
 {
     public class BEEClass
     {
-        DBCLASS dbc = new DBCLASS();
     }
 }

@@ -124,6 +124,9 @@
   <data name="default-icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\default-icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Franksouza183-Fs-Actions-stock-save-as1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Franksouza183-Fs-Actions-stock-save-as.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Designcontest-Ecommerce-Business-Notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Designcontest-Ecommerce-Business-Notes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,14 @@
   <data name="search-icon (8)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\search-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fasticon-Shop-Cart-Shop-cart-apply1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Fasticon-Shop-Cart-Shop-cart-apply.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="master-card-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\master-card-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Add-item" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Add-item.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search-icon (8)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\search-icon (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,9 +165,6 @@
   </data>
   <data name="admin-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\admin-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Designcontest-Ecommerce-Business-Shopping (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Designcontest-Ecommerce-Business-Shopping (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Information-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Information-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,14 +193,20 @@
   <data name="Custom-Icon-Design-Pretty-Office-4-Shopping-bag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Pretty-Office-4-Shopping-bag.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boxes-brown-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\boxes-brown-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Custom-Icon-Design-Pretty-Office-6-Shopping-basket-accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Pretty-Office-6-Shopping-basket-accept.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Male-user-info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Male-user-info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boss-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\boss-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ampeross-Lamond-Control-panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Ampeross-Lamond-Control-panel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help-file-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\help-file-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Everaldo-Crystal-Clear-Mimetype-log" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Everaldo-Crystal-Clear-Mimetype-log.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +220,8 @@
   <data name="Hopstarter-Soft-Scraps-Button-Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Hopstarter-Soft-Scraps-Button-Next.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Designcontest-Ecommerce-Business-Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Designcontest-Ecommerce-Business-Money.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Custom-Icon-Design-Flatastic-4-Remove-item" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Remove-item.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="atm-money-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\atm-money-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -219,6 +231,9 @@
   </data>
   <data name="Documents-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Documents-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pie-chart-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\pie-chart-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Information-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Information-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +253,8 @@
   <data name="Gpritiranjan-Simple-Christmas-Christmas-date" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Gpritiranjan-Simple-Christmas-Christmas-date.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Designcontest-Ecommerce-Business-Master-card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Designcontest-Ecommerce-Business-Master-card.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boxes-brown-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\boxes-brown-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button-Next-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Button-Next-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,8 +265,8 @@
   <data name="Custom-Icon-Design-Flatastic-4-Decrease" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-4-Decrease.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admin-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\admin-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shopping-bag-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\shopping-bag-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="credit-card-icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\credit-card-icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,23 +292,23 @@
   <data name="Awicons-Vista-Artistic-Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Awicons-Vista-Artistic-Delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="help-file-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\help-file-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Iconleak-Atrous-Search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Iconleak-Atrous-Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shop-cart-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\shop-cart-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fasticon-Shop-Cart-Shop-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Fasticon-Shop-Cart-Shop-cart.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Custom-Icon-Design-Flatastic-4-Shopping-cart-insert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-4-Shopping-cart-insert.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paomedia-Small-N-Flat-Sign-check1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Paomedia-Small-N-Flat-Sign-check.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\loginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MAIN1~1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MAIN1~1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Designcontest-Ecommerce-Business-Master-card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Designcontest-Ecommerce-Business-Master-card.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bank-icon (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\bank-icon (11).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,8 +316,8 @@
   <data name="faq-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\faq-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Vexels-Office-Key-lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Vexels-Office-Key-lock.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Designcontest-Ecommerce-Business-Shopping (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Designcontest-Ecommerce-Business-Shopping (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keyring-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\keyring-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,6 +328,9 @@
   <data name="Custom-Icon-Design-Flatastic-4-Package-accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-4-Package-accept.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Mattahan-Umicons-Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Mattahan-Umicons-Check.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Custom-Icon-Design-Flatastic-4-Package-accept1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-4-Package-accept.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -321,6 +339,9 @@
   </data>
   <data name="Custom-Icon-Design-Pretty-Office-10-Abacus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Pretty-Office-10-Abacus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paomedia-Small-N-Flat-Sign-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Paomedia-Small-N-Flat-Sign-add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Iconleak-Atrous-Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Iconleak-Atrous-Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,23 +373,32 @@
   <data name="dollar-folder-icon (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\dollar-folder-icon (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Designcontest-Ecommerce-Business-Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Designcontest-Ecommerce-Business-Money.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Calendar-Blue-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Calendar-Blue-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fasticon-Shop-Cart-Shop-cart-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Fasticon-Shop-Cart-Shop-cart-add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shopping-bag-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\shopping-bag-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Vexels-Office-Key-lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Vexels-Office-Key-lock.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Uiconstock-Dynamic-Flat-Android-Bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Uiconstock-Dynamic-Flat-Android-Bank.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAIN1~1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAIN1~1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keyring-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyring-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dollar-folder-icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\dollar-folder-icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ebiene-E-Commerce-Tag-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Ebiene-E-Commerce-Tag-open.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search-icon (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\search-icon (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,11 +412,17 @@
   <data name="Graphicloads-Polygon-Refresh-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Graphicloads-Polygon-Refresh-3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icojam-Blue-Bits-Math-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Icojam-Blue-Bits-Math-add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ProductGrid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\ProductGrid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="credit-card-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\credit-card-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Custom-Icon-Design-Flatastic-11-Shopping-basket-refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-11-Shopping-basket-refresh.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\save-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -421,6 +457,9 @@
   <data name="Problem-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Problem-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Shopping-bag-purple-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Shopping-bag-purple-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keyring-icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\keyring-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -433,14 +472,17 @@
   <data name="bank-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\bank-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Open.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="vintage-radio-05-orange-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\vintage-radio-05-orange-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Treetog-I-Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Treetog-I-Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pie-chart-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\pie-chart-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="admin-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\admin-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shopping-bag-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\shopping-bag-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -451,8 +493,8 @@
   <data name="default-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\default-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shopping-bag-purple-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Shopping-bag-purple-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fasticon-Shop-Cart-Shop-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Fasticon-Shop-Cart-Shop-cart.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dollar-folder-icon (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\dollar-folder-icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,7 +508,7 @@
   <data name="default-icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\default-icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paomedia-Small-N-Flat-Sign-check1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Paomedia-Small-N-Flat-Sign-check.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Graphicloads-Colorful-Long-Shadow-Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Graphicloads-Colorful-Long-Shadow-Add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

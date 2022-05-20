@@ -31,6 +31,9 @@
             this.ADMINNUMBER = new System.Windows.Forms.Label();
             this.ADMINNAME = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.accessCode = new System.Windows.Forms.TextBox();
             this.OwnerCodetxt = new System.Windows.Forms.TextBox();
             this.usernametxt = new System.Windows.Forms.TextBox();
@@ -48,17 +51,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Emailtxt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Familytxt = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkbtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Familytxt = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             // 
             this.ADMINNAME.AutoSize = true;
             this.ADMINNAME.BackColor = System.Drawing.Color.Transparent;
-            this.ADMINNAME.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ADMINNAME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ADMINNAME.Location = new System.Drawing.Point(6, 338);
             this.ADMINNAME.Name = "ADMINNAME";
             this.ADMINNAME.Size = new System.Drawing.Size(20, 13);
@@ -107,6 +107,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اطلاعات حساب :";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(413, 28);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(3, 285);
+            this.panel2.TabIndex = 23;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::StoreMarket_V1.Properties.Resources.lock_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(118, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Save;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(36, 271);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(365, 34);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ذخیره";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter_1);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave_1);
+            // 
             // accessCode
             // 
             this.accessCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
@@ -116,7 +152,8 @@
             this.accessCode.MaxLength = 20;
             this.accessCode.Name = "accessCode";
             this.accessCode.Size = new System.Drawing.Size(332, 30);
-            this.accessCode.TabIndex = 11;
+            this.accessCode.TabIndex = 2;
+            this.accessCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OwnerCodetxt
             // 
@@ -128,6 +165,7 @@
             this.OwnerCodetxt.Name = "OwnerCodetxt";
             this.OwnerCodetxt.Size = new System.Drawing.Size(332, 30);
             this.OwnerCodetxt.TabIndex = 8;
+            this.OwnerCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usernametxt
             // 
@@ -138,7 +176,8 @@
             this.usernametxt.MaxLength = 20;
             this.usernametxt.Name = "usernametxt";
             this.usernametxt.Size = new System.Drawing.Size(332, 30);
-            this.usernametxt.TabIndex = 9;
+            this.usernametxt.TabIndex = 0;
+            this.usernametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // userpasstxt
             // 
@@ -149,7 +188,8 @@
             this.userpasstxt.MaxLength = 20;
             this.userpasstxt.Name = "userpasstxt";
             this.userpasstxt.Size = new System.Drawing.Size(332, 30);
-            this.userpasstxt.TabIndex = 10;
+            this.userpasstxt.TabIndex = 1;
+            this.userpasstxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -204,7 +244,7 @@
             this.Phonetxt.MaxLength = 11;
             this.Phonetxt.Name = "Phonetxt";
             this.Phonetxt.Size = new System.Drawing.Size(332, 30);
-            this.Phonetxt.TabIndex = 4;
+            this.Phonetxt.TabIndex = 2;
             this.Phonetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nametxt
@@ -216,7 +256,7 @@
             this.Nametxt.MaxLength = 20;
             this.Nametxt.Name = "Nametxt";
             this.Nametxt.Size = new System.Drawing.Size(332, 30);
-            this.Nametxt.TabIndex = 2;
+            this.Nametxt.TabIndex = 0;
             this.Nametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -239,7 +279,7 @@
             this.Addresstxt.MaxLength = 20;
             this.Addresstxt.Name = "Addresstxt";
             this.Addresstxt.Size = new System.Drawing.Size(332, 30);
-            this.Addresstxt.TabIndex = 6;
+            this.Addresstxt.TabIndex = 4;
             this.Addresstxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -284,7 +324,7 @@
             this.Emailtxt.MaxLength = 20;
             this.Emailtxt.Name = "Emailtxt";
             this.Emailtxt.Size = new System.Drawing.Size(332, 30);
-            this.Emailtxt.TabIndex = 5;
+            this.Emailtxt.TabIndex = 3;
             this.Emailtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
@@ -313,54 +353,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات فردی :";
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(735, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 23);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "فامیل";
-            // 
-            // Familytxt
-            // 
-            this.Familytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.Familytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Familytxt.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Familytxt.Location = new System.Drawing.Point(442, 111);
-            this.Familytxt.MaxLength = 20;
-            this.Familytxt.Name = "Familytxt";
-            this.Familytxt.Size = new System.Drawing.Size(332, 30);
-            this.Familytxt.TabIndex = 3;
-            this.Familytxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::StoreMarket_V1.Properties.Resources.lock_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(118, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Save;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(36, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(365, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "ذخیره";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(415, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(3, 317);
+            this.panel1.TabIndex = 22;
             // 
             // pictureBox1
             // 
@@ -382,26 +381,35 @@
             this.checkbtn.Location = new System.Drawing.Point(36, 291);
             this.checkbtn.Name = "checkbtn";
             this.checkbtn.Size = new System.Drawing.Size(365, 34);
-            this.checkbtn.TabIndex = 18;
+            this.checkbtn.TabIndex = 5;
             this.checkbtn.Text = "بررسی";
             this.checkbtn.UseVisualStyleBackColor = true;
             this.checkbtn.Click += new System.EventHandler(this.checkbtn_Click_1);
+            this.checkbtn.MouseEnter += new System.EventHandler(this.checkbtn_MouseEnter_1);
+            this.checkbtn.MouseLeave += new System.EventHandler(this.checkbtn_MouseLeave_1);
             // 
-            // panel1
+            // label2
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(415, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 317);
-            this.panel1.TabIndex = 22;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(735, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 23);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "فامیل";
             // 
-            // panel2
+            // Familytxt
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(413, 28);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3, 285);
-            this.panel2.TabIndex = 23;
+            this.Familytxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.Familytxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Familytxt.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Familytxt.Location = new System.Drawing.Point(442, 111);
+            this.Familytxt.MaxLength = 20;
+            this.Familytxt.Name = "Familytxt";
+            this.Familytxt.Size = new System.Drawing.Size(332, 30);
+            this.Familytxt.TabIndex = 1;
+            this.Familytxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FirstAdminPanel
             // 
@@ -413,11 +421,12 @@
             this.Name = "FirstAdminPanel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(838, 709);
+            this.Load += new System.EventHandler(this.FirstAdminPanel_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
