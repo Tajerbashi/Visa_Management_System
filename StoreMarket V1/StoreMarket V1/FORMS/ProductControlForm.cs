@@ -49,7 +49,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV1.Rows.Add(item.id,i, item.Name, item.Brand, item.Type, item.SellCount,item.BuyCount,item.Mojodi,item.buyPrice,item.newBuyPrice,item.sellPrice,item.RegisterDate,item.ProduceDate,item.ExpireDate,FactorCode,Cash,item.AgentName,item.Totalcash);
+                    DGV1.Rows.Add(item.id,i, item.Name, item.Brand, item.Type, item.SellCount,item.BuyCount,item.Mojodi,item.buyPrice,item.newBuyPrice,item.sellPrice, item.Totalcash, item.RegisterDate,item.ProduceDate,item.ExpireDate,FactorCode,Cash,item.AgentName);
                 }
             }
             else
@@ -60,7 +60,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -78,7 +78,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -89,7 +89,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -108,7 +108,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = "نقدی" ;
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -119,7 +119,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = "نقدی" ;
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -137,7 +137,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -148,7 +148,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -167,7 +167,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -178,7 +178,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -195,7 +195,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -206,7 +206,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             
@@ -226,7 +226,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -237,7 +237,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -255,7 +255,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -266,7 +266,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -291,7 +291,7 @@ namespace StoreMarket_V1
                         i++;
                         Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                         int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                     }
                 }
             }
@@ -309,7 +309,7 @@ namespace StoreMarket_V1
                         i++;
                         Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                         int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                     }
                 }
             }
@@ -330,7 +330,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -341,7 +341,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -359,7 +359,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -370,7 +370,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -389,7 +389,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -400,7 +400,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV1.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -418,7 +418,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -429,7 +429,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName, item.Totalcash);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             RegisterDate.Text = Fun.CLOCK();
@@ -533,7 +533,7 @@ namespace StoreMarket_V1
                     ProduceDate.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C13"].Value.ToString();
                     ExpireDate.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C14"].Value.ToString();
 
-                    Savebtn.Text = "بروزرسانی";
+                    buttonX1.Text = "بروزرسانی";
                 }
                 SW = false;
 
@@ -602,6 +602,161 @@ namespace StoreMarket_V1
             ShowProductOrderbyMojodiDGV2(ADMINNUMBER.Text);
         }
         private void Savebtn_Click(object sender, EventArgs e)
+        {
+        }
+        private void ShowTransection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ControlTranSectionForm ctf = new ControlTranSectionForm();
+                ctf.ADMINNUMBER.Text = ADMINNUMBER.Text;
+                ctf.ADMINNAME.Text = ADMINNAME.Text;
+                ctf.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("عدد مورد نظر را وارد کنید");
+            }
+        }
+        private void MoneyCash_Click(object sender, EventArgs e)
+        {
+            // خرید نقدی
+            ShowAllMoneyProductDGV2(ADMINNUMBER.Text);
+        }
+        private void BankiCash_Click(object sender, EventArgs e)
+        {
+            //  خرید بانکی
+            ShowAllBankiProductDGV2(ADMINNUMBER.Text);
+        }
+        private void Greaterbtn_Click(object sender, EventArgs e)
+        {
+            // مانده بیشتر از
+            try
+            {
+                int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
+                ShowAllProductAGreatN(ADMINNUMBER.Text, Number);
+            }
+            catch
+            {
+                MessageBox.Show("عدد وارد کنید");
+            }
+        }
+        private void LessBtn_Click(object sender, EventArgs e)
+        {
+            // مانده کمتر از
+            try
+            {
+                int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
+                ShowAllProductALessN(ADMINNUMBER.Text,Number);
+            }
+            catch
+            {
+                MessageBox.Show("عدد وارد کنید");
+            }
+        }
+        private void Expiredatebtn_Click(object sender, EventArgs e)
+        {
+            //  تاریخ انقضاء
+            try
+            {
+                String Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
+                String Expire = Fun.ChangeToEnglishNumber(date.Text);
+                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
+                ShowResultDateNowExpireDGV2(Now, Expire);
+            }
+            catch
+            {
+                MessageBox.Show("عدد وارد کنید");
+            }
+        }
+        private void nearExpire_Click(object sender, EventArgs e)
+        {
+            //  نزدیک انقضاء
+            try
+            {
+                String Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
+                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
+
+                DateTime NowDate = Convert.ToDateTime(Now);
+                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+                NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
+                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
+                Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
+                String Expire = NowDate.ToString();
+                ShowResultDateNowExpireDGV2(Now, Expire);
+            }
+            catch
+            {
+                MessageBox.Show("عدد مورد نظر را وارد کنید");
+            }
+        }
+        private void tabControl1_SelectedTabChanged_1(object sender, DevComponents.DotNetBar.TabStripTabChangedEventArgs e)
+        {
+            TAP = tabControl1.SelectedTabIndex;
+            //MessageBox.Show(TAP.ToString());
+            switch (TAP)
+            {
+                case 0:
+                    {
+                        ShowAllProductDGV2(ADMINNUMBER.Text);
+                        ShowAllAgentNameinComboBox(ADMINNUMBER.Text);
+                        break;
+                    }
+                case 1:
+                    {
+                        ShowAllProductDGV1(ADMINNUMBER.Text);
+                        break;
+                    }
+            }
+        }
+        
+        private void GR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+        }
+        private void DGV1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            {
+                ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
+
+                DGV1.CurrentRow.Selected = true;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+        private void DGV2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            {
+                ID = int.Parse(DGV2.CurrentRow.Cells[0].Value.ToString());
+
+                DGV2.CurrentRow.Selected = true;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void NewBuyPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
         {
             #region RegisterCode
             if (ProductName.Text.Trim().Length == 0)
@@ -796,6 +951,7 @@ namespace StoreMarket_V1
 
                     if (MessageForm.Sw)
                     {
+                        //  ویرایش اطلاعات کامل در دتابس اجرا ذخیره میشود
                         if (MessageForm.RC2.Checked)
                         {
                             #region EditCode
@@ -823,9 +979,9 @@ namespace StoreMarket_V1
 
                                 if (!blc.ExistProductA(product))
                                 {
-                                    blc.SaveEditProductA(product);
+                                    blc.SaveEditProductForControlProductFormA(product, ID);
                                     Result.Text = "ویرایش شد";
-                                    Savebtn.Text = "ذخیره";
+                                    buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
                                     ShowAllProductDGV2(ADMINNUMBER.Text);
@@ -857,9 +1013,9 @@ namespace StoreMarket_V1
 
                                 if (!blc.ExistProductB(product))
                                 {
-                                    blc.SaveEditProductB(product);
+                                    blc.SaveEditProductForControlProductFormB(product, ID);
                                     Result.Text = "ویرایش شد";
-                                    Savebtn.Text = "ذخیره";
+                                    buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
                                     ShowAllProductDGV2(ADMINNUMBER.Text);
@@ -871,6 +1027,7 @@ namespace StoreMarket_V1
                             }
                             #endregion
                         }
+                        //  ویرایش اطلاعات فقط نوشتاری است و در دتابس اجرا ذخیره میشود
                         else
                         {
                             #region EditCode
@@ -896,9 +1053,9 @@ namespace StoreMarket_V1
 
                                 if (!blc.ExistProductA(product))
                                 {
-                                    blc.SaveEditProductA(product);
+                                    blc.SaveEditProductForControlProductFormA(product, ID);
                                     Result.Text = "ویرایش شد";
-                                    Savebtn.Text = "ذخیره";
+                                    buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
                                     ShowAllProductDGV2(ADMINNUMBER.Text);
@@ -929,9 +1086,9 @@ namespace StoreMarket_V1
 
                                 if (!blc.ExistProductB(product))
                                 {
-                                    blc.SaveEditProductB(product);
+                                    blc.SaveEditProductForControlProductFormB(product, ID);
                                     Result.Text = "ویرایش شد";
-                                    Savebtn.Text = "ذخیره";
+                                    buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
                                     ShowAllProductDGV2(ADMINNUMBER.Text);
@@ -948,156 +1105,7 @@ namespace StoreMarket_V1
                 #endregion
             }
             #endregion
-        }
-        private void ShowTransection_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ControlTranSectionForm ctf = new ControlTranSectionForm();
-                ctf.ADMINNUMBER.Text = ADMINNUMBER.Text;
-                ctf.ADMINNAME.Text = ADMINNAME.Text;
-                ctf.ShowDialog();
-            }
-            catch
-            {
-                MessageBox.Show("عدد مورد نظر را وارد کنید");
-            }
-        }
-        private void MoneyCash_Click(object sender, EventArgs e)
-        {
-            // خرید نقدی
-            ShowAllMoneyProductDGV2(ADMINNUMBER.Text);
-        }
-        private void BankiCash_Click(object sender, EventArgs e)
-        {
-            //  خرید بانکی
-            ShowAllBankiProductDGV2(ADMINNUMBER.Text);
-        }
-        private void Greaterbtn_Click(object sender, EventArgs e)
-        {
-            // مانده بیشتر از
-            try
-            {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(GR.Text));
-                ShowAllProductAGreatN(ADMINNUMBER.Text, Number);
-            }
-            catch
-            {
-                MessageBox.Show("عدد وارد کنید");
-            }
-        }
-        private void LessBtn_Click(object sender, EventArgs e)
-        {
-            // مانده کمتر از
-            try
-            {
-                int Number = int.Parse(Fun.ChangeToEnglishNumber(LS.Text));
-                ShowAllProductALessN(ADMINNUMBER.Text,Number);
-            }
-            catch
-            {
-                MessageBox.Show("عدد وارد کنید");
-            }
-        }
-        private void Expiredatebtn_Click(object sender, EventArgs e)
-        {
-            //  تاریخ انقضاء
-            try
-            {
-                String Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
-                String Expire = Fun.ChangeToEnglishNumber(date.Text);
-                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
-                ShowResultDateNowExpireDGV2(Now, Expire);
-            }
-            catch
-            {
-                MessageBox.Show("عدد وارد کنید");
-            }
-        }
-        private void nearExpire_Click(object sender, EventArgs e)
-        {
-            //  نزدیک انقضاء
-            try
-            {
-                String Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
-                //MessageBox.Show(NN8.Text +" : "+ Now +" : "+ Expire);
-
-                DateTime NowDate = Convert.ToDateTime(Now);
-                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
-                NowDate = NowDate.AddMonths(int.Parse(Fun.ChangeToEnglishNumber((Mounth.Text))));
-                //MessageBox.Show(NowDate.ToString("yyyy/MM/dd"));
-                Now = Fun.ChangeToEnglishNumber(RegisterDate.Text);
-                String Expire = NowDate.ToString();
-                ShowResultDateNowExpireDGV2(Now, Expire);
-            }
-            catch
-            {
-                MessageBox.Show("عدد مورد نظر را وارد کنید");
-            }
-        }
-        private void tabControl1_SelectedTabChanged_1(object sender, DevComponents.DotNetBar.TabStripTabChangedEventArgs e)
-        {
-            TAP = tabControl1.SelectedTabIndex;
-            //MessageBox.Show(TAP.ToString());
-            switch (TAP)
-            {
-                case 0:
-                    {
-                        ShowAllProductDGV2(ADMINNUMBER.Text);
-                        ShowAllAgentNameinComboBox(ADMINNUMBER.Text);
-                        break;
-                    }
-                case 1:
-                    {
-                        ShowAllProductDGV1(ADMINNUMBER.Text);
-                        break;
-                    }
-            }
-        }
-        private void NN4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-        private void GR_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
         }
-        private void DGV1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
-            {
-                ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
-
-                DGV1.CurrentRow.Selected = true;
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
-            }
-        }
-        private void DGV2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
-            {
-                ID = int.Parse(DGV2.CurrentRow.Cells[0].Value.ToString());
-
-                DGV2.CurrentRow.Selected = true;
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
-            }
-        }
-
     }
 }

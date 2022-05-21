@@ -137,7 +137,7 @@ namespace StoreMarket_V1
                             AAdmin admin = new AAdmin();
 
                             admin.FullName = nametxt.Text;
-                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Phone = Fun.ChangeToEnglishNumber(phonetxt.Text);
                             admin.Email = emailtxt.Text;
                             admin.Address = addresstxt.Text;
                             admin.Username = username.Text;
@@ -161,7 +161,7 @@ namespace StoreMarket_V1
 
                             BAdmin admin = new BAdmin();
                             admin.FullName = nametxt.Text;
-                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Phone = Fun.ChangeToEnglishNumber(phonetxt.Text);
                             admin.Email = emailtxt.Text;
                             admin.Address = addresstxt.Text;
                             admin.Username = username.Text;
@@ -186,7 +186,7 @@ namespace StoreMarket_V1
                         {
                             AAdmin admin = blc.EditAdminA(ID);
                             admin.FullName = nametxt.Text;
-                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Phone = Fun.ChangeToEnglishNumber(phonetxt.Text);
                             admin.Email = emailtxt.Text;
                             admin.Address = addresstxt.Text;
                             admin.Username = username.Text;
@@ -198,7 +198,7 @@ namespace StoreMarket_V1
                         {
                             BAdmin admin = blc.EditAdminB(ID);
                             admin.FullName = nametxt.Text;
-                            admin.Phone = Int64.Parse(ConvertArabicNumberToEnglish.toEnglishNumber(phonetxt.Text));
+                            admin.Phone = Fun.ChangeToEnglishNumber(phonetxt.Text);
                             admin.Email = emailtxt.Text;
                             admin.Address = addresstxt.Text;
                             admin.Username = username.Text;

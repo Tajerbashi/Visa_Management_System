@@ -16,8 +16,8 @@ namespace BEE
         public bool CashType { get; set; }  // sell or buy
         public bool DeleteStatus { get; set; } = false;
         public bool IsActive { get; set; } = true;
-        public List<BProduct> bProducts { get; set; } = new List<BProduct>();
-        public BCustomer bCustomer { get; set; }
+        public List<BProduct> Products { get; set; } = new List<BProduct>();
+        public BCustomer Customer { get; set; }
         public BAdmin admin { get; set; }
 
     }

@@ -43,6 +43,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ResultStatus = new DevComponents.DotNetBar.LabelX();
             this.CustomerName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.Okay = new DevComponents.DotNetBar.ButtonX();
             this.ADMINNAMESHOW = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -54,6 +55,8 @@
             this.DayDate = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.Searchbtn = new DevComponents.DotNetBar.ButtonX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.Search = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DGV1 = new System.Windows.Forms.DataGridView();
@@ -65,7 +68,12 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CloseFactor = new DevComponents.DotNetBar.ButtonX();
+            this.Deletebtn = new DevComponents.DotNetBar.ButtonX();
+            this.Addbtn = new DevComponents.DotNetBar.ButtonX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.AddMojodi = new DevComponents.DotNetBar.ButtonX();
             this.Tehdad = new System.Windows.Forms.NumericUpDown();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.DGV2 = new System.Windows.Forms.DataGridView();
@@ -77,19 +85,14 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPriceFactor = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.AddMojodi = new DevComponents.DotNetBar.ButtonX();
             this.SaveFactor = new DevComponents.DotNetBar.ButtonX();
             this.AcceptFactor = new DevComponents.DotNetBar.ButtonX();
             this.OpenFactor = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.Searchbtn = new DevComponents.DotNetBar.ButtonX();
-            this.CloseFactor = new DevComponents.DotNetBar.ButtonX();
-            this.Deletebtn = new DevComponents.DotNetBar.ButtonX();
-            this.Addbtn = new DevComponents.DotNetBar.ButtonX();
-            this.Okay = new DevComponents.DotNetBar.ButtonX();
+            this.TotalPriceFactor = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.ResultText2 = new DevComponents.DotNetBar.LabelX();
+            this.R1 = new System.Windows.Forms.RadioButton();
+            this.R2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
@@ -132,6 +135,7 @@
             this.groupBox1.Controls.Add(this.FactorNumber);
             this.groupBox1.Controls.Add(this.DayDate);
             this.groupBox1.Controls.Add(this.labelX3);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("MRT_Mitra_3", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -176,6 +180,25 @@
             this.CustomerName.Size = new System.Drawing.Size(195, 32);
             this.CustomerName.TabIndex = 0;
             this.CustomerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Okay
+            // 
+            this.Okay.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.Okay.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.Okay.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Okay.Image = global::StoreMarket_V1.Properties.Resources.Mattahan_Umicons_Check;
+            this.Okay.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.Okay.Location = new System.Drawing.Point(7, 48);
+            this.Okay.Name = "Okay";
+            this.Okay.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.Okay.Size = new System.Drawing.Size(90, 35);
+            this.Okay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Okay.TabIndex = 5;
+            this.Okay.Text = "تایید";
+            this.Okay.TextColor = System.Drawing.Color.White;
+            this.Okay.Click += new System.EventHandler(this.Okay_Click);
+            this.Okay.MouseEnter += new System.EventHandler(this.Okay_MouseEnter);
+            this.Okay.MouseLeave += new System.EventHandler(this.Okay_MouseLeave);
             // 
             // ADMINNAMESHOW
             // 
@@ -368,6 +391,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "محصولات موجود در انبار :";
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.buttonX1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.buttonX1.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Male_user_info;
+            this.buttonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.buttonX1.Location = new System.Drawing.Point(755, 23);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.buttonX1.Size = new System.Drawing.Size(20, 20);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 20;
+            this.buttonX1.TextColor = System.Drawing.Color.White;
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // Searchbtn
+            // 
+            this.Searchbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.Searchbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.Searchbtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Searchbtn.Image = global::StoreMarket_V1.Properties.Resources.Iconleak_Atrous_Search1;
+            this.Searchbtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.Searchbtn.Location = new System.Drawing.Point(6, 16);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.Searchbtn.Size = new System.Drawing.Size(105, 35);
+            this.Searchbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Searchbtn.TabIndex = 1;
+            this.Searchbtn.Text = "جستجو";
+            this.Searchbtn.TextColor = System.Drawing.Color.White;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
+            this.Searchbtn.MouseEnter += new System.EventHandler(this.Searchbtn_MouseEnter);
+            this.Searchbtn.MouseLeave += new System.EventHandler(this.Searchbtn_MouseLeave);
+            // 
             // labelX8
             // 
             // 
@@ -508,8 +566,68 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 50;
             // 
+            // CloseFactor
+            // 
+            this.CloseFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.CloseFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.CloseFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.CloseFactor.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Pretty_Office_6_Shopping_basket_accept;
+            this.CloseFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.CloseFactor.Location = new System.Drawing.Point(6, 139);
+            this.CloseFactor.Name = "CloseFactor";
+            this.CloseFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.CloseFactor.Size = new System.Drawing.Size(105, 35);
+            this.CloseFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.CloseFactor.TabIndex = 3;
+            this.CloseFactor.Text = "بستن فاکتور";
+            this.CloseFactor.TextColor = System.Drawing.Color.White;
+            this.CloseFactor.Click += new System.EventHandler(this.CloseFactor_Click);
+            this.CloseFactor.MouseEnter += new System.EventHandler(this.CloseFactor_MouseEnter);
+            this.CloseFactor.MouseLeave += new System.EventHandler(this.CloseFactor_MouseLeave);
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.Deletebtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.Deletebtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Deletebtn.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Remove_item;
+            this.Deletebtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.Deletebtn.Location = new System.Drawing.Point(6, 98);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.Deletebtn.Size = new System.Drawing.Size(105, 35);
+            this.Deletebtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Deletebtn.TabIndex = 4;
+            this.Deletebtn.Text = "حذف";
+            this.Deletebtn.TextColor = System.Drawing.Color.White;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
+            this.Deletebtn.MouseEnter += new System.EventHandler(this.Deletebtn_MouseEnter);
+            this.Deletebtn.MouseLeave += new System.EventHandler(this.Deletebtn_MouseLeave);
+            // 
+            // Addbtn
+            // 
+            this.Addbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.Addbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.Addbtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Addbtn.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Add_item;
+            this.Addbtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.Addbtn.Location = new System.Drawing.Point(6, 57);
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.Addbtn.Size = new System.Drawing.Size(105, 35);
+            this.Addbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Addbtn.TabIndex = 2;
+            this.Addbtn.Text = "اضافه";
+            this.Addbtn.TextColor = System.Drawing.Color.White;
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            this.Addbtn.MouseEnter += new System.EventHandler(this.Addbtn_MouseEnter);
+            this.Addbtn.MouseLeave += new System.EventHandler(this.Addbtn_MouseLeave);
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.R2);
+            this.groupBox3.Controls.Add(this.R1);
+            this.groupBox3.Controls.Add(this.ResultText2);
             this.groupBox3.Controls.Add(this.buttonX2);
             this.groupBox3.Controls.Add(this.AddMojodi);
             this.groupBox3.Controls.Add(this.Tehdad);
@@ -529,6 +647,40 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "فاکتور فروش :";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.buttonX2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.buttonX2.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Calculator;
+            this.buttonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.buttonX2.Location = new System.Drawing.Point(8, 126);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.buttonX2.Size = new System.Drawing.Size(105, 35);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 2;
+            this.buttonX2.Text = "جمع فاکتور";
+            this.buttonX2.TextColor = System.Drawing.Color.White;
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // AddMojodi
+            // 
+            this.AddMojodi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.AddMojodi.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.AddMojodi.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.AddMojodi.HoverImage = global::StoreMarket_V1.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Add;
+            this.AddMojodi.Image = global::StoreMarket_V1.Properties.Resources.Icojam_Blue_Bits_Math_add;
+            this.AddMojodi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.AddMojodi.Location = new System.Drawing.Point(8, 45);
+            this.AddMojodi.Name = "AddMojodi";
+            this.AddMojodi.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
+            this.AddMojodi.Size = new System.Drawing.Size(28, 28);
+            this.AddMojodi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.AddMojodi.TabIndex = 1;
+            this.AddMojodi.TextColor = System.Drawing.Color.White;
+            this.AddMojodi.Click += new System.EventHandler(this.AddMojodi_Click);
             // 
             // Tehdad
             // 
@@ -605,7 +757,7 @@
             this.DGV2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV2.EnableHeadersVisualStyles = false;
             this.DGV2.GridColor = System.Drawing.Color.White;
-            this.DGV2.Location = new System.Drawing.Point(122, 27);
+            this.DGV2.Location = new System.Drawing.Point(122, 21);
             this.DGV2.Name = "DGV2";
             this.DGV2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -622,7 +774,7 @@
             dataGridViewCellStyle10.Font = new System.Drawing.Font("MRT_Mitra_3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
             this.DGV2.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.DGV2.Size = new System.Drawing.Size(652, 206);
+            this.DGV2.Size = new System.Drawing.Size(652, 218);
             this.DGV2.TabIndex = 18;
             this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick);
             // 
@@ -670,6 +822,66 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "مجموعه";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // SaveFactor
+            // 
+            this.SaveFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.SaveFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.SaveFactor.Enabled = false;
+            this.SaveFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.SaveFactor.Image = global::StoreMarket_V1.Properties.Resources.Franksouza183_Fs_Actions_stock_save_as1;
+            this.SaveFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.SaveFactor.Location = new System.Drawing.Point(8, 222);
+            this.SaveFactor.Name = "SaveFactor";
+            this.SaveFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.SaveFactor.Size = new System.Drawing.Size(105, 35);
+            this.SaveFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.SaveFactor.TabIndex = 4;
+            this.SaveFactor.Text = "ثبت سیستم";
+            this.SaveFactor.TextColor = System.Drawing.Color.White;
+            this.SaveFactor.Click += new System.EventHandler(this.SaveFactor_Click);
+            this.SaveFactor.MouseEnter += new System.EventHandler(this.SaveFactor_MouseEnter);
+            this.SaveFactor.MouseLeave += new System.EventHandler(this.SaveFactor_MouseLeave);
+            // 
+            // AcceptFactor
+            // 
+            this.AcceptFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.AcceptFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.AcceptFactor.Enabled = false;
+            this.AcceptFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.AcceptFactor.Image = global::StoreMarket_V1.Properties.Resources.Fasticon_Shop_Cart_Shop_cart_apply1;
+            this.AcceptFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.AcceptFactor.Location = new System.Drawing.Point(8, 174);
+            this.AcceptFactor.Name = "AcceptFactor";
+            this.AcceptFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.AcceptFactor.Size = new System.Drawing.Size(105, 35);
+            this.AcceptFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.AcceptFactor.TabIndex = 3;
+            this.AcceptFactor.Text = "تایید فاکتور";
+            this.AcceptFactor.TextColor = System.Drawing.Color.White;
+            this.AcceptFactor.Click += new System.EventHandler(this.AcceptFactor_Click);
+            this.AcceptFactor.MouseEnter += new System.EventHandler(this.AcceptFactor_MouseEnter);
+            this.AcceptFactor.MouseLeave += new System.EventHandler(this.AcceptFactor_MouseLeave);
+            // 
+            // OpenFactor
+            // 
+            this.OpenFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.OpenFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.OpenFactor.Enabled = false;
+            this.OpenFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.OpenFactor.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_11_Shopping_basket_refresh;
+            this.OpenFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.OpenFactor.Location = new System.Drawing.Point(8, 78);
+            this.OpenFactor.Name = "OpenFactor";
+            this.OpenFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
+            this.OpenFactor.Size = new System.Drawing.Size(105, 35);
+            this.OpenFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.OpenFactor.TabIndex = 5;
+            this.OpenFactor.Text = "باز کردن";
+            this.OpenFactor.TextColor = System.Drawing.Color.White;
+            this.OpenFactor.Click += new System.EventHandler(this.OpenFactor_Click);
+            this.OpenFactor.MouseEnter += new System.EventHandler(this.OpenFactor_MouseEnter);
+            this.OpenFactor.MouseLeave += new System.EventHandler(this.OpenFactor_MouseLeave);
+            // 
             // TotalPriceFactor
             // 
             // 
@@ -698,204 +910,43 @@
             this.labelX6.Text = "مجموعه کل :";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // buttonX2
+            // ResultText2
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.buttonX2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.buttonX2.Image = global::StoreMarket_V1.Properties.Resources.Designcontest_Ecommerce_Business_Calculator;
-            this.buttonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.buttonX2.Location = new System.Drawing.Point(8, 79);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.buttonX2.Size = new System.Drawing.Size(105, 35);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 2;
-            this.buttonX2.Text = "جمع فاکتور";
-            this.buttonX2.TextColor = System.Drawing.Color.White;
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
-            // AddMojodi
             // 
-            this.AddMojodi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.AddMojodi.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.AddMojodi.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.AddMojodi.HoverImage = global::StoreMarket_V1.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Add;
-            this.AddMojodi.Image = global::StoreMarket_V1.Properties.Resources.Icojam_Blue_Bits_Math_add;
-            this.AddMojodi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.AddMojodi.Location = new System.Drawing.Point(8, 45);
-            this.AddMojodi.Name = "AddMojodi";
-            this.AddMojodi.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
-            this.AddMojodi.Size = new System.Drawing.Size(28, 28);
-            this.AddMojodi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.AddMojodi.TabIndex = 1;
-            this.AddMojodi.TextColor = System.Drawing.Color.White;
-            this.AddMojodi.Click += new System.EventHandler(this.AddMojodi_Click);
             // 
-            // SaveFactor
+            this.ResultText2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ResultText2.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ResultText2.ForeColor = System.Drawing.Color.Red;
+            this.ResultText2.Location = new System.Drawing.Point(511, -5);
+            this.ResultText2.Name = "ResultText2";
+            this.ResultText2.Size = new System.Drawing.Size(182, 23);
+            this.ResultText2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ResultText2.TabIndex = 20;
+            this.ResultText2.Text = "فاکتور فروش";
+            this.ResultText2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            this.SaveFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.SaveFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.SaveFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.SaveFactor.Image = global::StoreMarket_V1.Properties.Resources.Franksouza183_Fs_Actions_stock_save_as1;
-            this.SaveFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.SaveFactor.Location = new System.Drawing.Point(8, 226);
-            this.SaveFactor.Name = "SaveFactor";
-            this.SaveFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.SaveFactor.Size = new System.Drawing.Size(105, 35);
-            this.SaveFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SaveFactor.TabIndex = 4;
-            this.SaveFactor.Text = "ثبت سیستم";
-            this.SaveFactor.TextColor = System.Drawing.Color.White;
-            this.SaveFactor.MouseEnter += new System.EventHandler(this.SaveFactor_MouseEnter);
-            this.SaveFactor.MouseLeave += new System.EventHandler(this.SaveFactor_MouseLeave);
+            // R1
             // 
-            // AcceptFactor
+            this.R1.AutoSize = true;
+            this.R1.Location = new System.Drawing.Point(511, 240);
+            this.R1.Name = "R1";
+            this.R1.Size = new System.Drawing.Size(53, 25);
+            this.R1.TabIndex = 21;
+            this.R1.TabStop = true;
+            this.R1.Text = "نقدی";
+            this.R1.UseVisualStyleBackColor = true;
             // 
-            this.AcceptFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.AcceptFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.AcceptFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.AcceptFactor.Image = global::StoreMarket_V1.Properties.Resources.Fasticon_Shop_Cart_Shop_cart_apply1;
-            this.AcceptFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.AcceptFactor.Location = new System.Drawing.Point(8, 177);
-            this.AcceptFactor.Name = "AcceptFactor";
-            this.AcceptFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.AcceptFactor.Size = new System.Drawing.Size(105, 35);
-            this.AcceptFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.AcceptFactor.TabIndex = 3;
-            this.AcceptFactor.Text = "تایید فاکتور";
-            this.AcceptFactor.TextColor = System.Drawing.Color.White;
-            this.AcceptFactor.MouseEnter += new System.EventHandler(this.AcceptFactor_MouseEnter);
-            this.AcceptFactor.MouseLeave += new System.EventHandler(this.AcceptFactor_MouseLeave);
+            // R2
             // 
-            // OpenFactor
-            // 
-            this.OpenFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.OpenFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.OpenFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.OpenFactor.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_11_Shopping_basket_refresh;
-            this.OpenFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.OpenFactor.Location = new System.Drawing.Point(8, 128);
-            this.OpenFactor.Name = "OpenFactor";
-            this.OpenFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.OpenFactor.Size = new System.Drawing.Size(105, 35);
-            this.OpenFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.OpenFactor.TabIndex = 5;
-            this.OpenFactor.Text = "باز کردن";
-            this.OpenFactor.TextColor = System.Drawing.Color.White;
-            this.OpenFactor.Click += new System.EventHandler(this.OpenFactor_Click);
-            this.OpenFactor.MouseEnter += new System.EventHandler(this.OpenFactor_MouseEnter);
-            this.OpenFactor.MouseLeave += new System.EventHandler(this.OpenFactor_MouseLeave);
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.buttonX1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.buttonX1.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Male_user_info;
-            this.buttonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.buttonX1.Location = new System.Drawing.Point(755, 23);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.buttonX1.Size = new System.Drawing.Size(20, 20);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 20;
-            this.buttonX1.TextColor = System.Drawing.Color.White;
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // Searchbtn
-            // 
-            this.Searchbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.Searchbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.Searchbtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Searchbtn.Image = global::StoreMarket_V1.Properties.Resources.Iconleak_Atrous_Search1;
-            this.Searchbtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.Searchbtn.Location = new System.Drawing.Point(6, 16);
-            this.Searchbtn.Name = "Searchbtn";
-            this.Searchbtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.Searchbtn.Size = new System.Drawing.Size(105, 35);
-            this.Searchbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Searchbtn.TabIndex = 1;
-            this.Searchbtn.Text = "جستجو";
-            this.Searchbtn.TextColor = System.Drawing.Color.White;
-            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
-            this.Searchbtn.MouseEnter += new System.EventHandler(this.Searchbtn_MouseEnter);
-            this.Searchbtn.MouseLeave += new System.EventHandler(this.Searchbtn_MouseLeave);
-            // 
-            // CloseFactor
-            // 
-            this.CloseFactor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.CloseFactor.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.CloseFactor.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.CloseFactor.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Pretty_Office_6_Shopping_basket_accept;
-            this.CloseFactor.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.CloseFactor.Location = new System.Drawing.Point(6, 139);
-            this.CloseFactor.Name = "CloseFactor";
-            this.CloseFactor.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.CloseFactor.Size = new System.Drawing.Size(105, 35);
-            this.CloseFactor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.CloseFactor.TabIndex = 3;
-            this.CloseFactor.Text = "بستن فاکتور";
-            this.CloseFactor.TextColor = System.Drawing.Color.White;
-            this.CloseFactor.Click += new System.EventHandler(this.CloseFactor_Click);
-            this.CloseFactor.MouseEnter += new System.EventHandler(this.CloseFactor_MouseEnter);
-            this.CloseFactor.MouseLeave += new System.EventHandler(this.CloseFactor_MouseLeave);
-            // 
-            // Deletebtn
-            // 
-            this.Deletebtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.Deletebtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.Deletebtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Deletebtn.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Remove_item;
-            this.Deletebtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.Deletebtn.Location = new System.Drawing.Point(6, 98);
-            this.Deletebtn.Name = "Deletebtn";
-            this.Deletebtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.Deletebtn.Size = new System.Drawing.Size(105, 35);
-            this.Deletebtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Deletebtn.TabIndex = 4;
-            this.Deletebtn.Text = "حذف";
-            this.Deletebtn.TextColor = System.Drawing.Color.White;
-            this.Deletebtn.MouseEnter += new System.EventHandler(this.Deletebtn_MouseEnter);
-            this.Deletebtn.MouseLeave += new System.EventHandler(this.Deletebtn_MouseLeave);
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.Addbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.Addbtn.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Addbtn.Image = global::StoreMarket_V1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Add_item;
-            this.Addbtn.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.Addbtn.Location = new System.Drawing.Point(6, 57);
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.Addbtn.Size = new System.Drawing.Size(105, 35);
-            this.Addbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Addbtn.TabIndex = 2;
-            this.Addbtn.Text = "اضافه";
-            this.Addbtn.TextColor = System.Drawing.Color.White;
-            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
-            this.Addbtn.MouseEnter += new System.EventHandler(this.Addbtn_MouseEnter);
-            this.Addbtn.MouseLeave += new System.EventHandler(this.Addbtn_MouseLeave);
-            // 
-            // Okay
-            // 
-            this.Okay.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.Okay.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.Okay.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Okay.Image = global::StoreMarket_V1.Properties.Resources.Mattahan_Umicons_Check;
-            this.Okay.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.Okay.Location = new System.Drawing.Point(7, 48);
-            this.Okay.Name = "Okay";
-            this.Okay.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10);
-            this.Okay.Size = new System.Drawing.Size(90, 35);
-            this.Okay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Okay.TabIndex = 5;
-            this.Okay.Text = "تایید";
-            this.Okay.TextColor = System.Drawing.Color.White;
-            this.Okay.Click += new System.EventHandler(this.Okay_Click);
-            this.Okay.MouseEnter += new System.EventHandler(this.Okay_MouseEnter);
-            this.Okay.MouseLeave += new System.EventHandler(this.Okay_MouseLeave);
+            this.R2.AutoSize = true;
+            this.R2.Location = new System.Drawing.Point(451, 240);
+            this.R2.Name = "R2";
+            this.R2.Size = new System.Drawing.Size(54, 25);
+            this.R2.TabIndex = 22;
+            this.R2.TabStop = true;
+            this.R2.Text = "بانکی";
+            this.R2.UseVisualStyleBackColor = true;
             // 
             // SellFactor
             // 
@@ -915,6 +966,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tehdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
             this.ResumeLayout(false);
@@ -976,5 +1028,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.LabelX ResultText2;
+        private System.Windows.Forms.RadioButton R2;
+        private System.Windows.Forms.RadioButton R1;
     }
 }

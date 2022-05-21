@@ -22,7 +22,7 @@ namespace StoreMarket_V1
         BLLCode blc = new BLLCode();
         AAdmin AdminA = new AAdmin();
         BAdmin AdminB = new BAdmin();
-        int ID1 = 0, ID2 = 0, counter1 = 1, counter2 = 1, NO1 = 0, NO2 = 1;
+        int ID1 = 0, ID2 = 0, counter1 = 1, counter2 = 1, NO1 = 0, NO2 = 0;
         #region Function
         public void GetFactorNumber()
         {
@@ -64,112 +64,41 @@ namespace StoreMarket_V1
             if (AdminNumber.Text == "1")
             {
                 AProduct Product = blc.GetProductA(ID);
-                DGV2.Rows.Add(Product.id,counter2,Product.Name,Product.Type,Product.Brand,Product.newBuyPrice,0,000);
+                if (Product == null)
+                {
+                    ResultText2.Text = "محصول را انتخاب کنید";
+                }
+                else if (Product.Mojodi>0)
+                {
+                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice, 0, 000);
+                }
+                else
+                {
+                    ResultText2.Text = "موجود در انبار کافی نیست";
+                }
             }
             else
             {
                 AProduct Product = blc.GetProductA(ID);
-                DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.newBuyPrice, 0, 000);
+                if (Product == null)
+                {
+                    ResultText2.Text = "محصول را انتخاب کنید";
+                }
+                else if(Product.Mojodi > 0)
+                {
+                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice, 0, 000);
+                }
+                else
+                {
+                    ResultText2.Text = "موجود در انبار کافی نیست";
+                }
             }
             NO2 = counter2;
             counter2++;
         }
 
         #endregion
-        private void FactorCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void SellFactor_Load(object sender, EventArgs e)
-        {
-            //  زمان آپلود شدن فرم
-            GetAdminFullName();
-            GetFactorNumber();
-            GetFactorCode();
-            DayDate.Text = Fun.CLOCK();
-            groupBox1.Enabled = true;
-            groupBox2.Enabled = true;
-            groupBox3.Enabled = true;
-        }
-
-        private void Searchbtn_Click(object sender, EventArgs e)
-        {
-            DGV1.Rows.Clear();
-            var DB = blc.GetProductsA().Where(c => c.Name.Contains(Search.Text)).OrderBy( i => i.ProduceDate);
-            foreach (var item in DB)
-            {
-                DGV1.Rows.Add(item.id,counter1,item.Name,item.Type,item.Brand,item.ProduceDate,item.sellPrice,item.Mojodi);
-                counter1++;
-            }
-        }
-
-        private void Okay_Click(object sender, EventArgs e)
-        {
-            if (CustomerName.Text.Trim().Length==0)
-            {
-                ResultStatus.Text = "نام مشتری را وارد کنید";
-                CustomerName.Focus();
-            }
-            else if (PhoneNumber.Text.Trim().Length == 0)
-            {
-                ResultStatus.Text = "تلفن مشتری را وارد کنید";
-                PhoneNumber.Focus();
-
-            }
-            else if (FactorNumber.Text.Trim().Length == 0)
-            {
-                ResultStatus.Text = "شماره فاکتور را وارد کنید";
-                FactorNumber.Focus();
-
-            }
-            else if (FactorCode.Text.Trim().Length == 0)
-            {
-                ResultStatus.Text = "کد فاکتور را وارد کنید";
-                FactorCode.Focus();
-
-            }
-            else if (DayDate.Text.Trim().Length == 0)
-            {
-                ResultStatus.Text = "تاریخ را وارد کنید";
-                DayDate.Focus();
-
-            }
-            else
-            {
-                ACustomer customer = new ACustomer();
-                customer.FullName = CustomerName.Text;
-                customer.Phone = Convert.ToInt64(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
-                if (blc.CreateCustomerA(customer))
-                {
-                    //  موجود نیست و ثبت نام میشود
-                    MessageBox.Show("جدید بود و ثبت نام شد");
-                }
-                else
-                {
-                    //  موجود است و آنرا بگیرد
-                    //ACustomer customerN = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text).FirstOrDefault();
-                    MessageBox.Show("موجود بود");
-                }
-                //groupBox1.Enabled = false;
-                //groupBox2.Enabled = true;
-            }
-
-        }
-
-        private void CloseFactor_Click(object sender, EventArgs e)
-        {
-            //groupBox2.Enabled = false;
-            //groupBox3.Enabled = true;
-            
-        }
-
-        private void OpenFactor_Click(object sender, EventArgs e)
-        {
-            //groupBox2.Enabled = true;
-            //groupBox3.Enabled = false;
-        }
-
+        
         #region CodeMouse
         private void Okay_MouseEnter(object sender, EventArgs e)
         {
@@ -266,6 +195,105 @@ namespace StoreMarket_V1
         }
         #endregion
 
+        private void FactorCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void SellFactor_Load(object sender, EventArgs e)
+        {
+            //  زمان آپلود شدن فرم
+            GetAdminFullName();
+            GetFactorNumber();
+            GetFactorCode();
+            DayDate.Text = Fun.CLOCK();
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
+            NO1 = 1;
+            NO2 = 1;
+        }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            DGV1.Rows.Clear();
+            var DB = blc.GetProductsA().Where(c => c.Name.Contains(Search.Text)).OrderBy( i => i.ExpireDate);
+            foreach (var item in DB)
+            {
+                DGV1.Rows.Add(item.id,counter1,item.Name,item.Type,item.Brand,item.ExpireDate,item.sellPrice,item.Mojodi);
+                counter1++;
+            }
+        }
+
+        private void Okay_Click(object sender, EventArgs e)
+        {
+            if (CustomerName.Text.Trim().Length==0)
+            {
+                ResultStatus.Text = "نام مشتری را وارد کنید";
+                CustomerName.Focus();
+            }
+            else if (PhoneNumber.Text.Trim().Length == 0)
+            {
+                ResultStatus.Text = "تلفن مشتری را وارد کنید";
+                PhoneNumber.Focus();
+
+            }
+            else if (FactorNumber.Text.Trim().Length == 0)
+            {
+                ResultStatus.Text = "شماره فاکتور را وارد کنید";
+                FactorNumber.Focus();
+
+            }
+            else if (FactorCode.Text.Trim().Length == 0)
+            {
+                ResultStatus.Text = "کد فاکتور را وارد کنید";
+                FactorCode.Focus();
+
+            }
+            else if (DayDate.Text.Trim().Length == 0)
+            {
+                ResultStatus.Text = "تاریخ را وارد کنید";
+                DayDate.Focus();
+
+            }
+            else
+            {
+                ACustomer customer = new ACustomer();
+                customer.FullName = CustomerName.Text;
+                customer.Phone = Fun.ChangeToEnglishNumber(PhoneNumber.Text);
+                if (blc.CreateCustomerA(customer))
+                {
+                    //  موجود نیست و ثبت نام میشود
+                    ResultStatus.Text = "جدید بود و ثبت نام شد";
+                }
+                else
+                {
+                    //  موجود است و آنرا بگیرد
+                    //ACustomer customerN = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text).FirstOrDefault();
+                    ResultStatus.Text = "مشتری از قبل ثبت شده است";
+                }
+                groupBox1.Enabled = false;
+                groupBox2.Enabled = true;
+                groupBox3.Enabled = true;
+            }
+
+        }
+
+        private void CloseFactor_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = false;
+            OpenFactor.Enabled = true;
+            AcceptFactor.Enabled = true;
+        }
+
+        private void OpenFactor_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = true;
+            OpenFactor.Enabled = false;
+            AcceptFactor.Enabled = false;
+        }
+
+
         private void buttonX2_Click(object sender, EventArgs e)
         {
             Double Total = 0d;
@@ -276,11 +304,80 @@ namespace StoreMarket_V1
             TotalPriceFactor.Text = Total.ToString();
         }
 
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            //  حذف از فاکتور
+            try
+            {
+                DGV2.Rows.RemoveAt(NO2-1);
+                counter2 = DGV2.RowCount+1;
+
+                for (int i = 0; i < DGV2.RowCount; i++)
+                {
+                    DGV2.Rows[i].Cells[1].Value = i + 1;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void AcceptFactor_Click(object sender, EventArgs e)
+        {
+            if (!R1.Checked && !R2.Checked)
+            {
+                ResultText2.Text = "نوع پرداخت را انتخاب کنید";
+            }
+            else
+            {
+                SaveFactor.Enabled = true;
+                ASellFactor Factor = new ASellFactor();
+                Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+                Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+                Factor.Customer = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text && c.Phone == PhoneNumber.Text).FirstOrDefault();
+                Factor.admin = blc.GetAdminsA().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
+
+
+                for (int i=0;i<DGV2.RowCount;i++)
+                {
+                    int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
+                    AProduct product = blc.GetProductA(IDN);
+                    Factor.Products.Add(product);
+
+                    product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    blc.SaveEditForBuyFactorProductA(product);
+                }
+                blc.CreateSellFactorA(Factor);
+            }
+            
+        }
+
+        private void SaveFactor_Click(object sender, EventArgs e)
+        {
+            ASellFactor Factor = blc.GetSellFactorsA().Where(c => c.FactorCode == int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text))).FirstOrDefault();
+            Factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+            Factor.TotalPrice = Int64.Parse(TotalPriceFactor.Text);
+            Factor.CashType = R1.Checked ? true : false;    //  نقدی
+            blc.SaveLastChangesOnSellFacotrA(Factor);
+            NO1 = 1;
+            NO2 = 1;
+            DGV1.Rows.Clear();
+            DGV2.Rows.Clear();
+            GetFactorNumber();
+            GetFactorCode();
+            DayDate.Text = Fun.CLOCK();
+            SaveFactor.Enabled = false;
+            AcceptFactor.Enabled = false;
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
+        }
+
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            //groupBox1.Enabled = true;
-            //groupBox2.Enabled = false;
-            //groupBox3.Enabled = false;
+            groupBox1.Enabled = true;
         }
 
         private void Addbtn_Click(object sender, EventArgs e)
@@ -301,7 +398,7 @@ namespace StoreMarket_V1
             }
             else
             {
-                ResultStatus.Text = "در فاکتور موجود است";
+                ResultText2.Text = "در فاکتور موجود است";
             }
         }
 
@@ -312,7 +409,7 @@ namespace StoreMarket_V1
                 AProduct product = blc.GetProductA(ID2);
                 if (product == null)
                 {
-                    ResultStatus.Text = "محصول را انتخاب کنید";
+                    ResultText2.Text = "محصول را انتخاب کنید";
                 }
                 else if (product.Mojodi >= Tehdad.Value)
                 {
@@ -321,7 +418,7 @@ namespace StoreMarket_V1
                 }
                 else
                 {
-                    ResultStatus.Text = "موجودی در انبار کافی نیست";
+                    ResultText2.Text = "موجودی در انبار کافی نیست";
                 }
             }
             catch

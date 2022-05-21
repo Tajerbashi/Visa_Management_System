@@ -441,7 +441,7 @@ namespace StoreMarket_V1
                         agent.CompanyName = CompanyName.Text.Trim();
                         agent.FullName = AgentName.Text.Trim();
                         agent.Address = "تعریف نشده";
-                        agent.Phone = 100;
+                        agent.Phone = "تعریف نشده";
 
                         AProduct product = new AProduct();
                         product.BuyCount = int.Parse(Tehdad.Value.ToString());
@@ -506,7 +506,7 @@ namespace StoreMarket_V1
                         agent.CompanyName = CompanyName.Text.Trim();
                         agent.FullName = AgentName.Text.Trim();
                         agent.Address = "تعریف نشده";
-                        agent.Phone = 100;
+                        agent.Phone = "تعریف نشده";
 
                         BProduct product = new BProduct();
                         product.BuyCount = int.Parse(Tehdad.Value.ToString());

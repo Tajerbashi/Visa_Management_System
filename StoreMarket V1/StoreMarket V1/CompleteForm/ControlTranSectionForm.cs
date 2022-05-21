@@ -634,7 +634,7 @@ namespace StoreMarket_V1
                             AAgent agent = new AAgent();
                             agent.CompanyName = CompanyAgent2.Text;
                             agent.FullName = NameAgent2.Text;
-                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.Phone = Fun.ChangeToEnglishNumber(PhoneAgent2.Text);
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.CreatAgentA(agent))
                             {
@@ -650,7 +650,7 @@ namespace StoreMarket_V1
                             BAgent agent = new BAgent();
                             agent.CompanyName = CompanyAgent2.Text;
                             agent.FullName = NameAgent2.Text;
-                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.Phone = Fun.ChangeToEnglishNumber(PhoneAgent2.Text);
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
 
                             if (blc.CreatAgentB(agent))
@@ -670,7 +670,7 @@ namespace StoreMarket_V1
                             AAgent agent = blc.SelectAgentA(ID);
                             agent.CompanyName = CompanyAgent2.Text;
                             agent.FullName = NameAgent2.Text;
-                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.Phone = Fun.ChangeToEnglishNumber(PhoneAgent2.Text);
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.SaveEditAgentA(agent))
                             {
@@ -687,7 +687,7 @@ namespace StoreMarket_V1
                             BAgent agent = blc.SelectAgentB(ID);
                             agent.CompanyName = CompanyAgent2.Text;
                             agent.FullName = NameAgent2.Text;
-                            agent.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PhoneAgent2.Text));
+                            agent.Phone = Fun.ChangeToEnglishNumber(PhoneAgent2.Text);
                             agent.IsActive = (Status2.Text) == "فعال" ? true : false;
                             if (blc.SaveEditAgentB(agent))
                             {

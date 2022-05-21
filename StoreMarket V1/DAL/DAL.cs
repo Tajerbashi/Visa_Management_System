@@ -603,6 +603,47 @@ namespace DAL
             db.SaveChanges();
         }
 
+        public void SaveEditProductForControlProductFormA(AProduct product,int ID)
+        {
+            AProduct product1 = db.aProducts.Where(c => c.id == ID).FirstOrDefault();
+            product1.Name = product.Name;
+            product1.Type = product.Type;
+            product1.Brand = product.Brand;
+            product1.SellCount = product.SellCount;
+            product1.BuyCount = product.BuyCount;
+            product1.Mojodi = product.Mojodi;
+            product1.buyPrice = product.buyPrice;
+            product1.newBuyPrice = product.newBuyPrice;
+            product1.sellPrice = product.sellPrice;
+            product1.RegisterDate = product.RegisterDate;
+            product1.ProduceDate = product.ProduceDate;
+            product1.ExpireDate = product.ExpireDate;
+            product1.CashType = product.CashType;    //  1:Money 2:Banking
+            product1.AgentName = product.AgentName;
+            product1.Totalcash = product.Totalcash;
+            db.SaveChanges();
+        }
+        public void SaveEditProductForControlProductFormB(BProduct product, int ID)
+        {
+            BProduct product1 = db.bProducts.Where(c => c.id == ID).FirstOrDefault();
+            product1.Name = product.Name;
+            product1.Type = product.Type;
+            product1.Brand = product.Brand;
+            product1.SellCount = product.SellCount;
+            product1.BuyCount = product.BuyCount;
+            product1.Mojodi = product.Mojodi;
+            product1.buyPrice = product.buyPrice;
+            product1.newBuyPrice = product.newBuyPrice;
+            product1.sellPrice = product.sellPrice;
+            product1.RegisterDate = product.RegisterDate;
+            product1.ProduceDate = product.ProduceDate;
+            product1.ExpireDate = product.ExpireDate;
+            product1.CashType = product.CashType;    //  1:Money 2:Banking
+            product1.AgentName = product.AgentName;
+            product1.Totalcash = product.Totalcash;
+            db.SaveChanges();
+        }
+
         public bool SaveEditProductA(AProduct product)
         {
             foreach (var item in db.aProducts)
@@ -1398,6 +1439,16 @@ namespace DAL
         }
 
         // Sell Factor
+
+        public List<ASellFactor> GetSellFactorsA()
+        {
+            return (db.aSellFactors.Where(c => !c.DeleteStatus)).ToList();
+        }
+        public List<BSellFactor> GetSellFactorsB()
+        {
+            return (db.bSellFactors.Where(c => !c.DeleteStatus)).ToList();
+        }
+
         public int GetLastSellFactorNumberA()
         {
             try
@@ -1448,6 +1499,41 @@ namespace DAL
             }
         }
 
-
+        public void CreateSellFactorA(ASellFactor factor)
+        {
+            db.aSellFactors.Add(factor);
+            db.SaveChanges();
+        }
+        public void CreateSellFactorB(BSellFactor factor)
+        {
+            db.bSellFactors.Add(factor);
+            db.SaveChanges();
+        }
+        public void SaveLastChangesOnSellFacotrA(ASellFactor factor)
+        {
+            ASellFactor Factor = db.aSellFactors.Where(c => c.FactorCode == factor.FactorCode).FirstOrDefault();
+            Factor.FactorCode = factor.FactorCode;
+            Factor.FactorNumber = factor.FactorNumber;
+            Factor.RegisterDate = factor.RegisterDate;
+            //Factor.Customer = factor.Customer;
+            //Factor.admin = factor.admin;
+            Factor.TotalPrice = factor.TotalPrice;
+            Factor.CashType = factor.CashType;    //  نقدی
+            Factor.Products.AddRange(factor.Products);
+            db.SaveChanges();
+        }
+        public void SaveLastChangesOnSellFacotrB(BSellFactor factor)
+        {
+            BSellFactor Factor = db.bSellFactors.Where(c => c.FactorCode == factor.FactorCode).FirstOrDefault();
+            Factor.FactorCode = factor.FactorCode;
+            Factor.FactorNumber = factor.FactorNumber;
+            Factor.RegisterDate = factor.RegisterDate;
+            //Factor.Customer = factor.Customer;
+            //Factor.admin = factor.admin;
+            Factor.TotalPrice = factor.TotalPrice;
+            Factor.CashType = factor.CashType;    //  نقدی
+            Factor.Products.AddRange(factor.Products);
+            db.SaveChanges();
+        }
     }
 }

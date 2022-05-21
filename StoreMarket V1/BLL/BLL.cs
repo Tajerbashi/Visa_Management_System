@@ -468,8 +468,15 @@ namespace BLL
         {
             dlc.SaveEditForBuyFactorProductB(product);
         }
+        public void SaveEditProductForControlProductFormA(AProduct product, int ID)
+        {
+            dlc.SaveEditProductForControlProductFormA(product, ID);
+        }
+        public void SaveEditProductForControlProductFormB(BProduct product, int ID)
+        {
+            dlc.SaveEditProductForControlProductFormB(product, ID);
+        }
 
-        
         public void DeleteProductA(int ID)
         {
             dlc.DeleteProductA(ID);
@@ -748,7 +755,7 @@ namespace BLL
         }
 
 
-        public void ChangeStatusAgentBank(String Admin,int ID)
+        public void ChangeStatusAgentBank(String Admin, int ID)
         {
             dlc.ChangeStatusAgentBank(Admin, ID);
         }
@@ -796,7 +803,7 @@ namespace BLL
             {
                 return false;
             }
-            
+
             return dlc.CreateCustomerB(customer);
         }
         public List<ACustomer> GetCustomersA()
@@ -818,7 +825,7 @@ namespace BLL
 
         public bool EditCustomerA(ACustomer customer, int ID)
         {
-            return (dlc.EditCustomerA(customer,ID));
+            return (dlc.EditCustomerA(customer, ID));
         }
         public bool EditCustomerB(BCustomer customer, int ID)
         {
@@ -863,6 +870,16 @@ namespace BLL
         }
 
         //  Sell Factor
+
+        public List<ASellFactor> GetSellFactorsA()
+        {
+            return (dlc.GetSellFactorsA()).ToList();
+        }
+        public List<BSellFactor> GetSellFactorsB()
+        {
+            return (dlc.GetSellFactorsB()).ToList();
+        }
+
         public int GetLastSellFactorNumberA()
         {
             return (dlc.GetLastSellFactorNumberA());
@@ -880,5 +897,23 @@ namespace BLL
         {
             return (dlc.GetLastSellFactorCodeB());
         }
+        public void CreateSellFactorA(ASellFactor factor)
+        {
+            dlc.CreateSellFactorA(factor);
+        }
+        public void CreateSellFactorB(BSellFactor factor)
+        {
+            dlc.CreateSellFactorB(factor);
+        }
+
+        public void SaveLastChangesOnSellFacotrA(ASellFactor factor)
+        {
+            dlc.SaveLastChangesOnSellFacotrA(factor);
+        }
+        public void SaveLastChangesOnSellFacotrB(BSellFactor factor)
+        {
+            dlc.SaveLastChangesOnSellFacotrB(factor);
+        }
+
     }
 }

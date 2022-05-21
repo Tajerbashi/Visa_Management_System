@@ -86,7 +86,7 @@ namespace StoreMarket_V1
                     if (SW)
                     {   //ذخیره
                         customer.FullName = NAME.Text;
-                        customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
+                        customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerA(customer))
                         {
@@ -102,7 +102,7 @@ namespace StoreMarket_V1
                     else
                     {
                         customer.FullName = NAME.Text;
-                        customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
+                        customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerA(customer, ID))
                         {
@@ -124,7 +124,7 @@ namespace StoreMarket_V1
                     if (SW)
                     {
                         customer.FullName = NAME.Text;
-                        customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
+                        customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerB(customer))
                         {
@@ -140,7 +140,7 @@ namespace StoreMarket_V1
                     else
                     {
                         customer.FullName = NAME.Text;
-                        customer.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(PHONE.Text));
+                        customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
                         customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerB(customer, ID))
                         {

@@ -73,7 +73,7 @@ namespace StoreMarket_V1
 
                         admin.OwnerName = OwnerCodetxt.Text.Trim();
                         admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
-                        admin.Phone = Int64.Parse(Phonetxt.Text);
+                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
                         admin.Email = Emailtxt.Text;
                         admin.Address = Addresstxt.Text;
                         admin.IsActive = true;
@@ -98,7 +98,7 @@ namespace StoreMarket_V1
 
                         admin.OwnerName = OwnerCodetxt.Text.Trim();
                         admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
-                        admin.Phone = Int64.Parse(Phonetxt.Text);
+                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
                         admin.Email = Emailtxt.Text;
                         admin.Address = Addresstxt.Text;
                         admin.IsActive = true;
@@ -137,7 +137,7 @@ namespace StoreMarket_V1
                 {
                     AAdmin admin = new AAdmin();
                     admin.FullName = Nametxt.Text + " " + Familytxt;
-                    admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
+                    admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
                     if (!blc.ExistAdminA(admin))
@@ -150,7 +150,7 @@ namespace StoreMarket_V1
                 {
                     BAdmin admin = new BAdmin();
                     admin.FullName = Nametxt.Text + " " + Familytxt;
-                    admin.Phone = Int64.Parse(Fun.ChangeToEnglishNumber(Phonetxt.Text));
+                    admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
                     admin.Email = Emailtxt.Text;
                     admin.Address = Addresstxt.Text;
                     if (!blc.ExistAdminB(admin))
