@@ -478,7 +478,8 @@ namespace DAL
         //  تمام محصولات موجود
         public List<AProduct> ShowAllProductA()
         {
-            return (from i in db.aProducts where !i.DeleteStatus select i).ToList();
+            //return (from i in db.aProducts where !i.DeleteStatus select i).ToList();
+            return (db.aProducts.Where(c => !c.DeleteStatus).Include(c => c.aBuyFactor)).ToList();
         }
         public List<BProduct> ShowAllProductB()
         {
@@ -847,6 +848,29 @@ namespace DAL
         public BAdmin SelectAdminAccountB(int ID)
         {
             return (db.bAdmins.Where(c => c.id == ID).FirstOrDefault());
+        }
+        //  Lazy Loading
+        public int GetIDBuyFactorForProductA(int ID)
+        {
+            try
+            {
+                return db.aProducts.Where(c => c.id == ID).Include("aBuyFactor").Select(i => i.aBuyFactor.FactorCode).FirstOrDefault();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public int GetIDBuyFactorForProductB(int ID)
+        {
+            try
+            {
+                return db.bProducts.Where(c => c.id == ID).Include("bBuyFactor").Select(i => i.bBuyFactor.FactorCode).FirstOrDefault();
+            }
+            catch
+            {
+                return 0;
+            }
         }
         //  Buy Factor
         public void CreateBuyFactorA(ABuyFactor factor)

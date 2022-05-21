@@ -147,42 +147,44 @@
             this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subject.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Subject.ForeColor = System.Drawing.Color.White;
-            this.Subject.Location = new System.Drawing.Point(196, 60);
+            this.Subject.Location = new System.Drawing.Point(114, 48);
             this.Subject.Name = "Subject";
             this.Subject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Subject.Size = new System.Drawing.Size(49, 24);
+            this.Subject.Size = new System.Drawing.Size(228, 24);
             this.Subject.TabIndex = 6;
-            this.Subject.Text = "اطلاعیه";
+            this.Subject.Text = "ویرایش خود را انتخاب کنید و تایید کنید!";
             this.Subject.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // RC1
             // 
             this.RC1.AutoSize = true;
-            this.RC1.Location = new System.Drawing.Point(256, 86);
+            this.RC1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RC1.Location = new System.Drawing.Point(137, 85);
             this.RC1.Name = "RC1";
-            this.RC1.Size = new System.Drawing.Size(101, 17);
+            this.RC1.Size = new System.Drawing.Size(211, 28);
             this.RC1.TabIndex = 8;
             this.RC1.TabStop = true;
-            this.RC1.Text = "ویرایش نوشتاری";
+            this.RC1.Text = "ویرایش نوشتاری اطلاعات دتابس";
             this.RC1.UseVisualStyleBackColor = true;
             this.RC1.Visible = false;
             // 
             // RC2
             // 
             this.RC2.AutoSize = true;
-            this.RC2.Location = new System.Drawing.Point(262, 109);
+            this.RC2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RC2.Location = new System.Drawing.Point(158, 119);
             this.RC2.Name = "RC2";
-            this.RC2.Size = new System.Drawing.Size(95, 17);
+            this.RC2.Size = new System.Drawing.Size(190, 28);
             this.RC2.TabIndex = 9;
             this.RC2.TabStop = true;
-            this.RC2.Text = "ویرایش اطلاعات";
+            this.RC2.Text = "ویرایش کامل اطلاعات دتابس";
             this.RC2.UseVisualStyleBackColor = true;
             this.RC2.Visible = false;
             // 
             // tick
             // 
             this.tick.Image = global::StoreMarket_V1.Properties.Resources.Check_2_icon__1_;
-            this.tick.Location = new System.Drawing.Point(38, 66);
+            this.tick.Location = new System.Drawing.Point(17, 69);
             this.tick.Name = "tick";
             this.tick.Size = new System.Drawing.Size(75, 75);
             this.tick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,7 +195,7 @@
             // error
             // 
             this.error.Image = global::StoreMarket_V1.Properties.Resources.Problem_icon;
-            this.error.Location = new System.Drawing.Point(38, 66);
+            this.error.Location = new System.Drawing.Point(17, 69);
             this.error.Name = "error";
             this.error.Size = new System.Drawing.Size(75, 75);
             this.error.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -204,7 +206,7 @@
             // question
             // 
             this.question.Image = global::StoreMarket_V1.Properties.Resources.faq_icon;
-            this.question.Location = new System.Drawing.Point(38, 66);
+            this.question.Location = new System.Drawing.Point(17, 69);
             this.question.Name = "question";
             this.question.Size = new System.Drawing.Size(75, 75);
             this.question.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,7 +217,7 @@
             // warning
             // 
             this.warning.Image = global::StoreMarket_V1.Properties.Resources.Warning_icon__2_;
-            this.warning.Location = new System.Drawing.Point(38, 66);
+            this.warning.Location = new System.Drawing.Point(17, 69);
             this.warning.Name = "warning";
             this.warning.Size = new System.Drawing.Size(75, 75);
             this.warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

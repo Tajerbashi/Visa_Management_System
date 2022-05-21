@@ -635,6 +635,15 @@
   <ItemGroup>
     <None Include="ico\Graphicloads-Colorful-Long-Shadow-Add.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Hopstarter-Soft-Scraps-User-Executive-Green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Kyo-Tux-Basket-Basket-empty.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

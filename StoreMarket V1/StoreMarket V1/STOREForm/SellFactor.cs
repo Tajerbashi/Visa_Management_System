@@ -22,7 +22,7 @@ namespace StoreMarket_V1
         BLLCode blc = new BLLCode();
         AAdmin AdminA = new AAdmin();
         BAdmin AdminB = new BAdmin();
-        int ID1 = 0, ID2 = 0, counter1 = 1, counter2 = 1,NO1=0,NO2=1;
+        int ID1 = 0, ID2 = 0, counter1 = 1, counter2 = 1, NO1 = 0, NO2 = 1;
         #region Function
         public void GetFactorNumber()
         {
@@ -97,11 +97,10 @@ namespace StoreMarket_V1
         {
             DGV1.Rows.Clear();
             var DB = blc.GetProductsA().Where(c => c.Name.Contains(Search.Text)).OrderBy( i => i.ProduceDate);
-            int No = 1;
             foreach (var item in DB)
             {
-                DGV1.Rows.Add(item.id,No,item.Name,item.Type,item.Brand,item.ProduceDate,item.sellPrice,item.Mojodi);
-                No++;
+                DGV1.Rows.Add(item.id,counter1,item.Name,item.Type,item.Brand,item.ProduceDate,item.sellPrice,item.Mojodi);
+                counter1++;
             }
         }
 
@@ -162,6 +161,7 @@ namespace StoreMarket_V1
         {
             //groupBox2.Enabled = false;
             //groupBox3.Enabled = true;
+            
         }
 
         private void OpenFactor_Click(object sender, EventArgs e)
@@ -266,6 +266,16 @@ namespace StoreMarket_V1
         }
         #endregion
 
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            Double Total = 0d;
+            for (int i = 0; i < DGV2.RowCount; i++)
+            {
+                Total += int.Parse(DGV2.Rows[i].Cells[7].Value.ToString());
+            }
+            TotalPriceFactor.Text = Total.ToString();
+        }
+
         private void buttonX1_Click(object sender, EventArgs e)
         {
             //groupBox1.Enabled = true;
@@ -276,13 +286,49 @@ namespace StoreMarket_V1
         private void Addbtn_Click(object sender, EventArgs e)
         {
             //groupBox3.Enabled = true;
-            AddProductToDGV2(ID1);
+            bool SW = false;
+            for (int i=0;i<DGV2.RowCount;i++)
+            {
+                if (ID1 == int.Parse(DGV2.Rows[i].Cells[0].Value.ToString()))
+                {
+                    SW = true;
+                }
+                
+            }
+            if (!SW)
+            {
+                AddProductToDGV2(ID1);
+            }
+            else
+            {
+                ResultStatus.Text = "در فاکتور موجود است";
+            }
         }
 
         private void AddMojodi_Click(object sender, EventArgs e)
         {
-            DGV2.Rows[NO2-1].Cells[6].Value = int.Parse(Tehdad.Value.ToString());
-            DGV2.Rows[NO2-1].Cells[7].Value = int.Parse(Tehdad.Value.ToString()) * int.Parse(DGV2.Rows[NO2-1].Cells[5].Value.ToString());
+            try
+            {
+                AProduct product = blc.GetProductA(ID2);
+                if (product == null)
+                {
+                    ResultStatus.Text = "محصول را انتخاب کنید";
+                }
+                else if (product.Mojodi >= Tehdad.Value)
+                {
+                    DGV2.Rows[NO2 - 1].Cells[6].Value = int.Parse(Tehdad.Value.ToString());
+                    DGV2.Rows[NO2 - 1].Cells[7].Value = int.Parse(Tehdad.Value.ToString()) * int.Parse(DGV2.Rows[NO2 - 1].Cells[5].Value.ToString());
+                }
+                else
+                {
+                    ResultStatus.Text = "موجودی در انبار کافی نیست";
+                }
+            }
+            catch
+            {
+
+            }
+
         }
 
         private void DGV1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

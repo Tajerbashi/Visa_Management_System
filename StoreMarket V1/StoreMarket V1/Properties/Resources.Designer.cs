@@ -513,6 +513,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Designcontest_Ecommerce_Business_Calculator {
+            get {
+                object obj = ResourceManager.GetObject("Designcontest-Ecommerce-Business-Calculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Designcontest_Ecommerce_Business_Credit_card {
             get {
                 object obj = ResourceManager.GetObject("Designcontest-Ecommerce-Business-Credit-card", resourceCulture);
@@ -813,6 +823,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Soft_Scraps_User_Executive_Green {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Soft-Scraps-User-Executive-Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icojam_Blue_Bits_Math_add {
             get {
                 object obj = ResourceManager.GetObject("Icojam-Blue-Bits-Math-add", resourceCulture);
@@ -896,6 +916,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap keyring_icon3 {
             get {
                 object obj = ResourceManager.GetObject("keyring-icon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kyo_Tux_Basket_Basket_empty {
+            get {
+                object obj = ResourceManager.GetObject("Kyo-Tux-Basket-Basket-empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

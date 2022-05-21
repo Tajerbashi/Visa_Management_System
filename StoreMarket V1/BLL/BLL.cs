@@ -480,6 +480,15 @@ namespace BLL
         }
 
         #endregion
+        //  Lazy Loading
+        public int GetIDBuyFactorForProductA(int ID)
+        {
+            return (dlc.GetIDBuyFactorForProductA(ID));
+        }
+        public int GetIDBuyFactorForProductB(int ID)
+        {
+            return (dlc.GetIDBuyFactorForProductB(ID));
+        }
         //  Buy Factor
         public void CreateBuyFactorA(ABuyFactor factor)
         {
