@@ -551,8 +551,7 @@ namespace DAL
             return (from i in db.bProducts orderby i.Mojodi ascending where !i.DeleteStatus select i).ToList();
 
         }
-
-
+        
         public List<AProduct> ShowSearchResultA(String Word)
         {
             return (from i in db.aProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
@@ -706,6 +705,18 @@ namespace DAL
                 return true;
             }
             return false;
+        }
+        public void SavePicForProductA(AProduct product,int ID)
+        {
+            AProduct product1 = db.aProducts.Where(c => c.id == ID).FirstOrDefault();
+            product1.Picture = product.Picture;
+            db.SaveChanges();
+        }
+        public void SavePicForProductB(BProduct product, int ID)
+        {
+            BProduct product1 = db.bProducts.Where(c => c.id == ID).FirstOrDefault();
+            product1.Picture = product.Picture;
+            db.SaveChanges();
         }
 
         public void DeleteProductFromDBA(int ID)
@@ -1533,6 +1544,28 @@ namespace DAL
             Factor.TotalPrice = factor.TotalPrice;
             Factor.CashType = factor.CashType;    //  نقدی
             Factor.Products.AddRange(factor.Products);
+            db.SaveChanges();
+        }
+        //  Customer
+        public ACustomer GetCustomerByPhoneA(String Phone)
+        {
+            return (db.aCustomers.Where(c => c.Phone == Phone).FirstOrDefault());
+        }
+        public BCustomer GetCustomerByPhoneB(String Phone)
+        {
+            return (db.bCustomers.Where(c => c.Phone == Phone).FirstOrDefault());
+        }
+
+        public void SaveEditCustomerA(ACustomer customer)
+        {
+            ACustomer CU= db.aCustomers.Where(c => c.Phone == customer.Phone).FirstOrDefault();
+            CU.BuyCost = customer.BuyCost;
+            db.SaveChanges();
+        }
+        public void SaveEditCustomerB(BCustomer customer)
+        {
+            BCustomer CU = db.bCustomers.Where(c => c.Phone == customer.Phone).FirstOrDefault();
+            CU.BuyCost = customer.BuyCost;
             db.SaveChanges();
         }
     }

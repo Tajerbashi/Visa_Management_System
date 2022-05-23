@@ -477,6 +477,15 @@ namespace BLL
             dlc.SaveEditProductForControlProductFormB(product, ID);
         }
 
+        public void SavePicForProductA(AProduct product, int ID)
+        {
+            dlc.SavePicForProductA(product, ID);
+        }
+        public void SavePicForProductB(BProduct product, int ID)
+        {
+            dlc.SavePicForProductB(product, ID);
+        }
+
         public void DeleteProductA(int ID)
         {
             dlc.DeleteProductA(ID);
@@ -915,5 +924,22 @@ namespace BLL
             dlc.SaveLastChangesOnSellFacotrB(factor);
         }
 
+        public ACustomer GetCustomerByPhoneA(String Phone)
+        {
+            return (dlc.GetCustomerByPhoneA(Phone));
+        }
+        public BCustomer GetCustomerByPhoneB(String Phone)
+        {
+            return (dlc.GetCustomerByPhoneB(Phone));
+        }
+
+        public void SaveEditCustomerA(ACustomer customer)
+        {
+            dlc.SaveEditCustomerA(customer);
+        }
+        public void SaveEditCustomerB(BCustomer customer)
+        {
+            dlc.SaveEditCustomerB(customer);
+        }
     }
 }

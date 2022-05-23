@@ -73,7 +73,13 @@ namespace StoreMarket_V1
 
         private void Store_Load(object sender, EventArgs e)
         {
-
+            ProductPanel panel = new ProductPanel();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.ADMIN.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)

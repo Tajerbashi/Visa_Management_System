@@ -21,7 +21,9 @@ namespace BEE
         public String RegisterDate { get; set; }
         public String ProduceDate { get; set; }
         public String ExpireDate { get; set; }
+        public String Details { get; set; }
         public int CashType { get; set; }
+        public String Picture { get; set; }
         public String AgentName { get; set; }
         public int Totalcash { get; set; } = 0;
 

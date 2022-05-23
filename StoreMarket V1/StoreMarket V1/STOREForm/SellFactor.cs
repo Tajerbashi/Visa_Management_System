@@ -256,6 +256,10 @@ namespace StoreMarket_V1
                 DayDate.Focus();
 
             }
+            else if (!R1.Checked && !R2.Checked)
+            {
+                ResultStatus.Text = "نوع پرداخت را انتخاب کنید";
+            }
             else
             {
                 ACustomer customer = new ACustomer();
@@ -325,44 +329,39 @@ namespace StoreMarket_V1
 
         private void AcceptFactor_Click(object sender, EventArgs e)
         {
-            if (!R1.Checked && !R2.Checked)
+            SaveFactor.Enabled = true;
+            ASellFactor Factor = new ASellFactor();
+            Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+            Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+            Factor.admin = blc.GetAdminsA().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
+
+
+            for (int i = 0; i < DGV2.RowCount; i++)
             {
-                ResultText2.Text = "نوع پرداخت را انتخاب کنید";
+                int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
+                AProduct product = blc.GetProductA(IDN);
+                Factor.Products.Add(product);
+
+                product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                blc.SaveEditForBuyFactorProductA(product);
             }
-            else
-            {
-                SaveFactor.Enabled = true;
-                ASellFactor Factor = new ASellFactor();
-                Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
-                Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
-                Factor.Customer = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text && c.Phone == PhoneNumber.Text).FirstOrDefault();
-                Factor.admin = blc.GetAdminsA().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
-
-
-                for (int i=0;i<DGV2.RowCount;i++)
-                {
-                    int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
-                    AProduct product = blc.GetProductA(IDN);
-                    Factor.Products.Add(product);
-
-                    product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
-                    product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
-                    blc.SaveEditForBuyFactorProductA(product);
-                }
-                blc.CreateSellFactorA(Factor);
-            }
-            
+            blc.CreateSellFactorA(Factor);
         }
 
         private void SaveFactor_Click(object sender, EventArgs e)
         {
             ASellFactor Factor = blc.GetSellFactorsA().Where(c => c.FactorCode == int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text))).FirstOrDefault();
+            ACustomer customer = blc.GetCustomerByPhoneA(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+            Factor.Customer = customer;
+            customer.BuyCost += Int64.Parse(TotalPriceFactor.Text);
+            blc.SaveEditCustomerA(customer);
             Factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
             Factor.TotalPrice = Int64.Parse(TotalPriceFactor.Text);
             Factor.CashType = R1.Checked ? true : false;    //  نقدی
             blc.SaveLastChangesOnSellFacotrA(Factor);
-            NO1 = 1;
-            NO2 = 1;
+            NO1 = counter1 = 1;
+            NO2 = counter2 = 1;
             DGV1.Rows.Clear();
             DGV2.Rows.Clear();
             GetFactorNumber();

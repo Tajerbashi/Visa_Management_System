@@ -72,6 +72,9 @@
             this.Deletebtn = new DevComponents.DotNetBar.ButtonX();
             this.Addbtn = new DevComponents.DotNetBar.ButtonX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.R2 = new System.Windows.Forms.RadioButton();
+            this.R1 = new System.Windows.Forms.RadioButton();
+            this.ResultText2 = new DevComponents.DotNetBar.LabelX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.AddMojodi = new DevComponents.DotNetBar.ButtonX();
             this.Tehdad = new System.Windows.Forms.NumericUpDown();
@@ -90,9 +93,6 @@
             this.OpenFactor = new DevComponents.DotNetBar.ButtonX();
             this.TotalPriceFactor = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.ResultText2 = new DevComponents.DotNetBar.LabelX();
-            this.R1 = new System.Windows.Forms.RadioButton();
-            this.R2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
@@ -123,6 +123,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(24)))), ((int)(((byte)(154)))));
             this.groupBox1.Controls.Add(this.ResultStatus);
+            this.groupBox1.Controls.Add(this.R2);
+            this.groupBox1.Controls.Add(this.R1);
             this.groupBox1.Controls.Add(this.CustomerName);
             this.groupBox1.Controls.Add(this.Okay);
             this.groupBox1.Controls.Add(this.ADMINNAMESHOW);
@@ -150,10 +152,21 @@
             // 
             // 
             // 
+            this.ResultStatus.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ResultStatus.BackgroundStyle.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultStatus.BackgroundStyle.BorderBottomWidth = 1;
+            this.ResultStatus.BackgroundStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultStatus.BackgroundStyle.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultStatus.BackgroundStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ResultStatus.BackgroundStyle.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultStatus.BackgroundStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.ResultStatus.BackgroundStyle.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultStatus.BackgroundStyle.BorderRightWidth = 1;
+            this.ResultStatus.BackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.ResultStatus.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ResultStatus.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ResultStatus.ForeColor = System.Drawing.Color.Red;
-            this.ResultStatus.Location = new System.Drawing.Point(103, 19);
+            this.ResultStatus.Location = new System.Drawing.Point(92, 0);
             this.ResultStatus.Name = "ResultStatus";
             this.ResultStatus.Size = new System.Drawing.Size(182, 23);
             this.ResultStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -625,8 +638,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.R2);
-            this.groupBox3.Controls.Add(this.R1);
             this.groupBox3.Controls.Add(this.ResultText2);
             this.groupBox3.Controls.Add(this.buttonX2);
             this.groupBox3.Controls.Add(this.AddMojodi);
@@ -647,6 +658,56 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "فاکتور فروش :";
+            // 
+            // R2
+            // 
+            this.R2.AutoSize = true;
+            this.R2.Location = new System.Drawing.Point(111, 33);
+            this.R2.Name = "R2";
+            this.R2.Size = new System.Drawing.Size(54, 25);
+            this.R2.TabIndex = 22;
+            this.R2.TabStop = true;
+            this.R2.Text = "بانکی";
+            this.R2.UseVisualStyleBackColor = true;
+            // 
+            // R1
+            // 
+            this.R1.AutoSize = true;
+            this.R1.Location = new System.Drawing.Point(179, 33);
+            this.R1.Name = "R1";
+            this.R1.Size = new System.Drawing.Size(53, 25);
+            this.R1.TabIndex = 21;
+            this.R1.TabStop = true;
+            this.R1.Text = "نقدی";
+            this.R1.UseVisualStyleBackColor = true;
+            // 
+            // ResultText2
+            // 
+            // 
+            // 
+            // 
+            this.ResultText2.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.ResultText2.BackgroundStyle.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultText2.BackgroundStyle.BorderBottomWidth = 1;
+            this.ResultText2.BackgroundStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.ResultText2.BackgroundStyle.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultText2.BackgroundStyle.BorderLeftWidth = 1;
+            this.ResultText2.BackgroundStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.ResultText2.BackgroundStyle.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultText2.BackgroundStyle.BorderRightWidth = 1;
+            this.ResultText2.BackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.ResultText2.BackgroundStyle.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ResultText2.BackgroundStyle.BorderTopWidth = 1;
+            this.ResultText2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ResultText2.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ResultText2.ForeColor = System.Drawing.Color.Red;
+            this.ResultText2.Location = new System.Drawing.Point(501, -1);
+            this.ResultText2.Name = "ResultText2";
+            this.ResultText2.Size = new System.Drawing.Size(182, 23);
+            this.ResultText2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ResultText2.TabIndex = 20;
+            this.ResultText2.Text = "فاکتور فروش";
+            this.ResultText2.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // buttonX2
             // 
@@ -910,44 +971,6 @@
             this.labelX6.Text = "مجموعه کل :";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // ResultText2
-            // 
-            // 
-            // 
-            // 
-            this.ResultText2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ResultText2.Font = new System.Drawing.Font("MRT_Mitra_3", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ResultText2.ForeColor = System.Drawing.Color.Red;
-            this.ResultText2.Location = new System.Drawing.Point(511, -5);
-            this.ResultText2.Name = "ResultText2";
-            this.ResultText2.Size = new System.Drawing.Size(182, 23);
-            this.ResultText2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ResultText2.TabIndex = 20;
-            this.ResultText2.Text = "فاکتور فروش";
-            this.ResultText2.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // R1
-            // 
-            this.R1.AutoSize = true;
-            this.R1.Location = new System.Drawing.Point(511, 240);
-            this.R1.Name = "R1";
-            this.R1.Size = new System.Drawing.Size(53, 25);
-            this.R1.TabIndex = 21;
-            this.R1.TabStop = true;
-            this.R1.Text = "نقدی";
-            this.R1.UseVisualStyleBackColor = true;
-            // 
-            // R2
-            // 
-            this.R2.AutoSize = true;
-            this.R2.Location = new System.Drawing.Point(451, 240);
-            this.R2.Name = "R2";
-            this.R2.Size = new System.Drawing.Size(54, 25);
-            this.R2.TabIndex = 22;
-            this.R2.TabStop = true;
-            this.R2.Text = "بانکی";
-            this.R2.UseVisualStyleBackColor = true;
-            // 
             // SellFactor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,10 +986,10 @@
             this.Size = new System.Drawing.Size(776, 545);
             this.Load += new System.EventHandler(this.SellFactor_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tehdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
             this.ResumeLayout(false);
