@@ -74,6 +74,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckBankPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckBankPanel.Designer.cs">
+      <DependentUpon>CheckBankPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOREForm\ReportationProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="STOREForm\ReportationProduct.Designer.cs">
+      <DependentUpon>ReportationProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="STOREForm\InventoryPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +211,12 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckBankPanel.resx">
+      <DependentUpon>CheckBankPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOREForm\ReportationProduct.resx">
+      <DependentUpon>ReportationProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="STOREForm\InventoryPanel.resx">
       <DependentUpon>InventoryPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +676,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\Blackvariant-Button-Ui-System-Folders-Drives-Utilities.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Aha-Soft-Free-Large-Boss-Chief.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\bank-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\checks-icon %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

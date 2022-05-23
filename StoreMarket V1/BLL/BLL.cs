@@ -941,5 +941,58 @@ namespace BLL
         {
             dlc.SaveEditCustomerB(customer);
         }
+
+        public List<ACheckBank> GetCheckBanksA()
+        {
+            return (dlc.GetCheckBanksA()).ToList();
+        }
+        public List<BCheckBank> GetCheckBanksB()
+        {
+            return (dlc.GetCheckBanksB()).ToList();
+        }
+
+        public void CreateCheckBankA(ACheckBank checkBank)
+        {
+            dlc.CreateCheckBankA(checkBank);
+        }
+        public void CreateCheckBankB(BCheckBank checkBank)
+        {
+            dlc.CreateCheckBankB(checkBank);
+        }
+
+        public void UpdateCheckBankA(ACheckBank checkBank1, int ID)
+        {
+            dlc.UpdateCheckBankA(checkBank1, ID);
+        }
+        public void UpdateCheckBankB(BCheckBank checkBank1, int ID)
+        {
+            dlc.UpdateCheckBankB(checkBank1, ID);
+        }
+
+        public ACheckBank GetCheckBankA(int ID)
+        {
+            return (dlc.GetCheckBankA(ID));
+        }
+        public BCheckBank GetCheckBankB(int ID)
+        {
+            return (dlc.GetCheckBankB(ID));
+        }
+        public void DeleteCheckBanksA(int ID)
+        {
+            dlc.DeleteCheckBanksA(ID);
+        }
+        public void DeleteCheckBanksB(int ID)
+        {
+            dlc.DeleteCheckBanksB(ID);
+        }
+        public void ChangeStatusCheckBankA(int ID)
+        {
+            dlc.ChangeStatusCheckBankA(ID);
+        }
+        public void ChangeStatusCheckBankB(int ID)
+        {
+            dlc.ChangeStatusCheckBankB(ID);
+
+        }
     }
 }

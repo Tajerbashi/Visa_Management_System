@@ -68,3 +68,5 @@ C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar.Layout.dll
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.InventoryPanel.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ProductPanelControl.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.CheckBankPanel.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ReportationProduct.resources

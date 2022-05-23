@@ -1568,5 +1568,88 @@ namespace DAL
             CU.BuyCost = customer.BuyCost;
             db.SaveChanges();
         }
+
+        public List<ACheckBank> GetCheckBanksA()
+        {
+            return (db.aCheckBanks.Where(c => !c.DeleteStatus)).ToList();
+        }
+        public List<BCheckBank> GetCheckBanksB()
+        {
+            return (db.bCheckBanks.Where(c => !c.DeleteStatus)).ToList();
+        }
+
+        public void CreateCheckBankA(ACheckBank checkBank)
+        {
+            db.aCheckBanks.Add(checkBank);
+            db.SaveChanges();
+        }
+        public void CreateCheckBankB(BCheckBank checkBank)
+        {
+            db.bCheckBanks.Add(checkBank);
+            db.SaveChanges();
+        }
+
+        public void UpdateCheckBankA(ACheckBank checkBank1,int ID)
+        {
+            ACheckBank checkBank = db.aCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.CustomerName = checkBank1.CustomerName;
+            checkBank.BankName = checkBank1.BankName;
+            checkBank.CheckNumber = checkBank1.CheckNumber;
+            checkBank.SariNumber = checkBank1.SariNumber;
+            checkBank.DayDate = checkBank1.DayDate;
+            checkBank.PassDate = checkBank1.PassDate;
+            checkBank.Details = checkBank1.Details;
+            checkBank.Price = checkBank1.Price;
+            db.SaveChanges();
+        }
+        public void UpdateCheckBankB(BCheckBank checkBank1, int ID)
+        {
+            BCheckBank checkBank = db.bCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.CustomerName = checkBank1.CustomerName;
+            checkBank.BankName = checkBank1.BankName;
+            checkBank.CheckNumber = checkBank1.CheckNumber;
+            checkBank.SariNumber = checkBank1.SariNumber;
+            checkBank.DayDate = checkBank1.DayDate;
+            checkBank.PassDate = checkBank1.PassDate;
+            checkBank.Details = checkBank1.Details;
+            checkBank.Price = checkBank1.Price;
+            db.SaveChanges();
+        }
+
+        public ACheckBank GetCheckBankA(int ID)
+        {
+            return (db.aCheckBanks.Where(c => c.id == ID).FirstOrDefault());
+        }
+        public BCheckBank GetCheckBankB(int ID)
+        {
+            return (db.bCheckBanks.Where(c => c.id == ID).FirstOrDefault());
+        }
+
+        public void DeleteCheckBanksA(int ID)
+        {
+            ACheckBank checkBank = db.aCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.DeleteStatus = true;
+            db.SaveChanges();
+        }
+        public void DeleteCheckBanksB(int ID)
+        {
+            BCheckBank checkBank = db.bCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.DeleteStatus = true;
+            db.SaveChanges();
+        }
+        public void ChangeStatusCheckBankA(int ID)
+        {
+            ACheckBank checkBank = db.aCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.Status = (checkBank.Status) ? false :true;
+            db.SaveChanges();
+        }
+        public void ChangeStatusCheckBankB(int ID)
+        {
+            BCheckBank checkBank = db.bCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.Status = (checkBank.Status) ? false : true;
+            db.SaveChanges();
+        }
+
+
     }
 }
