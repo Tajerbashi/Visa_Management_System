@@ -117,10 +117,14 @@ namespace StoreMarket_V1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            ProductControlForm PCF = new ProductControlForm();
-            PCF.ADMINNAME.Text = ADMINNAME.Text;
-            PCF.ADMINNUMBER.Text = ADMINNUMBER.Text;
-            PCF.Show();
+            ProductPanelControl panel = new ProductPanelControl();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.ADMINNAME.Text = ADMINNAME.Text;
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -156,6 +160,47 @@ namespace StoreMarket_V1
             }
             panel.AdminName.Text = ADMINNAME.Text;
             panel.AdminNumber.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            InventoryPanel panel = new InventoryPanel();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.ADMINNAME.Text = ADMINNAME.Text;
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ReportationProduct panel = new ReportationProduct();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.ADMINNAME.Text = ADMINNAME.Text;
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            MainPanel.Controls.Add(panel);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            (new AdminBankAccount()).ShowDialog();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            CheckBankPanel panel = new CheckBankPanel();
+            if (MainPanel.Controls.Count > 0)
+            {
+                MainPanel.Controls[0].Dispose();
+            }
+            panel.ADMINNAME.Text = ADMINNAME.Text;
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
             MainPanel.Controls.Add(panel);
         }
     }

@@ -113,6 +113,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aha_Soft_Free_Large_Boss_Chief {
+            get {
+                object obj = ResourceManager.GetObject("Aha-Soft-Free-Large-Boss-Chief", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ampeross_Lamond_Control_panel {
             get {
                 object obj = ResourceManager.GetObject("Ampeross-Lamond-Control-panel", resourceCulture);
@@ -183,6 +193,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bank_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("bank-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bank_icon__10_ {
             get {
                 object obj = ResourceManager.GetObject("bank-icon (10)", resourceCulture);
@@ -216,6 +236,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap bank_icon__5_ {
             get {
                 object obj = ResourceManager.GetObject("bank-icon (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blackvariant_Button_Ui_System_Folders_Drives_Utilities {
+            get {
+                object obj = ResourceManager.GetObject("Blackvariant-Button-Ui-System-Folders-Drives-Utilities", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +316,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Check_2_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("Check-2-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checks_icon__3_ {
+            get {
+                object obj = ResourceManager.GetObject("checks-icon (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
