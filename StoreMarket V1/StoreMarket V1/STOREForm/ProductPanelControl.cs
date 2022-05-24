@@ -201,10 +201,12 @@ namespace StoreMarket_V1
 
         private void ویرایشمحصولToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SW = false;
+
             ProductName.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C3"].Value.ToString();
             TypeProduct.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C5"].Value.ToString();
             BrandProduct.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C4"].Value.ToString();
-            AgentName.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["17"].Value.ToString();
+            AgentName.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C17"].Value.ToString();
 
             BuyPrice.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C9"].Value.ToString();
             NewBuyPrice.Text = DGV1.Rows[DGV1.CurrentRow.Index].Cells["C10"].Value.ToString();
@@ -244,8 +246,10 @@ namespace StoreMarket_V1
         {
             MessageBoxForm message = new MessageBoxForm();
             message.title.Text = "تایید درخواست";
+            message.Subject.Location = new Point(112, 53);
             message.Subject.Text = "آیا میخواهید اطلاعات حذف شود؟؟؟";
             message.error.Visible = true;
+            message.ShowDialog();
             if (message.Sw)
             {
                 if (ADMINNUMBER.Text == "1")
@@ -258,11 +262,6 @@ namespace StoreMarket_V1
                 }
                 ShowAllProductDGV1(ADMINNUMBER.Text);
             }
-        }
-
-        private void panelEx1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -540,6 +539,7 @@ namespace StoreMarket_V1
                                     buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
+                                    SW = true;
                                 }
                                 else
                                 {
@@ -573,6 +573,7 @@ namespace StoreMarket_V1
                                     buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
+                                    SW = true;
                                 }
                                 else
                                 {
@@ -585,7 +586,6 @@ namespace StoreMarket_V1
                         else
                         {
                             #region EditCode
-                            SW = true;
                             if (ADMINNUMBER.Text == "1")
                             {
                                 AProduct product = blc.GetProductA(ID);
@@ -612,6 +612,7 @@ namespace StoreMarket_V1
                                     buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
+                                    SW = true;
                                 }
                                 else
                                 {
@@ -643,6 +644,7 @@ namespace StoreMarket_V1
                                     buttonX1.Text = "ذخیره";
                                     Fun.ClearTextBoxes(this.Controls);
                                     ShowAllProductDGV1(ADMINNUMBER.Text);
+                                    SW = true;
                                 }
                                 else
                                 {

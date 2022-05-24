@@ -59,67 +59,78 @@ namespace StoreMarket_V1
             try
             {
                 OWNER owner = blc.SelectOwner(ADMINNAME.Text);
-                if (usernametxt.Text.Trim().Length == 0) { MessageBox.Show("نام کاربری را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (usernametxt.Text.Trim().Length == 0) { ResultS1.Text = "نام کاربری را وارد کنید"; }
                 else
-                if (userpasstxt.Text.Trim().Length == 0) { MessageBox.Show("رمز کاربری را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (userpasstxt.Text.Trim().Length == 0) { ResultS1.Text = "نام کاربری را وارد کنید"; }
                 else
-                if (accessCode.Text.Trim().Length == 0) { MessageBox.Show("کد دسترسی را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (accessCode.Text.Trim().Length == 0) { ResultS1.Text = "نام کاربری را وارد کنید"; }
                 else
-                if (owner.Status && ADMINNUMBER.Text == "1")
                 {
-                    if (DialogResult.OK == MessageBox.Show("به یاد داشته باشید که\n اطلاعات شما برای ورود به برنامه \nکد دسترسی  \nنام کاربری \n رمز کاربری \nاست پس در وارد کردن آنها دقت کنید!!!","اخطار",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning))
+                    MessageBoxForm message = new MessageBoxForm();
+                    message.title.Text = "اطلاعیه";
+
+                    message.Subject.Location = new Point(125, 69);
+                    message.Subject.Text = "به یاد داشته باشید\nکد دسترسی نام کاربری رمز کاربری\nبرای ورود به فروشگاه الزامیست!!!";
+                    message.warning.Visible = true;
+                    message.ShowDialog();
+
+                    if (owner.Status && ADMINNUMBER.Text == "1")
                     {
-                        AAdmin admin = new AAdmin();
+                        if (message.Sw)
+                        {
+                            AAdmin admin = new AAdmin();
 
-                        admin.OwnerName = OwnerCodetxt.Text.Trim();
-                        admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
-                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
-                        admin.Email = Emailtxt.Text;
-                        admin.Address = Addresstxt.Text;
-                        admin.IsActive = true;
-                        admin.Username = usernametxt.Text.Trim();
-                        admin.Password = userpasstxt.Text.Trim();
-                        admin.accessCode = accessCode.Text.Trim();
-                        admin.DeleteStatus = false;
-                        admin.AccessControl = true;
-                        blc.RegisterAdminA(admin);
-                        blc.ChangeOwnerStatus(owner);
+                            admin.OwnerName = OwnerCodetxt.Text.Trim();
+                            admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
+                            admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
+                            admin.Email = Emailtxt.Text;
+                            admin.Address = Addresstxt.Text;
+                            admin.IsActive = true;
+                            admin.Username = usernametxt.Text.Trim();
+                            admin.Password = userpasstxt.Text.Trim();
+                            admin.accessCode = accessCode.Text.Trim();
+                            admin.DeleteStatus = false;
+                            admin.AccessControl = true;
+                            blc.RegisterAdminA(admin);
+                            blc.ChangeOwnerStatus(owner);
+                            Fun.ClearTextBoxes(this.Controls);
+                        }
 
-                        MessageBox.Show("ثبت نام انجام شد");
-                        Fun.ClearTextBoxes(this.Controls);
                     }
-                    
-                }
-                else if (owner.Status && ADMINNUMBER.Text == "2")
-                {
-                    if (DialogResult.OK == MessageBox.Show("به یاد داشته باشید که\n اطلاعات شما برای ورود به برنامه \nکد دسترسی  \nنام کاربری \n رمز کاربری \nاست پس در وارد کردن آنها دقت کنید!!!", "اخطار", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                    else if (owner.Status && ADMINNUMBER.Text == "2")
                     {
-                        BAdmin admin = new BAdmin();
+                        if (message.Sw)
+                        {
+                            BAdmin admin = new BAdmin();
 
-                        admin.OwnerName = OwnerCodetxt.Text.Trim();
-                        admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
-                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
-                        admin.Email = Emailtxt.Text;
-                        admin.Address = Addresstxt.Text;
-                        admin.IsActive = true;
-                        admin.Username = usernametxt.Text.Trim();
-                        admin.Password = userpasstxt.Text.Trim();
-                        admin.accessCode = accessCode.Text.Trim();
-                        admin.DeleteStatus = false;
-                        admin.AccessControl = true;
+                            admin.OwnerName = OwnerCodetxt.Text.Trim();
+                            admin.FullName = Nametxt.Text.Trim() + " " + Familytxt.Text.Trim();
+                            admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
+                            admin.Email = Emailtxt.Text;
+                            admin.Address = Addresstxt.Text;
+                            admin.IsActive = true;
+                            admin.Username = usernametxt.Text.Trim();
+                            admin.Password = userpasstxt.Text.Trim();
+                            admin.accessCode = accessCode.Text.Trim();
+                            admin.DeleteStatus = false;
+                            admin.AccessControl = true;
 
-                        blc.RegisterAdminB(admin);
-                        blc.ChangeOwnerStatus(owner);
+                            blc.RegisterAdminB(admin);
+                            blc.ChangeOwnerStatus(owner);
 
-                        MessageBox.Show("ثبت نام انجام شد");
-                        Fun.ClearTextBoxes(this.Controls);
+                            MessageBox.Show("ثبت نام انجام شد");
+                            Fun.ClearTextBoxes(this.Controls);
+                        }
+                        Application.Exit();
                     }
-                    Application.Exit();
+
                 }
+
+
             }
             catch
             {
-                MessageBox.Show("اطلاعات نادرست است");
+                ResultS.Text = "اطلاعات نادرست است";
             }
             OwnerCodetxt.Text = ADMINNAME.Text;
             if (ADMINNAME.Text=="ADMIN1" || ADMINNAME.Text=="ADMIN2")
@@ -130,39 +141,68 @@ namespace StoreMarket_V1
 
         private void checkbtn_Click_1(object sender, EventArgs e)
         {
+
             //  بررسی
-            try
+            if (Nametxt.Text.Trim().Length==0)
             {
-                if (ADMINNUMBER.Text == "1")
-                {
-                    AAdmin admin = new AAdmin();
-                    admin.FullName = Nametxt.Text + " " + Familytxt;
-                    admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
-                    admin.Email = Emailtxt.Text;
-                    admin.Address = Addresstxt.Text;
-                    if (!blc.ExistAdminA(admin))
-                    {
-                        MessageBox.Show("ادمین جدید است");
-                        groupBox2.Enabled = true;
-                    }
-                }
-                else
-                {
-                    BAdmin admin = new BAdmin();
-                    admin.FullName = Nametxt.Text + " " + Familytxt;
-                    admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
-                    admin.Email = Emailtxt.Text;
-                    admin.Address = Addresstxt.Text;
-                    if (!blc.ExistAdminB(admin))
-                    {
-                        MessageBox.Show("ادمین جدید است");
-                        groupBox2.Enabled = true;
-                    }
-                }
+                ResultS.Text = "نام را وارد کنید";
+                Nametxt.Focus();
             }
-            catch (Exception)
+            else if (Familytxt.Text.Trim().Length == 0)
             {
-                MessageBox.Show("اطلاعاتی وارد نشده است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ResultS.Text = "فامیلی را وارد کنید";
+                Familytxt.Focus();
+            }
+            else if (Phonetxt.Text.Trim().Length == 0)
+            {
+                ResultS.Text = "تلفن را وارد کنید";
+                Phonetxt.Focus();
+            }
+            else if (Emailtxt.Text.Trim().Length == 0)
+            {
+                ResultS.Text = "ایمیل را وارد کنید";
+                Emailtxt.Focus();
+            }
+            else if (Addresstxt.Text.Trim().Length == 0)
+            {
+                ResultS.Text = "آدرس را وارد کنید";
+                Addresstxt.Focus();
+            }
+            else
+            {
+                try
+                {
+                    if (ADMINNUMBER.Text == "1")
+                    {
+                        AAdmin admin = new AAdmin();
+                        admin.FullName = Nametxt.Text + " " + Familytxt;
+                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
+                        admin.Email = Emailtxt.Text;
+                        admin.Address = Addresstxt.Text;
+                        if (!blc.ExistAdminA(admin))
+                        {
+                            ResultS.Text = "ادمین جدید است";
+                            groupBox2.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        BAdmin admin = new BAdmin();
+                        admin.FullName = Nametxt.Text + " " + Familytxt;
+                        admin.Phone = Fun.ChangeToEnglishNumber(Phonetxt.Text);
+                        admin.Email = Emailtxt.Text;
+                        admin.Address = Addresstxt.Text;
+                        if (!blc.ExistAdminB(admin))
+                        {
+                            ResultS.Text = "ادمین جدید است";
+                            groupBox2.Enabled = true;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("اطلاعاتی وارد نشده است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -190,6 +230,11 @@ namespace StoreMarket_V1
         private void button1_MouseLeave_1(object sender, EventArgs e)
         {
             button1.ForeColor = Color.White;
+        }
+
+        private void Phonetxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

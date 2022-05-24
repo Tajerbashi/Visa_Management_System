@@ -950,6 +950,14 @@ namespace BLL
         {
             return (dlc.GetCheckBanksB()).ToList();
         }
+        public List<ACheckBank> GetCheckBanksSortSaveA()
+        {
+            return (dlc.GetCheckBanksSortSaveA()).ToList();
+        }
+        public List<BCheckBank> GetCheckBanksSortSaveB()
+        {
+            return (dlc.GetCheckBanksSortSaveB()).ToList();
+        }
 
         public void CreateCheckBankA(ACheckBank checkBank)
         {
@@ -992,7 +1000,50 @@ namespace BLL
         public void ChangeStatusCheckBankB(int ID)
         {
             dlc.ChangeStatusCheckBankB(ID);
+        }
 
+        public List<ACheckBank> ShowSearchResultForCheckBankA(String Word)
+        {
+            return (dlc.ShowSearchResultForCheckBankA(Word)).ToList();
+        }
+        public List<BCheckBank> ShowSearchResultForCheckBankB(String Word)
+        {
+            return (dlc.ShowSearchResultForCheckBankB(Word)).ToList();
+        }
+
+        public List<ACheckBank> ShowTodayChecksA(String Date)
+        {
+            return (dlc.ShowTodayChecksA(Date)).ToList();
+        }
+        public List<BCheckBank> ShowTodayChecksB(String Date)
+        {
+            return (dlc.ShowTodayChecksB(Date)).ToList();
+        }
+
+        public List<ACheckBank> ShowAllChecksBankPassedA()
+        {
+            return (dlc.ShowAllChecksBankPassedA()).ToList();
+        }
+        public List<BCheckBank> ShowAllChecksBankPassedB()
+        {
+            return (dlc.ShowAllChecksBankPassedB()).ToList();
+        }
+
+        public List<ACheckBank> ShowAllChecksBankNotPassedA()
+        {
+            return (dlc.ShowAllChecksBankNotPassedA()).ToList();
+        }
+        public List<BCheckBank> ShowAllChecksBankNotPassedB()
+        {
+            return (dlc.ShowAllChecksBankNotPassedB()).ToList();
+        }
+        public void PassingTodayChecksA(int ID)
+        {
+            dlc.PassingTodayChecksA(ID);
+        }
+        public void PassingTodayChecksB(int ID)
+        {
+            dlc.PassingTodayChecksB(ID);
         }
     }
 }

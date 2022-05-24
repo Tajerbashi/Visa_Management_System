@@ -18,13 +18,10 @@ namespace BEE
         public String DayDate { get; set; }
         public String PassDate { get; set; }
         public String Details { get; set; }
+        public int FactorCode { get; set; }
         public bool DeleteStatus { get; set; } = false;
         public bool IsActive { get; set; } = true;
         public bool Status { get; set; } = false;  //ایا چک پاس شده یا خیر    پاس شده درست نشده نادرست
-        public AAdminBankAccount adminBankAccount { get; set; }
-        public AAgentBankAccount agentBankAccount { get; set; }
-        public List<ABuyFactor> aBuyFactors { get; set; } = new List<ABuyFactor>();
-
 
     }
 }

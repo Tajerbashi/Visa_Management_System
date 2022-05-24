@@ -56,6 +56,8 @@
             this.checkbtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Familytxt = new System.Windows.Forms.TextBox();
+            this.ResultS = new System.Windows.Forms.Label();
+            this.ResultS1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,6 +89,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.ResultS1);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.button1);
@@ -246,6 +249,7 @@
             this.Phonetxt.Size = new System.Drawing.Size(332, 30);
             this.Phonetxt.TabIndex = 2;
             this.Phonetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Phonetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phonetxt_KeyPress);
             // 
             // Nametxt
             // 
@@ -330,6 +334,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.ResultS);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.ADMINNUMBER);
@@ -411,6 +416,30 @@
             this.Familytxt.TabIndex = 1;
             this.Familytxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // ResultS
+            // 
+            this.ResultS.AutoSize = true;
+            this.ResultS.BackColor = System.Drawing.Color.Transparent;
+            this.ResultS.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ResultS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ResultS.Location = new System.Drawing.Point(442, 327);
+            this.ResultS.Name = "ResultS";
+            this.ResultS.Size = new System.Drawing.Size(35, 23);
+            this.ResultS.TabIndex = 23;
+            this.ResultS.Text = "نتایج";
+            // 
+            // ResultS1
+            // 
+            this.ResultS1.AutoSize = true;
+            this.ResultS1.BackColor = System.Drawing.Color.Transparent;
+            this.ResultS1.Font = new System.Drawing.Font("MRT_Mitra_3", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ResultS1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ResultS1.Location = new System.Drawing.Point(442, 301);
+            this.ResultS1.Name = "ResultS1";
+            this.ResultS1.Size = new System.Drawing.Size(35, 23);
+            this.ResultS1.TabIndex = 24;
+            this.ResultS1.Text = "نتایج";
+            // 
             // FirstAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,5 +490,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label ResultS;
+        public System.Windows.Forms.Label ResultS1;
     }
 }

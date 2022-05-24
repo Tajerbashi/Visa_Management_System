@@ -1571,9 +1571,18 @@ namespace DAL
 
         public List<ACheckBank> GetCheckBanksA()
         {
-            return (db.aCheckBanks.Where(c => !c.DeleteStatus)).ToList();
+            return (db.aCheckBanks.Where(c => !c.DeleteStatus).OrderBy(c  => c.PassDate)).ToList();
         }
         public List<BCheckBank> GetCheckBanksB()
+        {
+            return (db.bCheckBanks.Where(c => !c.DeleteStatus).OrderBy(c => c.PassDate)).ToList();
+        }
+
+        public List<ACheckBank> GetCheckBanksSortSaveA()
+        {
+            return (db.aCheckBanks.Where(c => !c.DeleteStatus)).ToList();
+        }
+        public List<BCheckBank> GetCheckBanksSortSaveB()
         {
             return (db.bCheckBanks.Where(c => !c.DeleteStatus)).ToList();
         }
@@ -1650,6 +1659,53 @@ namespace DAL
             db.SaveChanges();
         }
 
+        public List<ACheckBank> ShowSearchResultForCheckBankA(String Word)
+        {
+            return (db.aCheckBanks.Where(c => c.PassDate == Word || c.CheckNumber.Contains(Word) || c.SariNumber.Contains(Word) || c.BankName.Contains(Word) || c.CustomerName.Contains(Word) || (c.FactorCode).ToString()==Word ).OrderBy(c => c.PassDate)).ToList();
+        }
+        public List<BCheckBank> ShowSearchResultForCheckBankB(String Word)
+        {
+            return (db.bCheckBanks.Where(c => c.PassDate == Word || c.CheckNumber.Contains(Word) || c.SariNumber.Contains(Word) || c.BankName.Contains(Word) || c.CustomerName.Contains(Word) || c.FactorCode == int.Parse(Word)).OrderBy(c => c.PassDate)).ToList();
+        }
 
+        public List<ACheckBank> ShowTodayChecksA(String Date)
+        {
+            return (db.aCheckBanks.Where(c => c.PassDate == Date ).OrderBy(c => c.PassDate)).ToList();
+        }
+        public List<BCheckBank> ShowTodayChecksB(String Date)
+        {
+            return (db.bCheckBanks.Where(c => c.PassDate == Date ).OrderBy(c => c.PassDate)).ToList();
+        }
+
+        public List<ACheckBank> ShowAllChecksBankPassedA()
+        {
+            return (db.aCheckBanks.Where( c => c.Status ).OrderBy(c => c.PassDate)).ToList();
+        }
+        public List<BCheckBank> ShowAllChecksBankPassedB()
+        {
+            return (db.bCheckBanks.Where( c => c.Status ).OrderBy(c => c.PassDate)).ToList();
+        }
+
+        public List<ACheckBank> ShowAllChecksBankNotPassedA()
+        {
+            return (db.aCheckBanks.Where( c => !c.Status ).OrderBy(c => c.PassDate)).ToList();
+        }
+        public List<BCheckBank> ShowAllChecksBankNotPassedB()
+        {
+            return (db.bCheckBanks.Where( c => !c.Status ).OrderBy(c => c.PassDate)).ToList();
+        }
+
+        public void PassingTodayChecksA(int ID)
+        {
+            ACheckBank checkBank = db.aCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.Status = true;
+            db.SaveChanges();
+        }
+        public void PassingTodayChecksB(int ID)
+        {
+            BCheckBank checkBank = db.bCheckBanks.Where(c => c.id == ID).FirstOrDefault();
+            checkBank.Status = true;
+            db.SaveChanges();
+        }
     }
 }

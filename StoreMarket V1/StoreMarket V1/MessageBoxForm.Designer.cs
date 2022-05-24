@@ -120,9 +120,9 @@
             this.OKbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.OKbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OKbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.OKbtn.Location = new System.Drawing.Point(228, 147);
+            this.OKbtn.Location = new System.Drawing.Point(200, 164);
             this.OKbtn.Name = "OKbtn";
-            this.OKbtn.Size = new System.Drawing.Size(113, 30);
+            this.OKbtn.Size = new System.Drawing.Size(81, 30);
             this.OKbtn.TabIndex = 1;
             this.OKbtn.Text = "تایید";
             this.OKbtn.UseVisualStyleBackColor = false;
@@ -133,9 +133,9 @@
             this.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancelbtn.ForeColor = System.Drawing.Color.Red;
-            this.Cancelbtn.Location = new System.Drawing.Point(78, 147);
+            this.Cancelbtn.Location = new System.Drawing.Point(98, 164);
             this.Cancelbtn.Name = "Cancelbtn";
-            this.Cancelbtn.Size = new System.Drawing.Size(113, 30);
+            this.Cancelbtn.Size = new System.Drawing.Size(81, 30);
             this.Cancelbtn.TabIndex = 2;
             this.Cancelbtn.Text = "لغو";
             this.Cancelbtn.UseVisualStyleBackColor = false;
@@ -147,19 +147,19 @@
             this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subject.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Subject.ForeColor = System.Drawing.Color.White;
-            this.Subject.Location = new System.Drawing.Point(114, 48);
+            this.Subject.Location = new System.Drawing.Point(190, 64);
             this.Subject.Name = "Subject";
-            this.Subject.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Subject.Size = new System.Drawing.Size(228, 24);
+            this.Subject.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Subject.Size = new System.Drawing.Size(148, 24);
             this.Subject.TabIndex = 6;
-            this.Subject.Text = "ویرایش خود را انتخاب کنید و تایید کنید!";
+            this.Subject.Text = "نوع تغییرات انتخاب کنید؟\r\n";
             this.Subject.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // RC1
             // 
             this.RC1.AutoSize = true;
             this.RC1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RC1.Location = new System.Drawing.Point(137, 85);
+            this.RC1.Location = new System.Drawing.Point(129, 91);
             this.RC1.Name = "RC1";
             this.RC1.Size = new System.Drawing.Size(211, 28);
             this.RC1.TabIndex = 8;
@@ -172,7 +172,7 @@
             // 
             this.RC2.AutoSize = true;
             this.RC2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.RC2.Location = new System.Drawing.Point(158, 119);
+            this.RC2.Location = new System.Drawing.Point(150, 116);
             this.RC2.Name = "RC2";
             this.RC2.Size = new System.Drawing.Size(190, 28);
             this.RC2.TabIndex = 9;
@@ -230,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
-            this.ClientSize = new System.Drawing.Size(378, 202);
+            this.ClientSize = new System.Drawing.Size(378, 221);
             this.Controls.Add(this.tick);
             this.Controls.Add(this.error);
             this.Controls.Add(this.question);

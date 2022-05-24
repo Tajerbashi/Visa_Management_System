@@ -74,10 +74,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckBankPanel.cs">
+    <Compile Include="STOREForm\CheckBankPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CheckBankPanel.Designer.cs">
+    <Compile Include="STOREForm\CheckBankPanel.Designer.cs">
       <DependentUpon>CheckBankPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="STOREForm\ReportationProduct.cs">
@@ -211,7 +211,7 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CheckBankPanel.resx">
+    <EmbeddedResource Include="STOREForm\CheckBankPanel.resx">
       <DependentUpon>CheckBankPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STOREForm\ReportationProduct.resx">
@@ -685,6 +685,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\checks-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Icons-Land-Vista-Elements-Wait.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Chrisbanks2-Cold-Fusion-Hd-Settings-switch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Double-J-Design-Super-Mono-3d-Button-round-tick-ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Designcontest-Ecommerce-Business-Checks.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Graphicloads-100-Flat-Check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Wineass-Ios7-Redesign-Calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
