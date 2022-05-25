@@ -554,7 +554,7 @@ namespace DAL
         
         public List<AProduct> ShowSearchResultA(String Word)
         {
-            return (from i in db.aProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
+            return (from i in db.aProducts where (i.aBuyFactor.FactorCode).ToString()==Word || (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> ShowSearchResultB(String Word)
         {
@@ -1707,5 +1707,71 @@ namespace DAL
             checkBank.Status = true;
             db.SaveChanges();
         }
+
+        //  گزارش گیری
+        //  محصولات خریده شده در سال 
+        public List<AProduct> ShowSearchResultForYearA(String Start,String End)
+        {
+            return (db.aProducts.Where(c => !c.DeleteStatus && (String.Compare(c.RegisterDate, Start) == 1 && String.Compare(End, c.RegisterDate) == 1)).OrderBy(c => c.RegisterDate).ThenBy(c => c.SellCount)).ToList();
+        }
+        public List<BProduct> ShowSearchResultForYearB(String Start,String End)
+        {
+            return (db.bProducts.Where(c => !c.DeleteStatus && (String.Compare(c.RegisterDate, Start) == 1 && String.Compare(End, c.RegisterDate) == 1)).OrderBy(c => c.RegisterDate).ThenBy(c => c.SellCount)).ToList();
+        }
+        //  پر فروش ترین ها
+        public List<AProduct> ShowMoreSellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount descending where !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowMoreSellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount descending where !i.DeleteStatus select i).ToList();
+        }
+        //  کم فروش ترین ها
+        public List<AProduct> ShowLessSellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount where !i.DeleteStatus select i).ToList();
+        }
+        public List<BProduct> ShowLessSellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount where !i.DeleteStatus select i).ToList();
+        }
+        //  پر فروش ترین ها بانکی
+        public List<AProduct> ShowMoreBankiSellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount descending where (!i.DeleteStatus && i.CashType==2) select i).ToList();
+        }
+        public List<BProduct> ShowMoreBankiSellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount descending where ( !i.DeleteStatus && i.CashType == 2 ) select i).ToList();
+        }
+        //  پر فروش ترین ها نقدی
+        public List<AProduct> ShowMoreMoneySellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount descending where (!i.DeleteStatus && i.CashType == 1) select i).ToList();
+        }
+        public List<BProduct> ShowMoreMoneySellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount descending where (!i.DeleteStatus && i.CashType == 1) select i).ToList();
+        }
+        //  کم فروش ترین ها بانکی
+        public List<AProduct> ShowLessBankiSellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount descending where (!i.DeleteStatus && i.CashType == 2) select i).ToList();
+        }
+        public List<BProduct> ShowLessBankiSellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount descending where (!i.DeleteStatus && i.CashType == 2) select i).ToList();
+        }
+        //  کم فروش ترین ها نقدی
+        public List<AProduct> ShowLessMoneySellProductA()
+        {
+            return (from i in db.aProducts orderby i.SellCount where (!i.DeleteStatus && i.CashType == 1) select i).ToList();
+        }
+        public List<BProduct> ShowLessMoneySellProductB()
+        {
+            return (from i in db.bProducts orderby i.SellCount where (!i.DeleteStatus && i.CashType == 1) select i).ToList();
+        }
+
     }
 }

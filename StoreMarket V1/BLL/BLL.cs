@@ -1045,5 +1045,72 @@ namespace BLL
         {
             dlc.PassingTodayChecksB(ID);
         }
+
+        //  گزارش گیری
+
+        //  محصولات خریده شده در سال 
+        public List<AProduct> ShowSearchResultForYearA(String Start, String End)
+        {
+            return (dlc.ShowSearchResultForYearA(Start,End)).ToList();
+        }
+        public List<BProduct> ShowSearchResultForYearB(String Start, String End)
+        {
+            return (dlc.ShowSearchResultForYearB(Start,End)).ToList();
+        }
+        //  پر فروش ترین ها
+        public List<AProduct> ShowMoreSellProductA()
+        {
+            return (dlc.ShowMoreSellProductA()).ToList();
+        }
+        public List<BProduct> ShowMoreSellProductB()
+        {
+            return (dlc.ShowMoreSellProductB()).ToList();
+        }
+        //  کم فروش ترین ها
+        public List<AProduct> ShowLessSellProductA()
+        {
+            return (dlc.ShowLessSellProductA()).ToList();
+        }
+        public List<BProduct> ShowLessSellProductB()
+        {
+            return (dlc.ShowLessSellProductB()).ToList();
+        }
+        //  پر فروش ترین ها بانکی
+        public List<AProduct> ShowMoreBankiSellProductA()
+        {
+            return (dlc.ShowMoreBankiSellProductA()).ToList();
+        }
+        public List<BProduct> ShowMoreBankiSellProductB()
+        {
+            return (dlc.ShowMoreBankiSellProductB()).ToList();
+        }
+        //  پر فروش ترین ها نقدی
+        public List<AProduct> ShowMoreMoneySellProductA()
+        {
+            return (dlc.ShowMoreMoneySellProductA()).ToList();
+        }
+        public List<BProduct> ShowMoreMoneySellProductB()
+        {
+            return (dlc.ShowMoreMoneySellProductB()).ToList();
+        }
+        //  کم فروش ترین ها بانکی
+        public List<AProduct> ShowLessBankiSellProductA()
+        {
+            return (dlc.ShowLessBankiSellProductA()).ToList();
+        }
+        public List<BProduct> ShowLessBankiSellProductB()
+        {
+            return (dlc.ShowLessBankiSellProductB()).ToList();
+        }
+        //  کم فروش ترین ها نقدی
+        public List<AProduct> ShowLessMoneySellProductA()
+        {
+            return (dlc.ShowLessMoneySellProductA()).ToList();
+        }
+        public List<BProduct> ShowLessMoneySellProductB()
+        {
+            return (dlc.ShowLessMoneySellProductB()).ToList();
+        }
+
     }
 }
