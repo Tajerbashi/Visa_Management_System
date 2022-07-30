@@ -139,6 +139,9 @@
   <data name="Designcontest-Ecommerce-Business-Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Designcontest-Ecommerce-Business-Save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Male-user-info2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Male-user-info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Shopping-bag-purple-icon (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Shopping-bag-purple-icon (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,6 +208,9 @@
   <data name="faq-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\faq-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Male-user-info1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Male-user-info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Treetog-I-Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Treetog-I-Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,9 +250,6 @@
   <data name="Gpritiranjan-Simple-Christmas-Christmas-date" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Gpritiranjan-Simple-Christmas-Christmas-date.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ampeross-Lamond-Control-panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Ampeross-Lamond-Control-panel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ProductGrid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\ProductGrid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,6 +285,9 @@
   </data>
   <data name="loginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\loginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gakuseisean-Ivista-2-Misc-Download-Database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Gakuseisean-Ivista-2-Misc-Download-Database.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Designcontest-Ecommerce-Business-Notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Designcontest-Ecommerce-Business-Notes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,6 +343,9 @@
   <data name="Shopping-bag-purple-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Shopping-bag-purple-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Oxygen-Icons.org-Oxygen-Apps-accessories-calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Saviourmachine-Chat-Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Saviourmachine-Chat-Default.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -363,6 +372,9 @@
   </data>
   <data name="help-file-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\help-file-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gakuseisean-Ivista-2-Misc-Upload-Database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Gakuseisean-Ivista-2-Misc-Upload-Database.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Custom-Icon-Design-Flatastic-11-Shopping-basket-refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-11-Shopping-basket-refresh.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -469,6 +481,9 @@
   <data name="Custom-Icon-Design-Flatastic-4-Package-accept1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Custom-Icon-Design-Flatastic-4-Package-accept.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Designcontest-Ecommerce-Business-Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Designcontest-Ecommerce-Business-Money.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="credit-card-icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\credit-card-icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -477,9 +492,6 @@
   </data>
   <data name="keyring-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\keyring-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User-Executive-Green-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\User-Executive-Green-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Uiconstock-Dynamic-Flat-Android-Bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Uiconstock-Dynamic-Flat-Android-Bank.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -495,6 +507,9 @@
   </data>
   <data name="Awicons-Vista-Artistic-Chart-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Awicons-Vista-Artistic-Chart-search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Custom-Icon-Design-Flatastic-4-Decrease1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Custom-Icon-Design-Flatastic-4-Decrease.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fasticon-Shop-Cart-Shop-cart-exclude" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Fasticon-Shop-Cart-Shop-cart-exclude.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -529,11 +544,11 @@
   <data name="Wineass-Ios7-Redesign-Calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\Wineass-Ios7-Redesign-Calculator.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Everaldo-Crystal-Clear-Action-cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Everaldo-Crystal-Clear-Action-cancel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="User-Executive-Green-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\User-Executive-Green-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Designcontest-Ecommerce-Business-Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Designcontest-Ecommerce-Business-Money.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ampeross-Lamond-Control-panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Ampeross-Lamond-Control-panel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="master-card-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\master-card-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -559,7 +574,10 @@
   <data name="vintage-radio-05-orange-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\vintage-radio-05-orange-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Oxygen-Icons.org-Oxygen-Apps-accessories-calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ico\Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Everaldo-Crystal-Clear-Action-cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Everaldo-Crystal-Clear-Action-cancel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Keys-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\Keys-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

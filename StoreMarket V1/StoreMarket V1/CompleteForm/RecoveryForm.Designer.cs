@@ -102,7 +102,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 20);
-            this.label7.TabIndex = 9;
+            this.label7.TabIndex = 4;
             this.label7.Text = "خروج";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
@@ -166,12 +166,12 @@
             this.accesscodetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.accesscodetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.accesscodetxt.ForeColor = System.Drawing.Color.Black;
-            this.accesscodetxt.Location = new System.Drawing.Point(12, 46);
+            this.accesscodetxt.Location = new System.Drawing.Point(12, 100);
             this.accesscodetxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accesscodetxt.MaxLength = 20;
             this.accesscodetxt.Name = "accesscodetxt";
             this.accesscodetxt.Size = new System.Drawing.Size(190, 27);
-            this.accesscodetxt.TabIndex = 0;
+            this.accesscodetxt.TabIndex = 1;
             this.toolTip1.SetToolTip(this.accesscodetxt, "متوجه به ورودی های کیبورد باشید \r\nاعداد فارسی با کیبورد فارسی \r\nاعداد انگلیسی با " +
         "کیبورد انگلیسی");
             // 
@@ -180,12 +180,12 @@
             this.usernametxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.usernametxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.usernametxt.ForeColor = System.Drawing.Color.Black;
-            this.usernametxt.Location = new System.Drawing.Point(12, 100);
+            this.usernametxt.Location = new System.Drawing.Point(14, 45);
             this.usernametxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernametxt.MaxLength = 20;
             this.usernametxt.Name = "usernametxt";
             this.usernametxt.Size = new System.Drawing.Size(190, 27);
-            this.usernametxt.TabIndex = 1;
+            this.usernametxt.TabIndex = 0;
             this.toolTip1.SetToolTip(this.usernametxt, "متوجه به ورودی های کیبورد باشید \r\nاعداد فارسی با کیبورد فارسی \r\nاعداد انگلیسی با " +
         "کیبورد انگلیسی");
             // 
@@ -194,7 +194,7 @@
             this.phonetxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.phonetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phonetxt.ForeColor = System.Drawing.Color.Black;
-            this.phonetxt.Location = new System.Drawing.Point(12, 154);
+            this.phonetxt.Location = new System.Drawing.Point(12, 155);
             this.phonetxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.phonetxt.MaxLength = 11;
             this.phonetxt.Name = "phonetxt";

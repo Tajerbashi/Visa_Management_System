@@ -39,12 +39,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Result = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ADMIN = new System.Windows.Forms.Label();
             this.Search = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
             this.SEABTN = new System.Windows.Forms.Button();
             this.SAVEBTN = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ADMIN = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DGV1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,7 @@
             this.PHONE.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.PHONE.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.PHONE.Location = new System.Drawing.Point(16, 240);
+            this.PHONE.MaxLength = 11;
             this.PHONE.Name = "PHONE";
             this.PHONE.PreventEnterBeep = true;
             this.PHONE.Size = new System.Drawing.Size(172, 32);
@@ -115,6 +116,7 @@
             this.NEWBUY.PreventEnterBeep = true;
             this.NEWBUY.Size = new System.Drawing.Size(172, 32);
             this.NEWBUY.TabIndex = 6;
+            this.NEWBUY.TextChanged += new System.EventHandler(this.NEWBUY_TextChanged);
             this.NEWBUY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NAME_KeyPress);
             // 
             // label2
@@ -181,25 +183,6 @@
             this.Result.TabIndex = 24;
             this.Result.Text = "-";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.default_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ADMIN
-            // 
-            this.ADMIN.AutoSize = true;
-            this.ADMIN.Location = new System.Drawing.Point(75, 107);
-            this.ADMIN.Name = "ADMIN";
-            this.ADMIN.Size = new System.Drawing.Size(18, 24);
-            this.ADMIN.TabIndex = 22;
-            this.ADMIN.Text = "-";
-            // 
             // Search
             // 
             this.Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(78)))), ((int)(((byte)(221)))));
@@ -259,6 +242,25 @@
             this.SAVEBTN.MouseEnter += new System.EventHandler(this.SAVEBTN_MouseEnter);
             this.SAVEBTN.MouseLeave += new System.EventHandler(this.SAVEBTN_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StoreMarket_V1.Properties.Resources.default_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ADMIN
+            // 
+            this.ADMIN.AutoSize = true;
+            this.ADMIN.Location = new System.Drawing.Point(75, 107);
+            this.ADMIN.Name = "ADMIN";
+            this.ADMIN.Size = new System.Drawing.Size(18, 24);
+            this.ADMIN.TabIndex = 22;
+            this.ADMIN.Text = "-";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.DGV1);
@@ -279,6 +281,7 @@
             this.DGV1.AllowUserToResizeColumns = false;
             this.DGV1.AllowUserToResizeRows = false;
             this.DGV1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(24)))), ((int)(((byte)(154)))));
+            this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(9)))), ((int)(((byte)(108)))));
@@ -302,10 +305,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV1.EnableHeadersVisualStyles = false;
             this.DGV1.Location = new System.Drawing.Point(6, 19);
             this.DGV1.Name = "DGV1";
             this.DGV1.RowHeadersVisible = false;
+            this.DGV1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV1.Size = new System.Drawing.Size(487, 514);
             this.DGV1.TabIndex = 0;
             this.DGV1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV1_CellMouseClick);

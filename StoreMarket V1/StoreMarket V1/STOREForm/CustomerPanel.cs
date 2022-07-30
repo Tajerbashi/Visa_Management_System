@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace StoreMarket_V1
                 var DB = bll.GetCustomersA();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost);
+                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost.ToString("#,0"));
                 }
             }
             else
@@ -37,7 +38,7 @@ namespace StoreMarket_V1
                 var DB = bll.GetCustomersB();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, item.FullName,item.Phone, item.BuyCost);
+                    DGV1.Rows.Add(item.id, item.FullName,item.Phone, item.BuyCost.ToString("#,0"));
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace StoreMarket_V1
                 var DB = bll.PrintSerchResultCustomerA(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost);
+                    DGV1.Rows.Add(item.id,item.FullName,item.Phone,item.BuyCost.ToString("#,0"));
                 }
             }
             else
@@ -57,7 +58,7 @@ namespace StoreMarket_V1
                 var DB = bll.PrintSerchResultCustomerB(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, item.FullName, item.Phone, item.BuyCost);
+                    DGV1.Rows.Add(item.id, item.FullName, item.Phone, item.BuyCost.ToString("#,0"));
                 }
             }
         }
@@ -114,7 +115,7 @@ namespace StoreMarket_V1
                         }
                         else
                         {
-                            Result.Text = "ذخیره نشد";
+                            Result.Text = "ویرایش نشد";
                         }
                     }
                 }
@@ -125,7 +126,7 @@ namespace StoreMarket_V1
                     {
                         customer.FullName = NAME.Text;
                         customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
-                        customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
+                        customer.BuyCost = Convert.ToDouble(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.CreateCustomerB(customer))
                         {
                             Result.Text = "ذخیره شد";
@@ -141,7 +142,7 @@ namespace StoreMarket_V1
                     {
                         customer.FullName = NAME.Text;
                         customer.Phone = Fun.ChangeToEnglishNumber(PHONE.Text);
-                        customer.BuyCost = Int64.Parse(Fun.ChangeToEnglishNumber(NEWBUY.Text));
+                        customer.BuyCost = Convert.ToDouble(Fun.ChangeToEnglishNumber(NEWBUY.Text));
                         if (bll.EditCustomerB(customer, ID))
                         {
                             Result.Text = "ویرایش شد";
@@ -152,7 +153,7 @@ namespace StoreMarket_V1
                         }
                         else
                         {
-                            Result.Text = "ذخیره نشد";
+                            Result.Text = "ویرایش نشد";
                         }
                     }
                 }
@@ -168,28 +169,30 @@ namespace StoreMarket_V1
 
         private void DGV1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button==MouseButtons.Right || e.Button==MouseButtons.Left)
+            try
             {
-                DGV1.CurrentRow.Selected = (DGV1.CurrentRow.Selected) ? false : true;
-                ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
+                if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
+                {
+                    ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+                }
             }
-            if (e.Button==MouseButtons.Right)
+            catch
             {
-                contextMenuStrip1.Show(Cursor.Position.X,Cursor.Position.Y);
             }
+            
         }
-
-
         private void NAME_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider1.Clear();
         }
-
         private void SEABTN_Click(object sender, EventArgs e)
         {
             PrintSerchResult(ADMIN.Text, Search.Text);
         }
-
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ADMIN.Text == "1")
@@ -204,7 +207,6 @@ namespace StoreMarket_V1
             }
             Result.Text ="اطلاعات مشتری مورد نظر حذف شد!!!";
         }
-
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
@@ -233,6 +235,20 @@ namespace StoreMarket_V1
         private void SEABTN_MouseLeave(object sender, EventArgs e)
         {
             SEABTN.ForeColor = Color.White;
+        }
+
+        private void NEWBUY_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                NumberFormatInfo nfi = new NumberFormatInfo();
+                nfi.NumberDecimalDigits = 0;
+                NEWBUY.Text = Int64.Parse(NEWBUY.Text, NumberStyles.AllowThousands).ToString("N", nfi);
+                NEWBUY.Select(NEWBUY.Text.Length, 0);
+            }
+            catch
+            {
+            }
         }
     }
 }

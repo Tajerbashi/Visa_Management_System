@@ -92,7 +92,10 @@
             // DGV2
             // 
             this.DGV2.AllowUserToAddRows = false;
+            this.DGV2.AllowUserToOrderColumns = true;
+            this.DGV2.AllowUserToResizeRows = false;
             this.DGV2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.DGV2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(9)))), ((int)(((byte)(108)))));
@@ -131,12 +134,14 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV2.DefaultCellStyle = dataGridViewCellStyle12;
             this.DGV2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGV2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV2.EnableHeadersVisualStyles = false;
             this.DGV2.Location = new System.Drawing.Point(0, 112);
             this.DGV2.Margin = new System.Windows.Forms.Padding(4);
             this.DGV2.Name = "DGV2";
             this.DGV2.ReadOnly = true;
             this.DGV2.RowHeadersVisible = false;
+            this.DGV2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV2.Size = new System.Drawing.Size(776, 433);
             this.DGV2.TabIndex = 9;
             this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick);

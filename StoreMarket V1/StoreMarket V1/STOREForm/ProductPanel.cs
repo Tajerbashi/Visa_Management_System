@@ -56,7 +56,7 @@ namespace StoreMarket_V1
                 var DB = blc.GetProductsA();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id,N,item.Name,item.Brand,item.Type,item.Mojodi,item.sellPrice);
+                    DGV1.Rows.Add(item.id,N,item.Name,item.Brand,item.Type,item.Mojodi,item.sellPrice.ToString("#,0"));
                     N++;
                 }
             }
@@ -65,7 +65,7 @@ namespace StoreMarket_V1
                 var DB = blc.GetProductsB();
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice);
+                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice.ToString("#,0"));
                     N++;
                 }
             }
@@ -81,7 +81,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowSearchResultA(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice);
+                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice.ToString("#,0"));
                     N++;
                 }
             }
@@ -90,7 +90,7 @@ namespace StoreMarket_V1
                 var DB = blc.ShowSearchResultB(Word);
                 foreach (var item in DB)
                 {
-                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice);
+                    DGV1.Rows.Add(item.id, N, item.Name, item.Brand, item.Type, item.Mojodi, item.sellPrice.ToString("#,0"));
                     N++;
                 }
             }
@@ -174,12 +174,18 @@ namespace StoreMarket_V1
 
         private void DGV1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button==MouseButtons.Right || e.Button==MouseButtons.Left)
+            try
             {
-                DGV1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                IDP = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
+                if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
+                {
+                    IDP = int.Parse(DGV1.SelectedCells[0].Value.ToString());
+                }
+                ShowPic();
             }
-            ShowPic();
+            catch
+            {
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -39,8 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // accessTXT
@@ -53,7 +55,6 @@
             this.accessTXT.PasswordChar = '+';
             this.accessTXT.Size = new System.Drawing.Size(225, 20);
             this.accessTXT.TabIndex = 1;
-            this.accessTXT.Text = "ADMIN1";
             this.accessTXT.UseSystemPasswordChar = true;
             // 
             // UserTXT
@@ -65,7 +66,6 @@
             this.UserTXT.Name = "UserTXT";
             this.UserTXT.Size = new System.Drawing.Size(225, 20);
             this.UserTXT.TabIndex = 2;
-            this.UserTXT.Text = "ADMIN1";
             // 
             // passTXT
             // 
@@ -77,7 +77,6 @@
             this.passTXT.PasswordChar = '*';
             this.passTXT.Size = new System.Drawing.Size(225, 20);
             this.passTXT.TabIndex = 3;
-            this.passTXT.Text = "ADMIN1";
             this.passTXT.UseSystemPasswordChar = true;
             // 
             // button2
@@ -145,7 +144,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::StoreMarket_V1.Properties.Resources.Hopstarter_Rounded_Square_Button_Delete;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(564, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(561, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 10;
@@ -157,12 +156,23 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::StoreMarket_V1.Properties.Resources.Rimshotdesign_Milkanodised_Mac_mini;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(1, 78);
+            this.pictureBox2.Location = new System.Drawing.Point(528, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::StoreMarket_V1.Properties.Resources.Keys_icon;
+            this.pictureBox3.Location = new System.Drawing.Point(41, 101);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(149, 158);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
             // 
             // LoginForm
             // 
@@ -172,6 +182,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(597, 329);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -195,6 +206,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +224,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

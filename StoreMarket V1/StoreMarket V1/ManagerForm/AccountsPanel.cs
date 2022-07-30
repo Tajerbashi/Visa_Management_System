@@ -268,8 +268,7 @@ namespace StoreMarket_V1
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
             {
-                ID = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
-                DGV1.CurrentRow.Selected = true;
+                ID = int.Parse(DGV1.SelectedCells[0].Value.ToString());
             }
             if (e.Button == MouseButtons.Right)
             {

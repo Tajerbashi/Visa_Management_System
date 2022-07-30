@@ -43,6 +43,7 @@
             this.error = new System.Windows.Forms.PictureBox();
             this.question = new System.Windows.Forms.PictureBox();
             this.warning = new System.Windows.Forms.PictureBox();
+            this.OKAYBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.titelpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tick)).BeginInit();
@@ -225,12 +226,28 @@
             this.warning.TabStop = false;
             this.warning.Visible = false;
             // 
+            // OKAYBTN
+            // 
+            this.OKAYBTN.BackColor = System.Drawing.Color.DarkOrchid;
+            this.OKAYBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OKAYBTN.Font = new System.Drawing.Font("MRT_AridiNaskh Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.OKAYBTN.ForeColor = System.Drawing.Color.Thistle;
+            this.OKAYBTN.Location = new System.Drawing.Point(98, 161);
+            this.OKAYBTN.Name = "OKAYBTN";
+            this.OKAYBTN.Size = new System.Drawing.Size(183, 33);
+            this.OKAYBTN.TabIndex = 14;
+            this.OKAYBTN.Text = "تشکر";
+            this.OKAYBTN.UseVisualStyleBackColor = false;
+            this.OKAYBTN.Visible = false;
+            this.OKAYBTN.Click += new System.EventHandler(this.OKAYBTN_Click);
+            // 
             // MessageBoxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(378, 221);
+            this.Controls.Add(this.OKAYBTN);
             this.Controls.Add(this.tick);
             this.Controls.Add(this.error);
             this.Controls.Add(this.question);
@@ -276,5 +293,6 @@
         public System.Windows.Forms.PictureBox question;
         public System.Windows.Forms.PictureBox error;
         public System.Windows.Forms.PictureBox tick;
+        public System.Windows.Forms.Button OKAYBTN;
     }
 }

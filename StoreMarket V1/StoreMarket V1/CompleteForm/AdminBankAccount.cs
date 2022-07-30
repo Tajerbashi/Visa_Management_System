@@ -232,7 +232,6 @@ namespace StoreMarket_V1
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
             {
-                dataGridView1.CurrentRow.Selected = (dataGridView1.CurrentRow.Selected) ? false : true;
                 ID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             }
             if (e.Button == MouseButtons.Right)

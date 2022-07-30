@@ -24,6 +24,7 @@ namespace StoreMarket_V1
         String S3;
         public void ShowAllDate(String Admin)
         {
+            DT.Rows.Clear();
             if (Admin == "1")
             {
                 var DB = blc.aLogInformation();
@@ -43,6 +44,7 @@ namespace StoreMarket_V1
         }
         public void ShowAllDateSearch(String Admin, String Start)
         {
+            DT.Rows.Clear();
             if (Admin == "1")
             {
                 var DB = blc.LogSearchEnterA(Start);
@@ -63,6 +65,8 @@ namespace StoreMarket_V1
 
         public void ShowAllDateFilter(String Admin, String Start, String End)
         {
+            DT.Rows.Clear();
+
             if (Admin == "1")
             {
                 var DB = blc.SearchResultLogInformationDateA(Start, End);
@@ -81,17 +85,9 @@ namespace StoreMarket_V1
             }
         }
 
-        private void LogFORM_Load(object sender, EventArgs e)
-        {
-            ShowAllDate(ADMINNUMBER.Text);
-            S1 = searchtxt.Text;
-            S2 = Startdate.Text;
-            S3 = Enddate.Text;
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
-            String search = ConvertArabicNumberToEnglish.toEnglishNumber(searchtxt.Text);
+            String search = Fun.ChangeToEnglishNumber(searchtxt.Text);
 
             DT.Rows.Clear();
             if (searchtxt.Text == S1)
@@ -105,7 +101,21 @@ namespace StoreMarket_V1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void LogReports_Load(object sender, EventArgs e)
+        {
+            ShowAllDate(ADMINNUMBER.Text);
+            S1 = searchtxt.Text;
+            S2 = Startdate.Text;
+            S3 = Enddate.Text;
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            ShowAllDate(ADMINNUMBER.Text);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             String Startdate1 = ConvertArabicNumberToEnglish.toEnglishNumber(Startdate.Text);
             String Enddate1 = ConvertArabicNumberToEnglish.toEnglishNumber(Enddate.Text);
@@ -124,13 +134,8 @@ namespace StoreMarket_V1
             {
                 ShowAllDateFilter(ADMINNUMBER.Text, Startdate1, Enddate1);
             }
-
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ShowAllDate(ADMINNUMBER.Text);
-        }
 
     }
 }

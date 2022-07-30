@@ -176,6 +176,7 @@ namespace StoreMarket_V1
                 }
             }
             else
+            if (Admin == "2")
             {
                 var DB = blc.GetAgentB();
                 foreach (var item in DB)
@@ -204,7 +205,6 @@ namespace StoreMarket_V1
                 }
             }
         }
-
         public void GetBrandProduct(String Admin)
         {
             Brand.Items.Clear();
@@ -227,7 +227,6 @@ namespace StoreMarket_V1
                 }
             }
         }
-
         public void GetLastFactorNumber(String Admin)
         {
             if (Admin == "1")
@@ -449,8 +448,9 @@ namespace StoreMarket_V1
                         product.Name = ProductName.Text.Trim();
                         product.Type = ProductType.Text.Trim();
                         product.Brand = Brand.Text.Trim();
-                        product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
-                        product.sellPrice = 0;
+                        product.buyPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(Price.Text)));
+                        product.sellPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(SellPrice.Text)));
+                        product.newBuyPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(Price.Text)));
                         product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
                         product.Totalcash = (product.BuyCount * product.buyPrice);
                         product.AgentName = AgentName.Text.Trim();
@@ -475,7 +475,9 @@ namespace StoreMarket_V1
                         {
                             ResultText.Text = "جدید نیست";
                         }
+                        
                         int IDforProduct = 0;
+                        
                         if (blc.CreateProductForBuyFactorA(product))
                         {
                             IDforProduct = product.id;
@@ -488,12 +490,11 @@ namespace StoreMarket_V1
                                 IDforProduct = item.id;
                             }
                         }
-                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
+                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Convert.ToDouble(Price.Text).ToString("#,0"), (Convert.ToDouble(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * Convert.ToDouble(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
                         ProductName.Text = " ";
                         ProductName.Focus();
                         No++;
                         #endregion
-
                     }
                     else
                     {
@@ -514,8 +515,9 @@ namespace StoreMarket_V1
                         product.Name = ProductName.Text.Trim();
                         product.Type = ProductType.Text.Trim();
                         product.Brand = Brand.Text.Trim();
-                        product.buyPrice = product.newBuyPrice = int.Parse((Fun.ChangeToEnglishNumber(Price.Text)).ToString());
-                        product.sellPrice = 0;
+                        product.buyPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(Price.Text)));
+                        product.newBuyPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(Price.Text)));
+                        product.sellPrice = Convert.ToDouble((Fun.ChangeToEnglishNumber(SellPrice.Text)));
                         product.CashType = (CashType.Text) == "نقدی" ? 1 : 2;
                         product.Totalcash = (product.BuyCount * product.buyPrice);
                         product.AgentName = AgentName.Text.Trim();
@@ -553,12 +555,11 @@ namespace StoreMarket_V1
                                 IDforProduct = item.id;
                             }
                         }
-                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Price.Text, (int.Parse(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * int.Parse(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
+                        DGV.Rows.Add(IDforProduct, No, ProductName.Text.Trim(), ProductType.Text.Trim(), CompanyName.Text.Trim(), Tehdad.Value.ToString(), Convert.ToDouble(Price.Text).ToString("#,0"), (Convert.ToDouble(Fun.ChangeToEnglishNumber(Tehdad.Value.ToString())) * Convert.ToDouble(Fun.ChangeToEnglishNumber(Price.Text.ToString()))));
                         ProductName.Text = " ";
                         ProductName.Focus();
                         No++;
                         #endregion
-
                     }
                 }
             }
@@ -659,8 +660,7 @@ namespace StoreMarket_V1
                 index = DGV.CurrentRow.Index;
                 if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
                 {
-                    DGV.CurrentRow.Selected = (DGV.CurrentRow.Selected) ? false : true;
-                    IDforDelete = int.Parse(DGV.CurrentRow.Cells[0].Value.ToString());
+                    IDforDelete = int.Parse(DGV.SelectedCells[0].Value.ToString());
                 }
             }
             catch
@@ -677,7 +677,7 @@ namespace StoreMarket_V1
             {
                 totalfactor += int.Parse(DGV.Rows[i].Cells[7].Value.ToString());
             }
-            TotalPriceFactor.Text = (totalfactor).ToString();
+            TotalPriceFactor.Text = (totalfactor).ToString("#,0");
             groupBox1.Enabled = false;
             buttonX5.Enabled = true;
         }
@@ -700,20 +700,20 @@ namespace StoreMarket_V1
                     if (product.RegisterDate.Equals(Fun.ChangeToEnglishNumber(DayDate.Text)))
                     {
                         // خرید امروز و تغییرات نهایی درج شود
-                        product.buyPrice = product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.buyPrice = product.newBuyPrice = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
                         product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
                         product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
-                        product.Totalcash = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        product.Totalcash = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
                         //MessageBox.Show("خرید جدید");
                     }
                     else
                     {
                         // خرید امروز به علاوه موجودیت قبل و ذخیره شود
                         product.buyPrice = product.newBuyPrice;
-                        product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.newBuyPrice = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
                         product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
                         product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
-                        product.Totalcash += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        product.Totalcash += Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
                         //MessageBox.Show("ویرایش");
                     }
                     product.aBuyFactor = factor;
@@ -735,20 +735,20 @@ namespace StoreMarket_V1
                     if (product.RegisterDate.Equals(Fun.ChangeToEnglishNumber(DayDate.Text)))
                     {
                         // خرید امروز و تغییرات نهایی درج شود
-                        product.buyPrice = product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.buyPrice = product.newBuyPrice = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
                         product.BuyCount = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
                         product.Mojodi = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
-                        product.Totalcash = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        product.Totalcash = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
                         //MessageBox.Show("خرید جدید");
                     }
                     else
                     {
                         // خرید امروز به علاوه موجودیت قبل و ذخیره شود
                         product.buyPrice = product.newBuyPrice;
-                        product.newBuyPrice = int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
+                        product.newBuyPrice = Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[6].Value.ToString()));
                         product.Mojodi += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
                         product.BuyCount += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[5].Value.ToString()));
-                        product.Totalcash += int.Parse(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
+                        product.Totalcash += Convert.ToDouble(Fun.ChangeToEnglishNumber(DGV.Rows[i].Cells[7].Value.ToString()));
                         //MessageBox.Show("ویرایش");
                     }
                     product.bBuyFactor = factor;
@@ -837,6 +837,36 @@ namespace StoreMarket_V1
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Price_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                NumberFormatInfo nfi = new NumberFormatInfo();
+                nfi.NumberDecimalDigits = 0;
+                Price.Text = Int64.Parse(Price.Text, NumberStyles.AllowThousands).ToString("N", nfi);
+                Price.Select(Price.Text.Length, 0);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void SellPrice_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                NumberFormatInfo nfi = new NumberFormatInfo();
+                nfi.NumberDecimalDigits = 0;
+                SellPrice.Text = Int64.Parse(SellPrice.Text, NumberStyles.AllowThousands).ToString("N", nfi);
+                SellPrice.Select(SellPrice.Text.Length, 0);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

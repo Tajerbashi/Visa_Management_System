@@ -34,6 +34,14 @@ namespace StoreMarket_V1
             {
                 button1.Enabled = true;
             }
+            LogReports panel = new LogReports();
+            if (mainpanel.Controls.Count > 0)
+            {
+                mainpanel.Controls[0].Dispose();
+            }
+            panel.ADMINNUMBER.Text = ADMINNUMBER.Text;
+            panel.ADMINNAME.Text = ADMINNAME.Text;
+            mainpanel.Controls.Add(panel);
         }
 
         private void StoreManagmentForm_MouseDown(object sender, MouseEventArgs e)

@@ -19,9 +19,7 @@ namespace StoreMarket_V1
         }
         BLLCode blc = new BLLCode();
         Functions Fun = new Functions();
-        int TAP = 0;
         int ID = -1;
-        bool SW = true;
 
         #region ShowDataIn DGV
         public void ShowAllProductDGV2(String Admin)
@@ -37,7 +35,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -48,7 +46,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -66,7 +64,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = "نقدی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -77,7 +75,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = "نقدی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0") ,item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -94,7 +92,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -105,7 +103,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -123,7 +121,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -134,7 +132,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -151,7 +149,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -162,7 +160,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
 
@@ -182,7 +180,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -193,7 +191,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -217,7 +215,7 @@ namespace StoreMarket_V1
                         i++;
                         Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                         int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                     }
                 }
             }
@@ -235,7 +233,7 @@ namespace StoreMarket_V1
                         i++;
                         Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                         int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                        DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                     }
                 }
             }
@@ -254,7 +252,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -265,7 +263,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }
@@ -283,7 +281,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductA(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
             else
@@ -294,7 +292,7 @@ namespace StoreMarket_V1
                     i++;
                     Cash = (item.CashType) == 1 ? "نقدی" : "بانکی";
                     int FactorCode = blc.GetIDBuyFactorForProductB(item.id);
-                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice, item.newBuyPrice, item.sellPrice, item.Totalcash, item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
+                    DGV2.Rows.Add(item.id, i, item.Name, item.Brand, item.Type, item.SellCount, item.BuyCount, item.Mojodi, item.buyPrice.ToString("#,0"), item.newBuyPrice.ToString("#,0"), item.sellPrice.ToString("#,0"), item.Totalcash.ToString("#,0"), item.RegisterDate, item.ProduceDate, item.ExpireDate, FactorCode, Cash, item.AgentName);
                 }
             }
         }

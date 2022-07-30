@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Custom-Icon-Design-Flatastic-4-Shopping-bag-blue.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Layout, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
@@ -60,6 +63,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="STOREForm\ChartsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="STOREForm\ChartsPanel.Designer.cs">
+      <DependentUpon>ChartsPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="STOREForm\CheckBankPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,10 +187,10 @@
     <Compile Include="CompleteForm\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\MainForm.cs">
+    <Compile Include="CompleteForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\MainForm.Designer.cs">
+    <Compile Include="CompleteForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -211,6 +221,9 @@
     <Compile Include="STOREForm\Store.Designer.cs">
       <DependentUpon>Store.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="STOREForm\ChartsPanel.resx">
+      <DependentUpon>ChartsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="STOREForm\CheckBankPanel.resx">
       <DependentUpon>CheckBankPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,7 +267,7 @@
     <EmbeddedResource Include="CompleteForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\MainForm.resx">
+    <EmbeddedResource Include="CompleteForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -709,6 +722,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Gakuseisean-Ivista-2-Misc-Upload-Database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Gakuseisean-Ivista-2-Misc-Download-Database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\Keys-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Custom-Icon-Design-Flatastic-4-Shopping-bag-blue.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

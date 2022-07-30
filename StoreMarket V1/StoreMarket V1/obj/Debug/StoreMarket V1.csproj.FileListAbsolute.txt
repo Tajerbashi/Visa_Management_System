@@ -21,8 +21,31 @@ C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\Sto
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.pdb
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ControlAccount.resources
 C:\Users\Tajerbashi\Desktop\Class\Source Code C#\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.LogFORM.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.exe.config
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.exe
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.pdb
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BLL.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar.Layout.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\XanderUI.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.dll
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.pdb
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.dll.config
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BLL.pdb
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.pdb
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.dll.config
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.xml
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.AssemblyReference.cache
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ChartsPanel.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.CheckBankPanel.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ReportationProduct.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.InventoryPanel.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.BuyFactorPanel.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.LogReports.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.FirstAdminPanel.resources
@@ -39,34 +62,12 @@ C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ManageForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.RecoveryForm.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.SplashScreen.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ProductPanelControl.resources
+C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.SellFactor.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.Store.resources
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.GenerateResource.cache
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.exe.licenses
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.CoreCompileInputs.cache
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.exe.config
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.exe
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\StoreMarket V1.pdb
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BLL.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar2.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\XanderUI.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.pdb
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BEE.dll.config
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\BLL.pdb
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar2.xml
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\EntityFramework.xml
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.pdb
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DAL.dll.config
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.csproj.CopyComplete
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.exe
 C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket V1.pdb
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.SellFactor.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\bin\Debug\DevComponents.DotNetBar.Layout.dll
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.InventoryPanel.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ProductPanelControl.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.CheckBankPanel.resources
-C:\Users\Tajerbashi\Desktop\C# Project\Store Market\StoreMarket V1\StoreMarket V1\obj\Debug\StoreMarket_V1.ReportationProduct.resources

@@ -503,22 +503,57 @@ namespace StoreMarket_V1
 
         private void DT1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-            DT1.CurrentRow.Selected = DT1.CurrentRow.Selected == true ? false : true;
-            ID = int.Parse(DT1.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+                {
+                    ID = int.Parse(DT1.SelectedCells[0].Value.ToString());
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+                }
+            }
+            catch
+            {
+            }
 
         }
 
         private void DT2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DT2.CurrentRow.Selected = DT2.CurrentRow.Selected == true ? false : true;
-            ID = int.Parse(DT2.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+                {
+                    ID = int.Parse(DT2.SelectedCells[0].Value.ToString());
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+                }
+            }
+            catch
+            {
+            }
         }
         
         private void DT3_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DT3.CurrentRow.Selected = DT3.CurrentRow.Selected == true ? false : true;
-            ID = int.Parse(DT3.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+                {
+                    ID = int.Parse(DT3.SelectedCells[0].Value.ToString());
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+                }
+            }
+            catch
+            {
+            }
         }
         
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)

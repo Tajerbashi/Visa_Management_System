@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackUpDAL.cs" />
     <Compile Include="DAL.cs" />
     <Compile Include="DBCLASS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

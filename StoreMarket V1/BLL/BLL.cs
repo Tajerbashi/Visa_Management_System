@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using BEE;
 using DAL;
 
@@ -11,6 +12,7 @@ namespace BLL
     public class BLLCode
     {
         DALCODE dlc = new DALCODE();
+
 
         #region OWNER
         public int PublicKey(String Key)
@@ -35,6 +37,17 @@ namespace BLL
         {
             return (dlc.SelectOwner(Name));
         }
+
+        public bool CheckAccessCodeAdminA(String Code, String UserName)
+        {
+            return (dlc.CheckAccessCodeAdminA(Code, UserName));
+        }
+        public bool CheckAccessCodeAdminB(String Code, String UserName)
+        {
+            return (dlc.CheckAccessCodeAdminB(Code, UserName));
+        }
+
+
         public void ChangeOwnerStatus(OWNER owner)
         {   // وضعیت مالک تغییر میدهد و غیر فعال میکند
             dlc.ChangeStatusOwner(owner);
@@ -1045,6 +1058,70 @@ namespace BLL
         {
             dlc.PassingTodayChecksB(ID);
         }
+        //  چارت 
+        public int GetProductsSellCountA(int ID)
+        {
+            return (dlc.GetProductsSellCountA(ID));
+        }
+        public int GetProductsSellCountB(int ID)
+        {
+            return (dlc.GetProductsSellCountB(ID));
+        }
+        public int GetProductsMojodiCountA(int ID)
+        {
+            return (dlc.GetProductsMojodiCountA(ID));
+        }
+        public int GetProductsMojodiCountB(int ID)
+        {
+            return (dlc.GetProductsMojodiCountB(ID));
+        }
+
+        public int GetAllSellCountA()
+        {
+            return (dlc.GetAllSellCountA());
+        }
+        public int GetAllSellCountB()
+        {
+            return (dlc.GetAllSellCountB());
+        }
+
+        public int GetAllBuyCountA()
+        {
+            return (dlc.GetAllBuyCountA());
+        }
+        public int GetAllBuyCountB()
+        {
+            return (dlc.GetAllBuyCountB());
+        }
+
+        public List<String> GetProductsNameA()
+        {
+            return (dlc.GetProductsNameA()).ToList();
+        }
+        public List<String> GetProductsNameB()
+        {
+            return (dlc.GetProductsNameB()).ToList();
+        }
+
+        public int GetAllBankiCashTypeA()
+        {
+            return (dlc.GetAllBankiCashTypeA());
+        }
+        public int GetAllBankiCashTypeB()
+        {
+            return (dlc.GetAllBankiCashTypeB());
+        }
+
+        public int GetAllMoneyCashTypeA()
+        {
+            return (dlc.GetAllMoneyCashTypeA());
+        }
+        public int GetAllMoneyCashTypeB()
+        {
+            return (dlc.GetAllMoneyCashTypeB());
+        }
+
+        #region Code
 
         //  گزارش گیری
 
@@ -1111,6 +1188,6 @@ namespace BLL
         {
             return (dlc.ShowLessMoneySellProductB()).ToList();
         }
-
+        #endregion
     }
 }

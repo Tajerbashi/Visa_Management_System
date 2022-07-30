@@ -77,5 +77,9 @@ namespace StoreMarket_V1
             this.Close();
         }
 
+        private void OKAYBTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

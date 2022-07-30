@@ -70,7 +70,7 @@ namespace StoreMarket_V1
                 }
                 else if (Product.Mojodi>0)
                 {
-                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice, 0, 000);
+                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice.ToString("#,0"), 0, 000);
                 }
                 else
                 {
@@ -79,14 +79,14 @@ namespace StoreMarket_V1
             }
             else
             {
-                AProduct Product = blc.GetProductA(ID);
+                BProduct Product = blc.GetProductB(ID);
                 if (Product == null)
                 {
                     ResultText2.Text = "محصول را انتخاب کنید";
                 }
                 else if(Product.Mojodi > 0)
                 {
-                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice, 0, 000);
+                    DGV2.Rows.Add(Product.id, counter2, Product.Name, Product.Type, Product.Brand, Product.sellPrice.ToString("#,0"), 0, 000);
                 }
                 else
                 {
@@ -216,12 +216,25 @@ namespace StoreMarket_V1
 
         private void Searchbtn_Click(object sender, EventArgs e)
         {
-            DGV1.Rows.Clear();
-            var DB = blc.GetProductsA().Where(c => c.Name.Contains(Search.Text)).OrderBy( i => i.ExpireDate);
-            foreach (var item in DB)
+            if (AdminNumber.Text=="1")
             {
-                DGV1.Rows.Add(item.id,counter1,item.Name,item.Type,item.Brand,item.ExpireDate,item.sellPrice,item.Mojodi);
-                counter1++;
+                DGV1.Rows.Clear();
+                var DB = blc.GetProductsA().Where(c => c.Name.Contains(Search.Text)).OrderBy(i => i.ExpireDate);
+                foreach (var item in DB)
+                {
+                    DGV1.Rows.Add(item.id, counter1, item.Name, item.Type, item.Brand, item.ExpireDate, item.sellPrice.ToString("#,0"), item.Mojodi);
+                    counter1++;
+                }
+            }
+            else
+            {
+                DGV1.Rows.Clear();
+                var DB = blc.GetProductsB().Where(c => c.Name.Contains(Search.Text)).OrderBy(i => i.ExpireDate);
+                foreach (var item in DB)
+                {
+                    DGV1.Rows.Add(item.id, counter1, item.Name, item.Type, item.Brand, item.ExpireDate, item.sellPrice.ToString("#,0"), item.Mojodi);
+                    counter1++;
+                }
             }
         }
 
@@ -262,20 +275,41 @@ namespace StoreMarket_V1
             }
             else
             {
-                ACustomer customer = new ACustomer();
-                customer.FullName = CustomerName.Text;
-                customer.Phone = Fun.ChangeToEnglishNumber(PhoneNumber.Text);
-                if (blc.CreateCustomerA(customer))
+                if (AdminNumber.Text=="1")
                 {
-                    //  موجود نیست و ثبت نام میشود
-                    ResultStatus.Text = "جدید بود و ثبت نام شد";
+                    ACustomer customer = new ACustomer();
+                    customer.FullName = CustomerName.Text;
+                    customer.Phone = Fun.ChangeToEnglishNumber(PhoneNumber.Text);
+                    if (blc.CreateCustomerA(customer))
+                    {
+                        //  موجود نیست و ثبت نام میشود
+                        ResultStatus.Text = "جدید بود و ثبت نام شد";
+                    }
+                    else
+                    {
+                        //  موجود است و آنرا بگیرد
+                        //ACustomer customerN = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text).FirstOrDefault();
+                        ResultStatus.Text = "مشتری از قبل ثبت شده است";
+                    }
                 }
                 else
                 {
-                    //  موجود است و آنرا بگیرد
-                    //ACustomer customerN = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text).FirstOrDefault();
-                    ResultStatus.Text = "مشتری از قبل ثبت شده است";
+                    BCustomer customer = new BCustomer();
+                    customer.FullName = CustomerName.Text;
+                    customer.Phone = Fun.ChangeToEnglishNumber(PhoneNumber.Text);
+                    if (blc.CreateCustomerB(customer))
+                    {
+                        //  موجود نیست و ثبت نام میشود
+                        ResultStatus.Text = "جدید بود و ثبت نام شد";
+                    }
+                    else
+                    {
+                        //  موجود است و آنرا بگیرد
+                        //ACustomer customerN = blc.GetCustomersA().Where(c => c.FullName == CustomerName.Text).FirstOrDefault();
+                        ResultStatus.Text = "مشتری از قبل ثبت شده است";
+                    }
                 }
+                
                 groupBox1.Enabled = false;
                 groupBox2.Enabled = true;
                 groupBox3.Enabled = true;
@@ -297,7 +331,6 @@ namespace StoreMarket_V1
             AcceptFactor.Enabled = false;
         }
 
-
         private void buttonX2_Click(object sender, EventArgs e)
         {
             Double Total = 0d;
@@ -305,7 +338,7 @@ namespace StoreMarket_V1
             {
                 Total += int.Parse(DGV2.Rows[i].Cells[7].Value.ToString());
             }
-            TotalPriceFactor.Text = Total.ToString();
+            TotalPriceFactor.Text = Total.ToString("#,0");
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)
@@ -326,52 +359,103 @@ namespace StoreMarket_V1
 
             }
         }
-
         private void AcceptFactor_Click(object sender, EventArgs e)
         {
             SaveFactor.Enabled = true;
-            ASellFactor Factor = new ASellFactor();
-            Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
-            Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
-            Factor.admin = blc.GetAdminsA().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
-
-
-            for (int i = 0; i < DGV2.RowCount; i++)
+            if (AdminNumber.Text=="1")
             {
-                int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
-                AProduct product = blc.GetProductA(IDN);
-                Factor.Products.Add(product);
+                ASellFactor Factor = new ASellFactor();
+                Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+                Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+                Factor.admin = blc.GetAdminsA().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
 
-                product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
-                product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
-                blc.SaveEditForBuyFactorProductA(product);
+
+                for (int i = 0; i < DGV2.RowCount; i++)
+                {
+                    int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
+                    AProduct product = blc.GetProductA(IDN);
+                    Factor.Products.Add(product);
+
+                    product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    blc.SaveEditForBuyFactorProductA(product);
+                }
+                blc.CreateSellFactorA(Factor);
             }
-            blc.CreateSellFactorA(Factor);
+            else
+            {
+                BSellFactor Factor = new BSellFactor();
+                Factor.FactorCode = int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text));
+                Factor.FactorNumber = int.Parse(Fun.ChangeToEnglishNumber(FactorNumber.Text));
+                Factor.admin = blc.GetAdminsB().Where(c => c.FullName == ADMINNAMESHOW.Text).FirstOrDefault();
+
+
+                for (int i = 0; i < DGV2.RowCount; i++)
+                {
+                    int IDN = int.Parse(DGV2.Rows[i].Cells[0].Value.ToString());
+                    BProduct product = blc.GetProductB(IDN);
+                    Factor.Products.Add(product);
+
+                    product.Mojodi -= int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    product.SellCount += int.Parse(DGV2.Rows[i].Cells[6].Value.ToString());
+                    blc.SaveEditForBuyFactorProductB(product);
+                }
+                blc.CreateSellFactorB(Factor);
+            }
+
+
         }
 
         private void SaveFactor_Click(object sender, EventArgs e)
         {
-            ASellFactor Factor = blc.GetSellFactorsA().Where(c => c.FactorCode == int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text))).FirstOrDefault();
-            ACustomer customer = blc.GetCustomerByPhoneA(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
-            Factor.Customer = customer;
-            customer.BuyCost += Int64.Parse(TotalPriceFactor.Text);
-            blc.SaveEditCustomerA(customer);
-            Factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
-            Factor.TotalPrice = Int64.Parse(TotalPriceFactor.Text);
-            Factor.CashType = R1.Checked ? true : false;    //  نقدی
-            blc.SaveLastChangesOnSellFacotrA(Factor);
-            NO1 = counter1 = 1;
-            NO2 = counter2 = 1;
-            DGV1.Rows.Clear();
-            DGV2.Rows.Clear();
-            GetFactorNumber();
-            GetFactorCode();
-            DayDate.Text = Fun.CLOCK();
-            SaveFactor.Enabled = false;
-            AcceptFactor.Enabled = false;
-            groupBox1.Enabled = true;
-            groupBox2.Enabled = false;
-            groupBox3.Enabled = false;
+            if (AdminNumber.Text=="1")
+            {
+                ASellFactor Factor = blc.GetSellFactorsA().Where(c => c.FactorCode == int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text))).FirstOrDefault();
+                ACustomer customer = blc.GetCustomerByPhoneA(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                Factor.Customer = customer;
+                customer.BuyCost += Convert.ToDouble(TotalPriceFactor.Text);
+                blc.SaveEditCustomerA(customer);
+                Factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                Factor.TotalPrice = Convert.ToDouble(TotalPriceFactor.Text);
+                Factor.CashType = R1.Checked ? true : false;    //  نقدی
+                blc.SaveLastChangesOnSellFacotrA(Factor);
+                NO1 = counter1 = 1;
+                NO2 = counter2 = 1;
+                DGV1.Rows.Clear();
+                DGV2.Rows.Clear();
+                GetFactorNumber();
+                GetFactorCode();
+                DayDate.Text = Fun.CLOCK();
+                SaveFactor.Enabled = false;
+                AcceptFactor.Enabled = false;
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = false;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                BSellFactor Factor = blc.GetSellFactorsB().Where(c => c.FactorCode == int.Parse(Fun.ChangeToEnglishNumber(FactorCode.Text))).FirstOrDefault();
+                BCustomer customer = blc.GetCustomerByPhoneB(Fun.ChangeToEnglishNumber(PhoneNumber.Text));
+                Factor.Customer = customer;
+                customer.BuyCost += Convert.ToDouble(TotalPriceFactor.Text);
+                blc.SaveEditCustomerB(customer);
+                Factor.RegisterDate = Fun.ChangeToEnglishNumber(DayDate.Text);
+                Factor.TotalPrice = Convert.ToDouble(TotalPriceFactor.Text);
+                Factor.CashType = R1.Checked ? true : false;    //  نقدی
+                blc.SaveLastChangesOnSellFacotrB(Factor);
+                NO1 = counter1 = 1;
+                NO2 = counter2 = 1;
+                DGV1.Rows.Clear();
+                DGV2.Rows.Clear();
+                GetFactorNumber();
+                GetFactorCode();
+                DayDate.Text = Fun.CLOCK();
+                SaveFactor.Enabled = false;
+                AcceptFactor.Enabled = false;
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = false;
+                groupBox3.Enabled = false;
+            }
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
@@ -405,19 +489,39 @@ namespace StoreMarket_V1
         {
             try
             {
-                AProduct product = blc.GetProductA(ID2);
-                if (product == null)
+                if (AdminNumber.Text=="1")
                 {
-                    ResultText2.Text = "محصول را انتخاب کنید";
-                }
-                else if (product.Mojodi >= Tehdad.Value)
-                {
-                    DGV2.Rows[NO2 - 1].Cells[6].Value = int.Parse(Tehdad.Value.ToString());
-                    DGV2.Rows[NO2 - 1].Cells[7].Value = int.Parse(Tehdad.Value.ToString()) * int.Parse(DGV2.Rows[NO2 - 1].Cells[5].Value.ToString());
+                    AProduct product = blc.GetProductA(ID2);
+                    if (product == null)
+                    {
+                        ResultText2.Text = "محصول را انتخاب کنید";
+                    }
+                    else if (product.Mojodi >= Tehdad.Value)
+                    {
+                        DGV2.Rows[NO2 - 1].Cells[6].Value = int.Parse(Tehdad.Value.ToString());
+                        DGV2.Rows[NO2 - 1].Cells[7].Value = int.Parse(Tehdad.Value.ToString()) * Convert.ToDouble(DGV2.Rows[NO2 - 1].Cells[5].Value.ToString());
+                    }
+                    else
+                    {
+                        ResultText2.Text = "موجودی در انبار کافی نیست";
+                    }
                 }
                 else
                 {
-                    ResultText2.Text = "موجودی در انبار کافی نیست";
+                    BProduct product = blc.GetProductB(ID2);
+                    if (product == null)
+                    {
+                        ResultText2.Text = "محصول را انتخاب کنید";
+                    }
+                    else if (product.Mojodi >= Tehdad.Value)
+                    {
+                        DGV2.Rows[NO2 - 1].Cells[6].Value = int.Parse(Tehdad.Value.ToString());
+                        DGV2.Rows[NO2 - 1].Cells[7].Value = int.Parse(Tehdad.Value.ToString()) * Convert.ToDouble(DGV2.Rows[NO2 - 1].Cells[5].Value.ToString());
+                    }
+                    else
+                    {
+                        ResultText2.Text = "موجودی در انبار کافی نیست";
+                    }
                 }
             }
             catch
@@ -431,7 +535,6 @@ namespace StoreMarket_V1
         {
             if (e.Button==MouseButtons.Right || e.Button==MouseButtons.Left)
             {
-                DGV1.CurrentRow.Selected = (DGV1.CurrentRow.Selected) ? false : true;
                 ID1 = int.Parse(DGV1.CurrentRow.Cells[0].Value.ToString());
                 NO1 = int.Parse(DGV1.CurrentRow.Cells[1].Value.ToString());
             }
@@ -440,10 +543,10 @@ namespace StoreMarket_V1
         {
             if (e.Button == MouseButtons.Right || e.Button == MouseButtons.Left)
             {
-                DGV2.CurrentRow.Selected = (DGV2.CurrentRow.Selected) ? false : true;
-                ID2 = int.Parse(DGV2.CurrentRow.Cells[0].Value.ToString());
-                NO2 = int.Parse(DGV2.CurrentRow.Cells[1].Value.ToString());
+                ID2 = int.Parse(DGV2.SelectedCells[0].Value.ToString());
+                NO2 = int.Parse(DGV2.SelectedCells[1].Value.ToString());
             }
         }
+    
     }
 }

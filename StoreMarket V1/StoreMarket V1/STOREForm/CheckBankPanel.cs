@@ -33,7 +33,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -43,7 +43,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -59,7 +59,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -69,7 +69,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -85,7 +85,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id,NO,item.CustomerName,item.BankName,item.CheckNumber,item.Price,item.SariNumber,item.PassDate,Status, item.Details);
+                    DGV.Rows.Add(item.id,NO,item.CustomerName,item.BankName,item.CheckNumber,item.Price.ToString("#,0"), item.SariNumber,item.PassDate,Status, item.Details);
                     NO++;
                 }
             }
@@ -95,7 +95,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -111,7 +111,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -121,7 +121,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -137,7 +137,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -147,7 +147,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -163,7 +163,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }
@@ -173,7 +173,7 @@ namespace StoreMarket_V1
                 foreach (var item in DB)
                 {
                     Status = (item.Status) ? "پاس شده" : "پاس نشده";
-                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price, item.SariNumber, item.PassDate, Status, item.Details);
+                    DGV.Rows.Add(item.id, NO, item.CustomerName, item.BankName, item.CheckNumber, item.Price.ToString("#,0"), item.SariNumber, item.PassDate, Status, item.Details);
                     NO++;
                 }
             }

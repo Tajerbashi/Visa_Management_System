@@ -132,6 +132,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccessCodeForm";
+            this.Load += new System.EventHandler(this.AccessCodeForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AccessCodeForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();

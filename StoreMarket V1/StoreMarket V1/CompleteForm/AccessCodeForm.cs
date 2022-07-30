@@ -19,7 +19,6 @@ namespace StoreMarket_V1
         }
 
         BLLCode blc = new BLLCode();
-
         private void button1_Click(object sender, EventArgs e)
         {
             bool OwnerKey=blc.OwnerKey(textBox1.Text);
@@ -47,6 +46,10 @@ namespace StoreMarket_V1
         private void AccessCodeForm_MouseDown(object sender, MouseEventArgs e)
         {
            
+        }
+
+        private void AccessCodeForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

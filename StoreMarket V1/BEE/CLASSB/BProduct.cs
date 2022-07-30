@@ -15,9 +15,9 @@ namespace BEE
         public String Name { get; set; }
         public String Type { get; set; }
         public String Brand { get; set; }
-        public int buyPrice { get; set; }
-        public int newBuyPrice { get; set; }
-        public int sellPrice { get; set; }
+        public double buyPrice { get; set; }
+        public double newBuyPrice { get; set; }
+        public double sellPrice { get; set; }
         public String RegisterDate { get; set; }
         public String ProduceDate { get; set; }
         public String ExpireDate { get; set; }
@@ -25,7 +25,7 @@ namespace BEE
         public int CashType { get; set; }
         public String Picture { get; set; }
         public String AgentName { get; set; }
-        public int Totalcash { get; set; } = 0;
+        public double Totalcash { get; set; } = 0;
         public bool DeleteStatus { get; set; } = false;
         public bool IsActive { get; set; } = true;
         public BBuyFactor bBuyFactor { get; set; }

@@ -42,6 +42,8 @@
             this.AdminNumber = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ResultStatus = new DevComponents.DotNetBar.LabelX();
+            this.R2 = new System.Windows.Forms.RadioButton();
+            this.R1 = new System.Windows.Forms.RadioButton();
             this.CustomerName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.Okay = new DevComponents.DotNetBar.ButtonX();
             this.ADMINNAMESHOW = new DevComponents.DotNetBar.LabelX();
@@ -72,8 +74,6 @@
             this.Deletebtn = new DevComponents.DotNetBar.ButtonX();
             this.Addbtn = new DevComponents.DotNetBar.ButtonX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.R2 = new System.Windows.Forms.RadioButton();
-            this.R1 = new System.Windows.Forms.RadioButton();
             this.ResultText2 = new DevComponents.DotNetBar.LabelX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.AddMojodi = new DevComponents.DotNetBar.ButtonX();
@@ -173,6 +173,28 @@
             this.ResultStatus.TabIndex = 14;
             this.ResultStatus.Text = "فاکتور فروش";
             this.ResultStatus.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // R2
+            // 
+            this.R2.AutoSize = true;
+            this.R2.Location = new System.Drawing.Point(111, 33);
+            this.R2.Name = "R2";
+            this.R2.Size = new System.Drawing.Size(54, 25);
+            this.R2.TabIndex = 22;
+            this.R2.TabStop = true;
+            this.R2.Text = "بانکی";
+            this.R2.UseVisualStyleBackColor = true;
+            // 
+            // R1
+            // 
+            this.R1.AutoSize = true;
+            this.R1.Location = new System.Drawing.Point(179, 33);
+            this.R1.Name = "R1";
+            this.R1.Size = new System.Drawing.Size(53, 25);
+            this.R1.TabIndex = 21;
+            this.R1.TabStop = true;
+            this.R1.Text = "نقدی";
+            this.R1.UseVisualStyleBackColor = true;
             // 
             // CustomerName
             // 
@@ -478,7 +500,7 @@
             this.DGV1.AllowUserToOrderColumns = true;
             this.DGV1.AllowUserToResizeRows = false;
             this.DGV1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(24)))), ((int)(((byte)(154)))));
-            this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(0)))), ((int)(((byte)(70)))));
@@ -526,6 +548,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("MRT_Mitra_3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             this.DGV1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DGV1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV1.Size = new System.Drawing.Size(652, 125);
             this.DGV1.TabIndex = 17;
             this.DGV1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV1_CellMouseClick);
@@ -659,28 +682,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "فاکتور فروش :";
             // 
-            // R2
-            // 
-            this.R2.AutoSize = true;
-            this.R2.Location = new System.Drawing.Point(111, 33);
-            this.R2.Name = "R2";
-            this.R2.Size = new System.Drawing.Size(54, 25);
-            this.R2.TabIndex = 22;
-            this.R2.TabStop = true;
-            this.R2.Text = "بانکی";
-            this.R2.UseVisualStyleBackColor = true;
-            // 
-            // R1
-            // 
-            this.R1.AutoSize = true;
-            this.R1.Location = new System.Drawing.Point(179, 33);
-            this.R1.Name = "R1";
-            this.R1.Size = new System.Drawing.Size(53, 25);
-            this.R1.TabIndex = 21;
-            this.R1.TabStop = true;
-            this.R1.Text = "نقدی";
-            this.R1.UseVisualStyleBackColor = true;
-            // 
             // ResultText2
             // 
             // 
@@ -787,7 +788,7 @@
             this.DGV2.AllowUserToOrderColumns = true;
             this.DGV2.AllowUserToResizeRows = false;
             this.DGV2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(24)))), ((int)(((byte)(154)))));
-            this.DGV2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGV2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(0)))), ((int)(((byte)(70)))));
@@ -835,6 +836,7 @@
             dataGridViewCellStyle10.Font = new System.Drawing.Font("MRT_Mitra_3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
             this.DGV2.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.DGV2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV2.Size = new System.Drawing.Size(652, 218);
             this.DGV2.TabIndex = 18;
             this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick);

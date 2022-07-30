@@ -70,6 +70,35 @@ namespace DAL
             return "0";
         }
 
+        public bool CheckAccessCodeAdminA(String Code,String UserName)
+        {
+            foreach (var item in db.aAdmins)
+            {
+                if (item.Username==UserName && !item.DeleteStatus && item.IsActive && item.AccessControl)
+                {
+                    if (item.accessCode==Code)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool CheckAccessCodeAdminB(String Code, String UserName)
+        {
+            foreach (var item in db.bAdmins)
+            {
+                if (item.Username == UserName && !item.DeleteStatus && item.IsActive && item.AccessControl)
+                {
+                    if (item.accessCode == Code)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public List<AAdmin> ShowAdminsA()
         {
             return (from i in db.aAdmins where !i.DeleteStatus && i.IsActive select i).ToList();
@@ -467,11 +496,11 @@ namespace DAL
         // Product
         public List<AProduct> GetProductsA()
         {
-            return (from i in db.aProducts select i).ToList();
+            return (from i in db.aProducts where !i.DeleteStatus select i).ToList();
         }
         public List<BProduct> GetProductsB()
         {
-            return (from i in db.bProducts select i).ToList();
+            return (from i in db.bProducts where !i.DeleteStatus select i).ToList();
         }
         //  Control Product
 
@@ -560,6 +589,70 @@ namespace DAL
         {
             return (from i in db.bProducts where (i.Name).Contains(Word) || (i.Type).Contains(Word) || (i.AgentName).Contains(Word) && !i.DeleteStatus select i).ToList();
         }
+        // گزارشات
+
+        public int GetProductsSellCountA(int ID)
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus && i.id==ID) select i.SellCount).FirstOrDefault();
+        }
+        public int GetProductsSellCountB(int ID)
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus && i.id == ID) select i.SellCount).FirstOrDefault();
+        }
+        public int GetProductsMojodiCountA(int ID)
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus && i.id == ID) select i.Mojodi).FirstOrDefault();
+        }
+        public int GetProductsMojodiCountB(int ID)
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus && i.id == ID) select i.Mojodi).FirstOrDefault();
+        }
+
+        public List<String> GetProductsNameA()
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus) select i.Name).ToList();
+        }
+        public List<String> GetProductsNameB()
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus) select i.Name).ToList();
+        }
+
+        public int GetAllBankiCashTypeA()
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus && i.CashType == 2) select i).Count();
+        }
+        public int GetAllBankiCashTypeB()
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus && i.CashType == 2) select i).Count();
+        }
+
+        public int GetAllMoneyCashTypeA()
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus && i.CashType == 1) select i).Count();
+        }
+        public int GetAllMoneyCashTypeB()
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus && i.CashType == 1) select i).Count();
+        }
+
+        public int GetAllSellCountA()
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus) select i.SellCount).Sum();
+        }
+        public int GetAllSellCountB()
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus) select i.SellCount).Sum();
+        }
+
+        public int GetAllBuyCountA()
+        {
+            return (from i in db.aProducts where (!i.DeleteStatus) select i.BuyCount).Sum();
+        }
+        public int GetAllBuyCountB()
+        {
+            return (from i in db.bProducts where (!i.DeleteStatus) select i.BuyCount).Sum();
+        }
+
 
         public void CreateProductA(AProduct product)
         {
@@ -797,7 +890,6 @@ namespace DAL
                     return item.Password;
                 }
             }
-
             return "0";
         }
 
@@ -1360,7 +1452,7 @@ namespace DAL
         {
             foreach (var item in db.aCustomers)
             {
-                if (item.id != ID && item.FullName == customer.FullName)
+                if (item.id != ID && item.FullName == customer.FullName && item.Phone == customer.Phone)
                 {
                     return false;
                 }
@@ -1376,7 +1468,7 @@ namespace DAL
         {
             foreach (var item in db.bCustomers)
             {
-                if (item.id != ID && item.FullName == customer.FullName)
+                if (item.id != ID && item.FullName == customer.FullName && item.Phone==customer.Phone)
                 {
                     return false;
                 }

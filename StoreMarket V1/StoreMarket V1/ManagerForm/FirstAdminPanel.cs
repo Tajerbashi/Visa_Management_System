@@ -183,6 +183,7 @@ namespace StoreMarket_V1
                         {
                             ResultS.Text = "ادمین جدید است";
                             groupBox2.Enabled = true;
+                            groupBox1.Enabled = false;
                         }
                     }
                     else
@@ -196,6 +197,7 @@ namespace StoreMarket_V1
                         {
                             ResultS.Text = "ادمین جدید است";
                             groupBox2.Enabled = true;
+                            groupBox1.Enabled = false;
                         }
                     }
                 }

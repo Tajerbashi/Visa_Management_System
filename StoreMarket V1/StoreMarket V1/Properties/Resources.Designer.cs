@@ -413,6 +413,16 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Decrease1 {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Decrease1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Increase {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Increase", resourceCulture);
@@ -426,6 +436,26 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Male_user_info {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Male-user-info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Male_user_info1 {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Male-user-info1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_4_Male_user_info2 {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-4-Male-user-info2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -843,6 +873,26 @@ namespace StoreMarket_V1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gakuseisean_Ivista_2_Misc_Download_Database {
+            get {
+                object obj = ResourceManager.GetObject("Gakuseisean-Ivista-2-Misc-Download-Database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gakuseisean_Ivista_2_Misc_Upload_Database {
+            get {
+                object obj = ResourceManager.GetObject("Gakuseisean-Ivista-2-Misc-Upload-Database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gpritiranjan_Simple_Christmas_Christmas_date {
             get {
                 object obj = ResourceManager.GetObject("Gpritiranjan-Simple-Christmas-Christmas-date", resourceCulture);
@@ -1036,6 +1086,16 @@ namespace StoreMarket_V1.Properties {
         internal static System.Drawing.Bitmap keyring_icon3 {
             get {
                 object obj = ResourceManager.GetObject("keyring-icon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Keys_icon {
+            get {
+                object obj = ResourceManager.GetObject("Keys-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
