@@ -9,6 +9,7 @@ namespace StoreMarket_V1
 {
     public class Functions
     {
+
         public string GetPersianDate(DateTime date)
         {
             System.Globalization.PersianCalendar jc = new System.Globalization.PersianCalendar();

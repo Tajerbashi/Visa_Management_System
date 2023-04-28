@@ -68,11 +68,11 @@
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("MRT_Mitra_3", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.title.ForeColor = System.Drawing.Color.White;
             this.title.Location = new System.Drawing.Point(42, 10);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(37, 18);
+            this.title.Size = new System.Drawing.Size(45, 15);
             this.title.TabIndex = 5;
             this.title.Text = "اطلاعیه";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,12 +146,12 @@
             // 
             this.Subject.AutoSize = true;
             this.Subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Subject.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Subject.ForeColor = System.Drawing.Color.White;
             this.Subject.Location = new System.Drawing.Point(190, 64);
             this.Subject.Name = "Subject";
             this.Subject.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Subject.Size = new System.Drawing.Size(148, 24);
+            this.Subject.Size = new System.Drawing.Size(169, 20);
             this.Subject.TabIndex = 6;
             this.Subject.Text = "نوع تغییرات انتخاب کنید؟\r\n";
             this.Subject.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,10 +159,10 @@
             // RC1
             // 
             this.RC1.AutoSize = true;
-            this.RC1.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.RC1.Location = new System.Drawing.Point(129, 91);
             this.RC1.Name = "RC1";
-            this.RC1.Size = new System.Drawing.Size(211, 28);
+            this.RC1.Size = new System.Drawing.Size(228, 24);
             this.RC1.TabIndex = 8;
             this.RC1.TabStop = true;
             this.RC1.Text = "ویرایش نوشتاری اطلاعات دتابس";
@@ -172,10 +172,10 @@
             // RC2
             // 
             this.RC2.AutoSize = true;
-            this.RC2.Font = new System.Drawing.Font("MRT_Mitra_3", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.RC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.RC2.Location = new System.Drawing.Point(150, 116);
             this.RC2.Name = "RC2";
-            this.RC2.Size = new System.Drawing.Size(190, 28);
+            this.RC2.Size = new System.Drawing.Size(202, 24);
             this.RC2.TabIndex = 9;
             this.RC2.TabStop = true;
             this.RC2.Text = "ویرایش کامل اطلاعات دتابس";
@@ -228,7 +228,7 @@
             // 
             // OKAYBTN
             // 
-            this.OKAYBTN.BackColor = System.Drawing.Color.DarkOrchid;
+            this.OKAYBTN.BackColor = System.Drawing.Color.Indigo;
             this.OKAYBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OKAYBTN.Font = new System.Drawing.Font("MRT_AridiNaskh Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.OKAYBTN.ForeColor = System.Drawing.Color.Thistle;
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(191)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(60)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(378, 221);
             this.Controls.Add(this.OKAYBTN);
             this.Controls.Add(this.tick);
