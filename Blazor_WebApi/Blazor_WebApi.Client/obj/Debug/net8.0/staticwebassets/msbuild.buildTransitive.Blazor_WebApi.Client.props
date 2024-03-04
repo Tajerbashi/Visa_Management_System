@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Blazor_WebApi.Client.props" />
+</Project>

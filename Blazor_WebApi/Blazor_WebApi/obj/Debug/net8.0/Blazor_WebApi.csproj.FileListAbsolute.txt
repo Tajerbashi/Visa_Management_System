@@ -1,0 +1,7 @@
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.csproj.AssemblyReference.cache
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.AssemblyInfoInputs.cache
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.AssemblyInfo.cs
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi\obj\Debug\net8.0\Blazor_WebApi.sourcelink.json
