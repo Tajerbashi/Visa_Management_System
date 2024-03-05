@@ -492,6 +492,54 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "Blazor_Application_Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Blazor_Domain_Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Blazor_Application_Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blazor_Application_Library.dll": {}
+        }
+      },
+      "Blazor_Domain_Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Blazor_Domain_Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blazor_Domain_Library.dll": {}
+        }
+      },
+      "Blazor_Infrastructure_Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Blazor_Application_Library": "1.0.0",
+          "Blazor_Domain_Library": "1.0.0",
+          "Blazor_Persistance_Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Blazor_Infrastructure_Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blazor_Infrastructure_Library.dll": {}
+        }
+      },
+      "Blazor_Persistance_Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Blazor_Persistance_Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blazor_Persistance_Library.dll": {}
+        }
+      },
       "Blazor_WebApi.Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1316,6 +1364,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Blazor_Application_Library/1.0.0": {
+      "type": "project",
+      "path": "../../Blazor_Application_Library/Blazor_Application_Library.csproj",
+      "msbuildProject": "../../Blazor_Application_Library/Blazor_Application_Library.csproj"
+    },
+    "Blazor_Domain_Library/1.0.0": {
+      "type": "project",
+      "path": "../../Blazor_Domain_Library/Blazor_Domain_Library.csproj",
+      "msbuildProject": "../../Blazor_Domain_Library/Blazor_Domain_Library.csproj"
+    },
+    "Blazor_Infrastructure_Library/1.0.0": {
+      "type": "project",
+      "path": "../../Blazor_Infrastructure_Library/Blazor_Infrastructure_Library.csproj",
+      "msbuildProject": "../../Blazor_Infrastructure_Library/Blazor_Infrastructure_Library.csproj"
+    },
+    "Blazor_Persistance_Library/1.0.0": {
+      "type": "project",
+      "path": "../../Blazor_Persistance_Library/Blazor_Persistance_Library.csproj",
+      "msbuildProject": "../../Blazor_Persistance_Library/Blazor_Persistance_Library.csproj"
+    },
     "Blazor_WebApi.Client/1.0.0": {
       "type": "project",
       "path": "../Blazor_WebApi.Client/Blazor_WebApi.Client.csproj",
@@ -1324,6 +1392,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Blazor_Application_Library >= 1.0.0",
+      "Blazor_Infrastructure_Library >= 1.0.0",
       "Blazor_WebApi.Client >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 8.0.2"
     ]
@@ -1361,6 +1431,12 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_Application_Library\\Blazor_Application_Library.csproj": {
+              "projectPath": "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_Application_Library\\Blazor_Application_Library.csproj"
+            },
+            "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_Infrastructure_Library\\Blazor_Infrastructure_Library.csproj": {
+              "projectPath": "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_Infrastructure_Library\\Blazor_Infrastructure_Library.csproj"
+            },
             "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_WebApi\\Blazor_WebApi.Client\\Blazor_WebApi.Client.csproj": {
               "projectPath": "D:\\Visual Studio\\Solutions\\Git KTajerbashi\\Blazor_DDD\\Blazor_WebApi\\Blazor_WebApi.Client\\Blazor_WebApi.Client.csproj"
             }
