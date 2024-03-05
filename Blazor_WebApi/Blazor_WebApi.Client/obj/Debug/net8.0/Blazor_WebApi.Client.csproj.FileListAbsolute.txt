@@ -1022,8 +1022,9 @@ D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebAp
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\compressed\fkh8lb2okw.gz
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\compressed\8f0skfy8ui.gz
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\compressed\fveyapdap7.gz
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\Blazor_W.25D05B5F.Up2Date
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\Blazor_WebApi.Client.dll
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\refint\Blazor_WebApi.Client.dll
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\Blazor_WebApi.Client.pdb
 D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\ref\Blazor_WebApi.Client.dll
-D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\obj\Debug\net8.0\Blazor_WebApi.Client.csproj.CopyComplete
+D:\Visual Studio\Solutions\Git KTajerbashi\Blazor_DDD\Blazor_WebApi\Blazor_WebApi.Client\bin\Debug\net8.0\libman.json
