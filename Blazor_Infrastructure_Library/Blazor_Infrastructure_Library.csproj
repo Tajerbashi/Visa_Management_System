@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Blazor_Application_Library\Blazor_Application_Library.csproj" />
     <ProjectReference Include="..\Blazor_Domain_Library\Blazor_Domain_Library.csproj" />
     <ProjectReference Include="..\Blazor_Persistance_Library\Blazor_Persistance_Library.csproj" />
