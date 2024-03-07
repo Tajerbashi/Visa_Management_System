@@ -10,6 +10,7 @@
     <ProjectReference Include="..\..\Blazor_Application_Library\Blazor_Application_Library.csproj" />
     <ProjectReference Include="..\..\Blazor_Infrastructure_Library\Blazor_Infrastructure_Library.csproj" />
     <ProjectReference Include="..\Blazor_WebApi.Client\Blazor_WebApi.Client.csproj" />
+    <PackageReference Include="bootstrap" Version="5.3.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.21.121" />

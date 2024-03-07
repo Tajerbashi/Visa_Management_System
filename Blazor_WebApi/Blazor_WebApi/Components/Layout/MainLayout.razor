@@ -1,32 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
+<style>
+    #main-page{
+        margin:0;
+        padding:0;
+    }
+</style>
 
 
-
-<div dir="rtl" class="page">
+<div dir="rtl" id="main-page" class="container-fluid page">
     <div class="sidebar">
         <NavMenu />
     </div>
-</div>
-@* <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
+    <div class="row">
         <article class="content px-4">
             @Body
         </article>
-    </main>
+        <div id="blazor-error-ui">
+            An unhandled error has occurred.
+            <a href="" class="reload">Reload</a>
+            <a class="dismiss">🗙</a>
+        </div>
+    </div>
 </div>
-
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
- *@

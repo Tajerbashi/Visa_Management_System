@@ -143,6 +143,11 @@
         "scss/_variables-dark.scss",
         "scss/_variables.scss"
       ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "bootstrap-icons@1.11.3",
+      "destination": "wwwroot/lib/bootstrap-icons/"
     }
   ]
 }

@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark d-flex justify-content-center">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Blazor_WebApi</a>
+    <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="">مدیریت ویزا</a>
     </div>
 </div>
 
@@ -9,44 +9,75 @@
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            <NavLink class="nav-link" href="profile">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-person-circle fon fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">پروفایل</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.All">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-house-door-fill-nav-menu fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">داشبورد</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="visa-form">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-plus-square-fill-nav-menu fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">ثبت فورم</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="following">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-bricks fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">پیگیری درخواست</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="cartable">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-calendar-check-fill fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">کارتابل درخواست</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="status">
+                <div class="d-flex flex-row justify-content-center">
+
+                    <span class="bi bi-check-circle fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">تعیین وضعیت</span>
+                </div>
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="managment">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-gear-wide-connected fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">مدیریت</span>
+                </div>
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="reports">
+                <div class="d-flex flex-row justify-content-center">
+                    <span class="bi bi-clipboard2-data fs-4" aria-hidden="true"></span>
+                    <span class="mx-3 fs-5" aria-hidden="true">گزارشات</span>
+                </div>
             </NavLink>
         </div>
 

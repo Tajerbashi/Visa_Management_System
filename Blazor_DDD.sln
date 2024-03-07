@@ -23,9 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Infrastructure_Libra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Persistance_Library_Test", "Blazor_Persistance_Library_Test\Blazor_Persistance_Library_Test.csproj", "{360696AA-0344-4A98-A282-053B16356FC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi\Blazor_WebApi.csproj", "{B72AFE53-9FE9-4BB0-80CE-11FAEE42EFBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi\Blazor_WebApi.csproj", "{B72AFE53-9FE9-4BB0-80CE-11FAEE42EFBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_WebApi.Client", "Blazor_WebApi\Blazor_WebApi.Client\Blazor_WebApi.Client.csproj", "{16F701F4-C25F-4363-97E1-B11F30962413}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi.Client", "Blazor_WebApi\Blazor_WebApi.Client\Blazor_WebApi.Client.csproj", "{16F701F4-C25F-4363-97E1-B11F30962413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
