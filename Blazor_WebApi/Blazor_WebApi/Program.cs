@@ -1,5 +1,4 @@
 using Blazor_Infrastructure_Library.DatabaseContext;
-using Blazor_WebApi.Components;
 using Blazor_WebApi.Middleware;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,7 +37,7 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 //app.UseMiddleware<ExceptionHandler>();  // Type 1
 //app.UseRestoreDataHandler();    // Type 2
-app.MapRazorComponents<App>()
+app.MapRazorComponents<Blazor_WebApi.Components.App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(Blazor_WebApi.Client._Imports).Assembly);
