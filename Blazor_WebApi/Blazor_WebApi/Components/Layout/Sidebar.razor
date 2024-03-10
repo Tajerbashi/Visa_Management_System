@@ -1,0 +1,97 @@
+﻿@rendermode InteractiveAuto
+<div class="sidebar">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="javascript:void(0)" class="simple-text logo-mini">
+                TK
+            </a>
+            <a href="javascript:void(0)" class="simple-text logo-normal">
+                Tajerbashi
+            </a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-chart-pie-36"></i>
+                    <p>ثبت فرم</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-atom"></i>
+                    <p>ثبت درخواست</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-pin"></i>
+                    <p>نمایش اطلاعات</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-bell-55"></i>
+                    <p>گزارشات</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>پیگیری</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-puzzle-10"></i>
+                    <p>اطلاعات</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-align-center"></i>
+                    <p>کنترل</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-world"></i>
+                    <p>مدیریت</p>
+                </a>
+            </li>
+            <li class="nav-item-tk">
+                <a href="#">
+                    <i class="tim-icons icon-spaceship"></i>
+                    <p>تنظیمات</p>
+                </a>
+            </li>
+            @* <li class="nav-item-tk">
+                <a href="#" @onclick="Selected">
+                    <i class="tim-icons icon-spaceship"></i>
+                    <p>@Name</p>
+                </a>
+            </li> *@
+        </ul>
+        <button class="btn btn-primary" @onclick="IncrementCount">Click me (@currentCount)</button>
+    </div>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    // int i = 0;
+    // string Name = "";
+    // private void Selected()
+    // {
+    //     i++;
+    //     Name = i.ToString();
+    // }
+    private void Selected()
+    {
+        
+    }
+    
+}
