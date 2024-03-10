@@ -1,59 +1,211 @@
 ﻿@inherits LayoutComponentBase
 
-<style>
-    #main-page {
-        margin: 0;
-        padding: 0;
-    }
-</style>
-
-
-<div dir="rtl" id="main-page" class="container-fluid page">
+<div class="wrapper">
     <div class="sidebar">
-        <NavMenu />
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="javascript:void(0)" class="simple-text logo-mini">
+                    TK
+                </a>
+                <a href="javascript:void(0)" class="simple-text logo-normal">
+                    Tajerbashi
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>ثبت فرم</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-atom"></i>
+                        <p>ثبت درخواست</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-pin"></i>
+                        <p>نمایش اطلاعات</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-bell-55"></i>
+                        <p>گزارشات</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-single-02"></i>
+                        <p>پیگیری</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-puzzle-10"></i>
+                        <p>اطلاعات</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-align-center"></i>
+                        <p>کنترل</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-world"></i>
+                        <p>مدیریت</p>
+                    </a>
+                </li>
+                <li class="nav-item-tk">
+                    <a href="#">
+                        <i class="tim-icons icon-spaceship"></i>
+                        <p>تنظیمات</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="row">
-
-        <div class="bg-primary">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <div class="navbar-toggle d-inline">
+                        <button type="button" class="navbar-toggler">
+                            <span class="navbar-toggler-bar bar1"></span>
+                            <span class="navbar-toggler-bar bar2"></span>
+                            <span class="navbar-toggler-bar bar3"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand" href="javascript:void(0)">داشبورد</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav  mr-auto">
+                        <li class="search-bar input-group">
+                            <button class="btn btn-link" id="search-button" data-toggle="modal"
+                                    data-target="#searchModal">
+                                <i class="tim-icons icon-zoom-split"></i>
+                                <span class="d-lg-none d-md-block">جستجو</span>
+                            </button>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <div class="notification d-none d-lg-block d-xl-block"></div>
+                                <i class="tim-icons icon-sound-wave"></i>
+                                <p class="d-lg-none">
+                                    اعلان
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
+                                <li class="nav-link"><a href="#" class="nav-item dropdown-item">ایمیل</a></li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">پیام های دریافتی</a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">دوستان</a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">اعلان های دیگر</a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">ناشناس</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <div class="photo">
+                                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                                </div>
+                                <b class="caret d-none d-lg-block d-xl-block"></b>
+                                <p class="d-lg-none">
+                                    خروج
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">حساب کاربری</a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)"
+                                       class="nav-item dropdown-item">تنظیمات</a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li class="nav-link">
+                                    <a href="javascript:void(0)" class="nav-item dropdown-item">
+                                        خروج
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="separator d-lg-none"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
+             aria-labelledby="searchModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="جستجو ...">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="tim-icons icon-simple-remove"></i>
+                        </button>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
-        <article class="content px-4">
+        <!-- End Navbar -->
+        <div class="content">
             @Body
-        </article>
+        </div>
+
     </div>
 </div>
+
+<div class="fixed-plugin fixed-plugin-tk">
+    <div class="dropdown show-dropdown">
+        <a href="#" data-toggle="dropdown">
+            <i class="fa fa-cog fa-2x"> </i>
+        </a>
+        <ul class="dropdown-menu">
+            <li class="adjustments-line">
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors text-center">
+                        <span class="badge filter badge-primary active" data-color="primary"></span>
+                        <span class="badge filter badge-info" data-color="blue"></span>
+                        <span class="badge filter badge-success" data-color="green"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li class="adjustments-line text-center color-change d-flex flex-row justify-content-center">
+                <span class="mx-1">
+                    <span class="color-label">روشن</span>
+                    <span class="badge light-badge mr-2"></span>
+                </span>
+                <span class="mx-1">
+                    <span class="badge dark-badge ml-2"></span>
+                    <span class="color-label">تاریک</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+

@@ -29,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi.Client", "Bla
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalApi", "ExternalApi", "{79655161-8259-4888-B4C3-E5F8C4752CA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Service_GEN", "Client_Service_GEN\Client_Service_GEN.csproj", "{69C6B32E-8A0E-4EED-9A64-1E418BCDE88B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client_Service_GEN", "Client_Service_GEN\Client_Service_GEN.csproj", "{69C6B32E-8A0E-4EED-9A64-1E418BCDE88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity_External", "Identity_External\Identity_External.csproj", "{735579DD-0103-4F33-9DC7-D949C5553001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity_External", "Identity_External\Identity_External.csproj", "{735579DD-0103-4F33-9DC7-D949C5553001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
