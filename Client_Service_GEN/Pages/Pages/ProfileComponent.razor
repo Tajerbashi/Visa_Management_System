@@ -1,0 +1,29 @@
+﻿@page "/profile"
+@using Client_Service_GEN.Models
+@using Client_Service_GEN.Pages.Components
+@using Client_Service_GEN.Repositories
+
+@inject IUserRepository userService;
+
+@if (DataList.Data == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="container d-flex flex-row flex-wrap justify-content-around">
+
+        @foreach (var item in DataList.Data)
+        {
+            <UserInfo model="@item" />
+        }
+    </div>
+}
+
+@code {
+    ResultModel<List<UserModel>> DataList = new ResultModel<List<UserModel>>();
+    protected override async Task OnInitializedAsync()
+    {
+        DataList = userService.GetAllUsers();
+    }
+}

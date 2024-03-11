@@ -1,0 +1,23 @@
+﻿@using Client_Service_GEN.Models
+
+<div class="card bg-warning bg-gradient shadow border-dark mb-3 text-center justify-content-center mx-2" 
+style="width: 20rem;">
+    <img class="card-img-top" src="~/Files/Download/@Model.Picture" alt="Card image cap">
+    <div class="card-header">@Model.Family</div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Email</p>
+        <p class="card-text">@Model.Password</p>
+    </div>
+    <div class="card-footer">
+        <a href="#" class="btn btn-success shadow " >ورود</a>
+        <a href="#" class="btn btn-primary shadow " >بازنگری</a>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public UserModel Model { get; set; }
+
+}

@@ -6,10 +6,13 @@
     <div id="main" class="">
         <main>
             <div class="top-row px-4">
-                <Navbar Name="کامران تاجرباشی" />
-                <a href="#" target="_blank">پروفایل</a>
-                <a href="#" target="_blank">اعلان</a>
-                <button class="@signStyle" @onclick="SignLog">@Text</button>
+                <NavLink href="/profile">
+                    <Navbar Name="کامران تاجرباشی" RoleName="ادمین" />
+                </NavLink>
+                <NavLink href="/login" >
+                    <span class="bi bi-house-door-fill-nav-menu mx-1" aria-hidden="true"></span>
+                    <button class="@signStyle" @onclick="SignLog">@Text</button>
+                </NavLink>
             </div>
 
             <article class="content p-4">
@@ -21,7 +24,7 @@
 
 @code {
     bool sw=true;
-    string Text = "خروج";
+    string Text = "ورود";
     string signStyle = "btn btn-primary";
     private void SignLog()
     {
