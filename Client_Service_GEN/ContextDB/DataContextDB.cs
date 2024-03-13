@@ -16,7 +16,7 @@ namespace Client_Service_GEN.ContextDB
             var result = new List<UserModel>();
             for (int i = 1; i <= 10; i++)
             {
-                result.Add(new UserModel { ID = i, Name = $"Client Name {i}", Family = $"Client Family {i}", Email = $"ClientEmail_{i}@mail.com", Password = $"@@@@{i}@@@@" ,Picture=$"a ({i}).jpg" });
+                result.Add(new UserModel { ID = i, Name = $"Client Name {i}", Family = $"Client Family {i}", Email = $"ClientEmail_{i}@mail.com", Password = $"@@@@{i}@@@@" ,Picture=$"B ({i}).jpg" });
             }
             return result;
         }

@@ -17,8 +17,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Files\Download\" />
-    <Folder Include="Files\Upload\" />
+    <None Include="wwwroot\Files\Download\A %281%29.png" />
+    <None Include="wwwroot\Files\Download\A %282%29.jpg" />
+    <None Include="wwwroot\Files\Download\A %283%29.jpg" />
+    <None Include="wwwroot\Files\Download\A %284%29.jpg" />
+    <None Include="wwwroot\Files\Download\A %285%29.jpg" />
+    <None Include="wwwroot\Files\Download\A %287%29.jpg" />
+    <None Include="wwwroot\Files\Download\A %289%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %281%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %282%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %283%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %284%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %285%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %286%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %287%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %288%29.jpg" />
+    <None Include="wwwroot\Files\Upload\B %289%29.jpg" />
   </ItemGroup>
 
 </Project>

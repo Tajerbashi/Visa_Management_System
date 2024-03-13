@@ -2,7 +2,7 @@
 
 <div class="card bg-warning bg-gradient shadow border-dark mb-3 text-center justify-content-center mx-2" 
 style="width: 20rem;">
-    <img class="card-img-top" src="~/Files/Download/@Model.Picture" alt="Card image cap">
+    <img style="height:200px;" class="card-img-top" src="./Files/Upload/@Model.Picture" alt="Card image cap">
     <div class="card-header">@Model.Family</div>
     <div class="card-body">
         <h5 class="card-title">@Model.Name</h5>
@@ -10,8 +10,11 @@ style="width: 20rem;">
         <p class="card-text">@Model.Password</p>
     </div>
     <div class="card-footer">
-        <a href="#" class="btn btn-success shadow " >ورود</a>
-        <a href="#" class="btn btn-primary shadow " >بازنگری</a>
+        <a href="/user/@Model.ID" class="btn btn-success shadow ">ورود</a>
+        <button @onclick="args => ShowModal(Model)" class="btn btn-primary shadow ">بازنگری</button>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary shadow ">@name</button>
     </div>
 </div>
 
@@ -20,4 +23,9 @@ style="width: 20rem;">
     [Parameter]
     public UserModel Model { get; set; }
 
+    string name = "";
+    private void ShowModal(UserModel model)
+    {
+        name = model.Name;
+    }
 }
