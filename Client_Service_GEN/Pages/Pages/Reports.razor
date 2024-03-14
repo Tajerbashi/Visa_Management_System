@@ -1,8 +1,9 @@
 ﻿@page "/reports"
+@using Client_Service_GEN.Bases.Model
 @using Client_Service_GEN.Models
 @using Client_Service_GEN.Repositories
 
-@inject IUserRepository userService;
+@inject IPersonRepository userService;
 
 <PageTitle>گزارشات</PageTitle>
 
@@ -46,10 +47,10 @@ else
 }
 
 @code {
-    ResultModel<List<UserModel>> DataList = new ResultModel<List<UserModel>>();
+    Result<List<Person>> DataList = new Result<List<Person>>();
     protected override async Task OnInitializedAsync()
     {
-        DataList = userService.GetAllUsers();
+        DataList.Data = userService.GetAll().ToList();
     }
 
 }

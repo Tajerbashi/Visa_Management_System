@@ -2,7 +2,7 @@
 @using Client_Service_GEN.Models
 @using Client_Service_GEN.Repositories
 
-@inject IUserRepository _userService;
+@inject IPersonRepository _userService;
 
 @if (Model == null)
 {
@@ -49,7 +49,7 @@ else
 }
 
 @code {
-    public UserModel Model { get; set; }
+    public Person Model { get; set; }
 
     [Parameter]
     public string ID { get; set; }

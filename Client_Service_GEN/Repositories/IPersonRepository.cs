@@ -3,8 +3,7 @@ using Client_Service_GEN.Models;
 
 namespace Client_Service_GEN.Repositories
 {
-    public interface IUserRepository:IBaseRepository<UserModel>
+    public interface IPersonRepository : IBaseRepository<Person>
     {
-        ResultModel<List<UserModel>> GetAllUsers();
     }
 }

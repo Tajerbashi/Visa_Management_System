@@ -1,9 +1,10 @@
 ﻿@page "/profile"
+@using Client_Service_GEN.Bases.Model
 @using Client_Service_GEN.Models
 @using Client_Service_GEN.Pages.Components
 @using Client_Service_GEN.Repositories
 
-@inject IUserRepository userService;
+@inject IPersonRepository personService;
 
 @if (DataList.Data == null)
 {
@@ -23,10 +24,10 @@ else
 <button class="btn btn-primary shadow rounded" @onclick="() => modal.Open()">نمایش</button>
 
 @code {
-    ResultModel<List<UserModel>> DataList = new ResultModel<List<UserModel>>();
+    Result<List<Person>> DataList = new Result<List<Person>>();
     protected override void OnInitialized()
     {
-        DataList = userService.GetAllUsers();
+        DataList.Data = personService.GetAll().ToList();
         base.OnInitialized();
     }
     public string Title { get; set; }

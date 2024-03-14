@@ -1,30 +1,31 @@
 ﻿using Client_Service_GEN.Bases.Model;
 using Client_Service_GEN.ContextDB;
-using Client_Service_GEN.Models;
 
 namespace Client_Service_GEN.Bases.Repository
 {
-    public interface IBaseRepository<T> where T : IBaseModel
+    public interface IBaseRepository<T> where T : IBaseEntity, new()
     {
+        bool AddOrUpdate(T entity);
         bool Add(T entity);
         bool Update(T entity);
         bool Remove(T entity);
+        bool Remove(long id);
         T Get(long ID);
         IList<T> GetAll();
     }
     public abstract class BaseRepository<T> : IBaseRepository<T>
-        where T : UserModel
+        where T : BaseEntity<long>, new()
     {
-        protected DataContextDB DataContextDB;
-        protected BaseRepository()
+        protected DbContextApplication DataContextDB;
+        protected BaseRepository(DbContextApplication DataContextDB)
         {
-            DataContextDB = new DataContextDB();
+            this.DataContextDB = DataContextDB;
         }
-        public bool Add(T entity)
+        public virtual bool Add(T entity)
         {
             try
             {
-                DataContextDB.UserModels.Add(entity);
+                DataContextDB.Set<T>().Add(entity);
                 return true;
             }
             catch
@@ -33,11 +34,23 @@ namespace Client_Service_GEN.Bases.Repository
             }
         }
 
-        public T Get(long ID)
+        public bool AddOrUpdate(T entity)
+        {
+            if (entity.ID == 0)
+            {
+                return Add(entity);
+            }
+            else
+            {
+                return Update(entity);
+            }
+        }
+
+        public virtual T Get(long ID)
         {
             try
             {
-                var entity = DataContextDB.UserModels.Where(c => c.ID == ID).SingleOrDefault();
+                var entity = DataContextDB.Set<T>().Where(c => c.ID == ID).Single();
                 return (T)entity;
             }
             catch
@@ -46,11 +59,11 @@ namespace Client_Service_GEN.Bases.Repository
             }
         }
 
-        public IList<T> GetAll()
+        public virtual IList<T> GetAll()
         {
             try
             {
-                var entity = DataContextDB.UserModels.ToList();
+                var entity = DataContextDB.Set<T>().ToList();
                 return (IList<T>)entity.ToList();
             }
             catch
@@ -59,11 +72,11 @@ namespace Client_Service_GEN.Bases.Repository
             }
         }
 
-        public bool Remove(T entity)
+        public virtual bool Remove(T entity)
         {
             try
             {
-                DataContextDB.UserModels.Remove(entity);
+                DataContextDB.Set<T>().Remove(entity);
                 return true;
             }
             catch
@@ -72,11 +85,24 @@ namespace Client_Service_GEN.Bases.Repository
             }
         }
 
-        public bool Update(T entity)
+        public virtual bool Remove(long id)
         {
             try
             {
-                var model = DataContextDB.UserModels.Where(x => x.ID == entity.ID).Single();
+                var model = DataContextDB.Set<T>().Where(x => x.ID == id).Single();
+                return Remove((T)model); ;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public virtual bool Update(T entity)
+        {
+            try
+            {
+                var model = DataContextDB.Set<T>().Where(x => x.ID == entity.ID).Single();
                 model = entity;
                 return true;
             }

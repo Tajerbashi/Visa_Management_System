@@ -21,10 +21,10 @@ style="width: 20rem;">
 @code {
 
     [Parameter]
-    public UserModel Model { get; set; }
+    public Person Model { get; set; }
 
     string name = "";
-    private void ShowModal(UserModel model)
+    private void ShowModal(Person model)
     {
         name = model.Name;
     }

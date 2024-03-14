@@ -1,7 +1,7 @@
-﻿using Blazor_Domain_Library.Entities.Security;
+﻿using Client_Service_GEN.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Blazor_Infrastructure_Library.DatabaseContext
+namespace Client_Service_GEN.ContextDB
 {
     public class DbContextApplication : DbContext
     {
@@ -9,11 +9,15 @@ namespace Blazor_Infrastructure_Library.DatabaseContext
         {
         }
 
-        public DbSet<UserEntity> Users{ get; set; }
+        public DbSet<Person> People { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
