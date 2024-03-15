@@ -9,11 +9,18 @@ namespace Blazor_Infrastructure_Library.DatabaseContext
         {
         }
 
-        public DbSet<UserEntity> Users{ get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+
+        public DbSet<UserEntity> Users { get; set; }
+
     }
 }
