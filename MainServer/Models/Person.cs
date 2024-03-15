@@ -14,6 +14,7 @@ namespace MainServer.Models
         public string Email { get; set; }
         [Description(""), MaxLength(11), MinLength(11)]
         public string Phone { get; set; }
+        public string UserName { get; set; }
         [PasswordPropertyText]
         public string Password { get; set; }
         public string Picture { get; set; }

@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity_External", "Identi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainServer", "MainServer\MainServer.csproj", "{8B350C51-8543-4E02-A56E-10FADF92A9F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.Server", "Database.Server\Database.Server.csproj", "{55F84D17-9DBF-4D33-A751-621DA4BC5741}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{8B350C51-8543-4E02-A56E-10FADF92A9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B350C51-8543-4E02-A56E-10FADF92A9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B350C51-8543-4E02-A56E-10FADF92A9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F84D17-9DBF-4D33-A751-621DA4BC5741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F84D17-9DBF-4D33-A751-621DA4BC5741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F84D17-9DBF-4D33-A751-621DA4BC5741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F84D17-9DBF-4D33-A751-621DA4BC5741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{16F701F4-C25F-4363-97E1-B11F30962413} = {153FD172-8126-46C2-B310-1CD175F3AAC5}
 		{735579DD-0103-4F33-9DC7-D949C5553001} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
 		{8B350C51-8543-4E02-A56E-10FADF92A9F6} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
+		{55F84D17-9DBF-4D33-A751-621DA4BC5741} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E337B20A-7B33-4B52-AB8D-6922BC65247B}

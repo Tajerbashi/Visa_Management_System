@@ -9,7 +9,7 @@
                 <NavLink href="/profile">
                     <Navbar Name="کامران تاجرباشی" RoleName="ادمین" />
                 </NavLink>
-                <NavLink href="/login">
+                <NavLink href="@url">
                     <span class="bi bi-house-door-fill-nav-menu mx-1" aria-hidden="true"></span>
                     <button class="@signStyle" @onclick="SignLog">@Text</button>
                 </NavLink>
@@ -25,18 +25,21 @@
 @code {
     bool sw=true;
     string Text = "ورود";
+    string url = "/signin";
     string signStyle = "btn btn-primary";
     private void SignLog()
     {
         if (sw)
         {
-            Text = "خروج";
+            Text = "خروج"; 
+            url = "/signin";
             signStyle = "btn btn-danger";
             sw = false;
         }
         else
         {
             Text = "ورود";
+            url = "/login";
             signStyle = "btn btn-primary";
             sw = true;
         }

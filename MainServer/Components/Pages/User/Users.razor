@@ -1,6 +1,92 @@
 ﻿@page "/user"
-<h3>Users</h3>
+@using MainServer.Models
+@using MainServer.Repositories
+
+@inject IPersonRepository PersonService;
+
+
+<PageTitle>کاربران سیستم</PageTitle>
+<div class="container-fluid shadow rounded-3">
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام</th>
+                    <th>فامیلی</th>
+                    <th>ایمیل</th>
+                    <th>تلفن</th>
+                    <th>نام کاربری</th>
+                    <th>رمز</th>
+                    <th>تصویر</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Datalist)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Name</td>
+                        <td>@item.Family</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Password</td>
+                        <td>
+                            <img src="./Files/Pictures/@item.Picture" alt="تصویر" />
+                        </td>
+                        <td>
+                            <button @onclick="() => Update(item.ID)" class="btn btn-warning rounded shadow">ویرایش</button>
+                            <button @onclick="() => Delete(item.ID)" class="btn btn-danger rounded shadow">حذف</button>
+                            <button @onclick="() => Read(item.ID)" class="btn btn-info rounded shadow">نمایش</button>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    @if (show)
+    {
+        <div class="row">
+            نمایش اطلاعات
+        </div>
+    }
+</div>
 
 @code {
+    List<Person> Datalist;
+    Person person;
+    bool show;
+    protected override void OnInitialized()
+    {
+        person = new Person();
+        show = false;
+        Datalist = PersonService.GetAll().ToList();
+        base.OnInitialized();
+    }
 
+}
+@functions {
+    private void Create()
+    {
+        PersonService.AddOrUpdate(person);
+        person = new Person();
+        show = false;
+    }
+    private void Update(long id)
+    {
+        show = true;
+        person = PersonService.Get(id);
+    }
+    private void Delete(long id)
+    {
+        PersonService.Remove(id);
+        person = new Person();
+    }
+    private void Read(long id)
+    {
+        person = PersonService.Get(id);
+    }
 }
