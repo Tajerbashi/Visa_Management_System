@@ -1,14 +1,16 @@
 ﻿using MainServer.Bases.Service;
 using MainServer.Models;
 using MainServer.Repositories;
-using MainServer.WebService;
 
 namespace MainServer.Services
 {
     public class PersonServices : BaseService<Person>, IPersonRepository
     {
-        private string baseUrl = "https://localhost:44325";
 
+        public PersonServices()
+        {
+            
+        }
         public override bool Add(Person entity)
         {
             throw new NotImplementedException();
@@ -26,9 +28,7 @@ namespace MainServer.Services
 
         public override IList<Person> GetAll()
         {
-            var get = new GetService<List<Person>>(baseUrl,"/Person");
-            var Result = get.Call();
-            return Result.Result.Data.ToList();
+            throw new NotImplementedException();
         }
 
         public override bool Remove(Person entity)

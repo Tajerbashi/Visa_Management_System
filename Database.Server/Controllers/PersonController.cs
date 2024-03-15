@@ -21,19 +21,19 @@ namespace Database.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<Result<Person>> Create(Person person)
+        public Person Create(Person person)
         {
             try
             {
                 _databaseContext.People.Add(person);
-                await _databaseContext.SaveChangesAsync();
+                _databaseContext.SaveChanges();
                 var result  = new Result<Person>()
                 {
                     Data = person,
                     Message="اطلاعات با موفقیت ذخیره شده است",
                     Ressult=true
                 };
-                return result;
+                return result.Data;
             }
             catch
             {
@@ -42,7 +42,7 @@ namespace Database.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<Result<List<Person>>> Get()
+        public List<Person> Get()
         {
             #region Loop
             //for (int i = 1; i <= 10000; i++)
@@ -73,7 +73,7 @@ namespace Database.Server.Controllers
                     Message="اطلاعات با موفقیت واکشی شده است",
                     Ressult=true
                 };
-                return result;
+                return result.Data;
             }
             catch
             {
@@ -82,7 +82,7 @@ namespace Database.Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<Result<Person>> GetByID(long id)
+        public Person GetByID(long id)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Database.Server.Controllers
                     Message="اطلاعات با موفقیت واکشی شده است",
                     Ressult=true
                 };
-                return result;
+                return result.Data;
             }
             catch
             {
@@ -101,19 +101,19 @@ namespace Database.Server.Controllers
         }
 
         [HttpPut]
-        public async Task<Result<Person>> Update(Person person)
+        public Person Update(Person person)
         {
             try
             {
                 _databaseContext.People.Update(person);
-                await _databaseContext.SaveChangesAsync();
+                _databaseContext.SaveChanges();
                 var result  = new Result<Person>()
                 {
                     Data = person,
                     Message="اطلاعات با موفقیت ویرایش شده است",
                     Ressult=true
                 };
-                return result;
+                return result.Data;
             }
             catch
             {
@@ -122,7 +122,7 @@ namespace Database.Server.Controllers
         }
 
         [HttpDelete]
-        public async Task<Result<Person>> Delete(long id)
+        public Person Delete(long id)
         {
             try
             {
@@ -130,14 +130,14 @@ namespace Database.Server.Controllers
                 entity.IsDeleted = true;
                 entity.IsActive = false;
                 _databaseContext.People.Update(entity);
-                await _databaseContext.SaveChangesAsync();
+                _databaseContext.SaveChanges();
                 var result  = new Result<Person>()
                 {
                     Data = entity,
                     Message="اطلاعات با موفقیت حذف شده است",
                     Ressult=true
                 };
-                return result;
+                return result.Data;
             }
             catch
             {

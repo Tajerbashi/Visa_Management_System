@@ -1,10 +1,8 @@
 ﻿using MainServer.Bases.Models;
+using MainServer.Models;
 using Newtonsoft.Json;
-using System;
-using System.Data;
-using System.Net;
 using System.Net.Http.Headers;
-using System.Text.Json;
+using System.Net.Http.Json;
 
 namespace MainServer.WebService
 {
@@ -17,42 +15,50 @@ namespace MainServer.WebService
     {
         private string BaseURL;
         private string ServiceUrl;
-        public GetService(string baseUrl,string serviceUrl, long id = 0)
+        public GetService(string baseUrl, string serviceUrl, long id = 0)
         {
             this.BaseURL = baseUrl;
             this.ServiceUrl = serviceUrl;
         }
-        public async Task<Result<T>> Call()
+        public async Task<Result<T>> Invoked()
         {
-            var Result = new Result<T>();
-            // HTTP GET.  
-            using (var client = new HttpClient())
+            try
             {
-                // Setting Base address.  
-                client.BaseAddress = new Uri(BaseURL);
-
-                // Setting content type.  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                // Initialization.  
-                HttpResponseMessage response = new HttpResponseMessage();
-
-                // HTTP GET  
-                response = await client.GetAsync(ServiceUrl).ConfigureAwait(false);
-
-                // Verification  
-                if (response.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    // Reading Response.  
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    Result = JsonConvert.DeserializeObject<Result<T>>(result);
+                    ///Type1
+                    //var response = await client.GetAsync($"{BaseURL}/{ServiceUrl}");
+                    //var resResult = await response.Content.ReadAsStringAsync();
+                    //var result =  JsonConvert.DeserializeObject<Result<T>>(resResult);
+                    //return result;
+
+                    ///Type2
+                    client.BaseAddress = new Uri(BaseURL);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    HttpResponseMessage response = client.GetAsync(ServiceUrl).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseResult = await response.Content.ReadFromJsonAsync<Result<T>>();
+                        return responseResult;
+                    }
+                    return new Result<T>
+                    {
+                        Data = null,
+                        Message = "",
+                        Ressult = "",
+                    };
+
                 }
             }
-            return Result;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }
-    public class PostService<T>: IWebService
+    public class PostService<T> : IWebService
     {
     }
     public class PutService

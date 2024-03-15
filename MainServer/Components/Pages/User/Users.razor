@@ -63,8 +63,13 @@
     protected override Task OnInitializedAsync()
     {
         Datalist = new List<Person>();
-        Datalist = PersonService.GetAll().ToList();
         return base.OnInitializedAsync();
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        var dd=PersonService.GetAll().ToList();
+
+        return base.OnAfterRenderAsync(true);
     }
 }
 @functions {
