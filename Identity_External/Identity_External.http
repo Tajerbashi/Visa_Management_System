@@ -1,6 +1,0 @@
-@Identity_External_HostAddress = http://localhost:5269
-
-GET {{Identity_External_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
