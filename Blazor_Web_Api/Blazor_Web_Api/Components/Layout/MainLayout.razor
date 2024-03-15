@@ -1,5 +1,4 @@
 ﻿@inherits LayoutComponentBase
-
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -7,7 +6,10 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <NavLink href="profile" class="btn btn-dark rounded-3 btn-outline-light border-0 mx-3 text-decoration-none">
+                @UserName
+            </NavLink>
+            <button class="@Style rounded-3 btn-outline-light border-0" @onclick="Switch">@Name</button>
         </div>
 
         <article class="content px-4">
@@ -17,7 +19,32 @@
 </div>
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
+    <a class="reload" href="">تازه سازی</a>
+    <a class="" href="">خطای اجرای صفحه</a>
+    <a class="dismiss" href="">🗙</a>
 </div>
+
+@code {
+    string Name = "ورود";
+    string UserName = "مهمان";
+    string Style = "btn btn-primary";
+    bool State = true;
+
+    private void Switch()
+    {
+        if (State)
+        {
+            Name = "خروج";
+            UserName = "کامران تاجرباشی";
+            Style = "btn btn-danger";
+            State = false;
+        }
+        else
+        {
+            Name = "ورود";
+            UserName = "مهمان";
+            Style = "btn btn-primary";
+            State = true;
+        }
+    }
+}

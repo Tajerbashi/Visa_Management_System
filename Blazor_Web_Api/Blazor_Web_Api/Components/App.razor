@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link href="~/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-grid.rtl.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-reboot.rtl.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-utilities.rtl.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="Blazor_Web_Api.styles.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -13,8 +19,11 @@
 </head>
 
 <body dir="rtl">
-    <Routes />
+    <Routes @rendermode=RenderMode.InteractiveServer />
     <script src="_framework/blazor.web.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.esm.min.js"></script>
 </body>
 
 </html>
