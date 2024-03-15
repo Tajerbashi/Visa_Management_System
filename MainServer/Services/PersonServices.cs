@@ -7,7 +7,7 @@ namespace MainServer.Services
 {
     public class PersonServices : BaseService<Person>, IPersonRepository
     {
-        private string baseUrl = "https://localhost:44325/Person";
+        private string baseUrl = "https://localhost:44325";
 
         public override bool Add(Person entity)
         {
@@ -26,9 +26,9 @@ namespace MainServer.Services
 
         public override IList<Person> GetAll()
         {
-            var get = new GetService<Person>(baseUrl);
-            get.Call();
-            return new List<Person>();
+            var get = new GetService<List<Person>>(baseUrl,"/Person");
+            var Result = get.Call();
+            return Result.Result.Data.ToList();
         }
 
         public override bool Remove(Person entity)

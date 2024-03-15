@@ -69,7 +69,7 @@ namespace Database.Server.Controllers
             {
                 var result  = new Result<List<Person>>()
                 {
-                    Data = _databaseContext.People.ToList(),
+                    Data = _databaseContext.People.Take(20).ToList(),
                     Message="اطلاعات با موفقیت واکشی شده است",
                     Ressult=true
                 };

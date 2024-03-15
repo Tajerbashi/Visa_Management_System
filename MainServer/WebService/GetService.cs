@@ -1,5 +1,10 @@
 ﻿using MainServer.Bases.Models;
+using Newtonsoft.Json;
+using System;
+using System.Data;
 using System.Net;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace MainServer.WebService
 {
@@ -10,43 +15,44 @@ namespace MainServer.WebService
     public class GetService<T> : IWebService
         where T : class
     {
-        private string BaseURL { get; set; }
-        public GetService(string baseurl, long id = 0)
+        private string BaseURL;
+        private string ServiceUrl;
+        public GetService(string baseUrl,string serviceUrl, long id = 0)
         {
-            if (id != 0)
-            {
-                baseurl = $"{baseurl}/{id}";
-            }
-            else
-            {
-                this.BaseURL = baseurl;
-            }
+            this.BaseURL = baseUrl;
+            this.ServiceUrl = serviceUrl;
         }
-        public Result<T> Call()
+        public async Task<Result<T>> Call()
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri(BaseURL);
-            var response = client.GetAsync("todos/1").Result;
-            if (response.IsSuccessStatusCode)
+            var Result = new Result<T>();
+            // HTTP GET.  
+            using (var client = new HttpClient())
             {
-                var responseContent = response.Content.ReadAsStringAsync().Result;
-                var Result = System.Text.Json.JsonSerializer.Deserialize<Result<T>>(responseContent);
-                Console.WriteLine("Get successful!");
-                return Result;
-            }
-            else
-            {
-                Console.WriteLine("Error: " + response.StatusCode);
-                return new Result<T>
+                // Setting Base address.  
+                client.BaseAddress = new Uri(BaseURL);
+
+                // Setting content type.  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Initialization.  
+                HttpResponseMessage response = new HttpResponseMessage();
+
+                // HTTP GET  
+                response = await client.GetAsync(ServiceUrl).ConfigureAwait(false);
+
+                // Verification  
+                if (response.IsSuccessStatusCode)
                 {
-                    Data = null,
-                    Ressult = "",
-                    Message = "",
-                };
+                    // Reading Response.  
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    Result = JsonConvert.DeserializeObject<Result<T>>(result);
+                }
             }
+            return Result;
+
         }
     }
-    public class PostService
+    public class PostService<T>: IWebService
     {
     }
     public class PutService
