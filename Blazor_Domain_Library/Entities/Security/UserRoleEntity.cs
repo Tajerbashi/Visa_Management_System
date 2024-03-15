@@ -21,5 +21,8 @@ namespace Blazor_Domain_Library.Entities.Security
         [Description("فعال")]
         public bool IsActive { get; set; }
 
+        [Description("حذف شده"), DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
     }
 }

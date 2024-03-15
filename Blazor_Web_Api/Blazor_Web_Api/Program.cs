@@ -1,8 +1,6 @@
 using Blazor_Infrastructure_Library.DatabaseContext;
-using Blazor_Web_Api.Client.Pages;
 using Blazor_Web_Api.Components;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 //var Configuracion = builder.Build().Configuration;
@@ -15,10 +13,6 @@ builder.Services.AddRazorComponents()
 //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 //});
 
-//builder.Services.AddDbContext<DbContextApplication>(option => 
-//{
-//    option.UseSqlServer(Configuracion.GetConnectionString("DefaultConnection"));
-//});
 builder.Services.AddDbContext<DbContextApplication>(options =>
 {
     //options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection"));

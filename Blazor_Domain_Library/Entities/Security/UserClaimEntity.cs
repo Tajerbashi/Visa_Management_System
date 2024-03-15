@@ -8,5 +8,10 @@ namespace Blazor_Domain_Library.Entities.Security
     public class UserClaimEntity : IdentityUserClaim<long>
 
     {
+        [Description("حذف شده"), DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
+        [Description("فعال"), DefaultValue(false)]
+        public bool IsActive { get; set; }
     }
 }
