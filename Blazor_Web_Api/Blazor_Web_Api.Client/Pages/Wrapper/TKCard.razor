@@ -1,8 +1,23 @@
-﻿<div class="m-1 p-1 rounded-3 shadow">
-    @Content
+﻿<style>
+    .card {
+        height: 87vh;
+        margin: 0.1rem;
+        border-radius:0.5rem;
+        box-shadow: 0 0 5px 5px #0001;
+    }
+</style>
+<div class="card">
+    @ChildContent
 </div>
 
-@code {
+@code
+{
     [Parameter]
-    public RenderFragment Content { get; set; }
+    public RenderFragment? ChildContent { get; set; }
+
+    private void ChangeBackgroundColor()
+    {
+
+    }
+
 }
