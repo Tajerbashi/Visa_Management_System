@@ -1,5 +1,6 @@
 ﻿using Blazor_Domain_Library.Entities.Security;
 using Blazor_Domain_Library.Entities.Securityk;
+using Blazor_Domain_Library.Entities.Test;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
@@ -35,8 +36,7 @@ namespace Blazor_Infrastructure_Library.DatabaseContext
 
         }
 
-
-        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<Person> People { get; set; }
 
     }
 }
