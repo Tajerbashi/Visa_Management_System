@@ -1,0 +1,27 @@
+﻿<div class="row">
+	<button @onclick=Toggle class="col-12 btn btn-dark">@ActionText</button>
+
+	@if (!Collapsed)
+	{
+		<div class="col-12 card card-body">
+			@ChildContent
+		</div>
+	}
+
+</div>
+
+@code
+{
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public bool Collapsed { get; set; }
+
+	string ActionText { get => Collapsed ? "نمایش" : "عدم نمایش"; }
+
+	void Toggle()
+	{
+		Collapsed = !Collapsed;
+	}
+}
