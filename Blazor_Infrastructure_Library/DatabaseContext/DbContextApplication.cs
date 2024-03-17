@@ -3,11 +3,21 @@ using Blazor_Domain_Library.Entities.Securityk;
 using Blazor_Domain_Library.Entities.Test;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace Blazor_Infrastructure_Library.DatabaseContext
 {
     public class DbContextApplication : IdentityDbContext<UserEntity, RoleEntity, long, UserClaimEntity, UserRoleEntity, UserLoginEntity, RoleClaimEntity, UserTokenEntity>
+    //public class DbContextApplication 
+    //    : IdentityDbContext<
+    //        IdentityUser,
+    //        IdentityRole, 
+    //        string, 
+    //        IdentityUserClaim<string>,
+    //        IdentityUserRole<string>, 
+    //        IdentityUserLogin<string>,
+    //        IdentityRoleClaim<string>,
+    //        IdentityUserToken<string>
+    //        >
     {
         public DbContextApplication(DbContextOptions<DbContextApplication> options) : base(options)
         {
