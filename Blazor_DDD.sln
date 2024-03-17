@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity_Server", "Identity_Server\Identity_Server.csproj", "{D172E973-F3F0-4B57-BC61-9D991D3CDF93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi.csproj", "{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi.csproj", "{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

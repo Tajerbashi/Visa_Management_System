@@ -1,15 +1,18 @@
 ﻿<style>
+    .main-tk{
+        height: 95vh;
+        padding: 1rem;
+    }
     .card {
-        height: 87vh;
-        margin: 0.1rem;
         border-radius: 0.5rem;
         box-shadow: 0 0 5px 5px #0001;
-        padding: 1rem;
         overflow: auto;
     }
 </style>
-<div class="card">
-    @ChildContent
+<div class="main-tk">
+    <div class="card">
+        @ChildContent
+    </div>
 </div>
 
 @code
