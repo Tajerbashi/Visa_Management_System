@@ -4,24 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Identity_Server.Domain
 {
-    [Table("User", Schema = "Security"), Description("کاربران")]
-    public class UserEntity : IdentityUser<long>
+    [Table("Role", Schema = "Security"), Description("نقش")]
+    public class RoleEntity : IdentityRole<long>
     {
-        public UserEntity()
+
+        public RoleEntity(string Role) : base(Role)
         {
 
         }
-        public UserEntity(string username)
+
+        public RoleEntity()
         {
 
         }
-        [Description("نام")]
-        public string Name { get; set; }
-
-        [Description("فامیل")]
-        public string Family { get; set; }
-
-
         [Description("حذف شده"), DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
