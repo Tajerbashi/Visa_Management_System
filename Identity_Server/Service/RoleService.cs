@@ -1,24 +1,17 @@
 ﻿using Identity_Server.Bases.Model;
 using Identity_Server.Domain;
 using Identity_Server.Repository;
-using Microsoft.AspNetCore.Identity;
 
 namespace Identity_Server.Service
 {
-    public class UserService : IUserRepository
+    public class RoleService : IRoleRepository
     {
-        private UserManager<UserEntity> UserManager;
-        public UserService(UserManager<UserEntity> UserManager)
-        {
-            this.UserManager = UserManager;
-        }
-
-        public Result<long> Create(UserEntity entity)
+        public Result<long> Create(RoleEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public Result<bool> Delete(UserEntity entity)
+        public Result<bool> Delete(RoleEntity entity)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +21,17 @@ namespace Identity_Server.Service
             throw new NotImplementedException();
         }
 
-        public Result<UserEntity> Read()
+        public Result<RoleEntity> Read()
         {
             throw new NotImplementedException();
         }
 
-        public Result<List<UserEntity>> ReadAll()
+        public Result<List<RoleEntity>> ReadAll()
         {
             throw new NotImplementedException();
         }
 
-        public Result<bool> Update(UserEntity entity)
+        public Result<bool> Update(RoleEntity entity)
         {
             throw new NotImplementedException();
         }

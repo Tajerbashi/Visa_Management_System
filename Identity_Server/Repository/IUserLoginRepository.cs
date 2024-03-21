@@ -3,7 +3,8 @@ using Identity_Server.Domain;
 
 namespace Identity_Server.Repository
 {
-    public interface IUserRepository : IGenericRepository<UserEntity>
+    public interface IUserLoginRepository : IGenericRepository<UserLoginEntity>
     {
+
     }
 }
