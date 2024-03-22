@@ -1,9 +1,9 @@
-﻿namespace Domain_Driven_Design.DomainEntities.ValueObject
+﻿namespace Domain_Driven_Design.Aggregate.ValueObject
 {
-    public class PersonID
+    public class Email
     {
         public string Value { get; set; }
-        public PersonID(string value)
+        public Email(string value)
         {
             //  Validation 
 

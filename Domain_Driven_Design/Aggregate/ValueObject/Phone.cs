@@ -1,4 +1,4 @@
-﻿namespace Domain_Driven_Design.DomainEntities.ValueObject
+﻿namespace Domain_Driven_Design.Aggregate.ValueObject
 {
     public class Phone
     {
