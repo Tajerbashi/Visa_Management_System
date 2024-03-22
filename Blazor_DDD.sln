@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity_Server", "Identity
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi.csproj", "{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain_Driven_Design", "Domain_Driven_Design\Domain_Driven_Design.csproj", "{95049FF9-EE02-4511-A43F-803492DCD981}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain_Driven_Design_Solution", "Domain_Driven_Design\Domain_Driven_Design_Solution.csproj", "{95049FF9-EE02-4511-A43F-803492DCD981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

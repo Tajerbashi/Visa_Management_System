@@ -1,6 +1,6 @@
-﻿using Domain_Driven_Design.Aggregate.PersonDomain;
-using Domain_Driven_Design.DomainEntities;
-using Domain_Driven_Design.DomainEntities.ValueObject;
+﻿
+using Domain_Driven_Design_Solution.Library_Domain.Entities;
+using Domain_Driven_Design_Solution.Library_Domain.ValueObjects;
 
 Console.WriteLine(" --------- Start Project --------- ");
 

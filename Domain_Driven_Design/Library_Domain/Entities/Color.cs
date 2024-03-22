@@ -1,4 +1,4 @@
-﻿namespace Domain_Driven_Design.DomainEntities
+﻿namespace Domain_Driven_Design_Solution.Library_Domain.Entities
 {
     public class Color
     {
@@ -19,24 +19,24 @@
                 Blue + color.Blue
             );
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             if (obj is null) return false;
             var model = obj as Color;
             if (model == null) return false;
-            return 
+            return
                     model.Red == Red
-                &&  model.Green == Green
-                &&  model.Blue == Blue;
+                && model.Green == Green
+                && model.Blue == Blue;
         }
 
-        public static bool operator == (Color left, Color right)
+        public static bool operator ==(Color left, Color right)
         {
             if (ReferenceEquals(left, null)) return false;
             return left.Equals(right);
 
         }
-        public static bool operator != (Color left, Color right)
+        public static bool operator !=(Color left, Color right)
         {
             return !(left == right);
         }

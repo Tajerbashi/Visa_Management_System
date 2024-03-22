@@ -1,4 +1,4 @@
-﻿namespace Domain_Driven_Design.Aggregate.ValueObject
+﻿namespace Domain_Driven_Design_Solution.Library_Domain.ValueObjects
 {
     public class PersonID
     {

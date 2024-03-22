@@ -1,9 +1,9 @@
-﻿namespace Domain_Driven_Design.Aggregate.ValueObject
+﻿namespace Domain_Driven_Design_Solution.Library_Domain.ValueObjects
 {
-    public class Email
+    public class Phone
     {
         public string Value { get; set; }
-        public Email(string value)
+        public Phone(string value)
         {
             //  Validation 
 

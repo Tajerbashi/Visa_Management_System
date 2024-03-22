@@ -1,6 +1,6 @@
-﻿using Domain_Driven_Design.Aggregate.ValueObject;
+﻿using Domain_Driven_Design_Solution.Library_Domain.ValueObjects;
 
-namespace Domain_Driven_Design.Aggregate.PersonDomain
+namespace Domain_Driven_Design_Solution.Library_Domain.Entities
 {
     public class Person
     {
