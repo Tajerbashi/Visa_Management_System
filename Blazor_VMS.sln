@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Infrastructure_Libra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Persistance_Library_Test", "Blazor_Persistance_Library_Test\Blazor_Persistance_Library_Test.csproj", "{360696AA-0344-4A98-A282-053B16356FC3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalApi", "ExternalApi", "{79655161-8259-4888-B4C3-E5F8C4752CA2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalKernel", "ExternalKernel", "{79655161-8259-4888-B4C3-E5F8C4752CA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{3353AD79-C67C-4A14-9C8C-5439CBA64019}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity_Server", "Identity
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_WebApi", "Blazor_WebApi\Blazor_WebApi.csproj", "{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain_Driven_Design_Solution", "Domain_Driven_Design\Domain_Driven_Design_Solution.csproj", "{95049FF9-EE02-4511-A43F-803492DCD981}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO", "SSO\SSO.csproj", "{D8F86E75-B63C-4CE6-8BD8-944851786E97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,10 +82,10 @@ Global
 		{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C71F332-6ECC-4D97-ACED-E88249AAA5EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95049FF9-EE02-4511-A43F-803492DCD981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95049FF9-EE02-4511-A43F-803492DCD981}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95049FF9-EE02-4511-A43F-803492DCD981}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95049FF9-EE02-4511-A43F-803492DCD981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F86E75-B63C-4CE6-8BD8-944851786E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F86E75-B63C-4CE6-8BD8-944851786E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F86E75-B63C-4CE6-8BD8-944851786E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F86E75-B63C-4CE6-8BD8-944851786E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,7 +101,7 @@ Global
 		{360696AA-0344-4A98-A282-053B16356FC3} = {653BD81C-CF20-4C44-BDAB-A1719FCD8522}
 		{D172E973-F3F0-4B57-BC61-9D991D3CDF93} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
 		{3C71F332-6ECC-4D97-ACED-E88249AAA5EF} = {153FD172-8126-46C2-B310-1CD175F3AAC5}
-		{95049FF9-EE02-4511-A43F-803492DCD981} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
+		{D8F86E75-B63C-4CE6-8BD8-944851786E97} = {79655161-8259-4888-B4C3-E5F8C4752CA2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E337B20A-7B33-4B52-AB8D-6922BC65247B}

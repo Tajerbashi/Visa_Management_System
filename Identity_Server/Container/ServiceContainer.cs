@@ -1,5 +1,8 @@
-﻿using Identity_Server.Repository;
+﻿using Identity_Server.DatabaseApplication;
+using Identity_Server.Domain;
+using Identity_Server.Repository;
 using Identity_Server.Service;
+using Microsoft.AspNetCore.Identity;
 
 namespace Identity_Server.Container
 {
@@ -15,6 +18,15 @@ namespace Identity_Server.Container
             services.AddScoped<IUserRepository, UserService>();
             services.AddScoped<IUserRoleRepository, UserRoleService>();
             services.AddScoped<IUserTokenRepository, UserTokenService>();
+            return services;
+        }
+
+        public static IServiceCollection AddIdentity(this IServiceCollection services,
+            IConfiguration configuration
+            )
+        {
+            services.AddIdentity<UserEntity, RoleEntity>()
+                .AddEntityFrameworkStores<DbContextApplication>();
             return services;
         }
     }
