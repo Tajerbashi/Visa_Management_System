@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Blazor_Domain_Library.Entities.Securityk
+namespace Blazor_Domain_Library.Entities.Security
 {
     [Table("Role", Schema = "Security"), Description("نقش")]
     public class RoleEntity : IdentityRole<long>
