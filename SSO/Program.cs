@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SSO.DatabaseApplication;
+using SSO.DependencyInjection;
+using SSO.Domains;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddAutoMapper(typeof(Program));
 // Add services to the container.
 builder.Services.AddRazorPages();
 #region DatabaseConfig
@@ -12,6 +15,21 @@ builder.Services.AddDbContext<DbContextApplication>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 #endregion
+
+#region Identity
+builder.Services
+    .AddIdentity<UserEntity, RoleEntity>(config =>
+{
+
+})
+    .AddEntityFrameworkStores<DbContextApplication>()
+    .AddDefaultTokenProviders();
+#endregion
+
+builder.Services.AddRepositories();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
