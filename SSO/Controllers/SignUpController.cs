@@ -1,20 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SSO.BaseSSO.Controllers;
 using SSO.Models.DTOs;
+using SSO.Repositpries;
 
 namespace SSO.Controllers
 {
     public class SignUpController : BaseController
     {
         private readonly ILogger<LoginController> _logger;
-
-        public SignUpController(ILogger<LoginController> logger)
+        private readonly IUserRepository userRepository;
+        public SignUpController(ILogger<LoginController> logger, IUserRepository userRepository)
         {
             _logger = logger;
+            this.userRepository = userRepository;
         }
 
         public IActionResult Index()
         {
+            var data = userRepository.ReadAll();
             return View();
         }
 
