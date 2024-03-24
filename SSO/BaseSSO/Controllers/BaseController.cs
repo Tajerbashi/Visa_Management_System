@@ -3,7 +3,7 @@
 namespace SSO.BaseSSO.Controllers
 {
     [ApiController]
-    [Route("Identity/[controller]")]
+    [Route("sso/[controller]")]
     public class BaseController : Controller
     {
     }

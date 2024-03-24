@@ -1,8 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using SSO.DatabaseApplication;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+#region DatabaseConfig
+builder.Services.AddDbContext<DbContextApplication>(options =>
+{
+    //options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,5 +30,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapControllers();
 app.Run();
