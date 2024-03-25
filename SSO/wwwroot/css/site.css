@@ -1,5 +1,11 @@
+@font-face {
+  font-family: iransansweb;
+  src: url(../fonts/IRANSansWeb.ttf)
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: iransansweb;
 }
 
 @media (min-width: 768px) {
