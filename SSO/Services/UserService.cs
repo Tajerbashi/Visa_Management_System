@@ -10,7 +10,7 @@ using SSO.Repositpries;
 
 namespace SSO.Services
 {
-    public class UserService :BaseServices<UserDTO>, IUserRepository
+    public class UserService : BaseServices<UserDTO>, IUserRepository
     {
         private UserManager<UserEntity> _userManager;
 
@@ -21,7 +21,27 @@ namespace SSO.Services
 
         public override Result<long> Create(UserDTO entity)
         {
-            throw new NotImplementedException();
+            var model = Mapper.Map<UserEntity>(entity);
+            model.UserName = entity.UserName;
+            var result = _userManager.CreateAsync(model, entity.Password).Result;
+            if (result.Succeeded)
+            {
+                return new Result<long>
+                {
+                    Data = model.Id,
+                    Results = ResponseMessage.Success(),
+                    Success = true,
+                };
+            }
+            else
+            {
+                return new Result<long>
+                {
+                    Data = model.Id,
+                    Results = ResponseMessage.MessageeLine(result.Errors),
+                    Success = false,
+                };
+            }
         }
 
         public override Result<bool> Delete(UserDTO entity)

@@ -20,12 +20,6 @@ namespace SSO.Controllers
         }
         
         [Route("Login")]
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
-        [Route("Login")]
         [HttpPost]
         public IActionResult Login(LoginDTO model)
         {

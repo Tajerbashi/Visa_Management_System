@@ -18,11 +18,6 @@ namespace SSO.Controllers
             return View();
         }
 
-        [Route("Profile")]
-        public IActionResult Profile()
-        {
-            return View();
-        }
         [HttpPost]
         public IActionResult Profile(ProfileDTO model)
         {

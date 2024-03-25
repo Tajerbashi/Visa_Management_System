@@ -14,22 +14,40 @@ namespace SSO.Controllers
             _logger = logger;
             this.userRepository = userRepository;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             var data = userRepository.ReadAll();
             return View();
         }
 
-        [Route("SignUp")]
-        public IActionResult SignUp()
-        {
-            return View();
-        }
         [HttpPost]
-        public IActionResult SignUp(SignUpDTO model)
+        public IActionResult SignUp([FromBody] SignUpDTO model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var entity = new UserDTO
+            {
+                Name = model.Name,
+                Family = model.Family,
+                UserName = model.UserName,
+                Email = model.Email,
+                IsActive=true,
+                IsDeleted=false,
+                Password= model.Password
+            };
+            var res = userRepository.Create(entity);
+            if (res.Success)
+            {
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                TempData["Errors"] = res.Results;
+                return View(model);
+            }
         }
     }
 }
