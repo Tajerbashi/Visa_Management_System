@@ -32,8 +32,5 @@ namespace SSO.DatabaseApplication
             #endregion
 
         }
-        public DbSet<SSO.Models.DTOs.LoginDTO> LoginDTO { get; set; } = default!;
-        public DbSet<SSO.Models.DTOs.SignUpDTO> SignUpDTO { get; set; } = default!;
-        public DbSet<SSO.Models.DTOs.ProfileDTO> ProfileDTO { get; set; } = default!;
     }
 }

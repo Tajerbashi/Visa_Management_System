@@ -20,11 +20,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">صفحه اصلی</a>
+                            <a class="nav-link text-primary" asp-area="" asp-page="/Index">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">حریم خصوصی</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MainPages/Privacy">در باره ما</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-page="/SignUpPages/SignUp">صفحه ثبت نام</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" asp-area="" asp-page="/LoginPages/Login">صفحه ورود</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-area="" asp-page="/SignOut">خروج</a>
+                        </li>
+                        @*
                         <li class="nav-item">
                             <a class="nav-link text-primary" asp-area="" asp-controller="Login" asp-action="Index">ورود یکپارچه</a>
                         </li>
@@ -34,6 +44,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">صفحه کاربری</a>
                         </li>
+                        *@
                     </ul>
                 </div>
             </div>
