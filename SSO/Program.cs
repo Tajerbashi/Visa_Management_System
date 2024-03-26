@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SSO.DatabaseApplication;
 using SSO.DependencyInjection;
 using SSO.Domains;
+using SSO.Repositpries;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
@@ -46,7 +48,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.MapGet("/sso/Users/ReadAll", (IUserRepository service) =>
+{
+    return Results.Ok(service.ReadAll());
+});
 app.MapRazorPages();
 app.MapControllers();
 app.Run();
+
+

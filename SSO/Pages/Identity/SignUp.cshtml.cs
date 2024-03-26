@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SSO.Pages.LoginPages
+namespace SSO.Pages.Identity
 {
-    public class LoginModel : PageModel
+    public class SignUpModel : PageModel
     {
         public void OnGet()
         {

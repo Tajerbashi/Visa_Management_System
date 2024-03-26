@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SSO.BaseSSO.Model;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
 
@@ -21,6 +22,5 @@ namespace SSO.Pages
             Users = userRepository.ReadAll().Data;
             ViewData["ActiveUsers"] = Users.Count;
         }
-        
     }
 }
