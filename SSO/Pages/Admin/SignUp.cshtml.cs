@@ -16,7 +16,9 @@ namespace SSO.Pages.Admin
 
         public IActionResult OnGet()
         {
+
             return Page();
+
         }
 
         [BindProperty]

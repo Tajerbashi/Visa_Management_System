@@ -58,7 +58,7 @@ namespace SSO.Services
 
         public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
-            try
+            try 
             {
                 var user = _userManager.FindByNameAsync(model.UserName).Result;
                 _signInManager.SignOutAsync();

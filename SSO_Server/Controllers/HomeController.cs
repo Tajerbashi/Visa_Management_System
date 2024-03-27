@@ -22,6 +22,10 @@ namespace SSO_Server.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            return Redirect("https://localhost:44350/Admin/Login");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

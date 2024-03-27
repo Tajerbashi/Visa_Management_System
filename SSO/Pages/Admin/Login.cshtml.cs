@@ -14,14 +14,15 @@ namespace SSO.Pages.Admin
             this.userRepository = userRepository;
         }
 
+        [BindProperty]
+        public LoginDTO LoginDTO { get; set; } = default!;
         public IActionResult OnGet()
         {
-            //LoginDTO.ReturnUrl = "/";
+            ViewData["Ref"] = base.Request.Headers.Referer;
             return Page();
         }
 
-        [BindProperty]
-        public LoginDTO LoginDTO { get; set; } = default!;
+        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -33,7 +34,7 @@ namespace SSO.Pages.Admin
             var loginResult = userRepository.Login(LoginDTO);
             if (loginResult.Success)
             {
-                return RedirectToPage(loginResult.Data.ReturnUrl);
+                return Redirect(loginResult.Data.ReturnUrl);
             }
             if (loginResult.Results.RequiresTwoFactor)
             {
@@ -43,8 +44,7 @@ namespace SSO.Pages.Admin
             {
                 //
             }
-            ModelState.AddModelError(string.Empty,"");
-
+            ModelState.AddModelError(string.Empty, "");
             return RedirectToPage("./Login");
         }
 
