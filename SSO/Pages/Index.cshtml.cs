@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.BaseSSO.Model;
 using SSO.Models.DTOs;
@@ -19,6 +19,7 @@ namespace SSO.Pages
         public List<UserDTO> Users { get; set; }
         public void OnGet()
         {
+            ViewData["Title"] = "ورود یکپارچه";
             Users = userRepository.ReadAll().Data;
             ViewData["ActiveUsers"] = Users.Count;
         }

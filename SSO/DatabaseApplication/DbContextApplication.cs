@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SSO.Domains;
-using SSO.Models.DTOs;
 
 namespace SSO.DatabaseApplication
 {
@@ -30,6 +29,7 @@ namespace SSO.DatabaseApplication
             modelBuilder.Entity<UserTokenEntity>().ToTable("UserTokens", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             modelBuilder.Entity<UserEntity>().HasIndex(x => x.Email).IsUnique();
             #endregion
+
 
         }
     }

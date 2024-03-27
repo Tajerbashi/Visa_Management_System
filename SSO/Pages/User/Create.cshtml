@@ -1,0 +1,120 @@
+﻿@page
+@model SSO.Pages.User.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>UserEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserEntity.Name" class="control-label"></label>
+                <input asp-for="UserEntity.Name" class="form-control" />
+                <span asp-validation-for="UserEntity.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.Family" class="control-label"></label>
+                <input asp-for="UserEntity.Family" class="form-control" />
+                <span asp-validation-for="UserEntity.Family" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.IsDeleted" /> @Html.DisplayNameFor(model => model.UserEntity.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.IsActive" /> @Html.DisplayNameFor(model => model.UserEntity.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.UserName" class="control-label"></label>
+                <input asp-for="UserEntity.UserName" class="form-control" />
+                <span asp-validation-for="UserEntity.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.NormalizedUserName" class="control-label"></label>
+                <input asp-for="UserEntity.NormalizedUserName" class="form-control" />
+                <span asp-validation-for="UserEntity.NormalizedUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.Email" class="control-label"></label>
+                <input asp-for="UserEntity.Email" class="form-control" />
+                <span asp-validation-for="UserEntity.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.NormalizedEmail" class="control-label"></label>
+                <input asp-for="UserEntity.NormalizedEmail" class="form-control" />
+                <span asp-validation-for="UserEntity.NormalizedEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.EmailConfirmed" /> @Html.DisplayNameFor(model => model.UserEntity.EmailConfirmed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.PasswordHash" class="control-label"></label>
+                <input asp-for="UserEntity.PasswordHash" class="form-control" />
+                <span asp-validation-for="UserEntity.PasswordHash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.SecurityStamp" class="control-label"></label>
+                <input asp-for="UserEntity.SecurityStamp" class="form-control" />
+                <span asp-validation-for="UserEntity.SecurityStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.ConcurrencyStamp" class="control-label"></label>
+                <input asp-for="UserEntity.ConcurrencyStamp" class="form-control" />
+                <span asp-validation-for="UserEntity.ConcurrencyStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.PhoneNumber" class="control-label"></label>
+                <input asp-for="UserEntity.PhoneNumber" class="form-control" />
+                <span asp-validation-for="UserEntity.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.PhoneNumberConfirmed" /> @Html.DisplayNameFor(model => model.UserEntity.PhoneNumberConfirmed)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.TwoFactorEnabled" /> @Html.DisplayNameFor(model => model.UserEntity.TwoFactorEnabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.LockoutEnd" class="control-label"></label>
+                <input asp-for="UserEntity.LockoutEnd" class="form-control" />
+                <span asp-validation-for="UserEntity.LockoutEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserEntity.LockoutEnabled" /> @Html.DisplayNameFor(model => model.UserEntity.LockoutEnabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEntity.AccessFailedCount" class="control-label"></label>
+                <input asp-for="UserEntity.AccessFailedCount" class="form-control" />
+                <span asp-validation-for="UserEntity.AccessFailedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

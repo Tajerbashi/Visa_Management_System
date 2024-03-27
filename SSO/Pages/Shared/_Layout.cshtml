@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/SSO.styles.css" asp-append-version="true" />
 </head>
 <body dir="rtl">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header >
+        <nav style="background:linear-gradient(128deg, #38ffa5, #4643ff, #0056f1);" class="bg-danger navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">سیستم یکپارچه SSO</a>
+                <a class="navbar-brand text-light" asp-area="" asp-page="/Index">سیستم یکپارچه SSO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,20 +20,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-page="/Index">صفحه اصلی</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Index">صفحه اصلی</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Main/Privacy">در باره ما</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Main/Privacy">در باره ما</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-page="/Identity/SignUp">صفحه ثبت نام</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Admin/SignUp">صفحه ثبت نام</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-page="/Identity/Login">صفحه ورود</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Admin/Login">صفحه ورود</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" asp-area="" asp-page="/Identity/SignOut">خروج</a>
-                        </li>
+                        
                         @*
                         <li class="nav-item">
                             <a class="nav-link text-primary" asp-area="" asp-controller="Login" asp-action="Index">ورود یکپارچه</a>
@@ -46,6 +44,7 @@
                         </li>
                         *@
                     </ul>
+                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Identity/SignOut">خروج</a>
                 </div>
             </div>
         </nav>

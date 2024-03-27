@@ -9,7 +9,9 @@ using SSO.Repositpries;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
 // Add services to the container.
+builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
 #region DatabaseConfig
 builder.Services.AddDbContext<DbContextApplication>(options =>
 {
@@ -46,14 +48,16 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
+app.MapRazorPages();
+
 app.MapGet("/sso/Users/ReadAll", (IUserRepository service) =>
 {
     return Results.Ok(service.ReadAll());
 });
-app.MapRazorPages();
-app.MapControllers();
+
+app.MapDefaultControllerRoute();
+
 app.Run();
 
 

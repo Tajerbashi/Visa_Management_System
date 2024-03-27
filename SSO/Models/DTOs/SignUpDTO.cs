@@ -6,38 +6,38 @@ namespace SSO.Models.DTOs
 {
     public class SignUpDTO : BaseDTO
     {
-        [BindProperty]
+        //[BindProperty]
+        //[Display(Name ="نام")]
         [Required(ErrorMessage ="نام اجباری است")]
-        [Display(Name ="نام")]
         public string Name { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
+        //[Display(Name ="فامیلی")]
         [Required(ErrorMessage ="نام خانوادگی اجباری است")]
-        [Display(Name ="فامیلی")]
         public string Family { get; set; }
 
-        [BindProperty]
+        //[BindProperty]
+        //[Display(Name ="نام کاربری")]
         [Required(ErrorMessage ="نام کاربری اجباری است")]
-        [Display(Name ="نام کاربری")]
         public string UserName { get; set; }
 
-        [BindProperty]
-        [Required(ErrorMessage ="ایمیل اجباری است")]
+        //[BindProperty]
+        //[Display(Name ="ایمیل")]
         [EmailAddress]
-        [Display(Name ="ایمیل")]
+        [Required(ErrorMessage ="ایمیل اجباری است")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage ="رمز اجباری است")]
-        [BindProperty]
+        //[Display(Name ="رمز")]
+        //[BindProperty]
         [DataType(DataType.Password)]
-        [Display(Name ="رمز")]
+        [Required(ErrorMessage ="رمز اجباری است")]
         public string Password { get; set; }
 
-        [BindProperty]
+        //[Display(Name ="تکرار رمز")]
+        //[BindProperty]
         [Required(ErrorMessage ="رمز تکراری درست نیست")]
         [DataType(DataType.Password)]
         [Compare(nameof(Password))]
-        [Display(Name ="تکرار رمز")]
         public string ConfirmPassword { get; set; }
     }
 }
