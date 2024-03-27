@@ -17,6 +17,7 @@
             <hr />
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="LoginDTO.ReturnUrl" type="hidden" value="/"/>
                 <div class="form-group">
                     <label asp-for="LoginDTO.UserName" class="form-label">نام کاربری</label>
                     <input asp-for="LoginDTO.UserName" class="form-control" />
@@ -30,7 +31,7 @@
                 <div class="form-group form-check p-2">
                     <div class="d-flex flex-row justify-content-between">
                         <div class="d-flex flex-row">
-                            <input class="form-check-input mx-1" asp-for="LoginDTO.IsActive" />
+                            <input class="form-check-input mx-1" asp-for="LoginDTO.IsPersistance" />
                             <text class="mx-4">مرا به خاطر بسپار!</text>
                         </div>
                         <div>

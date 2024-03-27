@@ -8,11 +8,16 @@ namespace SSO.Models.DTOs
     {
         [Required(ErrorMessage ="نام کاربری الزامی است")]
         public string UserName { get; set; }
+
+
         [Required(ErrorMessage = "رمز کاربری الزامی است")]
         [PasswordPropertyText]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        //[Compare(nameof(Password))]
-        //public string ConfirmPassword { get; set; }
+
+        public bool IsPersistance { get; set; }
+
+        public string? ReturnUrl { get; set; } = "/";
+
     }
 }

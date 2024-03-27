@@ -16,6 +16,7 @@ namespace SSO.Pages.Admin
 
         public IActionResult OnGet()
         {
+            //LoginDTO.ReturnUrl = "/";
             return Page();
         }
 
@@ -29,10 +30,29 @@ namespace SSO.Pages.Admin
             {
                 return Page();
             }
+            var loginResult = userRepository.Login(LoginDTO);
+            if (loginResult.Success)
+            {
+                return RedirectToPage(loginResult.Data.ReturnUrl);
+            }
+            if (loginResult.Results.RequiresTwoFactor)
+            {
+                //
+            }
+            if (loginResult.Results.IsLockedOut)
+            {
+                //
+            }
+            ModelState.AddModelError(string.Empty,"");
 
-            
-
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Login");
         }
+
+        public async Task<IActionResult> OnGetSignOut()
+        {
+            userRepository.SignOut();
+            return RedirectToPage("Index");
+        }
+
     }
 }

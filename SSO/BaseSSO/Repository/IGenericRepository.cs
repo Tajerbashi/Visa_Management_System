@@ -7,12 +7,12 @@ namespace SSO.BaseSSO.Repository
     public interface IGenericRepository<T> : IDisposable
         where T : BaseDTO, new()
     {
-        Result<long> Create(T entity);
-        Result<bool> Update(T entity);
-        Result<bool> Delete(T entity);
-        Result<bool> Delete(long ID);
-        Result<T> Read(long Id);
-        Result<List<T>> ReadAll();
+        Result<long,bool> Create(T entity);
+        Result<bool, bool> Update(T entity);
+        Result<bool, bool> Delete(T entity);
+        Result<bool, bool> Delete(long ID);
+        Result<T, bool> Read(long Id);
+        Result<List<T>, bool> ReadAll();
 
         void BeginTransaction();
         void CommitTransaction();
@@ -45,21 +45,21 @@ namespace SSO.BaseSSO.Repository
             Context.Database.CommitTransaction();
         }
 
-        public abstract Result<long> Create(T entity);
+        public abstract Result<long, bool> Create(T entity);
 
-        public abstract Result<bool> Delete(T entity);
+        public abstract Result<bool, bool> Delete(T entity);
 
-        public abstract Result<bool> Delete(long ID);
+        public abstract Result<bool, bool> Delete(long ID);
 
         public void Dispose()
         {
             Context.Dispose();
         }
 
-        public abstract Result<T> Read(long Id);
+        public abstract Result<T, bool> Read(long Id);
         
 
-        public abstract Result<List<T>> ReadAll();
+        public abstract Result<List<T>, bool> ReadAll();
 
         public void RollBackTransaction()
         {
@@ -68,6 +68,6 @@ namespace SSO.BaseSSO.Repository
 
         public void SaveChanges() => Context.SaveChanges();
 
-        public abstract Result<bool> Update(T entity);
+        public abstract Result<bool, bool> Update(T entity);
     }
 }

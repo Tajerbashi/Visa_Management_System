@@ -21,14 +21,14 @@ namespace SSO.Services
             _signInManager = signInManager;
         }
 
-        public override Result<long> Create(UserDTO entity)
+        public override Result<long, bool> Create(UserDTO entity)
         {
             var model = Mapper.Map<UserEntity>(entity);
             model.UserName = entity.UserName;
             var result = _userManager.CreateAsync(model, entity.Password).Result;
             if (result.Succeeded)
             {
-                return new Result<long>
+                return new Result<long, bool>
                 {
                     Data = model.Id,
                     Messages = ResponseMessage.Success(),
@@ -37,7 +37,7 @@ namespace SSO.Services
             }
             else
             {
-                return new Result<long>
+                return new Result<long, bool>
                 {
                     Data = model.Id,
                     Messages = (string)ResponseMessage.MessageeLine(result.Errors),
@@ -46,57 +46,90 @@ namespace SSO.Services
             }
         }
 
-        public override Result<bool> Delete(UserDTO entity)
+        public override Result<bool, bool> Delete(UserDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public override Result<bool> Delete(long ID)
+        public override Result<bool, bool> Delete(long ID)
         {
             throw new NotImplementedException();
         }
 
-        public Result<bool> Login(LoginDTO model)
+        public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
-
-            if (model.Id > 0)
+            try
             {
-                return new Result<bool>
+                var user = _userManager.FindByNameAsync(model.UserName).Result;
+                _signInManager.SignOutAsync();
+                var loginResult = _signInManager.PasswordSignInAsync(
+                   user,
+                   model.Password,
+                   model.IsPersistance,
+                   true
+                   ).Result;
+                if (loginResult.Succeeded)
                 {
-
+                    return new Result<LoginDTO, SignInResult>
+                    {
+                        Data = model,
+                        Messages = ResponseMessage.Success(),
+                        Results = loginResult,
+                        Success = true,
+                    };
+                }
+                return new Result<LoginDTO, SignInResult>
+                {
+                    Data = model,
+                    Messages = ResponseMessage.FaildLogin(),
+                    Results = loginResult,
+                    Success = false,
                 };
             }
-            return new Result<bool>
+            catch
             {
-
-            };
+                throw;
+            }
 
         }
 
-        public override Result<UserDTO> Read(long Id)
+        public override Result<UserDTO, bool> Read(long Id)
         {
             throw new NotImplementedException();
         }
 
-        public override Result<List<UserDTO>> ReadAll()
+        public override Result<List<UserDTO>, bool> ReadAll()
         {
             try
             {
                 var model = Mapper.Map<List<UserDTO>>(Context.Users.ToList());
-                return new Result<List<UserDTO>>
+                return new Result<List<UserDTO>, bool>
                 {
                     Data = model,
-                    Results = ResponseMessage.Success(),
+                    Messages = ResponseMessage.Success(),
+                    Results = true,
                     Success = true,
                 };
             }
             catch
             {
-                return new Result<List<UserDTO>> { Success = false };
+                return new Result<List<UserDTO>, bool> { Success = false };
             }
         }
 
-        public override Result<bool> Update(UserDTO entity)
+        public Result<bool, bool> SignOut()
+        {
+            var res = _signInManager.SignOutAsync();
+            return new Result<bool, bool>
+            {
+                Messages = ResponseMessage.SignOutSuccess(),
+                Data = true,
+                Success = true,
+                Results = true,
+            };
+        }
+
+        public override Result<bool, bool> Update(UserDTO entity)
         {
             throw new NotImplementedException();
         }

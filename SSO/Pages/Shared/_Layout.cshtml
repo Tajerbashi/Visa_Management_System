@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/SSO.styles.css" asp-append-version="true" />
 </head>
 <body dir="rtl">
-    <header >
+    <header>
         <nav style="background:linear-gradient(128deg, #38ffa5, #4643ff, #0056f1);" class="bg-danger navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand text-light" asp-area="" asp-page="/Index">سیستم یکپارچه SSO</a>
@@ -31,20 +31,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Admin/Login">صفحه ورود</a>
                         </li>
-                        
+
                         @*
                         <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-controller="Login" asp-action="Index">ورود یکپارچه</a>
+                        <a class="nav-link text-primary" asp-area="" asp-controller="Login" asp-action="Index">ورود یکپارچه</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-controller="SignUp" asp-action="Index">ثبت نام</a>
+                        <a class="nav-link text-success" asp-area="" asp-controller="SignUp" asp-action="Index">ثبت نام</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">صفحه کاربری</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">صفحه کاربری</a>
                         </li>
                         *@
                     </ul>
-                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Identity/SignOut">خروج</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link text-light btn btn-dark px-4 mx-1 rounded-5 shadow">
+                            @User.Identity.Name
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-light btn btn-primary px-4 mx-1 rounded-5 shadow" asp-area="" asp-page="/Admin/Login">ورود</a>
+                    }
+                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Admin/Login" asp-page-handler="SignOut">خروج</a>
                 </div>
             </div>
         </nav>
