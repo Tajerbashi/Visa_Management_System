@@ -1,6 +1,6 @@
 @font-face {
     font-family: iransansweb;
-    src: url(../fonts/IRANSansWeb.ttf)
+    src: url(~/fonts/IRANSansWeb.ttf)
 }
 
 html {
@@ -26,4 +26,5 @@ html {
 body {
     margin-bottom: 60px;
     background: linear-gradient(134deg, #38ffa5, #4643ff, #0056f1);
+    font-family: iransansweb;
 }

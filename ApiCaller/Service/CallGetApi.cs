@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,7 +29,7 @@ namespace ApiCaller.Service
                 HttpResponseMessage response = await client.GetAsync($"{API}");
                 if (response.IsSuccessStatusCode)
                 {
-                    var res = await response.Content.ReadAsStringAsync();
+                    Result<object> res = await response.Content.ReadFromJsonAsync<Result<object>>();
                     Console.WriteLine("Result : {0}", res);
                 }
                 else

@@ -1,15 +1,18 @@
 ﻿using SSO.BaseSSO.Model;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SSO.Models.DTOs
 {
     public class LoginDTO : BaseDTO
     {
-        [Required]
+        [Required(ErrorMessage ="نام کاربری الزامی است")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "رمز کاربری الزامی است")]
+        [PasswordPropertyText]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required]
-        public string ConfirmPassword { get; set; }
+        //[Compare(nameof(Password))]
+        //public string ConfirmPassword { get; set; }
     }
 }

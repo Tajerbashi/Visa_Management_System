@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SSO.Domains;
+using SSO.Models.DTOs;
 
 namespace SSO.DatabaseApplication
 {

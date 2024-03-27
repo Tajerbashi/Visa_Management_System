@@ -13,10 +13,12 @@ namespace SSO.Services
     public class UserService : BaseServices<UserDTO>, IUserRepository
     {
         private UserManager<UserEntity> _userManager;
+        private SignInManager<UserEntity> _signInManager;
 
-        public UserService(DbContextApplication context, IMapper mapper, UserManager<UserEntity> userManager) : base(context, mapper)
+        public UserService(DbContextApplication context, IMapper mapper, UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : base(context, mapper)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public override Result<long> Create(UserDTO entity)
@@ -52,6 +54,23 @@ namespace SSO.Services
         public override Result<bool> Delete(long ID)
         {
             throw new NotImplementedException();
+        }
+
+        public Result<bool> Login(LoginDTO model)
+        {
+
+            if (model.Id > 0)
+            {
+                return new Result<bool>
+                {
+
+                };
+            }
+            return new Result<bool>
+            {
+
+            };
+
         }
 
         public override Result<UserDTO> Read(long Id)
