@@ -31,7 +31,7 @@ namespace SSO.Services
                 return new Result<long>
                 {
                     Data = model.Id,
-                    Results = ResponseMessage.Success(),
+                    Messages = ResponseMessage.Success(),
                     Success = true,
                 };
             }
@@ -40,7 +40,7 @@ namespace SSO.Services
                 return new Result<long>
                 {
                     Data = model.Id,
-                    Results = ResponseMessage.MessageeLine(result.Errors),
+                    Messages = (string)ResponseMessage.MessageeLine(result.Errors),
                     Success = false,
                 };
             }

@@ -24,7 +24,7 @@ namespace SSO.Common
             var result  = "";
             foreach (var item in errors.ToList())
             {
-                result += item.Description + Environment.NewLine;
+                result += $"{item.Code} : {item.Description + Environment.NewLine}";
             }
             return result;
         }

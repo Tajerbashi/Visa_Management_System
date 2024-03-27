@@ -33,17 +33,20 @@ namespace SSO.Pages.Admin
             await Task.Delay(100);
             var entity = new UserDTO
             {
-                Name=SignUpDTO.Name,
-                Family=SignUpDTO.Family,
-                Email=SignUpDTO.Email,
-                UserName=SignUpDTO.UserName,
-                Password=SignUpDTO.Password,
+                Name = SignUpDTO.Name,
+                Family = SignUpDTO.Family,
+                Email = SignUpDTO.Email,
+                UserName = SignUpDTO.UserName,
+                Password = SignUpDTO.Password,
+                IsDeleted = false,
+                IsActive= true
             };
             var res = userRepository.Create(entity);
             if (res.Success)
             {
                 return RedirectToPage("./Index");
             }
+            ViewData["Messages"] = res.Messages;
             return Page();
         }
     }
