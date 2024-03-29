@@ -26,11 +26,11 @@
                             <a class="nav-link text-light" asp-area="" asp-page="/Main/Privacy">در باره ما</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Admin/SignUp">صفحه ثبت نام</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Identity/SignUp">صفحه ثبت نام</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Admin/Login">صفحه ورود</a>
-                        </li>
+                        @* <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-page="/Admin/Login">صفحه ورود</a>
+                        </li> *@
 
                         @*
                         <li class="nav-item">
@@ -49,12 +49,14 @@
                         <a class="nav-link text-light btn btn-dark px-4 mx-1 rounded-5 shadow">
                             @User.Identity.Name
                         </a>
+                        <a class="nav-link text-light btn btn-primary px-4 rounded-5 shadow mx-1" asp-page="/Admin/AdminPanel">پنل مدیریت</a>
+
                     }
                     else
                     {
-                        <a class="nav-link text-light btn btn-primary px-4 mx-1 rounded-5 shadow" asp-area="" asp-page="/Admin/Login">ورود</a>
+                        <a class="nav-link text-light btn btn-primary px-4 mx-1 rounded-5 shadow" asp-area="" asp-page="/Identity/Login">ورود</a>
                     }
-                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Admin/Login" asp-page-handler="SignOut">خروج</a>
+                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Identity/Login" asp-page-handler="SignOut">خروج</a>
                 </div>
             </div>
         </nav>
@@ -66,7 +68,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container text-light">
             اطلاعات محفوظ است
         </div>
     </footer>

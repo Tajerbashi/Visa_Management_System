@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 
-namespace SSO.Pages.Admin
+namespace SSO.Pages.Identity
 {
     public class ForgotPasswordModel : PageModel
     {

@@ -12,8 +12,8 @@ namespace SSO.Services
 {
     public class UserService : BaseServices<UserDTO>, IUserRepository
     {
-        private UserManager<UserEntity> _userManager;
-        private SignInManager<UserEntity> _signInManager;
+        private readonly UserManager<UserEntity> _userManager;
+        private readonly SignInManager<UserEntity> _signInManager;
 
         public UserService(DbContextApplication context, IMapper mapper, UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : base(context, mapper)
         {
@@ -102,7 +102,7 @@ namespace SSO.Services
         {
             try
             {
-                var model = Mapper.Map<List<UserDTO>>(Context.Users.ToList());
+                var model = Mapper.Map<List<UserDTO>>(_userManager.Users.ToList());
                 return new Result<List<UserDTO>, bool>
                 {
                     Data = model,

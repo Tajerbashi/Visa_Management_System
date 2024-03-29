@@ -17,6 +17,8 @@ namespace SSO.Domains
         {
 
         }
+        [Description("توضیحات")]
+        public string Description { get; set; }
         [Description("حذف شده"), DefaultValue(false)]
         public bool IsDeleted { get; set; }
 

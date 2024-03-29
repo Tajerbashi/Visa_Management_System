@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
 
-namespace SSO.Pages.Admin
+namespace SSO.Pages.Identity
 {
     public class SignUpModel : PageModel
     {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using SSO.BaseSSO.Model;
 using SSO.BaseSSO.Repository;
 using SSO.Common;
@@ -11,46 +12,57 @@ namespace SSO.Services
 {
     public class RoleService : BaseServices<RoleDTO>, IRoleRepository
     {
-        public RoleService(DbContextApplication context, IMapper mapper) : base(context, mapper)
+        private readonly RoleManager<RoleEntity> roleManager;
+        public RoleService(DbContextApplication context, IMapper mapper, RoleManager<RoleEntity> roleManager) : base(context, mapper)
         {
+            this.roleManager = roleManager;
         }
 
-        public override Result<long,bool> Create(RoleDTO entity)
+        public override Result<long, bool> Create(RoleDTO entity)
         {
             try
             {
                 var model = Mapper.Map<RoleEntity>(entity);
-                Context.Roles.Add(model);
-                base.SaveChanges();
-                return new Result<long,bool>
+                var result =roleManager.CreateAsync(model).Result;
+                if (result.Succeeded)
                 {
-                    Data=model.Id,
-                    Messages = ResponseMessage.Success(),
-                    Success= true,
+                    return new Result<long, bool>
+                    {
+                        Data = model.Id,
+                        Messages = ResponseMessage.Success(),
+                        Success = true,
+                    };
+                }
+                return new Result<long, bool>
+                {
+                    Data = 0,
+                    Messages = (string)ResponseMessage.MessageeLine(result.Errors),
+                    Success = false,
                 };
+
             }
-            catch 
+            catch
             {
-                return new Result<long,bool> { Success = false };
+                return new Result<long, bool> { Success = false };
             }
         }
 
-        public override Result<bool,bool> Delete(RoleDTO entity)
+        public override Result<bool, bool> Delete(RoleDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public override Result<bool,bool> Delete(long ID)
+        public override Result<bool, bool> Delete(long ID)
         {
             throw new NotImplementedException();
         }
 
-        public override Result<RoleDTO,bool> Read(long Id)
+        public override Result<RoleDTO, bool> Read(long Id)
         {
             try
             {
                 var model = Mapper.Map<RoleDTO>(Context.Roles.Find(Id));
-                return new Result<RoleDTO,bool>
+                return new Result<RoleDTO, bool>
                 {
                     Data = model,
                     Messages = ResponseMessage.Success(),
@@ -59,16 +71,16 @@ namespace SSO.Services
             }
             catch
             {
-                return new Result<RoleDTO,bool> { Success = false };
+                return new Result<RoleDTO, bool> { Success = false };
             }
         }
 
-        public override Result<List<RoleDTO>,bool> ReadAll()
+        public override Result<List<RoleDTO>, bool> ReadAll()
         {
             try
             {
-                var model = Mapper.Map<List<RoleDTO>>(Context.Roles.ToList());
-                return new Result<List<RoleDTO>,bool>
+                var model = Mapper.Map<List<RoleDTO>>(roleManager.Roles.ToList());
+                return new Result<List<RoleDTO>, bool>
                 {
                     Data = model,
                     Messages = ResponseMessage.Success(),
@@ -77,11 +89,11 @@ namespace SSO.Services
             }
             catch
             {
-                return new Result<List<RoleDTO>,bool> { Success = false };
+                return new Result<List<RoleDTO>, bool> { Success = false };
             }
         }
 
-        public override Result<bool,bool> Update(RoleDTO entity)
+        public override Result<bool, bool> Update(RoleDTO entity)
         {
             throw new NotImplementedException();
         }

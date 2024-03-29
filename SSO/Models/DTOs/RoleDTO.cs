@@ -4,5 +4,7 @@ namespace SSO.Models.DTOs
 {
     public class RoleDTO: BaseDTO
     {
+        public string Description { get; set; }
+        public string Name { get; set; }
     }
 }

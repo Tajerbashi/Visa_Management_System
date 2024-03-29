@@ -36,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO", "SSO\SSO.csproj", "{D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCaller", "ApiCaller\ApiCaller.csproj", "{191DE1C5-5BCC-4E9B-A1C6-83B02F33E4BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSO_Server", "SSO_Server\SSO_Server.csproj", "{BA696E41-E20F-42DA-8604-B886A65A9D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSO_Server", "SSO_Server\SSO_Server.csproj", "{BA696E41-E20F-42DA-8604-B886A65A9D8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

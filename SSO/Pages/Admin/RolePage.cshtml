@@ -1,0 +1,48 @@
+﻿@page
+@model SSO.Pages.Admin.RolePageModel
+@{
+}
+
+
+<div style="height:80vh; overflow:auto;" class=" container-fluid d-flex flex-column justify-content-between">
+    <div class="row shadow">
+        <div class="text-center alert alert-primary border-primary fixed-top">مدیریت نقش ها و نقش های کاربران</div>
+        <div>
+            <table class="table table-hover text-center text-light">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>نام</th>
+                        <th>توضیحات</th>
+                        <th>عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Roles)
+                    {
+                        <tr>
+                            <th>@item.Id</th>
+                            <th>@item.Name</th>
+                            <th>@item.Description</th>
+                            <th>
+                                <a class="btn btn-warning">ویرایش</a>
+                                <a class="btn btn-info">نمایش</a>
+                                <a class="btn btn-danger">حدف</a>
+                                <a class="btn btn-danger">معرفی به کاربران</a>
+                                <a class="btn btn-danger">کاربران این نقش</a>
+                                <a class="btn btn-danger">مدیریت دسترسی</a>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @if (@ViewData["Errors"] != null)
+    {
+        <div class="alert alert-danger">@ViewData["Errors"]</div>
+    }
+    <div class="row shadow text-center">
+        <a asp-page="./AdminPanel" class="btn btn-dark text-light fixed-bottom p-3">مدیریت کابران</a>
+    </div>
+</div>
