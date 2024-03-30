@@ -7,4 +7,11 @@
         public string Messages { get; set; }
         public bool Success { get; set; }
     }
+
+    public class Result<TData>
+    {
+        public TData Data { get; set; }
+        public string Messages { get; set; }
+        public bool Success { get; set; }
+    }
 }

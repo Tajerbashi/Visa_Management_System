@@ -2,16 +2,19 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
+using SSO.Services;
 
 namespace SSO.Pages.Identity
 {
     public class SignUpModel : PageModel
     {
         private readonly IUserRepository userRepository;
+        private readonly IMailRepository mailRepository;
 
         public SignUpModel(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
+            this.mailRepository = new MailService();
         }
 
         public IActionResult OnGet()
@@ -46,7 +49,30 @@ namespace SSO.Pages.Identity
             var res = userRepository.Create(entity);
             if (res.Success)
             {
-                return RedirectToPage("./Index");
+                var token = userRepository.GeneratToken(res.Data);
+                //var  callBackLink = Url.Action("ConfimEmail","Account",new
+                //{
+                //    UserId=res.Data,
+                //    token=token
+                //},protocol:Request.Scheme);
+
+                var callBackLink = Url.PageLink("ConfirmAccount");
+                string body = $@"
+برای فعال سازی حساب کاربری خو روی 
+<a href={callBackLink}>لینک</a>
+کلیک کنید
+";
+                var config= new UserPassword
+                (
+                  "",//AdminEmail
+                  "",//AdminPass
+                  "",//UserEmail
+                  "",//Subject
+                  ""//Body
+                );
+
+                var mail = await mailRepository.SendGmail(config);
+                return RedirectToPage("./DisplayEmail");
             }
             ViewData["Messages"] = res.Messages;
             return Page();

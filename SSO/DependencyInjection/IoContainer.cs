@@ -9,6 +9,7 @@ namespace SSO.DependencyInjection
         {
             services.AddScoped<IUserRepository, UserService>();
             services.AddScoped<IRoleRepository, RoleService>();
+            services.AddScoped<IMailRepository, MailService>();
             return services;
         }
     }

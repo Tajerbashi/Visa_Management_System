@@ -56,9 +56,28 @@ namespace SSO.Services
             throw new NotImplementedException();
         }
 
+        public Result<string> GeneratToken(long userId)
+        {
+            try
+            {
+                var user= _userManager.FindByIdAsync(userId.ToString()).Result;
+                var code = _userManager.GenerateEmailConfirmationTokenAsync(user).Result;
+                return new Result<string>
+                {
+                    Data=code,
+                    Messages=ResponseMessage.Success(),
+                    Success = true,
+                };
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
-            try 
+            try
             {
                 var user = _userManager.FindByNameAsync(model.UserName).Result;
                 _signInManager.SignOutAsync();
