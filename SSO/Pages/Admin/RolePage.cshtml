@@ -2,11 +2,20 @@
 @model SSO.Pages.Admin.RolePageModel
 @{
 }
-
+<style>
+    .btn-tk {
+        width: 150px;
+        border-radius: 1rem;
+        margin:0.3px;
+    }
+</style>
 
 <div style="height:80vh; overflow:auto;" class=" container-fluid d-flex flex-column justify-content-between">
     <div class="row shadow">
-        <div class="text-center alert alert-primary border-primary fixed-top">مدیریت نقش ها و نقش های کاربران</div>
+        <div class="text-center alert alert-primary border-primary fixed-top d-flex flex-row justify-content-between">
+            <a asp-page="./RoleManagement" asp-route-id="0" asp-page-handler="Create" class="btn btn-primary">جدید</a>
+            <text>مدیریت نقش کاربران</text>
+        </div>
         <div>
             <table class="table table-hover text-center text-light">
                 <thead>
@@ -25,12 +34,12 @@
                             <th>@item.Name</th>
                             <th>@item.Description</th>
                             <th>
-                                <a class="btn btn-warning">ویرایش</a>
-                                <a class="btn btn-info">نمایش</a>
-                                <a class="btn btn-danger">حدف</a>
-                                <a class="btn btn-danger">معرفی به کاربران</a>
-                                <a class="btn btn-danger">کاربران این نقش</a>
-                                <a class="btn btn-danger">مدیریت دسترسی</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Update" class="btn-tk btn btn-warning bg-gradient">ویرایش</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Read" class="btn-tk btn btn-info bg-gradient">نمایش</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Delete" class="btn-tk btn btn-danger bg-gradient">حدف</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="AddRoleToUser" class="btn-tk btn btn-primary bg-gradient">معرفی به کاربران</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="UsersOfRole" class="btn-tk btn btn-info bg-gradient">کاربران این نقش</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Privilege" class="btn-tk btn btn-dark bg-gradient">مدیریت دسترسی</a>
                             </th>
                         </tr>
                     }

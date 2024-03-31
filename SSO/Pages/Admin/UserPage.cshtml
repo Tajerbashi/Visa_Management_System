@@ -5,7 +5,10 @@
 
 <div style="height:80vh; overflow:auto;" class=" container-fluid d-flex flex-column justify-content-between">
     <div class="row shadow">
-        <div class="text-center alert alert-primary border-primary fixed-top">مدیریت کاربران</div>
+        <div class="text-center alert alert-primary border-primary fixed-top d-flex flex-row justify-content-between">
+            <a asp-page="./UserManagement" asp-route-id="0"  asp-page-handler="Create" class="btn btn-primary">جدید</a>
+            <text>مدیریت کاربران</text>
+        </div>
         <div>
             <table class="table table-hover text-center text-light">
                 <thead>
@@ -32,10 +35,10 @@
                             <th>@item.Password</th>
                             <th>@item.Phone</th>
                             <th>
-                                <a class="btn btn-warning">ویرایش</a>
-                                <a class="btn btn-info">نمایش</a>
-                                <a class="btn btn-danger">حدف</a>
-                                <a class="btn btn-primary">ورود</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Update" class="btn btn-warning">ویرایش</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Read" class="btn btn-info">نمایش</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Delete" class="btn btn-danger">حدف</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Login" class="btn btn-primary">ورود</a>
                             </th>
                         </tr>
                     }

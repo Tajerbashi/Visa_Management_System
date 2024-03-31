@@ -1,0 +1,16 @@
+﻿@page "{id}"
+@model SSO.Pages.Admin.UserManagementModel
+@{
+}
+
+<div>
+    <div class="alert alert-primary shadow">@Model.Mode</div>
+    @if (Model.Id != 0)
+    {
+        <div class="alert alert-success">اطلاعات کاربر موجود است</div>
+    }
+    else
+    {
+        <div class="alert alert-danger">موردی یافت نشده است</div>
+    }
+</div>
