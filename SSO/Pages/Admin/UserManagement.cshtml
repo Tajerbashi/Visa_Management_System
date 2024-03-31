@@ -1,16 +1,120 @@
 ﻿@page "{id}"
 @model SSO.Pages.Admin.UserManagementModel
 @{
+    var Title = "ثبت اطلاعات کاربر جدید";
+    ViewData["Title"] = Title;
+    var messages = ViewData["Messages"];
 }
+<style>
+    .title-tk {
+        width: 150px;
+        background: linear-gradient(270deg, #ffffff3d, transparent);
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .value-tk {
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .field-tk{
+        margin: 1rem;
+        box-shadow: 0 0 8px 3px #0000002e;
+        padding: 5px;
+        border-radius: 1rem;
+        color: wheat;
+        display:flex;
+        flex-direction:row;
+    }
+</style>
 
 <div>
-    <div class="alert alert-primary shadow">@Model.Mode</div>
-    @if (Model.Id != 0)
+    @if (Model.ReadOnly)
     {
-        <div class="alert alert-success">اطلاعات کاربر موجود است</div>
+        <div class="container ">
+            <div class="row">
+                <div class="field-tk ">
+                    <div class="title-tk">نام</div>   <div class="value-tk">@Model.UserModel.Name</div>
+                </div>
+                <div class="field-tk ">
+                    <div class="title-tk">فامیلی</div>   <div class="value-tk">@Model.UserModel.Family</div>
+                </div>
+                <div class="field-tk ">
+                    <div class="title-tk">ایمیل</div>   <div class="value-tk">@Model.UserModel.Email</div>
+                </div>
+                <div class="field-tk ">
+                    <div class="title-tk">نام کاربری</div>   <div class="value-tk">@Model.UserModel.UserName</div>
+                </div>
+                <div class="field-tk ">
+                    <div class="title-tk">رمز کاربری</div>   <div class="value-tk">@Model.UserModel.Password</div>
+                </div>
+                <div class="field-tk ">
+                    <div class="title-tk">تلفن</div>   <div class="value-tk">@Model.UserModel.Phone</div>
+                </div>
+            </div>
+            <div>
+                <a asp-page="./UserPage" class="btn btn-primary bg-gradient rounded">بازگشت به صفحه قبل</a>
+            </div>
+        </div>
     }
     else
     {
-        <div class="alert alert-danger">موردی یافت نشده است</div>
+        <div class="container align-items-center pb-5">
+            <div class="alert alert-primary border-dark text-center display-6 shadow rounded-5">به سامانه ورود یکپارچه خوش آمدید</div>
+            <div class="row d-flex flex-row justify-content-center mt-5">
+                <div class="col-md-8 col-sm-10 col-xl-6 col-lg-8 bg-light bg-gradient shadow p-5 rounded-3 ">
+                    @if (messages != null)
+                    {
+                        <div class="alert alert-danger shadow text-center">
+                            @messages
+                        </div>
+                    }
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.Name" class="form-label">نام</label>
+                            <input asp-for="SignUpModel.Name" class="form-control" />
+                            <input type="hidden" value="@Model.Id" class="form-control" />
+                            <span asp-validation-for="SignUpModel.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.Family" class="form-label">فامیلی</label>
+                            <input asp-for="SignUpModel.Family" class="form-control" />
+                            <span asp-validation-for="SignUpModel.Family" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.UserName" class="form-label">نام کاربری</label>
+                            <input asp-for="SignUpModel.UserName" class="form-control" />
+                            <span asp-validation-for="SignUpModel.UserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.Email" class="form-label">ایمیل</label>
+                            <input asp-for="SignUpModel.Email" class="form-control" />
+                            <span asp-validation-for="SignUpModel.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.Password" class="form-label">رمز</label>
+                            <input asp-for="SignUpModel.Password" class="form-control" />
+                            <span asp-validation-for="SignUpModel.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SignUpModel.ConfirmPassword" class="form-label">تکرار رمز</label>
+                            <input asp-for="SignUpModel.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="SignUpModel.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group text-center p-2 mt-4 d-flex flex-row justify-content-around">
+                            <input type="submit"
+                                   value="ثبت نام"
+                                   class="btn btn-success w-25 shadow" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
     }
 </div>

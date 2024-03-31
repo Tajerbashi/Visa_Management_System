@@ -44,6 +44,7 @@ namespace SSO.Pages.Identity
             {
                 //
             }
+            await Task.CompletedTask;
             ModelState.AddModelError(string.Empty, "");
             return RedirectToPage("./Login");
         }
@@ -51,6 +52,7 @@ namespace SSO.Pages.Identity
         public async Task<IActionResult> OnGetSignOut()
         {
             userRepository.SignOut();
+            await Task.CompletedTask;
             return RedirectToPage("Index");
         }
 

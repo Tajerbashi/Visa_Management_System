@@ -17,7 +17,7 @@ namespace SSO.Models.DTOs
 
         public bool IsPersistance { get; set; }
 
-        public string? ReturnUrl { get; set; } = "/";
+        public string ReturnUrl { get; set; } = "/";
 
     }
 }

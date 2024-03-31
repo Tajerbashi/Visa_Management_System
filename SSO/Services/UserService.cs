@@ -25,6 +25,8 @@ namespace SSO.Services
         {
             var model = Mapper.Map<UserEntity>(entity);
             model.UserName = entity.UserName;
+            model.IsActive = true;
+            model.IsDeleted = false;
             var result = _userManager.CreateAsync(model, entity.Password).Result;
             if (result.Succeeded)
             {
@@ -48,12 +50,37 @@ namespace SSO.Services
 
         public override Result<bool, bool> Delete(UserDTO entity)
         {
-            throw new NotImplementedException();
+            var user = _userManager.FindByIdAsync(entity.Id.ToString()).Result;
+            user.IsDeleted = true;
+            user.IsActive = false;
+            var res = _userManager.UpdateAsync(user).Result;
+            if (res.Succeeded)
+            {
+                return new Result<bool, bool>
+                {
+                    Data = true,
+                    Messages = ResponseMessage.Success(),
+                    Results = true,
+                    Success = true
+                };
+            }
+            return new Result<bool, bool>
+            {
+                Data = false,
+                Messages = ResponseMessage.Faild(),
+                Results = false,
+                Success = false
+            };
         }
 
         public override Result<bool, bool> Delete(long ID)
         {
-            throw new NotImplementedException();
+            return Delete(new UserDTO
+            {
+                Id = ID,
+                IsDeleted = false,
+                IsActive = true
+            });
         }
 
         public Result<string> GeneratToken(long userId)
@@ -64,8 +91,8 @@ namespace SSO.Services
                 var code = _userManager.GenerateEmailConfirmationTokenAsync(user).Result;
                 return new Result<string>
                 {
-                    Data=code,
-                    Messages=ResponseMessage.Success(),
+                    Data = code,
+                    Messages = ResponseMessage.Success(),
                     Success = true,
                 };
             }
@@ -75,6 +102,39 @@ namespace SSO.Services
             }
         }
 
+        public async Task<Result<LoginDTO, bool>> LoginInternal(LoginDTO model)
+        {
+            try
+            {
+                var user = _userManager.FindByNameAsync(model.UserName).Result;
+                await _signInManager.SignOutAsync();
+                //var loginResult = _signInManager.SignInAsync(user,true);
+                var loginResult = _signInManager.RefreshSignInAsync(user);
+                Task.WaitAny(loginResult);
+                if (loginResult.IsCompletedSuccessfully)
+                {
+                    return new Result<LoginDTO, bool>
+                    {
+                        Data = model,
+                        Messages = ResponseMessage.Success(),
+                        Results = true,
+                        Success = true,
+                    };
+                }
+                return new Result<LoginDTO, bool>
+                {
+                    Data = model,
+                    Messages = ResponseMessage.FaildLogin(),
+                    Results = false,
+                    Success = false,
+                };
+            }
+            catch
+            {
+
+                throw;
+            }
+        }
         public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
             try
@@ -114,14 +174,22 @@ namespace SSO.Services
 
         public override Result<UserDTO, bool> Read(long Id)
         {
-            throw new NotImplementedException();
+            var entity = _userManager.FindByIdAsync(Id.ToString()).Result;
+            var dto = Mapper.Map<UserDTO>(entity);
+            return new Result<UserDTO, bool>
+            {
+                Data = dto,
+                Messages = ResponseMessage.Success(),
+                Results = true,
+                Success = true
+            };
         }
 
         public override Result<List<UserDTO>, bool> ReadAll()
         {
             try
             {
-                var model = Mapper.Map<List<UserDTO>>(_userManager.Users.ToList());
+                var model = Mapper.Map<List<UserDTO>>(_userManager.Users.Where(x => x.IsActive && !x.IsDeleted).ToList());
                 return new Result<List<UserDTO>, bool>
                 {
                     Data = model,
@@ -150,7 +218,33 @@ namespace SSO.Services
 
         public override Result<bool, bool> Update(UserDTO entity)
         {
-            throw new NotImplementedException();
+            //vaMapper.Map<UserEntity>(entity);
+            var model = _userManager.FindByIdAsync(entity.Id.ToString()).Result;
+            model.Name = entity.Name;
+            model.Family = entity.Family;
+            model.Email = entity.Email;
+            model.UserName = entity.UserName;
+
+            var res = _userManager.UpdateAsync(model).Result;
+            if (res.Succeeded)
+            {
+
+                return new Result<bool, bool>
+                {
+                    Data = true,
+                    Success = true,
+                    Messages = ResponseMessage.Success(),
+                    Results = true,
+                };
+            }
+            return new Result<bool, bool>
+            {
+                Data = false,
+                Success = false,
+                Messages = ResponseMessage.Faild(),
+                Results = false,
+            };
+
         }
     }
 }

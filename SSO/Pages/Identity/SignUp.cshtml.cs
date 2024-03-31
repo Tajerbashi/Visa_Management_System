@@ -19,9 +19,7 @@ namespace SSO.Pages.Identity
 
         public IActionResult OnGet()
         {
-
             return Page();
-
         }
 
         [BindProperty]

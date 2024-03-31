@@ -24,6 +24,7 @@ namespace SSO.Controllers
         // GET: SignUp
         public async Task<IActionResult> Index()
         {
+            await Task.CompletedTask;
             var res = userRepository.ReadAll();
             return View(res.Data);
         }
