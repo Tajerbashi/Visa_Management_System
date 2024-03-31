@@ -46,7 +46,7 @@
                     </ul>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a class="nav-link text-light btn btn-dark px-4 mx-1 rounded-5 shadow">
+                        <a asp-page="/Identity/ProfilePage" asp-route-id="@User.Identity.Name" class="nav-link text-light btn btn-dark px-4 mx-1 rounded-5 shadow">
                             @User.Identity.Name
                         </a>
                         <a class="nav-link text-light btn btn-primary px-4 rounded-5 shadow mx-1" asp-page="/Admin/AdminPanel">پنل مدیریت</a>
