@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SSO.DatabaseApplication;
 using SSO.DependencyInjection;
 using SSO.Domains;
+using SSO.Helper;
 using SSO.Repositpries;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +28,8 @@ builder.Services
 
 })
     .AddEntityFrameworkStores<DbContextApplication>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders()
+    .AddErrorDescriber<CustomIdentityError>();
 #endregion
 
 builder.Services.AddRepositories();
