@@ -29,7 +29,9 @@ builder.Services
 })
     .AddEntityFrameworkStores<DbContextApplication>()
     .AddDefaultTokenProviders()
-    .AddErrorDescriber<CustomIdentityError>();
+    .AddErrorDescriber<CustomIdentityError>()
+    .AddPasswordValidator<PasswordValidator>()
+    ;
 #endregion
 
 builder.Services.AddRepositories();
