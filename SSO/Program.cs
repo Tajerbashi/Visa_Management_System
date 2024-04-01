@@ -33,6 +33,9 @@ builder.Services
     .AddPasswordValidator<PasswordValidator>()
     ;
 #endregion
+#region ClaimConfig
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, UserApplicationClaims>();
+#endregion
 
 builder.Services.AddRepositories();
 
