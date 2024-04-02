@@ -24,37 +24,22 @@
             <ul class="d-flex flex-row justify-content-around flex-wrap">
                 <li class="list-group-item text-light rounded-bottom-5 border-bottom btn-tk">
                     @* <a asp-page-handler="LoadUserView" class="text-light">مدیریت کاربران</a> *@
-                    <a asp-page="./UserPage" class="text-light">مدیریت کاربران</a>
+                    <a asp-page="/UserManagement/UserPage" class="text-light">مدیریت کاربران</a>
                 </li>
                 <li class="list-group-item text-light rounded-bottom-5 border-bottom btn-tk">
                     @* <a asp-page-handler="LoadRoleView" class="text-light">مدیریت نقش ها</a> *@
-                    <a asp-page="./RolePage" class="text-light">مدیریت نقش ها</a>
+                    <a asp-page="/RoleManagement/RolePage" class="text-light">مدیریت نقش ها</a>
                 </li>
                 <li class="list-group-item text-light rounded-bottom-5 border-bottom btn-tk">
                     @* <a asp-page-handler="LoadPrivilegeView" class="text-light">مدیریت دسترسی ها</a> *@
-                    <a asp-page="./PrivilegePage" class="text-light">مدیریت دسترسی ها</a>
+                    <a asp-page="/RoleManagement/PrivilegePage" class="text-light">مدیریت دسترسی ها</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>#</th>
-                        <th>#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>123</td>
-                        <td>123</td>
-                        <td>123</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-12 text-center">
+            <div class="display-4 shadow">پنل مدیریت</div>
         </div>
     </div>
 </div>

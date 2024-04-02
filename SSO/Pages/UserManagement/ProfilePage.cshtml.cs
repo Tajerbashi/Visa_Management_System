@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 
-namespace SSO.Pages.Identity
+namespace SSO.Pages.UserManagement
 {
     public class ProfilePageModel : PageModel
     {

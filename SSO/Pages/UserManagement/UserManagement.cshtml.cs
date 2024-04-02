@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
 
-namespace SSO.Pages.Admin
+namespace SSO.Pages.UserManagement
 {
     public class UserManagementModel : PageModel
     {
@@ -145,5 +145,10 @@ namespace SSO.Pages.Admin
                 return Page();
         }
         #endregion
+
+        public IActionResult OnGetRolesOfUser(string Id)
+        {
+            return Redirect("RolesOfUserPage");
+        }
     }
 }

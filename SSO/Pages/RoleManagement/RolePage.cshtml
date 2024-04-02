@@ -1,5 +1,5 @@
 ﻿@page
-@model SSO.Pages.Admin.RolePageModel
+@model RolePageModel
 @{
 }
 <style>
@@ -37,7 +37,7 @@
                                 <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Update" class="btn-tk btn btn-warning bg-gradient">ویرایش</a>
                                 <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Read" class="btn-tk btn btn-info bg-gradient">نمایش</a>
                                 <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Delete" class="btn-tk btn btn-danger bg-gradient">حدف</a>
-                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="AddRoleToUser" class="btn-tk btn btn-primary bg-gradient">معرفی به کاربران</a>
+                                <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="AddRoleToUser" class="btn-tk btn btn-primary bg-gradient">اضافه به کاربران</a>
                                 <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="UsersOfRole" class="btn-tk btn btn-info bg-gradient">کاربران این نقش</a>
                                 <a asp-page="./RoleManagement" asp-route-id="@item.Id" asp-page-handler="Privilege" class="btn-tk btn btn-dark bg-gradient">مدیریت دسترسی</a>
                             </th>

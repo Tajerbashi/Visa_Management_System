@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SSO.Pages
+namespace SSO.Pages.Main
 {
     public class PrivacyModel : PageModel
     {

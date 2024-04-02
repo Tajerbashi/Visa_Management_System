@@ -13,9 +13,43 @@ namespace SSO.Services
     public class RoleService : BaseServices<RoleDTO>, IRoleRepository
     {
         private readonly RoleManager<RoleEntity> roleManager;
-        public RoleService(DbContextApplication context, IMapper mapper, RoleManager<RoleEntity> roleManager) : base(context, mapper)
+        private readonly UserManager<UserEntity> userManager;
+        public RoleService(
+            DbContextApplication context, IMapper mapper,
+            RoleManager<RoleEntity> roleManager,
+            UserManager<UserEntity> userManager) : base(context, mapper)
         {
             this.roleManager = roleManager;
+            this.userManager = userManager;
+        }
+
+        public Result<bool> AddUserToRole(string role, long userID)
+        {
+            try
+            {
+                var userEntity = userManager.FindByIdAsync(userID.ToString()).Result;
+                var roleResult = userManager.AddToRoleAsync(userEntity,role).Result;
+                if (roleResult.Succeeded)
+                {
+                    return new Result<bool>
+                    {
+                        Data = true,
+                        Messages = ResponseMessage.Success(),
+                        Success = true,
+                    };
+                }
+                return new Result<bool>
+                {
+                    Data = false,
+                    Messages = ResponseMessage.Faild(),
+                    Success = false,
+                };
+            }
+            catch
+            {
+
+                throw;
+            }
         }
 
         public override Result<long, bool> Create(RoleDTO entity)
@@ -23,7 +57,7 @@ namespace SSO.Services
             try
             {
                 var model = Mapper.Map<RoleEntity>(entity);
-                var result =roleManager.CreateAsync(model).Result;
+                var result = roleManager.CreateAsync(model).Result;
                 if (result.Succeeded)
                 {
                     return new Result<long, bool>
@@ -49,12 +83,40 @@ namespace SSO.Services
 
         public override Result<bool, bool> Delete(RoleDTO entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var model = Mapper.Map<RoleEntity>(entity);
+                model.IsDeleted = true;
+                model.IsActive = false;
+                roleManager.UpdateAsync(model);
+                return new Result<bool, bool>
+                {
+                    Data = true,
+                    Messages = ResponseMessage.Success(),
+                    Success = true,
+                    Results = true
+                };
+            }
+            catch
+            {
+
+                throw;
+            }
         }
 
         public override Result<bool, bool> Delete(long ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = roleManager.FindByIdAsync(ID.ToString()).Result;
+                if (entity != null)
+                    return this.Delete(Mapper.Map<RoleDTO>(entity));
+                return new Result<bool, bool> { Success = false };
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public override Result<RoleDTO, bool> Read(long Id)
@@ -67,6 +129,7 @@ namespace SSO.Services
                     Data = model,
                     Messages = ResponseMessage.Success(),
                     Success = true,
+                    Results = true
                 };
             }
             catch
@@ -79,7 +142,7 @@ namespace SSO.Services
         {
             try
             {
-                var model = Mapper.Map<List<RoleDTO>>(roleManager.Roles.ToList());
+                var model = Mapper.Map<List<RoleDTO>>(roleManager.Roles.Where(r => r.IsActive && !r.IsDeleted).ToList());
                 return new Result<List<RoleDTO>, bool>
                 {
                     Data = model,
@@ -93,9 +156,65 @@ namespace SSO.Services
             }
         }
 
+        public Result<List<RoleDTO>> RolesOfUser(long userId)
+        {
+            try
+            {
+                var user = userManager.FindByIdAsync(userId.ToString()).Result;
+                var roles = userManager.GetRolesAsync(user).Result;
+                var resultData = Mapper.Map<List<RoleDTO>>(roles);
+                return new Result<List<RoleDTO>>
+                {
+                    Data = resultData,
+                    Messages = ResponseMessage.Success(),
+                    Success = true,
+                };
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public override Result<bool, bool> Update(RoleDTO entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var res = roleManager.UpdateAsync(Mapper.Map<RoleEntity>(entity)).Result;
+                if (res.Succeeded)
+                {
+                    return new Result<bool, bool>
+                    {
+                        Data = true,
+                        Messages = ResponseMessage.Success(),
+                        Success = true,
+                        Results = true
+                    };
+                }
+                return new Result<bool, bool>
+                {
+                    Data = false,
+                    Messages = ResponseMessage.Faild(),
+                    Success = false,
+                    Results = false
+                };
+            }
+            catch
+            {
+
+                throw;
+            }
+        }
+
+        public Result<List<UserDTO>> UsersOfRole(string role)
+        {
+            var result = userManager.GetUsersInRoleAsync(role).Result;
+            return new Result<List<UserDTO>>
+            {
+                Data = Mapper.Map<List<UserDTO>>(result),
+                Messages = ResponseMessage.Success(),
+                Success = true,
+            };
         }
     }
 }

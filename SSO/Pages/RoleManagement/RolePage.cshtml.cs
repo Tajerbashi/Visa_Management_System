@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
 
-namespace SSO.Pages.Admin
+namespace SSO.Pages.RoleManagement
 {
     public class RolePageModel : PageModel
     {
-        private readonly IRoleRepository roleRepository ;
+        private readonly IRoleRepository roleRepository;
 
         public RolePageModel(IRoleRepository roleRepository)
         {
