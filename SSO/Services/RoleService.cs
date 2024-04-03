@@ -52,6 +52,26 @@ namespace SSO.Services
             }
         }
 
+        public Result<List<RoleDTO>> AllRolesByExistRoleUser(long userId)
+        {
+            var result = new Result<List<RoleDTO>>();
+            result.Data = new List<RoleDTO>();
+            var user = userManager.FindByIdAsync(userId.ToString()).Result;
+            var roles = Mapper.Map<List<RoleDTO>>(roleManager.Roles);
+            var userRoles = userManager.GetRolesAsync(user).Result;
+
+            foreach (var role in roles)
+            {
+                if (userRoles.Any(x => x.Equals(role.Name)))
+                {
+                    role.Selected = true;
+                }
+                result.Data.Add(role);
+            }
+            return result;
+
+        }
+
         public override Result<long, bool> Create(RoleDTO entity)
         {
             try

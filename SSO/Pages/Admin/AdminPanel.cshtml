@@ -1,25 +1,47 @@
 ﻿@page
 @model SSO.Pages.Admin.AdminPanelModel
-
+@{
+    int counter = 0;
+}
 <style>
     .list-group-item {
         background: #0000;
         border: 1px solid #0000;
     }
 
+    .rounded-1 {
+        border-radius: 5px;
+    }
+
+    .rounded-2 {
+        border-radius: 10px
+    }
+
+    .rounded-3 {
+        border-radius: 15px
+    }
+
+    .rounded-4 {
+        border-radius: 1rem
+    }
+
+    .rounded-5 {
+        border-radius: 1.5rem
+    }
+
     .btn-tk {
         cursor: pointer;
-        background: linear-gradient(0deg,rgba(255,255,255,0.2),rgba(0,0,0,0));
+        /* background: linear-gradient(0deg,rgba(255,255,255,0.1),rgba(0,0,0,0)); */
         text-align: center;
     }
 
         .btn-tk:hover {
-            background: linear-gradient(180deg,#ffffff87,rgba(0,0,0,0));
+            background: linear-gradient(0deg,#ffffff87,rgba(0,0,0,0));
         }
 </style>
 
 <div class="container-fluid">
-    <div class="row ">
+    <div class="row mt-5 shadow rounded-5">
         <div class="col-12">
             <ul class="d-flex flex-row justify-content-around flex-wrap">
                 <li class="list-group-item text-light rounded-bottom-5 border-bottom btn-tk">
@@ -37,10 +59,52 @@
             </ul>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <div class="display-4 shadow">پنل مدیریت</div>
+
+    <div class="row mt-5 ">
+        <div class="col-12 text-center ">
+            <div class="shadow text-light rounded-5">
+                <div class="alert rounded shadow p-1">Identity</div>
+                <div class="">@User.Identity.Name</div>
+                <div class="">@User.Identity.AuthenticationType</div>
+                <div class="">@User.Identity.IsAuthenticated</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12 text-center ">
+            <div class="shadow text-light rounded mt-1 overflow-auto">
+                <div class="alert rounded-5 shadow p-1 w-100">Claims</div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Subject</th>
+                            <th>Value</th>
+                            <th>Issuer</th>
+                            <th>Properties</th>
+                            <th>OriginalIssuer</th>
+                            <th>Type</th>
+                            <th>ValueType</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in User.Claims)
+                        {
+                            <tr>
+                                <td>@(counter += 1)</td>
+                                <td>@item.Subject</td>
+                                <td>@item.Value</td>
+                                <td>@item.Issuer</td>
+                                <td>@item.Properties</td>
+                                <td>@item.OriginalIssuer</td>
+                                <td>@item.Type</td>
+                                <td>@item.ValueType</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
-

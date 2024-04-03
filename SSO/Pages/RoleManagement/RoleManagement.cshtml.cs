@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SSO.Models.DTOs;
 
 namespace SSO.Pages.RoleManagement
 {
@@ -7,6 +8,9 @@ namespace SSO.Pages.RoleManagement
     {
         public long Id { get; set; }
         public string Mode { get; set; }
+
+        public List<UserOfRoleDTO> UsersOfRole { get; set; }
+        public List<RoleOfUser> RoleOfUsers { get; set; }
 
         public void OnGet(long id)
         {

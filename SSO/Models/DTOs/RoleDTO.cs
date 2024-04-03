@@ -6,5 +6,7 @@ namespace SSO.Models.DTOs
     {
         public string Description { get; set; }
         public string Name { get; set; }
+
+        public bool Selected { get; set; }
     }
 }

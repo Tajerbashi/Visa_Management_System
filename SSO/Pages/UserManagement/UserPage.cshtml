@@ -1,12 +1,47 @@
 ﻿@page
 @model UserPageModel
+
 @{
 }
+<style>
+    .btn-tk {
+        width: 150px;
+        margin: 2px;
+    }
+
+    .tk-modal {
+        position: fixed;
+        height: max-content;
+        width: 40%;
+        border-radius: 1rem;
+        box-shadow: 0px 11px 18px 0px #00000073;
+        top: 131px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 200;
+        background: linear-gradient(180deg, black, transparent);
+    }
+
+    .backdrop-tk {
+        height: 100%;
+        width: 100%;
+        background: #0000008c;
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 100 !important;
+        backdrop-filter: blur(4px);
+    }
+</style>
 
 <div style="height:80vh; overflow:auto;" class=" container-fluid d-flex flex-column justify-content-between">
     <div class="row shadow">
         <div class="text-center alert alert-primary border-primary fixed-top d-flex flex-row justify-content-between">
-            <a asp-page="./UserManagement" asp-route-id="0"  asp-page-handler="Create" class="btn btn-primary">جدید</a>
+            <a asp-page="./UserManagement" asp-route-id="0" asp-page-handler="Create" class="btn btn-primary">جدید</a>
             <text>مدیریت کاربران</text>
         </div>
         <div>
@@ -35,11 +70,11 @@
                             <th>@item.Password</th>
                             <th>@item.Phone</th>
                             <th>
-                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Update" class="btn btn-warning">ویرایش</a>
-                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Read" class="btn btn-info">نمایش</a>
-                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Delete" class="btn btn-danger">حدف</a>
-                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="RolesOfUser" class="btn btn-primary">نقش ها</a>
-                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Login" class="btn btn-primary">ورود</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Update" class="btn btn-warning btn-tk">ویرایش</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Read" class="btn btn-info btn-tk">نمایش</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Delete" class="btn btn-danger btn-tk">حدف</a>
+                                <a asp-page="./UserManagement" asp-route-id="@item.Id" asp-page-handler="Login" class="btn btn-primary btn-tk">ورود</a>
+                                <a asp-page="UserPage" asp-route-id="@item.Id" asp-page-handler="RolesOfUser" class="btn btn-primary btn-tk">مدیریت نقش ها</a>
                             </th>
                         </tr>
                     }
@@ -52,3 +87,37 @@
         <a asp-page="./AdminPanel" class="btn btn-dark text-light fixed-bottom p-3">مدیریت کابران</a>
     </div>
 </div>
+
+
+<div class="backdrop-tk  @Model.Style"></div>
+<div class="tk-modal @Model.Style">
+    <div class="d-flex flex-column justify-content-center text-light p-2">
+        <div class="alert alert-dark border-dark rounded text-center">@Model.Title</div>
+        <div id="BodyContent">
+            <div class="text-center">
+                <form asp-page="UserPage" asp-page-handler="SaveModal" method="post">
+                    @* <div asp-validation-summary="@RolesModel"></div> *@
+                    <div class="form-group p-2 my-2">
+                        <label asp-for="UserDTO.Role" class="control-label my-1">نقش های انتخابی</label>
+                        <select asp-for="UserDTO.Role" asp-items="Model.RolesModel" class="form-control"></select>
+                        <span asp-validation-for="UserDTO.Role" class="text-danger"></span>
+                    </div>
+                    <button class=" btn btn-success shadow mt-2" type="submit">ذخیره اطلاعات</button>
+                </form>
+            </div>
+            <hr />
+            <div class="p-1 shadow rounded">
+                <div class="alert alert-primary shadow  text-center">نقش های موجود</div>
+                <ul class="list-group p-0 m-0">
+                    <li class="list-group-item p-1 m-0">ادمین</li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-around p-1 ">
+            <a class="btn btn-danger bg-gradient w-25" asp-page="UserPage" asp-page-handler="CloseModal">بستن</a>
+        </div>
+    </div>
+</div>
+
+
+
