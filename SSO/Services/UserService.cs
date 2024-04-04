@@ -12,7 +12,7 @@ namespace SSO.Services
 {
     public class UserService : BaseServices<UserDTO>, IUserRepository
     {
-        private readonly UserManager<UserEntity> _userManager;
+        private readonly UserManager < UserEntity > _userManager;
         private readonly SignInManager<UserEntity> _signInManager;
 
         public UserService(DbContextApplication context, IMapper mapper, UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : base(context, mapper)

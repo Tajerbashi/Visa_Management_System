@@ -8,38 +8,36 @@ namespace SSO.Pages.RoleManagement
     public class RolePageModel : PageModel
     {
         private readonly IRoleRepository roleRepository;
+        [ModelBinder]
+        public RoleDTO Role { get; set; } = default;
+
+        public string Style { get; set; }
+        public string Title { get; set; }
 
         public RolePageModel(IRoleRepository roleRepository)
         {
             this.roleRepository = roleRepository;
         }
         public List<RoleDTO> Roles { get; set; }
-        public RoleDTO RoleEntity { get; set; }
         public void OnGet()
         {
-            //roleRepository.Create(new RoleDTO
-            //{
-            //    Name = "Admin",
-            //    Description = "ادمین",
-            //    IsActive = true,
-            //    IsDeleted = false,
-            //});
-            //roleRepository.Create(new RoleDTO
-            //{
-            //    Name = "User",
-            //    Description = "کاربر",
-            //    IsActive = true,
-            //    IsDeleted = false,
-            //});
+            Style = "d-none";
             Roles = roleRepository.ReadAll().Data;
         }
 
+        public void OnGetCreate()
+        {
+            Style = "";
+            Title = "ایجاد نقش جدید";
+            Roles = roleRepository.ReadAll().Data;
+        }
         public void OnPostCreate()
         {
-            var res = roleRepository.Create(RoleEntity);
+            var res = roleRepository.Create(Role);
             if (res.Success)
             {
-
+                Roles = roleRepository.ReadAll().Data;
+                Style = "d-none";
             }
             else
             {

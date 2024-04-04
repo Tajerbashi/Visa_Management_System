@@ -12,7 +12,7 @@ using SSO.DatabaseApplication;
 namespace SSO.Migrations
 {
     [DbContext(typeof(DbContextApplication))]
-    [Migration("20240324210522_Initial_Database")]
+    [Migration("20240403215902_Initial_Database")]
     partial class Initial_Database
     {
         /// <inheritdoc />
@@ -65,6 +65,9 @@ namespace SSO.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -144,7 +147,6 @@ namespace SSO.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Family")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -160,7 +162,6 @@ namespace SSO.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")

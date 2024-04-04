@@ -12,8 +12,8 @@ using SSO.DatabaseApplication;
 namespace SSO.Migrations
 {
     [DbContext(typeof(DbContextApplication))]
-    [Migration("20240329012419_Add_Desc_Role")]
-    partial class Add_Desc_Role
+    [Migration("20240404023034_Change_UserRole")]
+    partial class Change_UserRole
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,7 +68,6 @@ namespace SSO.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -148,7 +147,6 @@ namespace SSO.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Family")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -164,7 +162,6 @@ namespace SSO.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")

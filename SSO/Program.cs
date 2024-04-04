@@ -6,6 +6,7 @@ using SSO.DependencyInjection;
 using SSO.Domains;
 using SSO.Helper;
 using SSO.Repositpries;
+using SSO.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
@@ -25,7 +26,7 @@ builder.Services.AddDbContext<DbContextApplication>(options =>
 builder.Services
     .AddIdentity<UserEntity, RoleEntity>(config =>
 {
-
+    //config.User.AllowedUserNameCharacters = "";
 })
     .AddEntityFrameworkStores<DbContextApplication>()
     .AddDefaultTokenProviders()

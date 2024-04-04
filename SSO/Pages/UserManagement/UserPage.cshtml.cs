@@ -22,7 +22,7 @@ namespace SSO.Pages.UserManagement
 
         [BindProperty]
         [ModelBinder]
-        public UserDTO UserDTO { get; set; }
+        public RoleDTO Role { get; set; }
 
         [ModelBinder]
         public List<SelectListItem> RolesModel { get; set; } = default!;
@@ -50,7 +50,7 @@ namespace SSO.Pages.UserManagement
                 //Selected = false,
                 //Disabled = false,
                 Text = c.Description,
-                Value = c.Id.ToString(),
+                Value = c.Name,
             }).ToList();
         }
 
@@ -68,6 +68,8 @@ namespace SSO.Pages.UserManagement
 
         public void OnPostSaveModal()
         {
+            var user = userRepository.Read(Id).Data;
+            roleRepository.AddUserToRole(Role.Name,Id);
             Style = "d-none";
             LoadList();
         }

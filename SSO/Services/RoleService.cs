@@ -27,16 +27,27 @@ namespace SSO.Services
         {
             try
             {
-                var userEntity = userManager.FindByIdAsync(userID.ToString()).Result;
-                var roleResult = userManager.AddToRoleAsync(userEntity,role).Result;
-                if (roleResult.Succeeded)
+                // Add the Admin role to the database
+                IdentityResult roleResult;
+                bool adminRoleExists = roleManager.RoleExistsAsync(role).Result;
+                if (!adminRoleExists)
                 {
-                    return new Result<bool>
+                    roleResult = roleManager.CreateAsync(new RoleEntity(role)).Result;
+                }
+                // Select the user, and then add the admin role to the user
+                var user =  userManager.FindByIdAsync(userID.ToString()).Result;
+                if (!userManager.IsInRoleAsync(user, role).Result)
+                {
+                    roleResult = userManager.AddToRoleAsync(user, role).Result;
+                    if (roleResult.Succeeded)
                     {
-                        Data = true,
-                        Messages = ResponseMessage.Success(),
-                        Success = true,
-                    };
+                        return new Result<bool>
+                        {
+                            Data = true,
+                            Messages = ResponseMessage.Success(),
+                            Success = true,
+                        };
+                    }
                 }
                 return new Result<bool>
                 {
@@ -76,6 +87,8 @@ namespace SSO.Services
         {
             try
             {
+                entity.IsDeleted = false;
+                entity.IsActive = true;
                 var model = Mapper.Map<RoleEntity>(entity);
                 var result = roleManager.CreateAsync(model).Result;
                 if (result.Succeeded)

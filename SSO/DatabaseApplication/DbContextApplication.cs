@@ -29,6 +29,9 @@ namespace SSO.DatabaseApplication
             modelBuilder.Entity<UserRoleEntity>().ToTable("UserRoles", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => new { x.ID, x.UserId, x.RoleId });
             modelBuilder.Entity<UserTokenEntity>().ToTable("UserTokens", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             modelBuilder.Entity<UserEntity>().HasIndex(x => x.Email).IsUnique();
+
+
+            //modelBuilder.Entity<UserRoleEntity>().Property(x => new { x.IsDefault,x.IsDeleted,x.IsActive}).ValueGeneratedOnAddOrUpdate();
             #endregion
 
 

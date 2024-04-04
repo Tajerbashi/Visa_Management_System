@@ -76,3 +76,48 @@ a {
     background: rgba(10,10,10,0.1);
     border-radius: 1px;
 }
+.btn-tk {
+}
+
+.tk-modal {
+    position: fixed;
+    height: max-content;
+    width: 20%;
+    border-radius: 1rem;
+    box-shadow: 0px 11px 18px 0px #00000073;
+    top: 131px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 200;
+    background: linear-gradient(180deg, black, transparent);
+}
+
+.backdrop-tk {
+    height: 100%;
+    width: 100%;
+    background: #0000008c;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 100 !important;
+    backdrop-filter: blur(4px);
+}
+
+.list-item-tk {
+    background: rgba(0,0,0,0.5);
+    margin: 3px;
+    border-radius: 10px;
+    border-right: 10px solid wheat;
+    color: wheat;
+    text-align: right;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
