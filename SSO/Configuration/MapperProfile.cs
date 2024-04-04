@@ -9,6 +9,7 @@ namespace SSO.Configuration
         public MapperProfile()
         {
             CreateMap<UserEntity, UserDTO>().ReverseMap();
+            CreateMap<UserEntity, SignUpDTO>().ReverseMap();
             CreateMap<RoleEntity, RoleDTO>().ReverseMap();
         }
     }

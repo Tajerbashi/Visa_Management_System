@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SSO.Models.DTOs;
+using SSO.Repositpries;
 
 namespace SSO.Pages.RoleManagement
 {
@@ -8,34 +9,22 @@ namespace SSO.Pages.RoleManagement
     {
         public long Id { get; set; }
         public string Mode { get; set; }
+        public string RoleName { get; set; }
 
         public List<UserOfRoleDTO> UsersOfRole { get; set; }
         public List<RoleOfUser> RoleOfUsers { get; set; }
 
+        private readonly IUserRepository userRepository;
+        private readonly IRoleRepository roleRepository;
+        public RoleManagementModel(IUserRepository userRepository, IRoleRepository roleRepository)
+        {
+            this.userRepository = userRepository;
+            this.roleRepository = roleRepository;
+        }
         public void OnGet(long id)
         {
             Id = id;
             Mode = "صفحه اولیه";
-        }
-        public void OnGetCreate(long id)
-        {
-            Id = id;
-            Mode = "ایجاد کردن";
-        }
-        public void OnGetUpdate(long id)
-        {
-            Id = id;
-            Mode = "ویرایش کردن";
-        }
-        public void OnGetDelete(long id)
-        {
-            Id = id;
-            Mode = "حذف کردن";
-        }
-        public void OnGetRead(long id)
-        {
-            Id = id;
-            Mode = "خواندن";
         }
         public void OnGetAddRoleToUser(long id)
         {
@@ -46,6 +35,8 @@ namespace SSO.Pages.RoleManagement
         {
             Id = id;
             Mode = "کاربران این نقش";
+            RoleName = roleRepository.Read(id).Data.Name;
+            UsersOfRole = roleRepository.UsersOfRole(RoleName).Data;
         }
         public void OnGetPrivilege(long id)
         {

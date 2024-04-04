@@ -18,7 +18,7 @@ namespace SSO.Repositpries
         /// </summary>
         /// <param name="role"></param>
         /// <returns></returns>
-        Result<List<UserDTO>> UsersOfRole(string role);
+        Result<List<UserOfRoleDTO>> UsersOfRole(string role);
         /// <summary>
         /// نقش های کاربر مورد نظر
         /// </summary>

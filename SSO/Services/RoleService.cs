@@ -203,7 +203,7 @@ namespace SSO.Services
             try
             {
                 var user = userManager.FindByIdAsync(userId.ToString()).Result;
-                var resultData = from ur in Context.UserRoles 
+                var resultData = from ur in Context.UserRoles
                                  join ro in Context.Roles
                                  on ur.RoleId equals ro.Id
                                  select new UserRoleDTO
@@ -259,12 +259,22 @@ namespace SSO.Services
             }
         }
 
-        public Result<List<UserDTO>> UsersOfRole(string role)
+        public Result<List<UserOfRoleDTO>> UsersOfRole(string role)
         {
             var result = userManager.GetUsersInRoleAsync(role).Result;
-            return new Result<List<UserDTO>>
+            return new Result<List<UserOfRoleDTO>>
             {
-                Data = Mapper.Map<List<UserDTO>>(result),
+                Data = result.Select(x => new UserOfRoleDTO 
+                { 
+                    Id = x.Id,
+                    Name = x.Name,
+                    Family = x.Family,
+                    Email = x.Email,
+                    IsActive = x.IsActive,
+                    IsDeleted = x.IsDeleted,
+                    RoleName = x.Name,
+                    UserName = x.UserName
+                }).ToList(),
                 Messages = ResponseMessage.Success(),
                 Success = true,
             };

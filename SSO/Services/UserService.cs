@@ -141,6 +141,16 @@ namespace SSO.Services
             {
                 var user = _userManager.FindByNameAsync(model.UserName).Result;
                 _signInManager.SignOutAsync();
+                if (user == null)
+                {
+                    return new Result<LoginDTO, SignInResult>
+                    {
+                        Data=null,
+                        Messages = ResponseMessage.NotFound(),
+                        Results=null,
+                        Success = false,
+                    };
+                }
                 var loginResult = _signInManager.PasswordSignInAsync(
                    user,
                    model.Password,
@@ -245,6 +255,58 @@ namespace SSO.Services
                 Results = false,
             };
 
+        }
+
+        public Result<SignUpDTO, string> ReadDataByEmail(string email)
+        {
+            try
+            {
+                var model = _userManager.FindByEmailAsync(email).Result;
+                if (model != null)
+                {
+                    return new Result<SignUpDTO, string>
+                    {
+                        Data = Mapper.Map<SignUpDTO>(model),
+                        Messages = ResponseMessage.Success(),
+                        Results = _userManager.GeneratePasswordResetTokenAsync(model).Result,
+                        Success = true,
+                    };
+                }
+                return new Result<SignUpDTO, string>
+                {
+                    Data = Mapper.Map<SignUpDTO>(model),
+                    Messages = ResponseMessage.Faild(),
+                    Results = ResponseMessage.EmptyModel(),
+                    Success = false,
+                };
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public Result<SignUpDTO, bool> ResetPassword(SignUpDTO user, string token, string newPass)
+        {
+            var model = _userManager.FindByEmailAsync(user.Email).Result;
+            var result = _userManager.ResetPasswordAsync(model,token,newPass).Result;
+            if (result.Succeeded)
+            {
+                return new Result<SignUpDTO, bool>
+                {
+                    Data = user,
+                    Messages = ResponseMessage.Success(),
+                    Results = true,
+                    Success = true,
+                };
+            }
+            return new Result<SignUpDTO, bool>
+            {
+                Data=user,
+                Messages = (string)ResponseMessage.MessageeLine(result.Errors),
+                Results =false,
+                Success = false,
+            };
         }
     }
 }

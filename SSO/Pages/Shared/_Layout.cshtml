@@ -50,13 +50,12 @@
                             @User.Identity.Name
                         </a>
                         <a class="nav-link text-light btn btn-primary px-4 rounded-5 shadow mx-1" asp-page="/Admin/AdminPanel">پنل مدیریت</a>
-
+                        <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Identity/Login" asp-page-handler="SignOut">خروج</a>
                     }
                     else
                     {
                         <a class="nav-link text-light btn btn-primary px-4 mx-1 rounded-5 shadow" asp-area="" asp-page="/Identity/Login">ورود</a>
                     }
-                    <a class="nav-link text-light btn btn-danger px-4 rounded-5 shadow" asp-area="" asp-page="/Identity/Login" asp-page-handler="SignOut">خروج</a>
                 </div>
             </div>
         </nav>

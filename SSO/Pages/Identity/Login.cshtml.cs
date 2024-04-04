@@ -34,19 +34,27 @@ namespace SSO.Pages.Identity
             var loginResult = userRepository.Login(LoginDTO);
             if (loginResult.Success)
             {
-                return Redirect(loginResult.Data.ReturnUrl);
+                if (loginResult.Results.RequiresTwoFactor)
+                {
+                    //
+                }
+                if (loginResult.Results.IsLockedOut)
+                {
+                    //
+                }
+                await Task.CompletedTask;
+                ModelState.AddModelError(string.Empty, "");
+                return Redirect($"/UserManagement/ProfilePage/{User.Identity.Name}");
+
+                //return Redirect(loginResult.Data.ReturnUrl);
+
             }
-            if (loginResult.Results.RequiresTwoFactor)
+            else
             {
-                //
+                ViewData["Errors"] = loginResult.Messages;
+                return Page();
             }
-            if (loginResult.Results.IsLockedOut)
-            {
-                //
-            }
-            await Task.CompletedTask;
-            ModelState.AddModelError(string.Empty, "");
-            return RedirectToPage("./Login");
+           
         }
 
         public async Task<IActionResult> OnGetSignOut()
