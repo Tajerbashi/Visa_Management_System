@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SSO.Pages.Admin
 {
+    [Authorize(Roles ="Admin")]
     public class AdminPanelModel : PageModel
     {
         public void OnGet()

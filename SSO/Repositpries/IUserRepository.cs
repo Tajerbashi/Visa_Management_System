@@ -56,7 +56,7 @@ namespace SSO.Repositpries
         Result<ClaimUser> GetClaim(ClaimUser claim);
         Result<List<ClaimUser>> GetClaims(long UserId);
         Result<ClaimUser> UpdateClaim(ClaimUser claim);
-        Result<ClaimUser> DeleteClaim(ClaimUser  claim);
+        Result<bool> DeleteClaim(ClaimUser  claim);
 
 
 

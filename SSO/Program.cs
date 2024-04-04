@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SSO.DatabaseApplication;
@@ -30,6 +31,7 @@ builder.Services
 })
     .AddEntityFrameworkStores<DbContextApplication>()
     .AddDefaultTokenProviders()
+    .AddRoles<RoleEntity>()
     .AddErrorDescriber<CustomIdentityError>()
     .AddPasswordValidator<PasswordValidator>()
     ;
@@ -57,7 +59,12 @@ builder.Services.ConfigureApplicationCookie(options =>
 #endregion
 #region ClaimConfig
 //  ایجاد کلیم های شخصی سازی شده برای اجرای کاربر و اضافه به کلیم های سیستم
-builder.Services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, UserApplicationClaims>();
+
+//  این سرویس کامنت میشود برای اینکه کانفیگ های نقش های کاربر را جهت مدیریت دسترسی اضاقه کنیم
+//builder.Services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, UserApplicationClaims>();
+
+//  بجای سرویس بالا ازین روش استفاده میکنیم جهت وارد کردن کلیم های کاربر از هر مکانی که میتواند باشد
+builder.Services.AddScoped<IClaimsTransformation, AddClaimsExternal>();
 #endregion
 
 builder.Services.AddRepositories();

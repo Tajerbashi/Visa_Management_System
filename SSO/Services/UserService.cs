@@ -137,6 +137,7 @@ namespace SSO.Services
                 throw;
             }
         }
+        
         public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
             try
@@ -147,9 +148,9 @@ namespace SSO.Services
                 {
                     return new Result<LoginDTO, SignInResult>
                     {
-                        Data=null,
+                        Data = null,
                         Messages = ResponseMessage.NotFound(),
-                        Results=null,
+                        Results = null,
                         Success = false,
                     };
                 }
@@ -304,9 +305,9 @@ namespace SSO.Services
             }
             return new Result<SignUpDTO, bool>
             {
-                Data=user,
+                Data = user,
                 Messages = (string)ResponseMessage.MessageeLine(result.Errors),
-                Results =false,
+                Results = false,
                 Success = false,
             };
         }
@@ -329,7 +330,7 @@ namespace SSO.Services
             {
                 Data = claim,
                 Messages = (string)ResponseMessage.MessageeLine(result.Errors),
-                Success=false
+                Success = false
             };
 
         }
@@ -337,7 +338,7 @@ namespace SSO.Services
         public Result<ClaimUser> GetClaim(ClaimUser claim)
         {
             var userEntity = _userManager.FindByIdAsync(claim.User).Result;
-            var result = _userManager.GetClaimsAsync(userEntity).Result;  
+            var result = _userManager.GetClaimsAsync(userEntity).Result;
             if (result != null)
             {
                 return new Result<ClaimUser>
@@ -365,9 +366,35 @@ namespace SSO.Services
             throw new NotImplementedException();
         }
 
-        public Result<ClaimUser> DeleteClaim(ClaimUser claim)
+        public Result<bool> DeleteClaim(ClaimUser claim)
         {
-            throw new NotImplementedException();
+            var userEntity = _userManager.FindByNameAsync(claim.User).Result;
+            Claim model = claim.Claims.Where(x => x.Type.Equals(claim.Type)).FirstOrDefault();
+            if (model != null)
+            {
+                var res =_userManager.RemoveClaimAsync(userEntity,model).Result;
+                if (res.Succeeded)
+                {
+                    return new Result<bool>
+                    {
+                        Data = true,
+                        Messages = ResponseMessage.Success(),
+                        Success = true
+                    };
+                }
+                return new Result<bool>
+                {
+                    Data = false,
+                    Messages = ResponseMessage.Faild(),
+                    Success = false
+                };
+            }
+            return new Result<bool>
+            {
+                Data = false,
+                Messages = ResponseMessage.NotFound(),
+                Success = false
+            };
         }
     }
 }

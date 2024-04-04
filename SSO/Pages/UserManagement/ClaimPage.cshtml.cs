@@ -55,13 +55,19 @@ namespace SSO.Pages.UserManagement
         }
         public void OnPostRemove()
         {
-
+            Entity.User = User.Identity.Name;
+            Entity.Claims = User.Claims.ToList();
+            var res = userRepository.DeleteClaim(Entity);
+            if (res.Success)
+            {
+                Style = "d-none";
+            }
         }
         #endregion
         #region Update
-        public void OnGetUpdate()
+        public void OnGetUpdate(string type)
         {
-
+            Style = "";
         }
         public void OnPostUpdate()
         {
