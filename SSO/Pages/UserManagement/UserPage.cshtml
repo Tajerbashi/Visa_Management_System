@@ -64,11 +64,17 @@
             <div class="text-center">
                 <form asp-page="UserPage" asp-page-handler="SaveModal" method="post">
                     @* <div asp-validation-summary="@RolesModel"></div> *@
-                    <input type="hidden" asp-for="Id"/>
+                    <input type="hidden" asp-for="Id" />
                     <div class="form-group p-2 my-2">
                         <label asp-for="Role" class="control-label my-1">نقش های انتخابی</label>
                         <select asp-for="Role.Name" asp-items="Model.RolesModel" class="form-control"></select>
                         <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+                    <div class="form-group p-2 my-2 form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Role.IsDefault" />
+                            <span>پیش فرض</span>
+                        </label>
                     </div>
                     <button class=" btn btn-success shadow mt-2" type="submit">ذخیره اطلاعات</button>
                 </form>
@@ -77,7 +83,13 @@
             <div class="p-1">
                 <div class="shadow rounded">نقش های کاربر</div>
                 <ul class="list-group p-0 m-0">
-                    <li class="list-item-tk list-group-item bg-gradient p-1 m-0"><span class="mx-3">ادمین</span></li>
+                    @if (Model.UserRoles.Count > 0)
+                    {
+                        foreach (var item in Model.UserRoles)
+                        {
+                            <li class="list-item-tk list-group-item bg-gradient p-1 m-0 my-2"><span class="mx-3">@item.Description</span></li>
+                        }
+                    }
                 </ul>
             </div>
         </div>

@@ -2,11 +2,11 @@
 
 namespace SSO.Models.DTOs
 {
-    public class RoleDTO: BaseDTO
+    public class UserRoleDTO: BaseDTO
     {
         public string Description { get; set; }
         public string Name { get; set; }
-        public bool Selected { get; set; }
         public bool IsDefault { get; set; }
+        public long RoleId { get; set; }
     }
 }

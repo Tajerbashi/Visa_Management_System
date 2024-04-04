@@ -23,6 +23,7 @@ namespace SSO.Pages.UserManagement
         [BindProperty]
         [ModelBinder]
         public RoleDTO Role { get; set; }
+        public List<UserRoleDTO> UserRoles { get; set; }
 
         [ModelBinder]
         public List<SelectListItem> RolesModel { get; set; } = default!;
@@ -45,6 +46,7 @@ namespace SSO.Pages.UserManagement
             var username = userRepository.Read(id).Data;
             Title = $"تعیین نقش برای کاربر {username.Name} {username.Family}";
             Style = "";
+            UserRoles = roleRepository.RolesOfUser(id).Data;
             RolesModel = roleRepository.AllRolesByExistRoleUser(id).Data.Select(c => new SelectListItem
             {
                 //Selected = false,
@@ -57,6 +59,7 @@ namespace SSO.Pages.UserManagement
         private void LoadList()
         {
             Users = new List<UserDTO>();
+            UserRoles = new List<UserRoleDTO>();
             var data = userRepository.ReadAll();
             Users = data.Data.ToList();
         }
@@ -69,7 +72,7 @@ namespace SSO.Pages.UserManagement
         public void OnPostSaveModal()
         {
             var user = userRepository.Read(Id).Data;
-            roleRepository.AddUserToRole(Role.Name,Id);
+            roleRepository.AddUserToRole(Role.Name,Id,Role.IsDefault);
             Style = "d-none";
             LoadList();
         }

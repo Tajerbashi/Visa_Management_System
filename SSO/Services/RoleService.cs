@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SSO.BaseSSO.Model;
 using SSO.BaseSSO.Repository;
 using SSO.Common;
@@ -23,43 +24,51 @@ namespace SSO.Services
             this.userManager = userManager;
         }
 
-        public Result<bool> AddUserToRole(string role, long userID)
+        public Result<bool> AddUserToRole(string role, long userID, bool isDefault = false)
         {
             try
             {
                 // Add the Admin role to the database
-                IdentityResult roleResult;
-                bool adminRoleExists = roleManager.RoleExistsAsync(role).Result;
-                if (!adminRoleExists)
-                {
-                    roleResult = roleManager.CreateAsync(new RoleEntity(role)).Result;
-                }
+                var roleEntity = roleManager.FindByNameAsync(role).Result;
                 // Select the user, and then add the admin role to the user
                 var user =  userManager.FindByIdAsync(userID.ToString()).Result;
-                if (!userManager.IsInRoleAsync(user, role).Result)
+                var roleExistForUser = Context.UserRoles.FirstOrDefault(x => x.UserId == userID && x.RoleId == roleEntity.Id);
+                if (roleExistForUser == null)
                 {
-                    roleResult = userManager.AddToRoleAsync(user, role).Result;
-                    if (roleResult.Succeeded)
+                    var userRole = new UserRoleEntity
                     {
-                        return new Result<bool>
-                        {
-                            Data = true,
-                            Messages = ResponseMessage.Success(),
-                            Success = true,
-                        };
-                    }
+                        UserId = user.Id,
+                        RoleId=roleEntity.Id,
+                        IsActive=true,
+                        IsDefault=isDefault,
+                        IsDeleted = false,
+                    };
+                    Context.UserRoles.Add(userRole);
                 }
+                else
+                {
+                    roleExistForUser.IsDeleted = false;
+                    roleExistForUser.IsActive = true;
+                    roleExistForUser.IsDefault = isDefault;
+                    Context.UserRoles.Update(roleExistForUser);
+                }
+                Context.SaveChanges();
+                return new Result<bool>
+                {
+                    Data = true,
+                    Messages = ResponseMessage.Success(),
+                    Success = true,
+                };
+
+            }
+            catch
+            {
                 return new Result<bool>
                 {
                     Data = false,
                     Messages = ResponseMessage.Faild(),
                     Success = false,
                 };
-            }
-            catch
-            {
-
-                throw;
             }
         }
 
@@ -189,16 +198,27 @@ namespace SSO.Services
             }
         }
 
-        public Result<List<RoleDTO>> RolesOfUser(long userId)
+        public Result<List<UserRoleDTO>> RolesOfUser(long userId)
         {
             try
             {
                 var user = userManager.FindByIdAsync(userId.ToString()).Result;
-                var roles = userManager.GetRolesAsync(user).Result;
-                var resultData = Mapper.Map<List<RoleDTO>>(roles);
-                return new Result<List<RoleDTO>>
+                var resultData = from ur in Context.UserRoles 
+                                 join ro in Context.Roles
+                                 on ur.RoleId equals ro.Id
+                                 select new UserRoleDTO
+                                 {
+                                     Id = ur.ID,
+                                     RoleId = ro.Id,
+                                     Name=ro.Name,
+                                     Description=ro.Description,
+                                     IsActive=ro.IsActive,
+                                     IsDefault = ur.IsDefault,
+                                     IsDeleted = ur.IsDeleted,
+                                 };
+                return new Result<List<UserRoleDTO>>
                 {
-                    Data = resultData,
+                    Data = resultData.ToList(),
                     Messages = ResponseMessage.Success(),
                     Success = true,
                 };

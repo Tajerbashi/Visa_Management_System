@@ -12,7 +12,7 @@ namespace SSO.Repositpries
         /// <param name="role"></param>
         /// <param name="userID"></param>
         /// <returns></returns>
-        Result<bool> AddUserToRole(string role, long userID);
+        Result<bool> AddUserToRole(string role, long userID, bool isDefault = false);
         /// <summary>
         /// کاربران نقش مورد نظر
         /// </summary>
@@ -24,7 +24,7 @@ namespace SSO.Repositpries
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        Result<List<RoleDTO>> RolesOfUser(long userId);
+        Result<List<UserRoleDTO>> RolesOfUser(long userId);
         /// <summary>
         /// تمام نقش ها همراه با نقش های کاربر
         /// </summary>
