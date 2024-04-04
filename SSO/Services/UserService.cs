@@ -5,8 +5,10 @@ using SSO.BaseSSO.Repository;
 using SSO.Common;
 using SSO.DatabaseApplication;
 using SSO.Domains;
+using SSO.Models;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
+using System.Security.Claims;
 
 namespace SSO.Services
 {
@@ -307,6 +309,65 @@ namespace SSO.Services
                 Results =false,
                 Success = false,
             };
+        }
+
+        public Result<ClaimUser> AddClaim(ClaimUser claim)
+        {
+            var userEntity = _userManager.FindByNameAsync(claim.User).Result;
+            Claim claimModel = new Claim(claim.Type,claim.Value,ClaimValueTypes.String);
+            var result = _userManager.AddClaimAsync(userEntity,claimModel).Result;
+            if (result.Succeeded)
+            {
+                return new Result<ClaimUser>
+                {
+                    Data = claim,
+                    Messages = ResponseMessage.Success(),
+                    Success = true
+                };
+            }
+            return new Result<ClaimUser>
+            {
+                Data = claim,
+                Messages = (string)ResponseMessage.MessageeLine(result.Errors),
+                Success=false
+            };
+
+        }
+
+        public Result<ClaimUser> GetClaim(ClaimUser claim)
+        {
+            var userEntity = _userManager.FindByIdAsync(claim.User).Result;
+            var result = _userManager.GetClaimsAsync(userEntity).Result;  
+            if (result != null)
+            {
+                return new Result<ClaimUser>
+                {
+                    Data = claim,
+                    Messages = ResponseMessage.Success(),
+                    Success = true
+                };
+            }
+            return new Result<ClaimUser>
+            {
+                Data = claim,
+                Messages = ResponseMessage.NotFound(),
+                Success = false
+            };
+        }
+
+        public Result<List<ClaimUser>> GetClaims(long UserId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Result<ClaimUser> UpdateClaim(ClaimUser claim)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Result<ClaimUser> DeleteClaim(ClaimUser claim)
+        {
+            throw new NotImplementedException();
         }
     }
 }

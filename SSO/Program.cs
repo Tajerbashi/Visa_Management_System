@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SSO.DatabaseApplication;
@@ -33,8 +33,30 @@ builder.Services
     .AddErrorDescriber<CustomIdentityError>()
     .AddPasswordValidator<PasswordValidator>()
     ;
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    //  Identity Configuration Options For Customization
+    // User
+    options.User.RequireUniqueEmail = true;
+    // SignIn
+    options.SignIn.RequireConfirmedEmail = true;
+    // Lockout
+    options.Lockout.AllowedForNewUsers = true;
+    options.Lockout.MaxFailedAccessAttempts = 3;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+});
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    //  Cookie Setting
+    //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    options.LoginPath = "/Identity/Login";
+    options.AccessDeniedPath = "/Identity/AccessDenied";
+    options.SlidingExpiration = true;
+});
 #endregion
 #region ClaimConfig
+//  ایجاد کلیم های شخصی سازی شده برای اجرای کاربر و اضافه به کلیم های سیستم
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, UserApplicationClaims>();
 #endregion
 

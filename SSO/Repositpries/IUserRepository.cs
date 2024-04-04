@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SSO.BaseSSO.Model;
 using SSO.BaseSSO.Repository;
+using SSO.Models;
 using SSO.Models.DTOs;
+using System.Security.Claims;
 
 namespace SSO.Repositpries
 {
@@ -42,6 +44,21 @@ namespace SSO.Repositpries
         /// <param name="userId"></param>
         /// <returns></returns>
         Result<string> GeneratToken(long userId);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        Result<ClaimUser> AddClaim(ClaimUser claim);
+        Result<ClaimUser> GetClaim(ClaimUser claim);
+        Result<List<ClaimUser>> GetClaims(long UserId);
+        Result<ClaimUser> UpdateClaim(ClaimUser claim);
+        Result<ClaimUser> DeleteClaim(ClaimUser  claim);
+
+
 
     }
 }

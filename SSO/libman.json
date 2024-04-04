@@ -18,6 +18,17 @@
         "css/bootstrap.min.css",
         "css/bootstrap.rtl.min.css"
       ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@6.5.2",
+      "destination": "wwwroot/lib/font-awesome/",
+      "files": [
+        "css/all.min.css",
+        "css/fontawesome.min.css",
+        "js/all.min.js",
+        "js/fontawesome.min.js"
+      ]
     }
   ]
 }

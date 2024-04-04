@@ -56,6 +56,10 @@
                     @* <a asp-page-handler="LoadPrivilegeView" class="text-light">مدیریت دسترسی ها</a> *@
                     <a asp-page="/RoleManagement/PrivilegePage" class="text-light">مدیریت دسترسی ها</a>
                 </li>
+                <li class="list-group-item text-light rounded-bottom-5 border-bottom btn-tk">
+                    @* <a asp-page-handler="LoadPrivilegeView" class="text-light">مدیریت دسترسی ها</a> *@
+                    <a asp-page="/UserManagement/ClaimPage" class="text-light">مدیریت کلیم ها</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -70,41 +74,37 @@
             </div>
         </div>
     </div>
-
-    <div class="row mt-5">
-        <div class="col-12 text-center ">
-            <div class="shadow text-light rounded mt-1 overflow-auto">
-                <div class="alert rounded-5 shadow p-1 w-100">Claims</div>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Subject</th>
-                            <th>Value</th>
-                            <th>Issuer</th>
-                            <th>Properties</th>
-                            <th>OriginalIssuer</th>
-                            <th>Type</th>
-                            <th>ValueType</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in User.Claims)
-                        {
-                            <tr>
-                                <td>@(counter += 1)</td>
-                                <td>@item.Subject</td>
-                                <td>@item.Value</td>
-                                <td>@item.Issuer</td>
-                                <td>@item.Properties</td>
-                                <td>@item.OriginalIssuer</td>
-                                <td>@item.Type</td>
-                                <td>@item.ValueType</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
+
+<div class="card-tk">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Subject</th>
+                <th>Value</th>
+                <th>Issuer</th>
+                <th>Properties</th>
+                <th>OriginalIssuer</th>
+                <th>Type</th>
+                <th>ValueType</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in User.Claims)
+            {
+                <tr>
+                    <td>@(counter += 1)</td>
+                    <td>@item.Subject</td>
+                    <td>@item.Value</td>
+                    <td>@item.Issuer</td>
+                    <td>@item.Properties</td>
+                    <td>@item.OriginalIssuer</td>
+                    <td>@item.Type</td>
+                    <td>@item.ValueType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
