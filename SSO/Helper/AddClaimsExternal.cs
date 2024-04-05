@@ -13,6 +13,7 @@ namespace SSO.Helper
                 if (identity != null)
                 {
                     identity.AddClaim(new Claim("TestClaim","Yse",ClaimValueTypes.String));
+                    identity.AddClaim(new Claim("Credit", "2000",ClaimValueTypes.String));
                 }
             }
             return Task.FromResult(principal);

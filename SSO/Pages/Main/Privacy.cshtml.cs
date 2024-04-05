@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SSO.Pages.Main
 {
-    [Authorize(Policy = "Country")]
+    //[Authorize(Policy = "Country")]
+    [Authorize(Policy = "Credit")]
 
     public class PrivacyModel : PageModel
     {

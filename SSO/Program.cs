@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,11 @@ builder.Services.AddAuthorization(options =>
     });
     options.AddPolicy("Country", policy => // Policy Name
     {
-        policy.RequireClaim("Country", "Iran","Afghanistan"); //    External is Claim Type : Iran & Afghanistan is Claim Values
+        policy.RequireClaim("Country", "Iran", "Afghanistan"); //    External is Claim Type : Iran & Afghanistan is Claim Values
+    });
+    options.AddPolicy("Credit", policy =>
+    {
+        policy.Requirements.Add(new UserCustomAuthorization(1000));
     });
 });
 
@@ -78,6 +83,9 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 //  بجای سرویس بالا ازین روش استفاده میکنیم جهت وارد کردن کلیم های کاربر از هر مکانی که میتواند باشد
 builder.Services.AddScoped<IClaimsTransformation, AddClaimsExternal>();
+
+
+builder.Services.AddSingleton<IAuthorizationHandler, UserCustomCreditHandler>();
 #endregion
 
 builder.Services.AddRepositories();
