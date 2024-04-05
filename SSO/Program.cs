@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SSO.Authorization.ExternalClaims;
+using SSO.Authorization.IdentityErrors;
+using SSO.Authorization.Validators;
 using SSO.DatabaseApplication;
 using SSO.DependencyInjection;
 using SSO.Domains;
-using SSO.Helper;
 using SSO.Repositpries;
-using SSO.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
@@ -37,21 +36,7 @@ builder.Services
     .AddPasswordValidator<PasswordValidator>()
     ;
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("Internal", policy => // Policy Name
-    {
-        policy.RequireClaim("Internal"); // Claim Type
-    });
-    options.AddPolicy("Country", policy => // Policy Name
-    {
-        policy.RequireClaim("Country", "Iran", "Afghanistan"); //    External is Claim Type : Iran & Afghanistan is Claim Values
-    });
-    options.AddPolicy("Credit", policy =>
-    {
-        policy.Requirements.Add(new UserCustomAuthorization(1000));
-    });
-});
+builder.Services.AddPolicies();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -85,8 +70,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<IClaimsTransformation, AddClaimsExternal>();
 
 
-builder.Services.AddSingleton<IAuthorizationHandler, UserCustomCreditHandler>();
+
 #endregion
+
+builder.Services.AddRequirements();
 
 builder.Services.AddRepositories();
 

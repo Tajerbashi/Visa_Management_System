@@ -11,6 +11,7 @@ namespace SSO.Models.DTOs
         public string Description { get; set; }
         [Required(ErrorMessage = "محتوا الزامی است")]
         public string Body { get; set; }
+        public string UserName { get; set; }
 
         public int Like { get; set; }
 
