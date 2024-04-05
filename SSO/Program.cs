@@ -35,6 +35,19 @@ builder.Services
     .AddErrorDescriber<CustomIdentityError>()
     .AddPasswordValidator<PasswordValidator>()
     ;
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Internal", policy => // Policy Name
+    {
+        policy.RequireClaim("Internal"); // Claim Type
+    });
+    options.AddPolicy("Country", policy => // Policy Name
+    {
+        policy.RequireClaim("Country", "Iran","Afghanistan"); //    External is Claim Type : Iran & Afghanistan is Claim Values
+    });
+});
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
     //  Identity Configuration Options For Customization

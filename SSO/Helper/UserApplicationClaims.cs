@@ -5,6 +5,7 @@ using System.Security.Claims;
 
 namespace SSO.Helper
 {
+
     public class UserApplicationClaims : UserClaimsPrincipalFactory<UserEntity>
     {
         public UserApplicationClaims

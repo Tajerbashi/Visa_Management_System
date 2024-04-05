@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SSO.Pages.Main
 {
+    [Authorize(Policy = "Country")]
+
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
 
+        public string Type { get; set; }
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
@@ -14,7 +18,15 @@ namespace SSO.Pages.Main
 
         public void OnGet()
         {
-
+            Type = "None";
+        }
+        public void OnGetIran()
+        {
+            Type = "Iran";
+        }
+        public void OnGetAfghanistan()
+        {
+            Type = "Afghanistan";
         }
     }
 
