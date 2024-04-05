@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SSO.Models.DTOs
 {
+ 
     public class LoginDTO : BaseDTO
     {
         [Required(ErrorMessage ="نام کاربری الزامی است")]

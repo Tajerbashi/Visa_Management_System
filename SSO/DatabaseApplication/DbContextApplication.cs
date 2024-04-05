@@ -11,6 +11,9 @@ namespace SSO.DatabaseApplication
         public DbContextApplication(DbContextOptions options) : base(options)
         {
         }
+
+        public virtual DbSet<BlogEntity> Blogs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -21,6 +24,7 @@ namespace SSO.DatabaseApplication
             base.OnModelCreating(modelBuilder);
 
             #region SEC
+            modelBuilder.Entity<BlogEntity>().ToTable("Blogs", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             modelBuilder.Entity<UserEntity>().ToTable("Users", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             modelBuilder.Entity<RoleEntity>().ToTable("Roles", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             modelBuilder.Entity<RoleClaimEntity>().ToTable("RoleClaims", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
@@ -34,7 +38,7 @@ namespace SSO.DatabaseApplication
             //modelBuilder.Entity<UserRoleEntity>().Property(x => new { x.IsDefault,x.IsDeleted,x.IsActive}).ValueGeneratedOnAddOrUpdate();
             #endregion
 
-
+            modelBuilder.ApplyConfiguration(new BlogConfiguration());
         }
     }
 }

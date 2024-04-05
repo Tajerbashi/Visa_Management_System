@@ -12,6 +12,7 @@ using System.Security.Claims;
 
 namespace SSO.Services
 {
+   
     public class UserService : BaseServices<UserDTO>, IUserRepository
     {
         private readonly UserManager < UserEntity > _userManager;
@@ -395,6 +396,11 @@ namespace SSO.Services
                 Messages = ResponseMessage.NotFound(),
                 Success = false
             };
+        }
+
+        public override Result<bool> Exist(long ID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

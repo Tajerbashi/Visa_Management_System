@@ -7,6 +7,7 @@ namespace SSO.BaseSSO.Repository
     public interface IGenericRepository<T> : IDisposable
         where T : BaseDTO, new()
     {
+        Result<bool> Exist(long ID);
         Result<long,bool> Create(T entity);
         Result<bool, bool> Update(T entity);
         Result<bool, bool> Delete(T entity);
@@ -55,6 +56,8 @@ namespace SSO.BaseSSO.Repository
         {
             Context.Dispose();
         }
+
+        public abstract Result<bool> Exist(long ID);
 
         public abstract Result<T, bool> Read(long Id);
         

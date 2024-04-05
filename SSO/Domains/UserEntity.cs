@@ -27,5 +27,8 @@ namespace SSO.Domains
 
         [Description("فعال"), DefaultValue(false)]
         public bool IsActive { get; set; }
+
+
+        public virtual ICollection<BlogEntity> BlogEntities { get; set; }
     }
 }

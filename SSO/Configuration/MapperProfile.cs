@@ -11,6 +11,7 @@ namespace SSO.Configuration
             CreateMap<UserEntity, UserDTO>().ReverseMap();
             CreateMap<UserEntity, SignUpDTO>().ReverseMap();
             CreateMap<RoleEntity, RoleDTO>().ReverseMap();
+            CreateMap<BlogEntity, BlogDTO>().ReverseMap();
         }
     }
 }

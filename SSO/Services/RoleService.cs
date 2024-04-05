@@ -161,6 +161,11 @@ namespace SSO.Services
             }
         }
 
+        public override Result<bool> Exist(long ID)
+        {
+            throw new NotImplementedException();
+        }
+
         public override Result<RoleDTO, bool> Read(long Id)
         {
             try

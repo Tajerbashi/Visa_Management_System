@@ -7,6 +7,7 @@ using System.Security.Claims;
 
 namespace SSO.Repositpries
 {
+   
     public interface IUserRepository : IGenericRepository<UserDTO>
     {
         /// <summary>
