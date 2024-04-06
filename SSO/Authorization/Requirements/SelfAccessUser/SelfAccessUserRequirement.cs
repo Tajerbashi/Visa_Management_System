@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using SSO.Models.DTOs;
 
 namespace SSO.Authorization.Requirements.SelfAccessUser
 {
-    public class SelfAccessUserRequirement : IAuthorizationRequirement
+    public class SelfAccessUserRequirement<T> : IAuthorizationRequirement
+        where T : IRequirement
+    { }
+
+
+    public class SelfAccessUserRequirementHandler<T> : AuthorizationHandler<SelfAccessUserRequirement<T>, T>
+        where T : IRequirement
     {
-    }
-    public class SelfAccessUserRequirementHandler : AuthorizationHandler<SelfAccessUserRequirement, BlogDTO>
-    {
-        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, SelfAccessUserRequirement requirement, BlogDTO resource)
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, SelfAccessUserRequirement<T> requirement, T resource)
         {
             if (context.User.Identity?.Name == resource.UserName)
             {
@@ -16,5 +18,9 @@ namespace SSO.Authorization.Requirements.SelfAccessUser
             }
             return Task.CompletedTask;
         }
+    }
+    public interface IRequirement
+    {
+        string UserName { get; set; }
     }
 }

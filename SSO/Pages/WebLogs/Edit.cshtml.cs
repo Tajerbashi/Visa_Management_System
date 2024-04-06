@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using SSO.DatabaseApplication;
 using SSO.Models.DTOs;
 using SSO.Repositpries;
 
@@ -48,9 +41,14 @@ namespace SSO.Pages.WebLogs
             {
                 return Page();
             }
+            BlogDTO.CurrentUser = User;
+            var result =_blogRepository.Update(BlogDTO);
+            if (result.Success)
+            {
+                return RedirectToPage("./Index");
 
-            _blogRepository.Update(BlogDTO);
-            return RedirectToPage("./Index");
+            }
+            return new ChallengeResult();
         }
 
         private bool BlogDTOExists(long id)

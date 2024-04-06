@@ -21,7 +21,7 @@ namespace SSO.DependencyInjection
         public static IServiceCollection AddRequirements(this IServiceCollection services)
         {
             services.AddSingleton<IAuthorizationHandler, CreditRequirementHandler>();
-            services.AddSingleton<IAuthorizationHandler, SelfAccessUserRequirementHandler>();
+            services.AddSingleton<IAuthorizationHandler, SelfAccessUserToBlogRequirementHandler>();
             return services;
         }
 
@@ -44,7 +44,7 @@ namespace SSO.DependencyInjection
 
                 options.AddPolicy("SelfAccessUser", policy =>
                 {
-                    policy.Requirements.Add(new SelfAccessUserRequirement());
+                    policy.Requirements.Add(new SelfAccessUserToBLogRequirement());
                 });
             });
             return services;

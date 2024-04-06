@@ -24,6 +24,7 @@ namespace SSO.Pages.WebLogs
 
         public async Task OnGetAsync()
         {
+            var da = blogRepository.ReadAll().Data;
             BlogDTO = blogRepository.ReadAll().Data;
         }
     }

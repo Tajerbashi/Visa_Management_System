@@ -14,6 +14,7 @@ namespace SSO.Authorization.ExternalClaims
                 {
                     identity.AddClaim(new Claim("TestClaim", "Yse", ClaimValueTypes.String));
                     identity.AddClaim(new Claim("Credit", "2000", ClaimValueTypes.String));
+                    identity.AddClaim(new Claim("SelfAccessUser", "2000", ClaimValueTypes.String));
                 }
             }
             return Task.FromResult(principal);

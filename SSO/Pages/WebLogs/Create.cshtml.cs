@@ -30,7 +30,7 @@ namespace SSO.Pages.WebLogs
             {
                 return Page();
             }
-
+            BlogDTO.CurrentUser = User;
             _blogRepository.Create(BlogDTO);
 
             return RedirectToPage("./Index");

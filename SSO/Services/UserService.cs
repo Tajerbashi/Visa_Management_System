@@ -12,7 +12,7 @@ using System.Security.Claims;
 
 namespace SSO.Services
 {
-   
+
     public class UserService : BaseServices<UserDTO>, IUserRepository
     {
         private readonly UserManager < UserEntity > _userManager;
@@ -138,7 +138,7 @@ namespace SSO.Services
                 throw;
             }
         }
-        
+
         public Result<LoginDTO, SignInResult> Login(LoginDTO model)
         {
             try
@@ -401,6 +401,27 @@ namespace SSO.Services
         public override Result<bool> Exist(long ID)
         {
             throw new NotImplementedException();
+        }
+
+        public Result<UserDTO> Read(ClaimsPrincipal principal)
+        {
+            var result = _userManager.GetUserAsync(principal).Result;
+            if (result != null)
+            {
+                return new Result<UserDTO>
+                {
+                    Data = Mapper.Map<UserDTO>(result),
+                    Messages = ResponseMessage.Success(),
+                    Success = true
+                };
+            }
+            return new Result<UserDTO>
+            {
+
+                Data = Mapper.Map<UserDTO>(result),
+                Messages = ResponseMessage.Faild(),
+                Success = false
+            };
         }
     }
 }
