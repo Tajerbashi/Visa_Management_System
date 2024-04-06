@@ -11,6 +11,7 @@ namespace SSO.Pages.WebLogs
 
         public CreateModel(IBlogRepository blogRepository)
         {
+            var res = User;
             _blogRepository = blogRepository;
         }
 

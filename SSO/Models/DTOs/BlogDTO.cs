@@ -1,5 +1,6 @@
 ﻿using SSO.BaseSSO.Model;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace SSO.Models.DTOs
 {
@@ -19,5 +20,7 @@ namespace SSO.Models.DTOs
 
         public long UserId { get; set; }
         public UserDTO User { get; set; }
+
+        public ClaimsPrincipal CurrentUser { get; set; }
     }
 }

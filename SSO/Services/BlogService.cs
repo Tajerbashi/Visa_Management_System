@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using SSO.BaseSSO.Model;
 using SSO.BaseSSO.Repository;
 using SSO.Common;
@@ -10,13 +11,17 @@ namespace SSO.Services
 {
     public class BlogService : BaseServices<BlogDTO>, IBlogRepository
     {
-        public BlogService(DbContextApplication context, IMapper mapper) : base(context, mapper)
+        private readonly IAuthorizationService authorizationService;
+        public BlogService(DbContextApplication context, IMapper mapper, IAuthorizationService authorizationService) : base(context, mapper)
         {
+            this.authorizationService = authorizationService;
         }
 
         public override Result<long, bool> Create(BlogDTO entity)
         {
-            throw new NotImplementedException();
+
+            var result = authorizationService.AuthorizeAsync(entity.CurrentUser,entity,"SelfAccessUser");
+            return new Result<long, bool> {  };
         }
 
         public override Result<bool, bool> Delete(BlogDTO entity)
