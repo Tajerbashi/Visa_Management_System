@@ -1,5 +1,8 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization
+@using SSO.Models.DTOs
 @model SSO.Pages.Admin.AdminPanelModel
+@inject IAuthorizationService authorize;
 @{
     int counter = 0;
 }
@@ -41,6 +44,10 @@
 </style>
 
 <div class="container-fluid">
+    @if (authorize.AuthorizeAsync(User, Model.UserData, "AccessAdmin").Result.Succeeded)
+    {
+        <div class="alert alert-success shadow rounded">دسترسی کامل به صفحه ها</div>
+    }
     <div class="row mt-5 shadow rounded-5">
         <div class="col-12">
             <ul class="d-flex flex-row justify-content-around flex-wrap">

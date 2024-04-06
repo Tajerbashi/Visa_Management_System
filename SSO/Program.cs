@@ -60,6 +60,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 #endregion
+
 #region ClaimConfig
 //  ایجاد کلیم های شخصی سازی شده برای اجرای کاربر و اضافه به کلیم های سیستم
 
@@ -68,9 +69,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 //  بجای سرویس بالا ازین روش استفاده میکنیم جهت وارد کردن کلیم های کاربر از هر مکانی که میتواند باشد
 builder.Services.AddScoped<IClaimsTransformation, AddClaimsExternal>();
-
-
-
 #endregion
 
 builder.Services.AddRequirements();

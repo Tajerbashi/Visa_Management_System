@@ -1,8 +1,9 @@
-﻿using SSO.BaseSSO.Model;
+﻿using SSO.Authorization.Requirements.SelfAccessUser;
+using SSO.BaseSSO.Model;
 
 namespace SSO.Models.DTOs
 {
-    public class UserDTO : BaseDTO
+    public class UserDTO : BaseDTO, IRequirement
     {
         public string Name { get; set; }
         public string Family { get; set; }

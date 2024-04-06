@@ -45,9 +45,7 @@ namespace SSO.Pages.Identity
                 await Task.CompletedTask;
                 ModelState.AddModelError(string.Empty, "");
                 return Redirect($"/UserManagement/ProfilePage/{User.Identity.Name}");
-
                 //return Redirect(loginResult.Data.ReturnUrl);
-
             }
             else
             {

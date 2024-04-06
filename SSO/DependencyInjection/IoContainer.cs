@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using SSO.Authorization.Requirements.Credit;
 using SSO.Authorization.Requirements.SelfAccessUser;
+using SSO.Domains;
 using SSO.Helper;
+using SSO.Models;
+using SSO.Models.DTOs;
 using SSO.Repositpries;
 using SSO.Services;
 
@@ -22,6 +25,7 @@ namespace SSO.DependencyInjection
         {
             services.AddSingleton<IAuthorizationHandler, CreditRequirementHandler>();
             services.AddSingleton<IAuthorizationHandler, SelfAccessUserToBlogRequirementHandler>();
+            services.AddSingleton<IAuthorizationHandler, SelfAccessUserRequirementHandler<UserData>>();
             return services;
         }
 
@@ -45,6 +49,11 @@ namespace SSO.DependencyInjection
                 options.AddPolicy("SelfAccessUser", policy =>
                 {
                     policy.Requirements.Add(new SelfAccessUserToBLogRequirement());
+                });
+
+                options.AddPolicy("AccessAdmin", policy =>
+                {
+                    policy.Requirements.Add(new SelfAccessUserRequirement<UserData>());
                 });
             });
             return services;
