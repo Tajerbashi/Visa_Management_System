@@ -4,10 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Blazor_Application_Library\Blazor_Application_Library.csproj" />
+    <ProjectReference Include="..\Blazor_Domain_Library\Blazor_Domain_Library.csproj" />
     <ProjectReference Include="..\Blazor_Infrastructure_Library\Blazor_Infrastructure_Library.csproj" />
   </ItemGroup>
 
