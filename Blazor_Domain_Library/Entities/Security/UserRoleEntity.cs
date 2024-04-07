@@ -18,7 +18,7 @@ namespace Blazor_Domain_Library.Entities.Security
         [Description("پیش فرض")]
         public bool IsDefault { get; set; }
 
-        [Description("فعال")]
+        [Description("فعال"),DefaultValue(true)]
         public bool IsActive { get; set; }
 
         [Description("حذف شده"), DefaultValue(false)]
