@@ -5,8 +5,8 @@
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+        <LayoutView Layout="@typeof(PublicLayout)">
+            <Blazor_WebApi.Components.Public.NotFoundPage/>
         </LayoutView>
     </NotFound>
 </Router>
