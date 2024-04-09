@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blazor_Infrastructure_Library.Migrations
 {
     [DbContext(typeof(DbContextApplication))]
-    [Migration("20240316224414_Update_Database")]
-    partial class Update_Database
+    [Migration("20240409143233_Initial_Database")]
+    partial class Initial_Database
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,42 @@ namespace Blazor_Infrastructure_Library.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("RoleClaims", "Security");
+                });
+
+            modelBuilder.Entity("Blazor_Domain_Library.Entities.Security.RoleEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("Roles", "Security");
                 });
 
             modelBuilder.Entity("Blazor_Domain_Library.Entities.Security.UserClaimEntity", b =>
@@ -108,7 +144,6 @@ namespace Blazor_Infrastructure_Library.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Family")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -124,7 +159,6 @@ namespace Blazor_Infrastructure_Library.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -255,42 +289,6 @@ namespace Blazor_Infrastructure_Library.Migrations
                     b.ToTable("UserTokens", "Security");
                 });
 
-            modelBuilder.Entity("Blazor_Domain_Library.Entities.Securityk.RoleEntity", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("Roles", "Security");
-                });
-
             modelBuilder.Entity("Blazor_Domain_Library.Entities.Test.Person", b =>
                 {
                     b.Property<int>("ID")
@@ -303,11 +301,9 @@ namespace Blazor_Infrastructure_Library.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Family")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("Guid")
@@ -319,22 +315,18 @@ namespace Blazor_Infrastructure_Library.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Re_Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte>("Sex")
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -344,7 +336,7 @@ namespace Blazor_Infrastructure_Library.Migrations
 
             modelBuilder.Entity("Blazor_Domain_Library.Entities.Security.RoleClaimEntity", b =>
                 {
-                    b.HasOne("Blazor_Domain_Library.Entities.Securityk.RoleEntity", null)
+                    b.HasOne("Blazor_Domain_Library.Entities.Security.RoleEntity", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -371,7 +363,7 @@ namespace Blazor_Infrastructure_Library.Migrations
 
             modelBuilder.Entity("Blazor_Domain_Library.Entities.Security.UserRoleEntity", b =>
                 {
-                    b.HasOne("Blazor_Domain_Library.Entities.Securityk.RoleEntity", null)
+                    b.HasOne("Blazor_Domain_Library.Entities.Security.RoleEntity", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
