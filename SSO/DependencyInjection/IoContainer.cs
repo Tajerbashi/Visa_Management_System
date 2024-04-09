@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using SSO.Authorization.Requirements.Credit;
 using SSO.Authorization.Requirements.SelfAccessUser;
-using SSO.Domains;
-using SSO.Helper;
 using SSO.Models;
-using SSO.Models.DTOs;
 using SSO.Repositpries;
 using SSO.Services;
 
