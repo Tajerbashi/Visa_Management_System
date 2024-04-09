@@ -19,7 +19,7 @@ a, .btn-link {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
@@ -66,3 +66,61 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#public-card {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #2189f7, #7b68ee);
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h150 {
+    height: 150px;
+}
+
+.h200 {
+    height: 200px;
+}
+
+.h250 {
+    height: 250px;
+}
+
+.h300 {
+    height: 300px;
+}
+.textRight {
+    text-align: right;
+}
+.textLeft {
+    text-align: left;
+}
+#signup-form {
+    background: linear-gradient(70deg, #1f42bf, #413bff);
+    padding: 1rem;
+    border-radius: 1rem;
+    filter: drop-shadow(2px 2px 6px black);
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.gradient-custom {
+    background: #00000069;
+    border-radius: 1rem;
+    filter: drop-shadow(2px 9px 23px rgba(0, 0, 0, 0.5));
+    border: 1px solid #ffffff00;
+    backdrop-filter: blur(22px);
+}

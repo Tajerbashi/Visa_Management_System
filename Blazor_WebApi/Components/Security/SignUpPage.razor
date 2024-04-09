@@ -1,5 +1,66 @@
-﻿<h3>SignUpPage</h3>
+﻿@page "/Security/SignUp"
+@using Blazor_Application_Library.Models.Security
+@layout PublicLayout
+
+
+<div class="container login-card">
+    <div class="row d-flex flex-wrap align-content-center justify-content-center">
+        <div class="col-10">
+            <div class="alert alert-primary border-primary shadow rounded-5 text-center m-3 h4">
+                به صفحه ورود سیستم مدیریت محتوا خوش آمدید
+            </div>
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-6">
+            <EditForm Model=@SignUpDTO OnSubmit=@FormSubmitted>
+                <div class="card gradient-custom text-white">
+                    <div class="card-body p-5 text-center">
+                        <div class="d-flex flex-row flex-wrap justify-content-around mb-2">
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label h5" for="Name">نام</label>
+                                <InputText @bind-Value="SignUpDTO.Name" class="form-control " />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label  h5" for="Family">فامیلی</label>
+                                <InputText @bind-Value="SignUpDTO.Family" class="form-control " />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label  h5" for="Email">ایمیل</label>
+                                <InputText @bind-Value="SignUpDTO.Email" class="form-control " />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label h5 " for="Phone">تلفن</label>
+                                <InputText @bind-Value="SignUpDTO.Phone" class="form-control " />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-100 p-1">
+                                <label class="form-label h5 " for="UserName">نام کاربری</label>
+                                <InputText @bind-Value="SignUpDTO.UserName" class="form-control " />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label h5 " for="Password">رمز کاربری</label>
+                                <InputText @bind-Value="SignUpDTO.Password" class="form-control" />
+                            </div>
+                            <div class="form-outline form-white mb-4 textRight w-50 p-1">
+                                <label class="form-label h5 " for="PasswordConfirmation">رمز کاربری</label>
+                                <InputText type="password" @bind-Value="SignUpDTO.PasswordConfirmation" class="form-control " />
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-light  px-5" type="submit">ورود</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
 
 @code {
+    string Status = "Not submitted";
 
+    SignUpDTO SignUpDTO = new SignUpDTO();
+
+    void FormSubmitted()
+    {
+        Status = "Form submitted";
+        // Post data to the server, etc
+    }
 }

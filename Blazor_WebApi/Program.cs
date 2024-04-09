@@ -1,16 +1,26 @@
-using Blazor_WebApi.Data;
+using Blazor_WebApi.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
+#region DatabaseConfig
+builder.Services.AddDatabase(builder);
+builder.Services.AddIdentity(builder);
+builder.Services.AddClaims();
+builder.Services.AddRequirements();
+builder.Services.AddPolicies();
+builder.Services.AddRepositories();
+#endregion
+
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.Configure<RazorPagesOptions>(options =>
-options.RootDirectory = "/Components");
-var app = builder.Build();
+builder.Services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Components");
 
+var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
