@@ -1,7 +1,60 @@
 ﻿@page "/Security/Profile"
-<h3>ProfilePage</h3>
-
+@using Blazor_Application_Library.Models.Security
 @layout PublicLayout
-@code {
+<PageTitle>پروفایل</PageTitle>
 
+<div class="container-fluid">
+    <div class="row d-flex flex-wrap align-content-center justify-content-center">
+        <div class="col-12">
+            <div class="alert alert-primary border-primary shadow rounded-5 text-center m-3 h4">
+                به صفحه فراموش رمز سیستم مدیریت محتوا خوش آمدید
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex flex-wrap align-content-center justify-content-center p-2">
+        <div class="col-sm-12 col-md-4 col-lg-3 col-xl-2 p-3">
+            <div class="h-100">
+                <div class="card ">
+                    <div class="card-header">
+                        <img class="card-img-top " alt="تصویر" src="./favicon.png" />
+                        <h6 class="card-title">کاربر جاری</h6>
+                    </div>
+                    <div class="card-body overflow-auto" style="height:300px">
+                        <ul class="list-group m-0 p-0">
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                            <li class="list-group-item"><a class="btn btn-dark btn-outline-light w-100" href="/#">اطلاعات</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="card-subtitle">کاربر جاری</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-7 col-xl-10">
+            <div class="h-100 alert alert-primary border-primary shadow rounded-5 text-center m-3 h4">
+                به صفحه فراموش رمز سیستم مدیریت محتوا خوش آمدید
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    string Status = "Not submitted";
+    ProfileDTO Profile = new ProfileDTO();
+
+    void FormSubmitted()
+    {
+        Status = "Form submitted";
+    }
 }

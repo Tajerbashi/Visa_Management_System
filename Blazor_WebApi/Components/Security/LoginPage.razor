@@ -1,12 +1,13 @@
 ﻿@page "/Security/Login"
 @using Blazor_Application_Library.Models.Security
+<PageTitle>ورود کاربر</PageTitle>
 
 @layout PublicLayout
 
 <div class="container login-card">
     <div class="row d-flex flex-wrap align-content-center justify-content-center">
         <div class="col-10">
-            <div class="alert alert-primary border-primary shadow rounded-5 text-center m-3">
+            <div class="alert alert-primary border-primary shadow rounded-5 text-center m-3 h4">
                 به صفحه ورود سیستم مدیریت محتوا خوش آمدید
             </div>
         </div>
@@ -14,22 +15,22 @@
             <EditForm Model=@LoginDTO OnSubmit=@FormSubmitted>
                 <div class="card gradient-custom text-white">
                     <div class="card-body p-5 text-center">
-                        <div class="mb-md-5 mt-md-4 pb-5">
-                            <div class="form-outline form-white mb-4 textRight">
-                                <label class="form-label h4" for="typeEmailX">نام کاربری</label>
-                                <InputText @bind-Value="LoginDTO.UserName" class="form-control form-control-lg" />
+                        <div class="mb-md-5 mt-md-4 pb-1">
+                            <div class="form-outline form-white mb-2 textRight">
+                                <label class="form-label h5" for="typeEmailX">نام کاربری</label>
+                                <InputText @bind-Value="LoginDTO.UserName" class="form-control " />
                             </div>
 
                             <div class="form-outline form-white mb-4 textRight">
-                                <label class="form-label h4" for="typePasswordX">رمز کاربری</label>
-                                <InputText type="password" @bind-Value="LoginDTO.Password" class="form-control form-control-lg" />
+                                <label class="form-label h5" for="typePasswordX">رمز کاربری</label>
+                                <InputText type="password" @bind-Value="LoginDTO.Password" class="form-control " />
                             </div>
                             <div class="d-flex flex-row justify-content-between">
                                 <div class="px-2">
-                                    <InputCheckbox @bind-Value="LoginDTO.IsPersistence"/>
+                                    <InputCheckbox @bind-Value="LoginDTO.IsPersistence" />
                                     <label>مرا بخاطر بسپار</label>
                                 </div>
-                               
+
                                 <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="/Security/ForgotPassword">رمز خود را فراموش کردم</a></p>
                             </div>
 
