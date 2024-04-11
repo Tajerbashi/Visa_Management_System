@@ -2,6 +2,7 @@ using Blazor_WebApi.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(typeof(Program));
 
 #region DatabaseConfig
 builder.Services.AddDatabase(builder);

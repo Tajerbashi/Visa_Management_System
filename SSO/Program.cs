@@ -10,7 +10,9 @@ using SSO.Domains;
 using SSO.Repositpries;
 
 var builder = WebApplication.CreateBuilder(args);
+#region AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
+#endregion
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
