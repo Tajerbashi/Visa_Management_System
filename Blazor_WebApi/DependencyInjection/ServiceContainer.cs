@@ -1,5 +1,7 @@
-﻿using Blazor_Domain_Library.Entities.Security;
+﻿using Blazor_Application_Library.Repositories.Security;
+using Blazor_Domain_Library.Entities.Security;
 using Blazor_Infrastructure_Library.DatabaseContext;
+using Blazor_Infrastructure_Library.Services.Security;
 using Blazor_WebApi.Helper.Identity;
 using Blazor_WebApi.Helper.Validator;
 using Microsoft.AspNetCore.Identity;
@@ -56,6 +58,7 @@ namespace Blazor_WebApi.DependencyInjection
         }
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<IUserService,UserService>();
             return services;
         }
         public static IServiceCollection AddRequirements(this IServiceCollection services)

@@ -1,8 +1,11 @@
 ﻿@page "/Security/Login"
+@inject NavigationManager NavigationManager
 @using Blazor_Application_Library.Models.Security
+@using Blazor_Application_Library.Repositories.Security
 <PageTitle>ورود کاربر</PageTitle>
-
+@inject IUserService service;
 @layout PublicLayout
+
 
 <div class="container login-card">
     <div class="row d-flex flex-wrap align-content-center justify-content-center">
@@ -50,11 +53,18 @@
 
 
 @code {
-    string Status = "Not submitted";
     LoginDTO LoginDTO = new LoginDTO();
 
-    void FormSubmitted()
+    async void FormSubmitted()
     {
-        Status = "Form submitted";
+        var result = await service.Login(LoginDTO);
+        if (result.IsSuccess)
+        {
+            NavigationManager.NavigateTo("/Security/Profile");
+        }
+        else
+        {
+            
+        }
     }
 }
