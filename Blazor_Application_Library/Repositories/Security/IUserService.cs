@@ -5,18 +5,18 @@ namespace Blazor_Application_Library.Repositories.Security
 {
     public interface IUserService
     {
-        Task<Result<bool>> Login(LoginDTO model);
-        Task<Result<bool>> SignUp(SignUpDTO model);
-        Task<Result<bool>> LogOut();
-        Task<Result<long>> Create(UserDTO user);
-        Task<Result<bool>> Update(UserDTO user);
-        Task<Result<bool>> AddOrUpdate(UserDTO user);
-        Task<Result<bool>> Remove(UserDTO user);
-        Task<Result<bool>> Remove(long id);
-        Task<Result<bool>> DisActive(long id);
-        Task<Result<bool>> ChangeActive(long id);
-        Task<Result<UserDTO>> Get(long id);
-        Task<Result<List<UserDTO>>> Get();
+        Result<bool> Login(LoginDTO model);
+        Result<bool> SignUp(SignUpDTO model);
+        Result<bool> LogOut();
+        Result<long> Create(UserDTO user);
+        Result<bool> Update(UserDTO user);
+        Result<bool> AddOrUpdate(UserDTO user);
+        Result<bool> Remove(UserDTO user);
+        Result<bool> Remove(long id);
+        Result<bool> DisActive(long id);
+        Result<bool> ChangeActive(long id);
+        Result<UserDTO> Get(long id);
+        Result<List<UserDTO>> Get();
 
 
     }

@@ -26,20 +26,19 @@ builder.Services.AddDbContext<DbContextApplication>(options =>
 #endregion
 
 #region Identity
-builder.Services
-    .AddIdentity<UserEntity, RoleEntity>(config =>
+builder.Services.AddIdentity<UserEntity, RoleEntity>(config =>
 {
     //config.User.AllowedUserNameCharacters = "";
-})
-    .AddEntityFrameworkStores<DbContextApplication>()
+})  .AddEntityFrameworkStores<DbContextApplication>()
     .AddDefaultTokenProviders()
     .AddRoles<RoleEntity>()
     .AddErrorDescriber<CustomIdentityError>()
     .AddPasswordValidator<PasswordValidator>()
-    ;
-
+;
+builder.Services.AddCascadingAuthenticationState();
+builder.Services.AddOptions();
+builder.Services.AddAuthorizationCore();
 builder.Services.AddPolicies();
-
 builder.Services.Configure<IdentityOptions>(options =>
 {
     //  Identity Configuration Options For Customization
@@ -52,7 +51,6 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.MaxFailedAccessAttempts = 3;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
 });
-
 builder.Services.ConfigureApplicationCookie(options =>
 {
     //  Cookie Setting
@@ -93,7 +91,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapRazorPages();
 
 app.MapGet("/sso/Users/ReadAll", (IUserRepository service) =>

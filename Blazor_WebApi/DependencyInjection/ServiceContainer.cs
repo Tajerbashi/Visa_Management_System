@@ -19,7 +19,7 @@ namespace Blazor_WebApi.DependencyInjection
             });
             return services;
         }
-        public static IServiceCollection AddIdentity(this IServiceCollection services, WebApplicationBuilder builder)
+        public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
             services.AddIdentity<UserEntity, RoleEntity>(config =>
             {
@@ -30,26 +30,30 @@ namespace Blazor_WebApi.DependencyInjection
             .AddErrorDescriber<CustomIdentityError>()
             .AddPasswordValidator<PasswordValidator>()
             ;
-            builder.Services.Configure<IdentityOptions>(options =>
+            services.Configure<IdentityOptions>(options =>
             {
                 //  Identity Configuration Options For Customization
                 // User
-                options.User.RequireUniqueEmail = true;
+                //options.User.RequireUniqueEmail = true;
                 // SignIn
-                options.SignIn.RequireConfirmedEmail = true;
+                //options.SignIn.RequireConfirmedEmail = true;
                 // Lockout
-                options.Lockout.AllowedForNewUsers = true;
-                options.Lockout.MaxFailedAccessAttempts = 3;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                //options.Lockout.AllowedForNewUsers = true;
+                //options.Lockout.MaxFailedAccessAttempts = 3;
+                //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
             });
-            builder.Services.ConfigureApplicationCookie(options =>
+            services.ConfigureApplicationCookie(options =>
             {
                 //  Cookie Setting
                 //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
-                options.LoginPath = "/Identity/Login";
-                options.AccessDeniedPath = "/Identity/AccessDenied";
+                options.LoginPath = "/Security/Login";
+                options.AccessDeniedPath = "/Security/AccessDenied";
                 options.SlidingExpiration = true;
             });
+            services.AddCascadingAuthenticationState();
+            services.AddOptions();
+            services.AddAuthentication();
+            services.AddAuthorization();
             return services;
         }
         public static IServiceCollection AddClaims(this IServiceCollection services)

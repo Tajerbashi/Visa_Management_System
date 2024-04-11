@@ -19,14 +19,18 @@
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
     <div id="blazor-error-ui">
-        <environment include="Staging,Production">
-            An error has occurred. This application may no longer respond until reloaded.
-        </environment>
-        <environment include="Development">
-            An unhandled exception has occurred. See browser dev tools for details.
-        </environment>
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+        <div class="d-flex flex-row justify-content-between">
+           <div class="text-danger mx-3">
+                <environment include="Staging,Production">
+                    خطایی رخ داده است. این برنامه ممکن است دیگر پاسخ ندهد تا زمانی که دوباره بارگیری شود.
+                </environment>
+                <environment include="Development">
+                    یک استثناء کنترل نشده رخ داده است. برای جزئیات بیشتر به ابزارهای توسعه دهنده مرورگر مراجعه کنید.
+                </environment>
+           </div>
+            <a href="" class="reload">تلاش مجدد</a>
+            <a class="dismiss">🗙</a>
+        </div>
     </div>
 
     <script src="_framework/blazor.server.js"></script>

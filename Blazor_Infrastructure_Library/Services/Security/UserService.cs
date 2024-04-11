@@ -1,30 +1,33 @@
-﻿using Blazor_Application_Library.Models.General;
+﻿using Blazor_Application_Library.Helpers;
+using Blazor_Application_Library.Models.General;
 using Blazor_Application_Library.Models.Security;
 using Blazor_Application_Library.Repositories.Security;
 using Blazor_Domain_Library.Entities.Security;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Blazor_Infrastructure_Library.Services.Security
 {
-    public class UserService : UserManager<UserEntity>, IUserService
+    public class UserService : IUserService
     {
-        public UserService(
-            IUserStore<UserEntity> store, IOptions<IdentityOptions> optionsAccessor, IPasswordHasher<UserEntity> passwordHasher,
-            IEnumerable<IUserValidator<UserEntity>> userValidators, IEnumerable<IPasswordValidator<UserEntity>> passwordValidators,
-            ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors, IServiceProvider services, ILogger<UserManager<UserEntity>> logger) 
-            : base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
+        private readonly UserManager<UserEntity> UserManager;
+        private readonly SignInManager<UserEntity> SignInManager;
+
+        public UserService(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager)
         {
+            UserManager = userManager;
+            SignInManager = signInManager;
         }
 
-        public async Task<Result<bool>> AddOrUpdate(UserDTO user)
+
+
+
+        public Result<bool> AddOrUpdate(UserDTO user)
         {
             try
             {
                 if (user.ID == 0)
                 {
-                    var result = await Create(user);
+                    var result = Create(user);
                     return new Result<bool>
                     {
 
@@ -32,7 +35,7 @@ namespace Blazor_Infrastructure_Library.Services.Security
                 }
                 else
                 {
-                    var result = await Update(user);
+                    var result = Update(user);
                     return new Result<bool>
                     {
 
@@ -46,11 +49,11 @@ namespace Blazor_Infrastructure_Library.Services.Security
             }
         }
 
-        public async Task<Result<bool>> ChangeActive(long id)
+        public Result<bool> ChangeActive(long id)
         {
             try
             {
-                await Task.CompletedTask;
+
                 return new Result<bool>
                 {
 
@@ -63,35 +66,68 @@ namespace Blazor_Infrastructure_Library.Services.Security
             }
         }
 
-        public Task<Result<long>> Create(UserDTO user)
+        public Result<long> Create(UserDTO user)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Result<bool>> DisActive(long id)
+        public Result<bool> DisActive(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Result<UserDTO>> Get(long id)
+        public Result<UserDTO> Get(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Result<List<UserDTO>>> Get()
+        public Result<List<UserDTO>> Get()
         {
             throw new NotImplementedException();
         }
-
-        public async Task<Result<bool>> Login(LoginDTO model)
+        public Result<bool> Login(LoginDTO model)
         {
             try
             {
-                await Task.CompletedTask;
+
+                var userEntity = UserManager.FindByNameAsync(model.UserName).Result;
+                var SignOut = SignInManager.SignOutAsync();
+                if (userEntity is null)
+                {
+                    return new Result<bool>
+                    {
+                        Data = false,
+                        IsSuccess = false,
+                        Message = ApplicationMessages.NotFoundData(),
+                        Response = ""
+                    };
+                }
+                //var loginResult = SignInManager.PasswordSignInAsync(
+                //   userEntity,
+                //   model.Password,
+                //   model.IsPersistence,
+                //   true
+                //   ).Result;
+
+                var loginResult = SignInManager.RefreshSignInAsync(userEntity);
+                Task.WaitAny(loginResult);
+                if (loginResult.IsCompletedSuccessfully)
+                {
+                    return new Result<bool>
+                    {
+                        Data = true,
+                        IsSuccess = true,
+                        Message = ApplicationMessages.Success(),
+                        Response = loginResult
+                    };
+                }
+
                 return new Result<bool>
                 {
-                    Data = true,
-                    IsSuccess = true
+                    Data = false,
+                    IsSuccess = false,
+                    Message = ApplicationMessages.FaildLogin(),
+                    Response = loginResult
                 };
             }
             catch (Exception)
@@ -101,11 +137,11 @@ namespace Blazor_Infrastructure_Library.Services.Security
             }
         }
 
-        public async Task<Result<bool>> LogOut()
+        public Result<bool> LogOut()
         {
             try
             {
-                await Task.CompletedTask;
+
                 return new Result<bool>
                 {
 
@@ -118,11 +154,10 @@ namespace Blazor_Infrastructure_Library.Services.Security
             }
         }
 
-        public async Task<Result<bool>> Remove(UserDTO user)
+        public Result<bool> Remove(UserDTO user)
         {
             try
             {
-                await Task.CompletedTask;
                 return new Result<bool>
                 {
 
@@ -135,17 +170,50 @@ namespace Blazor_Infrastructure_Library.Services.Security
             }
         }
 
-        public Task<Result<bool>> Remove(long id)
+        public Result<bool> Remove(long id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Result<bool>> SignUp(SignUpDTO model)
+        public Result<bool> SignUp(SignUpDTO model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var userEntity = new UserEntity
+                {
+                    Name = model.Name,
+                    Family  = model.Family,
+                    Email = model.Email,
+                    UserName = model.UserName,
+                    PhoneNumber=model.Phone,
+                    IsActive = true,
+                    IsDeleted = false
+                };
+                var result = UserManager.CreateAsync(userEntity,model.Password).Result;
+                if (result.Succeeded)
+                {
+                    return new Result<bool>
+                    {
+                        Data = true,
+                        IsSuccess = true,
+                        Message = ApplicationMessages.Success(),
+                    };
+                }
+                return new Result<bool>
+                {
+                    Data = false,
+                    IsSuccess = false,
+                    Message = "",
+                    Response = (string)ApplicationMessages.IdentityErrors(result.Errors)
+                };
+            }
+            catch
+            {
+                throw;
+            }
         }
 
-        public Task<Result<bool>> Update(UserDTO user)
+        public Result<bool> Update(UserDTO user)
         {
             throw new NotImplementedException();
         }

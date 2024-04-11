@@ -6,7 +6,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 #region DatabaseConfig
 builder.Services.AddDatabase(builder);
-builder.Services.AddIdentity(builder);
+builder.Services.AddIdentity();
 builder.Services.AddClaims();
 builder.Services.AddRequirements();
 builder.Services.AddPolicies();
@@ -20,8 +20,10 @@ builder.Services.AddServerSideBlazor();
 builder.Services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Components");
 
 var app = builder.Build();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

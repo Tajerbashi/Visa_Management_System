@@ -1,0 +1,30 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>سیستم مدیریت اطلاعات</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <AuthorizeView>
+                <Authorized>
+                    <a class="btn btn-dark shadow" href="/Security/Profile">حساب کاربری</a>
+                    <a class="btn btn-info shadow" href="/Security/Notification">اعلانات</a>
+                    <a class="btn btn-danger shadow" href="/Security/Logout">خروج</a>
+                </Authorized>
+                <NotAuthorized>
+                    <a class="btn btn-primary shadow" href="/Security/Login">ورود</a>
+                    <a class="btn btn-success shadow" href="/Security/SignUp">ثبت نام</a>
+                </NotAuthorized>
+            </AuthorizeView>
+
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

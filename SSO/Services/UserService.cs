@@ -18,7 +18,11 @@ namespace SSO.Services
         private readonly UserManager < UserEntity > _userManager;
         private readonly SignInManager<UserEntity> _signInManager;
 
-        public UserService(DbContextApplication context, IMapper mapper, UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager) : base(context, mapper)
+        public UserService(
+            DbContextApplication context, 
+            IMapper mapper, 
+            UserManager<UserEntity> userManager,
+            SignInManager<UserEntity> signInManager) : base(context, mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;

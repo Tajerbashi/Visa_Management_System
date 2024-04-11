@@ -1,8 +1,15 @@
 ﻿@page "/Security/Login"
-@inject NavigationManager NavigationManager
+
+@using Blazor_Application_Library.Helpers
 @using Blazor_Application_Library.Models.Security
 @using Blazor_Application_Library.Repositories.Security
+@using Blazor_Domain_Library.Entities.Security
+@using Microsoft.AspNetCore.Identity
+
 <PageTitle>ورود کاربر</PageTitle>
+@inject NavigationManager NavigationManager
+@inject UserManager<UserEntity> UserManager
+@inject SignInManager<UserEntity> SignInManager
 @inject IUserService service;
 @layout PublicLayout
 
@@ -15,22 +22,22 @@
             </div>
         </div>
         <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
-            <EditForm Model=@LoginDTO OnSubmit=@FormSubmitted>
+            <EditForm Model=@Model OnSubmit=@FormSubmitted>
                 <div class="card gradient-custom text-white">
                     <div class="card-body p-5 text-center">
                         <div class="mb-md-5 mt-md-4 pb-1">
                             <div class="form-outline form-white mb-2 textRight">
                                 <label class="form-label h5" for="typeEmailX">نام کاربری</label>
-                                <InputText @bind-Value="LoginDTO.UserName" class="form-control " />
+                                <InputText @bind-Value="Model.UserName" class="form-control " />
                             </div>
 
                             <div class="form-outline form-white mb-4 textRight">
                                 <label class="form-label h5" for="typePasswordX">رمز کاربری</label>
-                                <InputText type="password" @bind-Value="LoginDTO.Password" class="form-control " />
+                                <InputText type="password" @bind-Value="Model.Password" class="form-control " />
                             </div>
                             <div class="d-flex flex-row justify-content-between">
                                 <div class="px-2">
-                                    <InputCheckbox @bind-Value="LoginDTO.IsPersistence" />
+                                    <InputCheckbox @bind-Value="Model.IsPersistence" />
                                     <label>مرا بخاطر بسپار</label>
                                 </div>
 
@@ -53,18 +60,30 @@
 
 
 @code {
-    LoginDTO LoginDTO = new LoginDTO();
+    LoginDTO Model = new LoginDTO();
+    string Messages = null;
 
-    async void FormSubmitted()
+    void FormSubmitted()
     {
-        var result = await service.Login(LoginDTO);
-        if (result.IsSuccess)
+        // var result = service.Login(LoginDTO);
+        var user = UserManager.FindByNameAsync(Model.UserName).Result;
+        SignInManager.SignOutAsync();
+        if (user is null)
         {
-            NavigationManager.NavigateTo("/Security/Profile");
+            Messages = ApplicationMessages.NotFoundData();
         }
         else
         {
-            
+            var result = SignInManager.PasswordSignInAsync(user,Model.Password,Model.IsPersistence,true).Result;
+            if (result.Succeeded)
+            {
+                NavigationManager.NavigateTo("/Security/Profile");
+            }
+            else
+            {
+                Messages = ApplicationMessages.FaildLogin();
+            }
         }
+        
     }
 }
