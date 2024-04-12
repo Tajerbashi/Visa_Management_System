@@ -2,26 +2,24 @@
 
 <PageTitle>داشبورد</PageTitle>
 
-
-<AuthorizeView>
-    <Authorized>
-        <div class="container-fluid p-5 text-center">
-            <div class="row my-3 d-flex justify-content-center">
-                <div class="col-sm-12 col-md-4 col-lg-6 col-xl-3 my-2">
-                    <div class="h100 text-center bg-dark bg-gradient text-light rounded-3 p-3">
-                        1
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-6 col-xl-3 my-2">
-                    <div class="h100 text-center bg-dark bg-gradient text-light rounded-3 p-3">
-                        2
-                    </div>
-                </div>
-                <div class=" col-sm-12 col-md-4 col-lg-6 col-xl-3 my-2">
-                    <div class="h100 text-center bg-dark bg-gradient text-light rounded-3 p-3">
-                        3
-                    </div>
-                </div>
+<div class="container-fluid p-5 text-center">
+    <AuthorizeView>
+        <NotAuthorized>
+            <div class="text-center bg-dark bg-gradient text-light rounded-3 p-3">
+                <ul class="list-group p-0 m-0 list-unstyled d-flex fleflex-row justify-content-evenly">
+                    <li class="list-group-item nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/Security/Login" Match="NavLinkMatch.All">
+                            <span class="oi oi-account-login" aria-hidden="true"></span>
+                            ورود
+                        </NavLink>
+                    </li>
+                    <li class=" list-group-item  nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/Security/SignUp" Match="NavLinkMatch.Prefix">
+                            <span class="oi oi-signal" aria-hidden="true"></span>
+                            ثبت نام
+                        </NavLink>
+                    </li>
+                </ul>
             </div>
             <div class="row my-3">
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"><div class="h200 text-center bg-dark bg-gradient text-light rounded-3 p-3">1</div></div>
@@ -30,31 +28,20 @@
             <div class="row my-3">
                 <div class="col-12"><div class="text-center bg-dark bg-gradient h300 text-light rounded-3 p-3">1</div></div>
             </div>
-        </div>
-
-        <ul>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="/identity/account/logout" Match="NavLinkMatch.All">
-                    <span class="oi oi-power-standby" aria-hidden="true"></span>
-                    Logout (@context.User.Identity.)
-                </NavLink>
-            </li>
-        </ul>
-    </Authorized>
-    <NotAuthorized>
-        <div class="container-fluid p-5 text-center">
-            <div class="row my-3 d-flex justify-content-center">
-                <ul class="list-group m-0 p-0 d-flex flex-row justify-content-around list-unstyled">
-                    <li class="nav-item px-3 ">
-                        <NavLink class="nav-link text-dark" href="/Security/Login" Match="NavLinkMatch.All">
-                            <span class="oi oi-power-standby text-dark" aria-hidden="true"></span>
-                            ورود
+        </NotAuthorized>
+        <Authorized>
+            <div class=" text-center bg-dark bg-gradient text-light rounded-3 p-3">
+                <ul class="list-group p-0 m-0 list-unstyled d-flex fleflex-row justify-content-evenly">
+                    <li class="list-group-item nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/Security/Profile" Match="NavLinkMatch.All">
+                            <span class="oi oi-dashboard" aria-hidden="true"></span>
+                            حساب کاربری (@context.User.Identity.Name)
                         </NavLink>
                     </li>
-                    <li class="nav-item px-3 ">
-                        <NavLink class="nav-link text-dark" href="/Security/SignUp" Match="NavLinkMatch.Prefix">
-                            <span class="oi oi-register text-dark" aria-hidden="true"></span>
-                            ثبت نام
+                    <li class=" list-group-item  nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/Security/Logout" Match="NavLinkMatch.Prefix">
+                            <span class="oi oi-account-logout" aria-hidden="true"></span>
+                            خروج
                         </NavLink>
                     </li>
                 </ul>
@@ -83,8 +70,11 @@
             <div class="row my-3">
                 <div class="col-12"><div class="text-center bg-dark bg-gradient h300 text-light rounded-3 p-3">1</div></div>
             </div>
-        </div>
-    </NotAuthorized>
-</AuthorizeView>
+        </Authorized>
 
-<SurveyPrompt Title="به داشبورد سیستم مدیریت محتوا خوش آمدید" />
+    </AuthorizeView>
+    <SurveyPrompt Title="به داشبورد سیستم مدیریت محتوا خوش آمدید" />
+</div>
+
+
+

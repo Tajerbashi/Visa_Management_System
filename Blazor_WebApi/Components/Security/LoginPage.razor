@@ -1,15 +1,9 @@
 ﻿@page "/Security/Login"
-
-@using Blazor_Application_Library.Helpers
 @using Blazor_Application_Library.Models.Security
 @using Blazor_Application_Library.Repositories.Security
-@using Blazor_Domain_Library.Entities.Security
-@using Microsoft.AspNetCore.Identity
-
 <PageTitle>ورود کاربر</PageTitle>
+
 @inject NavigationManager NavigationManager
-@inject UserManager<UserEntity> UserManager
-@inject SignInManager<UserEntity> SignInManager
 @inject IUserService service;
 @layout PublicLayout
 
@@ -22,6 +16,12 @@
             </div>
         </div>
         <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
+            @if (Messages != null)
+            {
+                <div class="alert alert-danger">
+                    @Messages
+                </div>
+            }
             <EditForm Model=@Model OnSubmit=@FormSubmitted>
                 <div class="card gradient-custom text-white">
                     <div class="card-body p-5 text-center">
@@ -45,6 +45,7 @@
                             </div>
 
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">ورود</button>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" @onclick="() => FormSubmitted()">ورود یکپارچه</button>
                         </div>
                         <div>
                             <p class="mb-0">
@@ -63,27 +64,49 @@
     LoginDTO Model = new LoginDTO();
     string Messages = null;
 
-    void FormSubmitted()
+    protected override Task OnInitializedAsync()
     {
-        // var result = service.Login(LoginDTO);
-        var user = UserManager.FindByNameAsync(Model.UserName).Result;
-        SignInManager.SignOutAsync();
-        if (user is null)
+        return base.OnInitializedAsync();
+    }
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     var result = await service.Login(new LoginDTO
+    //         {
+    //             UserName="Tajerbashi",
+    //             Password="@Tajer#1999",
+    //             IsPersistence=true
+    //         });
+    //     if (result.IsSuccess)
+    //     {
+    //         NavigationManager.NavigateTo("/Security/Profile");
+    //     }
+    //     else
+    //     {
+    //         Messages = result.Message;
+    //     }
+    //     await base.OnAfterRenderAsync(firstRender);
+    // }
+
+    void ReloadPage(NavigationManager manager)
+    {
+        manager.NavigateTo(manager.Uri, true);
+    }
+
+
+    
+}
+@functions{
+    async Task FormSubmitted()
+    {
+        var result = await this.service.Login(Model);
+        if (result.IsSuccess)
         {
-            Messages = ApplicationMessages.NotFoundData();
+            ReloadPage(NavigationManager);
+            NavigationManager.NavigateTo("/Security/Profile");
         }
         else
         {
-            var result = SignInManager.PasswordSignInAsync(user,Model.Password,Model.IsPersistence,true).Result;
-            if (result.Succeeded)
-            {
-                NavigationManager.NavigateTo("/Security/Profile");
-            }
-            else
-            {
-                Messages = ApplicationMessages.FaildLogin();
-            }
+            Messages = result.Message;
         }
-        
     }
 }

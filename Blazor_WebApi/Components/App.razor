@@ -1,4 +1,4 @@
-﻿@* <CascadingAuthenticationState>
+﻿<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
             <AuthorizeView>
@@ -15,29 +15,6 @@
             <PageTitle>Not found</PageTitle>
             <LayoutView Layout="@typeof(PublicLayout)">
                 <Blazor_WebApi.Components.Public.NotFoundPage />
-            </LayoutView>
-        </NotFound>
-    </Router>
-</CascadingAuthenticationState>
- *@
-
- <CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(App).Assembly">
-        <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >
-                <NotAuthorized>
-                    <RedirectToLogin />
-                </NotAuthorized>
-                <Authorizing>
-                    <p>Logging in...</p>
-                </Authorizing>
-            </AuthorizeRouteView>
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-        </Found>
-        <NotFound>
-            <PageTitle>Not found</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
             </LayoutView>
         </NotFound>
     </Router>

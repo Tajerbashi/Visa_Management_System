@@ -1,9 +1,11 @@
-﻿@page "/Security/AccessDenied"
+﻿@layout PublicLayout
+
+@page "/Security/AccessDenied"
 
 <div class="container">
-    <div class="alert alert-danger border-danger shadow rounded">شما به صفحه مورد نظر دسترسی ندارید ...</div>
-    <div class="display-4 mt-5">خطای 403</div>
-    <button class="btn btn-danger shadow rounded-2">برگشت به صفحه قبل</button>
+    <div class="alert alert-danger border-danger shadow rounded display-6">شما به صفحه مورد نظر دسترسی ندارید</div>
+    <div class="display-4 my-5 text-danger">خطای 403</div>
+    <a href="/" class="btn btn-danger text-light btn-outline-dark mt-5 w-50">برگشت</a>
 </div>
 
 @code {

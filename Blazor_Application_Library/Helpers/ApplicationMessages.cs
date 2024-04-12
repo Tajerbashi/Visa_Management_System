@@ -13,6 +13,7 @@ namespace Blazor_Application_Library.Helpers
         public static string NotAccess() => $"دسترسی ندرید";
         public static string CallSupport() => $"با پشتیبانی تماس بگیرید";
         public static string FaildLogin() => "عملیات ورود ناموفق بود";
+        public static string WrongPassword() => "رمز اشتباه است";
 
         public static string MessageeLine(List<string> message)
         {

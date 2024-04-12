@@ -22,9 +22,11 @@
         <div class="d-flex flex-row justify-content-between">
            <div class="text-danger mx-3">
                 <environment include="Staging,Production">
+                    <component render-mode="ServerPrerendered" type="typeof(App)" />
                     خطایی رخ داده است. این برنامه ممکن است دیگر پاسخ ندهد تا زمانی که دوباره بارگیری شود.
                 </environment>
                 <environment include="Development">
+                    <component render-mode="Server" type="typeof(App)" />
                     یک استثناء کنترل نشده رخ داده است. برای جزئیات بیشتر به ابزارهای توسعه دهنده مرورگر مراجعه کنید.
                 </environment>
            </div>

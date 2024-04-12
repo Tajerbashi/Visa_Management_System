@@ -3,6 +3,8 @@ using Blazor_Application_Library.Models.General;
 using Blazor_Application_Library.Models.Security;
 using Blazor_Application_Library.Repositories.Security;
 using Blazor_Domain_Library.Entities.Security;
+using Blazor_Domain_Library.Entities.Test;
+using Blazor_Infrastructure_Library.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
 
 namespace Blazor_Infrastructure_Library.Services.Security
@@ -11,15 +13,43 @@ namespace Blazor_Infrastructure_Library.Services.Security
     {
         private readonly UserManager<UserEntity> UserManager;
         private readonly SignInManager<UserEntity> SignInManager;
+        private readonly DbContextApplication Context;
 
-        public UserService(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager)
+        public UserService(
+            UserManager<UserEntity> userManager,
+            SignInManager<UserEntity> signInManager,
+            DbContextApplication context)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            Context = context;
         }
 
-
-
+        public Result<int> AddLog(HttpContextDTO model)
+        {
+            var entity = new Person
+            {
+                Guid=Guid.NewGuid(),
+                Age=10,
+                Name=model.ServiceName,
+                Family=model.MethodName,
+                Sex=1,
+                Email="",
+                Phone="",
+                Username=model.Time.ToString(),
+                Password="",
+                Re_Password="",
+            };
+            Context.People.Add(entity);
+            Context.SaveChanges();
+            return new Result<int>
+            {
+                Data = 1,
+                IsSuccess = true,
+                Message = ApplicationMessages.Success(),
+                Response = "",
+            };
+        }
 
         public Result<bool> AddOrUpdate(UserDTO user)
         {
@@ -85,40 +115,57 @@ namespace Blazor_Infrastructure_Library.Services.Security
         {
             throw new NotImplementedException();
         }
-        public Result<bool> Login(LoginDTO model)
+        public async Task<Result<bool>> Login(LoginDTO model)
         {
             try
             {
-
-                var userEntity = UserManager.FindByNameAsync(model.UserName).Result;
-                var SignOut = SignInManager.SignOutAsync();
-                if (userEntity is null)
+                if (model.UserName is null || model.Password is null)
+                {
+                    return new Result<bool>
+                    {
+                        Data = false,
+                        IsSuccess = false,
+                        Message = ApplicationMessages.NotValidData(),
+                    };
+                }
+                var user =  UserManager.FindByNameAsync(model.UserName).Result;
+                if (user is null)
                 {
                     return new Result<bool>
                     {
                         Data = false,
                         IsSuccess = false,
                         Message = ApplicationMessages.NotFoundData(),
-                        Response = ""
                     };
                 }
-                //var loginResult = SignInManager.PasswordSignInAsync(
-                //   userEntity,
-                //   model.Password,
-                //   model.IsPersistence,
-                //   true
-                //   ).Result;
+                if (await UserManager.CheckPasswordAsync(user, model.Password) == false)
+                {
+                    return new Result<bool>
+                    {
+                        Data = false,
+                        IsSuccess = false,
+                        Message = ApplicationMessages.WrongPassword(),
+                    };
 
-                var loginResult = SignInManager.RefreshSignInAsync(userEntity);
-                Task.WaitAny(loginResult);
-                if (loginResult.IsCompletedSuccessfully)
+                }
+                await SignInManager.SignInAsync(user, model.IsPersistence);
+                return new Result<bool>
+                {
+                    Data = true,
+                    IsSuccess = true,
+                    Message = ApplicationMessages.Success(),
+                    Response = ""
+                };
+                var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.IsPersistence, true);
+
+                if (result.Succeeded)
                 {
                     return new Result<bool>
                     {
                         Data = true,
                         IsSuccess = true,
                         Message = ApplicationMessages.Success(),
-                        Response = loginResult
+                        Response = result
                     };
                 }
 
@@ -127,12 +174,11 @@ namespace Blazor_Infrastructure_Library.Services.Security
                     Data = false,
                     IsSuccess = false,
                     Message = ApplicationMessages.FaildLogin(),
-                    Response = loginResult
+                    Response = result
                 };
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -141,10 +187,13 @@ namespace Blazor_Infrastructure_Library.Services.Security
         {
             try
             {
-
+                var res = SignInManager.SignOutAsync();
+                Task.WaitAny(res);
                 return new Result<bool>
                 {
-
+                    Data = true,
+                    IsSuccess = true,
+                    Message = ApplicationMessages.Success()
                 };
             }
             catch (Exception)

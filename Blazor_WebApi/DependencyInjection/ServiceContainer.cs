@@ -13,6 +13,7 @@ namespace Blazor_WebApi.DependencyInjection
     {
         public static IServiceCollection AddDatabase(this IServiceCollection services, WebApplicationBuilder builder)
         {
+            services.AddScoped<DbContextApplication>();
             services.AddDbContext<DbContextApplication>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -21,39 +22,11 @@ namespace Blazor_WebApi.DependencyInjection
         }
         public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
-            services.AddIdentity<UserEntity, RoleEntity>(config =>
-            {
-
-            }).AddEntityFrameworkStores<DbContextApplication>()
-            .AddDefaultTokenProviders()
-            .AddRoles<RoleEntity>()
-            .AddErrorDescriber<CustomIdentityError>()
-            .AddPasswordValidator<PasswordValidator>()
-            ;
-            services.Configure<IdentityOptions>(options =>
-            {
-                //  Identity Configuration Options For Customization
-                // User
-                //options.User.RequireUniqueEmail = true;
-                // SignIn
-                //options.SignIn.RequireConfirmedEmail = true;
-                // Lockout
-                //options.Lockout.AllowedForNewUsers = true;
-                //options.Lockout.MaxFailedAccessAttempts = 3;
-                //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
-            });
-            services.ConfigureApplicationCookie(options =>
-            {
-                //  Cookie Setting
-                //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
-                options.LoginPath = "/Security/Login";
-                options.AccessDeniedPath = "/Security/AccessDenied";
-                options.SlidingExpiration = true;
-            });
-            services.AddCascadingAuthenticationState();
-            services.AddOptions();
-            services.AddAuthentication();
-            services.AddAuthorization();
+            services.AddIdentity<UserEntity,RoleEntity>()
+                    .AddRoles<RoleEntity>()
+                    .AddEntityFrameworkStores<DbContextApplication>()
+                    .AddSignInManager()
+                    .AddDefaultTokenProviders();
             return services;
         }
         public static IServiceCollection AddClaims(this IServiceCollection services)
@@ -62,7 +35,7 @@ namespace Blazor_WebApi.DependencyInjection
         }
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IUserService,UserService>();
+            
             return services;
         }
         public static IServiceCollection AddRequirements(this IServiceCollection services)

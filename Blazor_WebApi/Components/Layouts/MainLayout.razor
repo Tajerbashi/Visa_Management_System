@@ -1,5 +1,7 @@
-﻿@inherits LayoutComponentBase
-
+﻿@using Blazor_Application_Library.Repositories.Security
+@inherits LayoutComponentBase
+@inject IUserService service
+@inject NavigationManager navigate
 <PageTitle>سیستم مدیریت اطلاعات</PageTitle>
 
 <div class="page">
@@ -13,7 +15,7 @@
                 <Authorized>
                     <a class="btn btn-dark shadow" href="/Security/Profile">حساب کاربری</a>
                     <a class="btn btn-info shadow" href="/Security/Notification">اعلانات</a>
-                    <a class="btn btn-danger shadow" href="/Security/Logout">خروج</a>
+                    <button class="btn btn-danger shadow" @onclick="LogOut">خروج</button>
                 </Authorized>
                 <NotAuthorized>
                     <a class="btn btn-primary shadow" href="/Security/Login">ورود</a>
@@ -28,3 +30,10 @@
         </article>
     </main>
 </div>
+@code {
+    public void LogOut()
+    {
+        service.LogOut();
+        navigate.NavigateTo("/Security/Profile");
+    }
+}
