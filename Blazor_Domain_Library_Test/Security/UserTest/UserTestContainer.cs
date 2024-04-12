@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.Utilities;
+using System.Reflection.Metadata;
 using Xunit.Abstractions;
 
 namespace Blazor_Domain_Library_Test.Security.UserTest
@@ -16,6 +17,8 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
             UserModelGenerator = UserFixture.Generator;
 
         }
+
+
         [Trait("CRUD", "Create")]
         [Fact]
         public void Create()
@@ -30,6 +33,7 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
 
         [Trait("CRUD", "Update")]
         [Fact]
+
         public void Update()
         {
             //  Arrange
@@ -45,6 +49,7 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
         }
         [Trait("CRUD", "Delete")]
         [Fact]
+
         public void Delete()
         {
             //  Arrange
@@ -63,7 +68,6 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
             //  Assert
             Assert.NotNull(result);
         }
-
 
         [Trait("CRUD", "Exception")]
         [Fact(Skip = "This is a Check Test")]
@@ -87,5 +91,48 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
             //  Assert
             Assert.NotNull(result);
         }
+
+
+
+        [Trait("CRUD", "Create")]
+        [Theory]
+        [InlineData("", false)]
+        [InlineData("Tajerbashi", true)]
+        public void User_Check_Name_When_Create_Model_With_Inline_Data(string parameter, bool outPut)
+        {
+            //  Arrange
+            var name = parameter;
+            //  Act
+            var result = UserModelGenerator.InsertModel(name);
+            //  Assert
+            OutPut.WriteLine("Par : {0} : {1}", name, outPut);
+            Assert.Equal(result, outPut);
+        }
+
+        [Theory]
+        [MemberData(nameof(ClassPassData.Data), MemberType = typeof(ClassPassData))]
+        public void User_Check_Name_When_Create_Model_With_Class_Data(string name, bool outPut)
+        {
+            //  Arrange
+            //  Act
+            var result = UserModelGenerator.InsertModel(name);
+            //  Assert
+            OutPut.WriteLine("Par : {0} : {1}", name, outPut);
+            Assert.Equal(result, outPut);
+        }
+
+        [Theory]
+        [DataUserAttribute]
+        public void User_Check_Name_When_Create_Model_With_Attribute_Data(string name, bool outPut)
+        {
+            //  Arrange
+            //  Act
+            var result = UserModelGenerator.InsertModel(name);
+            //  Assert
+            OutPut.WriteLine("Par : {0} : {1}", name, outPut);
+            Assert.Equal(outPut, result);
+        }
+
+
     }
 }

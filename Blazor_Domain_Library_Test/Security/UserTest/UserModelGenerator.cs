@@ -35,5 +35,14 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
                 IsDeleted = false,
             };
         }
+
+        public bool InsertModel(string name)
+        {
+            if (name.Count() > 6)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
