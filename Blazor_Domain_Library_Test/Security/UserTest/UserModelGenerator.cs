@@ -14,6 +14,17 @@ namespace Blazor_Domain_Library_Test.Security.UserTest
                 IsDeleted = false,
             };
         }
+        public UserEntity ExceptionHandler()
+        {
+            throw new Exception();
+            return new UserEntity()
+            {
+                Name = "Name User",
+                Family = "Family User",
+                IsActive = true,
+                IsDeleted = false,
+            };
+        }
         public UserEntity GetUserEntityForUpdate()
         {
             return new UserEntity()
